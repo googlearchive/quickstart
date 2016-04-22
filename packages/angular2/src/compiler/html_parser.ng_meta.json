@@ -1,0 +1,164 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.html_parser",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "StringWrapper",
+          "stringify",
+          "assertionsEnabled",
+          "StringJoiner",
+          "serializeEnum"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "html_ast.dart",
+        "2": [
+          "HtmlAst",
+          "HtmlAttrAst",
+          "HtmlTextAst",
+          "HtmlCommentAst",
+          "HtmlElementAst"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "html_lexer.dart",
+        "2": [
+          "HtmlToken",
+          "HtmlTokenType",
+          "tokenizeHtml"
+        ],
+        "5": false
+      },
+      {
+        "1": "parse_util.dart",
+        "2": [
+          "ParseError",
+          "ParseLocation",
+          "ParseSourceSpan"
+        ],
+        "5": false
+      },
+      {
+        "1": "html_tags.dart",
+        "2": [
+          "HtmlTagDefinition",
+          "getHtmlTagDefinition",
+          "getNsPrefix",
+          "mergeNsAndName"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "HtmlParser",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "html_parser.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "html_ast.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "html_lexer.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "parse_util.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "html_tags.template.dart",
+        "4": "i6"
+      }
+    ]
+  },
+  "type": {
+    "HtmlTreeError": {
+      "class": "Identifier",
+      "name": "HtmlTreeError",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "HtmlParseTreeResult": {
+      "class": "Identifier",
+      "name": "HtmlParseTreeResult",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "HtmlParser": {
+      "class": "Type",
+      "name": "HtmlParser",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    },
+    "TreeBuilder": {
+      "class": "Identifier",
+      "name": "TreeBuilder",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "getElementFullName": {
+      "class": "Identifier",
+      "name": "getElementFullName",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

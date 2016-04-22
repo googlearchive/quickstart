@@ -1,0 +1,17 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.zone",
+    "4": [
+      {
+        "1": "zone/ng_zone.dart",
+        "2": [
+          "NgZone",
+          "NgZoneError"
+        ]
+      }
+    ],
+    "6": "zone.dart"
+  },
+  "type": {},
+  "alias": {}
+}

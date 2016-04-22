@@ -1,0 +1,600 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.web_workers.shared.client_message_broker",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/message_bus.dart",
+        "2": [
+          "MessageBus"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "print",
+          "isPresent",
+          "DateWrapper",
+          "stringify"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseCompleter",
+          "PromiseWrapper",
+          "ObservableWrapper",
+          "EventEmitter"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper",
+          "MapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/serializer.dart",
+        "2": [
+          "Serializer"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "StringWrapper"
+        ],
+        "5": false
+      }
+    ],
+    "4": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "1": "ClientMessageBrokerFactory_",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "MessageBus",
+            "4": "_messageBus"
+          },
+          {
+            "1": "Serializer",
+            "4": "_serializer"
+          }
+        ]
+      }
+    ],
+    "6": "client_message_broker.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/web_workers/shared/message_bus.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/serializer.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i5"
+      }
+    ]
+  },
+  "type": {
+    "ClientMessageBrokerFactory": {
+      "class": "Identifier",
+      "name": "ClientMessageBrokerFactory",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ClientMessageBrokerFactory_": {
+      "class": "Type",
+      "name": "ClientMessageBrokerFactory_",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "MessageBus",
+            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "Serializer",
+            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    },
+    "ClientMessageBroker": {
+      "class": "Identifier",
+      "name": "ClientMessageBroker",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ClientMessageBroker_": {
+      "class": "Identifier",
+      "name": "ClientMessageBroker_",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "MessageData": {
+      "class": "Identifier",
+      "name": "MessageData",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "FnArg": {
+      "class": "Identifier",
+      "name": "FnArg",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "UiArguments": {
+      "class": "Identifier",
+      "name": "UiArguments",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "IS_DART": {
+      "class": "Identifier",
+      "name": "IS_DART",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_NAN_KEY": {
+      "class": "Identifier",
+      "name": "_NAN_KEY",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_IS_DART_VM": {
+      "class": "Identifier",
+      "name": "_IS_DART_VM",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "getTypeNameForDebugging": {
+      "class": "Identifier",
+      "name": "getTypeNameForDebugging",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "Math": {
+      "class": "Identifier",
+      "name": "Math",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CONST": {
+      "class": "Identifier",
+      "name": "CONST",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "scheduleMicroTask": {
+      "class": "Identifier",
+      "name": "scheduleMicroTask",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isPresent": {
+      "class": "Identifier",
+      "name": "isPresent",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isBlank": {
+      "class": "Identifier",
+      "name": "isBlank",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isString": {
+      "class": "Identifier",
+      "name": "isString",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isFunction": {
+      "class": "Identifier",
+      "name": "isFunction",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isType": {
+      "class": "Identifier",
+      "name": "isType",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isStringMap": {
+      "class": "Identifier",
+      "name": "isStringMap",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isArray": {
+      "class": "Identifier",
+      "name": "isArray",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isPromise": {
+      "class": "Identifier",
+      "name": "isPromise",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isNumber": {
+      "class": "Identifier",
+      "name": "isNumber",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isBoolean": {
+      "class": "Identifier",
+      "name": "isBoolean",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isDate": {
+      "class": "Identifier",
+      "name": "isDate",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "stringify": {
+      "class": "Identifier",
+      "name": "stringify",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "serializeEnum": {
+      "class": "Identifier",
+      "name": "serializeEnum",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "deserializeEnum": {
+      "class": "Identifier",
+      "name": "deserializeEnum",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "resolveEnumToken": {
+      "class": "Identifier",
+      "name": "resolveEnumToken",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "StringWrapper": {
+      "class": "Identifier",
+      "name": "StringWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "StringJoiner": {
+      "class": "Identifier",
+      "name": "StringJoiner",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "NumberWrapper": {
+      "class": "Identifier",
+      "name": "NumberWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RegExpWrapper": {
+      "class": "Identifier",
+      "name": "RegExpWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RegExpMatcherWrapper": {
+      "class": "Identifier",
+      "name": "RegExpMatcherWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_JSLikeMatch": {
+      "class": "Identifier",
+      "name": "_JSLikeMatch",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "FunctionWrapper": {
+      "class": "Identifier",
+      "name": "FunctionWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "looseIdentical": {
+      "class": "Identifier",
+      "name": "looseIdentical",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_looseIdentical": {
+      "class": "Identifier",
+      "name": "_looseIdentical",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "getMapKey": {
+      "class": "Identifier",
+      "name": "getMapKey",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "normalizeBlank": {
+      "class": "Identifier",
+      "name": "normalizeBlank",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "normalizeBool": {
+      "class": "Identifier",
+      "name": "normalizeBool",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isJsObject": {
+      "class": "Identifier",
+      "name": "isJsObject",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "lockMode": {
+      "class": "Identifier",
+      "name": "lockMode",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "enableDevMode": {
+      "class": "Identifier",
+      "name": "enableDevMode",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "enableProdMode": {
+      "class": "Identifier",
+      "name": "enableProdMode",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "assertionsEnabled": {
+      "class": "Identifier",
+      "name": "assertionsEnabled",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "Json": {
+      "class": "Identifier",
+      "name": "Json",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "DateWrapper": {
+      "class": "Identifier",
+      "name": "DateWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isPrimitive": {
+      "class": "Identifier",
+      "name": "isPrimitive",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "evalExpression": {
+      "class": "Identifier",
+      "name": "evalExpression",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "hasConstructor": {
+      "class": "Identifier",
+      "name": "hasConstructor",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "bitWiseOr": {
+      "class": "Identifier",
+      "name": "bitWiseOr",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "bitWiseAnd": {
+      "class": "Identifier",
+      "name": "bitWiseAnd",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "escape": {
+      "class": "Identifier",
+      "name": "escape",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

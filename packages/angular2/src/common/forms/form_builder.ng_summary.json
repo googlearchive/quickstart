@@ -1,0 +1,72 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.common.forms.form_builder",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isArray",
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "model.dart",
+        "4": "modelModule",
+        "5": false
+      },
+      {
+        "1": "directives/validators.dart",
+        "2": [
+          "ValidatorFn",
+          "AsyncValidatorFn"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "FormBuilder",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "form_builder.dart"
+  },
+  "type": {
+    "FormBuilder": {
+      "class": "Type",
+      "name": "FormBuilder",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/form_builder.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,23 @@
+{
+  "ngDeps": {
+    "1": "angular2.transform.common.naive_eval",
+    "3": [
+      {
+        "1": "package:analyzer/analyzer.dart",
+        "5": false
+      }
+    ],
+    "6": "naive_eval.dart"
+  },
+  "type": {
+    "naiveEval": {
+      "class": "Identifier",
+      "name": "naiveEval",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/naive_eval.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,30 @@
+{
+  "ngDeps": null,
+  "type": {
+    "codify": {
+      "class": "Identifier",
+      "name": "codify",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_facade.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "combineGeneratedStrings": {
+      "class": "Identifier",
+      "name": "combineGeneratedStrings",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_facade.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "rawString": {
+      "class": "Identifier",
+      "name": "rawString",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_facade.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

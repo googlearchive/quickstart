@@ -1,0 +1,76 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.di.metadata",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "stringify",
+          "isBlank",
+          "isPresent"
+        ],
+        "5": false
+      }
+    ],
+    "6": "metadata.dart"
+  },
+  "type": {
+    "InjectMetadata": {
+      "class": "Identifier",
+      "name": "InjectMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "OptionalMetadata": {
+      "class": "Identifier",
+      "name": "OptionalMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "DependencyMetadata": {
+      "class": "Identifier",
+      "name": "DependencyMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "InjectableMetadata": {
+      "class": "Identifier",
+      "name": "InjectableMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "SelfMetadata": {
+      "class": "Identifier",
+      "name": "SelfMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "SkipSelfMetadata": {
+      "class": "Identifier",
+      "name": "SkipSelfMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "HostMetadata": {
+      "class": "Identifier",
+      "name": "HostMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

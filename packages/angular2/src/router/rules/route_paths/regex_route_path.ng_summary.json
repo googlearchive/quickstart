@@ -1,0 +1,53 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.rules.route_paths.regex_route_path",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "RegExpWrapper",
+          "RegExpMatcherWrapper",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "../../url_parser.dart",
+        "2": [
+          "Url",
+          "RootUrl"
+        ],
+        "5": false
+      },
+      {
+        "1": "route_path.dart",
+        "2": [
+          "RoutePath",
+          "GeneratedUrl",
+          "MatchedUrl"
+        ],
+        "5": false
+      }
+    ],
+    "6": "regex_route_path.dart"
+  },
+  "type": {
+    "RegexSerializer": {
+      "class": "Identifier",
+      "name": "RegexSerializer",
+      "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/regex_route_path.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RegexRoutePath": {
+      "class": "Identifier",
+      "name": "RegexRoutePath",
+      "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/regex_route_path.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

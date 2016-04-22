@@ -1,0 +1,325 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.router",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper",
+          "EventEmitter",
+          "ObservableWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "Map",
+          "StringMapWrapper",
+          "MapWrapper",
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank",
+          "isString",
+          "isPresent",
+          "Type",
+          "isArray"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Inject",
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "route_registry.dart",
+        "2": [
+          "RouteRegistry",
+          "ROUTER_PRIMARY_COMPONENT"
+        ],
+        "5": false
+      },
+      {
+        "1": "instruction.dart",
+        "2": [
+          "ComponentInstruction",
+          "Instruction"
+        ],
+        "5": false
+      },
+      {
+        "1": "directives/router_outlet.dart",
+        "2": [
+          "RouterOutlet"
+        ],
+        "5": false
+      },
+      {
+        "1": "location/location.dart",
+        "2": [
+          "Location"
+        ],
+        "5": false
+      },
+      {
+        "1": "lifecycle/route_lifecycle_reflector.dart",
+        "2": [
+          "getCanActivateHook"
+        ],
+        "5": false
+      },
+      {
+        "1": "route_config/route_config_impl.dart",
+        "2": [
+          "RouteDefinition"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "Router",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "RouteRegistry",
+            "4": "registry"
+          },
+          {
+            "1": "Router",
+            "4": "parent"
+          },
+          {
+            "1": "dynamic",
+            "4": "hostComponent"
+          },
+          {
+            "1": "Router",
+            "4": "root"
+          }
+        ]
+      },
+      {
+        "1": "RootRouter",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "RouteRegistry",
+            "4": "registry"
+          },
+          {
+            "1": "Location",
+            "4": "location"
+          },
+          {
+            "1": "Type",
+            "3": [
+              "const Inject(ROUTER_PRIMARY_COMPONENT)"
+            ],
+            "4": "primaryComponent"
+          }
+        ]
+      }
+    ],
+    "6": "router.dart"
+  },
+  "type": {
+    "Router": {
+      "class": "Type",
+      "name": "Router",
+      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "RouteRegistry",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "Router",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "dynamic",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "Router",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    },
+    "RootRouter": {
+      "class": "Type",
+      "name": "RootRouter",
+      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "RouteRegistry",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "Location",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "ROUTER_PRIMARY_COMPONENT",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    },
+    "ChildRouter": {
+      "class": "Identifier",
+      "name": "ChildRouter",
+      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "canActivateOne": {
+      "class": "Identifier",
+      "name": "canActivateOne",
+      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

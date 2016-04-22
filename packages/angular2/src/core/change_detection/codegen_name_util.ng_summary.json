@@ -1,0 +1,161 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.change_detection.codegen_name_util",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "RegExpWrapper",
+          "StringWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "MapWrapper",
+          "Map"
+        ],
+        "5": false
+      },
+      {
+        "1": "directive_record.dart",
+        "2": [
+          "DirectiveIndex"
+        ],
+        "5": false
+      },
+      {
+        "1": "proto_record.dart",
+        "2": [
+          "ProtoRecord"
+        ],
+        "5": false
+      },
+      {
+        "1": "event_binding.dart",
+        "2": [
+          "EventBinding"
+        ],
+        "5": false
+      }
+    ],
+    "6": "codegen_name_util.dart"
+  },
+  "type": {
+    "_STATE_ACCESSOR": {
+      "class": "Identifier",
+      "name": "_STATE_ACCESSOR",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_CONTEXT_ACCESSOR": {
+      "class": "Identifier",
+      "name": "_CONTEXT_ACCESSOR",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_PROP_BINDING_INDEX": {
+      "class": "Identifier",
+      "name": "_PROP_BINDING_INDEX",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_DIRECTIVES_ACCESSOR": {
+      "class": "Identifier",
+      "name": "_DIRECTIVES_ACCESSOR",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_DISPATCHER_ACCESSOR": {
+      "class": "Identifier",
+      "name": "_DISPATCHER_ACCESSOR",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_LOCALS_ACCESSOR": {
+      "class": "Identifier",
+      "name": "_LOCALS_ACCESSOR",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_MODE_ACCESSOR": {
+      "class": "Identifier",
+      "name": "_MODE_ACCESSOR",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_PIPES_ACCESSOR": {
+      "class": "Identifier",
+      "name": "_PIPES_ACCESSOR",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_PROTOS_ACCESSOR": {
+      "class": "Identifier",
+      "name": "_PROTOS_ACCESSOR",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CONTEXT_ACCESSOR": {
+      "class": "Identifier",
+      "name": "CONTEXT_ACCESSOR",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CONTEXT_INDEX": {
+      "class": "Identifier",
+      "name": "CONTEXT_INDEX",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_FIELD_PREFIX": {
+      "class": "Identifier",
+      "name": "_FIELD_PREFIX",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "sanitizeName": {
+      "class": "Identifier",
+      "name": "sanitizeName",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CodegenNameUtil": {
+      "class": "Identifier",
+      "name": "CodegenNameUtil",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/codegen_name_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

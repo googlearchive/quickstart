@@ -1,0 +1,108 @@
+{
+  "ngDeps": {
+    "1": "testing.matchers",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:guinness2/guinness2.dart",
+        "4": "gns",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isString"
+        ],
+        "5": false
+      }
+    ],
+    "6": "matchers.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "type": {
+    "_u": {
+      "class": "Identifier",
+      "name": "_u",
+      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "expect": {
+      "class": "Identifier",
+      "name": "expect",
+      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "elementContainsStyle": {
+      "class": "Identifier",
+      "name": "elementContainsStyle",
+      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "expectErrorMessage": {
+      "class": "Identifier",
+      "name": "expectErrorMessage",
+      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "expectException": {
+      "class": "Identifier",
+      "name": "expectException",
+      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "Expect": {
+      "class": "Identifier",
+      "name": "Expect",
+      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "NotExpect": {
+      "class": "Identifier",
+      "name": "NotExpect",
+      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "elementText": {
+      "class": "Identifier",
+      "name": "elementText",
+      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

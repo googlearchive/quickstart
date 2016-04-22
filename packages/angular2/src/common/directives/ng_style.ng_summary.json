@@ -1,0 +1,166 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.common.directives.ng_style",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "DoCheck",
+          "KeyValueDiffer",
+          "KeyValueDiffers",
+          "ElementRef",
+          "Directive",
+          "Renderer"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "print"
+        ],
+        "5": false
+      },
+      {
+        "1": "../../core/change_detection/differs/default_keyvalue_differ.dart",
+        "2": [
+          "KeyValueChangeRecord"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "NgStyle",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[ngStyle]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"rawStyle: ngStyle\"]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "KeyValueDiffers",
+            "4": "_differs"
+          },
+          {
+            "1": "ElementRef",
+            "4": "_ngEl"
+          },
+          {
+            "1": "Renderer",
+            "4": "_renderer"
+          }
+        ],
+        "6": [
+          "DoCheck"
+        ]
+      }
+    ],
+    "6": "ng_style.dart"
+  },
+  "type": {
+    "NgStyle": {
+      "class": "Directive",
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[ngStyle]",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "NgStyle",
+        "moduleUrl": "asset:angular2/lib/src/common/directives/ng_style.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "value": null,
+        "diDeps": [
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "KeyValueDiffers",
+              "moduleUrl": null,
+              "prefix": null,
+              "constConstructor": null,
+              "value": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          },
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "ElementRef",
+              "moduleUrl": null,
+              "prefix": null,
+              "constConstructor": null,
+              "value": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          },
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "Renderer",
+              "moduleUrl": null,
+              "prefix": null,
+              "constConstructor": null,
+              "value": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          }
+        ]
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "rawStyle": "ngStyle"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        2
+      ],
+      "template": null,
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
+    }
+  },
+  "alias": {}
+}

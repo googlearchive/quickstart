@@ -1,0 +1,144 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.common.pipes.async_pipe",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank",
+          "isPresent",
+          "isPromise"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "ObservableWrapper",
+          "Stream",
+          "EventEmitter"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Pipe",
+          "Injectable",
+          "ChangeDetectorRef",
+          "OnDestroy",
+          "PipeTransform",
+          "WrappedValue"
+        ],
+        "5": false
+      },
+      {
+        "1": "invalid_pipe_argument_exception.dart",
+        "2": [
+          "InvalidPipeArgumentException"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "AsyncPipe",
+        "4": [
+          {
+            "1": "Pipe",
+            "3": [
+              {
+                "1": "name",
+                "2": "\"async\""
+              },
+              {
+                "1": "pure",
+                "2": "false"
+              }
+            ],
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ChangeDetectorRef",
+            "4": "_ref"
+          }
+        ],
+        "6": [
+          "PipeTransform",
+          "OnDestroy"
+        ]
+      }
+    ],
+    "6": "async_pipe.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "invalid_pipe_argument_exception.template.dart",
+        "4": "i3"
+      }
+    ]
+  },
+  "type": {
+    "ObservableStrategy": {
+      "class": "Identifier",
+      "name": "ObservableStrategy",
+      "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "PromiseStrategy": {
+      "class": "Identifier",
+      "name": "PromiseStrategy",
+      "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AsyncPipe": {
+      "class": "Pipe",
+      "type": {
+        "class": "Type",
+        "name": "AsyncPipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "value": null,
+        "diDeps": null
+      },
+      "name": "async",
+      "pure": false
+    }
+  },
+  "alias": {}
+}

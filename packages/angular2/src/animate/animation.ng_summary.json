@@ -1,0 +1,72 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.animate.animation",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "DateWrapper",
+          "StringWrapper",
+          "RegExpWrapper",
+          "NumberWrapper",
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/math.dart",
+        "2": [
+          "Math"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/util.dart",
+        "2": [
+          "camelCaseToDashCase"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      },
+      {
+        "1": "browser_details.dart",
+        "2": [
+          "BrowserDetails"
+        ],
+        "5": false
+      },
+      {
+        "1": "css_animation_options.dart",
+        "2": [
+          "CssAnimationOptions"
+        ],
+        "5": false
+      }
+    ],
+    "6": "animation.dart"
+  },
+  "type": {
+    "Animation": {
+      "class": "Identifier",
+      "name": "Animation",
+      "moduleUrl": "asset:angular2/lib/src/animate/animation.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,240 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.style_compiler",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "directive_metadata.dart",
+        "2": [
+          "CompileTypeMetadata",
+          "CompileTemplateMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "source_module.dart",
+        "2": [
+          "SourceModule",
+          "SourceExpression",
+          "moduleRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/xhr.dart",
+        "2": [
+          "XHR"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "IS_DART",
+          "StringWrapper",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/shadow_css.dart",
+        "2": [
+          "ShadowCss"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/url_resolver.dart",
+        "2": [
+          "UrlResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "style_url_resolver.dart",
+        "2": [
+          "extractStyleUrls"
+        ],
+        "5": false
+      },
+      {
+        "1": "util.dart",
+        "2": [
+          "escapeSingleQuoteString",
+          "codeGenExportVariable",
+          "codeGenToString",
+          "MODULE_SUFFIX"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "StyleCompiler",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "XHR",
+            "4": "_xhr"
+          },
+          {
+            "1": "UrlResolver",
+            "4": "_urlResolver"
+          }
+        ]
+      }
+    ],
+    "6": "style_compiler.dart",
+    "10": [
+      {
+        "1": "directive_metadata.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "source_module.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/compiler/xhr.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "package:angular2/src/compiler/shadow_css.template.dart",
+        "4": "i6"
+      },
+      {
+        "1": "package:angular2/src/compiler/url_resolver.template.dart",
+        "4": "i7"
+      },
+      {
+        "1": "style_url_resolver.template.dart",
+        "4": "i8"
+      },
+      {
+        "1": "util.template.dart",
+        "4": "i9"
+      },
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i10"
+      }
+    ]
+  },
+  "type": {
+    "COMPONENT_VARIABLE": {
+      "class": "Identifier",
+      "name": "COMPONENT_VARIABLE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "HOST_ATTR": {
+      "class": "Identifier",
+      "name": "HOST_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CONTENT_ATTR": {
+      "class": "Identifier",
+      "name": "CONTENT_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "StyleCompiler": {
+      "class": "Type",
+      "name": "StyleCompiler",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "XHR",
+            "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "UrlResolver",
+            "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

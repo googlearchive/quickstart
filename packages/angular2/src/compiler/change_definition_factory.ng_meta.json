@@ -1,0 +1,145 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.change_definition_factory",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "2": [
+          "reflector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "2": [
+          "DirectiveIndex",
+          "BindingRecord",
+          "DirectiveRecord",
+          "ChangeDetectionStrategy",
+          "ChangeDetectorDefinition",
+          "ChangeDetectorGenConfig",
+          "ASTWithSource"
+        ],
+        "5": false
+      },
+      {
+        "1": "directive_metadata.dart",
+        "2": [
+          "CompileDirectiveMetadata",
+          "CompileTypeMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "template_ast.dart",
+        "2": [
+          "TemplateAst",
+          "ElementAst",
+          "BoundTextAst",
+          "PropertyBindingType",
+          "DirectiveAst",
+          "TemplateAstVisitor",
+          "templateVisitAll",
+          "NgContentAst",
+          "EmbeddedTemplateAst",
+          "VariableAst",
+          "BoundElementPropertyAst",
+          "BoundEventAst",
+          "BoundDirectivePropertyAst",
+          "AttrAst",
+          "TextAst"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/interfaces.dart",
+        "2": [
+          "LifecycleHooks"
+        ],
+        "5": false
+      }
+    ],
+    "6": "change_definition_factory.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "directive_metadata.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "template_ast.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "package:angular2/src/core/linker/interfaces.template.dart",
+        "4": "i6"
+      }
+    ]
+  },
+  "type": {
+    "createChangeDetectorDefinitions": {
+      "class": "Identifier",
+      "name": "createChangeDetectorDefinitions",
+      "moduleUrl": "asset:angular2/lib/src/compiler/change_definition_factory.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ProtoViewVisitor": {
+      "class": "Identifier",
+      "name": "ProtoViewVisitor",
+      "moduleUrl": "asset:angular2/lib/src/compiler/change_definition_factory.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "createChangeDefinitions": {
+      "class": "Identifier",
+      "name": "createChangeDefinitions",
+      "moduleUrl": "asset:angular2/lib/src/compiler/change_definition_factory.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_collectNestedProtoViewsVariableNames": {
+      "class": "Identifier",
+      "name": "_collectNestedProtoViewsVariableNames",
+      "moduleUrl": "asset:angular2/lib/src/compiler/change_definition_factory.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

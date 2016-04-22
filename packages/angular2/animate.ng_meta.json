@@ -1,0 +1,133 @@
+{
+  "ngDeps": {
+    "1": "angular2.animate",
+    "4": [
+      {
+        "1": "src/animate/animation.dart",
+        "2": [
+          "Animation"
+        ]
+      },
+      {
+        "1": "src/animate/animation_builder.dart",
+        "2": [
+          "AnimationBuilder"
+        ]
+      },
+      {
+        "1": "src/animate/browser_details.dart",
+        "2": [
+          "BrowserDetails"
+        ]
+      },
+      {
+        "1": "src/animate/css_animation_builder.dart",
+        "2": [
+          "CssAnimationBuilder"
+        ]
+      },
+      {
+        "1": "src/animate/css_animation_options.dart",
+        "2": [
+          "CssAnimationOptions"
+        ]
+      }
+    ],
+    "6": "animate.dart",
+    "10": [
+      {
+        "1": "src/animate/animation.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "src/animate/animation_builder.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "src/animate/browser_details.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "src/animate/css_animation_builder.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "src/animate/css_animation_options.template.dart",
+        "4": "i4"
+      }
+    ]
+  },
+  "type": {
+    "Animation": {
+      "class": "Identifier",
+      "name": "Animation",
+      "moduleUrl": "asset:angular2/lib/src/animate/animation.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AnimationBuilder": {
+      "class": "Type",
+      "name": "AnimationBuilder",
+      "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "BrowserDetails",
+            "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    },
+    "BrowserDetails": {
+      "class": "Type",
+      "name": "BrowserDetails",
+      "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    },
+    "RafQueue": {
+      "class": "Identifier",
+      "name": "RafQueue",
+      "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CssAnimationBuilder": {
+      "class": "Identifier",
+      "name": "CssAnimationBuilder",
+      "moduleUrl": "asset:angular2/lib/src/animate/css_animation_builder.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CssAnimationOptions": {
+      "class": "Identifier",
+      "name": "CssAnimationOptions",
+      "moduleUrl": "asset:angular2/lib/src/animate/css_animation_options.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,74 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.change_detection.pregen_proto_change_detector",
+    "4": [
+      {
+        "1": "dart:core",
+        "2": [
+          "List"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/abstract_change_detector.dart",
+        "2": [
+          "AbstractChangeDetector"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "2": [
+          "ChangeDetectionStrategy"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/constants.dart",
+        "2": [
+          "ChangeDetectorState"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/directive_record.dart",
+        "2": [
+          "DirectiveIndex",
+          "DirectiveRecord"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/interfaces.dart",
+        "2": [
+          "ChangeDetector",
+          "ChangeDetectorDefinition",
+          "ProtoChangeDetector"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/pipes.dart",
+        "2": [
+          "Pipes"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/proto_record.dart",
+        "2": [
+          "ProtoRecord"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection_util.dart",
+        "2": [
+          "ChangeDetectionUtil"
+        ]
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "assertionsEnabled",
+          "looseIdentical"
+        ]
+      }
+    ],
+    "6": "pregen_proto_change_detector.dart"
+  },
+  "type": {},
+  "alias": {}
+}

@@ -1,0 +1,19 @@
+{
+  "ngDeps": {
+    "1": "angular2.compiler",
+    "4": [
+      {
+        "1": "src/compiler/url_resolver.dart"
+      },
+      {
+        "1": "src/compiler/xhr.dart"
+      },
+      {
+        "1": "src/compiler/compiler.dart"
+      }
+    ],
+    "6": "compiler.dart"
+  },
+  "type": {},
+  "alias": {}
+}

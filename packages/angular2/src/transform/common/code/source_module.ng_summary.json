@@ -1,0 +1,58 @@
+{
+  "ngDeps": {
+    "1": "angular2.transform.common.code.source_module",
+    "3": [
+      {
+        "1": "package:angular2/src/compiler/source_module.dart",
+        "5": false
+      },
+      {
+        "1": "package:analyzer/src/generated/scanner.dart",
+        "2": [
+          "Keyword"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/model/source_module.dart",
+        "5": false
+      },
+      {
+        "1": "ng_deps_code.dart",
+        "5": false
+      }
+    ],
+    "6": "source_module.dart"
+  },
+  "type": {
+    "writeSourceModule": {
+      "class": "Identifier",
+      "name": "writeSourceModule",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/code/source_module.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "writeTemplateFile": {
+      "class": "Identifier",
+      "name": "writeTemplateFile",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/code/source_module.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_sanitizeLibName": {
+      "class": "Identifier",
+      "name": "_sanitizeLibName",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/code/source_module.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,52 @@
+{
+  "ngDeps": {
+    "1": "angular2.browser_adapter_reexport",
+    "4": [
+      {
+        "1": "package:angular2/src/platform/browser/browser_adapter.dart"
+      }
+    ],
+    "6": "browser_adapter.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/platform/browser/browser_adapter.template.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "type": {
+    "_IdentitySanitizer": {
+      "class": "Identifier",
+      "name": "_IdentitySanitizer",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "BrowserDomAdapter": {
+      "class": "Identifier",
+      "name": "BrowserDomAdapter",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "getBaseElementHref": {
+      "class": "Identifier",
+      "name": "getBaseElementHref",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_relativePath": {
+      "class": "Identifier",
+      "name": "_relativePath",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

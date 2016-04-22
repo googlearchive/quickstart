@@ -1,0 +1,93 @@
+{
+  "ngDeps": {
+    "1": "angular2.transform.deferred_rewriter.rewriter",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:analyzer/analyzer.dart",
+        "5": false
+      },
+      {
+        "1": "package:analyzer/src/generated/ast.dart",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/asset_reader.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/logging.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/names.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/url_resolver.dart",
+        "5": false
+      }
+    ],
+    "6": "rewriter.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/transform/common/names.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/transform/common/url_resolver.template.dart",
+        "4": "i3"
+      }
+    ]
+  },
+  "type": {
+    "rewriteLibrary": {
+      "class": "Identifier",
+      "name": "rewriteLibrary",
+      "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_rewriteLibrary": {
+      "class": "Identifier",
+      "name": "_rewriteLibrary",
+      "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_FindDeferredLibraries": {
+      "class": "Identifier",
+      "name": "_FindDeferredLibraries",
+      "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_FindLoadLibraryCalls": {
+      "class": "Identifier",
+      "name": "_FindLoadLibraryCalls",
+      "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

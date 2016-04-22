@@ -1,0 +1,99 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.legacy_template",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable",
+          "Provider",
+          "provide"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "StringWrapper",
+          "RegExpWrapper",
+          "isBlank",
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "html_ast.dart",
+        "2": [
+          "HtmlAstVisitor",
+          "HtmlAttrAst",
+          "HtmlElementAst",
+          "HtmlTextAst",
+          "HtmlCommentAst",
+          "HtmlAst"
+        ],
+        "5": false
+      },
+      {
+        "1": "html_parser.dart",
+        "2": [
+          "HtmlParser",
+          "HtmlParseTreeResult"
+        ],
+        "5": false
+      },
+      {
+        "1": "util.dart",
+        "2": [
+          "dashCaseToCamelCase",
+          "camelCaseToDashCase"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "LegacyHtmlParser",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "legacy_template.dart"
+  },
+  "type": {
+    "SPECIAL_CASES": {
+      "class": "Identifier",
+      "name": "SPECIAL_CASES",
+      "moduleUrl": "asset:angular2/lib/src/compiler/legacy_template.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "LegacyHtmlAstTransformer": {
+      "class": "Identifier",
+      "name": "LegacyHtmlAstTransformer",
+      "moduleUrl": "asset:angular2/lib/src/compiler/legacy_template.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "LegacyHtmlParser": {
+      "class": "Type",
+      "name": "LegacyHtmlParser",
+      "moduleUrl": "asset:angular2/lib/src/compiler/legacy_template.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    }
+  },
+  "alias": {}
+}

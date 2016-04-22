@@ -1,0 +1,88 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.router_providers",
+    "3": [
+      {
+        "1": "router_providers_common.dart",
+        "2": [
+          "ROUTER_PROVIDERS_COMMON"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "location/browser_platform_location.dart",
+        "2": [
+          "BrowserPlatformLocation"
+        ],
+        "5": false
+      },
+      {
+        "1": "location/platform_location.dart",
+        "2": [
+          "PlatformLocation"
+        ],
+        "5": false
+      }
+    ],
+    "6": "router_providers.dart"
+  },
+  "type": {
+    "ROUTER_PROVIDERS": {
+      "class": "Identifier",
+      "name": "ROUTER_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/src/router/router_providers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": [
+        {
+          "class": "Identifier",
+          "name": "ROUTER_PROVIDERS_COMMON",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "class": "Identifier",
+            "name": "PlatformLocation",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "BrowserPlatformLocation",
+            "moduleUrl": null,
+            "prefix": null,
+            "isHost": false,
+            "constConstructor": null,
+            "value": null,
+            "diDeps": null
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null
+        }
+      ]
+    },
+    "ROUTER_BINDINGS": {
+      "class": "Identifier",
+      "name": "ROUTER_BINDINGS",
+      "moduleUrl": "asset:angular2/lib/src/router/router_providers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

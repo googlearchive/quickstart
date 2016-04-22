@@ -1,0 +1,153 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.linker.view_resolver",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "../metadata/view.dart",
+        "2": [
+          "ViewMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "../metadata/directives.dart",
+        "2": [
+          "ComponentMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "stringify",
+          "isBlank",
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "Map"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflector_reader.dart",
+        "2": [
+          "ReflectorReader"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "2": [
+          "reflector"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "ViewResolver",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ReflectorReader",
+            "4": "_reflector"
+          }
+        ]
+      }
+    ],
+    "6": "view_resolver.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "../metadata/view.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "../metadata/directives.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflector_reader.template.dart",
+        "4": "i6"
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
+        "4": "i7"
+      }
+    ]
+  },
+  "type": {
+    "ViewResolver": {
+      "class": "Type",
+      "name": "ViewResolver",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_resolver.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "ReflectorReader",
+            "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

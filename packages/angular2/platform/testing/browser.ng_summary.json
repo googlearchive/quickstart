@@ -1,0 +1,84 @@
+{
+  "ngDeps": {
+    "1": "angular2.platform.testing.browser",
+    "3": [
+      {
+        "1": "package:angular2/platform/testing/browser_static.dart",
+        "2": [
+          "TEST_BROWSER_STATIC_PLATFORM_PROVIDERS",
+          "ADDITIONAL_TEST_BROWSER_PROVIDERS"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/platform/browser_static.dart",
+        "2": [
+          "BROWSER_APP_PROVIDERS"
+        ],
+        "5": false
+      }
+    ],
+    "4": [
+      {
+        "1": "package:angular2/platform/browser_static.dart",
+        "2": [
+          "CACHED_TEMPLATE_PROVIDER"
+        ]
+      }
+    ],
+    "6": "browser.dart"
+  },
+  "type": {
+    "TEST_BROWSER_PLATFORM_PROVIDERS": {
+      "class": "Identifier",
+      "name": "TEST_BROWSER_PLATFORM_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/platform/testing/browser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": [
+        {
+          "class": "Identifier",
+          "name": "TEST_BROWSER_STATIC_PLATFORM_PROVIDERS",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        }
+      ]
+    },
+    "TEST_BROWSER_APPLICATION_PROVIDERS": {
+      "class": "Identifier",
+      "name": "TEST_BROWSER_APPLICATION_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/platform/testing/browser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": [
+        {
+          "class": "Identifier",
+          "name": "BROWSER_APP_PROVIDERS",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "ADDITIONAL_TEST_BROWSER_PROVIDERS",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        }
+      ]
+    }
+  },
+  "alias": {
+    "TEST_BROWSER_PLATFORM_PROVIDERS": [
+      "TEST_BROWSER_STATIC_PLATFORM_PROVIDERS"
+    ],
+    "TEST_BROWSER_APPLICATION_PROVIDERS": [
+      "BROWSER_APP_PROVIDERS",
+      "ADDITIONAL_TEST_BROWSER_PROVIDERS"
+    ]
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.directives.router_outlet",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank",
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Directive",
+          "Attribute",
+          "DynamicComponentLoader",
+          "ComponentRef",
+          "ElementRef",
+          "Injector",
+          "provide",
+          "Dependency",
+          "OnDestroy"
+        ],
+        "5": false
+      },
+      {
+        "1": "../router.dart",
+        "4": "routerMod",
+        "5": false
+      },
+      {
+        "1": "../instruction.dart",
+        "2": [
+          "ComponentInstruction",
+          "RouteParams",
+          "RouteData"
+        ],
+        "5": false
+      },
+      {
+        "1": "../lifecycle/lifecycle_annotations.dart",
+        "4": "hookMod",
+        "5": false
+      },
+      {
+        "1": "../lifecycle/route_lifecycle_reflector.dart",
+        "2": [
+          "hasLifecycleHook"
+        ],
+        "5": false
+      },
+      {
+        "1": "../interfaces.dart",
+        "2": [
+          "OnActivate",
+          "CanReuse",
+          "OnReuse",
+          "OnDeactivate",
+          "CanDeactivate"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "RouterOutlet",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"router-outlet\""
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "_elementRef"
+          },
+          {
+            "1": "DynamicComponentLoader",
+            "4": "_loader"
+          },
+          {
+            "1": "routerMod.Router",
+            "4": "_parentRouter"
+          },
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"name\")"
+            ],
+            "4": "nameAttr"
+          }
+        ],
+        "6": [
+          "OnDestroy"
+        ]
+      }
+    ],
+    "6": "router_outlet.dart"
+  },
+  "type": {
+    "RouterOutlet": {
+      "class": "Directive",
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "router-outlet",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "RouterOutlet",
+        "moduleUrl": "asset:angular2/lib/src/router/directives/router_outlet.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "value": null,
+        "diDeps": [
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "ElementRef",
+              "moduleUrl": null,
+              "prefix": null,
+              "constConstructor": null,
+              "value": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          },
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "DynamicComponentLoader",
+              "moduleUrl": null,
+              "prefix": null,
+              "constConstructor": null,
+              "value": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          },
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "Router",
+              "moduleUrl": null,
+              "prefix": "routerMod",
+              "constConstructor": null,
+              "value": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          },
+          {
+            "token": "name",
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": true,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          }
+        ]
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        1
+      ],
+      "template": null,
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
+    }
+  },
+  "alias": {}
+}

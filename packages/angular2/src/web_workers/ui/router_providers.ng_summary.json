@@ -1,0 +1,91 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.web_workers.ui.router_providers",
+    "3": [
+      {
+        "1": "platform_location.dart",
+        "2": [
+          "MessageBasedPlatformLocation"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/router/location/browser_platform_location.dart",
+        "2": [
+          "BrowserPlatformLocation"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "APP_INITIALIZER",
+          "Provider",
+          "Injector",
+          "NgZone"
+        ],
+        "5": false
+      }
+    ],
+    "6": "router_providers.dart"
+  },
+  "type": {
+    "WORKER_RENDER_ROUTER": {
+      "class": "Identifier",
+      "name": "WORKER_RENDER_ROUTER",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/router_providers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": [
+        {
+          "class": "Identifier",
+          "name": "MessageBasedPlatformLocation",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "BrowserPlatformLocation",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "class": "Identifier",
+            "name": "APP_INITIALIZER",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Factory",
+            "name": "initRouterListeners",
+            "prefix": null,
+            "moduleUrl": null,
+            "constConstructor": null,
+            "value": null,
+            "diDeps": null
+          }
+        }
+      ]
+    },
+    "initRouterListeners": {
+      "class": "Identifier",
+      "name": "initRouterListeners",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/router_providers.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,224 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.common.pipes.number_pipe",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isNumber",
+          "isPresent",
+          "isBlank",
+          "StringWrapper",
+          "NumberWrapper",
+          "RegExpWrapper",
+          "FunctionWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/intl.dart",
+        "2": [
+          "NumberFormatter",
+          "NumberFormatStyle"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Injectable",
+          "PipeTransform",
+          "WrappedValue",
+          "Pipe"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "invalid_pipe_argument_exception.dart",
+        "2": [
+          "InvalidPipeArgumentException"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "NumberPipe",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      },
+      {
+        "1": "DecimalPipe",
+        "4": [
+          {
+            "1": "Pipe",
+            "3": [
+              {
+                "1": "name",
+                "2": "\"number\""
+              }
+            ],
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "PipeTransform"
+        ]
+      },
+      {
+        "1": "PercentPipe",
+        "4": [
+          {
+            "1": "Pipe",
+            "3": [
+              {
+                "1": "name",
+                "2": "\"percent\""
+              }
+            ],
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "PipeTransform"
+        ]
+      },
+      {
+        "1": "CurrencyPipe",
+        "4": [
+          {
+            "1": "Pipe",
+            "3": [
+              {
+                "1": "name",
+                "2": "\"currency\""
+              }
+            ],
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "PipeTransform"
+        ]
+      }
+    ],
+    "6": "number_pipe.dart"
+  },
+  "type": {
+    "NumberPipe": {
+      "class": "Type",
+      "name": "NumberPipe",
+      "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    },
+    "DecimalPipe": {
+      "class": "Pipe",
+      "type": {
+        "class": "Type",
+        "name": "DecimalPipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "value": null,
+        "diDeps": null
+      },
+      "name": "number",
+      "pure": false
+    },
+    "PercentPipe": {
+      "class": "Pipe",
+      "type": {
+        "class": "Type",
+        "name": "PercentPipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "value": null,
+        "diDeps": null
+      },
+      "name": "percent",
+      "pure": false
+    },
+    "CurrencyPipe": {
+      "class": "Pipe",
+      "type": {
+        "class": "Type",
+        "name": "CurrencyPipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "value": null,
+        "diDeps": null
+      },
+      "name": "currency",
+      "pure": false
+    }
+  },
+  "alias": {}
+}

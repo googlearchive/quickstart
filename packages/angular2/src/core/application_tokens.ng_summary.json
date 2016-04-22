@@ -1,0 +1,121 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.application_tokens",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "OpaqueToken",
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Math",
+          "StringWrapper"
+        ],
+        "5": false
+      }
+    ],
+    "6": "application_tokens.dart"
+  },
+  "type": {
+    "APP_COMPONENT_REF_PROMISE": {
+      "class": "Identifier",
+      "name": "APP_COMPONENT_REF_PROMISE",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "APP_COMPONENT": {
+      "class": "Identifier",
+      "name": "APP_COMPONENT",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "APP_ID": {
+      "class": "Identifier",
+      "name": "APP_ID",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "APP_ID_RANDOM_PROVIDER": {
+      "class": "Identifier",
+      "name": "APP_ID_RANDOM_PROVIDER",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": {
+        "class": "Provider",
+        "token": {
+          "class": "Identifier",
+          "name": "APP_ID",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        "useClass": null,
+        "useExisting": null,
+        "useValue": null,
+        "useFactory": {
+          "class": "Factory",
+          "name": "_appIdRandomProviderFactory",
+          "prefix": null,
+          "moduleUrl": null,
+          "constConstructor": null,
+          "value": null,
+          "diDeps": null
+        }
+      }
+    },
+    "PLATFORM_INITIALIZER": {
+      "class": "Identifier",
+      "name": "PLATFORM_INITIALIZER",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "APP_INITIALIZER": {
+      "class": "Identifier",
+      "name": "APP_INITIALIZER",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "PACKAGE_ROOT_URL": {
+      "class": "Identifier",
+      "name": "PACKAGE_ROOT_URL",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_appIdRandomProviderFactory": {
+      "class": "Identifier",
+      "name": "_appIdRandomProviderFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_randomChar": {
+      "class": "Identifier",
+      "name": "_randomChar",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

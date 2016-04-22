@@ -1,0 +1,14 @@
+{
+  "ngDeps": null,
+  "type": {
+    "argsLength": {
+      "class": "Identifier",
+      "name": "argsLength",
+      "moduleUrl": "asset:angular2/lib/src/core/di/type_info.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,126 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.linker.resolved_metadata_cache",
+    "3": [
+      {
+        "1": "../di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "element.dart",
+        "2": [
+          "DirectiveProvider"
+        ],
+        "5": false
+      },
+      {
+        "1": "directive_resolver.dart",
+        "2": [
+          "DirectiveResolver",
+          "CODEGEN_DIRECTIVE_RESOLVER"
+        ],
+        "5": false
+      },
+      {
+        "1": "../pipes/pipe_provider.dart",
+        "2": [
+          "PipeProvider"
+        ],
+        "5": false
+      },
+      {
+        "1": "pipe_resolver.dart",
+        "2": [
+          "PipeResolver",
+          "CODEGEN_PIPE_RESOLVER"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "ResolvedMetadataCache",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "DirectiveResolver",
+            "4": "_directiveResolver"
+          },
+          {
+            "1": "PipeResolver",
+            "4": "_pipeResolver"
+          }
+        ]
+      }
+    ],
+    "6": "resolved_metadata_cache.dart"
+  },
+  "type": {
+    "ResolvedMetadataCache": {
+      "class": "Type",
+      "name": "ResolvedMetadataCache",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/resolved_metadata_cache.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "DirectiveResolver",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "PipeResolver",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

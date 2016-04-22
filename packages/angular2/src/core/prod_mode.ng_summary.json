@@ -1,0 +1,16 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.prod_mode",
+    "4": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "enableProdMode"
+        ]
+      }
+    ],
+    "6": "prod_mode.dart"
+  },
+  "type": {},
+  "alias": {}
+}

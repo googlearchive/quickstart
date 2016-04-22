@@ -1,0 +1,26 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.web_workers.shared.api",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "OpaqueToken"
+        ],
+        "5": false
+      }
+    ],
+    "6": "api.dart"
+  },
+  "type": {
+    "ON_WEB_WORKER": {
+      "class": "Identifier",
+      "name": "ON_WEB_WORKER",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/api.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

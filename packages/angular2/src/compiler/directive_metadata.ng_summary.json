@@ -1,0 +1,216 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.directive_metadata",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "isNumber",
+          "isBoolean",
+          "normalizeBool",
+          "serializeEnum",
+          "Type",
+          "isString",
+          "RegExpWrapper",
+          "StringWrapper",
+          "isArray"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "unimplemented"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "2": [
+          "ChangeDetectionStrategy",
+          "CHANGE_DETECTION_STRATEGY_VALUES"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation",
+          "VIEW_ENCAPSULATION_VALUES"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/selector.dart",
+        "2": [
+          "CssSelector"
+        ],
+        "5": false
+      },
+      {
+        "1": "util.dart",
+        "2": [
+          "splitAtColon"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/interfaces.dart",
+        "2": [
+          "LifecycleHooks",
+          "LIFECYCLE_HOOKS_VALUES"
+        ],
+        "5": false
+      }
+    ],
+    "6": "directive_metadata.dart"
+  },
+  "type": {
+    "CompileMetadataWithIdentifier": {
+      "class": "Identifier",
+      "name": "CompileMetadataWithIdentifier",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompileMetadataWithType": {
+      "class": "Identifier",
+      "name": "CompileMetadataWithType",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "metadataFromJson": {
+      "class": "Identifier",
+      "name": "metadataFromJson",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompileIdentifierMetadata": {
+      "class": "Identifier",
+      "name": "CompileIdentifierMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompileDiDependencyMetadata": {
+      "class": "Identifier",
+      "name": "CompileDiDependencyMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompileProviderMetadata": {
+      "class": "Identifier",
+      "name": "CompileProviderMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompileFactoryMetadata": {
+      "class": "Identifier",
+      "name": "CompileFactoryMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompileTypeMetadata": {
+      "class": "Identifier",
+      "name": "CompileTypeMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompileQueryMetadata": {
+      "class": "Identifier",
+      "name": "CompileQueryMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompileTemplateMetadata": {
+      "class": "Identifier",
+      "name": "CompileTemplateMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompileDirectiveMetadata": {
+      "class": "Identifier",
+      "name": "CompileDirectiveMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "createHostComponentMeta": {
+      "class": "Identifier",
+      "name": "createHostComponentMeta",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CompilePipeMetadata": {
+      "class": "Identifier",
+      "name": "CompilePipeMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "arrayFromJson": {
+      "class": "Identifier",
+      "name": "arrayFromJson",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "arrayToJson": {
+      "class": "Identifier",
+      "name": "arrayToJson",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "objFromJson": {
+      "class": "Identifier",
+      "name": "objFromJson",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "objToJson": {
+      "class": "Identifier",
+      "name": "objToJson",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,277 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.application_ref",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/zone/ng_zone.dart",
+        "2": [
+          "NgZone",
+          "NgZoneError"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isBlank",
+          "isPresent",
+          "assertionsEnabled",
+          "print",
+          "IS_DART"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "provide",
+          "Provider",
+          "Injector",
+          "OpaqueToken"
+        ],
+        "5": false
+      },
+      {
+        "1": "application_tokens.dart",
+        "2": [
+          "APP_COMPONENT_REF_PROMISE",
+          "APP_COMPONENT",
+          "APP_ID_RANDOM_PROVIDER",
+          "PLATFORM_INITIALIZER",
+          "APP_INITIALIZER"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper",
+          "PromiseCompleter",
+          "ObservableWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/testability/testability.dart",
+        "2": [
+          "TestabilityRegistry",
+          "Testability"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/dynamic_component_loader.dart",
+        "2": [
+          "ComponentRef",
+          "DynamicComponentLoader"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException",
+          "ExceptionHandler",
+          "unimplemented"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/console.dart",
+        "2": [
+          "Console"
+        ],
+        "5": false
+      },
+      {
+        "1": "profile/profile.dart",
+        "2": [
+          "wtfLeave",
+          "wtfCreateScope",
+          "WtfScopeFn"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detector_ref.dart",
+        "2": [
+          "ChangeDetectorRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "lockMode"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/element_ref.dart",
+        "2": [
+          "ElementRef_"
+        ],
+        "5": false
+      }
+    ],
+    "6": "application_ref.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "application_tokens.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "package:angular2/src/core/testability/testability.template.dart",
+        "4": "i6"
+      },
+      {
+        "1": "package:angular2/src/core/linker/dynamic_component_loader.template.dart",
+        "4": "i7"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "4": "i8"
+      },
+      {
+        "1": "package:angular2/src/core/console.template.dart",
+        "4": "i9"
+      },
+      {
+        "1": "profile/profile.template.dart",
+        "4": "i10"
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detector_ref.template.dart",
+        "4": "i11"
+      },
+      {
+        "1": "package:angular2/src/core/linker/element_ref.template.dart",
+        "4": "i12"
+      }
+    ]
+  },
+  "type": {
+    "_componentProviders": {
+      "class": "Identifier",
+      "name": "_componentProviders",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "createNgZone": {
+      "class": "Identifier",
+      "name": "createNgZone",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "platform": {
+      "class": "Identifier",
+      "name": "platform",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "disposePlatform": {
+      "class": "Identifier",
+      "name": "disposePlatform",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_createPlatform": {
+      "class": "Identifier",
+      "name": "_createPlatform",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_runPlatformInitializers": {
+      "class": "Identifier",
+      "name": "_runPlatformInitializers",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "PlatformRef": {
+      "class": "Identifier",
+      "name": "PlatformRef",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "PlatformRef_": {
+      "class": "Identifier",
+      "name": "PlatformRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_runAppInitializers": {
+      "class": "Identifier",
+      "name": "_runAppInitializers",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ApplicationRef": {
+      "class": "Identifier",
+      "name": "ApplicationRef",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ApplicationRef_": {
+      "class": "Identifier",
+      "name": "ApplicationRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

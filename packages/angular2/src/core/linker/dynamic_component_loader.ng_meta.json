@@ -1,0 +1,186 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.linker.dynamic_component_loader",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Key",
+          "Injector",
+          "ResolvedProvider",
+          "Provider",
+          "provide",
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "compiler.dart",
+        "2": [
+          "Compiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isType",
+          "Type",
+          "stringify",
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_manager.dart",
+        "2": [
+          "AppViewManager"
+        ],
+        "5": false
+      },
+      {
+        "1": "element_ref.dart",
+        "2": [
+          "ElementRef",
+          "ElementRef_"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_ref.dart",
+        "2": [
+          "HostViewRef"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "DynamicComponentLoader_",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Compiler",
+            "4": "_compiler"
+          },
+          {
+            "1": "AppViewManager",
+            "4": "_viewManager"
+          }
+        ]
+      }
+    ],
+    "6": "dynamic_component_loader.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "compiler.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_manager.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "element_ref.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "view_ref.template.dart",
+        "4": "i5"
+      }
+    ]
+  },
+  "type": {
+    "ComponentRef": {
+      "class": "Identifier",
+      "name": "ComponentRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ComponentRef_": {
+      "class": "Identifier",
+      "name": "ComponentRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "DynamicComponentLoader": {
+      "class": "Identifier",
+      "name": "DynamicComponentLoader",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "DynamicComponentLoader_": {
+      "class": "Type",
+      "name": "DynamicComponentLoader_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "Compiler",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/compiler.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "AppViewManager",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/view_manager.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

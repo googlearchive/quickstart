@@ -1,0 +1,194 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.directives.router_link_transform",
+    "3": [
+      {
+        "1": "package:angular2/compiler.dart",
+        "2": [
+          "TemplateAstVisitor",
+          "ElementAst",
+          "BoundDirectivePropertyAst",
+          "DirectiveAst",
+          "BoundElementPropertyAst"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/parser/ast.dart",
+        "2": [
+          "AstTransformer",
+          "Quote",
+          "AST",
+          "EmptyExpr",
+          "LiteralArray",
+          "LiteralPrimitive",
+          "ASTWithSource"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/parser/parser.dart",
+        "2": [
+          "Parser"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "RouterLinkTransform",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "Parser",
+            "4": "parser"
+          }
+        ],
+        "6": [
+          "TemplateAstVisitor"
+        ]
+      }
+    ],
+    "6": "router_link_transform.dart",
+    "10": [
+      {
+        "1": "package:angular2/compiler.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/parser/ast.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/parser/parser.template.dart",
+        "4": "i4"
+      }
+    ]
+  },
+  "type": {
+    "FixedPart": {
+      "class": "Identifier",
+      "name": "FixedPart",
+      "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AuxiliaryStart": {
+      "class": "Identifier",
+      "name": "AuxiliaryStart",
+      "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AuxiliaryEnd": {
+      "class": "Identifier",
+      "name": "AuxiliaryEnd",
+      "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "Params": {
+      "class": "Identifier",
+      "name": "Params",
+      "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RouterLinkLexer": {
+      "class": "Identifier",
+      "name": "RouterLinkLexer",
+      "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RouterLinkAstGenerator": {
+      "class": "Identifier",
+      "name": "RouterLinkAstGenerator",
+      "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RouterLinkAstTransformer": {
+      "class": "Identifier",
+      "name": "RouterLinkAstTransformer",
+      "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "parseRouterLinkExpression": {
+      "class": "Identifier",
+      "name": "parseRouterLinkExpression",
+      "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RouterLinkTransform": {
+      "class": "Type",
+      "name": "RouterLinkTransform",
+      "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "Parser",
+            "moduleUrl": "asset:angular2/lib/src/core/change_detection/parser/parser.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

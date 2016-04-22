@@ -1,0 +1,49 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.web_workers.shared.render_store",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "RenderStore",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "render_store.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "type": {
+    "RenderStore": {
+      "class": "Type",
+      "name": "RenderStore",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    }
+  },
+  "alias": {}
+}

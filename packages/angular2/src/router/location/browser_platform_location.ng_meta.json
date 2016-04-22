@@ -1,0 +1,90 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.location.browser_platform_location",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/browser.dart",
+        "2": [
+          "History",
+          "Location"
+        ],
+        "5": false
+      },
+      {
+        "1": "platform_location.dart",
+        "2": [
+          "UrlChangeListener"
+        ],
+        "5": false
+      },
+      {
+        "1": "platform_location.dart",
+        "2": [
+          "PlatformLocation"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "BrowserPlatformLocation",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "browser_platform_location.dart",
+    "10": [
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/browser.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "platform_location.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "4": "i3"
+      }
+    ]
+  },
+  "type": {
+    "BrowserPlatformLocation": {
+      "class": "Type",
+      "name": "BrowserPlatformLocation",
+      "moduleUrl": "asset:angular2/lib/src/router/location/browser_platform_location.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    }
+  },
+  "alias": {}
+}

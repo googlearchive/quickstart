@@ -1,0 +1,107 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.common.pipes.date_pipe",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isDate",
+          "isNumber",
+          "isPresent",
+          "DateTime",
+          "DateWrapper",
+          "isBlank",
+          "FunctionWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/intl.dart",
+        "2": [
+          "DateFormatter"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "PipeTransform",
+          "WrappedValue",
+          "Pipe",
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper",
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "invalid_pipe_argument_exception.dart",
+        "2": [
+          "InvalidPipeArgumentException"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "DatePipe",
+        "4": [
+          {
+            "1": "Pipe",
+            "3": [
+              {
+                "1": "name",
+                "2": "\"date\""
+              },
+              {
+                "1": "pure",
+                "2": "true"
+              }
+            ],
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "PipeTransform"
+        ]
+      }
+    ],
+    "6": "date_pipe.dart"
+  },
+  "type": {
+    "DatePipe": {
+      "class": "Pipe",
+      "type": {
+        "class": "Type",
+        "name": "DatePipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/date_pipe.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "value": null,
+        "diDeps": null
+      },
+      "name": "date",
+      "pure": true
+    }
+  },
+  "alias": {}
+}

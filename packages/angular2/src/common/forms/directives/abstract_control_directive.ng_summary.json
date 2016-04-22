@@ -1,0 +1,40 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.common.forms.directives.abstract_control_directive",
+    "3": [
+      {
+        "1": "../model.dart",
+        "2": [
+          "AbstractControl"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "unimplemented"
+        ],
+        "5": false
+      }
+    ],
+    "6": "abstract_control_directive.dart"
+  },
+  "type": {
+    "AbstractControlDirective": {
+      "class": "Identifier",
+      "name": "AbstractControlDirective",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/abstract_control_directive.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

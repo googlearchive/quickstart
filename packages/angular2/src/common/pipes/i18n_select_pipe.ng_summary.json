@@ -1,0 +1,92 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.common.pipes.i18n_select_pipe",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isStringMap"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Injectable",
+          "PipeTransform",
+          "Pipe"
+        ],
+        "5": false
+      },
+      {
+        "1": "invalid_pipe_argument_exception.dart",
+        "2": [
+          "InvalidPipeArgumentException"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "I18nSelectPipe",
+        "4": [
+          {
+            "1": "Pipe",
+            "3": [
+              {
+                "1": "name",
+                "2": "\"i18nSelect\""
+              },
+              {
+                "1": "pure",
+                "2": "true"
+              }
+            ],
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "PipeTransform"
+        ]
+      }
+    ],
+    "6": "i18n_select_pipe.dart"
+  },
+  "type": {
+    "I18nSelectPipe": {
+      "class": "Pipe",
+      "type": {
+        "class": "Type",
+        "name": "I18nSelectPipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "value": null,
+        "diDeps": null
+      },
+      "name": "i18nSelect",
+      "pure": true
+    }
+  },
+  "alias": {}
+}

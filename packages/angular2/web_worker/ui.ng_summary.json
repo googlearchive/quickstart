@@ -1,0 +1,39 @@
+{
+  "ngDeps": {
+    "1": "angular2.web_worker.ui",
+    "4": [
+      {
+        "1": "package:angular2/src/facade/facade.dart"
+      },
+      {
+        "1": "../src/core/di.dart"
+      },
+      {
+        "1": "../src/core/application_ref.dart",
+        "2": [
+          "platform",
+          "PlatformRef",
+          "ApplicationRef"
+        ]
+      },
+      {
+        "1": "../src/core/application_tokens.dart",
+        "2": [
+          "APP_ID",
+          "APP_COMPONENT",
+          "APP_INITIALIZER",
+          "PLATFORM_INITIALIZER"
+        ]
+      },
+      {
+        "1": "../src/core/zone.dart"
+      },
+      {
+        "1": "package:angular2/platform/worker_render.dart"
+      }
+    ],
+    "6": "ui.dart"
+  },
+  "type": {},
+  "alias": {}
+}

@@ -1,0 +1,527 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.linker",
+    "4": [
+      {
+        "1": "linker/interfaces.dart",
+        "2": [
+          "AfterContentInit",
+          "AfterContentChecked",
+          "AfterViewInit",
+          "AfterViewChecked",
+          "OnChanges",
+          "OnDestroy",
+          "OnInit",
+          "DoCheck"
+        ]
+      },
+      {
+        "1": "linker/directive_resolver.dart",
+        "2": [
+          "DirectiveResolver"
+        ]
+      },
+      {
+        "1": "linker/view_resolver.dart",
+        "2": [
+          "ViewResolver"
+        ]
+      },
+      {
+        "1": "linker/compiler.dart",
+        "2": [
+          "Compiler"
+        ]
+      },
+      {
+        "1": "linker/view_manager.dart",
+        "2": [
+          "AppViewManager"
+        ]
+      },
+      {
+        "1": "linker/query_list.dart",
+        "2": [
+          "QueryList"
+        ]
+      },
+      {
+        "1": "linker/dynamic_component_loader.dart",
+        "2": [
+          "DynamicComponentLoader"
+        ]
+      },
+      {
+        "1": "linker/element_ref.dart",
+        "2": [
+          "ElementRef"
+        ]
+      },
+      {
+        "1": "linker/template_ref.dart",
+        "2": [
+          "TemplateRef"
+        ]
+      },
+      {
+        "1": "linker/view_ref.dart",
+        "2": [
+          "EmbeddedViewRef",
+          "HostViewRef",
+          "ViewRef",
+          "HostViewFactoryRef"
+        ]
+      },
+      {
+        "1": "linker/view_container_ref.dart",
+        "2": [
+          "ViewContainerRef"
+        ]
+      },
+      {
+        "1": "linker/dynamic_component_loader.dart",
+        "2": [
+          "ComponentRef"
+        ]
+      }
+    ],
+    "6": "linker.dart",
+    "10": [
+      {
+        "1": "linker/interfaces.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "linker/directive_resolver.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "linker/view_resolver.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "linker/compiler.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "linker/view_manager.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "linker/query_list.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "linker/dynamic_component_loader.template.dart",
+        "4": "i6"
+      },
+      {
+        "1": "linker/element_ref.template.dart",
+        "4": "i7"
+      },
+      {
+        "1": "linker/template_ref.template.dart",
+        "4": "i8"
+      },
+      {
+        "1": "linker/view_ref.template.dart",
+        "4": "i9"
+      },
+      {
+        "1": "linker/view_container_ref.template.dart",
+        "4": "i10"
+      }
+    ]
+  },
+  "type": {
+    "LifecycleHooks": {
+      "class": "Identifier",
+      "name": "LifecycleHooks",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/interfaces.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "OnChanges": {
+      "class": "Identifier",
+      "name": "OnChanges",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/interfaces.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "OnInit": {
+      "class": "Identifier",
+      "name": "OnInit",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/interfaces.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "DoCheck": {
+      "class": "Identifier",
+      "name": "DoCheck",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/interfaces.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "OnDestroy": {
+      "class": "Identifier",
+      "name": "OnDestroy",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/interfaces.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AfterContentInit": {
+      "class": "Identifier",
+      "name": "AfterContentInit",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/interfaces.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AfterContentChecked": {
+      "class": "Identifier",
+      "name": "AfterContentChecked",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/interfaces.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AfterViewInit": {
+      "class": "Identifier",
+      "name": "AfterViewInit",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/interfaces.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AfterViewChecked": {
+      "class": "Identifier",
+      "name": "AfterViewChecked",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/interfaces.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_isDirectiveMetadata": {
+      "class": "Identifier",
+      "name": "_isDirectiveMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/directive_resolver.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "DirectiveResolver": {
+      "class": "Type",
+      "name": "DirectiveResolver",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/directive_resolver.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "ReflectorReader",
+            "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    },
+    "ViewResolver": {
+      "class": "Type",
+      "name": "ViewResolver",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_resolver.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "ReflectorReader",
+            "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    },
+    "Compiler": {
+      "class": "Identifier",
+      "name": "Compiler",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isHostViewFactory": {
+      "class": "Identifier",
+      "name": "isHostViewFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "Compiler_": {
+      "class": "Type",
+      "name": "Compiler_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/compiler.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    },
+    "AppViewManager": {
+      "class": "Identifier",
+      "name": "AppViewManager",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_manager.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AppViewManager_": {
+      "class": "Type",
+      "name": "AppViewManager_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_manager.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "RootRenderer",
+            "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "APP_ID",
+            "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    },
+    "QueryList": {
+      "class": "Identifier",
+      "name": "QueryList",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ComponentRef": {
+      "class": "Identifier",
+      "name": "ComponentRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ComponentRef_": {
+      "class": "Identifier",
+      "name": "ComponentRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "DynamicComponentLoader": {
+      "class": "Identifier",
+      "name": "DynamicComponentLoader",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "DynamicComponentLoader_": {
+      "class": "Type",
+      "name": "DynamicComponentLoader_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "Compiler",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/compiler.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "AppViewManager",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/view_manager.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    },
+    "ElementRef": {
+      "class": "Identifier",
+      "name": "ElementRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ElementRef_": {
+      "class": "Identifier",
+      "name": "ElementRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "TemplateRef": {
+      "class": "Identifier",
+      "name": "TemplateRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "TemplateRef_": {
+      "class": "Identifier",
+      "name": "TemplateRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ViewRef": {
+      "class": "Identifier",
+      "name": "ViewRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "HostViewRef": {
+      "class": "Identifier",
+      "name": "HostViewRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "EmbeddedViewRef": {
+      "class": "Identifier",
+      "name": "EmbeddedViewRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ViewRef_": {
+      "class": "Identifier",
+      "name": "ViewRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "HostViewFactoryRef": {
+      "class": "Identifier",
+      "name": "HostViewFactoryRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "HostViewFactoryRef_": {
+      "class": "Identifier",
+      "name": "HostViewFactoryRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ViewContainerRef": {
+      "class": "Identifier",
+      "name": "ViewContainerRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ViewContainerRef_": {
+      "class": "Identifier",
+      "name": "ViewContainerRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

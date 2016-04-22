@@ -1,0 +1,22 @@
+{
+  "ngDeps": {
+    "1": "angular2.i18n",
+    "4": [
+      {
+        "1": "src/i18n/message.dart"
+      },
+      {
+        "1": "src/i18n/xmb_serializer.dart"
+      },
+      {
+        "1": "src/i18n/message_extractor.dart"
+      },
+      {
+        "1": "src/i18n/i18n_html_parser.dart"
+      }
+    ],
+    "6": "i18n.dart"
+  },
+  "type": {},
+  "alias": {}
+}

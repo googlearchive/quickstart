@@ -1,0 +1,114 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.change_detection.coalesce",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "looseIdentical"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "Map"
+        ],
+        "5": false
+      },
+      {
+        "1": "proto_record.dart",
+        "2": [
+          "RecordType",
+          "ProtoRecord"
+        ],
+        "5": false
+      }
+    ],
+    "6": "coalesce.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "proto_record.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "coalesce": {
+      "class": "Identifier",
+      "name": "coalesce",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/coalesce.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_optimizeSkips": {
+      "class": "Identifier",
+      "name": "_optimizeSkips",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/coalesce.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_mayBeAddRecord": {
+      "class": "Identifier",
+      "name": "_mayBeAddRecord",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/coalesce.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_findFirstMatch": {
+      "class": "Identifier",
+      "name": "_findFirstMatch",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/coalesce.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_cloneAndUpdateIndexes": {
+      "class": "Identifier",
+      "name": "_cloneAndUpdateIndexes",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/coalesce.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_srcToDstSelfIndex": {
+      "class": "Identifier",
+      "name": "_srcToDstSelfIndex",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/coalesce.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_createSelfRecord": {
+      "class": "Identifier",
+      "name": "_createSelfRecord",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/coalesce.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_haveSameDirIndex": {
+      "class": "Identifier",
+      "name": "_haveSameDirIndex",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/coalesce.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

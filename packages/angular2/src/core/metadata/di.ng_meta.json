@@ -1,0 +1,105 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.metadata.di",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "stringify",
+          "isPresent",
+          "isString"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "resolveForwardRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/metadata.dart",
+        "2": [
+          "DependencyMetadata"
+        ],
+        "5": false
+      }
+    ],
+    "6": "di.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/core/di/metadata.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "AttributeMetadata": {
+      "class": "Identifier",
+      "name": "AttributeMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "QueryMetadata": {
+      "class": "Identifier",
+      "name": "QueryMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ContentChildrenMetadata": {
+      "class": "Identifier",
+      "name": "ContentChildrenMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ContentChildMetadata": {
+      "class": "Identifier",
+      "name": "ContentChildMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ViewQueryMetadata": {
+      "class": "Identifier",
+      "name": "ViewQueryMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ViewChildrenMetadata": {
+      "class": "Identifier",
+      "name": "ViewChildrenMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ViewChildMetadata": {
+      "class": "Identifier",
+      "name": "ViewChildMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

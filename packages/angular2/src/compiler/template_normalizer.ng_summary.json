@@ -1,0 +1,210 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.template_normalizer",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "directive_metadata.dart",
+        "2": [
+          "CompileTypeMetadata",
+          "CompileDirectiveMetadata",
+          "CompileTemplateMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/xhr.dart",
+        "2": [
+          "XHR"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/url_resolver.dart",
+        "2": [
+          "UrlResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "style_url_resolver.dart",
+        "2": [
+          "extractStyleUrls",
+          "isStyleUrlResolvable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation"
+        ],
+        "5": false
+      },
+      {
+        "1": "html_ast.dart",
+        "2": [
+          "HtmlAstVisitor",
+          "HtmlElementAst",
+          "HtmlTextAst",
+          "HtmlAttrAst",
+          "HtmlAst",
+          "HtmlCommentAst",
+          "htmlVisitAll"
+        ],
+        "5": false
+      },
+      {
+        "1": "html_parser.dart",
+        "2": [
+          "HtmlParser"
+        ],
+        "5": false
+      },
+      {
+        "1": "template_preparser.dart",
+        "2": [
+          "preparseElement",
+          "PreparsedElement",
+          "PreparsedElementType"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "TemplateNormalizer",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "XHR",
+            "4": "_xhr"
+          },
+          {
+            "1": "UrlResolver",
+            "4": "_urlResolver"
+          },
+          {
+            "1": "HtmlParser",
+            "4": "_htmlParser"
+          }
+        ]
+      }
+    ],
+    "6": "template_normalizer.dart"
+  },
+  "type": {
+    "TemplateNormalizer": {
+      "class": "Type",
+      "name": "TemplateNormalizer",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_normalizer.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "XHR",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "UrlResolver",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "HtmlParser",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    },
+    "TemplatePreparseVisitor": {
+      "class": "Identifier",
+      "name": "TemplatePreparseVisitor",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_normalizer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,14 @@
+{
+  "ngDeps": null,
+  "type": {
+    "assertArrayOfStrings": {
+      "class": "Identifier",
+      "name": "assertArrayOfStrings",
+      "moduleUrl": "asset:angular2/lib/src/compiler/assertions.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

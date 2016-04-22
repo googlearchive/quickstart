@@ -1,0 +1,35 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.i18n.message",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "escape"
+        ],
+        "5": false
+      }
+    ],
+    "6": "message.dart"
+  },
+  "type": {
+    "Message": {
+      "class": "Identifier",
+      "name": "Message",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "id": {
+      "class": "Identifier",
+      "name": "id",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

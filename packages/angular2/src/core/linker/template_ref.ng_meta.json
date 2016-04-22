@@ -1,0 +1,41 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.linker.template_ref",
+    "3": [
+      {
+        "1": "element_ref.dart",
+        "2": [
+          "ElementRef",
+          "ElementRef_"
+        ],
+        "5": false
+      }
+    ],
+    "6": "template_ref.dart",
+    "10": [
+      {
+        "1": "element_ref.template.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "type": {
+    "TemplateRef": {
+      "class": "Identifier",
+      "name": "TemplateRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "TemplateRef_": {
+      "class": "Identifier",
+      "name": "TemplateRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

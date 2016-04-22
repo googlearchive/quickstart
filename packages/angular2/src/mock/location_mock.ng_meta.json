@@ -1,0 +1,86 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.mock.location_mock",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "EventEmitter",
+          "ObservableWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/router/location/location.dart",
+        "2": [
+          "Location"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "SpyLocation",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "Location"
+        ]
+      }
+    ],
+    "6": "location_mock.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/router/location/location.template.dart",
+        "4": "i3"
+      }
+    ]
+  },
+  "type": {
+    "SpyLocation": {
+      "class": "Type",
+      "name": "SpyLocation",
+      "moduleUrl": "asset:angular2/lib/src/mock/location_mock.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    }
+  },
+  "alias": {}
+}

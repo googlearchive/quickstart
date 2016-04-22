@@ -1,0 +1,86 @@
+{
+  "ngDeps": null,
+  "type": {
+    "Predicate": {
+      "class": "Identifier",
+      "name": "Predicate",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "MapIterator": {
+      "class": "Identifier",
+      "name": "MapIterator",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "IterableMap": {
+      "class": "Identifier",
+      "name": "IterableMap",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "MapWrapper": {
+      "class": "Identifier",
+      "name": "MapWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "StringMapWrapper": {
+      "class": "Identifier",
+      "name": "StringMapWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ListWrapper": {
+      "class": "Identifier",
+      "name": "ListWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isListLikeIterable": {
+      "class": "Identifier",
+      "name": "isListLikeIterable",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "areIterablesEqual": {
+      "class": "Identifier",
+      "name": "areIterablesEqual",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "iterateListLike": {
+      "class": "Identifier",
+      "name": "iterateListLike",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "SetWrapper": {
+      "class": "Identifier",
+      "name": "SetWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,104 @@
+{
+  "ngDeps": {
+    "1": "angular2.transform.common.code.reflection_info_code",
+    "3": [
+      {
+        "1": "package:analyzer/analyzer.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/annotation_matcher.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/logging.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/names.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/property_utils.dart",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "2": [
+          "AssetId"
+        ],
+        "5": false
+      },
+      {
+        "1": "annotation_code.dart",
+        "5": false
+      },
+      {
+        "1": "parameter_code.dart",
+        "5": false
+      }
+    ],
+    "6": "reflection_info_code.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/transform/common/annotation_matcher.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/transform/common/names.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/transform/common/property_utils.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "annotation_code.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "parameter_code.template.dart",
+        "4": "i6"
+      }
+    ]
+  },
+  "type": {
+    "ReflectionInfoVisitor": {
+      "class": "Identifier",
+      "name": "ReflectionInfoVisitor",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/code/reflection_info_code.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_PropertyMetadataVisitor": {
+      "class": "Identifier",
+      "name": "_PropertyMetadataVisitor",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/code/reflection_info_code.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ReflectionWriterMixin": {
+      "class": "Identifier",
+      "name": "ReflectionWriterMixin",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/code/reflection_info_code.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

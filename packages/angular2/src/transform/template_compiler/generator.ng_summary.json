@@ -1,0 +1,105 @@
+{
+  "ngDeps": {
+    "1": "angular2.transform.template_compiler.generator",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/source_module.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/interfaces.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/asset_reader.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/logging.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/model/annotation_model.pb.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/names.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/ng_compiler.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/zone.dart",
+        "4": "zone",
+        "5": false
+      },
+      {
+        "1": "package:angular2/i18n.dart",
+        "5": false
+      },
+      {
+        "1": "reflection/processor.dart",
+        "4": "reg",
+        "5": false
+      },
+      {
+        "1": "reflection/reflection_capabilities.dart",
+        "5": false
+      },
+      {
+        "1": "compile_data_creator.dart",
+        "5": false
+      }
+    ],
+    "6": "generator.dart"
+  },
+  "type": {
+    "processTemplates": {
+      "class": "Identifier",
+      "name": "processTemplates",
+      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "templatesAssetId": {
+      "class": "Identifier",
+      "name": "templatesAssetId",
+      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "Outputs": {
+      "class": "Identifier",
+      "name": "Outputs",
+      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

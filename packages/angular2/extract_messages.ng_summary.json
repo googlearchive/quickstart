@@ -1,0 +1,71 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:build/build.dart",
+        "5": false
+      },
+      {
+        "1": "package:analyzer/src/generated/element.dart",
+        "5": false
+      },
+      {
+        "1": "src/transform/common/url_resolver.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/i18n.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/parser/parser.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/parser/lexer.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflector.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/html_parser.dart",
+        "5": false
+      }
+    ],
+    "6": "extract_messages.dart"
+  },
+  "type": {
+    "main": {
+      "class": "Identifier",
+      "name": "main",
+      "moduleUrl": "asset:angular2/lib/extract_messages.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "I18nMessageExtractorBuilder": {
+      "class": "Identifier",
+      "name": "I18nMessageExtractorBuilder",
+      "moduleUrl": "asset:angular2/lib/extract_messages.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "I18nMessageExtractor": {
+      "class": "Identifier",
+      "name": "I18nMessageExtractor",
+      "moduleUrl": "asset:angular2/lib/extract_messages.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

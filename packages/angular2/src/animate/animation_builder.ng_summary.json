@@ -1,0 +1,81 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.animate.animation_builder",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "css_animation_builder.dart",
+        "2": [
+          "CssAnimationBuilder"
+        ],
+        "5": false
+      },
+      {
+        "1": "browser_details.dart",
+        "2": [
+          "BrowserDetails"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "AnimationBuilder",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "BrowserDetails",
+            "4": "browserDetails"
+          }
+        ]
+      }
+    ],
+    "6": "animation_builder.dart"
+  },
+  "type": {
+    "AnimationBuilder": {
+      "class": "Type",
+      "name": "AnimationBuilder",
+      "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "BrowserDetails",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

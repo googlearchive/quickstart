@@ -1,0 +1,60 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.rules.route_handlers.async_route_handler",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "route_handler.dart",
+        "2": [
+          "RouteHandler"
+        ],
+        "5": false
+      },
+      {
+        "1": "../../instruction.dart",
+        "2": [
+          "RouteData",
+          "BLANK_ROUTE_DATA"
+        ],
+        "5": false
+      }
+    ],
+    "6": "async_route_handler.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "route_handler.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "../../instruction.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "AsyncRouteHandler": {
+      "class": "Identifier",
+      "name": "AsyncRouteHandler",
+      "moduleUrl": "asset:angular2/lib/src/router/rules/route_handlers/async_route_handler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

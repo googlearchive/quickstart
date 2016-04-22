@@ -1,0 +1,74 @@
+{
+  "ngDeps": {
+    "1": "angular2.platform.worker_render",
+    "3": [
+      {
+        "1": "package:angular2/src/platform/worker_render_common.dart",
+        "5": false
+      }
+    ],
+    "4": [
+      {
+        "1": "package:angular2/src/platform/worker_render_common.dart",
+        "2": [
+          "WORKER_SCRIPT",
+          "WORKER_RENDER_PLATFORM",
+          "WORKER_RENDER_APPLICATION_COMMON",
+          "initializeGenericWorkerRenderer"
+        ]
+      },
+      {
+        "1": "package:angular2/src/platform/worker_render.dart",
+        "2": [
+          "WORKER_RENDER_APPLICATION",
+          "initIsolate",
+          "WebWorkerInstance"
+        ]
+      },
+      {
+        "1": "../src/web_workers/shared/client_message_broker.dart",
+        "2": [
+          "ClientMessageBroker",
+          "ClientMessageBrokerFactory",
+          "FnArg",
+          "UiArguments"
+        ]
+      },
+      {
+        "1": "../src/web_workers/shared/service_message_broker.dart",
+        "2": [
+          "ReceivedMessage",
+          "ServiceMessageBroker",
+          "ServiceMessageBrokerFactory"
+        ]
+      },
+      {
+        "1": "../src/web_workers/shared/serializer.dart",
+        "2": [
+          "PRIMITIVE"
+        ]
+      },
+      {
+        "1": "../src/web_workers/shared/message_bus.dart"
+      },
+      {
+        "1": "../src/web_workers/ui/router_providers.dart",
+        "2": [
+          "WORKER_RENDER_ROUTER"
+        ]
+      }
+    ],
+    "6": "worker_render.dart"
+  },
+  "type": {
+    "WORKER_RENDER_APP": {
+      "class": "Identifier",
+      "name": "WORKER_RENDER_APP",
+      "moduleUrl": "asset:angular2/lib/platform/worker_render.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

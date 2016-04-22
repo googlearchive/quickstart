@@ -1,0 +1,69 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.pipes.pipe_provider",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/provider.dart",
+        "2": [
+          "ResolvedFactory",
+          "resolveProvider",
+          "ResolvedProvider_"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Key",
+          "ResolvedProvider",
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "../metadata/directives.dart",
+        "2": [
+          "PipeMetadata"
+        ],
+        "5": false
+      }
+    ],
+    "6": "pipe_provider.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/core/di/provider.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "../metadata/directives.template.dart",
+        "4": "i3"
+      }
+    ]
+  },
+  "type": {
+    "PipeProvider": {
+      "class": "Identifier",
+      "name": "PipeProvider",
+      "moduleUrl": "asset:angular2/lib/src/core/pipes/pipe_provider.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

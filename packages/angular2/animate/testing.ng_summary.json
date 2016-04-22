@@ -1,0 +1,13 @@
+{
+  "ngDeps": {
+    "1": "angular2.animate.testing",
+    "4": [
+      {
+        "1": "package:angular2/src/mock/animation_builder_mock.dart"
+      }
+    ],
+    "6": "testing.dart"
+  },
+  "type": {},
+  "alias": {}
+}

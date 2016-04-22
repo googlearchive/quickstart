@@ -1,0 +1,58 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.platform.dom.events.dom_events",
+    "3": [
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "event_manager.dart",
+        "2": [
+          "EventManagerPlugin",
+          "EventManager"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "DomEventsPlugin",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "dom_events.dart"
+  },
+  "type": {
+    "DomEventsPlugin": {
+      "class": "Type",
+      "name": "DomEventsPlugin",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/events/dom_events.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    }
+  },
+  "alias": {}
+}

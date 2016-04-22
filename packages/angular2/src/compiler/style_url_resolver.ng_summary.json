@@ -1,0 +1,53 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.style_url_resolver",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "RegExp",
+          "RegExpWrapper",
+          "StringWrapper",
+          "isPresent",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/url_resolver.dart",
+        "2": [
+          "UrlResolver"
+        ],
+        "5": false
+      }
+    ],
+    "6": "style_url_resolver.dart"
+  },
+  "type": {
+    "StyleWithImports": {
+      "class": "Identifier",
+      "name": "StyleWithImports",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_url_resolver.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isStyleUrlResolvable": {
+      "class": "Identifier",
+      "name": "isStyleUrlResolvable",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_url_resolver.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "extractStyleUrls": {
+      "class": "Identifier",
+      "name": "extractStyleUrls",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_url_resolver.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

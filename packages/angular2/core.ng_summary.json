@@ -1,0 +1,93 @@
+{
+  "ngDeps": {
+    "1": "angular2.core",
+    "4": [
+      {
+        "1": "./src/core/angular_entrypoint.dart",
+        "2": [
+          "AngularEntrypoint"
+        ]
+      },
+      {
+        "1": "./src/core/metadata.dart"
+      },
+      {
+        "1": "./src/core/util.dart"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "enableProdMode"
+        ]
+      },
+      {
+        "1": "./src/core/di.dart",
+        "3": [
+          "ForwardRefFn",
+          "resolveForwardRef",
+          "forwardRef"
+        ]
+      },
+      {
+        "1": "./src/facade/facade.dart"
+      },
+      {
+        "1": "./src/core/application_ref.dart",
+        "2": [
+          "platform",
+          "createNgZone",
+          "PlatformRef",
+          "ApplicationRef"
+        ]
+      },
+      {
+        "1": "./src/core/application_tokens.dart",
+        "2": [
+          "APP_ID",
+          "APP_COMPONENT",
+          "APP_INITIALIZER",
+          "PACKAGE_ROOT_URL",
+          "PLATFORM_INITIALIZER"
+        ]
+      },
+      {
+        "1": "./src/core/zone.dart"
+      },
+      {
+        "1": "./src/core/render.dart"
+      },
+      {
+        "1": "./src/core/linker.dart"
+      },
+      {
+        "1": "./src/core/debug/debug_node.dart",
+        "2": [
+          "DebugElement",
+          "DebugNode",
+          "asNativeElements"
+        ]
+      },
+      {
+        "1": "./src/core/testability/testability.dart"
+      },
+      {
+        "1": "./src/core/change_detection.dart"
+      },
+      {
+        "1": "./src/core/platform_directives_and_pipes.dart"
+      },
+      {
+        "1": "./src/core/platform_common_providers.dart"
+      },
+      {
+        "1": "./src/core/application_common_providers.dart"
+      },
+      {
+        "1": "./src/core/reflection/reflection.dart"
+      }
+    ],
+    "6": "core.dart"
+  },
+  "type": {},
+  "alias": {}
+}

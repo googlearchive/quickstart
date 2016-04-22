@@ -1,0 +1,14 @@
+{
+  "ngDeps": null,
+  "type": {
+    "ReflectorReader": {
+      "class": "Identifier",
+      "name": "ReflectorReader",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

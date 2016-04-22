@@ -1,0 +1,225 @@
+{
+  "ngDeps": {
+    "1": "angular2.i18n",
+    "4": [
+      {
+        "1": "src/i18n/message.dart"
+      },
+      {
+        "1": "src/i18n/xmb_serializer.dart"
+      },
+      {
+        "1": "src/i18n/message_extractor.dart"
+      },
+      {
+        "1": "src/i18n/i18n_html_parser.dart"
+      }
+    ],
+    "6": "i18n.dart",
+    "10": [
+      {
+        "1": "src/i18n/message.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "src/i18n/xmb_serializer.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "src/i18n/message_extractor.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "src/i18n/i18n_html_parser.template.dart",
+        "4": "i3"
+      }
+    ]
+  },
+  "type": {
+    "Message": {
+      "class": "Identifier",
+      "name": "Message",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "id": {
+      "class": "Identifier",
+      "name": "id",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_ID_ATTR": {
+      "class": "Identifier",
+      "name": "_ID_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_MSG_ELEMENT": {
+      "class": "Identifier",
+      "name": "_MSG_ELEMENT",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_BUNDLE_ELEMENT": {
+      "class": "Identifier",
+      "name": "_BUNDLE_ELEMENT",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "serializeXmb": {
+      "class": "Identifier",
+      "name": "serializeXmb",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "XmbDeserializationResult": {
+      "class": "Identifier",
+      "name": "XmbDeserializationResult",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "XmbDeserializationError": {
+      "class": "Identifier",
+      "name": "XmbDeserializationError",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "deserializeXmb": {
+      "class": "Identifier",
+      "name": "deserializeXmb",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_checkRootElement": {
+      "class": "Identifier",
+      "name": "_checkRootElement",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_createMessages": {
+      "class": "Identifier",
+      "name": "_createMessages",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_id": {
+      "class": "Identifier",
+      "name": "_id",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_serializeMessage": {
+      "class": "Identifier",
+      "name": "_serializeMessage",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_expandPlaceholder": {
+      "class": "Identifier",
+      "name": "_expandPlaceholder",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ExtractionResult": {
+      "class": "Identifier",
+      "name": "ExtractionResult",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "removeDuplicates": {
+      "class": "Identifier",
+      "name": "removeDuplicates",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "MessageExtractor": {
+      "class": "Identifier",
+      "name": "MessageExtractor",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_I18N_ATTR": {
+      "class": "Identifier",
+      "name": "_I18N_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_PLACEHOLDER_ELEMENT": {
+      "class": "Identifier",
+      "name": "_PLACEHOLDER_ELEMENT",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_NAME_ATTR": {
+      "class": "Identifier",
+      "name": "_NAME_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_I18N_ATTR_PREFIX": {
+      "class": "Identifier",
+      "name": "_I18N_ATTR_PREFIX",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "I18nHtmlParser": {
+      "class": "Identifier",
+      "name": "I18nHtmlParser",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_CreateNodeMapping": {
+      "class": "Identifier",
+      "name": "_CreateNodeMapping",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

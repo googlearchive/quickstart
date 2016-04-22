@@ -1,0 +1,62 @@
+{
+  "ngDeps": null,
+  "type": {
+    "serializeGenericEvent": {
+      "class": "Identifier",
+      "name": "serializeGenericEvent",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "serializeEventWithTarget": {
+      "class": "Identifier",
+      "name": "serializeEventWithTarget",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "serializeMouseEvent": {
+      "class": "Identifier",
+      "name": "serializeMouseEvent",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "serializePoint": {
+      "class": "Identifier",
+      "name": "serializePoint",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "serializeKeyboardEvent": {
+      "class": "Identifier",
+      "name": "serializeKeyboardEvent",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "serializeTransitionEvent": {
+      "class": "Identifier",
+      "name": "serializeTransitionEvent",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "addTarget": {
+      "class": "Identifier",
+      "name": "addTarget",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

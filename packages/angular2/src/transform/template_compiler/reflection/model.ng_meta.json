@@ -1,0 +1,45 @@
+{
+  "ngDeps": {
+    "1": "angular2.transform.template_compiler.reflection.model",
+    "3": [
+      {
+        "1": "package:angular2/src/compiler/util.dart",
+        "5": false
+      }
+    ],
+    "6": "model.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/compiler/util.template.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "type": {
+    "CodegenModel": {
+      "class": "Identifier",
+      "name": "CodegenModel",
+      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/reflection/model.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ReflectiveAccessor": {
+      "class": "Identifier",
+      "name": "ReflectiveAccessor",
+      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/reflection/model.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "sanitizePropertyName": {
+      "class": "Identifier",
+      "name": "sanitizePropertyName",
+      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/reflection/model.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

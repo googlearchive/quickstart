@@ -1,0 +1,110 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.mock.view_resolver_mock",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "Map",
+          "MapWrapper",
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isPresent",
+          "stringify",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException"
+        ],
+        "5": false
+      },
+      {
+        "1": "../core/metadata.dart",
+        "2": [
+          "ViewMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_resolver.dart",
+        "2": [
+          "ViewResolver"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MockViewResolver",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "view_resolver_mock.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "../core/metadata.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_resolver.template.dart",
+        "4": "i5"
+      }
+    ]
+  },
+  "type": {
+    "MockViewResolver": {
+      "class": "Type",
+      "name": "MockViewResolver",
+      "moduleUrl": "asset:angular2/lib/src/mock/view_resolver_mock.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": []
+    }
+  },
+  "alias": {}
+}

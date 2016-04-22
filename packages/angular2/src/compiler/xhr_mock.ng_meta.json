@@ -1,0 +1,101 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.xhr_mock",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/xhr.dart",
+        "2": [
+          "XHR"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "Map",
+          "MapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank",
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseCompleter",
+          "PromiseWrapper"
+        ],
+        "5": false
+      }
+    ],
+    "6": "xhr_mock.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/compiler/xhr.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i4"
+      }
+    ]
+  },
+  "type": {
+    "MockXHR": {
+      "class": "Identifier",
+      "name": "MockXHR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_PendingRequest": {
+      "class": "Identifier",
+      "name": "_PendingRequest",
+      "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_Expectation": {
+      "class": "Identifier",
+      "name": "_Expectation",
+      "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

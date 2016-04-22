@@ -1,0 +1,206 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.testing.testing_internal_core",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:guinness2/guinness2.dart",
+        "4": "gns",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/provider.dart",
+        "2": [
+          "bind"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "test_injector.dart",
+        "5": false
+      }
+    ],
+    "4": [
+      {
+        "1": "package:guinness2/guinness2.dart",
+        "3": [
+          "Expect",
+          "expect",
+          "NotExpect",
+          "beforeEach",
+          "it",
+          "iit",
+          "xit",
+          "describe",
+          "ddescribe",
+          "xdescribe",
+          "SpyObject",
+          "SpyFunction"
+        ]
+      },
+      {
+        "1": "matchers.dart",
+        "2": [
+          "expect",
+          "Expect",
+          "NotExpect"
+        ]
+      },
+      {
+        "1": "test_injector.dart",
+        "2": [
+          "inject"
+        ]
+      }
+    ],
+    "6": "testing_internal_core.dart"
+  },
+  "type": {
+    "AsyncTestCompleter": {
+      "class": "Identifier",
+      "name": "AsyncTestCompleter",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "setDartBaseTestProviders": {
+      "class": "Identifier",
+      "name": "setDartBaseTestProviders",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "testSetup": {
+      "class": "Identifier",
+      "name": "testSetup",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "beforeEachProviders": {
+      "class": "Identifier",
+      "name": "beforeEachProviders",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "beforeEachBindings": {
+      "class": "Identifier",
+      "name": "beforeEachBindings",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "beforeEach": {
+      "class": "Identifier",
+      "name": "beforeEach",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_it": {
+      "class": "Identifier",
+      "name": "_it",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "it": {
+      "class": "Identifier",
+      "name": "it",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "iit": {
+      "class": "Identifier",
+      "name": "iit",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "xit": {
+      "class": "Identifier",
+      "name": "xit",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "describe": {
+      "class": "Identifier",
+      "name": "describe",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ddescribe": {
+      "class": "Identifier",
+      "name": "ddescribe",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "xdescribe": {
+      "class": "Identifier",
+      "name": "xdescribe",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "SpyFunction": {
+      "class": "Identifier",
+      "name": "SpyFunction",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "SpyObject": {
+      "class": "Identifier",
+      "name": "SpyObject",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isInInnerZone": {
+      "class": "Identifier",
+      "name": "isInInnerZone",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {
+    "_platformProviders": [],
+    "_applicationProviders": []
+  }
+}

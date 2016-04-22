@@ -1,0 +1,103 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.reflection.reflector",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isPresent",
+          "stringify"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "Map",
+          "MapWrapper",
+          "Set",
+          "SetWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "types.dart",
+        "2": [
+          "SetterFn",
+          "GetterFn",
+          "MethodFn"
+        ],
+        "5": false
+      },
+      {
+        "1": "reflector_reader.dart",
+        "2": [
+          "ReflectorReader"
+        ],
+        "5": false
+      },
+      {
+        "1": "platform_reflection_capabilities.dart",
+        "2": [
+          "PlatformReflectionCapabilities"
+        ],
+        "5": false
+      }
+    ],
+    "4": [
+      {
+        "1": "types.dart",
+        "2": [
+          "SetterFn",
+          "GetterFn",
+          "MethodFn"
+        ]
+      },
+      {
+        "1": "platform_reflection_capabilities.dart",
+        "2": [
+          "PlatformReflectionCapabilities"
+        ]
+      }
+    ],
+    "6": "reflector.dart"
+  },
+  "type": {
+    "ReflectionInfo": {
+      "class": "Identifier",
+      "name": "ReflectionInfo",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "Reflector": {
+      "class": "Identifier",
+      "name": "Reflector",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_mergeMaps": {
+      "class": "Identifier",
+      "name": "_mergeMaps",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

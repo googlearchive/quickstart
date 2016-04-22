@@ -1,0 +1,52 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.utils",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      }
+    ],
+    "6": "utils.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "type": {
+    "TouchMap": {
+      "class": "Identifier",
+      "name": "TouchMap",
+      "moduleUrl": "asset:angular2/lib/src/router/utils.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "normalizeString": {
+      "class": "Identifier",
+      "name": "normalizeString",
+      "moduleUrl": "asset:angular2/lib/src/router/utils.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,112 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.runtime_compiler",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/compiler.dart",
+        "2": [
+          "Compiler",
+          "Compiler_"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_ref.dart",
+        "2": [
+          "HostViewFactoryRef",
+          "HostViewFactoryRef_"
+        ],
+        "5": false
+      },
+      {
+        "1": "template_compiler.dart",
+        "2": [
+          "TemplateCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "RuntimeCompiler_",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "TemplateCompiler",
+            "4": "_templateCompiler"
+          }
+        ],
+        "6": [
+          "RuntimeCompiler"
+        ]
+      }
+    ],
+    "6": "runtime_compiler.dart"
+  },
+  "type": {
+    "RuntimeCompiler": {
+      "class": "Identifier",
+      "name": "RuntimeCompiler",
+      "moduleUrl": "asset:angular2/lib/src/compiler/runtime_compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RuntimeCompiler_": {
+      "class": "Type",
+      "name": "RuntimeCompiler_",
+      "moduleUrl": "asset:angular2/lib/src/compiler/runtime_compiler.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "TemplateCompiler",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

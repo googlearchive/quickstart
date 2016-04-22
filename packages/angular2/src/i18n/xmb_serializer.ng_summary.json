@@ -1,0 +1,147 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.i18n.xmb_serializer",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "RegExpWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/html_ast.dart",
+        "2": [
+          "HtmlAst",
+          "HtmlElementAst"
+        ],
+        "5": false
+      },
+      {
+        "1": "message.dart",
+        "2": [
+          "Message",
+          "id"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/html_parser.dart",
+        "2": [
+          "HtmlParser"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/parse_util.dart",
+        "2": [
+          "ParseSourceSpan",
+          "ParseError"
+        ],
+        "5": false
+      }
+    ],
+    "6": "xmb_serializer.dart"
+  },
+  "type": {
+    "_ID_ATTR": {
+      "class": "Identifier",
+      "name": "_ID_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_MSG_ELEMENT": {
+      "class": "Identifier",
+      "name": "_MSG_ELEMENT",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_BUNDLE_ELEMENT": {
+      "class": "Identifier",
+      "name": "_BUNDLE_ELEMENT",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "serializeXmb": {
+      "class": "Identifier",
+      "name": "serializeXmb",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "XmbDeserializationResult": {
+      "class": "Identifier",
+      "name": "XmbDeserializationResult",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "XmbDeserializationError": {
+      "class": "Identifier",
+      "name": "XmbDeserializationError",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "deserializeXmb": {
+      "class": "Identifier",
+      "name": "deserializeXmb",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_checkRootElement": {
+      "class": "Identifier",
+      "name": "_checkRootElement",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_createMessages": {
+      "class": "Identifier",
+      "name": "_createMessages",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_id": {
+      "class": "Identifier",
+      "name": "_id",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_serializeMessage": {
+      "class": "Identifier",
+      "name": "_serializeMessage",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_expandPlaceholder": {
+      "class": "Identifier",
+      "name": "_expandPlaceholder",
+      "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

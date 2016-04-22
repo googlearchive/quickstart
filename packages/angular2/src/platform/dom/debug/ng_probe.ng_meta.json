@@ -1,0 +1,206 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.platform.dom.debug.ng_probe",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "assertionsEnabled",
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable",
+          "provide",
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/debug/debug_node.dart",
+        "2": [
+          "DebugNode",
+          "getDebugNode"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
+        "2": [
+          "DomRootRenderer"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "RootRenderer",
+          "NgZone",
+          "ApplicationRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/debug/debug_renderer.dart",
+        "2": [
+          "DebugDomRootRenderer"
+        ],
+        "5": false
+      }
+    ],
+    "6": "ng_probe.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/core/debug/debug_node.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_renderer.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "package:angular2/src/core/debug/debug_renderer.template.dart",
+        "4": "i6"
+      }
+    ]
+  },
+  "type": {
+    "CORE_TOKENS": {
+      "class": "Identifier",
+      "name": "CORE_TOKENS",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "INSPECT_GLOBAL_NAME": {
+      "class": "Identifier",
+      "name": "INSPECT_GLOBAL_NAME",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CORE_TOKENS_GLOBAL_NAME": {
+      "class": "Identifier",
+      "name": "CORE_TOKENS_GLOBAL_NAME",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ELEMENT_PROBE_PROVIDERS": {
+      "class": "Identifier",
+      "name": "ELEMENT_PROBE_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "class": "Identifier",
+            "name": "RootRenderer",
+            "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Identifier",
+            "name": "_createConditionalRootRenderer",
+            "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          }
+        }
+      ]
+    },
+    "ELEMENT_PROBE_PROVIDERS_PROD_MODE": {
+      "class": "Identifier",
+      "name": "ELEMENT_PROBE_PROVIDERS_PROD_MODE",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "class": "Identifier",
+            "name": "RootRenderer",
+            "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Identifier",
+            "name": "_createRootRenderer",
+            "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          }
+        }
+      ]
+    },
+    "inspectNativeElement": {
+      "class": "Identifier",
+      "name": "inspectNativeElement",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_createConditionalRootRenderer": {
+      "class": "Identifier",
+      "name": "_createConditionalRootRenderer",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_createRootRenderer": {
+      "class": "Identifier",
+      "name": "_createRootRenderer",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,83 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.web_workers.ui.event_dispatcher",
+    "3": [
+      {
+        "1": "package:angular2/src/web_workers/shared/serializer.dart",
+        "2": [
+          "Serializer",
+          "RenderStoreObject"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/ui/event_serializer.dart",
+        "2": [
+          "serializeMouseEvent",
+          "serializeKeyboardEvent",
+          "serializeGenericEvent",
+          "serializeEventWithTarget",
+          "serializeTransitionEvent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "EventEmitter",
+          "ObservableWrapper"
+        ],
+        "5": false
+      }
+    ],
+    "6": "event_dispatcher.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/web_workers/shared/serializer.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/web_workers/ui/event_serializer.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i4"
+      }
+    ]
+  },
+  "type": {
+    "EventDispatcher": {
+      "class": "Identifier",
+      "name": "EventDispatcher",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_dispatcher.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

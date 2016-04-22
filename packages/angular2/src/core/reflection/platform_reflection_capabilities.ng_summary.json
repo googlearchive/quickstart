@@ -1,0 +1,35 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.reflection.platform_reflection_capabilities",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "types.dart",
+        "2": [
+          "GetterFn",
+          "SetterFn",
+          "MethodFn"
+        ],
+        "5": false
+      }
+    ],
+    "6": "platform_reflection_capabilities.dart"
+  },
+  "type": {
+    "PlatformReflectionCapabilities": {
+      "class": "Identifier",
+      "name": "PlatformReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,90 @@
+{
+  "ngDeps": {
+    "1": "angular2.transform.common.annotation_matcher",
+    "3": [
+      {
+        "1": "package:analyzer/src/generated/ast.dart",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "2": [
+          "AssetId"
+        ],
+        "5": false
+      },
+      {
+        "1": "class_matcher_base.dart",
+        "5": false
+      }
+    ],
+    "4": [
+      {
+        "1": "class_matcher_base.dart",
+        "2": [
+          "ClassDescriptor"
+        ]
+      }
+    ],
+    "6": "annotation_matcher.dart"
+  },
+  "type": {
+    "_INJECTABLES": {
+      "class": "Identifier",
+      "name": "_INJECTABLES",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_DIRECTIVES": {
+      "class": "Identifier",
+      "name": "_DIRECTIVES",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_COMPONENTS": {
+      "class": "Identifier",
+      "name": "_COMPONENTS",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_PIPES": {
+      "class": "Identifier",
+      "name": "_PIPES",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_VIEWS": {
+      "class": "Identifier",
+      "name": "_VIEWS",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "_ENTRYPOINTS": {
+      "class": "Identifier",
+      "name": "_ENTRYPOINTS",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "AnnotationMatcher": {
+      "class": "Identifier",
+      "name": "AnnotationMatcher",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

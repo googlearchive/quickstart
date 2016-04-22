@@ -1,0 +1,28 @@
+{
+  "ngDeps": {
+    "1": "",
+    "4": [
+      {
+        "1": "package:angular2/src/platform/server/html_adapter.dart"
+      }
+    ],
+    "6": "server.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/platform/server/html_adapter.template.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "type": {
+    "Html5LibDomAdapter": {
+      "class": "Identifier",
+      "name": "Html5LibDomAdapter",
+      "moduleUrl": "asset:angular2/lib/src/platform/server/html_adapter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

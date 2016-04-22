@@ -1,0 +1,149 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.web_workers.ui.xhr_impl",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/serializer.dart",
+        "2": [
+          "PRIMITIVE"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
+        "2": [
+          "XHR_CHANNEL"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/xhr.dart",
+        "2": [
+          "XHR"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/service_message_broker.dart",
+        "2": [
+          "ServiceMessageBrokerFactory"
+        ],
+        "5": false
+      },
+      {
+        "1": "bind.dart",
+        "2": [
+          "bind"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MessageBasedXHRImpl",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ServiceMessageBrokerFactory",
+            "4": "_brokerFactory"
+          },
+          {
+            "1": "XHR",
+            "4": "_xhr"
+          }
+        ]
+      }
+    ],
+    "6": "xhr_impl.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/serializer.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/messaging_api.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/compiler/xhr.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/service_message_broker.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "bind.template.dart",
+        "4": "i5"
+      }
+    ]
+  },
+  "type": {
+    "MessageBasedXHRImpl": {
+      "class": "Type",
+      "name": "MessageBasedXHRImpl",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "ServiceMessageBrokerFactory",
+            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "XHR",
+            "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

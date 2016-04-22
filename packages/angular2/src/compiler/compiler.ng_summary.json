@@ -1,0 +1,407 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.compiler",
+    "3": [
+      {
+        "1": "runtime_compiler.dart",
+        "2": [
+          "RuntimeCompiler_"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "assertionsEnabled",
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "provide",
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/template_parser.dart",
+        "2": [
+          "TemplateParser"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/html_parser.dart",
+        "2": [
+          "HtmlParser"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/template_normalizer.dart",
+        "2": [
+          "TemplateNormalizer"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/runtime_metadata.dart",
+        "2": [
+          "RuntimeMetadataResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/change_detector_compiler.dart",
+        "2": [
+          "ChangeDetectionCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/style_compiler.dart",
+        "2": [
+          "StyleCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/view_compiler.dart",
+        "2": [
+          "ViewCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/proto_view_compiler.dart",
+        "2": [
+          "ProtoViewCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/template_compiler.dart",
+        "2": [
+          "TemplateCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "2": [
+          "ChangeDetectorGenConfig"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/compiler.dart",
+        "2": [
+          "Compiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/runtime_compiler.dart",
+        "2": [
+          "RuntimeCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/schema/element_schema_registry.dart",
+        "2": [
+          "ElementSchemaRegistry"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/schema/dom_element_schema_registry.dart",
+        "2": [
+          "DomElementSchemaRegistry"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/url_resolver.dart",
+        "2": [
+          "UrlResolver",
+          "DEFAULT_PACKAGE_URL_PROVIDER"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "2": [
+          "Parser",
+          "Lexer"
+        ],
+        "5": false
+      }
+    ],
+    "4": [
+      {
+        "1": "template_compiler.dart",
+        "2": [
+          "TemplateCompiler"
+        ]
+      },
+      {
+        "1": "directive_metadata.dart",
+        "2": [
+          "CompileDirectiveMetadata",
+          "CompileTypeMetadata",
+          "CompileTemplateMetadata"
+        ]
+      },
+      {
+        "1": "source_module.dart",
+        "2": [
+          "SourceModule",
+          "SourceWithImports"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/platform_directives_and_pipes.dart",
+        "2": [
+          "PLATFORM_DIRECTIVES",
+          "PLATFORM_PIPES"
+        ]
+      },
+      {
+        "1": "package:angular2/src/compiler/template_ast.dart"
+      },
+      {
+        "1": "package:angular2/src/compiler/template_parser.dart",
+        "2": [
+          "TEMPLATE_TRANSFORMS"
+        ]
+      }
+    ],
+    "6": "compiler.dart"
+  },
+  "type": {
+    "COMPILER_PROVIDERS": {
+      "class": "Identifier",
+      "name": "COMPILER_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/src/compiler/compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": [
+        {
+          "class": "Identifier",
+          "name": "Lexer",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "Parser",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "HtmlParser",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "TemplateParser",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "TemplateNormalizer",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "RuntimeMetadataResolver",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "DEFAULT_PACKAGE_URL_PROVIDER",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "StyleCompiler",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "ProtoViewCompiler",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "ViewCompiler",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "ChangeDetectionCompiler",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "class": "Identifier",
+            "name": "ChangeDetectorGenConfig",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Factory",
+            "name": "_createChangeDetectorGenConfig",
+            "prefix": null,
+            "moduleUrl": null,
+            "constConstructor": null,
+            "value": null,
+            "diDeps": null
+          }
+        },
+        {
+          "class": "Identifier",
+          "name": "TemplateCompiler",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "class": "Identifier",
+            "name": "RuntimeCompiler",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "RuntimeCompiler_",
+            "moduleUrl": null,
+            "prefix": null,
+            "isHost": false,
+            "constConstructor": null,
+            "value": null,
+            "diDeps": null
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "class": "Identifier",
+            "name": "Compiler",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useClass": null,
+          "useExisting": {
+            "class": "Identifier",
+            "name": "RuntimeCompiler",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useValue": null,
+          "useFactory": null
+        },
+        {
+          "class": "Identifier",
+          "name": "DomElementSchemaRegistry",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "class": "Identifier",
+            "name": "ElementSchemaRegistry",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useClass": null,
+          "useExisting": {
+            "class": "Identifier",
+            "name": "DomElementSchemaRegistry",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "useValue": null,
+          "useFactory": null
+        },
+        {
+          "class": "Identifier",
+          "name": "UrlResolver",
+          "moduleUrl": null,
+          "prefix": null,
+          "constConstructor": null,
+          "value": null
+        }
+      ]
+    },
+    "_createChangeDetectorGenConfig": {
+      "class": "Identifier",
+      "name": "_createChangeDetectorGenConfig",
+      "moduleUrl": "asset:angular2/lib/src/compiler/compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

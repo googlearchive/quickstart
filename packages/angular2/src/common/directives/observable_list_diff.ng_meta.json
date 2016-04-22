@@ -1,0 +1,56 @@
+{
+  "ngDeps": {
+    "1": "angular2.directives.observable_list_iterable_diff",
+    "3": [
+      {
+        "1": "package:observe/observe.dart",
+        "2": [
+          "ObservableList"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/differs/default_iterable_differ.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
+      }
+    ],
+    "6": "observable_list_diff.dart",
+    "10": [
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/differs/default_iterable_differ.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "type": {
+    "ObservableListDiff": {
+      "class": "Identifier",
+      "name": "ObservableListDiff",
+      "moduleUrl": "asset:angular2/lib/src/common/directives/observable_list_diff.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ObservableListDiffFactory": {
+      "class": "Identifier",
+      "name": "ObservableListDiffFactory",
+      "moduleUrl": "asset:angular2/lib/src/common/directives/observable_list_diff.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

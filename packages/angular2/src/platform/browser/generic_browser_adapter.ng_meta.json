@@ -1,0 +1,68 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.platform.browser.generic_browser_adapter",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isFunction",
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DomAdapter"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/browser/xhr_impl.dart",
+        "2": [
+          "XHRImpl"
+        ],
+        "5": false
+      }
+    ],
+    "6": "generic_browser_adapter.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/platform/browser/xhr_impl.template.dart",
+        "4": "i3"
+      }
+    ]
+  },
+  "type": {
+    "GenericBrowserDomAdapter": {
+      "class": "Identifier",
+      "name": "GenericBrowserDomAdapter",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/generic_browser_adapter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

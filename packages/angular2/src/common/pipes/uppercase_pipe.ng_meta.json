@@ -1,0 +1,97 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.common.pipes.uppercase_pipe",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isString",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "PipeTransform",
+          "WrappedValue",
+          "Injectable",
+          "Pipe"
+        ],
+        "5": false
+      },
+      {
+        "1": "invalid_pipe_argument_exception.dart",
+        "2": [
+          "InvalidPipeArgumentException"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "UpperCasePipe",
+        "4": [
+          {
+            "1": "Pipe",
+            "3": [
+              {
+                "1": "name",
+                "2": "\"uppercase\""
+              }
+            ],
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "6": [
+          "PipeTransform"
+        ]
+      }
+    ],
+    "6": "uppercase_pipe.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "invalid_pipe_argument_exception.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "UpperCasePipe": {
+      "class": "Pipe",
+      "type": {
+        "class": "Type",
+        "name": "UpperCasePipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "value": null,
+        "diDeps": null
+      },
+      "name": "uppercase",
+      "pure": false
+    }
+  },
+  "alias": {}
+}

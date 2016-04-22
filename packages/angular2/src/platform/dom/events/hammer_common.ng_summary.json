@@ -1,0 +1,33 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.platform.dom.events.hammer_common",
+    "3": [
+      {
+        "1": "event_manager.dart",
+        "2": [
+          "EventManagerPlugin"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      }
+    ],
+    "6": "hammer_common.dart"
+  },
+  "type": {
+    "HammerGesturesPluginCommon": {
+      "class": "Identifier",
+      "name": "HammerGesturesPluginCommon",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_common.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

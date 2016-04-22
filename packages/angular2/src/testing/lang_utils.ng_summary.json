@@ -1,0 +1,22 @@
+{
+  "ngDeps": null,
+  "type": {
+    "getTypeOf": {
+      "class": "Identifier",
+      "name": "getTypeOf",
+      "moduleUrl": "asset:angular2/lib/src/testing/lang_utils.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "instantiateType": {
+      "class": "Identifier",
+      "name": "instantiateType",
+      "moduleUrl": "asset:angular2/lib/src/testing/lang_utils.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,57 @@
+{
+  "ngDeps": {
+    "1": "angular2.platform.common_dom",
+    "4": [
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM",
+          "setRootDomAdapter",
+          "DomAdapter"
+        ]
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
+        "2": [
+          "DomRenderer"
+        ]
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_tokens.dart",
+        "2": [
+          "DOCUMENT"
+        ]
+      },
+      {
+        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
+        "2": [
+          "SharedStylesHost",
+          "DomSharedStylesHost"
+        ]
+      },
+      {
+        "1": "package:angular2/src/platform/dom/events/dom_events.dart",
+        "2": [
+          "DomEventsPlugin"
+        ]
+      },
+      {
+        "1": "package:angular2/src/platform/dom/events/event_manager.dart",
+        "2": [
+          "EVENT_MANAGER_PLUGINS",
+          "EventManager",
+          "EventManagerPlugin"
+        ]
+      },
+      {
+        "1": "package:angular2/src/platform/dom/debug/by.dart"
+      },
+      {
+        "1": "package:angular2/src/platform/dom/debug/ng_probe.dart"
+      }
+    ],
+    "6": "common_dom.dart"
+  },
+  "type": {},
+  "alias": {}
+}

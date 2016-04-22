@@ -1,0 +1,384 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.runtime_metadata",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "resolveForwardRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isBlank",
+          "isPresent",
+          "isArray",
+          "stringify",
+          "RegExpWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "directive_metadata.dart",
+        "4": "cpl",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/directives.dart",
+        "4": "md",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/directive_resolver.dart",
+        "2": [
+          "DirectiveResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/pipe_resolver.dart",
+        "2": [
+          "PipeResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_resolver.dart",
+        "2": [
+          "ViewResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/directive_lifecycle_reflector.dart",
+        "2": [
+          "hasLifecycleHook"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/interfaces.dart",
+        "2": [
+          "LifecycleHooks",
+          "LIFECYCLE_HOOKS_VALUES"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "2": [
+          "reflector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable",
+          "Inject",
+          "Optional"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/platform_directives_and_pipes.dart",
+        "2": [
+          "PLATFORM_DIRECTIVES",
+          "PLATFORM_PIPES"
+        ],
+        "5": false
+      },
+      {
+        "1": "util.dart",
+        "2": [
+          "MODULE_SUFFIX"
+        ],
+        "5": false
+      },
+      {
+        "1": "assertions.dart",
+        "2": [
+          "assertArrayOfStrings"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/url_resolver.dart",
+        "2": [
+          "getUrlScheme"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "RuntimeMetadataResolver",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "DirectiveResolver",
+            "4": "_directiveResolver"
+          },
+          {
+            "1": "PipeResolver",
+            "4": "_pipeResolver"
+          },
+          {
+            "1": "ViewResolver",
+            "4": "_viewResolver"
+          },
+          {
+            "1": "List",
+            "2": "<Type>",
+            "3": [
+              "const Optional()",
+              "const Inject(PLATFORM_DIRECTIVES)"
+            ],
+            "4": "_platformDirectives"
+          },
+          {
+            "1": "List",
+            "2": "<Type>",
+            "3": [
+              "const Optional()",
+              "const Inject(PLATFORM_PIPES)"
+            ],
+            "4": "_platformPipes"
+          }
+        ]
+      }
+    ],
+    "6": "runtime_metadata.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/core/di.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "directive_metadata.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular2/src/core/metadata/directives.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:angular2/src/core/linker/directive_resolver.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "package:angular2/src/core/linker/pipe_resolver.template.dart",
+        "4": "i6"
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_resolver.template.dart",
+        "4": "i7"
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.template.dart",
+        "4": "i8"
+      },
+      {
+        "1": "package:angular2/src/core/linker/directive_lifecycle_reflector.template.dart",
+        "4": "i9"
+      },
+      {
+        "1": "package:angular2/src/core/linker/interfaces.template.dart",
+        "4": "i10"
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
+        "4": "i11"
+      },
+      {
+        "1": "package:angular2/src/core/platform_directives_and_pipes.template.dart",
+        "4": "i12"
+      },
+      {
+        "1": "util.template.dart",
+        "4": "i13"
+      },
+      {
+        "1": "assertions.template.dart",
+        "4": "i14"
+      },
+      {
+        "1": "package:angular2/src/compiler/url_resolver.template.dart",
+        "4": "i15"
+      }
+    ]
+  },
+  "type": {
+    "RuntimeMetadataResolver": {
+      "class": "Type",
+      "name": "RuntimeMetadataResolver",
+      "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "DirectiveResolver",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/directive_resolver.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "PipeResolver",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/pipe_resolver.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "ViewResolver",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/view_resolver.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "PLATFORM_DIRECTIVES",
+            "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": true
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "PLATFORM_PIPES",
+            "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": true
+        }
+      ]
+    },
+    "flattenDirectives": {
+      "class": "Identifier",
+      "name": "flattenDirectives",
+      "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "flattenPipes": {
+      "class": "Identifier",
+      "name": "flattenPipes",
+      "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "flattenArray": {
+      "class": "Identifier",
+      "name": "flattenArray",
+      "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isValidType": {
+      "class": "Identifier",
+      "name": "isValidType",
+      "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "calcModuleUrl": {
+      "class": "Identifier",
+      "name": "calcModuleUrl",
+      "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

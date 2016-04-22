@@ -1,0 +1,188 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.change_detector_compiler",
+    "3": [
+      {
+        "1": "directive_metadata.dart",
+        "2": [
+          "CompileTypeMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "source_module.dart",
+        "2": [
+          "SourceExpressions",
+          "moduleRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection_jit_generator.dart",
+        "2": [
+          "ChangeDetectorJITGenerator"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/abstract_change_detector.dart",
+        "2": [
+          "AbstractChangeDetector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection_util.dart",
+        "2": [
+          "ChangeDetectionUtil"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/constants.dart",
+        "2": [
+          "ChangeDetectorState"
+        ],
+        "5": false
+      },
+      {
+        "1": "change_definition_factory.dart",
+        "2": [
+          "createChangeDetectorDefinitions"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "IS_DART",
+          "isJsObject"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "2": [
+          "ChangeDetectorGenConfig",
+          "ChangeDetectorDefinition",
+          "DynamicProtoChangeDetector",
+          "ChangeDetectionStrategy"
+        ],
+        "5": false
+      },
+      {
+        "1": "template_ast.dart",
+        "2": [
+          "TemplateAst"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/template_compiler/change_detector_codegen.dart",
+        "2": [
+          "Codegen"
+        ],
+        "5": false
+      },
+      {
+        "1": "util.dart",
+        "2": [
+          "MODULE_SUFFIX"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "ChangeDetectionCompiler",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ChangeDetectorGenConfig",
+            "4": "_genConfig"
+          }
+        ]
+      }
+    ],
+    "6": "change_detector_compiler.dart"
+  },
+  "type": {
+    "ABSTRACT_CHANGE_DETECTOR": {
+      "class": "Identifier",
+      "name": "ABSTRACT_CHANGE_DETECTOR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/change_detector_compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "UTIL": {
+      "class": "Identifier",
+      "name": "UTIL",
+      "moduleUrl": "asset:angular2/lib/src/compiler/change_detector_compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CHANGE_DETECTOR_STATE": {
+      "class": "Identifier",
+      "name": "CHANGE_DETECTOR_STATE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/change_detector_compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "CHANGE_DETECTION_JIT_IMPORTS": {
+      "class": "Identifier",
+      "name": "CHANGE_DETECTION_JIT_IMPORTS",
+      "moduleUrl": "asset:angular2/lib/src/compiler/change_detector_compiler.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ChangeDetectionCompiler": {
+      "class": "Type",
+      "name": "ChangeDetectionCompiler",
+      "moduleUrl": "asset:angular2/lib/src/compiler/change_detector_compiler.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "ChangeDetectorGenConfig",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null,
+            "value": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

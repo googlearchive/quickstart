@@ -1,0 +1,65 @@
+{
+  "ngDeps": {
+    "1": "angular2.transform.template_compiler.url_resolver",
+    "3": [
+      {
+        "1": "package:angular2/compiler.dart",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "5": false
+      }
+    ],
+    "6": "url_resolver.dart",
+    "10": [
+      {
+        "1": "package:angular2/compiler.template.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "type": {
+    "TransformerUrlResolver": {
+      "class": "Identifier",
+      "name": "TransformerUrlResolver",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "toAssetUri": {
+      "class": "Identifier",
+      "name": "toAssetUri",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "fromUri": {
+      "class": "Identifier",
+      "name": "fromUri",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "toAssetScheme": {
+      "class": "Identifier",
+      "name": "toAssetScheme",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "isDartCoreUri": {
+      "class": "Identifier",
+      "name": "isDartCoreUri",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

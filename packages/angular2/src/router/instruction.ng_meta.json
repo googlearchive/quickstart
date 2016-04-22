@@ -1,0 +1,119 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.instruction",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "Map",
+          "MapWrapper",
+          "StringMapWrapper",
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper"
+        ],
+        "5": false
+      }
+    ],
+    "6": "instruction.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "RouteParams": {
+      "class": "Identifier",
+      "name": "RouteParams",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RouteData": {
+      "class": "Identifier",
+      "name": "RouteData",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "Instruction": {
+      "class": "Identifier",
+      "name": "Instruction",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ResolvedInstruction": {
+      "class": "Identifier",
+      "name": "ResolvedInstruction",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "DefaultInstruction": {
+      "class": "Identifier",
+      "name": "DefaultInstruction",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "UnresolvedInstruction": {
+      "class": "Identifier",
+      "name": "UnresolvedInstruction",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RedirectInstruction": {
+      "class": "Identifier",
+      "name": "RedirectInstruction",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ComponentInstruction": {
+      "class": "Identifier",
+      "name": "ComponentInstruction",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

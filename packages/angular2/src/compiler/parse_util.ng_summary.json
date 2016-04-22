@@ -1,0 +1,38 @@
+{
+  "ngDeps": null,
+  "type": {
+    "ParseLocation": {
+      "class": "Identifier",
+      "name": "ParseLocation",
+      "moduleUrl": "asset:angular2/lib/src/compiler/parse_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ParseSourceFile": {
+      "class": "Identifier",
+      "name": "ParseSourceFile",
+      "moduleUrl": "asset:angular2/lib/src/compiler/parse_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ParseSourceSpan": {
+      "class": "Identifier",
+      "name": "ParseSourceSpan",
+      "moduleUrl": "asset:angular2/lib/src/compiler/parse_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "ParseError": {
+      "class": "Identifier",
+      "name": "ParseError",
+      "moduleUrl": "asset:angular2/lib/src/compiler/parse_util.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

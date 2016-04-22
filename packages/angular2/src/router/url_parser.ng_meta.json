@@ -1,0 +1,113 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.router.url_parser",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "RegExpWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException"
+        ],
+        "5": false
+      }
+    ],
+    "6": "url_parser.dart",
+    "10": [
+      {
+        "1": "package:angular2/src/facade/collection.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "convertUrlParamsToArray": {
+      "class": "Identifier",
+      "name": "convertUrlParamsToArray",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "serializeParams": {
+      "class": "Identifier",
+      "name": "serializeParams",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "Url": {
+      "class": "Identifier",
+      "name": "Url",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "RootUrl": {
+      "class": "Identifier",
+      "name": "RootUrl",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "pathSegmentsToUrl": {
+      "class": "Identifier",
+      "name": "pathSegmentsToUrl",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "matchUrlSegment": {
+      "class": "Identifier",
+      "name": "matchUrlSegment",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "matchUrlQueryParamValue": {
+      "class": "Identifier",
+      "name": "matchUrlQueryParamValue",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    },
+    "UrlParser": {
+      "class": "Identifier",
+      "name": "UrlParser",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,37 @@
+{
+  "ngDeps": {
+    "1": "angular2.dom.webWorkerAdapter",
+    "3": [
+      {
+        "1": "abstract_html_adapter.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/platform/common_dom.dart",
+        "5": false
+      }
+    ],
+    "6": "webworker_adapter.dart",
+    "10": [
+      {
+        "1": "abstract_html_adapter.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/platform/common_dom.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "type": {
+    "WebWorkerDomAdapter": {
+      "class": "Identifier",
+      "name": "WebWorkerDomAdapter",
+      "moduleUrl": "asset:angular2/lib/src/platform/server/webworker_adapter.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

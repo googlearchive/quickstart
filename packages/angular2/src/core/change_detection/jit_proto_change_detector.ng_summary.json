@@ -1,0 +1,27 @@
+{
+  "ngDeps": {
+    "1": "change_detection.jit_proto_change_detector",
+    "3": [
+      {
+        "1": "interfaces.dart",
+        "2": [
+          "ChangeDetector",
+          "ProtoChangeDetector"
+        ],
+        "5": false
+      }
+    ],
+    "6": "jit_proto_change_detector.dart"
+  },
+  "type": {
+    "JitProtoChangeDetector": {
+      "class": "Identifier",
+      "name": "JitProtoChangeDetector",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/jit_proto_change_detector.dart",
+      "prefix": null,
+      "constConstructor": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}
