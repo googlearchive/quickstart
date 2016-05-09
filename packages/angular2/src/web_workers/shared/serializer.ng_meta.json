@@ -73,11 +73,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -89,37 +85,37 @@
       }
     ],
     "6": "serializer.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/render/api.template.dart",
+        "1": "package:angular2/src/core/render/api.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/render_store.template.dart",
+        "1": "package:angular2/src/web_workers/shared/render_store.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.template.dart",
+        "1": "package:angular2/src/core/metadata/view.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "serialized_types.template.dart",
+        "1": "serialized_types.ngfactory.dart",
         "4": "i7"
       }
     ]
@@ -130,7 +126,6 @@
       "name": "PRIMITIVE",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Serializer": {
@@ -139,25 +134,29 @@
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "RenderStore",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RenderStore",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -166,7 +165,6 @@
       "name": "RenderStoreObject",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

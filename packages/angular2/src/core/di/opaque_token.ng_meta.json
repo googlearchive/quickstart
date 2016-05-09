@@ -6,7 +6,6 @@
       "name": "OpaqueToken",
       "moduleUrl": "asset:angular2/lib/src/core/di/opaque_token.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

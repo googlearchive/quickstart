@@ -23,7 +23,6 @@
       "name": "NgDepsModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/ng_deps_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NgDepsModel": {
@@ -31,7 +30,6 @@
       "name": "NgDepsModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/ng_deps_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ReadonlyNgDepsModel": {
@@ -39,7 +37,6 @@
       "name": "_ReadonlyNgDepsModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/ng_deps_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -6,7 +6,6 @@
       "name": "SetterFn",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "GetterFn": {
@@ -14,7 +13,6 @@
       "name": "GetterFn",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MethodFn": {
@@ -22,7 +20,6 @@
       "name": "MethodFn",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

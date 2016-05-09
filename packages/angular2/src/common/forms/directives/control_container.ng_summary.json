@@ -25,7 +25,6 @@
       "name": "ControlContainer",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/control_container.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

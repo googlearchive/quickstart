@@ -11,9 +11,9 @@
       }
     ],
     "6": "route_path.dart",
-    "10": [
+    "7": [
       {
-        "1": "../../url_parser.template.dart",
+        "1": "../../url_parser.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -24,7 +24,6 @@
       "name": "MatchedUrl",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "GeneratedUrl": {
@@ -32,7 +31,6 @@
       "name": "GeneratedUrl",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RoutePath": {
@@ -40,7 +38,6 @@
       "name": "RoutePath",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

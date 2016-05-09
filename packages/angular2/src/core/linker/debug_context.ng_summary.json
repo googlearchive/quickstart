@@ -1,0 +1,69 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.linker.debug_context",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/render/api.dart",
+        "2": [
+          "RenderDebugInfo"
+        ],
+        "5": false
+      },
+      {
+        "1": "view.dart",
+        "2": [
+          "AppView"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_type.dart",
+        "2": [
+          "ViewType"
+        ],
+        "5": false
+      }
+    ],
+    "6": "debug_context.dart"
+  },
+  "type": {
+    "StaticNodeDebugInfo": {
+      "class": "Identifier",
+      "name": "StaticNodeDebugInfo",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/debug_context.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DebugContext": {
+      "class": "Identifier",
+      "name": "DebugContext",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/debug_context.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

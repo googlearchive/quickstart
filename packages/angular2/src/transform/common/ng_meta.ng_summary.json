@@ -3,7 +3,7 @@
     "1": "angular2.transform.common.ng_meta",
     "3": [
       {
-        "1": "package:angular2/src/compiler/directive_metadata.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.dart",
         "5": false
       },
       {
@@ -30,7 +30,6 @@
       "name": "NgMeta",
       "moduleUrl": "asset:angular2/lib/src/transform/common/ng_meta.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

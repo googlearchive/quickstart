@@ -11,7 +11,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/directive_metadata.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.dart",
         "5": false
       },
       {
@@ -51,7 +51,6 @@
       "name": "linkDirectiveMetadata",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/ng_meta_linker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_readNgMeta": {
@@ -59,7 +58,6 @@
       "name": "_readNgMeta",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/ng_meta_linker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_Linker": {
@@ -67,7 +65,6 @@
       "name": "_Linker",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/ng_meta_linker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_NgMetaIdentifierResolver": {
@@ -75,7 +72,6 @@
       "name": "_NgMetaIdentifierResolver",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/ng_meta_linker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

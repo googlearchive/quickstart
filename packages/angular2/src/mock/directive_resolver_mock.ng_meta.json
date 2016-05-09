@@ -38,7 +38,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/directive_resolver.dart",
+        "1": "package:angular2/src/compiler/directive_resolver.dart",
         "2": [
           "DirectiveResolver"
         ],
@@ -51,35 +51,31 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
     ],
     "6": "directive_resolver_mock.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "../core/metadata.template.dart",
+        "1": "../core/metadata.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/linker/directive_resolver.template.dart",
+        "1": "package:angular2/src/compiler/directive_resolver.ngfactory.dart",
         "4": "i4"
       }
     ]
@@ -91,7 +87,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/directive_resolver_mock.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     }

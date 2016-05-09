@@ -34,17 +34,17 @@
       }
     ],
     "6": "ng_zone.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "ng_zone_impl.template.dart",
+        "1": "ng_zone_impl.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "../../facade/exceptions.template.dart",
+        "1": "../../facade/exceptions.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -55,7 +55,6 @@
       "name": "NgZone",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ZeroArgFunction": {
@@ -63,7 +62,6 @@
       "name": "ZeroArgFunction",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ErrorHandlingFn": {
@@ -71,7 +69,6 @@
       "name": "ErrorHandlingFn",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WrappedTimer": {
@@ -79,7 +76,6 @@
       "name": "WrappedTimer",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NgZoneError": {
@@ -87,7 +83,6 @@
       "name": "NgZoneError",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NgZoneImpl": {
@@ -95,7 +90,6 @@
       "name": "NgZoneImpl",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

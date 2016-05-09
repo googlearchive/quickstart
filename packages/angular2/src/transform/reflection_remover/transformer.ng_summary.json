@@ -48,7 +48,6 @@
       "name": "ReflectionRemover",
       "moduleUrl": "asset:angular2/lib/src/transform/reflection_remover/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

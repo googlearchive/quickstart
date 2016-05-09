@@ -11,19 +11,15 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/source_module.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/interfaces.dart",
+        "1": "package:angular2/src/compiler/config.dart",
         "5": false
       },
       {
         "1": "package:angular2/src/facade/lang.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
         "5": false
       },
       {
@@ -60,12 +56,10 @@
         "5": false
       },
       {
-        "1": "reflection/processor.dart",
-        "4": "reg",
-        "5": false
-      },
-      {
-        "1": "reflection/reflection_capabilities.dart",
+        "1": "package:angular2/src/transform/common/options.dart",
+        "2": [
+          "CODEGEN_DEBUG_MODE"
+        ],
         "5": false
       },
       {
@@ -74,66 +68,58 @@
       }
     ],
     "6": "generator.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/source_module.template.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/change_detection/interfaces.template.dart",
+        "1": "package:angular2/src/compiler/config.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.template.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "1": "package:angular2/src/transform/common/model/annotation_model.pb.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/common/model/annotation_model.pb.template.dart",
+        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.template.dart",
+        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/ng_compiler.ngfactory.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_compiler.template.dart",
+        "1": "package:angular2/src/transform/common/zone.ngfactory.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/transform/common/zone.template.dart",
+        "1": "package:angular2/i18n.ngfactory.dart",
         "4": "i10"
       },
       {
-        "1": "package:angular2/i18n.template.dart",
+        "1": "package:angular2/src/transform/common/options.ngfactory.dart",
         "4": "i11"
       },
       {
-        "1": "reflection/processor.template.dart",
+        "1": "compile_data_creator.ngfactory.dart",
         "4": "i12"
-      },
-      {
-        "1": "reflection/reflection_capabilities.template.dart",
-        "4": "i13"
-      },
-      {
-        "1": "compile_data_creator.template.dart",
-        "4": "i14"
       }
     ]
   },
@@ -143,7 +129,6 @@
       "name": "processTemplates",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "templatesAssetId": {
@@ -151,7 +136,6 @@
       "name": "templatesAssetId",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Outputs": {
@@ -159,7 +143,6 @@
       "name": "Outputs",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

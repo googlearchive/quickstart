@@ -1,0 +1,63 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.output.output_jit",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "isString",
+          "evalExpression",
+          "RegExpWrapper",
+          "StringWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
+        "1": "abstract_emitter.dart",
+        "2": [
+          "EmitterVisitorContext"
+        ],
+        "5": false
+      },
+      {
+        "1": "abstract_js_emitter.dart",
+        "2": [
+          "AbstractJsEmitterVisitor"
+        ],
+        "5": false
+      },
+      {
+        "1": "../util.dart",
+        "2": [
+          "sanitizeIdentifier"
+        ],
+        "5": false
+      }
+    ],
+    "6": "output_jit.dart"
+  },
+  "type": {
+    "jitStatements": {
+      "class": "Identifier",
+      "name": "jitStatements",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_jit.dart",
+      "prefix": null,
+      "value": null
+    },
+    "JitEmitterVisitor": {
+      "class": "Identifier",
+      "name": "JitEmitterVisitor",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_jit.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

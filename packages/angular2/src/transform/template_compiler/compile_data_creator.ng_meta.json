@@ -11,11 +11,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/directive_metadata.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
@@ -52,41 +52,41 @@
       }
     ],
     "6": "compile_data_creator.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/directive_metadata.template.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.template.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.template.dart",
+        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.template.dart",
+        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_meta.template.dart",
+        "1": "package:angular2/src/transform/common/ng_meta.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/transform/common/url_resolver.template.dart",
+        "1": "package:angular2/src/transform/common/url_resolver.ngfactory.dart",
         "4": "i8"
       }
     ]
@@ -97,7 +97,6 @@
       "name": "createCompileData",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/compile_data_creator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CompileDataResults": {
@@ -105,7 +104,6 @@
       "name": "CompileDataResults",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/compile_data_creator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_CompileDataCreator": {
@@ -113,7 +111,6 @@
       "name": "_CompileDataCreator",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/compile_data_creator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

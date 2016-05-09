@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/interfaces.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "5": false
       },
       {
@@ -31,7 +31,6 @@
       "name": "ReflectionCapabilities",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_assertDeclaresLifecycleHooks": {
@@ -39,7 +38,6 @@
       "name": "_assertDeclaresLifecycleHooks",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_checkDeclares": {
@@ -47,7 +45,6 @@
       "name": "_checkDeclares",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_checkImplements": {
@@ -55,7 +52,6 @@
       "name": "_checkImplements",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MissingInterfaceError": {
@@ -63,7 +59,6 @@
       "name": "MissingInterfaceError",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

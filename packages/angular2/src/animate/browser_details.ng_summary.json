@@ -30,11 +30,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
@@ -48,7 +44,6 @@
       "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -57,7 +52,6 @@
       "name": "RafQueue",
       "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

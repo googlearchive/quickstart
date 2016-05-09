@@ -17,7 +17,16 @@
           "isPresent",
           "isArray",
           "stringify",
-          "RegExpWrapper"
+          "isString",
+          "RegExpWrapper",
+          "StringWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
         ],
         "5": false
       },
@@ -29,7 +38,14 @@
         "5": false
       },
       {
-        "1": "directive_metadata.dart",
+        "1": "package:angular2/src/core/di/reflective_exceptions.dart",
+        "2": [
+          "NoAnnotationError"
+        ],
+        "5": false
+      },
+      {
+        "1": "compile_metadata.dart",
         "4": "cpl",
         "5": false
       },
@@ -39,21 +55,26 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/directive_resolver.dart",
+        "1": "package:angular2/src/core/metadata/di.dart",
+        "4": "dimd",
+        "5": false
+      },
+      {
+        "1": "directive_resolver.dart",
         "2": [
           "DirectiveResolver"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/pipe_resolver.dart",
+        "1": "pipe_resolver.dart",
         "2": [
           "PipeResolver"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/view_resolver.dart",
+        "1": "view_resolver.dart",
         "2": [
           "ViewResolver"
         ],
@@ -67,14 +88,14 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/directive_lifecycle_reflector.dart",
+        "1": "directive_lifecycle_reflector.dart",
         "2": [
           "hasLifecycleHook"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/interfaces.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "2": [
           "LifecycleHooks",
           "LIFECYCLE_HOOKS_VALUES"
@@ -108,7 +129,8 @@
       {
         "1": "util.dart",
         "2": [
-          "MODULE_SUFFIX"
+          "MODULE_SUFFIX",
+          "sanitizeIdentifier"
         ],
         "5": false
       },
@@ -125,6 +147,38 @@
           "getUrlScheme"
         ],
         "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/provider.dart",
+        "2": [
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/reflective_provider.dart",
+        "2": [
+          "constructDependencies",
+          "ReflectiveDependency"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/metadata.dart",
+        "2": [
+          "OptionalMetadata",
+          "SelfMetadata",
+          "HostMetadata",
+          "SkipSelfMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflector_reader.dart",
+        "2": [
+          "ReflectorReader"
+        ],
+        "5": false
       }
     ],
     "5": [
@@ -133,11 +187,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -170,6 +220,10 @@
               "const Inject(PLATFORM_PIPES)"
             ],
             "4": "_platformPipes"
+          },
+          {
+            "1": "ReflectorReader",
+            "4": "_reflector"
           }
         ]
       }
@@ -183,93 +237,139 @@
       "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "DirectiveResolver",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DirectiveResolver",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "PipeResolver",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PipeResolver",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "ViewResolver",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ViewResolver",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "PLATFORM_DIRECTIVES",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PLATFORM_DIRECTIVES",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": true
+          "isOptional": true,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "PLATFORM_PIPES",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PLATFORM_PIPES",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": true
+          "isOptional": true,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ReflectorReader",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -278,7 +378,6 @@
       "name": "flattenDirectives",
       "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "flattenPipes": {
@@ -286,7 +385,6 @@
       "name": "flattenPipes",
       "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "flattenArray": {
@@ -294,7 +392,6 @@
       "name": "flattenArray",
       "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidType": {
@@ -302,7 +399,6 @@
       "name": "isValidType",
       "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "calcModuleUrl": {
@@ -310,7 +406,6 @@
       "name": "calcModuleUrl",
       "moduleUrl": "asset:angular2/lib/src/compiler/runtime_metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

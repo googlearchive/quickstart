@@ -1,0 +1,359 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.linker.view_utils",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank",
+          "isPresent",
+          "Type",
+          "stringify",
+          "looseIdentical"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "element.dart",
+        "2": [
+          "AppElement"
+        ],
+        "5": false
+      },
+      {
+        "1": "exceptions.dart",
+        "2": [
+          "ExpressionChangedAfterItHasBeenCheckedException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "2": [
+          "devModeEqual",
+          "uninitialized"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Inject",
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/render/api.dart",
+        "2": [
+          "RootRenderer",
+          "RenderComponentType",
+          "Renderer"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/application_tokens.dart",
+        "2": [
+          "APP_ID"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "ViewUtils",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false
+          }
+        ],
+        "5": [
+          {
+            "1": "RootRenderer",
+            "4": "_renderer"
+          },
+          {
+            "1": "String",
+            "3": [
+              "const Inject(APP_ID)"
+            ],
+            "4": "_appId"
+          }
+        ]
+      }
+    ],
+    "6": "view_utils.dart",
+    "7": [
+      {
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "4": "i2"
+      },
+      {
+        "1": "element.ngfactory.dart",
+        "4": "i3"
+      },
+      {
+        "1": "exceptions.ngfactory.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.ngfactory.dart",
+        "4": "i5"
+      },
+      {
+        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "4": "i6"
+      },
+      {
+        "1": "package:angular2/src/core/render/api.ngfactory.dart",
+        "4": "i7"
+      },
+      {
+        "1": "package:angular2/src/core/application_tokens.ngfactory.dart",
+        "4": "i8"
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.ngfactory.dart",
+        "4": "i9"
+      }
+    ]
+  },
+  "type": {
+    "EMPTY_ARR": {
+      "class": "Identifier",
+      "name": "EMPTY_ARR",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": []
+    },
+    "MAX_INTERPOLATION_VALUES": {
+      "class": "Identifier",
+      "name": "MAX_INTERPOLATION_VALUES",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewUtils": {
+      "class": "Type",
+      "name": "ViewUtils",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RootRenderer",
+              "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "APP_ID",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        }
+      ]
+    },
+    "flattenNestedViewRenderNodes": {
+      "class": "Identifier",
+      "name": "flattenNestedViewRenderNodes",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_flattenNestedViewRenderNodes": {
+      "class": "Identifier",
+      "name": "_flattenNestedViewRenderNodes",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ensureSlotCount": {
+      "class": "Identifier",
+      "name": "ensureSlotCount",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "interpolate": {
+      "class": "Identifier",
+      "name": "interpolate",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_toStringWithNull": {
+      "class": "Identifier",
+      "name": "_toStringWithNull",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "checkBinding": {
+      "class": "Identifier",
+      "name": "checkBinding",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "arrayLooseIdentical": {
+      "class": "Identifier",
+      "name": "arrayLooseIdentical",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "mapLooseIdentical": {
+      "class": "Identifier",
+      "name": "mapLooseIdentical",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "castByValue": {
+      "class": "Identifier",
+      "name": "castByValue",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy1": {
+      "class": "Identifier",
+      "name": "pureProxy1",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy2": {
+      "class": "Identifier",
+      "name": "pureProxy2",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy3": {
+      "class": "Identifier",
+      "name": "pureProxy3",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy4": {
+      "class": "Identifier",
+      "name": "pureProxy4",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy5": {
+      "class": "Identifier",
+      "name": "pureProxy5",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy6": {
+      "class": "Identifier",
+      "name": "pureProxy6",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy7": {
+      "class": "Identifier",
+      "name": "pureProxy7",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy8": {
+      "class": "Identifier",
+      "name": "pureProxy8",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy9": {
+      "class": "Identifier",
+      "name": "pureProxy9",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pureProxy10": {
+      "class": "Identifier",
+      "name": "pureProxy10",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {
+    "EMPTY_ARR": []
+  }
+}

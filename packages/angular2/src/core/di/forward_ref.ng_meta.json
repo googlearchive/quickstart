@@ -6,7 +6,6 @@
       "name": "ForwardRefFn",
       "moduleUrl": "asset:angular2/lib/src/core/di/forward_ref.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "forwardRef": {
@@ -14,7 +13,6 @@
       "name": "forwardRef",
       "moduleUrl": "asset:angular2/lib/src/core/di/forward_ref.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "resolveForwardRef": {
@@ -22,7 +20,6 @@
       "name": "resolveForwardRef",
       "moduleUrl": "asset:angular2/lib/src/core/di/forward_ref.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

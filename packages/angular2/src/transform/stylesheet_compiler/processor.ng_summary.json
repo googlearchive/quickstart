@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/source_module.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
@@ -48,7 +48,6 @@
       "name": "shimmedStylesheetAssetId",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "nonShimmedStylesheetAssetId": {
@@ -56,7 +55,6 @@
       "name": "nonShimmedStylesheetAssetId",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "processStylesheet": {
@@ -64,7 +62,6 @@
       "name": "processStylesheet",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

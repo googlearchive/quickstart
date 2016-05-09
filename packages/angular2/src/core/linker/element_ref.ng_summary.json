@@ -1,39 +1,11 @@
 {
-  "ngDeps": {
-    "1": "angular2.src.core.linker.element_ref",
-    "3": [
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "unimplemented"
-        ],
-        "5": false
-      },
-      {
-        "1": "element.dart",
-        "2": [
-          "AppElement"
-        ],
-        "5": false
-      }
-    ],
-    "6": "element_ref.dart"
-  },
+  "ngDeps": null,
   "type": {
     "ElementRef": {
       "class": "Identifier",
       "name": "ElementRef",
       "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ElementRef_": {
-      "class": "Identifier",
-      "name": "ElementRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

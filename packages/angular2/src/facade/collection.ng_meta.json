@@ -6,7 +6,6 @@
       "name": "Predicate",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MapIterator": {
@@ -14,7 +13,6 @@
       "name": "MapIterator",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "IterableMap": {
@@ -22,7 +20,6 @@
       "name": "IterableMap",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MapWrapper": {
@@ -30,7 +27,6 @@
       "name": "MapWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "StringMapWrapper": {
@@ -38,7 +34,6 @@
       "name": "StringMapWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ListWrapper": {
@@ -46,7 +41,13 @@
       "name": "ListWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "_flattenArray": {
+      "class": "Identifier",
+      "name": "_flattenArray",
+      "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
+      "prefix": null,
       "value": null
     },
     "isListLikeIterable": {
@@ -54,7 +55,6 @@
       "name": "isListLikeIterable",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "areIterablesEqual": {
@@ -62,7 +62,6 @@
       "name": "areIterablesEqual",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "iterateListLike": {
@@ -70,7 +69,6 @@
       "name": "iterateListLike",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SetWrapper": {
@@ -78,7 +76,6 @@
       "name": "SetWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/collection.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

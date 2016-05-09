@@ -21,9 +21,9 @@
       }
     ],
     "6": "async.dart",
-    "10": [
+    "7": [
       {
-        "1": "promise.template.dart",
+        "1": "promise.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -34,7 +34,6 @@
       "name": "TimerWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ObservableWrapper": {
@@ -42,7 +41,6 @@
       "name": "ObservableWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "EventEmitter": {
@@ -50,7 +48,6 @@
       "name": "EventEmitter",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Subject": {
@@ -58,7 +55,6 @@
       "name": "Subject",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PromiseWrapper": {
@@ -66,7 +62,6 @@
       "name": "PromiseWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PromiseCompleter": {
@@ -74,7 +69,6 @@
       "name": "PromiseCompleter",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

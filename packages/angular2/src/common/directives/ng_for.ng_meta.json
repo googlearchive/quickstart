@@ -46,26 +46,6 @@
     "5": [
       {
         "1": "NgFor",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"[ngFor][ngForOf]\""
-              },
-              {
-                "1": "inputs",
-                "2": "const [\"ngForTrackBy\", \"ngForOf\", \"ngForTemplate\"]"
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "ViewContainerRef",
@@ -90,21 +70,21 @@
       }
     ],
     "6": "ng_for.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "../../core/change_detection/differs/default_iterable_differ.template.dart",
+        "1": "../../core/change_detection/differs/default_iterable_differ.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "../../facade/exceptions.template.dart",
+        "1": "../../facade/exceptions.ngfactory.dart",
         "4": "i3"
       }
     ]
@@ -113,7 +93,6 @@
     "NgFor": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "[ngFor][ngForOf]",
       "exportAs": null,
       "type": {
@@ -122,76 +101,95 @@
         "moduleUrl": "asset:angular2/lib/src/common/directives/ng_for.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "ViewContainerRef",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ViewContainerRef",
+                "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "TemplateRef",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "TemplateRef",
+                "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "IterableDiffers",
-              "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "IterableDiffers",
+                "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "ChangeDetectorRef",
-              "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detector_ref.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ChangeDetectorRef",
+                "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detector_ref.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },
@@ -219,7 +217,6 @@
       "name": "RecordViewTuple",
       "moduleUrl": "asset:angular2/lib/src/common/directives/ng_for.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

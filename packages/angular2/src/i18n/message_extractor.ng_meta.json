@@ -46,7 +46,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/parser.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "2": [
           "Parser"
         ],
@@ -57,6 +57,13 @@
         "2": [
           "Message",
           "id"
+        ],
+        "5": false
+      },
+      {
+        "1": "expander.dart",
+        "2": [
+          "expandNodes"
         ],
         "5": false
       },
@@ -76,38 +83,42 @@
       }
     ],
     "6": "message_extractor.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/html_parser.template.dart",
+        "1": "package:angular2/src/compiler/html_parser.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/parse_util.template.dart",
+        "1": "package:angular2/src/compiler/parse_util.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/compiler/html_ast.template.dart",
+        "1": "package:angular2/src/compiler/html_ast.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/parser.template.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "message.template.dart",
+        "1": "message.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "shared.template.dart",
+        "1": "expander.ngfactory.dart",
         "4": "i7"
+      },
+      {
+        "1": "shared.ngfactory.dart",
+        "4": "i8"
       }
     ]
   },
@@ -117,7 +128,6 @@
       "name": "ExtractionResult",
       "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "removeDuplicates": {
@@ -125,7 +135,6 @@
       "name": "removeDuplicates",
       "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageExtractor": {
@@ -133,7 +142,6 @@
       "name": "MessageExtractor",
       "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

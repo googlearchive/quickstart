@@ -3,31 +3,26 @@
     "1": "angular2.transform.template_compiler.url_resolver",
     "3": [
       {
-        "1": "package:angular2/compiler.dart",
-        "5": false
-      },
-      {
         "1": "package:barback/barback.dart",
         "5": false
+      }
+    ],
+    "4": [
+      {
+        "1": "package:angular2/src/compiler/url_resolver.dart",
+        "2": [
+          "createOfflineCompileUrlResolver"
+        ]
       }
     ],
     "6": "url_resolver.dart"
   },
   "type": {
-    "TransformerUrlResolver": {
-      "class": "Identifier",
-      "name": "TransformerUrlResolver",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
     "toAssetUri": {
       "class": "Identifier",
       "name": "toAssetUri",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "fromUri": {
@@ -35,7 +30,6 @@
       "name": "fromUri",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "toAssetScheme": {
@@ -43,7 +37,6 @@
       "name": "toAssetScheme",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isDartCoreUri": {
@@ -51,7 +44,6 @@
       "name": "isDartCoreUri",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

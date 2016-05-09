@@ -3,6 +3,13 @@
     "1": "angular2.src.core.render.api",
     "3": [
       {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "unimplemented"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/metadata/view.dart",
         "2": [
           "ViewEncapsulation"
@@ -26,7 +33,6 @@
       "name": "RenderComponentType",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RenderDebugInfo": {
@@ -34,15 +40,6 @@
       "name": "RenderDebugInfo",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ParentRenderer": {
-      "class": "Identifier",
-      "name": "ParentRenderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Renderer": {
@@ -50,7 +47,6 @@
       "name": "Renderer",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RootRenderer": {
@@ -58,7 +54,6 @@
       "name": "RootRenderer",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

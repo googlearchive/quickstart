@@ -7,6 +7,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/collection.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/async.dart",
         "5": false
       }
@@ -19,7 +23,6 @@
       "name": "QueryList",
       "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

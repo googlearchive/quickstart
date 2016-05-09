@@ -27,7 +27,6 @@
       "name": "DeferredRewriter",
       "moduleUrl": "asset:angular2/lib/transform/deferred_rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

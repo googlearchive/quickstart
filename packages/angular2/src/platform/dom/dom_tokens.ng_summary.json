@@ -18,7 +18,6 @@
       "name": "DOCUMENT",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

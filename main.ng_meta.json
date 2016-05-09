@@ -13,37 +13,17 @@
     ],
     "5": [
       {
-        "1": "AppComponent",
-        "4": [
-          {
-            "1": "Component",
-            "3": [
-              {
-                "1": "selector",
-                "2": "'my-app'"
-              },
-              {
-                "1": "template",
-                "2": "'<h1>My First Angular 2 App</h1>'"
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": true,
-            "7": true,
-            "8": false
-          }
-        ]
+        "1": "AppComponent"
       }
     ],
     "6": "main.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/platform/browser_static.template.dart",
+        "1": "package:angular2/platform/browser_static.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -52,7 +32,6 @@
     "AppComponent": {
       "class": "Directive",
       "isComponent": true,
-      "dynamicLoadable": true,
       "selector": "my-app",
       "exportAs": null,
       "type": {
@@ -61,7 +40,6 @@
         "moduleUrl": "asset:angular2_getting_started/web/main.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": []
       },
@@ -90,7 +68,6 @@
       "name": "main",
       "moduleUrl": "asset:angular2_getting_started/web/main.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

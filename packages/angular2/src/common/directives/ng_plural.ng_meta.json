@@ -42,22 +42,6 @@
     "5": [
       {
         "1": "NgPluralCase",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"[ngPluralCase]\""
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "String",
@@ -78,22 +62,6 @@
       },
       {
         "1": "NgPlural",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"[ngPlural]\""
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "NgLocalization",
@@ -102,59 +70,25 @@
         ],
         "6": [
           "AfterContentInit"
-        ],
-        "7": [
-          {
-            "1": "cases",
-            "2": [
-              {
-                "1": "ContentChildren",
-                "2": [
-                  "NgPluralCase"
-                ],
-                "4": false,
-                "5": false,
-                "6": false,
-                "7": false,
-                "8": false
-              }
-            ]
-          },
-          {
-            "1": "ngPlural",
-            "2": [
-              {
-                "1": "Input",
-                "4": false,
-                "5": false,
-                "6": false,
-                "7": false,
-                "8": false
-              }
-            ]
-          }
         ]
       }
     ],
     "6": "ng_plural.dart",
-    "8": [
-      "cases"
-    ],
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "ng_switch.template.dart",
+        "1": "ng_switch.ngfactory.dart",
         "4": "i3"
       }
     ]
@@ -165,7 +99,6 @@
       "name": "_CATEGORY_DEFAULT",
       "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NgLocalization": {
@@ -173,13 +106,11 @@
       "name": "NgLocalization",
       "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NgPluralCase": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "[ngPluralCase]",
       "exportAs": null,
       "type": {
@@ -188,52 +119,67 @@
         "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
-            "token": "ngPluralCase",
+            "token": {
+              "value": "ngPluralCase",
+              "identifier": null,
+              "identifierIsInstance": false
+            },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": true,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "TemplateRef",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "TemplateRef",
+                "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "ViewContainerRef",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ViewContainerRef",
+                "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },
@@ -253,7 +199,6 @@
     "NgPlural": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "[ngPlural]",
       "exportAs": null,
       "type": {
@@ -262,25 +207,29 @@
         "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "NgLocalization",
-              "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "NgLocalization",
+                "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },
@@ -302,64 +251,84 @@
         {
           "selectors": [
             {
-              "class": "Type",
-              "name": "NgPluralCase",
-              "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
-              "prefix": null,
-              "isHost": false,
-              "constConstructor": null,
               "value": null,
-              "diDeps": [
-                {
-                  "token": "ngPluralCase",
-                  "query": null,
-                  "viewQuery": null,
-                  "isAttribute": true,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false
-                },
-                {
-                  "token": {
-                    "class": "Identifier",
-                    "name": "TemplateRef",
-                    "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
-                    "prefix": null,
-                    "constConstructor": null,
-                    "value": null
+              "identifier": {
+                "class": "Type",
+                "name": "NgPluralCase",
+                "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+                "prefix": null,
+                "isHost": false,
+                "value": null,
+                "diDeps": [
+                  {
+                    "token": {
+                      "value": "ngPluralCase",
+                      "identifier": null,
+                      "identifierIsInstance": false
+                    },
+                    "query": null,
+                    "viewQuery": null,
+                    "value": null,
+                    "isAttribute": true,
+                    "isSelf": false,
+                    "isHost": false,
+                    "isSkipSelf": false,
+                    "isOptional": false,
+                    "isValue": false
                   },
-                  "query": null,
-                  "viewQuery": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false
-                },
-                {
-                  "token": {
-                    "class": "Identifier",
-                    "name": "ViewContainerRef",
-                    "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
-                    "prefix": null,
-                    "constConstructor": null,
-                    "value": null
+                  {
+                    "token": {
+                      "value": null,
+                      "identifier": {
+                        "class": "Identifier",
+                        "name": "TemplateRef",
+                        "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
+                        "prefix": null,
+                        "value": null
+                      },
+                      "identifierIsInstance": false
+                    },
+                    "query": null,
+                    "viewQuery": null,
+                    "value": null,
+                    "isAttribute": false,
+                    "isSelf": false,
+                    "isHost": false,
+                    "isSkipSelf": false,
+                    "isOptional": false,
+                    "isValue": false
                   },
-                  "query": null,
-                  "viewQuery": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false
-                }
-              ]
+                  {
+                    "token": {
+                      "value": null,
+                      "identifier": {
+                        "class": "Identifier",
+                        "name": "ViewContainerRef",
+                        "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+                        "prefix": null,
+                        "value": null
+                      },
+                      "identifierIsInstance": false
+                    },
+                    "query": null,
+                    "viewQuery": null,
+                    "value": null,
+                    "isAttribute": false,
+                    "isSelf": false,
+                    "isHost": false,
+                    "isSkipSelf": false,
+                    "isOptional": false,
+                    "isValue": false
+                  }
+                ]
+              },
+              "identifierIsInstance": false
             }
           ],
           "descendants": false,
           "first": false,
-          "propertyName": "cases"
+          "propertyName": "cases",
+          "read": null
         }
       ],
       "viewQueries": []

@@ -27,7 +27,6 @@
       "name": "PlatformReflectionCapabilities",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

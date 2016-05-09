@@ -10,15 +10,22 @@
         "1": "package:angular2/core.dart",
         "2": [
           "ComponentRef",
-          "DirectiveResolver",
           "DynamicComponentLoader",
           "Injector",
           "Injectable",
           "ViewMetadata",
           "ElementRef",
           "EmbeddedViewRef",
-          "ViewResolver",
+          "ChangeDetectorRef",
           "provide"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/compiler.dart",
+        "2": [
+          "DirectiveResolver",
+          "ViewResolver"
         ],
         "5": false
       },
@@ -32,24 +39,17 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper",
           "MapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/view_ref.dart",
-        "2": [
-          "ViewRef_"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/view.dart",
-        "2": [
-          "AppView"
         ],
         "5": false
       },
@@ -82,6 +82,13 @@
           "getDebugNode"
         ],
         "5": false
+      },
+      {
+        "1": "fake_async.dart",
+        "2": [
+          "tick"
+        ],
+        "5": false
       }
     ],
     "5": [
@@ -90,11 +97,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -113,15 +116,6 @@
       "name": "ComponentFixture",
       "moduleUrl": "asset:angular2/lib/src/testing/test_component_builder.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ComponentFixture_": {
-      "class": "Identifier",
-      "name": "ComponentFixture_",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_component_builder.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TestComponentBuilder": {
@@ -130,25 +124,29 @@
       "moduleUrl": "asset:angular2/lib/src/testing/test_component_builder.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "Injector",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Injector",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     }

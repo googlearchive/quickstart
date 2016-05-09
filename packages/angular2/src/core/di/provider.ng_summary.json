@@ -5,73 +5,19 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
+          "normalizeBool",
           "Type",
-          "isBlank",
-          "isPresent",
-          "stringify",
-          "isArray",
           "isType",
+          "isBlank",
           "isFunction",
-          "normalizeBool"
+          "stringify"
         ],
         "5": false
       },
       {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "MapWrapper",
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
-        "2": [
-          "reflector"
-        ],
-        "5": false
-      },
-      {
-        "1": "key.dart",
-        "2": [
-          "Key"
-        ],
-        "5": false
-      },
-      {
-        "1": "metadata.dart",
-        "2": [
-          "InjectMetadata",
-          "InjectableMetadata",
-          "OptionalMetadata",
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata",
-          "DependencyMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "exceptions.dart",
-        "2": [
-          "NoAnnotationError",
-          "MixingMultiProvidersWithRegularProvidersError",
-          "InvalidProviderError"
-        ],
-        "5": false
-      },
-      {
-        "1": "forward_ref.dart",
-        "2": [
-          "resolveForwardRef"
+          "BaseException"
         ],
         "5": false
       }
@@ -79,28 +25,11 @@
     "6": "provider.dart"
   },
   "type": {
-    "_EMPTY_LIST": {
-      "class": "Identifier",
-      "name": "_EMPTY_LIST",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": []
-    },
-    "Dependency": {
-      "class": "Identifier",
-      "name": "Dependency",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
     "Provider": {
       "class": "Identifier",
       "name": "Provider",
       "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Binding": {
@@ -108,39 +37,6 @@
       "name": "Binding",
       "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ResolvedProvider": {
-      "class": "Identifier",
-      "name": "ResolvedProvider",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ResolvedBinding": {
-      "class": "Identifier",
-      "name": "ResolvedBinding",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ResolvedProvider_": {
-      "class": "Identifier",
-      "name": "ResolvedProvider_",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ResolvedFactory": {
-      "class": "Identifier",
-      "name": "ResolvedFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "bind": {
@@ -148,15 +44,6 @@
       "name": "bind",
       "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "provide": {
-      "class": "Identifier",
-      "name": "provide",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ProviderBuilder": {
@@ -164,83 +51,15 @@
       "name": "ProviderBuilder",
       "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
-    "resolveFactory": {
+    "provide": {
       "class": "Identifier",
-      "name": "resolveFactory",
+      "name": "provide",
       "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "resolveProvider": {
-      "class": "Identifier",
-      "name": "resolveProvider",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "resolveProviders": {
-      "class": "Identifier",
-      "name": "resolveProviders",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "mergeResolvedProviders": {
-      "class": "Identifier",
-      "name": "mergeResolvedProviders",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "_normalizeProviders": {
-      "class": "Identifier",
-      "name": "_normalizeProviders",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "_constructDependencies": {
-      "class": "Identifier",
-      "name": "_constructDependencies",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "_dependenciesFor": {
-      "class": "Identifier",
-      "name": "_dependenciesFor",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "_extractToken": {
-      "class": "Identifier",
-      "name": "_extractToken",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "_createDependency": {
-      "class": "Identifier",
-      "name": "_createDependency",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },
-  "alias": {
-    "_EMPTY_LIST": []
-  }
+  "alias": {}
 }

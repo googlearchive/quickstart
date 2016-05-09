@@ -66,7 +66,6 @@
       "name": "CORE_TOKENS",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "INSPECT_GLOBAL_NAME": {
@@ -74,7 +73,6 @@
       "name": "INSPECT_GLOBAL_NAME",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CORE_TOKENS_GLOBAL_NAME": {
@@ -82,7 +80,6 @@
       "name": "CORE_TOKENS_GLOBAL_NAME",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ELEMENT_PROBE_PROVIDERS": {
@@ -90,17 +87,19 @@
       "name": "ELEMENT_PROBE_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "RootRenderer",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RootRenderer",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -110,10 +109,34 @@
             "name": "_createConditionalRootRenderer",
             "prefix": null,
             "moduleUrl": null,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
-          }
+            "diDeps": []
+          },
+          "multi": false,
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "DomRootRenderer",
+                  "moduleUrl": null,
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
         }
       ]
     },
@@ -122,17 +145,19 @@
       "name": "ELEMENT_PROBE_PROVIDERS_PROD_MODE",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "RootRenderer",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RootRenderer",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -142,10 +167,34 @@
             "name": "_createRootRenderer",
             "prefix": null,
             "moduleUrl": null,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
-          }
+            "diDeps": []
+          },
+          "multi": false,
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "DomRootRenderer",
+                  "moduleUrl": null,
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
         }
       ]
     },
@@ -154,7 +203,6 @@
       "name": "inspectNativeElement",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_createConditionalRootRenderer": {
@@ -162,7 +210,6 @@
       "name": "_createConditionalRootRenderer",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_createRootRenderer": {
@@ -170,7 +217,6 @@
       "name": "_createRootRenderer",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

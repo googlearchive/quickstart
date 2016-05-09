@@ -52,39 +52,35 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
     ],
     "6": "dom_element_schema_registry.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/compiler/html_tags.template.dart",
+        "1": "package:angular2/src/compiler/html_tags.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "element_schema_registry.template.dart",
+        "1": "element_schema_registry.ngfactory.dart",
         "4": "i5"
       }
     ]
@@ -95,7 +91,6 @@
       "name": "NAMESPACE_URIS",
       "moduleUrl": "asset:angular2/lib/src/compiler/schema/dom_element_schema_registry.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DomElementSchemaRegistry": {
@@ -104,7 +99,6 @@
       "moduleUrl": "asset:angular2/lib/src/compiler/schema/dom_element_schema_registry.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     }

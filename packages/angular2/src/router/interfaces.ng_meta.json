@@ -22,13 +22,13 @@
       }
     ],
     "6": "interfaces.dart",
-    "10": [
+    "7": [
       {
-        "1": "instruction.template.dart",
+        "1": "instruction.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -39,7 +39,6 @@
       "name": "OnActivate",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "OnReuse": {
@@ -47,7 +46,6 @@
       "name": "OnReuse",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "OnDeactivate": {
@@ -55,7 +53,6 @@
       "name": "OnDeactivate",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CanReuse": {
@@ -63,7 +60,6 @@
       "name": "CanReuse",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CanDeactivate": {
@@ -71,7 +67,6 @@
       "name": "CanDeactivate",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

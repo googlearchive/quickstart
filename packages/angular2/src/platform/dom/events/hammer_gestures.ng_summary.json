@@ -38,11 +38,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       },
@@ -51,11 +47,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -77,7 +69,6 @@
       "name": "HAMMER_GESTURE_CONFIG",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "overrideDefault": {
@@ -85,7 +76,6 @@
       "name": "overrideDefault",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HammerGestureConfig": {
@@ -94,7 +84,6 @@
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -104,25 +93,29 @@
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "HAMMER_GESTURE_CONFIG",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "HAMMER_GESTURE_CONFIG",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -131,7 +124,6 @@
       "name": "HammerEvent",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

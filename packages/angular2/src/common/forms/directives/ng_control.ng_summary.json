@@ -40,7 +40,6 @@
       "name": "NgControl",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

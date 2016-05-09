@@ -7,10 +7,8 @@
         "2": [
           "IS_DART",
           "StringWrapper",
-          "isBlank",
-          "isPresent",
-          "isString",
-          "isArray"
+          "Math",
+          "isBlank"
         ],
         "5": false
       }
@@ -23,7 +21,6 @@
       "name": "camelCaseToDashCase",
       "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "dashCaseToCamelCase": {
@@ -31,71 +28,6 @@
       "name": "dashCaseToCamelCase",
       "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "escapeSingleQuoteString": {
-      "class": "Identifier",
-      "name": "escapeSingleQuoteString",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "escapeDoubleQuoteString": {
-      "class": "Identifier",
-      "name": "escapeDoubleQuoteString",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "escapeString": {
-      "class": "Identifier",
-      "name": "escapeString",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "codeGenExportVariable": {
-      "class": "Identifier",
-      "name": "codeGenExportVariable",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "codeGenConstConstructorCall": {
-      "class": "Identifier",
-      "name": "codeGenConstConstructorCall",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "codeGenValueFn": {
-      "class": "Identifier",
-      "name": "codeGenValueFn",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "codeGenFnHeader": {
-      "class": "Identifier",
-      "name": "codeGenFnHeader",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "codeGenToString": {
-      "class": "Identifier",
-      "name": "codeGenToString",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "splitAtColon": {
@@ -103,79 +35,13 @@
       "name": "splitAtColon",
       "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
-    "Statement": {
+    "sanitizeIdentifier": {
       "class": "Identifier",
-      "name": "Statement",
+      "name": "sanitizeIdentifier",
       "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "Expression": {
-      "class": "Identifier",
-      "name": "Expression",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "escapeValue": {
-      "class": "Identifier",
-      "name": "escapeValue",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "codeGenArray": {
-      "class": "Identifier",
-      "name": "codeGenArray",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "codeGenFlatArray": {
-      "class": "Identifier",
-      "name": "codeGenFlatArray",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "codeGenStringMap": {
-      "class": "Identifier",
-      "name": "codeGenStringMap",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "codeGenKeyValue": {
-      "class": "Identifier",
-      "name": "codeGenKeyValue",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "addAll": {
-      "class": "Identifier",
-      "name": "addAll",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "flattenArray": {
-      "class": "Identifier",
-      "name": "flattenArray",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

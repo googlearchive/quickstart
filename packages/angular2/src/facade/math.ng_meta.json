@@ -6,7 +6,6 @@
       "name": "NaN",
       "moduleUrl": "asset:angular2/lib/src/facade/math.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Math": {
@@ -14,7 +13,6 @@
       "name": "Math",
       "moduleUrl": "asset:angular2/lib/src/facade/math.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -18,7 +18,6 @@
       "name": "PLATFORM_DIRECTIVES",
       "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PLATFORM_PIPES": {
@@ -26,7 +25,6 @@
       "name": "PLATFORM_PIPES",
       "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

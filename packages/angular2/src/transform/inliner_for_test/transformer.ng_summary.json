@@ -82,7 +82,6 @@
       "name": "InlinerForTest",
       "moduleUrl": "asset:angular2/lib/src/transform/inliner_for_test/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "inline": {
@@ -90,7 +89,6 @@
       "name": "inline",
       "moduleUrl": "asset:angular2/lib/src/transform/inliner_for_test/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ViewPropInliner": {
@@ -98,7 +96,6 @@
       "name": "_ViewPropInliner",
       "moduleUrl": "asset:angular2/lib/src/transform/inliner_for_test/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_InlinedValue": {
@@ -106,7 +103,6 @@
       "name": "_InlinedValue",
       "moduleUrl": "asset:angular2/lib/src/transform/inliner_for_test/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

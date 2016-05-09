@@ -11,11 +11,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/directive_metadata.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
@@ -23,7 +23,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/interfaces.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "2": [
           "LifecycleHooks"
         ],
@@ -65,45 +65,45 @@
       }
     ],
     "6": "type_metadata_reader.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/directive_metadata.template.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.template.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/change_detection/change_detection.template.dart",
+        "1": "package:angular2/src/core/change_detection/change_detection.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/linker/interfaces.template.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.template.dart",
+        "1": "package:angular2/src/core/metadata/view.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/common/annotation_matcher.template.dart",
+        "1": "package:angular2/src/transform/common/annotation_matcher.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/common/interface_matcher.template.dart",
+        "1": "package:angular2/src/transform/common/interface_matcher.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "naive_eval.template.dart",
+        "1": "naive_eval.ngfactory.dart",
         "4": "i8"
       },
       {
-        "1": "url_resolver.template.dart",
+        "1": "url_resolver.ngfactory.dart",
         "4": "i9"
       }
     ]
@@ -114,7 +114,6 @@
       "name": "TypeMetadataReader",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_populateMap": {
@@ -122,7 +121,6 @@
       "name": "_populateMap",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_populateList": {
@@ -130,7 +128,6 @@
       "name": "_populateList",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_expressionToString": {
@@ -138,7 +135,6 @@
       "name": "_expressionToString",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_expressionToBool": {
@@ -146,7 +142,6 @@
       "name": "_expressionToBool",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_CompileTypeMetadataVisitor": {
@@ -154,7 +149,6 @@
       "name": "_CompileTypeMetadataVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_CompileFactoryMetadataVisitor": {
@@ -162,7 +156,6 @@
       "name": "_CompileFactoryMetadataVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_DirectiveMetadataVisitor": {
@@ -170,7 +163,6 @@
       "name": "_DirectiveMetadataVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_LifecycleHookVisitor": {
@@ -178,7 +170,6 @@
       "name": "_LifecycleHookVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_CompileTemplateMetadataVisitor": {
@@ -186,7 +177,6 @@
       "name": "_CompileTemplateMetadataVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_PipeMetadataVisitor": {
@@ -194,7 +184,6 @@
       "name": "_PipeMetadataVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_readProviders": {
@@ -202,7 +191,6 @@
       "name": "_readProviders",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_readProvider": {
@@ -210,7 +198,6 @@
       "name": "_readProvider",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_readDeps": {
@@ -218,7 +205,6 @@
       "name": "_readDeps",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_createQueryMetadata": {
@@ -226,7 +212,6 @@
       "name": "_createQueryMetadata",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_getCompileDiDependencyMetadata": {
@@ -234,7 +219,6 @@
       "name": "_getCompileDiDependencyMetadata",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_getAnnotation": {
@@ -242,7 +226,6 @@
       "name": "_getAnnotation",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_hasAnnotation": {
@@ -250,7 +233,6 @@
       "name": "_hasAnnotation",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_hasConst": {
@@ -258,7 +240,6 @@
       "name": "_hasConst",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_readIdentifier": {
@@ -266,7 +247,20 @@
       "name": "_readIdentifier",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "_readValue": {
+      "class": "Identifier",
+      "name": "_readValue",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_readToken": {
+      "class": "Identifier",
+      "name": "_readToken",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
+      "prefix": null,
       "value": null
     }
   },

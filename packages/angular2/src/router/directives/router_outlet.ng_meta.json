@@ -9,7 +9,8 @@
       {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "PromiseWrapper"
+          "PromiseWrapper",
+          "EventEmitter"
         ],
         "5": false
       },
@@ -35,11 +36,11 @@
           "Attribute",
           "DynamicComponentLoader",
           "ComponentRef",
-          "ElementRef",
-          "Injector",
+          "ViewContainerRef",
           "provide",
-          "Dependency",
-          "OnDestroy"
+          "ReflectiveInjector",
+          "OnDestroy",
+          "Output"
         ],
         "5": false
       },
@@ -84,26 +85,10 @@
     "5": [
       {
         "1": "RouterOutlet",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"router-outlet\""
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
-            "1": "ElementRef",
-            "4": "_elementRef"
+            "1": "ViewContainerRef",
+            "4": "_viewContainerRef"
           },
           {
             "1": "DynamicComponentLoader",
@@ -127,41 +112,41 @@
       }
     ],
     "6": "router_outlet.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "../router.template.dart",
+        "1": "../router.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "../instruction.template.dart",
+        "1": "../instruction.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "../lifecycle/lifecycle_annotations.template.dart",
+        "1": "../lifecycle/lifecycle_annotations.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "../lifecycle/route_lifecycle_reflector.template.dart",
+        "1": "../lifecycle/route_lifecycle_reflector.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "../interfaces.template.dart",
+        "1": "../interfaces.ngfactory.dart",
         "4": "i8"
       }
     ]
@@ -170,7 +155,6 @@
     "RouterOutlet": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "router-outlet",
       "exportAs": null,
       "type": {
@@ -179,75 +163,97 @@
         "moduleUrl": "asset:angular2/lib/src/router/directives/router_outlet.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "ElementRef",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ViewContainerRef",
+                "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "DynamicComponentLoader",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "DynamicComponentLoader",
+                "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "Router",
-              "moduleUrl": "asset:angular2/lib/src/router/router.dart",
-              "prefix": "routerMod",
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Router",
+                "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+                "prefix": "routerMod",
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
-            "token": "name",
+            "token": {
+              "value": "name",
+              "identifier": null,
+              "identifierIsInstance": false
+            },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": true,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },
       "changeDetection": 5,
       "inputs": {},
-      "outputs": {},
+      "outputs": {
+        "activateEvents": "activate"
+      },
       "hostListeners": {},
       "hostProperties": {},
       "hostAttributes": {},

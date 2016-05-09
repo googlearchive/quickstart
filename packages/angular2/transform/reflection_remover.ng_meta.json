@@ -28,17 +28,17 @@
       }
     ],
     "6": "reflection_remover.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/transform/common/options.template.dart",
+        "1": "package:angular2/src/transform/common/options.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/options_reader.template.dart",
+        "1": "package:angular2/src/transform/common/options_reader.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/reflection_remover/transformer.template.dart",
+        "1": "package:angular2/src/transform/reflection_remover/transformer.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -49,7 +49,6 @@
       "name": "ReflectionRemover",
       "moduleUrl": "asset:angular2/lib/transform/reflection_remover.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

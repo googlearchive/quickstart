@@ -18,7 +18,6 @@
       "name": "NG_VALUE_ACCESSOR",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/control_value_accessor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ControlValueAccessor": {
@@ -26,7 +25,6 @@
       "name": "ControlValueAccessor",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/control_value_accessor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

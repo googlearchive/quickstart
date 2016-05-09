@@ -26,13 +26,13 @@
       }
     ],
     "6": "debug_reflection_capabilities.dart",
-    "10": [
+    "7": [
       {
-        "1": "types.template.dart",
+        "1": "types.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "reflection_capabilities.template.dart",
+        "1": "reflection_capabilities.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -43,7 +43,6 @@
       "name": "ReflectionCapabilities",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/debug_reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

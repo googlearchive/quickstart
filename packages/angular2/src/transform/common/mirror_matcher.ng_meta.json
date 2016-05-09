@@ -12,9 +12,9 @@
       }
     ],
     "6": "mirror_matcher.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -25,7 +25,6 @@
       "name": "_BOOTSTRAP_URI",
       "moduleUrl": "asset:angular2/lib/src/transform/common/mirror_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_REFLECTION_CAPABILITIES_URI": {
@@ -33,7 +32,6 @@
       "name": "_REFLECTION_CAPABILITIES_URI",
       "moduleUrl": "asset:angular2/lib/src/transform/common/mirror_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "BOOTSTRAP_STATIC_URI": {
@@ -41,7 +39,6 @@
       "name": "BOOTSTRAP_STATIC_URI",
       "moduleUrl": "asset:angular2/lib/src/transform/common/mirror_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MirrorMatcher": {
@@ -49,7 +46,6 @@
       "name": "MirrorMatcher",
       "moduleUrl": "asset:angular2/lib/src/transform/common/mirror_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

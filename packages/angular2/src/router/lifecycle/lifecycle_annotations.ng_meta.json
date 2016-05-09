@@ -7,9 +7,9 @@
       }
     ],
     "6": "lifecycle_annotations.dart",
-    "10": [
+    "7": [
       {
-        "1": "./lifecycle_annotations_impl.template.dart",
+        "1": "./lifecycle_annotations_impl.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -20,7 +20,6 @@
       "name": "routerCanReuse",
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/lifecycle_annotations_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "routerCanDeactivate": {
@@ -28,7 +27,6 @@
       "name": "routerCanDeactivate",
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/lifecycle_annotations_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "routerOnActivate": {
@@ -36,7 +34,6 @@
       "name": "routerOnActivate",
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/lifecycle_annotations_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "routerOnReuse": {
@@ -44,7 +41,6 @@
       "name": "routerOnReuse",
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/lifecycle_annotations_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "routerOnDeactivate": {
@@ -52,7 +48,6 @@
       "name": "routerOnDeactivate",
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/lifecycle_annotations_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RouteLifecycleHook": {
@@ -60,7 +55,6 @@
       "name": "RouteLifecycleHook",
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/lifecycle_annotations_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CanActivate": {
@@ -68,7 +62,6 @@
       "name": "CanActivate",
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/lifecycle_annotations_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

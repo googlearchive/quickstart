@@ -17,10 +17,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/core/di/injector.dart",
         "2": [
-          "ResolvedProvider",
-          "Injectable"
+          "Injector"
         ],
         "5": false
       },
@@ -29,6 +28,15 @@
         "2": [
           "isPresent",
           "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "../profile/profile.dart",
+        "2": [
+          "wtfCreateScope",
+          "wtfLeave",
+          "WtfScopeFn"
         ],
         "5": false
       },
@@ -42,8 +50,7 @@
       {
         "1": "element_ref.dart",
         "2": [
-          "ElementRef",
-          "ElementRef_"
+          "ElementRef"
         ],
         "5": false
       },
@@ -59,48 +66,61 @@
         "1": "view_ref.dart",
         "2": [
           "EmbeddedViewRef",
-          "HostViewRef",
-          "HostViewFactoryRef",
-          "HostViewFactoryRef_",
           "ViewRef",
           "ViewRef_"
+        ],
+        "5": false
+      },
+      {
+        "1": "component_factory.dart",
+        "2": [
+          "ComponentFactory",
+          "ComponentRef"
         ],
         "5": false
       }
     ],
     "6": "view_container_ref.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di/injector.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "element.template.dart",
+        "1": "../profile/profile.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "element_ref.template.dart",
+        "1": "element.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "template_ref.template.dart",
+        "1": "element_ref.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "view_ref.template.dart",
+        "1": "template_ref.ngfactory.dart",
         "4": "i7"
+      },
+      {
+        "1": "view_ref.ngfactory.dart",
+        "4": "i8"
+      },
+      {
+        "1": "component_factory.ngfactory.dart",
+        "4": "i9"
       }
     ]
   },
@@ -110,7 +130,6 @@
       "name": "ViewContainerRef",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewContainerRef_": {
@@ -118,7 +137,6 @@
       "name": "ViewContainerRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

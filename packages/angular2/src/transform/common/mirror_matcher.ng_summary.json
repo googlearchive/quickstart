@@ -19,7 +19,6 @@
       "name": "_BOOTSTRAP_URI",
       "moduleUrl": "asset:angular2/lib/src/transform/common/mirror_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_REFLECTION_CAPABILITIES_URI": {
@@ -27,7 +26,6 @@
       "name": "_REFLECTION_CAPABILITIES_URI",
       "moduleUrl": "asset:angular2/lib/src/transform/common/mirror_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "BOOTSTRAP_STATIC_URI": {
@@ -35,7 +33,6 @@
       "name": "BOOTSTRAP_STATIC_URI",
       "moduleUrl": "asset:angular2/lib/src/transform/common/mirror_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MirrorMatcher": {
@@ -43,7 +40,6 @@
       "name": "MirrorMatcher",
       "moduleUrl": "asset:angular2/lib/src/transform/common/mirror_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

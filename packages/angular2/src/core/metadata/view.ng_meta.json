@@ -11,9 +11,9 @@
       }
     ],
     "6": "view.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -24,7 +24,6 @@
       "name": "ViewEncapsulation",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewMetadata": {
@@ -32,7 +31,6 @@
       "name": "ViewMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

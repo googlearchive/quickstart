@@ -3,7 +3,23 @@
     "1": "angular2.platform.worker_render",
     "3": [
       {
+        "1": "package:angular2/src/platform/worker_render.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/platform/worker_render_common.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
         "5": false
       }
     ],
@@ -21,7 +37,6 @@
         "1": "package:angular2/src/platform/worker_render.dart",
         "2": [
           "WORKER_RENDER_APPLICATION",
-          "initIsolate",
           "WebWorkerInstance"
         ]
       },
@@ -59,34 +74,42 @@
       }
     ],
     "6": "worker_render.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/platform/worker_render_common.template.dart",
+        "1": "package:angular2/src/platform/worker_render.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/platform/worker_render.template.dart",
+        "1": "package:angular2/src/platform/worker_render_common.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "../src/web_workers/shared/client_message_broker.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "../src/web_workers/shared/service_message_broker.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "../src/web_workers/shared/serializer.template.dart",
+        "1": "../src/web_workers/shared/client_message_broker.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "../src/web_workers/shared/message_bus.template.dart",
+        "1": "../src/web_workers/shared/service_message_broker.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "../src/web_workers/ui/router_providers.template.dart",
+        "1": "../src/web_workers/shared/serializer.ngfactory.dart",
         "4": "i6"
+      },
+      {
+        "1": "../src/web_workers/shared/message_bus.ngfactory.dart",
+        "4": "i7"
+      },
+      {
+        "1": "../src/web_workers/ui/router_providers.ngfactory.dart",
+        "4": "i8"
       }
     ]
   },
@@ -96,7 +119,20 @@
       "name": "WORKER_RENDER_APP",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "workerRenderPlatform": {
+      "class": "Identifier",
+      "name": "workerRenderPlatform",
+      "moduleUrl": "asset:angular2/lib/platform/worker_render.dart",
+      "prefix": null,
+      "value": null
+    },
+    "bootstrapRender": {
+      "class": "Identifier",
+      "name": "bootstrapRender",
+      "moduleUrl": "asset:angular2/lib/platform/worker_render.dart",
+      "prefix": null,
       "value": null
     },
     "WORKER_SCRIPT": {
@@ -104,7 +140,6 @@
       "name": "WORKER_SCRIPT",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WORKER_RENDER_MESSAGING_PROVIDERS": {
@@ -112,105 +147,132 @@
       "name": "WORKER_RENDER_MESSAGING_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "MessageBasedRenderer",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/ui/renderer.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+            "identifier": {
+              "class": "Type",
+              "name": "MessageBasedRenderer",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/ui/renderer.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "ServiceMessageBrokerFactory",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "MessageBus",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "MessageBus",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "Serializer",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Serializer",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "RenderStore",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "RenderStore",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "RootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "RootRenderer",
+                      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -218,146 +280,185 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/ui/renderer.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ServiceMessageBrokerFactory",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "MessageBus",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "MessageBus",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "Serializer",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "Serializer",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "RenderStore",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "RenderStore",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "RootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "RootRenderer",
+                    "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "MessageBasedXHRImpl",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+            "identifier": {
+              "class": "Type",
+              "name": "MessageBasedXHRImpl",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "ServiceMessageBrokerFactory",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "XHR",
-                  "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "XHR",
+                      "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -365,67 +466,218 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ServiceMessageBrokerFactory",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "XHR",
-                  "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "XHR",
+                    "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         }
       ]
+    },
+    "WORKER_RENDER_PLATFORM_MARKER": {
+      "class": "Identifier",
+      "name": "WORKER_RENDER_PLATFORM_MARKER",
+      "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
+      "prefix": null,
+      "value": null
     },
     "WORKER_RENDER_PLATFORM": {
       "class": "Identifier",
       "name": "WORKER_RENDER_PLATFORM",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "Reflector",
-            "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "PlatformRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Injector",
+                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "PlatformRef_",
+            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
             "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "isHost": false,
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "Injector",
+                    "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PlatformRef",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "PlatformRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Injector",
+                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Reflector",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -435,43 +687,55 @@
             "name": "_reflector",
             "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
-          }
+          },
+          "multi": false,
+          "deps": []
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ReflectorReader",
-            "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ReflectorReader",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": {
-            "class": "Identifier",
-            "name": "Reflector",
-            "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Reflector",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "TestabilityRegistry",
-            "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": []
+            "identifier": {
+              "class": "Type",
+              "name": "TestabilityRegistry",
+              "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -479,25 +743,29 @@
             "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "Console",
-            "moduleUrl": "asset:angular2/lib/src/core/console.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": []
+            "identifier": {
+              "class": "Type",
+              "name": "Console",
+              "moduleUrl": "asset:angular2/lib/src/core/console.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -505,23 +773,47 @@
             "moduleUrl": "asset:angular2/lib/src/core/console.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "PLATFORM_INITIALIZER",
-            "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "WORKER_RENDER_PLATFORM_MARKER",
+              "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": true,
+          "useFactory": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PLATFORM_INITIALIZER",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -530,10 +822,11 @@
             "name": "initWebWorkerRenderPlatform",
             "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
           },
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         }
       ]
     },
@@ -542,88 +835,110 @@
       "name": "WORKER_RENDER_ROUTER",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/router_providers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "MessageBasedPlatformLocation",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/ui/platform_location.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+            "identifier": {
+              "class": "Type",
+              "name": "MessageBasedPlatformLocation",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/ui/platform_location.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "ServiceMessageBrokerFactory",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "BrowserPlatformLocation",
-                  "moduleUrl": "asset:angular2/lib/src/router/location/browser_platform_location.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "BrowserPlatformLocation",
+                      "moduleUrl": "asset:angular2/lib/src/platform/browser/location/browser_platform_location.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "MessageBus",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "MessageBus",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "Serializer",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Serializer",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -631,118 +946,146 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/ui/platform_location.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ServiceMessageBrokerFactory",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "BrowserPlatformLocation",
-                  "moduleUrl": "asset:angular2/lib/src/router/location/browser_platform_location.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "BrowserPlatformLocation",
+                    "moduleUrl": "asset:angular2/lib/src/platform/browser/location/browser_platform_location.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "MessageBus",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "MessageBus",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "Serializer",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "Serializer",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "BrowserPlatformLocation",
-            "moduleUrl": "asset:angular2/lib/src/router/location/browser_platform_location.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": []
+            "identifier": {
+              "class": "Type",
+              "name": "BrowserPlatformLocation",
+              "moduleUrl": "asset:angular2/lib/src/platform/browser/location/browser_platform_location.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
             "name": "BrowserPlatformLocation",
-            "moduleUrl": "asset:angular2/lib/src/router/location/browser_platform_location.dart",
+            "moduleUrl": "asset:angular2/lib/src/platform/browser/location/browser_platform_location.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "APP_INITIALIZER",
-            "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "APP_INITIALIZER",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -752,9 +1095,33 @@
             "name": "initRouterListeners",
             "moduleUrl": "asset:angular2/lib/src/web_workers/ui/router_providers.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
-          }
+          },
+          "multi": true,
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "Injector",
+                  "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
         }
       ]
     },
@@ -763,41 +1130,336 @@
       "name": "WORKER_RENDER_APPLICATION_COMMON",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Provider",
           "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "NgZone",
+              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
             "class": "Identifier",
-            "name": "Compiler",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/compiler.dart",
+            "name": "createNgZone",
+            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
+          },
+          "multi": false,
+          "deps": []
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "ApplicationRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "PlatformRef_",
+                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "NgZone",
+                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Injector",
+                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
-            "name": "Compiler_",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/compiler.dart",
+            "name": "ApplicationRef_",
+            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "PlatformRef_",
+                    "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "NgZone",
+                    "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "Injector",
+                    "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ApplicationRef",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "ApplicationRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "PlatformRef_",
+                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "NgZone",
+                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Injector",
+                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ComponentResolver",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "ReflectorComponentResolver",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
+            "prefix": null,
+            "isHost": false,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "APP_ID",
-            "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "APP_ID",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -807,236 +1469,143 @@
             "name": "_appIdRandomProviderFactory",
             "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
-          }
+          },
+          "multi": false,
+          "deps": []
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "ResolvedMetadataCache",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/resolved_metadata_cache.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "DirectiveResolver",
-                  "moduleUrl": "asset:angular2/lib/src/core/linker/directive_resolver.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+            "identifier": {
+              "class": "Type",
+              "name": "ViewUtils",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "RootRenderer",
+                      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "PipeResolver",
-                  "moduleUrl": "asset:angular2/lib/src/core/linker/pipe_resolver.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "APP_ID",
+                      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
-            "name": "ResolvedMetadataCache",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/resolved_metadata_cache.dart",
+            "name": "ViewUtils",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "DirectiveResolver",
-                  "moduleUrl": "asset:angular2/lib/src/core/linker/directive_resolver.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "RootRenderer",
+                    "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "PipeResolver",
-                  "moduleUrl": "asset:angular2/lib/src/core/linker/pipe_resolver.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "APP_ID",
+                    "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "AppViewManager",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_manager.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "AppViewManager_",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_manager.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "RootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "APP_ID",
-                  "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "class": "Type",
-            "name": "ViewResolver",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_resolver.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ReflectorReader",
-                  "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "ViewResolver",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_resolver.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ReflectorReader",
-                  "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "class": "Identifier",
-            "name": "IterableDiffers",
-            "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "identifier": {
+              "class": "Identifier",
+              "name": "IterableDiffers",
+              "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -1045,20 +1614,24 @@
             "name": "defaultIterableDiffers",
             "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
           },
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "KeyValueDiffers",
-            "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "KeyValueDiffers",
+              "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -1067,144 +1640,24 @@
             "name": "defaultKeyValueDiffers",
             "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
           },
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "DirectiveResolver",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/directive_resolver.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ReflectorReader",
-                  "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "DirectiveResolver",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/directive_resolver.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ReflectorReader",
-                  "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "class": "Type",
-            "name": "PipeResolver",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/pipe_resolver.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ReflectorReader",
-                  "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "PipeResolver",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/pipe_resolver.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ReflectorReader",
-                  "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "class": "Identifier",
-            "name": "DynamicComponentLoader",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "identifier": {
+              "class": "Identifier",
+              "name": "DynamicComponentLoader",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1212,146 +1665,163 @@
             "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "Compiler",
-                  "moduleUrl": "asset:angular2/lib/src/core/linker/compiler.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ComponentResolver",
+                    "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "AppViewManager",
-                  "moduleUrl": "asset:angular2/lib/src/core/linker/view_manager.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "MessageBasedRenderer",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/ui/renderer.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+            "identifier": {
+              "class": "Type",
+              "name": "MessageBasedRenderer",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/ui/renderer.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "ServiceMessageBrokerFactory",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "MessageBus",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "MessageBus",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "Serializer",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Serializer",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "RenderStore",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "RenderStore",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "RootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "RootRenderer",
+                      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1359,146 +1829,185 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/ui/renderer.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ServiceMessageBrokerFactory",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "MessageBus",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "MessageBus",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "Serializer",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "Serializer",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "RenderStore",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "RenderStore",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "RootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "RootRenderer",
+                    "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "MessageBasedXHRImpl",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+            "identifier": {
+              "class": "Type",
+              "name": "MessageBasedXHRImpl",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "ServiceMessageBrokerFactory",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "XHR",
-                  "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "XHR",
+                      "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1506,58 +2015,72 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ServiceMessageBrokerFactory",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "XHR",
-                  "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "XHR",
+                    "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ExceptionHandler",
-            "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ExceptionHandler",
+              "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -1567,19 +2090,23 @@
             "name": "_exceptionHandler",
             "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
-          }
+          },
+          "multi": false,
+          "deps": []
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "DOCUMENT",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DOCUMENT",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -1589,19 +2116,23 @@
             "name": "_document",
             "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
-          }
+          },
+          "multi": false,
+          "deps": []
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "EVENT_MANAGER_PLUGINS",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EVENT_MANAGER_PLUGINS",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1609,23 +2140,27 @@
             "moduleUrl": "asset:angular2/lib/src/platform/dom/events/dom_events.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "EVENT_MANAGER_PLUGINS",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EVENT_MANAGER_PLUGINS",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1633,23 +2168,27 @@
             "moduleUrl": "asset:angular2/lib/src/platform/dom/events/key_events.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "EVENT_MANAGER_PLUGINS",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EVENT_MANAGER_PLUGINS",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1657,41 +2196,50 @@
             "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "HAMMER_GESTURE_CONFIG",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "HAMMER_GESTURE_CONFIG",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "HAMMER_GESTURE_CONFIG",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "HAMMER_GESTURE_CONFIG",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1699,23 +2247,27 @@
             "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "DomRootRenderer",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DomRootRenderer",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1723,158 +2275,203 @@
             "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "DOCUMENT",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "DOCUMENT",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "EventManager",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "EventManager",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "DomSharedStylesHost",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "DomSharedStylesHost",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "AnimationBuilder",
-                  "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "AnimationBuilder",
+                    "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "RootRenderer",
-            "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RootRenderer",
+              "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": {
-            "class": "Identifier",
-            "name": "DomRootRenderer",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DomRootRenderer",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "SharedStylesHost",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": []
+            "identifier": {
+              "class": "Type",
+              "name": "SharedStylesHost",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": {
-            "class": "Type",
-            "name": "DomSharedStylesHost",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "DOCUMENT",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+            "identifier": {
+              "class": "Type",
+              "name": "DomSharedStylesHost",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "DOCUMENT",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "XHR",
-            "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "XHR",
+              "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1882,60 +2479,74 @@
             "moduleUrl": "asset:angular2/lib/src/platform/browser/xhr_impl.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "MessageBasedXHRImpl",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+            "identifier": {
+              "class": "Type",
+              "name": "MessageBasedXHRImpl",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "ServiceMessageBrokerFactory",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "XHR",
-                  "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "XHR",
+                      "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -1943,58 +2554,72 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "ServiceMessageBrokerFactory",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ServiceMessageBrokerFactory",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "XHR",
-                  "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "XHR",
+                    "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ServiceMessageBrokerFactory",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ServiceMessageBrokerFactory",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -2002,58 +2627,72 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "MessageBus",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "MessageBus",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "Serializer",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "Serializer",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ClientMessageBrokerFactory",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ClientMessageBrokerFactory",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -2061,78 +2700,97 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "MessageBus",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "MessageBus",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "Serializer",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "Serializer",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "Serializer",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "RenderStore",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+            "identifier": {
+              "class": "Type",
+              "name": "Serializer",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "RenderStore",
+                      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -2140,58 +2798,72 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "RenderStore",
-                  "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "RenderStore",
+                    "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ON_WEB_WORKER",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/api.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ON_WEB_WORKER",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/api.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
           "useValue": false,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "RenderStore",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": []
+            "identifier": {
+              "class": "Type",
+              "name": "RenderStore",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -2199,105 +2871,128 @@
             "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "DomSharedStylesHost",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "DOCUMENT",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
             "class": "Type",
             "name": "DomSharedStylesHost",
             "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "DOCUMENT",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "DOCUMENT",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "DomSharedStylesHost",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "DOCUMENT",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "Testability",
-            "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "NgZone",
-                  "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+            "identifier": {
+              "class": "Type",
+              "name": "Testability",
+              "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "NgZone",
+                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -2305,43 +3000,52 @@
             "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "NgZone",
-                  "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "NgZone",
+                    "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "BrowserDetails",
-            "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": []
+            "identifier": {
+              "class": "Type",
+              "name": "BrowserDetails",
+              "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -2349,43 +3053,52 @@
             "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "AnimationBuilder",
-            "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "BrowserDetails",
-                  "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+            "identifier": {
+              "class": "Type",
+              "name": "AnimationBuilder",
+              "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "BrowserDetails",
+                      "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -2393,78 +3106,97 @@
             "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "BrowserDetails",
-                  "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "BrowserDetails",
+                    "moduleUrl": "asset:angular2/lib/src/animate/browser_details.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "EventManager",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "EVENT_MANAGER_PLUGINS",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+            "identifier": {
+              "class": "Type",
+              "name": "EventManager",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "EVENT_MANAGER_PLUGINS",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "NgZone",
-                  "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "NgZone",
+                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -2472,48 +3204,59 @@
             "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "EVENT_MANAGER_PLUGINS",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "EVENT_MANAGER_PLUGINS",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "NgZone",
-                  "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "NgZone",
+                    "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         }
       ]
     },
@@ -2522,7 +3265,6 @@
       "name": "initializeGenericWorkerRenderer",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "initWebWorkerRenderPlatform": {
@@ -2530,7 +3272,6 @@
       "name": "initWebWorkerRenderPlatform",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_exceptionHandler": {
@@ -2538,7 +3279,6 @@
       "name": "_exceptionHandler",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_document": {
@@ -2546,7 +3286,6 @@
       "name": "_document",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "initIsolate": {
@@ -2554,7 +3293,6 @@
       "name": "initIsolate",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "spawnIsolate": {
@@ -2562,7 +3300,6 @@
       "name": "spawnIsolate",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "UIMessageBusSource": {
@@ -2570,7 +3307,6 @@
       "name": "UIMessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WebWorkerInstance": {
@@ -2578,7 +3314,6 @@
       "name": "WebWorkerInstance",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClientMessageBrokerFactory": {
@@ -2586,7 +3321,6 @@
       "name": "ClientMessageBrokerFactory",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClientMessageBrokerFactory_": {
@@ -2595,42 +3329,51 @@
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "MessageBus",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "MessageBus",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "Serializer",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Serializer",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -2639,7 +3382,6 @@
       "name": "ClientMessageBroker",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClientMessageBroker_": {
@@ -2647,7 +3389,6 @@
       "name": "ClientMessageBroker_",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageData": {
@@ -2655,7 +3396,6 @@
       "name": "MessageData",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "FnArg": {
@@ -2663,7 +3403,6 @@
       "name": "FnArg",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "UiArguments": {
@@ -2671,7 +3410,6 @@
       "name": "UiArguments",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "IS_DART": {
@@ -2679,7 +3417,6 @@
       "name": "IS_DART",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_NAN_KEY": {
@@ -2687,7 +3424,6 @@
       "name": "_NAN_KEY",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_IS_DART_VM": {
@@ -2695,7 +3431,6 @@
       "name": "_IS_DART_VM",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getTypeNameForDebugging": {
@@ -2703,7 +3438,6 @@
       "name": "getTypeNameForDebugging",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Math": {
@@ -2711,7 +3445,6 @@
       "name": "Math",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CONST": {
@@ -2719,7 +3452,6 @@
       "name": "CONST",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "scheduleMicroTask": {
@@ -2727,7 +3459,6 @@
       "name": "scheduleMicroTask",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isPresent": {
@@ -2735,7 +3466,6 @@
       "name": "isPresent",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isBlank": {
@@ -2743,7 +3473,6 @@
       "name": "isBlank",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isString": {
@@ -2751,7 +3480,6 @@
       "name": "isString",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isFunction": {
@@ -2759,7 +3487,6 @@
       "name": "isFunction",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isType": {
@@ -2767,7 +3494,6 @@
       "name": "isType",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isStringMap": {
@@ -2775,7 +3501,6 @@
       "name": "isStringMap",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isArray": {
@@ -2783,7 +3508,6 @@
       "name": "isArray",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isPromise": {
@@ -2791,7 +3515,6 @@
       "name": "isPromise",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isNumber": {
@@ -2799,7 +3522,6 @@
       "name": "isNumber",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isBoolean": {
@@ -2807,7 +3529,6 @@
       "name": "isBoolean",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isDate": {
@@ -2815,7 +3536,6 @@
       "name": "isDate",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "stringify": {
@@ -2823,7 +3543,6 @@
       "name": "stringify",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "serializeEnum": {
@@ -2831,7 +3550,6 @@
       "name": "serializeEnum",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "deserializeEnum": {
@@ -2839,7 +3557,6 @@
       "name": "deserializeEnum",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "resolveEnumToken": {
@@ -2847,7 +3564,6 @@
       "name": "resolveEnumToken",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "StringWrapper": {
@@ -2855,7 +3571,6 @@
       "name": "StringWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "StringJoiner": {
@@ -2863,7 +3578,6 @@
       "name": "StringJoiner",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NumberWrapper": {
@@ -2871,7 +3585,6 @@
       "name": "NumberWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RegExpWrapper": {
@@ -2879,7 +3592,6 @@
       "name": "RegExpWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RegExpMatcherWrapper": {
@@ -2887,7 +3599,6 @@
       "name": "RegExpMatcherWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_JSLikeMatch": {
@@ -2895,7 +3606,6 @@
       "name": "_JSLikeMatch",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "FunctionWrapper": {
@@ -2903,7 +3613,6 @@
       "name": "FunctionWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "looseIdentical": {
@@ -2911,7 +3620,6 @@
       "name": "looseIdentical",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_looseIdentical": {
@@ -2919,7 +3627,6 @@
       "name": "_looseIdentical",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getMapKey": {
@@ -2927,7 +3634,6 @@
       "name": "getMapKey",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "normalizeBlank": {
@@ -2935,7 +3641,6 @@
       "name": "normalizeBlank",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "normalizeBool": {
@@ -2943,7 +3648,6 @@
       "name": "normalizeBool",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isJsObject": {
@@ -2951,7 +3655,13 @@
       "name": "isJsObject",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "warn": {
+      "class": "Identifier",
+      "name": "warn",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
       "value": null
     },
     "lockMode": {
@@ -2959,7 +3669,6 @@
       "name": "lockMode",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "enableDevMode": {
@@ -2967,7 +3676,6 @@
       "name": "enableDevMode",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "enableProdMode": {
@@ -2975,7 +3683,6 @@
       "name": "enableProdMode",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "assertionsEnabled": {
@@ -2983,7 +3690,6 @@
       "name": "assertionsEnabled",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Json": {
@@ -2991,7 +3697,6 @@
       "name": "Json",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DateWrapper": {
@@ -2999,7 +3704,6 @@
       "name": "DateWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isPrimitive": {
@@ -3007,7 +3711,6 @@
       "name": "isPrimitive",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "evalExpression": {
@@ -3015,7 +3718,6 @@
       "name": "evalExpression",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "hasConstructor": {
@@ -3023,7 +3725,6 @@
       "name": "hasConstructor",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "bitWiseOr": {
@@ -3031,7 +3732,6 @@
       "name": "bitWiseOr",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "bitWiseAnd": {
@@ -3039,7 +3739,6 @@
       "name": "bitWiseAnd",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "escape": {
@@ -3047,7 +3746,6 @@
       "name": "escape",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ServiceMessageBrokerFactory": {
@@ -3055,7 +3753,6 @@
       "name": "ServiceMessageBrokerFactory",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ServiceMessageBrokerFactory_": {
@@ -3064,42 +3761,51 @@
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "MessageBus",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "MessageBus",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "Serializer",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Serializer",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -3108,7 +3814,6 @@
       "name": "ServiceMessageBroker",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ServiceMessageBroker_": {
@@ -3116,7 +3821,6 @@
       "name": "ServiceMessageBroker_",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ReceivedMessage": {
@@ -3124,7 +3828,6 @@
       "name": "ReceivedMessage",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PRIMITIVE": {
@@ -3132,7 +3835,6 @@
       "name": "PRIMITIVE",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Serializer": {
@@ -3141,25 +3843,29 @@
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "RenderStore",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RenderStore",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -3168,7 +3874,6 @@
       "name": "RenderStoreObject",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageBus": {
@@ -3176,7 +3881,6 @@
       "name": "MessageBus",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageBusSource": {
@@ -3184,7 +3888,6 @@
       "name": "MessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageBusSink": {
@@ -3192,7 +3895,6 @@
       "name": "MessageBusSink",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TimerWrapper": {
@@ -3200,7 +3902,6 @@
       "name": "TimerWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ObservableWrapper": {
@@ -3208,7 +3909,6 @@
       "name": "ObservableWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "EventEmitter": {
@@ -3216,7 +3916,6 @@
       "name": "EventEmitter",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Subject": {
@@ -3224,7 +3923,6 @@
       "name": "Subject",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PromiseWrapper": {
@@ -3232,7 +3930,6 @@
       "name": "PromiseWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PromiseCompleter": {
@@ -3240,7 +3937,6 @@
       "name": "PromiseCompleter",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "initRouterListeners": {
@@ -3248,7 +3944,6 @@
       "name": "initRouterListeners",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/router_providers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

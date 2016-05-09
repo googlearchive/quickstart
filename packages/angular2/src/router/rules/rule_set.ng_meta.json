@@ -113,57 +113,57 @@
       }
     ],
     "6": "rule_set.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "rules.template.dart",
+        "1": "rules.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "../route_config/route_config_impl.template.dart",
+        "1": "../route_config/route_config_impl.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "route_handlers/async_route_handler.template.dart",
+        "1": "route_handlers/async_route_handler.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "route_handlers/sync_route_handler.template.dart",
+        "1": "route_handlers/sync_route_handler.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "route_paths/route_path.template.dart",
+        "1": "route_paths/route_path.ngfactory.dart",
         "4": "i8"
       },
       {
-        "1": "route_paths/param_route_path.template.dart",
+        "1": "route_paths/param_route_path.ngfactory.dart",
         "4": "i9"
       },
       {
-        "1": "route_paths/regex_route_path.template.dart",
+        "1": "route_paths/regex_route_path.ngfactory.dart",
         "4": "i10"
       },
       {
-        "1": "../url_parser.template.dart",
+        "1": "../url_parser.ngfactory.dart",
         "4": "i11"
       },
       {
-        "1": "../instruction.template.dart",
+        "1": "../instruction.ngfactory.dart",
         "4": "i12"
       }
     ]
@@ -174,7 +174,6 @@
       "name": "RuleSet",
       "moduleUrl": "asset:angular2/lib/src/router/rules/rule_set.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

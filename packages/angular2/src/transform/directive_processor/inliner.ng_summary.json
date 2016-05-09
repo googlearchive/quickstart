@@ -55,7 +55,6 @@
       "name": "inlineParts",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/inliner.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_getAllDeclarations": {
@@ -63,7 +62,6 @@
       "name": "_getAllDeclarations",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/inliner.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_NgDepsDirectivesVisitor": {
@@ -71,7 +69,6 @@
       "name": "_NgDepsDirectivesVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/inliner.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

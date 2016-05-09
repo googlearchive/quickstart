@@ -34,7 +34,6 @@
       "name": "MultiClientServerMessageBus",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/multi_client_server_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WebSocketWrapper": {
@@ -42,7 +41,6 @@
       "name": "WebSocketWrapper",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/multi_client_server_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MultiClientServerMessageBusSink": {
@@ -50,7 +48,6 @@
       "name": "MultiClientServerMessageBusSink",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/multi_client_server_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MultiClientServerMessageBusSource": {
@@ -58,7 +55,6 @@
       "name": "MultiClientServerMessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/multi_client_server_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

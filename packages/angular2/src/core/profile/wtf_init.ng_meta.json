@@ -14,9 +14,9 @@
       }
     ],
     "6": "wtf_init.dart",
-    "10": [
+    "7": [
       {
-        "1": "wtf_impl.template.dart",
+        "1": "wtf_impl.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -27,7 +27,6 @@
       "name": "wtfInit",
       "moduleUrl": "asset:angular2/lib/src/core/profile/wtf_init.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

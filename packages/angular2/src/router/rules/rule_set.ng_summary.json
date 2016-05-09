@@ -120,7 +120,6 @@
       "name": "RuleSet",
       "moduleUrl": "asset:angular2/lib/src/router/rules/rule_set.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

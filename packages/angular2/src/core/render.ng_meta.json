@@ -12,9 +12,9 @@
       }
     ],
     "6": "render.dart",
-    "10": [
+    "7": [
       {
-        "1": "render/api.template.dart",
+        "1": "render/api.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -25,7 +25,6 @@
       "name": "RenderComponentType",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RenderDebugInfo": {
@@ -33,15 +32,6 @@
       "name": "RenderDebugInfo",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ParentRenderer": {
-      "class": "Identifier",
-      "name": "ParentRenderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Renderer": {
@@ -49,7 +39,6 @@
       "name": "Renderer",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RootRenderer": {
@@ -57,7 +46,6 @@
       "name": "RootRenderer",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

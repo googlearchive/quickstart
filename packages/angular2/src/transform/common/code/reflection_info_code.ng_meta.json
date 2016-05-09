@@ -23,10 +23,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/property_utils.dart",
-        "5": false
-      },
-      {
         "1": "package:barback/barback.dart",
         "2": [
           "AssetId"
@@ -43,34 +39,30 @@
       }
     ],
     "6": "reflection_info_code.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/transform/common/annotation_matcher.template.dart",
+        "1": "package:angular2/src/transform/common/annotation_matcher.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.template.dart",
+        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/common/property_utils.template.dart",
+        "1": "annotation_code.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "annotation_code.template.dart",
+        "1": "parameter_code.ngfactory.dart",
         "4": "i5"
-      },
-      {
-        "1": "parameter_code.template.dart",
-        "4": "i6"
       }
     ]
   },
@@ -80,15 +72,6 @@
       "name": "ReflectionInfoVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/reflection_info_code.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "_PropertyMetadataVisitor": {
-      "class": "Identifier",
-      "name": "_PropertyMetadataVisitor",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/code/reflection_info_code.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ReflectionWriterMixin": {
@@ -96,7 +79,6 @@
       "name": "ReflectionWriterMixin",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/reflection_info_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

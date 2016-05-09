@@ -31,17 +31,17 @@
       }
     ],
     "6": "async_route_handler.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "route_handler.template.dart",
+        "1": "route_handler.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "../../instruction.template.dart",
+        "1": "../../instruction.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -52,7 +52,6 @@
       "name": "AsyncRouteHandler",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_handlers/async_route_handler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -41,7 +41,6 @@
       "name": "NgZone",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

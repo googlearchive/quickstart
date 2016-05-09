@@ -19,7 +19,9 @@
           "print",
           "isPresent",
           "DateWrapper",
-          "stringify"
+          "stringify",
+          "Type",
+          "StringWrapper"
         ],
         "5": false
       },
@@ -54,14 +56,6 @@
           "Injectable"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "StringWrapper"
-        ],
-        "5": false
       }
     ],
     "4": [
@@ -78,11 +72,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -105,7 +95,6 @@
       "name": "ClientMessageBrokerFactory",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClientMessageBrokerFactory_": {
@@ -114,42 +103,51 @@
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "MessageBus",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "MessageBus",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "Serializer",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Serializer",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -158,7 +156,6 @@
       "name": "ClientMessageBroker",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClientMessageBroker_": {
@@ -166,7 +163,6 @@
       "name": "ClientMessageBroker_",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageData": {
@@ -174,7 +170,6 @@
       "name": "MessageData",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "FnArg": {
@@ -182,7 +177,6 @@
       "name": "FnArg",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "UiArguments": {
@@ -190,7 +184,6 @@
       "name": "UiArguments",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

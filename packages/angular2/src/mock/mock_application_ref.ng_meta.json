@@ -16,7 +16,8 @@
       {
         "1": "package:angular2/src/core/di.dart",
         "2": [
-          "Injectable"
+          "Injectable",
+          "Injector"
         ],
         "5": false
       },
@@ -28,17 +29,10 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/dynamic_component_loader.dart",
+        "1": "package:angular2/src/core/linker/component_factory.dart",
         "2": [
-          "ComponentRef"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di.dart",
-        "2": [
-          "Provider",
-          "Injector"
+          "ComponentRef",
+          "ComponentFactory"
         ],
         "5": false
       },
@@ -56,35 +50,31 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
     ],
     "6": "mock_application_ref.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/core/application_ref.template.dart",
+        "1": "package:angular2/src/core/application_ref.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/linker/dynamic_component_loader.template.dart",
+        "1": "package:angular2/src/core/linker/component_factory.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
+        "1": "package:angular2/src/core/zone/ng_zone.ngfactory.dart",
         "4": "i4"
       }
     ]
@@ -96,7 +86,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/mock_application_ref.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     }

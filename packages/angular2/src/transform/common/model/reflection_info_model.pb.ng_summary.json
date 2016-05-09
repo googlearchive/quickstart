@@ -18,20 +18,11 @@
     "6": "reflection_info_model.pb.dart"
   },
   "type": {
-    "PropertyMetadataModel$json": {
-      "class": "Identifier",
-      "name": "PropertyMetadataModel$json",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
     "PrefixedType$json": {
       "class": "Identifier",
       "name": "PrefixedType$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ReflectionInfoModel$json": {
@@ -39,23 +30,6 @@
       "name": "ReflectionInfoModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "PropertyMetadataModel": {
-      "class": "Identifier",
-      "name": "PropertyMetadataModel",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "_ReadonlyPropertyMetadataModel": {
-      "class": "Identifier",
-      "name": "_ReadonlyPropertyMetadataModel",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PrefixedType": {
@@ -63,7 +37,6 @@
       "name": "PrefixedType",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ReadonlyPrefixedType": {
@@ -71,7 +44,6 @@
       "name": "_ReadonlyPrefixedType",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ReflectionInfoModel": {
@@ -79,7 +51,6 @@
       "name": "ReflectionInfoModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ReadonlyReflectionInfoModel": {
@@ -87,7 +58,6 @@
       "name": "_ReadonlyReflectionInfoModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

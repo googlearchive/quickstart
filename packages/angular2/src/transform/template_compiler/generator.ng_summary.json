@@ -11,19 +11,15 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/source_module.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/interfaces.dart",
+        "1": "package:angular2/src/compiler/config.dart",
         "5": false
       },
       {
         "1": "package:angular2/src/facade/lang.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
         "5": false
       },
       {
@@ -60,12 +56,10 @@
         "5": false
       },
       {
-        "1": "reflection/processor.dart",
-        "4": "reg",
-        "5": false
-      },
-      {
-        "1": "reflection/reflection_capabilities.dart",
+        "1": "package:angular2/src/transform/common/options.dart",
+        "2": [
+          "CODEGEN_DEBUG_MODE"
+        ],
         "5": false
       },
       {
@@ -81,7 +75,6 @@
       "name": "processTemplates",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "templatesAssetId": {
@@ -89,7 +82,6 @@
       "name": "templatesAssetId",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Outputs": {
@@ -97,7 +89,6 @@
       "name": "Outputs",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

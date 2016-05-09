@@ -87,38 +87,6 @@
     "5": [
       {
         "1": "NgControlName",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"[ngControl]\""
-              },
-              {
-                "1": "bindings",
-                "2": "const [controlNameBinding]"
-              },
-              {
-                "1": "inputs",
-                "2": "const [\"name: ngControl\", \"model: ngModel\"]"
-              },
-              {
-                "1": "outputs",
-                "2": "const [\"update: ngModelChange\"]"
-              },
-              {
-                "1": "exportAs",
-                "2": "\"ngForm\""
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "ControlContainer",
@@ -173,34 +141,40 @@
       "name": "controlNameBinding",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control_name.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": {
         "class": "Provider",
         "token": {
-          "class": "Identifier",
-          "name": "NgControl",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "NgControl",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useClass": null,
         "useExisting": {
-          "class": "Identifier",
-          "name": "NgControlName",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "NgControlName",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useValue": null,
-        "useFactory": null
+        "useFactory": null,
+        "multi": false,
+        "deps": null
       }
     },
     "NgControlName": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "[ngControl]",
       "exportAs": "ngForm",
       "type": {
@@ -209,76 +183,95 @@
         "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control_name.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "ControlContainer",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ControlContainer",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": true,
             "isSkipSelf": true,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "NG_VALIDATORS",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "NG_VALIDATORS",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": true,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": true
+            "isOptional": true,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "NG_ASYNC_VALIDATORS",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "NG_ASYNC_VALIDATORS",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": true,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": true
+            "isOptional": true,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "NG_VALUE_ACCESSOR",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "NG_VALUE_ACCESSOR",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": true,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": true
+            "isOptional": true,
+            "isValue": false
           }
         ]
       },
@@ -304,7 +297,6 @@
           "name": "controlNameBinding",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ],

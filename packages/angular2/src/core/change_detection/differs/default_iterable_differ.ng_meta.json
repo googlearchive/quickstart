@@ -48,25 +48,25 @@
       }
     ],
     "6": "default_iterable_differ.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "../change_detector_ref.template.dart",
+        "1": "../change_detector_ref.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "../differs/iterable_differs.template.dart",
+        "1": "../differs/iterable_differs.ngfactory.dart",
         "4": "i4"
       }
     ]
@@ -77,7 +77,6 @@
       "name": "DefaultIterableDifferFactory",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DefaultIterableDiffer": {
@@ -85,7 +84,6 @@
       "name": "DefaultIterableDiffer",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CollectionChangeRecord": {
@@ -93,7 +91,6 @@
       "name": "CollectionChangeRecord",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_DuplicateItemRecordList": {
@@ -101,7 +98,6 @@
       "name": "_DuplicateItemRecordList",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_DuplicateMap": {
@@ -109,7 +105,6 @@
       "name": "_DuplicateMap",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

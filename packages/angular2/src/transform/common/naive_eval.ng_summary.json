@@ -15,7 +15,6 @@
       "name": "naiveEval",
       "moduleUrl": "asset:angular2/lib/src/transform/common/naive_eval.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

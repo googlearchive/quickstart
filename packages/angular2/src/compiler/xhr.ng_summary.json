@@ -6,7 +6,6 @@
       "name": "XHR",
       "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

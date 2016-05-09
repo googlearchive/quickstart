@@ -9,19 +9,17 @@
       {
         "1": "package:angular2/src/core/di.dart",
         "2": [
-          "Key",
           "Injector",
-          "ResolvedProvider",
-          "Provider",
-          "provide",
-          "Injectable"
+          "ResolvedReflectiveProvider",
+          "Injectable",
+          "ReflectiveInjector"
         ],
         "5": false
       },
       {
-        "1": "compiler.dart",
+        "1": "component_resolver.dart",
         "2": [
-          "Compiler"
+          "ComponentResolver"
         ],
         "5": false
       },
@@ -36,24 +34,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/view_manager.dart",
+        "1": "component_factory.dart",
         "2": [
-          "AppViewManager"
+          "ComponentRef"
         ],
         "5": false
       },
       {
-        "1": "element_ref.dart",
+        "1": "view_container_ref.dart",
         "2": [
-          "ElementRef",
-          "ElementRef_"
-        ],
-        "5": false
-      },
-      {
-        "1": "view_ref.dart",
-        "2": [
-          "HostViewRef"
+          "ViewContainerRef"
         ],
         "5": false
       }
@@ -64,21 +54,13 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
           {
-            "1": "Compiler",
+            "1": "ComponentResolver",
             "4": "_compiler"
-          },
-          {
-            "1": "AppViewManager",
-            "4": "_viewManager"
           }
         ]
       }
@@ -86,28 +68,11 @@
     "6": "dynamic_component_loader.dart"
   },
   "type": {
-    "ComponentRef": {
-      "class": "Identifier",
-      "name": "ComponentRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ComponentRef_": {
-      "class": "Identifier",
-      "name": "ComponentRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
     "DynamicComponentLoader": {
       "class": "Identifier",
       "name": "DynamicComponentLoader",
       "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DynamicComponentLoader_": {
@@ -116,42 +81,29 @@
       "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "Compiler",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ComponentResolver",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
-        },
-        {
-          "token": {
-            "class": "Identifier",
-            "name": "AppViewManager",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
-          },
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     }

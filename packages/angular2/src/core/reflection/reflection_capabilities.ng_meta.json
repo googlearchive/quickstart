@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/interfaces.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "5": false
       },
       {
@@ -24,21 +24,21 @@
       }
     ],
     "6": "reflection_capabilities.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/core/linker/interfaces.template.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "platform_reflection_capabilities.template.dart",
+        "1": "platform_reflection_capabilities.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "types.template.dart",
+        "1": "types.ngfactory.dart",
         "4": "i3"
       }
     ]
@@ -49,7 +49,6 @@
       "name": "ReflectionCapabilities",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_assertDeclaresLifecycleHooks": {
@@ -57,7 +56,6 @@
       "name": "_assertDeclaresLifecycleHooks",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_checkDeclares": {
@@ -65,7 +63,6 @@
       "name": "_checkDeclares",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_checkImplements": {
@@ -73,7 +70,6 @@
       "name": "_checkImplements",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MissingInterfaceError": {
@@ -81,7 +77,6 @@
       "name": "MissingInterfaceError",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

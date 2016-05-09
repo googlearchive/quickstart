@@ -43,7 +43,6 @@
       "name": "rewriteLibrary",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_rewriteLibrary": {
@@ -51,7 +50,6 @@
       "name": "_rewriteLibrary",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_FindDeferredLibraries": {
@@ -59,7 +57,6 @@
       "name": "_FindDeferredLibraries",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_FindLoadLibraryCalls": {
@@ -67,7 +64,6 @@
       "name": "_FindLoadLibraryCalls",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

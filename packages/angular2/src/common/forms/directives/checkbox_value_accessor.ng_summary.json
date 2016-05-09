@@ -25,30 +25,6 @@
     "5": [
       {
         "1": "CheckboxControlValueAccessor",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"input[type=checkbox][ngControl],input[type=checkbox][ngFormControl],input[type=checkbox][ngModel]\""
-              },
-              {
-                "1": "host",
-                "2": "const {\"(change)\" : \"onChange(\\$event.target.checked)\", \"(blur)\" : \"onTouched()\"}"
-              },
-              {
-                "1": "providers",
-                "2": "const [CHECKBOX_VALUE_ACCESSOR]"
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "Renderer",
@@ -72,34 +48,40 @@
       "name": "CHECKBOX_VALUE_ACCESSOR",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/checkbox_value_accessor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": {
         "class": "Provider",
         "token": {
-          "class": "Identifier",
-          "name": "NG_VALUE_ACCESSOR",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "NG_VALUE_ACCESSOR",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useClass": null,
         "useExisting": {
-          "class": "Identifier",
-          "name": "CheckboxControlValueAccessor",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "CheckboxControlValueAccessor",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useValue": null,
-        "useFactory": null
+        "useFactory": null,
+        "multi": true,
+        "deps": null
       }
     },
     "CheckboxControlValueAccessor": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "input[type=checkbox][ngControl],input[type=checkbox][ngFormControl],input[type=checkbox][ngModel]",
       "exportAs": null,
       "type": {
@@ -108,42 +90,51 @@
         "moduleUrl": "asset:angular2/lib/src/common/forms/directives/checkbox_value_accessor.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "Renderer",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Renderer",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "ElementRef",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ElementRef",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },
@@ -164,7 +155,6 @@
           "name": "CHECKBOX_VALUE_ACCESSOR",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ],

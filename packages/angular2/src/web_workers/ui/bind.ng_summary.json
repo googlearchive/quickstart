@@ -6,7 +6,6 @@
       "name": "bind",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/bind.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

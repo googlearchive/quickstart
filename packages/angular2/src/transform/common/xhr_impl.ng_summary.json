@@ -34,7 +34,6 @@
       "name": "XhrImpl",
       "moduleUrl": "asset:angular2/lib/src/transform/common/xhr_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

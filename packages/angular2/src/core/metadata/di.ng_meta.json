@@ -28,17 +28,17 @@
       }
     ],
     "6": "di.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di/metadata.template.dart",
+        "1": "package:angular2/src/core/di/metadata.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -49,7 +49,6 @@
       "name": "AttributeMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "QueryMetadata": {
@@ -57,7 +56,6 @@
       "name": "QueryMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ContentChildrenMetadata": {
@@ -65,7 +63,6 @@
       "name": "ContentChildrenMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ContentChildMetadata": {
@@ -73,7 +70,6 @@
       "name": "ContentChildMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewQueryMetadata": {
@@ -81,7 +77,6 @@
       "name": "ViewQueryMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewChildrenMetadata": {
@@ -89,7 +84,6 @@
       "name": "ViewChildrenMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewChildMetadata": {
@@ -97,7 +91,6 @@
       "name": "ViewChildMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

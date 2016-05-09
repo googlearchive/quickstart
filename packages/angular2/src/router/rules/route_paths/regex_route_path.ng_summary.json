@@ -37,7 +37,6 @@
       "name": "RegexSerializer",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/regex_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RegexRoutePath": {
@@ -45,7 +44,6 @@
       "name": "RegexRoutePath",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/regex_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

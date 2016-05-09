@@ -3,53 +3,23 @@
     "1": "angular2.src.compiler.style_compiler",
     "3": [
       {
-        "1": "dart:async",
-        "5": false
-      },
-      {
-        "1": "directive_metadata.dart",
+        "1": "compile_metadata.dart",
         "2": [
-          "CompileTypeMetadata",
-          "CompileTemplateMetadata"
+          "CompileTemplateMetadata",
+          "CompileIdentifierMetadata",
+          "CompileDirectiveMetadata"
         ],
         "5": false
       },
       {
-        "1": "source_module.dart",
-        "2": [
-          "SourceModule",
-          "SourceExpression",
-          "moduleRef"
-        ],
+        "1": "output/output_ast.dart",
+        "4": "o",
         "5": false
       },
       {
         "1": "package:angular2/src/core/metadata/view.dart",
         "2": [
           "ViewEncapsulation"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/xhr.dart",
-        "2": [
-          "XHR"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "IS_DART",
-          "StringWrapper",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "PromiseWrapper"
         ],
         "5": false
       },
@@ -75,19 +45,16 @@
         "5": false
       },
       {
-        "1": "util.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "escapeSingleQuoteString",
-          "codeGenExportVariable",
-          "codeGenToString",
-          "MODULE_SUFFIX"
+          "Injectable"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "Injectable"
+          "isPresent"
         ],
         "5": false
       }
@@ -98,18 +65,10 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
-          {
-            "1": "XHR",
-            "4": "_xhr"
-          },
           {
             "1": "UrlResolver",
             "4": "_urlResolver"
@@ -125,7 +84,6 @@
       "name": "COMPONENT_VARIABLE",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HOST_ATTR": {
@@ -133,7 +91,6 @@
       "name": "HOST_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CONTENT_ATTR": {
@@ -141,7 +98,20 @@
       "name": "CONTENT_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "StylesCompileDependency": {
+      "class": "Identifier",
+      "name": "StylesCompileDependency",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "StylesCompileResult": {
+      "class": "Identifier",
+      "name": "StylesCompileResult",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
+      "prefix": null,
       "value": null
     },
     "StyleCompiler": {
@@ -150,44 +120,38 @@
       "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "XHR",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "UrlResolver",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
-        },
-        {
-          "token": {
-            "class": "Identifier",
-            "name": "UrlResolver",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
-          },
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
+    },
+    "getStylesVarName": {
+      "class": "Identifier",
+      "name": "getStylesVarName",
+      "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
+      "prefix": null,
+      "value": null
     }
   },
   "alias": {}

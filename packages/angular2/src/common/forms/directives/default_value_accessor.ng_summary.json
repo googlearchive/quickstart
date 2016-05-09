@@ -32,30 +32,6 @@
     "5": [
       {
         "1": "DefaultValueAccessor",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"input:not([type=checkbox])[ngControl],textarea[ngControl],input:not([type=checkbox])[ngFormControl],textarea[ngFormControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]\""
-              },
-              {
-                "1": "host",
-                "2": "const {\"(input)\" : \"onChange(\\$event.target.value)\", \"(blur)\" : \"onTouched()\"}"
-              },
-              {
-                "1": "bindings",
-                "2": "const [DEFAULT_VALUE_ACCESSOR]"
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "Renderer",
@@ -79,34 +55,40 @@
       "name": "DEFAULT_VALUE_ACCESSOR",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/default_value_accessor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": {
         "class": "Provider",
         "token": {
-          "class": "Identifier",
-          "name": "NG_VALUE_ACCESSOR",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "NG_VALUE_ACCESSOR",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useClass": null,
         "useExisting": {
-          "class": "Identifier",
-          "name": "DefaultValueAccessor",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "DefaultValueAccessor",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useValue": null,
-        "useFactory": null
+        "useFactory": null,
+        "multi": true,
+        "deps": null
       }
     },
     "DefaultValueAccessor": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "input:not([type=checkbox])[ngControl],textarea[ngControl],input:not([type=checkbox])[ngFormControl],textarea[ngFormControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]",
       "exportAs": null,
       "type": {
@@ -115,42 +97,51 @@
         "moduleUrl": "asset:angular2/lib/src/common/forms/directives/default_value_accessor.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "Renderer",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Renderer",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "ElementRef",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ElementRef",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },
@@ -171,7 +162,6 @@
           "name": "DEFAULT_VALUE_ACCESSOR",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ],

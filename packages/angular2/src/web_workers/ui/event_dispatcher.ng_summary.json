@@ -53,7 +53,6 @@
       "name": "EventDispatcher",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_dispatcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

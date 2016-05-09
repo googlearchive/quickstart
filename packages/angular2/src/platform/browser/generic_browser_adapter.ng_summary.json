@@ -42,7 +42,6 @@
       "name": "GenericBrowserDomAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/generic_browser_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

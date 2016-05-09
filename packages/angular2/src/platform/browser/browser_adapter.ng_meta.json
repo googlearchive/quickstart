@@ -39,21 +39,21 @@
       }
     ],
     "6": "browser_adapter.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/platform/common_dom.template.dart",
+        "1": "package:angular2/platform/common_dom.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "generic_browser_adapter.template.dart",
+        "1": "generic_browser_adapter.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/browser.template.dart",
+        "1": "package:angular2/src/facade/browser.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i3"
       }
     ]
@@ -64,7 +64,6 @@
       "name": "_IdentitySanitizer",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "BrowserDomAdapter": {
@@ -72,7 +71,6 @@
       "name": "BrowserDomAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getBaseElementHref": {
@@ -80,7 +78,6 @@
       "name": "getBaseElementHref",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_relativePath": {
@@ -88,7 +85,6 @@
       "name": "_relativePath",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

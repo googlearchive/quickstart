@@ -23,7 +23,6 @@
       "name": "AssetReader",
       "moduleUrl": "asset:angular2/lib/src/transform/common/asset_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_TransformAssetReader": {
@@ -31,7 +30,6 @@
       "name": "_TransformAssetReader",
       "moduleUrl": "asset:angular2/lib/src/transform/common/asset_reader.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

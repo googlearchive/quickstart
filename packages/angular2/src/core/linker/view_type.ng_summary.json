@@ -6,7 +6,6 @@
       "name": "ViewType",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_type.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

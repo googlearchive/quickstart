@@ -13,9 +13,9 @@
       }
     ],
     "6": "constants.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -26,7 +26,6 @@
       "name": "ChangeDetectorState",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ChangeDetectionStrategy": {
@@ -34,7 +33,6 @@
       "name": "ChangeDetectionStrategy",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isDefaultChangeDetectionStrategy": {
@@ -42,7 +40,6 @@
       "name": "isDefaultChangeDetectionStrategy",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

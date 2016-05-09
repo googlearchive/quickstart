@@ -1,0 +1,142 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.output.output_interpreter",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "isString",
+          "evalExpression",
+          "IS_DART",
+          "FunctionWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "ObservableWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "2": [
+          "reflector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "unimplemented"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "MapWrapper",
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "dart_emitter.dart",
+        "2": [
+          "debugOutputAstAsDart"
+        ],
+        "5": false
+      },
+      {
+        "1": "ts_emitter.dart",
+        "2": [
+          "debugOutputAstAsTypeScript"
+        ],
+        "5": false
+      }
+    ],
+    "6": "output_interpreter.dart"
+  },
+  "type": {
+    "interpretStatements": {
+      "class": "Identifier",
+      "name": "interpretStatements",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "InstanceFactory": {
+      "class": "Identifier",
+      "name": "InstanceFactory",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DynamicInstance": {
+      "class": "Identifier",
+      "name": "DynamicInstance",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "isDynamicInstance": {
+      "class": "Identifier",
+      "name": "isDynamicInstance",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_executeFunctionStatements": {
+      "class": "Identifier",
+      "name": "_executeFunctionStatements",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ExecutionContext": {
+      "class": "Identifier",
+      "name": "_ExecutionContext",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ReturnValue": {
+      "class": "Identifier",
+      "name": "ReturnValue",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_DynamicClass": {
+      "class": "Identifier",
+      "name": "_DynamicClass",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "StatementInterpreter": {
+      "class": "Identifier",
+      "name": "StatementInterpreter",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_declareFn": {
+      "class": "Identifier",
+      "name": "_declareFn",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

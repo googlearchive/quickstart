@@ -34,7 +34,6 @@
       "name": "_u",
       "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "expect": {
@@ -42,7 +41,6 @@
       "name": "expect",
       "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "elementContainsStyle": {
@@ -50,7 +48,6 @@
       "name": "elementContainsStyle",
       "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "expectErrorMessage": {
@@ -58,7 +55,6 @@
       "name": "expectErrorMessage",
       "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "expectException": {
@@ -66,7 +62,6 @@
       "name": "expectException",
       "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Expect": {
@@ -74,7 +69,6 @@
       "name": "Expect",
       "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NotExpect": {
@@ -82,7 +76,6 @@
       "name": "NotExpect",
       "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "elementText": {
@@ -90,7 +83,6 @@
       "name": "elementText",
       "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

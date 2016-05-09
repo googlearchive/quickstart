@@ -16,17 +16,17 @@
       }
     ],
     "6": "route_lifecycle_reflector.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/router/lifecycle/lifecycle_annotations_impl.template.dart",
+        "1": "package:angular2/src/router/lifecycle/lifecycle_annotations_impl.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/router/interfaces.template.dart",
+        "1": "package:angular2/src/router/interfaces.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.template.dart",
+        "1": "package:angular2/src/core/reflection/reflection.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -37,7 +37,6 @@
       "name": "hasLifecycleHook",
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/route_lifecycle_reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getCanActivateHook": {
@@ -45,7 +44,6 @@
       "name": "getCanActivateHook",
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/route_lifecycle_reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

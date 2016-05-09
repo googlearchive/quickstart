@@ -40,7 +40,6 @@
       "name": "DebugDomRootRenderer",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_renderer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DebugDomRenderer": {
@@ -48,7 +47,6 @@
       "name": "DebugDomRenderer",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_renderer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

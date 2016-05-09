@@ -34,7 +34,6 @@
       "name": "_ON_CHANGE_INTERFACES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/interface_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ON_DESTROY_INTERFACES": {
@@ -42,7 +41,6 @@
       "name": "_ON_DESTROY_INTERFACES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/interface_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_DO_CHECK_INTERFACES": {
@@ -50,7 +48,6 @@
       "name": "_DO_CHECK_INTERFACES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/interface_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ON_INIT_INTERFACES": {
@@ -58,7 +55,6 @@
       "name": "_ON_INIT_INTERFACES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/interface_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ON_AFTER_CONTENT_INIT_INTERFACES": {
@@ -66,7 +62,6 @@
       "name": "_ON_AFTER_CONTENT_INIT_INTERFACES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/interface_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ON_AFTER_CONTENT_CHECKED_INTERFACES": {
@@ -74,7 +69,6 @@
       "name": "_ON_AFTER_CONTENT_CHECKED_INTERFACES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/interface_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ON_AFTER_VIEW_INIT_INTERFACES": {
@@ -82,7 +76,6 @@
       "name": "_ON_AFTER_VIEW_INIT_INTERFACES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/interface_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ON_AFTER_VIEW_CHECKED_INTERFACES": {
@@ -90,7 +83,6 @@
       "name": "_ON_AFTER_VIEW_CHECKED_INTERFACES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/interface_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "InterfaceMatcher": {
@@ -98,7 +90,6 @@
       "name": "InterfaceMatcher",
       "moduleUrl": "asset:angular2/lib/src/transform/common/interface_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -76,45 +76,45 @@
       }
     ],
     "6": "common_pipes.dart",
-    "10": [
+    "7": [
       {
-        "1": "async_pipe.template.dart",
+        "1": "async_pipe.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "uppercase_pipe.template.dart",
+        "1": "uppercase_pipe.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "lowercase_pipe.template.dart",
+        "1": "lowercase_pipe.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "json_pipe.template.dart",
+        "1": "json_pipe.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "slice_pipe.template.dart",
+        "1": "slice_pipe.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "date_pipe.template.dart",
+        "1": "date_pipe.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "number_pipe.template.dart",
+        "1": "number_pipe.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "replace_pipe.template.dart",
+        "1": "replace_pipe.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "i18n_plural_pipe.template.dart",
+        "1": "i18n_plural_pipe.ngfactory.dart",
         "4": "i8"
       },
       {
-        "1": "i18n_select_pipe.template.dart",
+        "1": "i18n_select_pipe.ngfactory.dart",
         "4": "i9"
       }
     ]
@@ -125,19 +125,21 @@
       "name": "COMMON_PIPES",
       "moduleUrl": "asset:angular2/lib/src/common/pipes/common_pipes.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "AsyncPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "AsyncPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -145,25 +147,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "UpperCasePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "UpperCasePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -171,25 +177,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "LowerCasePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/lowercase_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "LowerCasePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/lowercase_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -197,25 +207,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/lowercase_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "JsonPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/json_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "JsonPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/json_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -223,25 +237,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/json_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "SlicePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/slice_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "SlicePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/slice_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -249,25 +267,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/slice_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "DecimalPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "DecimalPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -275,25 +297,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "PercentPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "PercentPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -301,25 +327,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "CurrencyPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "CurrencyPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -327,25 +357,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "DatePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/date_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "DatePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/date_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -353,25 +387,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/date_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "ReplacePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "ReplacePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -379,25 +417,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "I18nPluralPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "I18nPluralPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -405,25 +447,29 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "I18nSelectPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "identifier": {
+              "class": "Type",
+              "name": "I18nSelectPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -431,13 +477,14 @@
             "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         }
       ]
     }

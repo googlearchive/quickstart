@@ -56,40 +56,12 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       },
       {
         "1": "RadioControlValueAccessor",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"input[type=radio][ngControl],input[type=radio][ngFormControl],input[type=radio][ngModel]\""
-              },
-              {
-                "1": "host",
-                "2": "const {\"(change)\" : \"onChange()\", \"(blur)\" : \"onTouched()\"}"
-              },
-              {
-                "1": "providers",
-                "2": "const [RADIO_VALUE_ACCESSOR]"
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "Renderer",
@@ -112,21 +84,6 @@
           "ControlValueAccessor",
           "OnDestroy",
           "OnInit"
-        ],
-        "7": [
-          {
-            "1": "name",
-            "2": [
-              {
-                "1": "Input",
-                "4": false,
-                "5": false,
-                "6": false,
-                "7": false,
-                "8": false
-              }
-            ]
-          }
         ]
       }
     ],
@@ -138,28 +95,35 @@
       "name": "RADIO_VALUE_ACCESSOR",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/radio_control_value_accessor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": {
         "class": "Provider",
         "token": {
-          "class": "Identifier",
-          "name": "NG_VALUE_ACCESSOR",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "NG_VALUE_ACCESSOR",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useClass": null,
         "useExisting": {
-          "class": "Identifier",
-          "name": "RadioControlValueAccessor",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "RadioControlValueAccessor",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useValue": null,
-        "useFactory": null
+        "useFactory": null,
+        "multi": true,
+        "deps": null
       }
     },
     "RadioControlRegistry": {
@@ -168,7 +132,6 @@
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/radio_control_value_accessor.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -177,13 +140,11 @@
       "name": "RadioButtonState",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/radio_control_value_accessor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RadioControlValueAccessor": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "input[type=radio][ngControl],input[type=radio][ngFormControl],input[type=radio][ngModel]",
       "exportAs": null,
       "type": {
@@ -192,76 +153,95 @@
         "moduleUrl": "asset:angular2/lib/src/common/forms/directives/radio_control_value_accessor.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "Renderer",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Renderer",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "ElementRef",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ElementRef",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "RadioControlRegistry",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "RadioControlRegistry",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "Injector",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Injector",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },
@@ -287,7 +267,6 @@
           "name": "RADIO_VALUE_ACCESSOR",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ],

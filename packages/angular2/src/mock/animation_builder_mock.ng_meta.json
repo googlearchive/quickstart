@@ -51,39 +51,35 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
     ],
     "6": "animation_builder_mock.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/animate/animation_builder.template.dart",
+        "1": "package:angular2/src/animate/animation_builder.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/animate/css_animation_builder.template.dart",
+        "1": "package:angular2/src/animate/css_animation_builder.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/animate/css_animation_options.template.dart",
+        "1": "package:angular2/src/animate/css_animation_options.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/animate/animation.template.dart",
+        "1": "package:angular2/src/animate/animation.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/animate/browser_details.template.dart",
+        "1": "package:angular2/src/animate/browser_details.ngfactory.dart",
         "4": "i5"
       }
     ]
@@ -95,7 +91,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/animation_builder_mock.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -104,7 +99,6 @@
       "name": "MockCssAnimationBuilder",
       "moduleUrl": "asset:angular2/lib/src/mock/animation_builder_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MockBrowserAbstraction": {
@@ -112,7 +106,6 @@
       "name": "MockBrowserAbstraction",
       "moduleUrl": "asset:angular2/lib/src/mock/animation_builder_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MockAnimation": {
@@ -120,7 +113,6 @@
       "name": "MockAnimation",
       "moduleUrl": "asset:angular2/lib/src/mock/animation_builder_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

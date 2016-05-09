@@ -10,6 +10,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/platform/common.dart",
+        "2": [
+          "Location"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isString"
@@ -24,13 +31,6 @@
         "5": false
       },
       {
-        "1": "../location/location.dart",
-        "2": [
-          "Location"
-        ],
-        "5": false
-      },
-      {
         "1": "../instruction.dart",
         "2": [
           "Instruction"
@@ -41,30 +41,6 @@
     "5": [
       {
         "1": "RouterLink",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"[routerLink]\""
-              },
-              {
-                "1": "inputs",
-                "2": "const [\"routeParams: routerLink\", \"target: target\"]"
-              },
-              {
-                "1": "host",
-                "2": "const {\"(click)\" : \"onClick()\", \"[attr.href]\" : \"visibleHref\", \"[class.router-link-active]\" : \"isRouteActive\"}"
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "Router",
@@ -83,7 +59,6 @@
     "RouterLink": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "[routerLink]",
       "exportAs": null,
       "type": {
@@ -92,42 +67,51 @@
         "moduleUrl": "asset:angular2/lib/src/router/directives/router_link.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "Router",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Router",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "Location",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Location",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },

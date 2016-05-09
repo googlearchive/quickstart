@@ -31,13 +31,13 @@
       }
     ],
     "6": "class_matcher_base.dart",
-    "10": [
+    "7": [
       {
-        "1": "logging.template.dart",
+        "1": "logging.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "url_resolver.template.dart",
+        "1": "url_resolver.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -48,7 +48,6 @@
       "name": "ClassMatcherBase",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_getMatchingImport": {
@@ -56,7 +55,6 @@
       "name": "_getMatchingImport",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isMatch": {
@@ -64,7 +62,6 @@
       "name": "isMatch",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClassDescriptor": {
@@ -72,7 +69,6 @@
       "name": "ClassDescriptor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

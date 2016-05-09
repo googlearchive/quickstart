@@ -29,7 +29,6 @@
       "name": "OnActivate",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "OnReuse": {
@@ -37,7 +36,6 @@
       "name": "OnReuse",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "OnDeactivate": {
@@ -45,7 +43,6 @@
       "name": "OnDeactivate",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CanReuse": {
@@ -53,7 +50,6 @@
       "name": "CanReuse",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CanDeactivate": {
@@ -61,7 +57,6 @@
       "name": "CanDeactivate",
       "moduleUrl": "asset:angular2/lib/src/router/interfaces.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

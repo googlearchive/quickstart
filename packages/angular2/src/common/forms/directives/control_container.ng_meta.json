@@ -18,13 +18,13 @@
       }
     ],
     "6": "control_container.dart",
-    "10": [
+    "7": [
       {
-        "1": "form_interface.template.dart",
+        "1": "form_interface.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "abstract_control_directive.template.dart",
+        "1": "abstract_control_directive.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -35,7 +35,6 @@
       "name": "ControlContainer",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/control_container.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

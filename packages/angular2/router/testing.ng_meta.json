@@ -10,13 +10,13 @@
       }
     ],
     "6": "testing.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/mock/mock_location_strategy.template.dart",
+        "1": "package:angular2/src/mock/mock_location_strategy.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/mock/location_mock.template.dart",
+        "1": "package:angular2/src/mock/location_mock.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -28,7 +28,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/mock_location_strategy.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -37,7 +36,6 @@
       "name": "_MockPopStateEvent",
       "moduleUrl": "asset:angular2/lib/src/mock/mock_location_strategy.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SpyLocation": {
@@ -46,7 +44,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/location_mock.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     }

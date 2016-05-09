@@ -20,13 +20,13 @@
       }
     ],
     "6": "platform_reflection_capabilities.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "types.template.dart",
+        "1": "types.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -37,7 +37,6 @@
       "name": "PlatformReflectionCapabilities",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -36,7 +36,6 @@
       "name": "Rectangle",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/ruler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Ruler": {
@@ -44,7 +43,6 @@
       "name": "Ruler",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/ruler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

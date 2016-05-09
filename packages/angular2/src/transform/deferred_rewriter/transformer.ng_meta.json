@@ -29,21 +29,21 @@
       }
     ],
     "6": "transformer.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/zone.template.dart",
+        "1": "package:angular2/src/transform/common/zone.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "rewriter.template.dart",
+        "1": "rewriter.ngfactory.dart",
         "4": "i3"
       }
     ]
@@ -54,7 +54,6 @@
       "name": "DeferredRewriter",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_assetToProcess": {
@@ -62,7 +61,6 @@
       "name": "_assetToProcess",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "rewriteDeferredLibraries": {
@@ -70,7 +68,6 @@
       "name": "rewriteDeferredLibraries",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

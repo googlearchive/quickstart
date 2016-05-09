@@ -6,12 +6,18 @@
         "1": "package:angular2/core.dart",
         "2": [
           "APP_ID",
-          "DirectiveResolver",
           "NgZone",
           "Provider",
-          "ViewResolver",
           "PLATFORM_COMMON_PROVIDERS",
           "PLATFORM_INITIALIZER"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/compiler.dart",
+        "2": [
+          "DirectiveResolver",
+          "ViewResolver"
         ],
         "5": false
       },
@@ -65,7 +71,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/router/location/location_strategy.dart",
+        "1": "package:angular2/platform/common.dart",
         "2": [
           "LocationStrategy"
         ],
@@ -129,25 +135,26 @@
       "name": "TEST_BROWSER_STATIC_PLATFORM_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/platform/testing/browser_static.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "PLATFORM_COMMON_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "PLATFORM_INITIALIZER",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PLATFORM_INITIALIZER",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -156,10 +163,11 @@
             "name": "initBrowserTests",
             "moduleUrl": null,
             "prefix": null,
-            "constConstructor": null,
             "value": null
           },
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         }
       ]
     },
@@ -168,40 +176,46 @@
       "name": "ADDITIONAL_TEST_BROWSER_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/platform/testing/browser_static.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "APP_ID",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "APP_ID",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
           "useValue": "a",
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Identifier",
           "name": "ELEMENT_PROBE_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "DirectiveResolver",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DirectiveResolver",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -209,23 +223,27 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ViewResolver",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ViewResolver",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -233,20 +251,20 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Identifier",
           "name": "Log",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -254,18 +272,20 @@
           "name": "TestComponentBuilder",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "NgZone",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "NgZone",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -273,23 +293,27 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "LocationStrategy",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "LocationStrategy",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -297,23 +321,27 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "AnimationBuilder",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "AnimationBuilder",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -321,13 +349,14 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         }
       ]
     },
@@ -336,25 +365,26 @@
       "name": "TEST_BROWSER_STATIC_APPLICATION_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/platform/testing/browser_static.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "BROWSER_APP_COMMON_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "XHR",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "XHR",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -362,20 +392,20 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Identifier",
           "name": "ADDITIONAL_TEST_BROWSER_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ]
@@ -385,7 +415,6 @@
       "name": "initBrowserTests",
       "moduleUrl": "asset:angular2/lib/platform/testing/browser_static.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

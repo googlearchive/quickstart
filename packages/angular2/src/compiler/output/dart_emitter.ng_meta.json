@@ -1,0 +1,135 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.output.dart_emitter",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "StringWrapper",
+          "RegExpWrapper",
+          "isPresent",
+          "isBlank",
+          "Math",
+          "isString",
+          "isArray"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "../compile_metadata.dart",
+        "2": [
+          "CompileIdentifierMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
+        "1": "abstract_emitter.dart",
+        "2": [
+          "OutputEmitter",
+          "EmitterVisitorContext",
+          "AbstractEmitterVisitor",
+          "CATCH_ERROR_VAR",
+          "CATCH_STACK_VAR",
+          "escapeSingleQuoteString"
+        ],
+        "5": false
+      },
+      {
+        "1": "path_util.dart",
+        "2": [
+          "getImportModulePath",
+          "ImportEnv"
+        ],
+        "5": false
+      }
+    ],
+    "6": "dart_emitter.dart",
+    "7": [
+      {
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "4": "i2"
+      },
+      {
+        "1": "../compile_metadata.ngfactory.dart",
+        "4": "i3"
+      },
+      {
+        "1": "output_ast.ngfactory.dart",
+        "4": "i4"
+      },
+      {
+        "1": "abstract_emitter.ngfactory.dart",
+        "4": "i5"
+      },
+      {
+        "1": "path_util.ngfactory.dart",
+        "4": "i6"
+      }
+    ]
+  },
+  "type": {
+    "debugOutputAstAsDart": {
+      "class": "Identifier",
+      "name": "debugOutputAstAsDart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/dart_emitter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DartEmitter": {
+      "class": "Identifier",
+      "name": "DartEmitter",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/dart_emitter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_DartEmitterVisitor": {
+      "class": "Identifier",
+      "name": "_DartEmitterVisitor",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/dart_emitter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getSuperConstructorCallExpr": {
+      "class": "Identifier",
+      "name": "getSuperConstructorCallExpr",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/dart_emitter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "isConstType": {
+      "class": "Identifier",
+      "name": "isConstType",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/dart_emitter.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

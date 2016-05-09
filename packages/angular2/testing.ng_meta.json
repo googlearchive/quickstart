@@ -50,37 +50,37 @@
       }
     ],
     "6": "testing.dart",
-    "10": [
+    "7": [
       {
-        "1": "src/testing/test_component_builder.template.dart",
+        "1": "src/testing/test_component_builder.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "src/testing/test_injector.template.dart",
+        "1": "src/testing/test_injector.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "src/testing/fake_async.template.dart",
+        "1": "src/testing/fake_async.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/mock/view_resolver_mock.template.dart",
+        "1": "package:angular2/src/mock/view_resolver_mock.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/compiler/xhr_mock.template.dart",
+        "1": "package:angular2/src/compiler/xhr_mock.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/mock/ng_zone_mock.template.dart",
+        "1": "package:angular2/src/mock/ng_zone_mock.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/mock/mock_application_ref.template.dart",
+        "1": "package:angular2/src/mock/mock_application_ref.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/mock/directive_resolver_mock.template.dart",
+        "1": "package:angular2/src/mock/directive_resolver_mock.ngfactory.dart",
         "4": "i7"
       }
     ]
@@ -91,15 +91,6 @@
       "name": "ComponentFixture",
       "moduleUrl": "asset:angular2/lib/src/testing/test_component_builder.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ComponentFixture_": {
-      "class": "Identifier",
-      "name": "ComponentFixture_",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_component_builder.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TestComponentBuilder": {
@@ -108,25 +99,29 @@
       "moduleUrl": "asset:angular2/lib/src/testing/test_component_builder.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "Injector",
-            "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Injector",
+              "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -135,7 +130,6 @@
       "name": "TestInjector",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getTestInjector": {
@@ -143,7 +137,6 @@
       "name": "getTestInjector",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "setBaseTestProviders": {
@@ -151,7 +144,6 @@
       "name": "setBaseTestProviders",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "resetBaseTestProviders": {
@@ -159,7 +151,6 @@
       "name": "resetBaseTestProviders",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "inject": {
@@ -167,7 +158,6 @@
       "name": "inject",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "InjectSetupWrapper": {
@@ -175,7 +165,6 @@
       "name": "InjectSetupWrapper",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "withProviders": {
@@ -183,7 +172,6 @@
       "name": "withProviders",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "injectAsync": {
@@ -191,23 +179,13 @@
       "name": "injectAsync",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
-    "emptyArray": {
+    "async": {
       "class": "Identifier",
-      "name": "emptyArray",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
+      "name": "async",
+      "moduleUrl": "asset:angular2/lib/src/testing/async.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "FunctionWithParamTokens": {
-      "class": "Identifier",
-      "name": "FunctionWithParamTokens",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_u": {
@@ -215,7 +193,6 @@
       "name": "_u",
       "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "fakeAsync": {
@@ -223,7 +200,6 @@
       "name": "fakeAsync",
       "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "tick": {
@@ -231,7 +207,6 @@
       "name": "tick",
       "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "clearPendingTimers": {
@@ -239,7 +214,6 @@
       "name": "clearPendingTimers",
       "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "flushMicrotasks": {
@@ -247,7 +221,6 @@
       "name": "flushMicrotasks",
       "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_assertInFakeAsyncZone": {
@@ -255,7 +228,6 @@
       "name": "_assertInFakeAsyncZone",
       "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MockViewResolver": {
@@ -264,16 +236,21 @@
       "moduleUrl": "asset:angular2/lib/src/mock/view_resolver_mock.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
+    },
+    "flattenArray": {
+      "class": "Identifier",
+      "name": "flattenArray",
+      "moduleUrl": "asset:angular2/lib/src/mock/view_resolver_mock.dart",
+      "prefix": null,
+      "value": null
     },
     "MockXHR": {
       "class": "Identifier",
       "name": "MockXHR",
       "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_PendingRequest": {
@@ -281,7 +258,6 @@
       "name": "_PendingRequest",
       "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_Expectation": {
@@ -289,7 +265,6 @@
       "name": "_Expectation",
       "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MockNgZone": {
@@ -298,7 +273,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/ng_zone_mock.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -308,7 +282,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/mock_application_ref.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -318,7 +291,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/directive_resolver_mock.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     }

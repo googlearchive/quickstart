@@ -1,0 +1,32 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.alt_router.interfaces",
+    "3": [
+      {
+        "1": "segments.dart",
+        "2": [
+          "RouteSegment",
+          "Tree"
+        ],
+        "5": false
+      }
+    ],
+    "6": "interfaces.dart",
+    "7": [
+      {
+        "1": "segments.ngfactory.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "type": {
+    "OnActivate": {
+      "class": "Identifier",
+      "name": "OnActivate",
+      "moduleUrl": "asset:angular2/lib/src/alt_router/interfaces.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

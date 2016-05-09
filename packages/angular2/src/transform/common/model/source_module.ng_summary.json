@@ -8,10 +8,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/source_module.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/url_resolver.dart",
         "5": false
       },
@@ -23,20 +19,11 @@
     "6": "source_module.dart"
   },
   "type": {
-    "extractImports": {
-      "class": "Identifier",
-      "name": "extractImports",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/model/source_module.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
     "toImportModel": {
       "class": "Identifier",
       "name": "toImportModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/source_module.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_canImportRelative": {
@@ -44,7 +31,6 @@
       "name": "_canImportRelative",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/source_module.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_canPackageImport": {
@@ -52,7 +38,6 @@
       "name": "_canPackageImport",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/source_module.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_toPackageImport": {
@@ -60,7 +45,6 @@
       "name": "_toPackageImport",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/source_module.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

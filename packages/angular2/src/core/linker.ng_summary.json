@@ -3,40 +3,9 @@
     "1": "angular2.src.core.linker",
     "4": [
       {
-        "1": "linker/interfaces.dart",
+        "1": "linker/component_resolver.dart",
         "2": [
-          "AfterContentInit",
-          "AfterContentChecked",
-          "AfterViewInit",
-          "AfterViewChecked",
-          "OnChanges",
-          "OnDestroy",
-          "OnInit",
-          "DoCheck"
-        ]
-      },
-      {
-        "1": "linker/directive_resolver.dart",
-        "2": [
-          "DirectiveResolver"
-        ]
-      },
-      {
-        "1": "linker/view_resolver.dart",
-        "2": [
-          "ViewResolver"
-        ]
-      },
-      {
-        "1": "linker/compiler.dart",
-        "2": [
-          "Compiler"
-        ]
-      },
-      {
-        "1": "linker/view_manager.dart",
-        "2": [
-          "AppViewManager"
+          "ComponentResolver"
         ]
       },
       {
@@ -67,9 +36,7 @@
         "1": "linker/view_ref.dart",
         "2": [
           "EmbeddedViewRef",
-          "HostViewRef",
-          "ViewRef",
-          "HostViewFactoryRef"
+          "ViewRef"
         ]
       },
       {
@@ -79,9 +46,16 @@
         ]
       },
       {
-        "1": "linker/dynamic_component_loader.dart",
+        "1": "linker/component_factory.dart",
         "2": [
-          "ComponentRef"
+          "ComponentRef",
+          "ComponentFactory"
+        ]
+      },
+      {
+        "1": "linker/exceptions.dart",
+        "2": [
+          "ExpressionChangedAfterItHasBeenCheckedException"
         ]
       }
     ],

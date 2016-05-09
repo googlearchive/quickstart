@@ -6,7 +6,6 @@
       "name": "assertArrayOfStrings",
       "moduleUrl": "asset:angular2/lib/src/compiler/assertions.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

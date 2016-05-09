@@ -19,7 +19,6 @@
       "name": "WebWorkerDomAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/server/webworker_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

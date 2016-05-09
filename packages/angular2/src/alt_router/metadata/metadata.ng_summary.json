@@ -1,0 +1,40 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.alt_router.metadata.metadata",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "stringify"
+        ],
+        "5": false
+      }
+    ],
+    "6": "metadata.dart"
+  },
+  "type": {
+    "RouteMetadata": {
+      "class": "Identifier",
+      "name": "RouteMetadata",
+      "moduleUrl": "asset:angular2/lib/src/alt_router/metadata/metadata.dart",
+      "prefix": null,
+      "value": null
+    },
+    "Route": {
+      "class": "Identifier",
+      "name": "Route",
+      "moduleUrl": "asset:angular2/lib/src/alt_router/metadata/metadata.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RoutesMetadata": {
+      "class": "Identifier",
+      "name": "RoutesMetadata",
+      "moduleUrl": "asset:angular2/lib/src/alt_router/metadata/metadata.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

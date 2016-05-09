@@ -22,13 +22,13 @@
       }
     ],
     "6": "style_url_resolver.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/url_resolver.template.dart",
+        "1": "package:angular2/src/compiler/url_resolver.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -39,7 +39,6 @@
       "name": "StyleWithImports",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isStyleUrlResolvable": {
@@ -47,7 +46,6 @@
       "name": "isStyleUrlResolvable",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "extractStyleUrls": {
@@ -55,7 +53,6 @@
       "name": "extractStyleUrls",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

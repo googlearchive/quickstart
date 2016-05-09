@@ -6,7 +6,6 @@
       "name": "location",
       "moduleUrl": "asset:angular2/lib/src/facade/browser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "gc": {
@@ -14,7 +13,6 @@
       "name": "gc",
       "moduleUrl": "asset:angular2/lib/src/facade/browser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

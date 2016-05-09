@@ -57,17 +57,17 @@
       }
     ],
     "6": "parser.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/parse_util.template.dart",
+        "1": "package:angular2/src/compiler/parse_util.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/compiler/css/lexer.template.dart",
+        "1": "package:angular2/src/compiler/css/lexer.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -78,7 +78,6 @@
       "name": "BlockType",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "EOF_DELIM": {
@@ -86,7 +85,6 @@
       "name": "EOF_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RBRACE_DELIM": {
@@ -94,7 +92,6 @@
       "name": "RBRACE_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "LBRACE_DELIM": {
@@ -102,7 +99,6 @@
       "name": "LBRACE_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "COMMA_DELIM": {
@@ -110,7 +106,6 @@
       "name": "COMMA_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "COLON_DELIM": {
@@ -118,7 +113,6 @@
       "name": "COLON_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SEMICOLON_DELIM": {
@@ -126,7 +120,6 @@
       "name": "SEMICOLON_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NEWLINE_DELIM": {
@@ -134,7 +127,6 @@
       "name": "NEWLINE_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RPAREN_DELIM": {
@@ -142,7 +134,6 @@
       "name": "RPAREN_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "mergeTokens": {
@@ -150,7 +141,6 @@
       "name": "mergeTokens",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getDelimFromToken": {
@@ -158,7 +148,6 @@
       "name": "getDelimFromToken",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getDelimFromCharacter": {
@@ -166,7 +155,6 @@
       "name": "getDelimFromCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "characterContainsDelimiter": {
@@ -174,7 +162,6 @@
       "name": "characterContainsDelimiter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssAST": {
@@ -182,7 +169,6 @@
       "name": "CssAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssASTVisitor": {
@@ -190,7 +176,6 @@
       "name": "CssASTVisitor",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ParsedCssResult": {
@@ -198,7 +183,6 @@
       "name": "ParsedCssResult",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssParser": {
@@ -206,7 +190,6 @@
       "name": "CssParser",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssStyleValueAST": {
@@ -214,7 +197,6 @@
       "name": "CssStyleValueAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssRuleAST": {
@@ -222,7 +204,6 @@
       "name": "CssRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssBlockRuleAST": {
@@ -230,7 +211,6 @@
       "name": "CssBlockRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssKeyframeRuleAST": {
@@ -238,7 +218,6 @@
       "name": "CssKeyframeRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssKeyframeDefinitionAST": {
@@ -246,7 +225,6 @@
       "name": "CssKeyframeDefinitionAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssBlockDefinitionRuleAST": {
@@ -254,7 +232,6 @@
       "name": "CssBlockDefinitionRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssMediaQueryRuleAST": {
@@ -262,7 +239,6 @@
       "name": "CssMediaQueryRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssInlineRuleAST": {
@@ -270,7 +246,6 @@
       "name": "CssInlineRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssSelectorRuleAST": {
@@ -278,7 +253,6 @@
       "name": "CssSelectorRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssDefinitionAST": {
@@ -286,7 +260,6 @@
       "name": "CssDefinitionAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssSelectorAST": {
@@ -294,7 +267,6 @@
       "name": "CssSelectorAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssBlockAST": {
@@ -302,7 +274,6 @@
       "name": "CssBlockAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssStyleSheetAST": {
@@ -310,7 +281,6 @@
       "name": "CssStyleSheetAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssParseError": {
@@ -318,7 +288,6 @@
       "name": "CssParseError",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssUnknownTokenListAST": {
@@ -326,7 +295,6 @@
       "name": "CssUnknownTokenListAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssTokenType": {
@@ -334,7 +302,6 @@
       "name": "CssTokenType",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssLexerMode": {
@@ -342,7 +309,6 @@
       "name": "CssLexerMode",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "LexedCssResult": {
@@ -350,7 +316,6 @@
       "name": "LexedCssResult",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "generateErrorMessage": {
@@ -358,7 +323,6 @@
       "name": "generateErrorMessage",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "findProblemCode": {
@@ -366,7 +330,6 @@
       "name": "findProblemCode",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssToken": {
@@ -374,7 +337,6 @@
       "name": "CssToken",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssLexer": {
@@ -382,7 +344,6 @@
       "name": "CssLexer",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssScannerError": {
@@ -390,7 +351,6 @@
       "name": "CssScannerError",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_trackWhitespace": {
@@ -398,7 +358,6 @@
       "name": "_trackWhitespace",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CssScanner": {
@@ -406,7 +365,6 @@
       "name": "CssScanner",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isAtKeyword": {
@@ -414,7 +372,6 @@
       "name": "isAtKeyword",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isCharMatch": {
@@ -422,7 +379,6 @@
       "name": "isCharMatch",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isDigit": {
@@ -430,7 +386,6 @@
       "name": "isDigit",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isCommentStart": {
@@ -438,7 +393,6 @@
       "name": "isCommentStart",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isCommentEnd": {
@@ -446,7 +400,6 @@
       "name": "isCommentEnd",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isStringStart": {
@@ -454,7 +407,6 @@
       "name": "isStringStart",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isIdentifierStart": {
@@ -462,7 +414,6 @@
       "name": "isIdentifierStart",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isIdentifierPart": {
@@ -470,7 +421,6 @@
       "name": "isIdentifierPart",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidPseudoSelectorCharacter": {
@@ -478,7 +428,6 @@
       "name": "isValidPseudoSelectorCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidKeyframeBlockCharacter": {
@@ -486,7 +435,6 @@
       "name": "isValidKeyframeBlockCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidAttributeSelectorCharacter": {
@@ -494,7 +442,6 @@
       "name": "isValidAttributeSelectorCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidSelectorCharacter": {
@@ -502,7 +449,6 @@
       "name": "isValidSelectorCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidStyleBlockCharacter": {
@@ -510,7 +456,6 @@
       "name": "isValidStyleBlockCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidMediaQueryRuleCharacter": {
@@ -518,7 +463,6 @@
       "name": "isValidMediaQueryRuleCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidAtRuleCharacter": {
@@ -526,7 +470,6 @@
       "name": "isValidAtRuleCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidStyleFunctionCharacter": {
@@ -534,7 +477,6 @@
       "name": "isValidStyleFunctionCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidBlockCharacter": {
@@ -542,7 +484,6 @@
       "name": "isValidBlockCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isValidCssCharacter": {
@@ -550,7 +491,6 @@
       "name": "isValidCssCharacter",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "charCode": {
@@ -558,7 +498,6 @@
       "name": "charCode",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "charStr": {
@@ -566,7 +505,6 @@
       "name": "charStr",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isNewline": {
@@ -574,7 +512,6 @@
       "name": "isNewline",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/lexer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$EOF": {
@@ -582,7 +519,6 @@
       "name": "$EOF",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$TAB": {
@@ -590,7 +526,6 @@
       "name": "$TAB",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$LF": {
@@ -598,7 +533,6 @@
       "name": "$LF",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$VTAB": {
@@ -606,7 +540,6 @@
       "name": "$VTAB",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$FF": {
@@ -614,7 +547,6 @@
       "name": "$FF",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$CR": {
@@ -622,7 +554,6 @@
       "name": "$CR",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$SPACE": {
@@ -630,7 +561,6 @@
       "name": "$SPACE",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$BANG": {
@@ -638,7 +568,6 @@
       "name": "$BANG",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$DQ": {
@@ -646,7 +575,6 @@
       "name": "$DQ",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$HASH": {
@@ -654,7 +582,6 @@
       "name": "$HASH",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$$": {
@@ -662,7 +589,6 @@
       "name": "$$",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$PERCENT": {
@@ -670,7 +596,6 @@
       "name": "$PERCENT",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$AMPERSAND": {
@@ -678,7 +603,6 @@
       "name": "$AMPERSAND",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$SQ": {
@@ -686,7 +610,6 @@
       "name": "$SQ",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$LPAREN": {
@@ -694,7 +617,6 @@
       "name": "$LPAREN",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$RPAREN": {
@@ -702,7 +624,6 @@
       "name": "$RPAREN",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$STAR": {
@@ -710,7 +631,6 @@
       "name": "$STAR",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$PLUS": {
@@ -718,7 +638,6 @@
       "name": "$PLUS",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$COMMA": {
@@ -726,7 +645,6 @@
       "name": "$COMMA",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$MINUS": {
@@ -734,7 +652,6 @@
       "name": "$MINUS",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$PERIOD": {
@@ -742,7 +659,6 @@
       "name": "$PERIOD",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$SLASH": {
@@ -750,7 +666,6 @@
       "name": "$SLASH",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$COLON": {
@@ -758,7 +673,6 @@
       "name": "$COLON",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$SEMICOLON": {
@@ -766,7 +680,6 @@
       "name": "$SEMICOLON",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$LT": {
@@ -774,7 +687,6 @@
       "name": "$LT",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$EQ": {
@@ -782,7 +694,6 @@
       "name": "$EQ",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$GT": {
@@ -790,7 +701,6 @@
       "name": "$GT",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$QUESTION": {
@@ -798,7 +708,6 @@
       "name": "$QUESTION",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$0": {
@@ -806,7 +715,6 @@
       "name": "$0",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$9": {
@@ -814,7 +722,6 @@
       "name": "$9",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$A": {
@@ -822,7 +729,6 @@
       "name": "$A",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$E": {
@@ -830,7 +736,6 @@
       "name": "$E",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$Z": {
@@ -838,7 +743,6 @@
       "name": "$Z",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$LBRACKET": {
@@ -846,7 +750,6 @@
       "name": "$LBRACKET",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$BACKSLASH": {
@@ -854,7 +757,6 @@
       "name": "$BACKSLASH",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$RBRACKET": {
@@ -862,7 +764,6 @@
       "name": "$RBRACKET",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$CARET": {
@@ -870,7 +771,6 @@
       "name": "$CARET",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$_": {
@@ -878,7 +778,6 @@
       "name": "$_",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$a": {
@@ -886,7 +785,6 @@
       "name": "$a",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$e": {
@@ -894,7 +792,6 @@
       "name": "$e",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$f": {
@@ -902,7 +799,6 @@
       "name": "$f",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$n": {
@@ -910,7 +806,6 @@
       "name": "$n",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$r": {
@@ -918,7 +813,6 @@
       "name": "$r",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$t": {
@@ -926,7 +820,6 @@
       "name": "$t",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$u": {
@@ -934,7 +827,6 @@
       "name": "$u",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$v": {
@@ -942,7 +834,6 @@
       "name": "$v",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$z": {
@@ -950,7 +841,6 @@
       "name": "$z",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$LBRACE": {
@@ -958,7 +848,6 @@
       "name": "$LBRACE",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$BAR": {
@@ -966,7 +855,6 @@
       "name": "$BAR",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$RBRACE": {
@@ -974,7 +862,6 @@
       "name": "$RBRACE",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$NBSP": {
@@ -982,7 +869,6 @@
       "name": "$NBSP",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$PIPE": {
@@ -990,7 +876,6 @@
       "name": "$PIPE",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$TILDA": {
@@ -998,7 +883,6 @@
       "name": "$TILDA",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "$AT": {
@@ -1006,7 +890,6 @@
       "name": "$AT",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isWhitespace": {
@@ -1014,7 +897,6 @@
       "name": "isWhitespace",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

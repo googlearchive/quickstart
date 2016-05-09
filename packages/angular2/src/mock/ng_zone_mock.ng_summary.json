@@ -31,11 +31,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
@@ -49,7 +45,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/ng_zone_mock.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     }

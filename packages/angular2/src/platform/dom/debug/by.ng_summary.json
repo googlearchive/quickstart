@@ -41,7 +41,6 @@
       "name": "By",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/by.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

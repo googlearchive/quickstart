@@ -26,17 +26,17 @@
       }
     ],
     "6": "template_preparser.dart",
-    "10": [
+    "7": [
       {
-        "1": "html_ast.template.dart",
+        "1": "html_ast.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "html_tags.template.dart",
+        "1": "html_tags.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -47,7 +47,6 @@
       "name": "NG_CONTENT_SELECT_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NG_CONTENT_ELEMENT": {
@@ -55,7 +54,6 @@
       "name": "NG_CONTENT_ELEMENT",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "LINK_ELEMENT": {
@@ -63,7 +61,6 @@
       "name": "LINK_ELEMENT",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "LINK_STYLE_REL_ATTR": {
@@ -71,7 +68,6 @@
       "name": "LINK_STYLE_REL_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "LINK_STYLE_HREF_ATTR": {
@@ -79,7 +75,6 @@
       "name": "LINK_STYLE_HREF_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "LINK_STYLE_REL_VALUE": {
@@ -87,7 +82,6 @@
       "name": "LINK_STYLE_REL_VALUE",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "STYLE_ELEMENT": {
@@ -95,7 +89,6 @@
       "name": "STYLE_ELEMENT",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SCRIPT_ELEMENT": {
@@ -103,7 +96,6 @@
       "name": "SCRIPT_ELEMENT",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NG_NON_BINDABLE_ATTR": {
@@ -111,7 +103,6 @@
       "name": "NG_NON_BINDABLE_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NG_PROJECT_AS": {
@@ -119,7 +110,6 @@
       "name": "NG_PROJECT_AS",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PreparsedElementType": {
@@ -127,7 +117,6 @@
       "name": "PreparsedElementType",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "preparseElement": {
@@ -135,7 +124,6 @@
       "name": "preparseElement",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PreparsedElement": {
@@ -143,7 +131,6 @@
       "name": "PreparsedElement",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "normalizeNgContentSelect": {
@@ -151,7 +138,6 @@
       "name": "normalizeNgContentSelect",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

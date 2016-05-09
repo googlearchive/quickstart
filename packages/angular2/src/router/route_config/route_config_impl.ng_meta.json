@@ -38,17 +38,17 @@
       }
     ],
     "6": "route_config_impl.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "../route_definition.template.dart",
+        "1": "../route_definition.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "../rules/route_paths/regex_route_path.template.dart",
+        "1": "../rules/route_paths/regex_route_path.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -59,7 +59,6 @@
       "name": "RouteConfig",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AbstractRoute": {
@@ -67,7 +66,6 @@
       "name": "AbstractRoute",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Route": {
@@ -75,7 +73,6 @@
       "name": "Route",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AuxRoute": {
@@ -83,7 +80,6 @@
       "name": "AuxRoute",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AsyncRoute": {
@@ -91,7 +87,6 @@
       "name": "AsyncRoute",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Redirect": {
@@ -99,7 +94,6 @@
       "name": "Redirect",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RouteDefinition": {
@@ -107,7 +101,6 @@
       "name": "RouteDefinition",
       "moduleUrl": "asset:angular2/lib/src/router/route_definition.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -47,7 +47,6 @@
       "name": "removeReflectionCapabilities",
       "moduleUrl": "asset:angular2/lib/src/transform/reflection_remover/remove_reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

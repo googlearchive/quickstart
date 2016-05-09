@@ -18,13 +18,13 @@
       }
     ],
     "6": "hammer_common.dart",
-    "10": [
+    "7": [
       {
-        "1": "event_manager.template.dart",
+        "1": "event_manager.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -35,7 +35,6 @@
       "name": "HammerGesturesPluginCommon",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -44,7 +44,6 @@
       "name": "Rewriter",
       "moduleUrl": "asset:angular2/lib/src/transform/reflection_remover/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_RewriterVisitor": {
@@ -52,7 +51,6 @@
       "name": "_RewriterVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/reflection_remover/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_importDebugReflectionCapabilities": {
@@ -60,7 +58,6 @@
       "name": "_importDebugReflectionCapabilities",
       "moduleUrl": "asset:angular2/lib/src/transform/reflection_remover/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_instantiateVerboseReflectionCapabilities": {
@@ -68,7 +65,6 @@
       "name": "_instantiateVerboseReflectionCapabilities",
       "moduleUrl": "asset:angular2/lib/src/transform/reflection_remover/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

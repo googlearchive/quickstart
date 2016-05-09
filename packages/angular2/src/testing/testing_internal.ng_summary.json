@@ -57,7 +57,6 @@
       "name": "testSetup",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "beforeEachProviders": {
@@ -65,7 +64,6 @@
       "name": "beforeEachProviders",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "beforeEachBindings": {
@@ -73,7 +71,6 @@
       "name": "beforeEachBindings",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "beforeEach": {
@@ -81,7 +78,6 @@
       "name": "beforeEach",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "it": {
@@ -89,7 +85,6 @@
       "name": "it",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "iit": {
@@ -97,7 +92,6 @@
       "name": "iit",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "xit": {
@@ -105,7 +99,6 @@
       "name": "xit",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "describe": {
@@ -113,7 +106,6 @@
       "name": "describe",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ddescribe": {
@@ -121,7 +113,6 @@
       "name": "ddescribe",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "xdescribe": {
@@ -129,7 +120,6 @@
       "name": "xdescribe",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isInInnerZone": {
@@ -137,7 +127,6 @@
       "name": "isInInnerZone",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

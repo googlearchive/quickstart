@@ -3,7 +3,7 @@
     "1": "angular2.transform.common.ng_meta",
     "3": [
       {
-        "1": "package:angular2/src/compiler/directive_metadata.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.dart",
         "5": false
       },
       {
@@ -23,21 +23,21 @@
       }
     ],
     "6": "ng_meta.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/directive_metadata.template.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "logging.template.dart",
+        "1": "logging.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "model/ng_deps_model.pb.template.dart",
+        "1": "model/ng_deps_model.pb.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "url_resolver.template.dart",
+        "1": "url_resolver.ngfactory.dart",
         "4": "i3"
       }
     ]
@@ -48,7 +48,6 @@
       "name": "NgMeta",
       "moduleUrl": "asset:angular2/lib/src/transform/common/ng_meta.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

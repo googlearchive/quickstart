@@ -6,8 +6,6 @@
         "1": "change_detection/change_detection.dart",
         "2": [
           "ChangeDetectionStrategy",
-          "ExpressionChangedAfterItHasBeenCheckedException",
-          "ChangeDetectionError",
           "ChangeDetectorRef",
           "WrappedValue",
           "SimpleChange",

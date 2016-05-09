@@ -3,7 +3,15 @@
     "1": "angular2.transform.template_compiler.ng_compiler",
     "3": [
       {
-        "1": "package:angular2/src/compiler/view_compiler.dart",
+        "1": "package:angular2/src/compiler/config.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/view_compiler/view_compiler.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/console.dart",
         "5": false
       },
       {
@@ -15,11 +23,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/template_normalizer.dart",
+        "1": "package:angular2/src/compiler/directive_normalizer.dart",
         "5": false
       },
       {
@@ -27,12 +35,12 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/lexer.dart",
+        "1": "package:angular2/src/compiler/expression_parser/lexer.dart",
         "4": "ng",
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/parser.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "4": "ng",
         "5": false
       },
@@ -41,23 +49,15 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/output/dart_emitter.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/transform/common/asset_reader.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/interfaces.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/change_detector_compiler.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/router/router_link_dsl.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/proto_view_compiler.dart",
         "5": false
       },
       {
@@ -74,73 +74,73 @@
       }
     ],
     "6": "ng_compiler.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/view_compiler.template.dart",
+        "1": "package:angular2/src/compiler/config.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/html_parser.template.dart",
+        "1": "package:angular2/src/compiler/view_compiler/view_compiler.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/compiler/style_compiler.template.dart",
+        "1": "package:angular2/src/core/console.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.template.dart",
+        "1": "package:angular2/src/compiler/html_parser.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/compiler/template_normalizer.template.dart",
+        "1": "package:angular2/src/compiler/style_compiler.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/compiler/template_parser.template.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/lexer.template.dart",
+        "1": "package:angular2/src/compiler/directive_normalizer.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/parser.template.dart",
+        "1": "package:angular2/src/compiler/template_parser.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/compiler/schema/dom_element_schema_registry.template.dart",
+        "1": "package:angular2/src/compiler/expression_parser/lexer.ngfactory.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.ngfactory.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/core/change_detection/interfaces.template.dart",
+        "1": "package:angular2/src/compiler/schema/dom_element_schema_registry.ngfactory.dart",
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/compiler/change_detector_compiler.template.dart",
+        "1": "package:angular2/src/compiler/output/dart_emitter.ngfactory.dart",
         "4": "i11"
       },
       {
-        "1": "package:angular2/router/router_link_dsl.template.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
         "4": "i12"
       },
       {
-        "1": "package:angular2/src/compiler/proto_view_compiler.template.dart",
+        "1": "package:angular2/router/router_link_dsl.ngfactory.dart",
         "4": "i13"
       },
       {
-        "1": "package:angular2/i18n.template.dart",
+        "1": "package:angular2/i18n.ngfactory.dart",
         "4": "i14"
       },
       {
-        "1": "xhr_impl.template.dart",
+        "1": "xhr_impl.ngfactory.dart",
         "4": "i15"
       },
       {
-        "1": "url_resolver.template.dart",
+        "1": "url_resolver.ngfactory.dart",
         "4": "i16"
       }
     ]
@@ -151,7 +151,6 @@
       "name": "createTemplateCompiler",
       "moduleUrl": "asset:angular2/lib/src/transform/common/ng_compiler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_createHtmlParser": {
@@ -159,7 +158,6 @@
       "name": "_createHtmlParser",
       "moduleUrl": "asset:angular2/lib/src/transform/common/ng_compiler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

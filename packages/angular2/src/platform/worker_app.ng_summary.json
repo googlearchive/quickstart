@@ -39,7 +39,6 @@
       "name": "RENDER_SEND_PORT",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WORKER_APP_APPLICATION": {
@@ -47,25 +46,26 @@
       "name": "WORKER_APP_APPLICATION",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "WORKER_APP_APPLICATION_COMMON",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "MessageBus",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "MessageBus",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -75,20 +75,69 @@
             "name": "createMessageBus",
             "prefix": null,
             "moduleUrl": null,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
-          }
+            "diDeps": []
+          },
+          "multi": false,
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "NgZone",
+                  "moduleUrl": null,
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            },
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "RENDER_SEND_PORT",
+                  "moduleUrl": null,
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "APP_INITIALIZER",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "APP_INITIALIZER",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -97,10 +146,11 @@
             "name": "setupIsolate",
             "moduleUrl": null,
             "prefix": null,
-            "constConstructor": null,
             "value": null
           },
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         }
       ]
     },
@@ -109,7 +159,6 @@
       "name": "createMessageBus",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "setupIsolate": {
@@ -117,7 +166,6 @@
       "name": "setupIsolate",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WebWorkerMessageBusSink": {
@@ -125,7 +173,6 @@
       "name": "WebWorkerMessageBusSink",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

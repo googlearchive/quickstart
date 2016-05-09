@@ -29,7 +29,6 @@
           "PLATFORM_DIRECTIVES",
           "PLATFORM_PIPES",
           "ComponentRef",
-          "platform",
           "ExceptionHandler",
           "Reflector",
           "reflector",
@@ -81,13 +80,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/events/hammer_gestures.dart",
-        "2": [
-          "HammerGesturesPlugin"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/dom/dom_tokens.dart",
         "2": [
           "DOCUMENT"
@@ -105,13 +97,7 @@
       {
         "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
         "2": [
-          "DomSharedStylesHost"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
-        "2": [
+          "DomSharedStylesHost",
           "SharedStylesHost"
         ],
         "5": false
@@ -187,13 +173,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/router/location/browser_platform_location.dart",
-        "2": [
-          "BrowserPlatformLocation"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/web_workers/shared/service_message_broker.dart",
         "2": [
           "ServiceMessageBrokerFactory",
@@ -206,6 +185,13 @@
         "2": [
           "ClientMessageBrokerFactory",
           "ClientMessageBrokerFactory_"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/browser/location/browser_platform_location.dart",
+        "2": [
+          "BrowserPlatformLocation"
         ],
         "5": false
       },
@@ -231,10 +217,11 @@
         "5": false
       },
       {
-        "1": "dom/events/hammer_gestures.dart",
+        "1": "package:angular2/src/platform/dom/events/hammer_gestures.dart",
         "2": [
           "HAMMER_GESTURE_CONFIG",
-          "HammerGestureConfig"
+          "HammerGestureConfig",
+          "HammerGesturesPlugin"
         ],
         "5": false
       }
@@ -247,7 +234,6 @@
       "name": "WORKER_SCRIPT",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WORKER_RENDER_MESSAGING_PROVIDERS": {
@@ -255,14 +241,12 @@
       "name": "WORKER_RENDER_MESSAGING_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "MessageBasedRenderer",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -270,35 +254,62 @@
           "name": "MessageBasedXHRImpl",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ]
+    },
+    "WORKER_RENDER_PLATFORM_MARKER": {
+      "class": "Identifier",
+      "name": "WORKER_RENDER_PLATFORM_MARKER",
+      "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
+      "prefix": null,
+      "value": null
     },
     "WORKER_RENDER_PLATFORM": {
       "class": "Identifier",
       "name": "WORKER_RENDER_PLATFORM",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "PLATFORM_COMMON_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "PLATFORM_INITIALIZER",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "WORKER_RENDER_PLATFORM_MARKER",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": true,
+          "useFactory": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PLATFORM_INITIALIZER",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -307,10 +318,11 @@
             "name": "initWebWorkerRenderPlatform",
             "moduleUrl": null,
             "prefix": null,
-            "constConstructor": null,
             "value": null
           },
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         }
       ]
     },
@@ -319,14 +331,12 @@
       "name": "WORKER_RENDER_ROUTER",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "BrowserPlatformLocation",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ]
@@ -336,14 +346,12 @@
       "name": "WORKER_RENDER_APPLICATION_COMMON",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "APPLICATION_COMMON_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -351,18 +359,20 @@
           "name": "WORKER_RENDER_MESSAGING_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ExceptionHandler",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ExceptionHandler",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -372,20 +382,24 @@
             "name": "_exceptionHandler",
             "prefix": null,
             "moduleUrl": null,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
-          }
+            "diDeps": []
+          },
+          "multi": false,
+          "deps": []
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "DOCUMENT",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DOCUMENT",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -395,20 +409,24 @@
             "name": "_document",
             "prefix": null,
             "moduleUrl": null,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
-          }
+            "diDeps": []
+          },
+          "multi": false,
+          "deps": []
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "EVENT_MANAGER_PLUGINS",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EVENT_MANAGER_PLUGINS",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -416,23 +434,27 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "EVENT_MANAGER_PLUGINS",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EVENT_MANAGER_PLUGINS",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -440,23 +462,27 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "EVENT_MANAGER_PLUGINS",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EVENT_MANAGER_PLUGINS",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -464,23 +490,27 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "HAMMER_GESTURE_CONFIG",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "HAMMER_GESTURE_CONFIG",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -488,23 +518,27 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "DomRootRenderer",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DomRootRenderer",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -512,67 +546,87 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "RootRenderer",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RootRenderer",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": {
-            "class": "Identifier",
-            "name": "DomRootRenderer",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DomRootRenderer",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "SharedStylesHost",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "SharedStylesHost",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": {
-            "class": "Identifier",
-            "name": "DomSharedStylesHost",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DomSharedStylesHost",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "XHR",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "XHR",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -580,31 +634,34 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Identifier",
           "name": "MessageBasedXHRImpl",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ServiceMessageBrokerFactory",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ServiceMessageBrokerFactory",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -612,23 +669,27 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ClientMessageBrokerFactory",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ClientMessageBrokerFactory",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -636,43 +697,47 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Identifier",
           "name": "Serializer",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ON_WEB_WORKER",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ON_WEB_WORKER",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
           "useValue": false,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Identifier",
           "name": "RenderStore",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -680,7 +745,6 @@
           "name": "DomSharedStylesHost",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -688,7 +752,6 @@
           "name": "Testability",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -696,7 +759,6 @@
           "name": "BrowserDetails",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -704,7 +766,6 @@
           "name": "AnimationBuilder",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -712,7 +773,6 @@
           "name": "EventManager",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ]
@@ -722,7 +782,6 @@
       "name": "initializeGenericWorkerRenderer",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "initWebWorkerRenderPlatform": {
@@ -730,7 +789,6 @@
       "name": "initWebWorkerRenderPlatform",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_exceptionHandler": {
@@ -738,7 +796,6 @@
       "name": "_exceptionHandler",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_document": {
@@ -746,7 +803,6 @@
       "name": "_document",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

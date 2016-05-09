@@ -40,7 +40,6 @@
       "name": "DirectiveMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ComponentMetadata": {
@@ -48,7 +47,6 @@
       "name": "ComponentMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PipeMetadata": {
@@ -56,7 +54,6 @@
       "name": "PipeMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "InputMetadata": {
@@ -64,7 +61,6 @@
       "name": "InputMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "OutputMetadata": {
@@ -72,7 +68,6 @@
       "name": "OutputMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HostBindingMetadata": {
@@ -80,7 +75,6 @@
       "name": "HostBindingMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HostListenerMetadata": {
@@ -88,7 +82,6 @@
       "name": "HostListenerMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

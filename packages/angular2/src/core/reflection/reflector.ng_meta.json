@@ -72,29 +72,29 @@
       }
     ],
     "6": "reflector.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "types.template.dart",
+        "1": "types.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "reflector_reader.template.dart",
+        "1": "reflector_reader.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "platform_reflection_capabilities.template.dart",
+        "1": "platform_reflection_capabilities.ngfactory.dart",
         "4": "i5"
       }
     ]
@@ -105,7 +105,6 @@
       "name": "ReflectionInfo",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Reflector": {
@@ -113,7 +112,6 @@
       "name": "Reflector",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_mergeMaps": {
@@ -121,7 +119,6 @@
       "name": "_mergeMaps",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SetterFn": {
@@ -129,7 +126,6 @@
       "name": "SetterFn",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "GetterFn": {
@@ -137,7 +133,6 @@
       "name": "GetterFn",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MethodFn": {
@@ -145,7 +140,6 @@
       "name": "MethodFn",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PlatformReflectionCapabilities": {
@@ -153,7 +147,6 @@
       "name": "PlatformReflectionCapabilities",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

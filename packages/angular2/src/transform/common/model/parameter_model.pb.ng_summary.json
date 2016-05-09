@@ -15,7 +15,6 @@
       "name": "ParameterModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/parameter_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ParameterModel": {
@@ -23,7 +22,6 @@
       "name": "ParameterModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/parameter_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ReadonlyParameterModel": {
@@ -31,7 +29,6 @@
       "name": "_ReadonlyParameterModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/parameter_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

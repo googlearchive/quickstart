@@ -3,37 +3,32 @@
     "1": "angular2.transform.template_compiler.url_resolver",
     "3": [
       {
-        "1": "package:angular2/compiler.dart",
-        "5": false
-      },
-      {
         "1": "package:barback/barback.dart",
         "5": false
       }
     ],
-    "6": "url_resolver.dart",
-    "10": [
+    "4": [
       {
-        "1": "package:angular2/compiler.template.dart",
+        "1": "package:angular2/src/compiler/url_resolver.dart",
+        "2": [
+          "createOfflineCompileUrlResolver"
+        ]
+      }
+    ],
+    "6": "url_resolver.dart",
+    "7": [
+      {
+        "1": "package:angular2/src/compiler/url_resolver.ngfactory.dart",
         "4": "i0"
       }
     ]
   },
   "type": {
-    "TransformerUrlResolver": {
-      "class": "Identifier",
-      "name": "TransformerUrlResolver",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
     "toAssetUri": {
       "class": "Identifier",
       "name": "toAssetUri",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "fromUri": {
@@ -41,7 +36,6 @@
       "name": "fromUri",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "toAssetScheme": {
@@ -49,7 +43,6 @@
       "name": "toAssetScheme",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isDartCoreUri": {
@@ -57,7 +50,94 @@
       "name": "isDartCoreUri",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "_ASSET_SCHEME": {
+      "class": "Identifier",
+      "name": "_ASSET_SCHEME",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DEFAULT_PACKAGE_URL_PROVIDER": {
+      "class": "Identifier",
+      "name": "DEFAULT_PACKAGE_URL_PROVIDER",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PACKAGE_ROOT_URL",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": "/packages",
+          "useFactory": null,
+          "multi": false,
+          "deps": null
+        }
+      ]
+    },
+    "createUrlResolverWithoutPackagePrefix": {
+      "class": "Identifier",
+      "name": "createUrlResolverWithoutPackagePrefix",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createOfflineCompileUrlResolver": {
+      "class": "Identifier",
+      "name": "createOfflineCompileUrlResolver",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "UrlResolver": {
+      "class": "Type",
+      "name": "UrlResolver",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PACKAGE_ROOT_URL",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        }
+      ]
+    },
+    "getUrlScheme": {
+      "class": "Identifier",
+      "name": "getUrlScheme",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
       "value": null
     }
   },

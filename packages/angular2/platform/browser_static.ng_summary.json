@@ -10,7 +10,8 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "Type",
-          "isPresent"
+          "isPresent",
+          "isBlank"
         ],
         "5": false
       },
@@ -18,7 +19,8 @@
         "1": "package:angular2/src/platform/browser_common.dart",
         "2": [
           "BROWSER_PROVIDERS",
-          "BROWSER_APP_COMMON_PROVIDERS"
+          "BROWSER_APP_COMMON_PROVIDERS",
+          "BROWSER_PLATFORM_MARKER"
         ],
         "5": false
       },
@@ -26,17 +28,19 @@
         "1": "package:angular2/core.dart",
         "2": [
           "ComponentRef",
-          "platform"
+          "coreLoadAndBootstrap",
+          "ReflectiveInjector",
+          "PlatformRef",
+          "getPlatform",
+          "createPlatform",
+          "assertPlatform"
         ],
         "5": false
       }
     ],
     "4": [
       {
-        "1": "package:angular2/src/core/angular_entrypoint.dart",
-        "2": [
-          "AngularEntrypoint"
-        ]
+        "1": "package:angular2/src/core/angular_entrypoint.dart"
       },
       {
         "1": "package:angular2/src/platform/browser_common.dart",
@@ -61,7 +65,13 @@
       "name": "BROWSER_APP_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/platform/browser_static.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "browserStaticPlatform": {
+      "class": "Identifier",
+      "name": "browserStaticPlatform",
+      "moduleUrl": "asset:angular2/lib/platform/browser_static.dart",
+      "prefix": null,
       "value": null
     },
     "bootstrapStatic": {
@@ -69,7 +79,6 @@
       "name": "bootstrapStatic",
       "moduleUrl": "asset:angular2/lib/platform/browser_static.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

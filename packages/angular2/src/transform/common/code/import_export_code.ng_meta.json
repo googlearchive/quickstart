@@ -20,17 +20,17 @@
       }
     ],
     "6": "import_export_code.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/transform/common/mirror_matcher.template.dart",
+        "1": "package:angular2/src/transform/common/mirror_matcher.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/model/import_export_model.pb.template.dart",
+        "1": "package:angular2/src/transform/common/model/import_export_model.pb.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -41,7 +41,6 @@
       "name": "_mirrorMatcher",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ImportVisitor": {
@@ -49,7 +48,6 @@
       "name": "ImportVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ExportVisitor": {
@@ -57,7 +55,6 @@
       "name": "ExportVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_updateIfBootstrap": {
@@ -65,7 +62,6 @@
       "name": "_updateIfBootstrap",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_populateCombinators": {
@@ -73,7 +69,6 @@
       "name": "_populateCombinators",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ImportWriterMixin": {
@@ -81,7 +76,6 @@
       "name": "ImportWriterMixin",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ExportWriterMixin": {
@@ -89,7 +83,6 @@
       "name": "ExportWriterMixin",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_writeCombinators": {
@@ -97,7 +90,6 @@
       "name": "_writeCombinators",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

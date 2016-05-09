@@ -19,14 +19,14 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       }
     ],
     "6": "zone.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/template_compiler.template.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -37,7 +37,6 @@
       "name": "_SimpleCallback",
       "moduleUrl": "asset:angular2/lib/src/transform/common/zone.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "exec": {
@@ -45,7 +44,6 @@
       "name": "exec",
       "moduleUrl": "asset:angular2/lib/src/transform/common/zone.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "log": {
@@ -53,7 +51,6 @@
       "name": "log",
       "moduleUrl": "asset:angular2/lib/src/transform/common/zone.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "templateCompiler": {
@@ -61,7 +58,6 @@
       "name": "templateCompiler",
       "moduleUrl": "asset:angular2/lib/src/transform/common/zone.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_friendlyError": {
@@ -69,7 +65,6 @@
       "name": "_friendlyError",
       "moduleUrl": "asset:angular2/lib/src/transform/common/zone.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

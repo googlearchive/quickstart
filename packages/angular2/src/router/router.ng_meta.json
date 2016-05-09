@@ -45,6 +45,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/platform/common.dart",
+        "2": [
+          "Location"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/core.dart",
         "2": [
           "Inject",
@@ -76,13 +83,6 @@
         "5": false
       },
       {
-        "1": "location/location.dart",
-        "2": [
-          "Location"
-        ],
-        "5": false
-      },
-      {
         "1": "lifecycle/route_lifecycle_reflector.dart",
         "2": [
           "getCanActivateHook"
@@ -103,11 +103,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -134,11 +130,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -161,49 +153,49 @@
       }
     ],
     "6": "router.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/platform/common.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "route_registry.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "instruction.template.dart",
+        "1": "route_registry.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "directives/router_outlet.template.dart",
+        "1": "instruction.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "location/location.template.dart",
+        "1": "directives/router_outlet.ngfactory.dart",
         "4": "i8"
       },
       {
-        "1": "lifecycle/route_lifecycle_reflector.template.dart",
+        "1": "lifecycle/route_lifecycle_reflector.ngfactory.dart",
         "4": "i9"
       },
       {
-        "1": "route_config/route_config_impl.template.dart",
+        "1": "route_config/route_config_impl.ngfactory.dart",
         "4": "i10"
       }
     ]
@@ -215,76 +207,95 @@
       "moduleUrl": "asset:angular2/lib/src/router/router.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "RouteRegistry",
-            "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RouteRegistry",
+              "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "Router",
-            "moduleUrl": "asset:angular2/lib/src/router/router.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Router",
+              "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "dynamic",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "dynamic",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "Router",
-            "moduleUrl": "asset:angular2/lib/src/router/router.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Router",
+              "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -294,59 +305,73 @@
       "moduleUrl": "asset:angular2/lib/src/router/router.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "RouteRegistry",
-            "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RouteRegistry",
+              "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "Location",
-            "moduleUrl": "asset:angular2/lib/src/router/location/location.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Location",
+              "moduleUrl": "asset:angular2/lib/src/platform/browser/location/location.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "ROUTER_PRIMARY_COMPONENT",
-            "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ROUTER_PRIMARY_COMPONENT",
+              "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -355,7 +380,6 @@
       "name": "ChildRouter",
       "moduleUrl": "asset:angular2/lib/src/router/router.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "canActivateOne": {
@@ -363,7 +387,6 @@
       "name": "canActivateOne",
       "moduleUrl": "asset:angular2/lib/src/router/router.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -21,7 +21,6 @@
       "name": "wtfInit",
       "moduleUrl": "asset:angular2/lib/src/core/profile/wtf_init.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

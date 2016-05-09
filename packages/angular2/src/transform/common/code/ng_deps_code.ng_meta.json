@@ -49,49 +49,41 @@
       {
         "1": "parameter_code.dart",
         "5": false
-      },
-      {
-        "1": "queries_code.dart",
-        "5": false
       }
     ],
     "6": "ng_deps_code.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/transform/common/annotation_matcher.template.dart",
+        "1": "package:angular2/src/transform/common/annotation_matcher.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.template.dart",
+        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/model/import_export_model.pb.template.dart",
+        "1": "package:angular2/src/transform/common/model/import_export_model.pb.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "annotation_code.template.dart",
+        "1": "annotation_code.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "import_export_code.template.dart",
+        "1": "import_export_code.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "reflection_info_code.template.dart",
+        "1": "reflection_info_code.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "parameter_code.template.dart",
+        "1": "parameter_code.ngfactory.dart",
         "4": "i7"
-      },
-      {
-        "1": "queries_code.template.dart",
-        "4": "i8"
       }
     ]
   },
@@ -101,7 +93,6 @@
       "name": "NgDepsVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/ng_deps_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NgDepsWriter": {
@@ -109,7 +100,6 @@
       "name": "NgDepsWriter",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/ng_deps_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NgDepsWriterMixin": {
@@ -117,7 +107,6 @@
       "name": "NgDepsWriterMixin",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/ng_deps_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

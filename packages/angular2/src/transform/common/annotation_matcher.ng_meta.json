@@ -27,9 +27,9 @@
       }
     ],
     "6": "annotation_matcher.dart",
-    "10": [
+    "7": [
       {
-        "1": "class_matcher_base.template.dart",
+        "1": "class_matcher_base.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -40,7 +40,6 @@
       "name": "_INJECTABLES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_DIRECTIVES": {
@@ -48,7 +47,6 @@
       "name": "_DIRECTIVES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_COMPONENTS": {
@@ -56,7 +54,6 @@
       "name": "_COMPONENTS",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_PIPES": {
@@ -64,7 +61,6 @@
       "name": "_PIPES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_VIEWS": {
@@ -72,7 +68,6 @@
       "name": "_VIEWS",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ENTRYPOINTS": {
@@ -80,7 +75,6 @@
       "name": "_ENTRYPOINTS",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AnnotationMatcher": {
@@ -88,7 +82,6 @@
       "name": "AnnotationMatcher",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClassMatcherBase": {
@@ -96,7 +89,6 @@
       "name": "ClassMatcherBase",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_getMatchingImport": {
@@ -104,7 +96,6 @@
       "name": "_getMatchingImport",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isMatch": {
@@ -112,7 +103,6 @@
       "name": "isMatch",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClassDescriptor": {
@@ -120,7 +110,6 @@
       "name": "ClassDescriptor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

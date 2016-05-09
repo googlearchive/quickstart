@@ -40,19 +40,11 @@
                 "2": "\"uppercase\""
               }
             ],
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           },
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "6": [
@@ -61,17 +53,17 @@
       }
     ],
     "6": "uppercase_pipe.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "invalid_pipe_argument_exception.template.dart",
+        "1": "invalid_pipe_argument_exception.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -85,9 +77,8 @@
         "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
-        "diDeps": null
+        "diDeps": []
       },
       "name": "uppercase",
       "pure": false

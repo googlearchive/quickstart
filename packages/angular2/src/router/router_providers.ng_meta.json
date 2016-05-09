@@ -17,14 +17,14 @@
         "5": false
       },
       {
-        "1": "location/browser_platform_location.dart",
+        "1": "package:angular2/src/platform/browser/location/browser_platform_location.dart",
         "2": [
           "BrowserPlatformLocation"
         ],
         "5": false
       },
       {
-        "1": "location/platform_location.dart",
+        "1": "package:angular2/platform/common.dart",
         "2": [
           "PlatformLocation"
         ],
@@ -32,21 +32,21 @@
       }
     ],
     "6": "router_providers.dart",
-    "10": [
+    "7": [
       {
-        "1": "router_providers_common.template.dart",
+        "1": "router_providers_common.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "location/browser_platform_location.template.dart",
+        "1": "package:angular2/src/platform/browser/location/browser_platform_location.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "location/platform_location.template.dart",
+        "1": "package:angular2/platform/common.ngfactory.dart",
         "4": "i3"
       }
     ]
@@ -57,37 +57,44 @@
       "name": "ROUTER_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/src/router/router_providers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "RouteRegistry",
-            "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "ROUTER_PRIMARY_COMPONENT",
-                  "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+            "identifier": {
+              "class": "Type",
+              "name": "RouteRegistry",
+              "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "ROUTER_PRIMARY_COMPONENT",
+                      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -95,233 +102,290 @@
             "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "ROUTER_PRIMARY_COMPONENT",
-                  "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ROUTER_PRIMARY_COMPONENT",
+                    "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "LocationStrategy",
-            "moduleUrl": "asset:angular2/lib/src/router/location/location_strategy.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "LocationStrategy",
+              "moduleUrl": "asset:angular2/lib/src/platform/browser/location/location_strategy.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
             "name": "PathLocationStrategy",
-            "moduleUrl": "asset:angular2/lib/src/router/location/path_location_strategy.dart",
+            "moduleUrl": "asset:angular2/lib/src/platform/browser/location/path_location_strategy.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "PlatformLocation",
-                  "moduleUrl": "asset:angular2/lib/src/router/location/platform_location.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "PlatformLocation",
+                    "moduleUrl": "asset:angular2/lib/src/platform/browser/location/platform_location.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               },
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "APP_BASE_HREF",
-                  "moduleUrl": "asset:angular2/lib/src/router/location/location_strategy.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "APP_BASE_HREF",
+                    "moduleUrl": "asset:angular2/lib/src/platform/browser/location/location_strategy.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": true
+                "isOptional": true,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "Location",
-            "moduleUrl": "asset:angular2/lib/src/router/location/location.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "LocationStrategy",
-                  "moduleUrl": "asset:angular2/lib/src/router/location/location_strategy.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+            "identifier": {
+              "class": "Type",
+              "name": "Location",
+              "moduleUrl": "asset:angular2/lib/src/platform/browser/location/location.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "LocationStrategy",
+                      "moduleUrl": "asset:angular2/lib/src/platform/browser/location/location_strategy.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
             "name": "Location",
-            "moduleUrl": "asset:angular2/lib/src/router/location/location.dart",
+            "moduleUrl": "asset:angular2/lib/src/platform/browser/location/location.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": [
               {
                 "token": {
-                  "class": "Identifier",
-                  "name": "LocationStrategy",
-                  "moduleUrl": "asset:angular2/lib/src/router/location/location_strategy.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "LocationStrategy",
+                    "moduleUrl": "asset:angular2/lib/src/platform/browser/location/location_strategy.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
                 },
                 "query": null,
                 "viewQuery": null,
+                "value": null,
                 "isAttribute": false,
                 "isSelf": false,
                 "isHost": false,
                 "isSkipSelf": false,
-                "isOptional": false
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Type",
-            "name": "Router",
-            "moduleUrl": "asset:angular2/lib/src/router/router.dart",
-            "prefix": null,
-            "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "RouteRegistry",
-                  "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+            "identifier": {
+              "class": "Type",
+              "name": "Router",
+              "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "RouteRegistry",
+                      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "Router",
-                  "moduleUrl": "asset:angular2/lib/src/router/router.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Router",
+                      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "dynamic",
-                  "moduleUrl": null,
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "dynamic",
+                      "moduleUrl": null,
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
                 },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              },
-              {
-                "token": {
-                  "class": "Identifier",
-                  "name": "Router",
-                  "moduleUrl": "asset:angular2/lib/src/router/router.dart",
-                  "prefix": null,
-                  "constConstructor": null,
-                  "value": null
-                },
-                "query": null,
-                "viewQuery": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false
-              }
-            ]
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Router",
+                      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -331,19 +395,112 @@
             "name": "routerFactory",
             "moduleUrl": "asset:angular2/lib/src/router/router_providers_common.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
-          }
+          },
+          "multi": false,
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "RouteRegistry",
+                  "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            },
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "Location",
+                  "moduleUrl": "asset:angular2/lib/src/platform/browser/location/location.dart",
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            },
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "ROUTER_PRIMARY_COMPONENT",
+                  "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            },
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "ApplicationRef",
+                  "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ROUTER_PRIMARY_COMPONENT",
-            "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ROUTER_PRIMARY_COMPONENT",
+              "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -353,33 +510,61 @@
             "name": "routerPrimaryComponentFactory",
             "moduleUrl": "asset:angular2/lib/src/router/router_providers_common.dart",
             "prefix": null,
-            "constConstructor": null,
             "value": null
-          }
+          },
+          "multi": false,
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "ApplicationRef",
+                  "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "PlatformLocation",
-            "moduleUrl": "asset:angular2/lib/src/router/location/platform_location.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PlatformLocation",
+              "moduleUrl": "asset:angular2/lib/src/platform/browser/location/platform_location.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
             "name": "BrowserPlatformLocation",
-            "moduleUrl": "asset:angular2/lib/src/router/location/browser_platform_location.dart",
+            "moduleUrl": "asset:angular2/lib/src/platform/browser/location/browser_platform_location.dart",
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
             "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         }
       ]
     },
@@ -388,7 +573,6 @@
       "name": "ROUTER_BINDINGS",
       "moduleUrl": "asset:angular2/lib/src/router/router_providers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

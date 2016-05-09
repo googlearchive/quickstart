@@ -17,9 +17,9 @@
       }
     ],
     "6": "codegen.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -30,7 +30,6 @@
       "name": "Codegen",
       "moduleUrl": "asset:angular2/lib/src/transform/reflection_remover/codegen.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

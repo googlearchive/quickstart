@@ -33,7 +33,6 @@
       "name": "Form",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/form_interface.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

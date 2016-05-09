@@ -26,7 +26,6 @@
       "name": "TouchMap",
       "moduleUrl": "asset:angular2/lib/src/router/utils.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "normalizeString": {
@@ -34,7 +33,6 @@
       "name": "normalizeString",
       "moduleUrl": "asset:angular2/lib/src/router/utils.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

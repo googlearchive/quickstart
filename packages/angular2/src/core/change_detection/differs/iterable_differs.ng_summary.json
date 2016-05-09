@@ -51,7 +51,6 @@
       "name": "TrackByFn",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "IterableDiffer": {
@@ -59,7 +58,6 @@
       "name": "IterableDiffer",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "IterableDifferFactory": {
@@ -67,7 +65,6 @@
       "name": "IterableDifferFactory",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "IterableDiffers": {
@@ -75,7 +72,6 @@
       "name": "IterableDiffers",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

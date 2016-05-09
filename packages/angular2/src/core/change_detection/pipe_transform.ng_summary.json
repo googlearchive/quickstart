@@ -6,7 +6,6 @@
       "name": "PipeTransform",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/pipe_transform.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

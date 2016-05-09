@@ -35,7 +35,6 @@
       "name": "AttributeMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "QueryMetadata": {
@@ -43,7 +42,6 @@
       "name": "QueryMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ContentChildrenMetadata": {
@@ -51,7 +49,6 @@
       "name": "ContentChildrenMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ContentChildMetadata": {
@@ -59,7 +56,6 @@
       "name": "ContentChildMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewQueryMetadata": {
@@ -67,7 +63,6 @@
       "name": "ViewQueryMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewChildrenMetadata": {
@@ -75,7 +70,6 @@
       "name": "ViewChildrenMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewChildMetadata": {
@@ -83,7 +77,6 @@
       "name": "ViewChildMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

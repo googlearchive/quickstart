@@ -16,13 +16,13 @@
       }
     ],
     "6": "ng_deps_model.pb.dart",
-    "10": [
+    "7": [
       {
-        "1": "import_export_model.pb.template.dart",
+        "1": "import_export_model.pb.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "reflection_info_model.pb.template.dart",
+        "1": "reflection_info_model.pb.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -33,7 +33,6 @@
       "name": "NgDepsModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/ng_deps_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NgDepsModel": {
@@ -41,7 +40,6 @@
       "name": "NgDepsModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/ng_deps_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ReadonlyNgDepsModel": {
@@ -49,7 +47,6 @@
       "name": "_ReadonlyNgDepsModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/ng_deps_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

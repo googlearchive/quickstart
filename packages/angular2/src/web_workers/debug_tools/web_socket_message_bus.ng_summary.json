@@ -26,7 +26,6 @@
       "name": "WebSocketMessageBus",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/web_socket_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WebSocketMessageBusSink": {
@@ -34,7 +33,6 @@
       "name": "WebSocketMessageBusSink",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/web_socket_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WebSocketMessageBusSource": {
@@ -42,7 +40,6 @@
       "name": "WebSocketMessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/web_socket_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

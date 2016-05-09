@@ -64,7 +64,6 @@
       "name": "Animation",
       "moduleUrl": "asset:angular2/lib/src/animate/animation.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

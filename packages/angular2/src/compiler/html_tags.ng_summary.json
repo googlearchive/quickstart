@@ -21,7 +21,6 @@
       "name": "NAMED_ENTITIES",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_tags.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HtmlTagContentType": {
@@ -29,7 +28,6 @@
       "name": "HtmlTagContentType",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_tags.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HtmlTagDefinition": {
@@ -37,7 +35,6 @@
       "name": "HtmlTagDefinition",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_tags.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getHtmlTagDefinition": {
@@ -45,7 +42,6 @@
       "name": "getHtmlTagDefinition",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_tags.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "splitNsName": {
@@ -53,7 +49,6 @@
       "name": "splitNsName",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_tags.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getNsPrefix": {
@@ -61,7 +56,6 @@
       "name": "getNsPrefix",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_tags.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "mergeNsAndName": {
@@ -69,7 +63,6 @@
       "name": "mergeNsAndName",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_tags.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

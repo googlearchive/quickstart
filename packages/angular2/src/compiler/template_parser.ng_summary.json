@@ -7,7 +7,8 @@
         "2": [
           "ListWrapper",
           "StringMapWrapper",
-          "SetWrapper"
+          "SetWrapper",
+          "MapWrapper"
         ],
         "5": false
       },
@@ -17,7 +18,8 @@
           "RegExpWrapper",
           "isPresent",
           "StringWrapper",
-          "isBlank"
+          "isBlank",
+          "isArray"
         ],
         "5": false
       },
@@ -32,6 +34,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/console.dart",
+        "2": [
+          "Console"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -39,26 +48,34 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "1": "expression_parser/ast.dart",
         "2": [
-          "Parser",
           "AST",
-          "ASTWithSource"
+          "Interpolation",
+          "ASTWithSource",
+          "TemplateBinding",
+          "RecursiveAstVisitor",
+          "BindingPipe"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/ast.dart",
+        "1": "expression_parser/parser.dart",
         "2": [
-          "TemplateBinding"
+          "Parser"
         ],
         "5": false
       },
       {
-        "1": "directive_metadata.dart",
+        "1": "compile_metadata.dart",
         "2": [
+          "CompileTokenMap",
           "CompileDirectiveMetadata",
-          "CompilePipeMetadata"
+          "CompilePipeMetadata",
+          "CompileMetadataWithType",
+          "CompileProviderMetadata",
+          "CompileTokenMetadata",
+          "CompileTypeMetadata"
         ],
         "5": false
       },
@@ -82,15 +99,15 @@
         "2": [
           "ParseSourceSpan",
           "ParseError",
-          "ParseLocation"
+          "ParseLocation",
+          "ParseErrorLevel"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/ast.dart",
+        "1": "package:angular2/src/core/linker/view_utils.dart",
         "2": [
-          "RecursiveAstVisitor",
-          "BindingPipe"
+          "MAX_INTERPOLATION_VALUES"
         ],
         "5": false
       },
@@ -100,7 +117,7 @@
           "ElementAst",
           "BoundElementPropertyAst",
           "BoundEventAst",
-          "VariableAst",
+          "ReferenceAst",
           "TemplateAst",
           "TemplateAstVisitor",
           "templateVisitAll",
@@ -111,7 +128,10 @@
           "NgContentAst",
           "PropertyBindingType",
           "DirectiveAst",
-          "BoundDirectivePropertyAst"
+          "BoundDirectivePropertyAst",
+          "ProviderAst",
+          "ProviderAstType",
+          "VariableAst"
         ],
         "5": false
       },
@@ -155,6 +175,8 @@
           "HtmlAttrAst",
           "HtmlTextAst",
           "HtmlCommentAst",
+          "HtmlExpansionAst",
+          "HtmlExpansionCaseAst",
           "htmlVisitAll"
         ],
         "5": false
@@ -165,6 +187,22 @@
           "splitAtColon"
         ],
         "5": false
+      },
+      {
+        "1": "identifiers.dart",
+        "2": [
+          "identifierToken",
+          "Identifiers"
+        ],
+        "5": false
+      },
+      {
+        "1": "provider_parser.dart",
+        "2": [
+          "ProviderElementContext",
+          "ProviderViewContext"
+        ],
+        "5": false
       }
     ],
     "5": [
@@ -173,11 +211,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -192,6 +226,10 @@
           {
             "1": "HtmlParser",
             "4": "_htmlParser"
+          },
+          {
+            "1": "Console",
+            "4": "_console"
           },
           {
             "1": "List",
@@ -213,7 +251,6 @@
       "name": "TEMPLATE_ELEMENT",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TEMPLATE_ATTR": {
@@ -221,7 +258,6 @@
       "name": "TEMPLATE_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TEMPLATE_ATTR_PREFIX": {
@@ -229,7 +265,6 @@
       "name": "TEMPLATE_ATTR_PREFIX",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CLASS_ATTR": {
@@ -237,7 +272,6 @@
       "name": "CLASS_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ATTRIBUTE_PREFIX": {
@@ -245,7 +279,6 @@
       "name": "ATTRIBUTE_PREFIX",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CLASS_PREFIX": {
@@ -253,7 +286,6 @@
       "name": "CLASS_PREFIX",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "STYLE_PREFIX": {
@@ -261,7 +293,6 @@
       "name": "STYLE_PREFIX",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TEMPLATE_TRANSFORMS": {
@@ -269,7 +300,6 @@
       "name": "TEMPLATE_TRANSFORMS",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TemplateParseError": {
@@ -277,7 +307,6 @@
       "name": "TemplateParseError",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TemplateParseResult": {
@@ -285,7 +314,6 @@
       "name": "TemplateParseResult",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TemplateParser": {
@@ -294,76 +322,117 @@
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "Parser",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Parser",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "ElementSchemaRegistry",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ElementSchemaRegistry",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "HtmlParser",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "HtmlParser",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "TEMPLATE_TRANSFORMS",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Console",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": true
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "TEMPLATE_TRANSFORMS",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": true,
+          "isValue": false
         }
       ]
     },
@@ -372,7 +441,6 @@
       "name": "TemplateParseVisitor",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NonBindableVisitor": {
@@ -380,7 +448,6 @@
       "name": "NonBindableVisitor",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "BoundElementOrDirectiveProperty": {
@@ -388,7 +455,13 @@
       "name": "BoundElementOrDirectiveProperty",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "ElementOrDirectiveRef": {
+      "class": "Identifier",
+      "name": "ElementOrDirectiveRef",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
       "value": null
     },
     "splitClasses": {
@@ -396,15 +469,13 @@
       "name": "splitClasses",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
-    "Component": {
+    "ElementContext": {
       "class": "Identifier",
-      "name": "Component",
+      "name": "ElementContext",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "createElementCssSelector": {
@@ -412,7 +483,6 @@
       "name": "createElementCssSelector",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PipeCollector": {
@@ -420,7 +490,13 @@
       "name": "PipeCollector",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "removeDuplicates": {
+      "class": "Identifier",
+      "name": "removeDuplicates",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
       "value": null
     }
   },

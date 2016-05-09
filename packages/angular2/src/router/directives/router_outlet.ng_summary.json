@@ -9,7 +9,8 @@
       {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "PromiseWrapper"
+          "PromiseWrapper",
+          "EventEmitter"
         ],
         "5": false
       },
@@ -35,11 +36,11 @@
           "Attribute",
           "DynamicComponentLoader",
           "ComponentRef",
-          "ElementRef",
-          "Injector",
+          "ViewContainerRef",
           "provide",
-          "Dependency",
-          "OnDestroy"
+          "ReflectiveInjector",
+          "OnDestroy",
+          "Output"
         ],
         "5": false
       },
@@ -84,26 +85,10 @@
     "5": [
       {
         "1": "RouterOutlet",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"router-outlet\""
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
-            "1": "ElementRef",
-            "4": "_elementRef"
+            "1": "ViewContainerRef",
+            "4": "_viewContainerRef"
           },
           {
             "1": "DynamicComponentLoader",
@@ -132,7 +117,6 @@
     "RouterOutlet": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "router-outlet",
       "exportAs": null,
       "type": {
@@ -141,75 +125,97 @@
         "moduleUrl": "asset:angular2/lib/src/router/directives/router_outlet.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "ElementRef",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ViewContainerRef",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "DynamicComponentLoader",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "DynamicComponentLoader",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "Router",
-              "moduleUrl": null,
-              "prefix": "routerMod",
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Router",
+                "moduleUrl": null,
+                "prefix": "routerMod",
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
-            "token": "name",
+            "token": {
+              "value": "name",
+              "identifier": null,
+              "identifierIsInstance": false
+            },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": true,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },
       "changeDetection": 5,
       "inputs": {},
-      "outputs": {},
+      "outputs": {
+        "activateEvents": "activate"
+      },
       "hostListeners": {},
       "hostProperties": {},
       "hostAttributes": {},

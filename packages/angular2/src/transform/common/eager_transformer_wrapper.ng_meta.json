@@ -15,7 +15,6 @@
       "name": "EagerTransformerWrapper",
       "moduleUrl": "asset:angular2/lib/src/transform/common/eager_transformer_wrapper.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_EagerTransformerWrapper": {
@@ -23,7 +22,6 @@
       "name": "_EagerTransformerWrapper",
       "moduleUrl": "asset:angular2/lib/src/transform/common/eager_transformer_wrapper.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_EagerAggregateTransformerWrapper": {
@@ -31,7 +29,6 @@
       "name": "_EagerAggregateTransformerWrapper",
       "moduleUrl": "asset:angular2/lib/src/transform/common/eager_transformer_wrapper.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

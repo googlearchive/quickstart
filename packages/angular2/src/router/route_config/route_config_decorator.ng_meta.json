@@ -7,9 +7,9 @@
       }
     ],
     "6": "route_config_decorator.dart",
-    "10": [
+    "7": [
       {
-        "1": "./route_config_impl.template.dart",
+        "1": "./route_config_impl.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -20,7 +20,6 @@
       "name": "RouteConfig",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AbstractRoute": {
@@ -28,7 +27,6 @@
       "name": "AbstractRoute",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Route": {
@@ -36,7 +34,6 @@
       "name": "Route",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AuxRoute": {
@@ -44,7 +41,6 @@
       "name": "AuxRoute",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AsyncRoute": {
@@ -52,7 +48,6 @@
       "name": "AsyncRoute",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Redirect": {
@@ -60,7 +55,6 @@
       "name": "Redirect",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RouteDefinition": {
@@ -68,7 +62,6 @@
       "name": "RouteDefinition",
       "moduleUrl": "asset:angular2/lib/src/router/route_definition.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

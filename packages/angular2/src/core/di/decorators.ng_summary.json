@@ -20,7 +20,6 @@
       "name": "Inject",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Optional": {
@@ -28,7 +27,6 @@
       "name": "Optional",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Injectable": {
@@ -36,7 +34,6 @@
       "name": "Injectable",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Self": {
@@ -44,7 +41,6 @@
       "name": "Self",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Host": {
@@ -52,7 +48,6 @@
       "name": "Host",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SkipSelf": {
@@ -60,7 +55,6 @@
       "name": "SkipSelf",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

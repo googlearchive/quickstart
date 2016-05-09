@@ -25,17 +25,17 @@
       }
     ],
     "6": "css_animation_builder.dart",
-    "10": [
+    "7": [
       {
-        "1": "css_animation_options.template.dart",
+        "1": "css_animation_options.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "animation.template.dart",
+        "1": "animation.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "browser_details.template.dart",
+        "1": "browser_details.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -46,7 +46,6 @@
       "name": "CssAnimationBuilder",
       "moduleUrl": "asset:angular2/lib/src/animate/css_animation_builder.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

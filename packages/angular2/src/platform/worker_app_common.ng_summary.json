@@ -46,7 +46,8 @@
           "PLATFORM_PIPES",
           "ExceptionHandler",
           "APPLICATION_COMMON_PROVIDERS",
-          "PLATFORM_COMMON_PROVIDERS"
+          "PLATFORM_COMMON_PROVIDERS",
+          "OpaqueToken"
         ],
         "5": false
       },
@@ -107,20 +108,45 @@
     "6": "worker_app_common.dart"
   },
   "type": {
+    "WORKER_APP_PLATFORM_MARKER": {
+      "class": "Identifier",
+      "name": "WORKER_APP_PLATFORM_MARKER",
+      "moduleUrl": "asset:angular2/lib/src/platform/worker_app_common.dart",
+      "prefix": null,
+      "value": null
+    },
     "WORKER_APP_PLATFORM": {
       "class": "Identifier",
       "name": "WORKER_APP_PLATFORM",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "PLATFORM_COMMON_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "WORKER_APP_PLATFORM_MARKER",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": true,
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         }
       ]
     },
@@ -129,14 +155,12 @@
       "name": "WORKER_APP_APPLICATION_COMMON",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "APPLICATION_COMMON_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -144,7 +168,6 @@
           "name": "FORM_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -152,18 +175,20 @@
           "name": "Serializer",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "PLATFORM_PIPES",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PLATFORM_PIPES",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -172,20 +197,24 @@
             "name": "COMMON_PIPES",
             "moduleUrl": null,
             "prefix": null,
-            "constConstructor": null,
             "value": null
           },
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "PLATFORM_DIRECTIVES",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PLATFORM_DIRECTIVES",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -194,20 +223,24 @@
             "name": "COMMON_DIRECTIVES",
             "moduleUrl": null,
             "prefix": null,
-            "constConstructor": null,
             "value": null
           },
-          "useFactory": null
+          "useFactory": null,
+          "multi": true,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ClientMessageBrokerFactory",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ClientMessageBrokerFactory",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -215,23 +248,27 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ServiceMessageBrokerFactory",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ServiceMessageBrokerFactory",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
@@ -239,76 +276,91 @@
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Identifier",
           "name": "WebWorkerRootRenderer",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "RootRenderer",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RootRenderer",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": {
-            "class": "Identifier",
-            "name": "WebWorkerRootRenderer",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "WebWorkerRootRenderer",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ON_WEB_WORKER",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ON_WEB_WORKER",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
           "useValue": true,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Identifier",
           "name": "RenderStore",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ExceptionHandler",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ExceptionHandler",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -318,40 +370,48 @@
             "name": "_exceptionHandler",
             "prefix": null,
             "moduleUrl": null,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
-          }
+            "diDeps": []
+          },
+          "multi": false,
+          "deps": []
         },
         {
           "class": "Identifier",
           "name": "WebWorkerXHRImpl",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "XHR",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "XHR",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": {
-            "class": "Identifier",
-            "name": "WebWorkerXHRImpl",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "WebWorkerXHRImpl",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         }
       ]
     },
@@ -360,7 +420,6 @@
       "name": "PrintLogger",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_exceptionHandler": {
@@ -368,13 +427,8 @@
       "name": "_exceptionHandler",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app_common.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },
-  "alias": {
-    "WORKER_APP_PLATFORM": [
-      "PLATFORM_COMMON_PROVIDERS"
-    ]
-  }
+  "alias": {}
 }

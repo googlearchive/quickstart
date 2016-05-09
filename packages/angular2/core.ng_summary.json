@@ -34,7 +34,12 @@
       {
         "1": "./src/core/application_ref.dart",
         "2": [
-          "platform",
+          "createPlatform",
+          "assertPlatform",
+          "disposePlatform",
+          "getPlatform",
+          "coreLoadAndBootstrap",
+          "coreBootstrap",
           "createNgZone",
           "PlatformRef",
           "ApplicationRef"
@@ -44,7 +49,6 @@
         "1": "./src/core/application_tokens.dart",
         "2": [
           "APP_ID",
-          "APP_COMPONENT",
           "APP_INITIALIZER",
           "PACKAGE_ROOT_URL",
           "PLATFORM_INITIALIZER"

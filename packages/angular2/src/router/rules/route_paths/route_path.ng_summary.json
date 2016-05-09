@@ -18,7 +18,6 @@
       "name": "MatchedUrl",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "GeneratedUrl": {
@@ -26,7 +25,6 @@
       "name": "GeneratedUrl",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RoutePath": {
@@ -34,7 +32,6 @@
       "name": "RoutePath",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -1,0 +1,78 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.config",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "unimplemented"
+        ],
+        "5": false
+      },
+      {
+        "1": "identifiers.dart",
+        "2": [
+          "Identifiers"
+        ],
+        "5": false
+      },
+      {
+        "1": "compile_metadata.dart",
+        "2": [
+          "CompileIdentifierMetadata"
+        ],
+        "5": false
+      }
+    ],
+    "6": "config.dart",
+    "7": [
+      {
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "4": "i1"
+      },
+      {
+        "1": "identifiers.ngfactory.dart",
+        "4": "i2"
+      },
+      {
+        "1": "compile_metadata.ngfactory.dart",
+        "4": "i3"
+      }
+    ]
+  },
+  "type": {
+    "CompilerConfig": {
+      "class": "Identifier",
+      "name": "CompilerConfig",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RenderTypes": {
+      "class": "Identifier",
+      "name": "RenderTypes",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DefaultRenderTypes": {
+      "class": "Identifier",
+      "name": "DefaultRenderTypes",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

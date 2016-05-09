@@ -6,7 +6,6 @@
       "name": "LocationType",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serialized_types.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

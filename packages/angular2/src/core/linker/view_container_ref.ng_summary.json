@@ -17,10 +17,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/core/di/injector.dart",
         "2": [
-          "ResolvedProvider",
-          "Injectable"
+          "Injector"
         ],
         "5": false
       },
@@ -29,6 +28,15 @@
         "2": [
           "isPresent",
           "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "../profile/profile.dart",
+        "2": [
+          "wtfCreateScope",
+          "wtfLeave",
+          "WtfScopeFn"
         ],
         "5": false
       },
@@ -42,8 +50,7 @@
       {
         "1": "element_ref.dart",
         "2": [
-          "ElementRef",
-          "ElementRef_"
+          "ElementRef"
         ],
         "5": false
       },
@@ -59,11 +66,16 @@
         "1": "view_ref.dart",
         "2": [
           "EmbeddedViewRef",
-          "HostViewRef",
-          "HostViewFactoryRef",
-          "HostViewFactoryRef_",
           "ViewRef",
           "ViewRef_"
+        ],
+        "5": false
+      },
+      {
+        "1": "component_factory.dart",
+        "2": [
+          "ComponentFactory",
+          "ComponentRef"
         ],
         "5": false
       }
@@ -76,7 +88,6 @@
       "name": "ViewContainerRef",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewContainerRef_": {
@@ -84,7 +95,6 @@
       "name": "ViewContainerRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -57,33 +57,33 @@
       }
     ],
     "6": "animation.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/math.template.dart",
+        "1": "package:angular2/src/facade/math.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/platform/dom/util.template.dart",
+        "1": "package:angular2/src/platform/dom/util.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "browser_details.template.dart",
+        "1": "browser_details.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "css_animation_options.template.dart",
+        "1": "css_animation_options.ngfactory.dart",
         "4": "i6"
       }
     ]
@@ -94,7 +94,6 @@
       "name": "Animation",
       "moduleUrl": "asset:angular2/lib/src/animate/animation.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -1,0 +1,13 @@
+{
+  "ngDeps": null,
+  "type": {
+    "async": {
+      "class": "Identifier",
+      "name": "async",
+      "moduleUrl": "asset:angular2/lib/src/testing/async.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

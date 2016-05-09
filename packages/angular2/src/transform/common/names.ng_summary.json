@@ -6,7 +6,6 @@
       "name": "BOOTSTRAP_NAME",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "BOOTSTRAP_STATIC_NAME": {
@@ -14,7 +13,6 @@
       "name": "BOOTSTRAP_STATIC_NAME",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SETUP_METHOD_NAME": {
@@ -22,7 +20,6 @@
       "name": "SETUP_METHOD_NAME",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "REFLECTOR_VAR_NAME": {
@@ -30,7 +27,6 @@
       "name": "REFLECTOR_VAR_NAME",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TRANSFORM_DYNAMIC_MODE": {
@@ -38,7 +34,6 @@
       "name": "TRANSFORM_DYNAMIC_MODE",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CSS_EXTENSION": {
@@ -46,7 +41,6 @@
       "name": "CSS_EXTENSION",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DEFERRED_EXTENSION": {
@@ -54,7 +48,6 @@
       "name": "DEFERRED_EXTENSION",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SHIMMED_STYLESHEET_EXTENSION": {
@@ -62,7 +55,6 @@
       "name": "SHIMMED_STYLESHEET_EXTENSION",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NON_SHIMMED_STYLESHEET_EXTENSION": {
@@ -70,7 +62,6 @@
       "name": "NON_SHIMMED_STYLESHEET_EXTENSION",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "META_EXTENSION": {
@@ -78,7 +69,6 @@
       "name": "META_EXTENSION",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "REFLECTION_CAPABILITIES_NAME": {
@@ -86,7 +76,6 @@
       "name": "REFLECTION_CAPABILITIES_NAME",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "REFLECTOR_IMPORT": {
@@ -94,7 +83,6 @@
       "name": "REFLECTOR_IMPORT",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "REFLECTOR_PREFIX": {
@@ -102,7 +90,6 @@
       "name": "REFLECTOR_PREFIX",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "REGISTER_TYPE_METHOD_NAME": {
@@ -110,31 +97,6 @@
       "name": "REGISTER_TYPE_METHOD_NAME",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "REGISTER_GETTERS_METHOD_NAME": {
-      "class": "Identifier",
-      "name": "REGISTER_GETTERS_METHOD_NAME",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "REGISTER_SETTERS_METHOD_NAME": {
-      "class": "Identifier",
-      "name": "REGISTER_SETTERS_METHOD_NAME",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "REGISTER_METHODS_METHOD_NAME": {
-      "class": "Identifier",
-      "name": "REGISTER_METHODS_METHOD_NAME",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SUMMARY_META_EXTENSION": {
@@ -142,7 +104,6 @@
       "name": "SUMMARY_META_EXTENSION",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TEMPLATE_EXTENSION": {
@@ -150,7 +111,6 @@
       "name": "TEMPLATE_EXTENSION",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ALL_EXTENSIONS": {
@@ -158,7 +118,6 @@
       "name": "ALL_EXTENSIONS",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isGenerated": {
@@ -166,7 +125,6 @@
       "name": "isGenerated",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "toDeferredExtension": {
@@ -174,7 +132,6 @@
       "name": "toDeferredExtension",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "toMetaExtension": {
@@ -182,7 +139,6 @@
       "name": "toMetaExtension",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "toTemplateExtension": {
@@ -190,7 +146,6 @@
       "name": "toTemplateExtension",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "toShimmedStylesheetExtension": {
@@ -198,7 +153,6 @@
       "name": "toShimmedStylesheetExtension",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "toNonShimmedStylesheetExtension": {
@@ -206,7 +160,6 @@
       "name": "toNonShimmedStylesheetExtension",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "toSummaryExtension": {
@@ -214,7 +167,6 @@
       "name": "toSummaryExtension",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_toExtension": {
@@ -222,7 +174,6 @@
       "name": "_toExtension",
       "moduleUrl": "asset:angular2/lib/src/transform/common/names.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

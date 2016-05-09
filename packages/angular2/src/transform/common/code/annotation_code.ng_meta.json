@@ -11,10 +11,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/annotation_matcher.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/model/annotation_model.pb.dart",
         "5": false
       },
@@ -34,18 +30,14 @@
       }
     ],
     "6": "annotation_code.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/transform/common/annotation_matcher.template.dart",
+        "1": "package:angular2/src/transform/common/model/annotation_model.pb.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/model/annotation_model.pb.template.dart",
+        "1": "constify.ngfactory.dart",
         "4": "i1"
-      },
-      {
-        "1": "constify.template.dart",
-        "4": "i2"
       }
     ]
   },
@@ -55,7 +47,6 @@
       "name": "AnnotationVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/annotation_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AnnotationWriterMixin": {
@@ -63,7 +54,6 @@
       "name": "AnnotationWriterMixin",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/annotation_code.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

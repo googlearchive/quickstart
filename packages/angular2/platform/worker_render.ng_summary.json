@@ -3,7 +3,23 @@
     "1": "angular2.platform.worker_render",
     "3": [
       {
+        "1": "package:angular2/src/platform/worker_render.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/platform/worker_render_common.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "5": false
+      },
+      {
+        "1": "dart:async",
         "5": false
       }
     ],
@@ -21,7 +37,6 @@
         "1": "package:angular2/src/platform/worker_render.dart",
         "2": [
           "WORKER_RENDER_APPLICATION",
-          "initIsolate",
           "WebWorkerInstance"
         ]
       },
@@ -66,7 +81,20 @@
       "name": "WORKER_RENDER_APP",
       "moduleUrl": "asset:angular2/lib/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "workerRenderPlatform": {
+      "class": "Identifier",
+      "name": "workerRenderPlatform",
+      "moduleUrl": "asset:angular2/lib/platform/worker_render.dart",
+      "prefix": null,
+      "value": null
+    },
+    "bootstrapRender": {
+      "class": "Identifier",
+      "name": "bootstrapRender",
+      "moduleUrl": "asset:angular2/lib/platform/worker_render.dart",
+      "prefix": null,
       "value": null
     }
   },

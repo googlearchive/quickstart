@@ -31,6 +31,13 @@
         "5": false
       },
       {
+        "1": "ng_template_outlet.dart",
+        "2": [
+          "NgTemplateOutlet"
+        ],
+        "5": false
+      },
+      {
         "1": "ng_style.dart",
         "2": [
           "NgStyle"
@@ -63,14 +70,12 @@
       "name": "CORE_DIRECTIVES",
       "moduleUrl": "asset:angular2/lib/src/common/directives/core_directives.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "NgClass",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -78,7 +83,6 @@
           "name": "NgFor",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -86,7 +90,13 @@
           "name": "NgIf",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "NgTemplateOutlet",
+          "moduleUrl": null,
+          "prefix": null,
           "value": null
         },
         {
@@ -94,7 +104,6 @@
           "name": "NgStyle",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -102,7 +111,6 @@
           "name": "NgSwitch",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -110,7 +118,6 @@
           "name": "NgSwitchWhen",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -118,7 +125,6 @@
           "name": "NgSwitchDefault",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -126,7 +132,6 @@
           "name": "NgPlural",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -134,7 +139,6 @@
           "name": "NgPluralCase",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ]
@@ -145,6 +149,7 @@
       "NgClass",
       "NgFor",
       "NgIf",
+      "NgTemplateOutlet",
       "NgStyle",
       "NgSwitch",
       "NgSwitchWhen",

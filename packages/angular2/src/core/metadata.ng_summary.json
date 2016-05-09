@@ -38,6 +38,19 @@
         "3": [
           "VIEW_ENCAPSULATION_VALUES"
         ]
+      },
+      {
+        "1": "./metadata/lifecycle_hooks.dart",
+        "2": [
+          "AfterContentInit",
+          "AfterContentChecked",
+          "AfterViewInit",
+          "AfterViewChecked",
+          "OnChanges",
+          "OnDestroy",
+          "OnInit",
+          "DoCheck"
+        ]
       }
     ],
     "6": "metadata.dart"
@@ -48,7 +61,6 @@
       "name": "Directive",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Component": {
@@ -56,7 +68,6 @@
       "name": "Component",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "View": {
@@ -64,7 +75,6 @@
       "name": "View",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Pipe": {
@@ -72,7 +82,6 @@
       "name": "Pipe",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Attribute": {
@@ -80,7 +89,6 @@
       "name": "Attribute",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Query": {
@@ -88,7 +96,6 @@
       "name": "Query",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ContentChildren": {
@@ -96,7 +103,6 @@
       "name": "ContentChildren",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ContentChild": {
@@ -104,7 +110,6 @@
       "name": "ContentChild",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewQuery": {
@@ -112,7 +117,6 @@
       "name": "ViewQuery",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewChildren": {
@@ -120,7 +124,6 @@
       "name": "ViewChildren",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ViewChild": {
@@ -128,7 +131,6 @@
       "name": "ViewChild",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Input": {
@@ -136,7 +138,6 @@
       "name": "Input",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Output": {
@@ -144,7 +145,6 @@
       "name": "Output",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HostBinding": {
@@ -152,7 +152,6 @@
       "name": "HostBinding",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HostListener": {
@@ -160,7 +159,6 @@
       "name": "HostListener",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

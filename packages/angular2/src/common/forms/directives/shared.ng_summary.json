@@ -138,7 +138,6 @@
       "name": "controlPath",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "setUpControl": {
@@ -146,7 +145,6 @@
       "name": "setUpControl",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "setUpControlGroup": {
@@ -154,7 +152,6 @@
       "name": "setUpControlGroup",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_throwError": {
@@ -162,7 +159,6 @@
       "name": "_throwError",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "composeValidators": {
@@ -170,7 +166,6 @@
       "name": "composeValidators",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "composeAsyncValidators": {
@@ -178,7 +173,6 @@
       "name": "composeAsyncValidators",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isPropertyUpdated": {
@@ -186,7 +180,6 @@
       "name": "isPropertyUpdated",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "selectValueAccessor": {
@@ -194,7 +187,6 @@
       "name": "selectValueAccessor",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

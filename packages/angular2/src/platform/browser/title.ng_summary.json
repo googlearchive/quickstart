@@ -18,7 +18,6 @@
       "name": "Title",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/title.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

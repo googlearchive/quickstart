@@ -79,7 +79,6 @@
       "name": "ReflectionInfo",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Reflector": {
@@ -87,7 +86,6 @@
       "name": "Reflector",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_mergeMaps": {
@@ -95,7 +93,6 @@
       "name": "_mergeMaps",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

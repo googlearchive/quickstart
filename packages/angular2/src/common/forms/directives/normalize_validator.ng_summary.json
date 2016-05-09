@@ -18,7 +18,6 @@
       "name": "normalizeValidator",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/normalize_validator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "normalizeAsyncValidator": {
@@ -26,7 +25,6 @@
       "name": "normalizeAsyncValidator",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/normalize_validator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

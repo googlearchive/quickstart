@@ -35,7 +35,6 @@
       "name": "_ArrayLogger",
       "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ExceptionHandler": {
@@ -43,7 +42,6 @@
       "name": "ExceptionHandler",
       "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -25,7 +25,6 @@
       "name": "HtmlAst",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HtmlTextAst": {
@@ -33,7 +32,20 @@
       "name": "HtmlTextAst",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "HtmlExpansionAst": {
+      "class": "Identifier",
+      "name": "HtmlExpansionAst",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "HtmlExpansionCaseAst": {
+      "class": "Identifier",
+      "name": "HtmlExpansionCaseAst",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
+      "prefix": null,
       "value": null
     },
     "HtmlAttrAst": {
@@ -41,7 +53,6 @@
       "name": "HtmlAttrAst",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HtmlElementAst": {
@@ -49,7 +60,6 @@
       "name": "HtmlElementAst",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HtmlCommentAst": {
@@ -57,7 +67,6 @@
       "name": "HtmlCommentAst",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HtmlAstVisitor": {
@@ -65,7 +74,6 @@
       "name": "HtmlAstVisitor",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "htmlVisitAll": {
@@ -73,7 +81,6 @@
       "name": "htmlVisitAll",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

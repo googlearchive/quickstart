@@ -40,11 +40,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -64,21 +60,21 @@
       }
     ],
     "6": "event_manager.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
+        "1": "package:angular2/src/core/zone/ng_zone.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i3"
       }
     ]
@@ -89,7 +85,6 @@
       "name": "EVENT_MANAGER_PLUGINS",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "EventManager": {
@@ -98,42 +93,51 @@
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "EVENT_MANAGER_PLUGINS",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EVENT_MANAGER_PLUGINS",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "NgZone",
-            "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "NgZone",
+              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -142,7 +146,6 @@
       "name": "EventManagerPlugin",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

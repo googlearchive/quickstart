@@ -6,7 +6,6 @@
       "name": "PromiseWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PromiseCompleter": {
@@ -14,7 +13,6 @@
       "name": "PromiseCompleter",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

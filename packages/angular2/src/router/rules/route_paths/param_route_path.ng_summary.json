@@ -61,7 +61,6 @@
       "name": "PathSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ContinuationPathSegment": {
@@ -69,7 +68,6 @@
       "name": "ContinuationPathSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "StaticPathSegment": {
@@ -77,7 +75,6 @@
       "name": "StaticPathSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DynamicPathSegment": {
@@ -85,7 +82,6 @@
       "name": "DynamicPathSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "StarPathSegment": {
@@ -93,7 +89,6 @@
       "name": "StarPathSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ParamRoutePath": {
@@ -101,7 +96,6 @@
       "name": "ParamRoutePath",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "encodeDynamicSegment": {
@@ -109,7 +103,6 @@
       "name": "encodeDynamicSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "decodeDynamicSegment": {
@@ -117,7 +110,6 @@
       "name": "decodeDynamicSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

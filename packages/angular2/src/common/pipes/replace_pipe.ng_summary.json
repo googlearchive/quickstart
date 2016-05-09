@@ -15,13 +15,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/core.dart",
         "2": [
           "Injectable",
@@ -50,19 +43,11 @@
                 "2": "\"replace\""
               }
             ],
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           },
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "6": [
@@ -81,9 +66,8 @@
         "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
-        "diDeps": null
+        "diDeps": []
       },
       "name": "replace",
       "pure": false

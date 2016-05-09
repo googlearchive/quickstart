@@ -17,7 +17,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/router/location/platform_location.dart",
+        "1": "package:angular2/platform/common.dart",
         "2": [
           "PlatformLocation"
         ],
@@ -46,7 +46,6 @@
       "name": "initRouter",
       "moduleUrl": "asset:angular2/lib/src/web_workers/worker/router_providers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

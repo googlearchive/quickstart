@@ -32,27 +32,38 @@
         ]
       },
       {
+        "1": "di/reflective_injector.dart",
+        "2": [
+          "ReflectiveInjector"
+        ]
+      },
+      {
         "1": "di/provider.dart",
         "2": [
           "Binding",
           "ProviderBuilder",
-          "ResolvedBinding",
-          "ResolvedFactory",
-          "Dependency",
           "bind",
           "Provider",
-          "ResolvedProvider",
           "provide"
         ]
       },
       {
-        "1": "di/key.dart",
+        "1": "di/reflective_provider.dart",
         "2": [
-          "Key"
+          "ResolvedReflectiveBinding",
+          "ResolvedReflectiveFactory",
+          "ReflectiveDependency",
+          "ResolvedReflectiveProvider"
         ]
       },
       {
-        "1": "di/exceptions.dart",
+        "1": "di/reflective_key.dart",
+        "2": [
+          "ReflectiveKey"
+        ]
+      },
+      {
+        "1": "di/reflective_exceptions.dart",
         "2": [
           "NoProviderError",
           "AbstractProviderError",

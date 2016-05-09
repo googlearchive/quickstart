@@ -12,7 +12,8 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "print"
+          "print",
+          "warn"
         ],
         "5": false
       }
@@ -23,23 +24,19 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
     ],
     "6": "console.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -51,7 +48,6 @@
       "moduleUrl": "asset:angular2/lib/src/core/console.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     }

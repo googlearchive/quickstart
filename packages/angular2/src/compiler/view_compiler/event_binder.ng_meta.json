@@ -1,0 +1,168 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.view_compiler.event_binder",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank",
+          "isPresent",
+          "StringWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "constants.dart",
+        "2": [
+          "EventHandlerVars",
+          "ViewProperties"
+        ],
+        "5": false
+      },
+      {
+        "1": "../output/output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
+        "1": "compile_element.dart",
+        "2": [
+          "CompileElement"
+        ],
+        "5": false
+      },
+      {
+        "1": "compile_method.dart",
+        "2": [
+          "CompileMethod"
+        ],
+        "5": false
+      },
+      {
+        "1": "../template_ast.dart",
+        "2": [
+          "BoundEventAst",
+          "DirectiveAst"
+        ],
+        "5": false
+      },
+      {
+        "1": "../compile_metadata.dart",
+        "2": [
+          "CompileDirectiveMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "expression_converter.dart",
+        "2": [
+          "convertCdStatementToIr"
+        ],
+        "5": false
+      },
+      {
+        "1": "compile_binding.dart",
+        "2": [
+          "CompileBinding"
+        ],
+        "5": false
+      }
+    ],
+    "6": "event_binder.dart",
+    "7": [
+      {
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "4": "i1"
+      },
+      {
+        "1": "constants.ngfactory.dart",
+        "4": "i2"
+      },
+      {
+        "1": "../output/output_ast.ngfactory.dart",
+        "4": "i3"
+      },
+      {
+        "1": "compile_element.ngfactory.dart",
+        "4": "i4"
+      },
+      {
+        "1": "compile_method.ngfactory.dart",
+        "4": "i5"
+      },
+      {
+        "1": "../template_ast.ngfactory.dart",
+        "4": "i6"
+      },
+      {
+        "1": "../compile_metadata.ngfactory.dart",
+        "4": "i7"
+      },
+      {
+        "1": "expression_converter.ngfactory.dart",
+        "4": "i8"
+      },
+      {
+        "1": "compile_binding.ngfactory.dart",
+        "4": "i9"
+      }
+    ]
+  },
+  "type": {
+    "CompileEventListener": {
+      "class": "Identifier",
+      "name": "CompileEventListener",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/event_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "collectEventListeners": {
+      "class": "Identifier",
+      "name": "collectEventListeners",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/event_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "bindDirectiveOutputs": {
+      "class": "Identifier",
+      "name": "bindDirectiveOutputs",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/event_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "bindRenderOutputs": {
+      "class": "Identifier",
+      "name": "bindRenderOutputs",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/event_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "convertStmtIntoExpression": {
+      "class": "Identifier",
+      "name": "convertStmtIntoExpression",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/event_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "santitizeEventName": {
+      "class": "Identifier",
+      "name": "santitizeEventName",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/event_binder.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

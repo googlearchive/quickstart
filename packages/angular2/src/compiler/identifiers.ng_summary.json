@@ -1,0 +1,155 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.identifiers",
+    "3": [
+      {
+        "1": "compile_metadata.dart",
+        "2": [
+          "CompileIdentifierMetadata",
+          "CompileTokenMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view.dart",
+        "2": [
+          "AppView"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/debug_context.dart",
+        "2": [
+          "StaticNodeDebugInfo",
+          "DebugContext"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_utils.dart",
+        "2": [
+          "ViewUtils",
+          "flattenNestedViewRenderNodes",
+          "interpolate",
+          "checkBinding",
+          "castByValue",
+          "pureProxy1",
+          "pureProxy2",
+          "pureProxy3",
+          "pureProxy4",
+          "pureProxy5",
+          "pureProxy6",
+          "pureProxy7",
+          "pureProxy8",
+          "pureProxy9",
+          "pureProxy10"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "2": [
+          "uninitialized",
+          "devModeEqual",
+          "SimpleChange",
+          "ValueUnwrapper",
+          "ChangeDetectorRef",
+          "ChangeDetectorState",
+          "ChangeDetectionStrategy"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/element.dart",
+        "2": [
+          "AppElement"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/element_ref.dart",
+        "2": [
+          "ElementRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_container_ref.dart",
+        "2": [
+          "ViewContainerRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/render/api.dart",
+        "2": [
+          "Renderer",
+          "RenderComponentType",
+          "RenderDebugInfo"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_type.dart",
+        "2": [
+          "ViewType"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker.dart",
+        "2": [
+          "QueryList"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/injector.dart",
+        "2": [
+          "Injector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/template_ref.dart",
+        "2": [
+          "TemplateRef",
+          "TemplateRef_"
+        ],
+        "5": false
+      },
+      {
+        "1": "util.dart",
+        "2": [
+          "MODULE_SUFFIX"
+        ],
+        "5": false
+      }
+    ],
+    "6": "identifiers.dart"
+  },
+  "type": {
+    "Identifiers": {
+      "class": "Identifier",
+      "name": "Identifiers",
+      "moduleUrl": "asset:angular2/lib/src/compiler/identifiers.dart",
+      "prefix": null,
+      "value": null
+    },
+    "identifierToken": {
+      "class": "Identifier",
+      "name": "identifierToken",
+      "moduleUrl": "asset:angular2/lib/src/compiler/identifiers.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -29,7 +29,6 @@
       "name": "RouteHandler",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_handlers/route_handler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

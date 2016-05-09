@@ -19,7 +19,9 @@
           "print",
           "isPresent",
           "DateWrapper",
-          "stringify"
+          "stringify",
+          "Type",
+          "StringWrapper"
         ],
         "5": false
       },
@@ -54,14 +56,6 @@
           "Injectable"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "StringWrapper"
-        ],
-        "5": false
       }
     ],
     "4": [
@@ -78,11 +72,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -98,29 +88,29 @@
       }
     ],
     "6": "client_message_broker.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/web_workers/shared/message_bus.template.dart",
+        "1": "package:angular2/src/web_workers/shared/message_bus.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/serializer.template.dart",
+        "1": "package:angular2/src/web_workers/shared/serializer.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i5"
       }
     ]
@@ -131,7 +121,6 @@
       "name": "ClientMessageBrokerFactory",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClientMessageBrokerFactory_": {
@@ -140,42 +129,51 @@
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "MessageBus",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "MessageBus",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         },
         {
           "token": {
-            "class": "Identifier",
-            "name": "Serializer",
-            "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Serializer",
+              "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -184,7 +182,6 @@
       "name": "ClientMessageBroker",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClientMessageBroker_": {
@@ -192,7 +189,6 @@
       "name": "ClientMessageBroker_",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageData": {
@@ -200,7 +196,6 @@
       "name": "MessageData",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "FnArg": {
@@ -208,7 +203,6 @@
       "name": "FnArg",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "UiArguments": {
@@ -216,7 +210,6 @@
       "name": "UiArguments",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "IS_DART": {
@@ -224,7 +217,6 @@
       "name": "IS_DART",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_NAN_KEY": {
@@ -232,7 +224,6 @@
       "name": "_NAN_KEY",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_IS_DART_VM": {
@@ -240,7 +231,6 @@
       "name": "_IS_DART_VM",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getTypeNameForDebugging": {
@@ -248,7 +238,6 @@
       "name": "getTypeNameForDebugging",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Math": {
@@ -256,7 +245,6 @@
       "name": "Math",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "CONST": {
@@ -264,7 +252,6 @@
       "name": "CONST",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "scheduleMicroTask": {
@@ -272,7 +259,6 @@
       "name": "scheduleMicroTask",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isPresent": {
@@ -280,7 +266,6 @@
       "name": "isPresent",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isBlank": {
@@ -288,7 +273,6 @@
       "name": "isBlank",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isString": {
@@ -296,7 +280,6 @@
       "name": "isString",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isFunction": {
@@ -304,7 +287,6 @@
       "name": "isFunction",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isType": {
@@ -312,7 +294,6 @@
       "name": "isType",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isStringMap": {
@@ -320,7 +301,6 @@
       "name": "isStringMap",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isArray": {
@@ -328,7 +308,6 @@
       "name": "isArray",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isPromise": {
@@ -336,7 +315,6 @@
       "name": "isPromise",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isNumber": {
@@ -344,7 +322,6 @@
       "name": "isNumber",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isBoolean": {
@@ -352,7 +329,6 @@
       "name": "isBoolean",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isDate": {
@@ -360,7 +336,6 @@
       "name": "isDate",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "stringify": {
@@ -368,7 +343,6 @@
       "name": "stringify",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "serializeEnum": {
@@ -376,7 +350,6 @@
       "name": "serializeEnum",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "deserializeEnum": {
@@ -384,7 +357,6 @@
       "name": "deserializeEnum",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "resolveEnumToken": {
@@ -392,7 +364,6 @@
       "name": "resolveEnumToken",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "StringWrapper": {
@@ -400,7 +371,6 @@
       "name": "StringWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "StringJoiner": {
@@ -408,7 +378,6 @@
       "name": "StringJoiner",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NumberWrapper": {
@@ -416,7 +385,6 @@
       "name": "NumberWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RegExpWrapper": {
@@ -424,7 +392,6 @@
       "name": "RegExpWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RegExpMatcherWrapper": {
@@ -432,7 +399,6 @@
       "name": "RegExpMatcherWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_JSLikeMatch": {
@@ -440,7 +406,6 @@
       "name": "_JSLikeMatch",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "FunctionWrapper": {
@@ -448,7 +413,6 @@
       "name": "FunctionWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "looseIdentical": {
@@ -456,7 +420,6 @@
       "name": "looseIdentical",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_looseIdentical": {
@@ -464,7 +427,6 @@
       "name": "_looseIdentical",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getMapKey": {
@@ -472,7 +434,6 @@
       "name": "getMapKey",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "normalizeBlank": {
@@ -480,7 +441,6 @@
       "name": "normalizeBlank",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "normalizeBool": {
@@ -488,7 +448,6 @@
       "name": "normalizeBool",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isJsObject": {
@@ -496,7 +455,13 @@
       "name": "isJsObject",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "warn": {
+      "class": "Identifier",
+      "name": "warn",
+      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
       "value": null
     },
     "lockMode": {
@@ -504,7 +469,6 @@
       "name": "lockMode",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "enableDevMode": {
@@ -512,7 +476,6 @@
       "name": "enableDevMode",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "enableProdMode": {
@@ -520,7 +483,6 @@
       "name": "enableProdMode",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "assertionsEnabled": {
@@ -528,7 +490,6 @@
       "name": "assertionsEnabled",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Json": {
@@ -536,7 +497,6 @@
       "name": "Json",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DateWrapper": {
@@ -544,7 +504,6 @@
       "name": "DateWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isPrimitive": {
@@ -552,7 +511,6 @@
       "name": "isPrimitive",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "evalExpression": {
@@ -560,7 +518,6 @@
       "name": "evalExpression",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "hasConstructor": {
@@ -568,7 +525,6 @@
       "name": "hasConstructor",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "bitWiseOr": {
@@ -576,7 +532,6 @@
       "name": "bitWiseOr",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "bitWiseAnd": {
@@ -584,7 +539,6 @@
       "name": "bitWiseAnd",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "escape": {
@@ -592,7 +546,6 @@
       "name": "escape",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

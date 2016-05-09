@@ -5,7 +5,7 @@
       {
         "1": "package:angular2/core.dart",
         "2": [
-          "Injector",
+          "ReflectiveInjector",
           "Provider",
           "PLATFORM_INITIALIZER"
         ],
@@ -34,25 +34,55 @@
           "Type"
         ],
         "5": false
+      },
+      {
+        "1": "async.dart",
+        "2": [
+          "async"
+        ],
+        "5": false
+      },
+      {
+        "1": "async_test_completer.dart",
+        "2": [
+          "AsyncTestCompleter"
+        ],
+        "5": false
+      }
+    ],
+    "4": [
+      {
+        "1": "async.dart",
+        "2": [
+          "async"
+        ]
       }
     ],
     "6": "test_injector.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i3"
+      },
+      {
+        "1": "async.ngfactory.dart",
+        "4": "i4"
+      },
+      {
+        "1": "async_test_completer.ngfactory.dart",
+        "4": "i5"
       }
     ]
   },
@@ -62,7 +92,6 @@
       "name": "TestInjector",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getTestInjector": {
@@ -70,7 +99,6 @@
       "name": "getTestInjector",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "setBaseTestProviders": {
@@ -78,7 +106,6 @@
       "name": "setBaseTestProviders",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "resetBaseTestProviders": {
@@ -86,7 +113,6 @@
       "name": "resetBaseTestProviders",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "inject": {
@@ -94,7 +120,6 @@
       "name": "inject",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "InjectSetupWrapper": {
@@ -102,7 +127,6 @@
       "name": "InjectSetupWrapper",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "withProviders": {
@@ -110,7 +134,6 @@
       "name": "withProviders",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "injectAsync": {
@@ -118,23 +141,13 @@
       "name": "injectAsync",
       "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
-    "emptyArray": {
+    "async": {
       "class": "Identifier",
-      "name": "emptyArray",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
+      "name": "async",
+      "moduleUrl": "asset:angular2/lib/src/testing/async.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "FunctionWithParamTokens": {
-      "class": "Identifier",
-      "name": "FunctionWithParamTokens",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

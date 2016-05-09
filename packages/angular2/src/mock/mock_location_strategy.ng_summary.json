@@ -18,7 +18,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/router/location/location_strategy.dart",
+        "1": "package:angular2/platform/common.dart",
         "2": [
           "LocationStrategy"
         ],
@@ -31,11 +31,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
@@ -49,7 +45,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/mock_location_strategy.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -58,7 +53,6 @@
       "name": "_MockPopStateEvent",
       "moduleUrl": "asset:angular2/lib/src/mock/mock_location_strategy.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

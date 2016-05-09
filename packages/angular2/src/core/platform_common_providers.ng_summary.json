@@ -50,6 +50,13 @@
           "TestabilityRegistry"
         ],
         "5": false
+      },
+      {
+        "1": "application_ref.dart",
+        "2": [
+          "PLATFORM_CORE_PROVIDERS"
+        ],
+        "5": false
       }
     ],
     "6": "platform_common_providers.dart"
@@ -60,17 +67,26 @@
       "name": "PLATFORM_COMMON_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
+        {
+          "class": "Identifier",
+          "name": "PLATFORM_CORE_PROVIDERS",
+          "moduleUrl": null,
+          "prefix": null,
+          "value": null
+        },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "Reflector",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Reflector",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": null,
@@ -80,39 +96,47 @@
             "name": "_reflector",
             "prefix": null,
             "moduleUrl": null,
-            "constConstructor": null,
             "value": null,
-            "diDeps": null
-          }
+            "diDeps": []
+          },
+          "multi": false,
+          "deps": []
         },
         {
           "class": "Provider",
           "token": {
-            "class": "Identifier",
-            "name": "ReflectorReader",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ReflectorReader",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useClass": null,
           "useExisting": {
-            "class": "Identifier",
-            "name": "Reflector",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Reflector",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "useValue": null,
-          "useFactory": null
+          "useFactory": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Identifier",
           "name": "TestabilityRegistry",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -120,7 +144,6 @@
           "name": "Console",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ]
@@ -130,7 +153,6 @@
       "name": "_reflector",
       "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -50,7 +50,6 @@
       "name": "KeyValueDiffer",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "KeyValueDifferFactory": {
@@ -58,7 +57,6 @@
       "name": "KeyValueDifferFactory",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "KeyValueDiffers": {
@@ -66,7 +64,6 @@
       "name": "KeyValueDiffers",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

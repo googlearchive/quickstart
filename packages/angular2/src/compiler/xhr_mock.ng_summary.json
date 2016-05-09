@@ -55,7 +55,6 @@
       "name": "MockXHR",
       "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_PendingRequest": {
@@ -63,7 +62,6 @@
       "name": "_PendingRequest",
       "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_Expectation": {
@@ -71,7 +69,6 @@
       "name": "_Expectation",
       "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

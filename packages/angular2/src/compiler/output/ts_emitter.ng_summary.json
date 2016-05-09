@@ -1,0 +1,83 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.output.ts_emitter",
+    "3": [
+      {
+        "1": "output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "isString",
+          "evalExpression",
+          "RegExpWrapper",
+          "StringWrapper",
+          "isArray"
+        ],
+        "5": false
+      },
+      {
+        "1": "../compile_metadata.dart",
+        "2": [
+          "CompileIdentifierMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "abstract_emitter.dart",
+        "2": [
+          "OutputEmitter",
+          "EmitterVisitorContext",
+          "AbstractEmitterVisitor",
+          "CATCH_ERROR_VAR",
+          "CATCH_STACK_VAR"
+        ],
+        "5": false
+      },
+      {
+        "1": "path_util.dart",
+        "2": [
+          "getImportModulePath",
+          "ImportEnv"
+        ],
+        "5": false
+      }
+    ],
+    "6": "ts_emitter.dart"
+  },
+  "type": {
+    "debugOutputAstAsTypeScript": {
+      "class": "Identifier",
+      "name": "debugOutputAstAsTypeScript",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/ts_emitter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "TypeScriptEmitter": {
+      "class": "Identifier",
+      "name": "TypeScriptEmitter",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/ts_emitter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_TsEmitterVisitor": {
+      "class": "Identifier",
+      "name": "_TsEmitterVisitor",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/ts_emitter.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

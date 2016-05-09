@@ -60,13 +60,7 @@
       {
         "1": "route_paths/route_path.dart",
         "2": [
-          "RoutePath"
-        ],
-        "5": false
-      },
-      {
-        "1": "route_paths/route_path.dart",
-        "2": [
+          "RoutePath",
           "GeneratedUrl"
         ],
         "5": false
@@ -80,7 +74,6 @@
       "name": "RouteMatch",
       "moduleUrl": "asset:angular2/lib/src/router/rules/rules.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PathMatch": {
@@ -88,7 +81,6 @@
       "name": "PathMatch",
       "moduleUrl": "asset:angular2/lib/src/router/rules/rules.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RedirectMatch": {
@@ -96,7 +88,6 @@
       "name": "RedirectMatch",
       "moduleUrl": "asset:angular2/lib/src/router/rules/rules.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AbstractRule": {
@@ -104,7 +95,6 @@
       "name": "AbstractRule",
       "moduleUrl": "asset:angular2/lib/src/router/rules/rules.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RedirectRule": {
@@ -112,7 +102,6 @@
       "name": "RedirectRule",
       "moduleUrl": "asset:angular2/lib/src/router/rules/rules.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RouteRule": {
@@ -120,7 +109,6 @@
       "name": "RouteRule",
       "moduleUrl": "asset:angular2/lib/src/router/rules/rules.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

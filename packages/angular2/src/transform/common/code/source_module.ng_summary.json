@@ -3,7 +3,7 @@
     "1": "angular2.transform.common.code.source_module",
     "3": [
       {
-        "1": "package:angular2/src/compiler/source_module.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
@@ -15,10 +15,6 @@
       },
       {
         "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/transform/common/model/source_module.dart",
         "5": false
       },
       {
@@ -34,7 +30,6 @@
       "name": "writeSourceModule",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/source_module.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "writeTemplateFile": {
@@ -42,7 +37,6 @@
       "name": "writeTemplateFile",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/source_module.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_sanitizeLibName": {
@@ -50,7 +44,6 @@
       "name": "_sanitizeLibName",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/source_module.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

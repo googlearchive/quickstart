@@ -6,7 +6,6 @@
       "name": "serializeGenericEvent",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "serializeEventWithTarget": {
@@ -14,7 +13,6 @@
       "name": "serializeEventWithTarget",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "serializeMouseEvent": {
@@ -22,7 +20,6 @@
       "name": "serializeMouseEvent",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "serializePoint": {
@@ -30,7 +27,6 @@
       "name": "serializePoint",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "serializeKeyboardEvent": {
@@ -38,7 +34,6 @@
       "name": "serializeKeyboardEvent",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "serializeTransitionEvent": {
@@ -46,7 +41,6 @@
       "name": "serializeTransitionEvent",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "addTarget": {
@@ -54,7 +48,6 @@
       "name": "addTarget",
       "moduleUrl": "asset:angular2/lib/src/web_workers/ui/event_serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

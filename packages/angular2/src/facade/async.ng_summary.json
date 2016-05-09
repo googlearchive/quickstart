@@ -28,7 +28,6 @@
       "name": "TimerWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ObservableWrapper": {
@@ -36,7 +35,6 @@
       "name": "ObservableWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "EventEmitter": {
@@ -44,7 +42,6 @@
       "name": "EventEmitter",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Subject": {
@@ -52,7 +49,6 @@
       "name": "Subject",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

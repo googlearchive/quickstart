@@ -40,16 +40,18 @@
       "name": "ROUTER_LINK_DSL_PROVIDER",
       "moduleUrl": "asset:angular2/lib/router/router_link_dsl.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": {
         "class": "Provider",
         "token": {
-          "class": "Identifier",
-          "name": "TEMPLATE_TRANSFORMS",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "TEMPLATE_TRANSFORMS",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useClass": {
           "class": "Type",
@@ -57,13 +59,14 @@
           "moduleUrl": null,
           "prefix": null,
           "isHost": false,
-          "constConstructor": null,
           "value": null,
-          "diDeps": null
+          "diDeps": []
         },
         "useExisting": null,
         "useValue": null,
-        "useFactory": null
+        "useFactory": null,
+        "multi": true,
+        "deps": null
       }
     }
   },

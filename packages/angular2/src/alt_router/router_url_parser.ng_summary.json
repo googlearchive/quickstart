@@ -1,0 +1,40 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.alt_router.router_url_parser",
+    "3": [
+      {
+        "1": "segments.dart",
+        "2": [
+          "UrlSegment",
+          "Tree"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      }
+    ],
+    "6": "router_url_parser.dart"
+  },
+  "type": {
+    "RouterUrlParser": {
+      "class": "Identifier",
+      "name": "RouterUrlParser",
+      "moduleUrl": "asset:angular2/lib/src/alt_router/router_url_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DefaultRouterUrlParser": {
+      "class": "Identifier",
+      "name": "DefaultRouterUrlParser",
+      "moduleUrl": "asset:angular2/lib/src/alt_router/router_url_parser.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

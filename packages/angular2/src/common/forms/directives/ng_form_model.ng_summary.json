@@ -3,10 +3,24 @@
     "1": "angular2.src.common.forms.directives.ng_form_model",
     "3": [
       {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper",
           "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       },
@@ -90,42 +104,6 @@
     "5": [
       {
         "1": "NgFormModel",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"[ngFormModel]\""
-              },
-              {
-                "1": "bindings",
-                "2": "const [formDirectiveProvider]"
-              },
-              {
-                "1": "inputs",
-                "2": "const [\"form: ngFormModel\"]"
-              },
-              {
-                "1": "host",
-                "2": "const {\"(submit)\" : \"onSubmit()\"}"
-              },
-              {
-                "1": "outputs",
-                "2": "const [\"ngSubmit\"]"
-              },
-              {
-                "1": "exportAs",
-                "2": "\"ngForm\""
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "List",
@@ -162,34 +140,40 @@
       "name": "formDirectiveProvider",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_form_model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": {
         "class": "Provider",
         "token": {
-          "class": "Identifier",
-          "name": "ControlContainer",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "ControlContainer",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useClass": null,
         "useExisting": {
-          "class": "Identifier",
-          "name": "NgFormModel",
-          "moduleUrl": null,
-          "prefix": null,
-          "constConstructor": null,
-          "value": null
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "NgFormModel",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
         },
         "useValue": null,
-        "useFactory": null
+        "useFactory": null,
+        "multi": false,
+        "deps": null
       }
     },
     "NgFormModel": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "[ngFormModel]",
       "exportAs": "ngForm",
       "type": {
@@ -198,42 +182,51 @@
         "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_form_model.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "NG_VALIDATORS",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "NG_VALIDATORS",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": true,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": true
+            "isOptional": true,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "NG_ASYNC_VALIDATORS",
-              "moduleUrl": null,
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "NG_ASYNC_VALIDATORS",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": true,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": true
+            "isOptional": true,
+            "isValue": false
           }
         ]
       },
@@ -259,7 +252,6 @@
           "name": "formDirectiveProvider",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ],

@@ -29,7 +29,6 @@
       "name": "StyleWithImports",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isStyleUrlResolvable": {
@@ -37,7 +36,6 @@
       "name": "isStyleUrlResolvable",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "extractStyleUrls": {
@@ -45,7 +43,6 @@
       "name": "extractStyleUrls",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_url_resolver.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

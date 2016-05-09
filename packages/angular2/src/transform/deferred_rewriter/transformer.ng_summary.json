@@ -36,7 +36,6 @@
       "name": "DeferredRewriter",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_assetToProcess": {
@@ -44,7 +43,6 @@
       "name": "_assetToProcess",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "rewriteDeferredLibraries": {
@@ -52,7 +50,6 @@
       "name": "rewriteDeferredLibraries",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

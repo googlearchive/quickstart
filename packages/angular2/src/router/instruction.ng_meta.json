@@ -34,17 +34,17 @@
       }
     ],
     "6": "instruction.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -55,7 +55,6 @@
       "name": "RouteParams",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RouteData": {
@@ -63,7 +62,6 @@
       "name": "RouteData",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Instruction": {
@@ -71,7 +69,6 @@
       "name": "Instruction",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ResolvedInstruction": {
@@ -79,7 +76,6 @@
       "name": "ResolvedInstruction",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DefaultInstruction": {
@@ -87,7 +83,6 @@
       "name": "DefaultInstruction",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "UnresolvedInstruction": {
@@ -95,7 +90,6 @@
       "name": "UnresolvedInstruction",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RedirectInstruction": {
@@ -103,7 +97,6 @@
       "name": "RedirectInstruction",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ComponentInstruction": {
@@ -111,7 +104,6 @@
       "name": "ComponentInstruction",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -1,0 +1,63 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.output.path_util",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "RegExpWrapper",
+          "Math"
+        ],
+        "5": false
+      }
+    ],
+    "6": "path_util.dart"
+  },
+  "type": {
+    "ImportEnv": {
+      "class": "Identifier",
+      "name": "ImportEnv",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getImportModulePath": {
+      "class": "Identifier",
+      "name": "getImportModulePath",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_AssetUrl": {
+      "class": "Identifier",
+      "name": "_AssetUrl",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getRelativePath": {
+      "class": "Identifier",
+      "name": "getRelativePath",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getLongestPathSegmentPrefix": {
+      "class": "Identifier",
+      "name": "getLongestPathSegmentPrefix",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

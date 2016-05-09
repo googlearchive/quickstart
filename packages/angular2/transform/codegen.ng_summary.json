@@ -61,7 +61,6 @@
       "name": "CodegenTransformer",
       "moduleUrl": "asset:angular2/lib/transform/codegen.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

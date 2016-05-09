@@ -6,7 +6,6 @@
       "name": "MirrorMode",
       "moduleUrl": "asset:angular2/lib/src/transform/common/mirror_mode.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

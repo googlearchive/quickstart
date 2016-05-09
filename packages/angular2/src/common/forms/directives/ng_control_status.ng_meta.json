@@ -29,26 +29,6 @@
     "5": [
       {
         "1": "NgControlStatus",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"[ngControl],[ngModel],[ngFormControl]\""
-              },
-              {
-                "1": "host",
-                "2": "const {\"[class.ng-untouched]\" : \"ngClassUntouched\", \"[class.ng-touched]\" : \"ngClassTouched\", \"[class.ng-pristine]\" : \"ngClassPristine\", \"[class.ng-dirty]\" : \"ngClassDirty\", \"[class.ng-valid]\" : \"ngClassValid\", \"[class.ng-invalid]\" : \"ngClassInvalid\"}"
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "NgControl",
@@ -61,17 +41,17 @@
       }
     ],
     "6": "ng_control_status.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "ng_control.template.dart",
+        "1": "ng_control.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -80,7 +60,6 @@
     "NgControlStatus": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "[ngControl],[ngModel],[ngFormControl]",
       "exportAs": null,
       "type": {
@@ -89,25 +68,29 @@
         "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control_status.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "NgControl",
-              "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "NgControl",
+                "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": true,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },

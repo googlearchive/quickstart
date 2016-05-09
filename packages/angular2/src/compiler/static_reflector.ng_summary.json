@@ -5,7 +5,6 @@
       {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "ListWrapper",
           "StringMapWrapper"
         ],
         "5": false
@@ -14,12 +13,8 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isArray",
-          "isBlank",
-          "isNumber",
           "isPresent",
-          "isPrimitive",
-          "isString",
-          "Type"
+          "isPrimitive"
         ],
         "5": false
       },
@@ -43,6 +38,13 @@
           "QueryMetadata"
         ],
         "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflector_reader.dart",
+        "2": [
+          "ReflectorReader"
+        ],
+        "5": false
       }
     ],
     "6": "static_reflector.dart"
@@ -53,7 +55,6 @@
       "name": "StaticReflectorHost",
       "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "StaticType": {
@@ -61,7 +62,6 @@
       "name": "StaticType",
       "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "StaticReflector": {
@@ -69,7 +69,6 @@
       "name": "StaticReflector",
       "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isMetadataSymbolicCallExpression": {
@@ -77,7 +76,6 @@
       "name": "isMetadataSymbolicCallExpression",
       "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isMetadataSymbolicReferenceExpression": {
@@ -85,7 +83,6 @@
       "name": "isMetadataSymbolicReferenceExpression",
       "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isClassMetadata": {
@@ -93,31 +90,6 @@
       "name": "isClassMetadata",
       "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "splitPath": {
-      "class": "Identifier",
-      "name": "splitPath",
-      "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "resolvePath": {
-      "class": "Identifier",
-      "name": "resolvePath",
-      "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "pathTo": {
-      "class": "Identifier",
-      "name": "pathTo",
-      "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

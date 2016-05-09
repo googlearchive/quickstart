@@ -166,14 +166,12 @@
       "name": "FORM_PROVIDERS",
       "moduleUrl": "asset:angular2/lib/src/common/forms.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "FormBuilder",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -181,7 +179,6 @@
           "name": "RadioControlRegistry",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ]
@@ -191,7 +188,6 @@
       "name": "FORM_BINDINGS",
       "moduleUrl": "asset:angular2/lib/src/common/forms.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

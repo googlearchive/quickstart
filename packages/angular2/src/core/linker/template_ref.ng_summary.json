@@ -5,8 +5,28 @@
       {
         "1": "element_ref.dart",
         "2": [
-          "ElementRef",
-          "ElementRef_"
+          "ElementRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "element.dart",
+        "2": [
+          "AppElement"
+        ],
+        "5": false
+      },
+      {
+        "1": "view.dart",
+        "2": [
+          "AppView"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_ref.dart",
+        "2": [
+          "EmbeddedViewRef"
         ],
         "5": false
       }
@@ -19,7 +39,6 @@
       "name": "TemplateRef",
       "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TemplateRef_": {
@@ -27,7 +46,6 @@
       "name": "TemplateRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -26,7 +26,6 @@
       "name": "SingleClientServerMessageBus",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/single_client_server_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SingleClientServerMessageBusSink": {
@@ -34,7 +33,6 @@
       "name": "SingleClientServerMessageBusSink",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/single_client_server_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SingleClientServerMessageBusSource": {
@@ -42,7 +40,6 @@
       "name": "SingleClientServerMessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/web_workers/debug_tools/single_client_server_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -15,7 +15,6 @@
       "name": "ImportModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ExportModel$json": {
@@ -23,7 +22,6 @@
       "name": "ExportModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ImportModel": {
@@ -31,7 +29,6 @@
       "name": "ImportModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ReadonlyImportModel": {
@@ -39,7 +36,6 @@
       "name": "_ReadonlyImportModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ExportModel": {
@@ -47,7 +43,6 @@
       "name": "ExportModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ReadonlyExportModel": {
@@ -55,7 +50,6 @@
       "name": "_ReadonlyExportModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

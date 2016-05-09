@@ -12,9 +12,9 @@
       }
     ],
     "6": "isolate_message_bus.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/web_workers/shared/generic_message_bus.template.dart",
+        "1": "package:angular2/src/web_workers/shared/generic_message_bus.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -25,7 +25,6 @@
       "name": "IsolateMessageBus",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/isolate_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "IsolateMessageBusSink": {
@@ -33,7 +32,6 @@
       "name": "IsolateMessageBusSink",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/isolate_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "IsolateMessageBusSource": {
@@ -41,7 +39,6 @@
       "name": "IsolateMessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/isolate_message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

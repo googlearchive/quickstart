@@ -38,7 +38,6 @@
       "name": "ClassMatcherBase",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_getMatchingImport": {
@@ -46,7 +45,6 @@
       "name": "_getMatchingImport",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isMatch": {
@@ -54,7 +52,6 @@
       "name": "isMatch",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ClassDescriptor": {
@@ -62,7 +59,6 @@
       "name": "ClassDescriptor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

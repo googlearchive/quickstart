@@ -55,33 +55,33 @@
       }
     ],
     "6": "validators.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/promise.template.dart",
+        "1": "package:angular2/src/facade/promise.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "model.template.dart",
+        "1": "model.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "directives/validators.template.dart",
+        "1": "directives/validators.ngfactory.dart",
         "4": "i6"
       }
     ]
@@ -92,7 +92,6 @@
       "name": "NG_VALIDATORS",
       "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NG_ASYNC_VALIDATORS": {
@@ -100,7 +99,6 @@
       "name": "NG_ASYNC_VALIDATORS",
       "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Validators": {
@@ -108,7 +106,6 @@
       "name": "Validators",
       "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_convertToPromise": {
@@ -116,7 +113,6 @@
       "name": "_convertToPromise",
       "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_executeValidators": {
@@ -124,7 +120,6 @@
       "name": "_executeValidators",
       "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_executeAsyncValidators": {
@@ -132,7 +127,6 @@
       "name": "_executeAsyncValidators",
       "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_mergeErrors": {
@@ -140,7 +134,6 @@
       "name": "_mergeErrors",
       "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

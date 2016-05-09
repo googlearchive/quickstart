@@ -53,11 +53,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -72,11 +68,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
@@ -90,25 +82,29 @@
       "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "NgZone",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "NgZone",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -118,7 +114,6 @@
       "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -127,7 +122,6 @@
       "name": "GetTestability",
       "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_NoopGetTestability": {
@@ -135,7 +129,6 @@
       "name": "_NoopGetTestability",
       "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "setTestabilityGetter": {
@@ -143,7 +136,6 @@
       "name": "setTestabilityGetter",
       "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/dynamic_component_loader.dart",
+        "1": "package:angular2/src/core/linker/component_factory.dart",
         "2": [
           "ComponentRef"
         ],
@@ -29,7 +29,6 @@
       "name": "enableDebugTools",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/tools/tools.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "disableDebugTools": {
@@ -37,7 +36,6 @@
       "name": "disableDebugTools",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/tools/tools.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

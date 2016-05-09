@@ -23,7 +23,6 @@
       "name": "Html5LibDomAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/server/html_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

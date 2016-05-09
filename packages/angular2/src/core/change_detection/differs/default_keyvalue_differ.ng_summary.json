@@ -51,7 +51,6 @@
       "name": "DefaultKeyValueDifferFactory",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DefaultKeyValueDiffer": {
@@ -59,7 +58,6 @@
       "name": "DefaultKeyValueDiffer",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "KeyValueChangeRecord": {
@@ -67,7 +65,6 @@
       "name": "KeyValueChangeRecord",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

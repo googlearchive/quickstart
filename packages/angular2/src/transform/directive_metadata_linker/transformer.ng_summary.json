@@ -48,7 +48,6 @@
       "name": "DirectiveMetadataLinker",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ngLinkedAssetId": {
@@ -56,7 +55,6 @@
       "name": "_ngLinkedAssetId",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

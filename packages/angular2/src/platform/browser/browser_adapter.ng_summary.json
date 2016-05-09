@@ -46,7 +46,6 @@
       "name": "_IdentitySanitizer",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "BrowserDomAdapter": {
@@ -54,7 +53,6 @@
       "name": "BrowserDomAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getBaseElementHref": {
@@ -62,7 +60,6 @@
       "name": "getBaseElementHref",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_relativePath": {
@@ -70,7 +67,6 @@
       "name": "_relativePath",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -16,13 +16,13 @@
       }
     ],
     "6": "html_adapter.dart",
-    "10": [
+    "7": [
       {
-        "1": "abstract_html_adapter.template.dart",
+        "1": "abstract_html_adapter.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/platform/common_dom.template.dart",
+        "1": "package:angular2/platform/common_dom.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -33,7 +33,6 @@
       "name": "Html5LibDomAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/server/html_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -6,7 +6,6 @@
       "name": "BaseWrappedException",
       "moduleUrl": "asset:angular2/lib/src/facade/base_wrapped_exception.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

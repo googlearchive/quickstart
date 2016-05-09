@@ -131,73 +131,73 @@
       }
     ],
     "6": "shared.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "control_container.template.dart",
+        "1": "control_container.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "ng_control.template.dart",
+        "1": "ng_control.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "abstract_control_directive.template.dart",
+        "1": "abstract_control_directive.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "ng_control_group.template.dart",
+        "1": "ng_control_group.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "../model.template.dart",
+        "1": "../model.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "../validators.template.dart",
+        "1": "../validators.ngfactory.dart",
         "4": "i8"
       },
       {
-        "1": "control_value_accessor.template.dart",
+        "1": "control_value_accessor.ngfactory.dart",
         "4": "i9"
       },
       {
-        "1": "default_value_accessor.template.dart",
+        "1": "default_value_accessor.ngfactory.dart",
         "4": "i10"
       },
       {
-        "1": "number_value_accessor.template.dart",
+        "1": "number_value_accessor.ngfactory.dart",
         "4": "i11"
       },
       {
-        "1": "checkbox_value_accessor.template.dart",
+        "1": "checkbox_value_accessor.ngfactory.dart",
         "4": "i12"
       },
       {
-        "1": "select_control_value_accessor.template.dart",
+        "1": "select_control_value_accessor.ngfactory.dart",
         "4": "i13"
       },
       {
-        "1": "radio_control_value_accessor.template.dart",
+        "1": "radio_control_value_accessor.ngfactory.dart",
         "4": "i14"
       },
       {
-        "1": "normalize_validator.template.dart",
+        "1": "normalize_validator.ngfactory.dart",
         "4": "i15"
       },
       {
-        "1": "validators.template.dart",
+        "1": "validators.ngfactory.dart",
         "4": "i16"
       }
     ]
@@ -208,7 +208,6 @@
       "name": "controlPath",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "setUpControl": {
@@ -216,7 +215,6 @@
       "name": "setUpControl",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "setUpControlGroup": {
@@ -224,7 +222,6 @@
       "name": "setUpControlGroup",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_throwError": {
@@ -232,7 +229,6 @@
       "name": "_throwError",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "composeValidators": {
@@ -240,7 +236,6 @@
       "name": "composeValidators",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "composeAsyncValidators": {
@@ -248,7 +243,6 @@
       "name": "composeAsyncValidators",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isPropertyUpdated": {
@@ -256,7 +250,6 @@
       "name": "isPropertyUpdated",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "selectValueAccessor": {
@@ -264,7 +257,6 @@
       "name": "selectValueAccessor",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

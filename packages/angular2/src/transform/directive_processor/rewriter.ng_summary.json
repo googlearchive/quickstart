@@ -18,7 +18,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/directive_metadata.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.dart",
         "2": [
           "CompileIdentifierMetadata",
           "CompileProviderMetadata"
@@ -26,7 +26,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
@@ -83,7 +83,6 @@
       "name": "createNgMeta",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_NgMetaVisitor": {
@@ -91,7 +90,6 @@
       "name": "_NgMetaVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

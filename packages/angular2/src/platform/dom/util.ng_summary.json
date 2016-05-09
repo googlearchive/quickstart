@@ -18,7 +18,6 @@
       "name": "camelCaseToDashCase",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/util.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "dashCaseToCamelCase": {
@@ -26,7 +25,6 @@
       "name": "dashCaseToCamelCase",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/util.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

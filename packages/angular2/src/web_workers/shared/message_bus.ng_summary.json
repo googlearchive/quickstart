@@ -34,7 +34,6 @@
       "name": "MessageBus",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageBusSource": {
@@ -42,7 +41,6 @@
       "name": "MessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageBusSink": {
@@ -50,7 +48,6 @@
       "name": "MessageBusSink",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

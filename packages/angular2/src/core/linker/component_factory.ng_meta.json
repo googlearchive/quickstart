@@ -1,0 +1,125 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.linker.component_factory",
+    "3": [
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isPresent",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "unimplemented"
+        ],
+        "5": false
+      },
+      {
+        "1": "element_ref.dart",
+        "2": [
+          "ElementRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_ref.dart",
+        "2": [
+          "ViewRef",
+          "ViewRef_"
+        ],
+        "5": false
+      },
+      {
+        "1": "element.dart",
+        "2": [
+          "AppElement"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_utils.dart",
+        "2": [
+          "ViewUtils"
+        ],
+        "5": false
+      },
+      {
+        "1": "../change_detection/change_detection.dart",
+        "2": [
+          "ChangeDetectorRef"
+        ],
+        "5": false
+      }
+    ],
+    "6": "component_factory.dart",
+    "7": [
+      {
+        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "4": "i2"
+      },
+      {
+        "1": "element_ref.ngfactory.dart",
+        "4": "i3"
+      },
+      {
+        "1": "view_ref.ngfactory.dart",
+        "4": "i4"
+      },
+      {
+        "1": "element.ngfactory.dart",
+        "4": "i5"
+      },
+      {
+        "1": "view_utils.ngfactory.dart",
+        "4": "i6"
+      },
+      {
+        "1": "../change_detection/change_detection.ngfactory.dart",
+        "4": "i7"
+      }
+    ]
+  },
+  "type": {
+    "ComponentRef": {
+      "class": "Identifier",
+      "name": "ComponentRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ComponentRef_": {
+      "class": "Identifier",
+      "name": "ComponentRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ComponentFactory": {
+      "class": "Identifier",
+      "name": "ComponentFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

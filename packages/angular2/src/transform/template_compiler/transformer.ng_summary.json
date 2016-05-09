@@ -64,7 +64,6 @@
       "name": "_emptyNgDepsContents",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TemplateCompiler": {
@@ -72,7 +71,6 @@
       "name": "TemplateCompiler",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/transformer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -5,14 +5,17 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isPresent"
+          "isPresent",
+          "Type"
         ],
         "5": false
       },
       {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "Predicate"
+          "Predicate",
+          "ListWrapper",
+          "MapWrapper"
         ],
         "5": false
       },
@@ -20,14 +23,6 @@
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injector"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "MapWrapper"
         ],
         "5": false
       },
@@ -47,7 +42,6 @@
       "name": "EventListener",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DebugNode": {
@@ -55,7 +49,6 @@
       "name": "DebugNode",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DebugElement": {
@@ -63,7 +56,6 @@
       "name": "DebugElement",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "asNativeElements": {
@@ -71,7 +63,6 @@
       "name": "asNativeElements",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_queryElementChildren": {
@@ -79,7 +70,6 @@
       "name": "_queryElementChildren",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_queryNodeChildren": {
@@ -87,7 +77,6 @@
       "name": "_queryNodeChildren",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getDebugNode": {
@@ -95,7 +84,6 @@
       "name": "getDebugNode",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getAllDebugNodes": {
@@ -103,7 +91,6 @@
       "name": "getAllDebugNodes",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "indexDebugNode": {
@@ -111,7 +98,6 @@
       "name": "indexDebugNode",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "removeDebugNodeFromIndex": {
@@ -119,7 +105,6 @@
       "name": "removeDebugNodeFromIndex",
       "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -73,11 +73,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -96,7 +92,6 @@
       "name": "PRIMITIVE",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Serializer": {
@@ -105,25 +100,29 @@
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "RenderStore",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RenderStore",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -132,7 +131,6 @@
       "name": "RenderStoreObject",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

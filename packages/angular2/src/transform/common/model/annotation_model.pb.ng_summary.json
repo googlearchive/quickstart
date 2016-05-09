@@ -15,7 +15,6 @@
       "name": "NamedParameter$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AnnotationModel$json": {
@@ -23,7 +22,6 @@
       "name": "AnnotationModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "NamedParameter": {
@@ -31,7 +29,6 @@
       "name": "NamedParameter",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ReadonlyNamedParameter": {
@@ -39,7 +36,6 @@
       "name": "_ReadonlyNamedParameter",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AnnotationModel": {
@@ -47,7 +43,6 @@
       "name": "AnnotationModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ReadonlyAnnotationModel": {
@@ -55,7 +50,6 @@
       "name": "_ReadonlyAnnotationModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

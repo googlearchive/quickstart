@@ -14,7 +14,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/ast.dart",
+        "1": "package:angular2/src/compiler/expression_parser/ast.dart",
         "2": [
           "AstTransformer",
           "Quote",
@@ -41,7 +41,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/parser.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "2": [
           "Parser"
         ],
@@ -54,11 +54,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -73,25 +69,25 @@
       }
     ],
     "6": "router_link_transform.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/compiler.template.dart",
+        "1": "package:angular2/compiler.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/ast.template.dart",
+        "1": "package:angular2/src/compiler/expression_parser/ast.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/parser.template.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.ngfactory.dart",
         "4": "i4"
       }
     ]
@@ -102,7 +98,6 @@
       "name": "FixedPart",
       "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AuxiliaryStart": {
@@ -110,7 +105,6 @@
       "name": "AuxiliaryStart",
       "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AuxiliaryEnd": {
@@ -118,7 +112,6 @@
       "name": "AuxiliaryEnd",
       "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Params": {
@@ -126,7 +119,6 @@
       "name": "Params",
       "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RouterLinkLexer": {
@@ -134,7 +126,6 @@
       "name": "RouterLinkLexer",
       "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RouterLinkAstGenerator": {
@@ -142,7 +133,6 @@
       "name": "RouterLinkAstGenerator",
       "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RouterLinkAstTransformer": {
@@ -150,7 +140,6 @@
       "name": "RouterLinkAstTransformer",
       "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "parseRouterLinkExpression": {
@@ -158,7 +147,6 @@
       "name": "parseRouterLinkExpression",
       "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "RouterLinkTransform": {
@@ -167,25 +155,29 @@
       "moduleUrl": "asset:angular2/lib/src/router/directives/router_link_transform.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "Parser",
-            "moduleUrl": "asset:angular2/lib/src/core/change_detection/parser/parser.dart",
-            "prefix": null,
-            "constConstructor": null,
-            "value": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Parser",
+              "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/parser.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
     }

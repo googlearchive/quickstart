@@ -1,0 +1,142 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.alt_router.directives.router_outlet",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "ResolvedReflectiveProvider",
+          "Directive",
+          "DynamicComponentLoader",
+          "ViewContainerRef",
+          "Input",
+          "ComponentRef",
+          "ComponentFactory",
+          "ReflectiveInjector"
+        ],
+        "5": false
+      },
+      {
+        "1": "../router.dart",
+        "2": [
+          "RouterOutletMap"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "RouterOutlet",
+        "5": [
+          {
+            "1": "RouterOutletMap",
+            "4": "parentOutletMap"
+          },
+          {
+            "1": "ViewContainerRef",
+            "4": "_location"
+          }
+        ]
+      }
+    ],
+    "6": "router_outlet.dart",
+    "7": [
+      {
+        "1": "package:angular2/core.ngfactory.dart",
+        "4": "i0"
+      },
+      {
+        "1": "../router.ngfactory.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "RouterOutlet": {
+      "class": "Directive",
+      "isComponent": false,
+      "selector": "router-outlet",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "RouterOutlet",
+        "moduleUrl": "asset:angular2/lib/src/alt_router/directives/router_outlet.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": [
+          {
+            "token": {
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "RouterOutletMap",
+                "moduleUrl": "asset:angular2/lib/src/alt_router/router.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
+            },
+            "query": null,
+            "viewQuery": null,
+            "value": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false,
+            "isValue": false
+          },
+          {
+            "token": {
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ViewContainerRef",
+                "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
+            },
+            "query": null,
+            "viewQuery": null,
+            "value": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false,
+            "isValue": false
+          }
+        ]
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "name": "name"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null,
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
+    }
+  },
+  "alias": {}
+}

@@ -28,7 +28,6 @@
       "name": "__varargSentinel",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_jsFunction": {
@@ -36,7 +35,6 @@
       "name": "_jsFunction",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "__invokeFn": {
@@ -44,7 +42,6 @@
       "name": "__invokeFn",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_jsify": {
@@ -52,7 +49,6 @@
       "name": "_jsify",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_JsObjectProxyable": {
@@ -60,7 +56,6 @@
       "name": "_JsObjectProxyable",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PublicTestability": {
@@ -68,7 +63,6 @@
       "name": "PublicTestability",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "BrowserGetTestability": {
@@ -76,7 +70,6 @@
       "name": "BrowserGetTestability",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

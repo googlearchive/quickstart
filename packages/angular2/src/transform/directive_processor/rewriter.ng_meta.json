@@ -18,7 +18,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/directive_metadata.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.dart",
         "2": [
           "CompileIdentifierMetadata",
           "CompileProviderMetadata"
@@ -26,7 +26,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
@@ -76,57 +76,57 @@
       }
     ],
     "6": "rewriter.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/directive_metadata.template.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/template_compiler.template.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/annotation_matcher.template.dart",
+        "1": "package:angular2/src/transform/common/annotation_matcher.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/common/code/ng_deps_code.template.dart",
+        "1": "package:angular2/src/transform/common/code/ng_deps_code.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/common/type_metadata_reader.template.dart",
+        "1": "package:angular2/src/transform/common/type_metadata_reader.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/common/interface_matcher.template.dart",
+        "1": "package:angular2/src/transform/common/interface_matcher.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_compiler.template.dart",
+        "1": "package:angular2/src/transform/common/ng_compiler.ngfactory.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_meta.template.dart",
+        "1": "package:angular2/src/transform/common/ng_meta.ngfactory.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/transform/common/url_resolver.template.dart",
+        "1": "package:angular2/src/transform/common/url_resolver.ngfactory.dart",
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/transform/common/zone.template.dart",
+        "1": "package:angular2/src/transform/common/zone.ngfactory.dart",
         "4": "i11"
       },
       {
-        "1": "inliner.template.dart",
+        "1": "inliner.ngfactory.dart",
         "4": "i12"
       }
     ]
@@ -137,7 +137,6 @@
       "name": "createNgMeta",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_NgMetaVisitor": {
@@ -145,7 +144,6 @@
       "name": "_NgMetaVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/rewriter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

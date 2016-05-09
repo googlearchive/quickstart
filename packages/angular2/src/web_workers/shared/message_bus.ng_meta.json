@@ -27,13 +27,13 @@
       }
     ],
     "6": "message_bus.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
+        "1": "package:angular2/src/core/zone/ng_zone.ngfactory.dart",
         "4": "i1"
       }
     ]
@@ -44,7 +44,6 @@
       "name": "MessageBus",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageBusSource": {
@@ -52,7 +51,6 @@
       "name": "MessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MessageBusSink": {
@@ -60,7 +58,6 @@
       "name": "MessageBusSink",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "TimerWrapper": {
@@ -68,7 +65,6 @@
       "name": "TimerWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ObservableWrapper": {
@@ -76,7 +72,6 @@
       "name": "ObservableWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "EventEmitter": {
@@ -84,7 +79,6 @@
       "name": "EventEmitter",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Subject": {
@@ -92,7 +86,6 @@
       "name": "Subject",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PromiseWrapper": {
@@ -100,7 +93,6 @@
       "name": "PromiseWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PromiseCompleter": {
@@ -108,7 +100,6 @@
       "name": "PromiseCompleter",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -51,11 +51,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
@@ -69,7 +65,6 @@
       "moduleUrl": "asset:angular2/lib/src/mock/animation_builder_mock.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -78,7 +73,6 @@
       "name": "MockCssAnimationBuilder",
       "moduleUrl": "asset:angular2/lib/src/mock/animation_builder_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MockBrowserAbstraction": {
@@ -86,7 +80,6 @@
       "name": "MockBrowserAbstraction",
       "moduleUrl": "asset:angular2/lib/src/mock/animation_builder_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "MockAnimation": {
@@ -94,7 +87,6 @@
       "name": "MockAnimation",
       "moduleUrl": "asset:angular2/lib/src/mock/animation_builder_mock.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

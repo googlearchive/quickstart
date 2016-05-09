@@ -45,7 +45,6 @@
       "name": "SyncRouteHandler",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_handlers/sync_route_handler.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

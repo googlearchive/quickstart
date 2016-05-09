@@ -3,208 +3,34 @@
     "1": "angular2.src.core.di.injector",
     "3": [
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "Map",
-          "MapWrapper",
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "provider.dart",
-        "2": [
-          "ResolvedProvider",
-          "Provider",
-          "Dependency",
-          "ProviderBuilder",
-          "ResolvedFactory",
-          "provide",
-          "resolveProviders"
-        ],
-        "5": false
-      },
-      {
-        "1": "exceptions.dart",
-        "2": [
-          "AbstractProviderError",
-          "NoProviderError",
-          "CyclicDependencyError",
-          "InstantiationError",
-          "InvalidProviderError",
-          "OutOfBoundsError"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "FunctionWrapper",
-          "Type",
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "key.dart",
-        "2": [
-          "Key"
-        ],
-        "5": false
-      },
-      {
-        "1": "metadata.dart",
-        "2": [
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata"
+          "unimplemented"
         ],
         "5": false
       }
     ],
     "6": "injector.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i0"
-      },
-      {
-        "1": "provider.template.dart",
-        "4": "i1"
-      },
-      {
-        "1": "exceptions.template.dart",
-        "4": "i2"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i3"
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
-        "4": "i4"
-      },
-      {
-        "1": "key.template.dart",
-        "4": "i5"
-      },
-      {
-        "1": "metadata.template.dart",
-        "4": "i6"
       }
     ]
   },
   "type": {
-    "_MAX_CONSTRUCTION_COUNTER": {
+    "_THROW_IF_NOT_FOUND": {
       "class": "Identifier",
-      "name": "_MAX_CONSTRUCTION_COUNTER",
+      "name": "_THROW_IF_NOT_FOUND",
       "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
-    "UNDEFINED": {
+    "THROW_IF_NOT_FOUND": {
       "class": "Identifier",
-      "name": "UNDEFINED",
+      "name": "THROW_IF_NOT_FOUND",
       "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "Visibility": {
-      "class": "Identifier",
-      "name": "Visibility",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "canSee": {
-      "class": "Identifier",
-      "name": "canSee",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ProtoInjectorStrategy": {
-      "class": "Identifier",
-      "name": "ProtoInjectorStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ProtoInjectorInlineStrategy": {
-      "class": "Identifier",
-      "name": "ProtoInjectorInlineStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ProtoInjectorDynamicStrategy": {
-      "class": "Identifier",
-      "name": "ProtoInjectorDynamicStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ProtoInjector": {
-      "class": "Identifier",
-      "name": "ProtoInjector",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "InjectorStrategy": {
-      "class": "Identifier",
-      "name": "InjectorStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "InjectorInlineStrategy": {
-      "class": "Identifier",
-      "name": "InjectorInlineStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "InjectorDynamicStrategy": {
-      "class": "Identifier",
-      "name": "InjectorDynamicStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ProviderWithVisibility": {
-      "class": "Identifier",
-      "name": "ProviderWithVisibility",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "DependencyProvider": {
-      "class": "Identifier",
-      "name": "DependencyProvider",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Injector": {
@@ -212,15 +38,6 @@
       "name": "Injector",
       "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "_mapProviders": {
-      "class": "Identifier",
-      "name": "_mapProviders",
-      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

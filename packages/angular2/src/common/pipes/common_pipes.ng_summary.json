@@ -83,14 +83,12 @@
       "name": "COMMON_PIPES",
       "moduleUrl": "asset:angular2/lib/src/common/pipes/common_pipes.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": [
         {
           "class": "Identifier",
           "name": "AsyncPipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -98,7 +96,6 @@
           "name": "UpperCasePipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -106,7 +103,6 @@
           "name": "LowerCasePipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -114,7 +110,6 @@
           "name": "JsonPipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -122,7 +117,6 @@
           "name": "SlicePipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -130,7 +124,6 @@
           "name": "DecimalPipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -138,7 +131,6 @@
           "name": "PercentPipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -146,7 +138,6 @@
           "name": "CurrencyPipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -154,7 +145,6 @@
           "name": "DatePipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -162,7 +152,6 @@
           "name": "ReplacePipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -170,7 +159,6 @@
           "name": "I18nPluralPipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         },
         {
@@ -178,7 +166,6 @@
           "name": "I18nSelectPipe",
           "moduleUrl": null,
           "prefix": null,
-          "constConstructor": null,
           "value": null
         }
       ]

@@ -11,9 +11,9 @@
       }
     ],
     "6": "normalize_validator.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/common/forms/directives/validators.template.dart",
+        "1": "package:angular2/src/common/forms/directives/validators.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -24,7 +24,6 @@
       "name": "normalizeValidator",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/normalize_validator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "normalizeAsyncValidator": {
@@ -32,7 +31,6 @@
       "name": "normalizeAsyncValidator",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/normalize_validator.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

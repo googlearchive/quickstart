@@ -29,10 +29,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.dart",
-        "5": false
-      },
-      {
         "1": "dart:isolate",
         "5": false
       },
@@ -42,30 +38,26 @@
       }
     ],
     "6": "worker_render.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/platform/worker_render_common.template.dart",
+        "1": "package:angular2/src/platform/worker_render_common.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/isolate_message_bus.template.dart",
+        "1": "package:angular2/src/web_workers/shared/isolate_message_bus.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/message_bus.template.dart",
+        "1": "package:angular2/src/web_workers/shared/message_bus.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i4"
-      },
-      {
-        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
-        "4": "i5"
       }
     ]
   },
@@ -75,7 +67,6 @@
       "name": "WORKER_RENDER_APP",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "initIsolate": {
@@ -83,7 +74,6 @@
       "name": "initIsolate",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "spawnIsolate": {
@@ -91,7 +81,6 @@
       "name": "spawnIsolate",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "UIMessageBusSource": {
@@ -99,7 +88,6 @@
       "name": "UIMessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WebWorkerInstance": {
@@ -107,7 +95,6 @@
       "name": "WebWorkerInstance",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

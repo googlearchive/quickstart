@@ -29,7 +29,9 @@
           "HtmlAttrAst",
           "HtmlTextAst",
           "HtmlCommentAst",
-          "HtmlElementAst"
+          "HtmlElementAst",
+          "HtmlExpansionAst",
+          "HtmlExpansionCaseAst"
         ],
         "5": false
       },
@@ -75,11 +77,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
@@ -92,7 +90,6 @@
       "name": "HtmlTreeError",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HtmlParseTreeResult": {
@@ -100,7 +97,6 @@
       "name": "HtmlParseTreeResult",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "HtmlParser": {
@@ -109,7 +105,6 @@
       "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     },
@@ -118,7 +113,6 @@
       "name": "TreeBuilder",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "getElementFullName": {
@@ -126,7 +120,13 @@
       "name": "getElementFullName",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
       "prefix": null,
-      "constConstructor": null,
+      "value": null
+    },
+    "lastOnStack": {
+      "class": "Identifier",
+      "name": "lastOnStack",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
+      "prefix": null,
       "value": null
     }
   },

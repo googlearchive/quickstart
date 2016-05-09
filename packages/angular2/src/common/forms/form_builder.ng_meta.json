@@ -45,35 +45,31 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ]
       }
     ],
     "6": "form_builder.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "model.template.dart",
+        "1": "model.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "directives/validators.template.dart",
+        "1": "directives/validators.ngfactory.dart",
         "4": "i4"
       }
     ]
@@ -85,7 +81,6 @@
       "moduleUrl": "asset:angular2/lib/src/common/forms/form_builder.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
       "value": null,
       "diDeps": []
     }

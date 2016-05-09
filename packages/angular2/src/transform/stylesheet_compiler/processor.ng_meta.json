@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/source_module.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
@@ -41,33 +41,33 @@
       }
     ],
     "6": "processor.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/compiler/source_module.template.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/code/source_module.template.dart",
+        "1": "package:angular2/src/transform/common/code/source_module.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_compiler.template.dart",
+        "1": "package:angular2/src/transform/common/ng_compiler.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/common/zone.template.dart",
+        "1": "package:angular2/src/transform/common/zone.ngfactory.dart",
         "4": "i6"
       }
     ]
@@ -78,7 +78,6 @@
       "name": "shimmedStylesheetAssetId",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "nonShimmedStylesheetAssetId": {
@@ -86,7 +85,6 @@
       "name": "nonShimmedStylesheetAssetId",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "processStylesheet": {
@@ -94,7 +92,6 @@
       "name": "processStylesheet",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

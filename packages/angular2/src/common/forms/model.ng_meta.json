@@ -45,25 +45,25 @@
       }
     ],
     "6": "model.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/promise.template.dart",
+        "1": "package:angular2/src/facade/promise.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "directives/validators.template.dart",
+        "1": "directives/validators.ngfactory.dart",
         "4": "i4"
       }
     ]
@@ -74,7 +74,6 @@
       "name": "VALID",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "INVALID": {
@@ -82,7 +81,6 @@
       "name": "INVALID",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PENDING": {
@@ -90,7 +88,6 @@
       "name": "PENDING",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "isControl": {
@@ -98,7 +95,6 @@
       "name": "isControl",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_find": {
@@ -106,7 +102,6 @@
       "name": "_find",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "toObservable": {
@@ -114,7 +109,6 @@
       "name": "toObservable",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AbstractControl": {
@@ -122,7 +116,6 @@
       "name": "AbstractControl",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "Control": {
@@ -130,7 +123,6 @@
       "name": "Control",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ControlGroup": {
@@ -138,7 +130,6 @@
       "name": "ControlGroup",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "ControlArray": {
@@ -146,7 +137,6 @@
       "name": "ControlArray",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

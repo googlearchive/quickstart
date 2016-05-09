@@ -31,9 +31,9 @@
       }
     ],
     "6": "logging.dart",
-    "10": [
+    "7": [
       {
-        "1": "zone.template.dart",
+        "1": "zone.ngfactory.dart",
         "4": "i0"
       }
     ]
@@ -44,7 +44,6 @@
       "name": "log",
       "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "logElapsedAsync": {
@@ -52,7 +51,6 @@
       "name": "logElapsedAsync",
       "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "logElapsedSync": {
@@ -60,7 +58,6 @@
       "name": "logElapsedSync",
       "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_logElapsed": {
@@ -68,7 +65,6 @@
       "name": "_logElapsed",
       "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "SinkLogger": {
@@ -76,7 +72,6 @@
       "name": "SinkLogger",
       "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PrintLogger": {
@@ -84,7 +79,6 @@
       "name": "PrintLogger",
       "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "DeduppingLogger": {
@@ -92,7 +86,6 @@
       "name": "DeduppingLogger",
       "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PrintLoggerError": {
@@ -100,7 +93,6 @@
       "name": "PrintLoggerError",
       "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -27,25 +27,25 @@
       }
     ],
     "6": "route_config_normalizer.dart",
-    "10": [
+    "7": [
       {
-        "1": "route_config_decorator.template.dart",
+        "1": "route_config_decorator.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "../route_definition.template.dart",
+        "1": "../route_definition.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "../route_registry.template.dart",
+        "1": "../route_registry.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
         "4": "i4"
       }
     ]
@@ -56,7 +56,6 @@
       "name": "normalizeRouteConfig",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_normalizer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "assertComponentExists": {
@@ -64,7 +63,6 @@
       "name": "assertComponentExists",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_normalizer.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

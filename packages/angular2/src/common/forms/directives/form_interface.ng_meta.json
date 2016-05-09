@@ -26,17 +26,17 @@
       }
     ],
     "6": "form_interface.dart",
-    "10": [
+    "7": [
       {
-        "1": "ng_control.template.dart",
+        "1": "ng_control.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "ng_control_group.template.dart",
+        "1": "ng_control_group.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "../model.template.dart",
+        "1": "../model.ngfactory.dart",
         "4": "i2"
       }
     ]
@@ -47,7 +47,6 @@
       "name": "Form",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/form_interface.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

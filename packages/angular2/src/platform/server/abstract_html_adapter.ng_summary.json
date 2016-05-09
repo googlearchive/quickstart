@@ -36,7 +36,6 @@
       "name": "_attrToPropMap",
       "moduleUrl": "asset:angular2/lib/src/platform/server/abstract_html_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AbstractHtml5LibAdapter": {
@@ -44,7 +43,6 @@
       "name": "AbstractHtml5LibAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/server/abstract_html_adapter.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

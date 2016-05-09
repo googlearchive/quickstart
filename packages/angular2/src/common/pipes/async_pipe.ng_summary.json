@@ -31,7 +31,6 @@
           "Injectable",
           "ChangeDetectorRef",
           "OnDestroy",
-          "PipeTransform",
           "WrappedValue"
         ],
         "5": false
@@ -60,19 +59,11 @@
                 "2": "false"
               }
             ],
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           },
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -82,7 +73,6 @@
           }
         ],
         "6": [
-          "PipeTransform",
           "OnDestroy"
         ]
       }
@@ -95,7 +85,6 @@
       "name": "ObservableStrategy",
       "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "PromiseStrategy": {
@@ -103,7 +92,6 @@
       "name": "PromiseStrategy",
       "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AsyncPipe": {
@@ -114,9 +102,8 @@
         "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
-        "diDeps": null
+        "diDeps": []
       },
       "name": "async",
       "pure": false

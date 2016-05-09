@@ -34,7 +34,6 @@
       "name": "_INJECTABLES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_DIRECTIVES": {
@@ -42,7 +41,6 @@
       "name": "_DIRECTIVES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_COMPONENTS": {
@@ -50,7 +48,6 @@
       "name": "_COMPONENTS",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_PIPES": {
@@ -58,7 +55,6 @@
       "name": "_PIPES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_VIEWS": {
@@ -66,7 +62,6 @@
       "name": "_VIEWS",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "_ENTRYPOINTS": {
@@ -74,7 +69,6 @@
       "name": "_ENTRYPOINTS",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AnnotationMatcher": {
@@ -82,7 +76,6 @@
       "name": "AnnotationMatcher",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

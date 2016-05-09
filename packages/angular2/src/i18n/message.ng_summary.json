@@ -19,7 +19,6 @@
       "name": "Message",
       "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "id": {
@@ -27,7 +26,6 @@
       "name": "id",
       "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

@@ -10,6 +10,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/platform/common.dart",
+        "2": [
+          "Location"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isString"
@@ -24,13 +31,6 @@
         "5": false
       },
       {
-        "1": "../location/location.dart",
-        "2": [
-          "Location"
-        ],
-        "5": false
-      },
-      {
         "1": "../instruction.dart",
         "2": [
           "Instruction"
@@ -41,30 +41,6 @@
     "5": [
       {
         "1": "RouterLink",
-        "4": [
-          {
-            "1": "Directive",
-            "3": [
-              {
-                "1": "selector",
-                "2": "\"[routerLink]\""
-              },
-              {
-                "1": "inputs",
-                "2": "const [\"routeParams: routerLink\", \"target: target\"]"
-              },
-              {
-                "1": "host",
-                "2": "const {\"(click)\" : \"onClick()\", \"[attr.href]\" : \"visibleHref\", \"[class.router-link-active]\" : \"isRouteActive\"}"
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": false,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "Router",
@@ -78,25 +54,25 @@
       }
     ],
     "6": "router_link.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/core.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/platform/common.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "../router.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "../location/location.template.dart",
+        "1": "../router.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "../instruction.template.dart",
+        "1": "../instruction.ngfactory.dart",
         "4": "i4"
       }
     ]
@@ -105,7 +81,6 @@
     "RouterLink": {
       "class": "Directive",
       "isComponent": false,
-      "dynamicLoadable": true,
       "selector": "[routerLink]",
       "exportAs": null,
       "type": {
@@ -114,42 +89,51 @@
         "moduleUrl": "asset:angular2/lib/src/router/directives/router_link.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
         "value": null,
         "diDeps": [
           {
             "token": {
-              "class": "Identifier",
-              "name": "Router",
-              "moduleUrl": "asset:angular2/lib/src/router/router.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Router",
+                "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           },
           {
             "token": {
-              "class": "Identifier",
-              "name": "Location",
-              "moduleUrl": "asset:angular2/lib/src/router/location/location.dart",
-              "prefix": null,
-              "constConstructor": null,
-              "value": null
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "Location",
+                "moduleUrl": "asset:angular2/lib/src/platform/browser/location/location.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
             },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },

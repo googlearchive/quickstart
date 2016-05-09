@@ -8,64 +8,45 @@
           "ListWrapper",
           "MapWrapper",
           "Map",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/change_detection/change_detection.dart",
-        "2": [
-          "ChangeDetector",
-          "ChangeDispatcher",
-          "DirectiveIndex",
-          "BindingTarget",
-          "Locals",
-          "ProtoChangeDetector",
-          "ChangeDetectorRef"
+          "StringMapWrapper",
+          "isListLikeIterable",
+          "areIterablesEqual"
         ],
         "5": false
       },
       {
         "1": "package:angular2/src/core/di.dart",
         "2": [
-          "ResolvedProvider",
-          "Injectable",
           "Injector"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/change_detection/interfaces.dart",
-        "2": [
-          "DebugContext"
         ],
         "5": false
       },
       {
         "1": "element.dart",
         "2": [
-          "AppProtoElement",
-          "AppElement",
-          "DirectiveProvider"
+          "AppElement"
         ],
         "5": false
       },
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
+          "assertionsEnabled",
           "isPresent",
           "isBlank",
           "Type",
           "isArray",
-          "isNumber"
+          "isNumber",
+          "stringify",
+          "isPrimitive",
+          "isString"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "BaseException",
-          "WrappedException"
+          "ObservableWrapper"
         ],
         "5": false
       },
@@ -74,51 +55,14 @@
         "2": [
           "Renderer",
           "RootRenderer",
-          "RenderDebugInfo"
+          "RenderComponentType"
         ],
         "5": false
       },
       {
         "1": "view_ref.dart",
         "2": [
-          "ViewRef_",
-          "HostViewFactoryRef"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/pipes/pipes.dart",
-        "2": [
-          "ProtoPipes"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/render/util.dart",
-        "2": [
-          "camelCaseToDashCase"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/pipes/pipes.dart",
-        "2": [
-          "Pipes"
-        ],
-        "5": false
-      },
-      {
-        "1": "view_manager.dart",
-        "2": [
-          "AppViewManager_",
-          "AppViewManager"
-        ],
-        "5": false
-      },
-      {
-        "1": "resolved_metadata_cache.dart",
-        "2": [
-          "ResolvedMetadataCache"
+          "ViewRef_"
         ],
         "5": false
       },
@@ -128,91 +72,129 @@
           "ViewType"
         ],
         "5": false
-      }
-    ],
-    "4": [
+      },
       {
-        "1": "package:angular2/src/core/change_detection/interfaces.dart",
+        "1": "view_utils.dart",
         "2": [
+          "ViewUtils",
+          "flattenNestedViewRenderNodes",
+          "ensureSlotCount",
+          "arrayLooseIdentical",
+          "mapLooseIdentical"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "2": [
+          "ChangeDetectorRef",
+          "ChangeDetectionStrategy",
+          "ChangeDetectorState",
+          "isDefaultChangeDetectionStrategy",
+          "devModeEqual"
+        ],
+        "5": false
+      },
+      {
+        "1": "../profile/profile.dart",
+        "2": [
+          "wtfCreateScope",
+          "wtfLeave",
+          "WtfScopeFn"
+        ],
+        "5": false
+      },
+      {
+        "1": "exceptions.dart",
+        "2": [
+          "ExpressionChangedAfterItHasBeenCheckedException",
+          "ViewDestroyedException",
+          "ViewWrappedException"
+        ],
+        "5": false
+      },
+      {
+        "1": "debug_context.dart",
+        "2": [
+          "StaticNodeDebugInfo",
           "DebugContext"
-        ]
+        ],
+        "5": false
+      },
+      {
+        "1": "element_injector.dart",
+        "2": [
+          "ElementInjector"
+        ],
+        "5": false
       }
     ],
     "6": "view.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/collection.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/change_detection/change_detection.template.dart",
+        "1": "package:angular2/src/core/di.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "element.ngfactory.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/change_detection/interfaces.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i3"
       },
       {
-        "1": "element.template.dart",
+        "1": "package:angular2/src/facade/async.ngfactory.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/core/render/api.ngfactory.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "view_ref.ngfactory.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/core/render/api.template.dart",
+        "1": "view_type.ngfactory.dart",
         "4": "i7"
       },
       {
-        "1": "view_ref.template.dart",
+        "1": "view_utils.ngfactory.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/core/pipes/pipes.template.dart",
+        "1": "package:angular2/src/core/change_detection/change_detection.ngfactory.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/core/render/util.template.dart",
+        "1": "../profile/profile.ngfactory.dart",
         "4": "i10"
       },
       {
-        "1": "view_manager.template.dart",
+        "1": "exceptions.ngfactory.dart",
         "4": "i11"
       },
       {
-        "1": "resolved_metadata_cache.template.dart",
+        "1": "debug_context.ngfactory.dart",
         "4": "i12"
       },
       {
-        "1": "view_type.template.dart",
+        "1": "element_injector.ngfactory.dart",
         "4": "i13"
       }
     ]
   },
   "type": {
-    "REFLECT_PREFIX": {
-      "class": "Identifier",
-      "name": "REFLECT_PREFIX",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
     "EMPTY_CONTEXT": {
       "class": "Identifier",
       "name": "EMPTY_CONTEXT",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "AppView": {
@@ -220,111 +202,13 @@
       "name": "AppView",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
-    "_localsToStringMap": {
+    "_findLastRenderNode": {
       "class": "Identifier",
-      "name": "_localsToStringMap",
+      "name": "_findLastRenderNode",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
       "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "AppProtoView": {
-      "class": "Identifier",
-      "name": "AppProtoView",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "HostViewFactory": {
-      "class": "Identifier",
-      "name": "HostViewFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "flattenNestedViewRenderNodes": {
-      "class": "Identifier",
-      "name": "flattenNestedViewRenderNodes",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "_flattenNestedViewRenderNodes": {
-      "class": "Identifier",
-      "name": "_flattenNestedViewRenderNodes",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "findLastRenderNode": {
-      "class": "Identifier",
-      "name": "findLastRenderNode",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "checkSlotCount": {
-      "class": "Identifier",
-      "name": "checkSlotCount",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "DebugContext": {
-      "class": "Identifier",
-      "name": "DebugContext",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/interfaces.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ChangeDispatcher": {
-      "class": "Identifier",
-      "name": "ChangeDispatcher",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/interfaces.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ChangeDetector": {
-      "class": "Identifier",
-      "name": "ChangeDetector",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/interfaces.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ProtoChangeDetector": {
-      "class": "Identifier",
-      "name": "ProtoChangeDetector",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/interfaces.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ChangeDetectorGenConfig": {
-      "class": "Identifier",
-      "name": "ChangeDetectorGenConfig",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/interfaces.dart",
-      "prefix": null,
-      "constConstructor": null,
-      "value": null
-    },
-    "ChangeDetectorDefinition": {
-      "class": "Identifier",
-      "name": "ChangeDetectorDefinition",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/interfaces.dart",
-      "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },

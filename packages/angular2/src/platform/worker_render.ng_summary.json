@@ -29,10 +29,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.dart",
-        "5": false
-      },
-      {
         "1": "dart:isolate",
         "5": false
       },
@@ -49,7 +45,6 @@
       "name": "WORKER_RENDER_APP",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "initIsolate": {
@@ -57,7 +52,6 @@
       "name": "initIsolate",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "spawnIsolate": {
@@ -65,7 +59,6 @@
       "name": "spawnIsolate",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "UIMessageBusSource": {
@@ -73,7 +66,6 @@
       "name": "UIMessageBusSource",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     },
     "WebWorkerInstance": {
@@ -81,7 +73,6 @@
       "name": "WebWorkerInstance",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render.dart",
       "prefix": null,
-      "constConstructor": null,
       "value": null
     }
   },
