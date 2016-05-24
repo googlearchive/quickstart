@@ -1,4 +1,4 @@
-**WARNING:** This example is preliminary and will probably change.
+**WARNING:** This example is preliminary and subject to change.
 
 ------------------------------------------------------------------
       
