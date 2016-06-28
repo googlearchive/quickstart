@@ -1,15 +1,11 @@
-**WARNING:** This example is preliminary and subject to change.
 
-------------------------------------------------------------------
-      
 
-quickstart
----------------
+## QuickStart
 
 Welcome to the example application used in angular.io/dart's
-[quickstart](//github.com/angular/angular.io/tree/master/public/docs/_examples/quickstart/dart) page.
+[QuickStart](https://angular.io/docs/dart/latest/quickstart.html) page.
 
-To run your own copy:
+You can run a [hosted copy](http://angular-examples.github.io/quickstart) of this sample. Or run your own copy:
 
 1. Clone this repo.
 2. Download the dependencies:
@@ -30,4 +26,4 @@ To run your own copy:
 [the angular.io repository](//github.com/angular/angular.io/tree/master/public/docs/_examples/quickstart/dart) by running the
 [dart-doc-syncer](//github.com/angular/dart-doc-syncer) tool.
 If you find a problem with this sample's code, please open an
-[issue at angular/angular.io](https://github.com/angular/angular.io/issues/new).
+[issue at angular/angular.io](//github.com/angular/angular.io/issues/new?labels=dart,example&title=%5BDart%5D%5Bexample%5D%20quickstart%3A%20).
