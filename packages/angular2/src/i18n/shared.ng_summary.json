@@ -3,10 +3,9 @@
     "1": "angular2.src.i18n.shared",
     "3": [
       {
-        "1": "package:angular2/src/compiler/parse_util.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "2": [
-          "ParseSourceSpan",
-          "ParseError"
+          "Parser"
         ],
         "5": false
       },
@@ -26,6 +25,14 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/parse_util.dart",
+        "2": [
+          "ParseSourceSpan",
+          "ParseError"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
@@ -38,13 +45,6 @@
         "1": "message.dart",
         "2": [
           "Message"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
-        "2": [
-          "Parser"
         ],
         "5": false
       }

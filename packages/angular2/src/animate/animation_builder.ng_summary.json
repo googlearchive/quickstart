@@ -10,16 +10,16 @@
         "5": false
       },
       {
-        "1": "css_animation_builder.dart",
+        "1": "browser_details.dart",
         "2": [
-          "CssAnimationBuilder"
+          "BrowserDetails"
         ],
         "5": false
       },
       {
-        "1": "browser_details.dart",
+        "1": "css_animation_builder.dart",
         "2": [
-          "BrowserDetails"
+          "CssAnimationBuilder"
         ],
         "5": false
       }

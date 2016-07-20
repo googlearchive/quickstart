@@ -3,22 +3,6 @@
     "1": "angular2.src.compiler.static_reflector",
     "3": [
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isArray",
-          "isPresent",
-          "isPrimitive"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/metadata.dart",
         "2": [
           "AttributeMetadata",
@@ -40,9 +24,19 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/reflection/reflector_reader.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "ReflectorReader"
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isArray",
+          "isPresent",
+          "isPrimitive"
         ],
         "5": false
       }
@@ -50,20 +44,16 @@
     "6": "static_reflector.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/metadata.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflector_reader.ngfactory.dart",
-        "4": "i3"
       }
     ]
   },
@@ -106,6 +96,27 @@
     "isClassMetadata": {
       "class": "Identifier",
       "name": "isClassMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "splitPath": {
+      "class": "Identifier",
+      "name": "splitPath",
+      "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "resolvePath": {
+      "class": "Identifier",
+      "name": "resolvePath",
+      "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pathTo": {
+      "class": "Identifier",
+      "name": "pathTo",
       "moduleUrl": "asset:angular2/lib/src/compiler/static_reflector.dart",
       "prefix": null,
       "value": null

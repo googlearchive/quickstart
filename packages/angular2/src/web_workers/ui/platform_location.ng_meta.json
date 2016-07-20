@@ -7,13 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/browser/location/browser_platform_location.dart",
-        "2": [
-          "BrowserPlatformLocation"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/platform/common.dart",
         "2": [
           "UrlChangeListener"
@@ -28,6 +21,29 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "EventEmitter",
+          "ObservableWrapper",
+          "PromiseWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/browser/location/browser_platform_location.dart",
+        "2": [
+          "BrowserPlatformLocation"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/message_bus.dart",
+        "2": [
+          "MessageBus"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
         "2": [
           "ROUTER_CHANNEL"
@@ -35,10 +51,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/service_message_broker.dart",
+        "1": "package:angular2/src/web_workers/shared/serialized_types.dart",
         "2": [
-          "ServiceMessageBrokerFactory",
-          "ServiceMessageBroker"
+          "LocationType"
         ],
         "5": false
       },
@@ -51,32 +66,17 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/web_workers/shared/service_message_broker.dart",
+        "2": [
+          "ServiceMessageBrokerFactory",
+          "ServiceMessageBroker"
+        ],
+        "5": false
+      },
+      {
         "1": "bind.dart",
         "2": [
           "bind"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/serialized_types.dart",
-        "2": [
-          "LocationType"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/message_bus.dart",
-        "2": [
-          "MessageBus"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "EventEmitter",
-          "ObservableWrapper",
-          "PromiseWrapper"
         ],
         "5": false
       }
@@ -113,43 +113,43 @@
     "6": "platform_location.dart",
     "7": [
       {
-        "1": "package:angular2/src/platform/browser/location/browser_platform_location.ngfactory.dart",
+        "1": "package:angular2/platform/common.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/platform/common.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/messaging_api.ngfactory.dart",
+        "1": "package:angular2/src/platform/browser/location/browser_platform_location.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/service_message_broker.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/message_bus.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/serializer.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/messaging_api.template.dart",
         "4": "i5"
       },
       {
-        "1": "bind.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/serialized_types.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/serialized_types.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/serializer.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/message_bus.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/service_message_broker.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "bind.template.dart",
         "4": "i9"
       }
     ]

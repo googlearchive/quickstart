@@ -3,148 +3,85 @@
     "1": "angular2.testing_internal",
     "4": [
       {
-        "1": "src/testing/testing_internal.dart"
-      },
-      {
-        "1": "src/testing/test_component_builder.dart"
-      },
-      {
-        "1": "src/testing/test_injector.dart"
-      },
-      {
-        "1": "src/testing/fake_async.dart"
-      },
-      {
-        "1": "src/testing/utils.dart"
+        "1": "package:angular2/src/testing/internal.dart"
       }
     ],
     "6": "testing_internal.dart",
     "7": [
       {
-        "1": "src/testing/testing_internal.ngfactory.dart",
+        "1": "package:angular2/src/testing/internal.template.dart",
         "4": "i0"
-      },
-      {
-        "1": "src/testing/test_component_builder.ngfactory.dart",
-        "4": "i1"
-      },
-      {
-        "1": "src/testing/test_injector.ngfactory.dart",
-        "4": "i2"
-      },
-      {
-        "1": "src/testing/fake_async.ngfactory.dart",
-        "4": "i3"
-      },
-      {
-        "1": "src/testing/utils.ngfactory.dart",
-        "4": "i4"
       }
     ]
   },
   "type": {
-    "testSetup": {
+    "inject": {
       "class": "Identifier",
-      "name": "testSetup",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "name": "inject",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
     },
     "beforeEachProviders": {
       "class": "Identifier",
       "name": "beforeEachProviders",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
     },
-    "beforeEachBindings": {
+    "_bootstrapInternalTests": {
       "class": "Identifier",
-      "name": "beforeEachBindings",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "name": "_bootstrapInternalTests",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
     },
-    "beforeEach": {
+    "_setBaseTestProviders": {
       "class": "Identifier",
-      "name": "beforeEach",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
-      "prefix": null,
-      "value": null
-    },
-    "it": {
-      "class": "Identifier",
-      "name": "it",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
-      "prefix": null,
-      "value": null
-    },
-    "iit": {
-      "class": "Identifier",
-      "name": "iit",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
-      "prefix": null,
-      "value": null
-    },
-    "xit": {
-      "class": "Identifier",
-      "name": "xit",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
-      "prefix": null,
-      "value": null
-    },
-    "describe": {
-      "class": "Identifier",
-      "name": "describe",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ddescribe": {
-      "class": "Identifier",
-      "name": "ddescribe",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
-      "prefix": null,
-      "value": null
-    },
-    "xdescribe": {
-      "class": "Identifier",
-      "name": "xdescribe",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "name": "_setBaseTestProviders",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
     },
     "isInInnerZone": {
       "class": "Identifier",
       "name": "isInInnerZone",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
     },
-    "setDartBaseTestProviders": {
+    "_HasTextContent": {
       "class": "Identifier",
-      "name": "setDartBaseTestProviders",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "name": "_HasTextContent",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
     },
-    "_it": {
+    "hasTextContent": {
       "class": "Identifier",
-      "name": "_it",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "name": "hasTextContent",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
     },
-    "SpyFunction": {
+    "_ThrowsWith": {
       "class": "Identifier",
-      "name": "SpyFunction",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "name": "_ThrowsWith",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
     },
-    "SpyObject": {
+    "throwsWith": {
       "class": "Identifier",
-      "name": "SpyObject",
-      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "name": "throwsWith",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_elementText": {
+      "class": "Identifier",
+      "name": "_elementText",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
     },
@@ -155,122 +92,59 @@
       "prefix": null,
       "value": null
     },
-    "expect": {
+    "fakeAsync": {
       "class": "Identifier",
-      "name": "expect",
-      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "name": "fakeAsync",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
       "value": null
     },
-    "elementContainsStyle": {
+    "tick": {
       "class": "Identifier",
-      "name": "elementContainsStyle",
-      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "name": "tick",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
       "value": null
     },
-    "expectErrorMessage": {
+    "clearPendingTimers": {
       "class": "Identifier",
-      "name": "expectErrorMessage",
-      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "name": "clearPendingTimers",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
       "value": null
     },
-    "expectException": {
+    "flushMicrotasks": {
       "class": "Identifier",
-      "name": "expectException",
-      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
+      "name": "flushMicrotasks",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
       "value": null
     },
-    "Expect": {
+    "_assertInFakeAsyncZone": {
       "class": "Identifier",
-      "name": "Expect",
-      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
-      "prefix": null,
-      "value": null
-    },
-    "NotExpect": {
-      "class": "Identifier",
-      "name": "NotExpect",
-      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
-      "prefix": null,
-      "value": null
-    },
-    "elementText": {
-      "class": "Identifier",
-      "name": "elementText",
-      "moduleUrl": "asset:angular2/lib/src/testing/matchers.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AsyncTestCompleter": {
-      "class": "Identifier",
-      "name": "AsyncTestCompleter",
-      "moduleUrl": "asset:angular2/lib/src/testing/async_test_completer.dart",
+      "name": "_assertInFakeAsyncZone",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
       "prefix": null,
       "value": null
     },
     "TestInjector": {
       "class": "Identifier",
       "name": "TestInjector",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal_injector.dart",
       "prefix": null,
       "value": null
     },
-    "getTestInjector": {
+    "FunctionWithParamTokens": {
       "class": "Identifier",
-      "name": "getTestInjector",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
+      "name": "FunctionWithParamTokens",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal_injector.dart",
       "prefix": null,
       "value": null
     },
-    "setBaseTestProviders": {
+    "AsyncTestCompleter": {
       "class": "Identifier",
-      "name": "setBaseTestProviders",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "resetBaseTestProviders": {
-      "class": "Identifier",
-      "name": "resetBaseTestProviders",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "inject": {
-      "class": "Identifier",
-      "name": "inject",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "InjectSetupWrapper": {
-      "class": "Identifier",
-      "name": "InjectSetupWrapper",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "withProviders": {
-      "class": "Identifier",
-      "name": "withProviders",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "injectAsync": {
-      "class": "Identifier",
-      "name": "injectAsync",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "async": {
-      "class": "Identifier",
-      "name": "async",
-      "moduleUrl": "asset:angular2/lib/src/testing/async.dart",
+      "name": "AsyncTestCompleter",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal_injector.dart",
       "prefix": null,
       "value": null
     },
@@ -312,41 +186,6 @@
           "isValue": false
         }
       ]
-    },
-    "fakeAsync": {
-      "class": "Identifier",
-      "name": "fakeAsync",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "tick": {
-      "class": "Identifier",
-      "name": "tick",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "clearPendingTimers": {
-      "class": "Identifier",
-      "name": "clearPendingTimers",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "flushMicrotasks": {
-      "class": "Identifier",
-      "name": "flushMicrotasks",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_assertInFakeAsyncZone": {
-      "class": "Identifier",
-      "name": "_assertInFakeAsyncZone",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
-      "prefix": null,
-      "value": null
     },
     "Log": {
       "class": "Type",
@@ -400,8 +239,5 @@
       "value": null
     }
   },
-  "alias": {
-    "_platformProviders": [],
-    "_applicationProviders": []
-  }
+  "alias": {}
 }

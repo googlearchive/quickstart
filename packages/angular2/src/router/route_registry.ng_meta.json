@@ -7,12 +7,12 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "ListWrapper",
-          "Map",
-          "MapWrapper",
-          "StringMapWrapper"
+          "Injectable",
+          "Inject",
+          "OpaqueToken",
+          "ComponentFactory"
         ],
         "5": false
       },
@@ -20,6 +20,22 @@
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "PromiseWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "Map",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       },
@@ -32,62 +48,9 @@
           "isType",
           "isString",
           "isStringMap",
-          "Type",
           "StringWrapper",
           "Math",
           "getTypeNameForDebugging"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
-        "2": [
-          "reflector"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/core.dart",
-        "2": [
-          "Injectable",
-          "Inject",
-          "OpaqueToken"
-        ],
-        "5": false
-      },
-      {
-        "1": "route_config/route_config_impl.dart",
-        "2": [
-          "RouteConfig",
-          "AsyncRoute",
-          "Route",
-          "AuxRoute",
-          "Redirect",
-          "RouteDefinition"
-        ],
-        "5": false
-      },
-      {
-        "1": "rules/rules.dart",
-        "2": [
-          "PathMatch",
-          "RedirectMatch",
-          "RouteMatch"
-        ],
-        "5": false
-      },
-      {
-        "1": "rules/rule_set.dart",
-        "2": [
-          "RuleSet"
         ],
         "5": false
       },
@@ -103,6 +66,16 @@
         "5": false
       },
       {
+        "1": "route_config/route_config_impl.dart",
+        "2": [
+          "RouteConfig",
+          "Route",
+          "AuxRoute",
+          "RouteDefinition"
+        ],
+        "5": false
+      },
+      {
         "1": "route_config/route_config_normalizer.dart",
         "2": [
           "normalizeRouteConfig",
@@ -111,19 +84,42 @@
         "5": false
       },
       {
-        "1": "url_parser.dart",
+        "1": "rules/route_paths/route_path.dart",
         "2": [
-          "parser",
-          "Url",
-          "convertUrlParamsToArray",
-          "pathSegmentsToUrl"
+          "GeneratedUrl"
         ],
         "5": false
       },
       {
-        "1": "rules/route_paths/route_path.dart",
+        "1": "rules/rule_set.dart",
         "2": [
-          "GeneratedUrl"
+          "RuleSet"
+        ],
+        "5": false
+      },
+      {
+        "1": "rules/rules.dart",
+        "2": [
+          "PathMatch",
+          "RedirectMatch",
+          "RouteMatch"
+        ],
+        "5": false
+      },
+      {
+        "1": "url_parser.dart",
+        "2": [
+          "parser",
+          "Url",
+          "convertUrlParamsToArray"
+        ],
+        "5": false
+      },
+      {
+        "1": "utils.dart",
+        "2": [
+          "getComponentAnnotations",
+          "getComponentType"
         ],
         "5": false
       }
@@ -139,7 +135,7 @@
         ],
         "5": [
           {
-            "1": "Type",
+            "1": "dynamic",
             "3": [
               "const Inject(ROUTER_PRIMARY_COMPONENT)"
             ],
@@ -151,55 +147,55 @@
     "6": "route_registry.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "instruction.template.dart",
         "4": "i5"
       },
       {
-        "1": "route_config/route_config_impl.ngfactory.dart",
+        "1": "route_config/route_config_impl.template.dart",
         "4": "i6"
       },
       {
-        "1": "rules/rules.ngfactory.dart",
+        "1": "route_config/route_config_normalizer.template.dart",
         "4": "i7"
       },
       {
-        "1": "rules/rule_set.ngfactory.dart",
+        "1": "rules/route_paths/route_path.template.dart",
         "4": "i8"
       },
       {
-        "1": "instruction.ngfactory.dart",
+        "1": "rules/rule_set.template.dart",
         "4": "i9"
       },
       {
-        "1": "route_config/route_config_normalizer.ngfactory.dart",
+        "1": "rules/rules.template.dart",
         "4": "i10"
       },
       {
-        "1": "url_parser.ngfactory.dart",
+        "1": "url_parser.template.dart",
         "4": "i11"
       },
       {
-        "1": "rules/route_paths/route_path.ngfactory.dart",
+        "1": "utils.template.dart",
         "4": "i12"
       }
     ]

@@ -7,11 +7,6 @@
         "5": false
       },
       {
-        "1": "package:path/path.dart",
-        "4": "path",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/logging.dart",
         "5": false
       },
@@ -28,6 +23,11 @@
         "5": false
       },
       {
+        "1": "package:path/path.dart",
+        "4": "path",
+        "5": false
+      },
+      {
         "1": "codegen.dart",
         "5": false
       },
@@ -39,27 +39,27 @@
     "6": "rewriter.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/logging.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/mirror_matcher.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/mirror_matcher.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/mirror_mode.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/mirror_mode.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/names.template.dart",
         "4": "i3"
       },
       {
-        "1": "codegen.ngfactory.dart",
+        "1": "codegen.template.dart",
         "4": "i4"
       },
       {
-        "1": "entrypoint_matcher.ngfactory.dart",
+        "1": "entrypoint_matcher.template.dart",
         "4": "i5"
       }
     ]

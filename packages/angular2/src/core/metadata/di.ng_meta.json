@@ -3,17 +3,7 @@
     "1": "angular2.src.core.metadata.di",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "stringify",
-          "isPresent",
-          "isString"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/core/di/forward_ref.dart",
         "2": [
           "resolveForwardRef"
         ],
@@ -25,20 +15,27 @@
           "DependencyMetadata"
         ],
         "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "stringify"
+        ],
+        "5": false
       }
     ],
     "6": "di.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/di/forward_ref.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di/metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di/metadata.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       }
     ]
@@ -89,6 +86,20 @@
     "ViewChildMetadata": {
       "class": "Identifier",
       "name": "ViewChildMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ProviderPropertyMetadata": {
+      "class": "Identifier",
+      "name": "ProviderPropertyMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "InjectorModuleMetadata": {
+      "class": "Identifier",
+      "name": "InjectorModuleMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
       "value": null

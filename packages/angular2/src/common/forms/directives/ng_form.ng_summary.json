@@ -3,32 +3,6 @@
     "1": "angular2.src.common.forms.directives.ng_form",
     "3": [
       {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "PromiseWrapper",
-          "ObservableWrapper",
-          "EventEmitter",
-          "PromiseCompleter"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper",
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/core.dart",
         "2": [
           "Directive",
@@ -40,30 +14,25 @@
         "5": false
       },
       {
-        "1": "ng_control.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "NgControl"
+          "PromiseWrapper",
+          "ObservableWrapper",
+          "EventEmitter"
         ],
         "5": false
       },
       {
-        "1": "form_interface.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "Form"
+          "ListWrapper"
         ],
         "5": false
       },
       {
-        "1": "ng_control_group.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "NgControlGroup"
-        ],
-        "5": false
-      },
-      {
-        "1": "control_container.dart",
-        "2": [
-          "ControlContainer"
+          "isPresent"
         ],
         "5": false
       },
@@ -77,21 +46,48 @@
         "5": false
       },
       {
+        "1": "../validators.dart",
+        "2": [
+          "NG_VALIDATORS",
+          "NG_ASYNC_VALIDATORS"
+        ],
+        "5": false
+      },
+      {
+        "1": "control_container.dart",
+        "2": [
+          "ControlContainer"
+        ],
+        "5": false
+      },
+      {
+        "1": "form_interface.dart",
+        "2": [
+          "Form"
+        ],
+        "5": false
+      },
+      {
+        "1": "ng_control.dart",
+        "2": [
+          "NgControl"
+        ],
+        "5": false
+      },
+      {
+        "1": "ng_control_group.dart",
+        "2": [
+          "NgControlGroup"
+        ],
+        "5": false
+      },
+      {
         "1": "shared.dart",
         "2": [
           "setUpControl",
           "setUpControlGroup",
           "composeValidators",
           "composeAsyncValidators"
-        ],
-        "5": false
-      },
-      {
-        "1": "../validators.dart",
-        "2": [
-          "Validators",
-          "NG_VALIDATORS",
-          "NG_ASYNC_VALIDATORS"
         ],
         "5": false
       }
@@ -161,6 +157,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": false,
         "deps": null
       }

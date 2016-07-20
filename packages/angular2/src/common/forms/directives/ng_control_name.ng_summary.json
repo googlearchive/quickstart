@@ -3,20 +3,11 @@
     "1": "angular2.src.common.forms.directives.ng_control_name",
     "3": [
       {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "EventEmitter",
-          "ObservableWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/core.dart",
         "2": [
           "OnChanges",
           "OnDestroy",
           "SimpleChange",
-          "Query",
           "Directive",
           "Host",
           "SkipSelf",
@@ -28,35 +19,10 @@
         "5": false
       },
       {
-        "1": "control_container.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "ControlContainer"
-        ],
-        "5": false
-      },
-      {
-        "1": "ng_control.dart",
-        "2": [
-          "NgControl"
-        ],
-        "5": false
-      },
-      {
-        "1": "control_value_accessor.dart",
-        "2": [
-          "ControlValueAccessor",
-          "NG_VALUE_ACCESSOR"
-        ],
-        "5": false
-      },
-      {
-        "1": "shared.dart",
-        "2": [
-          "controlPath",
-          "composeValidators",
-          "composeAsyncValidators",
-          "isPropertyUpdated",
-          "selectValueAccessor"
+          "EventEmitter",
+          "ObservableWrapper"
         ],
         "5": false
       },
@@ -72,6 +38,39 @@
         "2": [
           "NG_VALIDATORS",
           "NG_ASYNC_VALIDATORS"
+        ],
+        "5": false
+      },
+      {
+        "1": "control_container.dart",
+        "2": [
+          "ControlContainer"
+        ],
+        "5": false
+      },
+      {
+        "1": "control_value_accessor.dart",
+        "2": [
+          "ControlValueAccessor",
+          "NG_VALUE_ACCESSOR"
+        ],
+        "5": false
+      },
+      {
+        "1": "ng_control.dart",
+        "2": [
+          "NgControl"
+        ],
+        "5": false
+      },
+      {
+        "1": "shared.dart",
+        "2": [
+          "controlPath",
+          "composeValidators",
+          "composeAsyncValidators",
+          "isPropertyUpdated",
+          "selectValueAccessor"
         ],
         "5": false
       },
@@ -168,6 +167,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": false,
         "deps": null
       }

@@ -3,11 +3,7 @@
     "1": "reflection.reflection",
     "3": [
       {
-        "1": "reflector.dart",
-        "5": false
-      },
-      {
-        "1": "types.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "5": false
       },
       {
@@ -15,7 +11,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "reflector.dart",
+        "5": false
+      },
+      {
+        "1": "types.dart",
         "5": false
       }
     ],
@@ -27,19 +27,19 @@
     "6": "reflection.dart",
     "7": [
       {
-        "1": "reflector.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i0"
       },
       {
-        "1": "types.ngfactory.dart",
+        "1": "platform_reflection_capabilities.template.dart",
         "4": "i1"
       },
       {
-        "1": "platform_reflection_capabilities.ngfactory.dart",
+        "1": "reflector.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "types.template.dart",
         "4": "i3"
       }
     ]
@@ -73,6 +73,13 @@
       "prefix": null,
       "value": null
     },
+    "PlatformReflectionCapabilities": {
+      "class": "Identifier",
+      "name": "PlatformReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
+      "prefix": null,
+      "value": null
+    },
     "SetterFn": {
       "class": "Identifier",
       "name": "SetterFn",
@@ -91,13 +98,6 @@
       "class": "Identifier",
       "name": "MethodFn",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PlatformReflectionCapabilities": {
-      "class": "Identifier",
-      "name": "PlatformReflectionCapabilities",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
       "prefix": null,
       "value": null
     }

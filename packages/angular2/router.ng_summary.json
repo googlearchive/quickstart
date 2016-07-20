@@ -3,37 +3,50 @@
     "1": "angular2.router",
     "3": [
       {
-        "1": "src/router/directives/router_outlet.dart",
+        "1": "src/router/directives/router_link.dart",
         "2": [
-          "RouterOutlet"
+          "RouterLink"
         ],
         "5": false
       },
       {
-        "1": "src/router/directives/router_link.dart",
+        "1": "src/router/directives/router_outlet.dart",
         "2": [
-          "RouterLink"
+          "RouterOutlet"
         ],
         "5": false
       }
     ],
     "4": [
       {
-        "1": "src/router/router.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "Router"
+          "OpaqueToken"
         ]
       },
       {
-        "1": "src/router/directives/router_outlet.dart",
+        "1": "package:angular2/src/router/router_providers.dart",
         "2": [
-          "RouterOutlet"
+          "ROUTER_PROVIDERS",
+          "ROUTER_BINDINGS"
+        ]
+      },
+      {
+        "1": "package:angular2/src/router/router_providers_common.dart",
+        "2": [
+          "ROUTER_PROVIDERS_COMMON"
         ]
       },
       {
         "1": "src/router/directives/router_link.dart",
         "2": [
           "RouterLink"
+        ]
+      },
+      {
+        "1": "src/router/directives/router_outlet.dart",
+        "2": [
+          "RouterOutlet"
         ]
       },
       {
@@ -44,17 +57,11 @@
         ]
       },
       {
-        "1": "src/router/route_registry.dart",
+        "1": "src/router/instruction.dart",
         "2": [
-          "RouteRegistry",
-          "ROUTER_PRIMARY_COMPONENT"
+          "Instruction",
+          "ComponentInstruction"
         ]
-      },
-      {
-        "1": "src/router/route_config/route_config_decorator.dart"
-      },
-      {
-        "1": "src/router/route_definition.dart"
       },
       {
         "1": "src/router/interfaces.dart",
@@ -73,29 +80,22 @@
         ]
       },
       {
-        "1": "src/router/instruction.dart",
+        "1": "src/router/route_config/route_config_decorator.dart"
+      },
+      {
+        "1": "src/router/route_definition.dart"
+      },
+      {
+        "1": "src/router/route_registry.dart",
         "2": [
-          "Instruction",
-          "ComponentInstruction"
+          "RouteRegistry",
+          "ROUTER_PRIMARY_COMPONENT"
         ]
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "src/router/router.dart",
         "2": [
-          "OpaqueToken"
-        ]
-      },
-      {
-        "1": "package:angular2/src/router/router_providers_common.dart",
-        "2": [
-          "ROUTER_PROVIDERS_COMMON"
-        ]
-      },
-      {
-        "1": "package:angular2/src/router/router_providers.dart",
-        "2": [
-          "ROUTER_PROVIDERS",
-          "ROUTER_BINDINGS"
+          "Router"
         ]
       }
     ],

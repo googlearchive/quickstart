@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/asset_reader.dart",
         "5": false
       },
@@ -36,6 +32,10 @@
         "5": false
       },
       {
+        "1": "package:barback/barback.dart",
+        "5": false
+      },
+      {
         "1": "remove_reflection_capabilities.dart",
         "5": false
       }
@@ -43,31 +43,31 @@
     "6": "transformer.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/mirror_mode.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/mirror_mode.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/names.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/options.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/options.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/common/options_reader.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/options_reader.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/common/zone.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/zone.template.dart",
         "4": "i5"
       },
       {
-        "1": "remove_reflection_capabilities.ngfactory.dart",
+        "1": "remove_reflection_capabilities.template.dart",
         "4": "i6"
       }
     ]

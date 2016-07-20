@@ -3,14 +3,14 @@
     "1": "angular2.transform.common.code.source_module",
     "3": [
       {
-        "1": "package:angular2/src/compiler/offline_compiler.dart",
-        "5": false
-      },
-      {
         "1": "package:analyzer/src/generated/scanner.dart",
         "2": [
           "Keyword"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {

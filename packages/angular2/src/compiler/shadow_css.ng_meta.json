@@ -25,11 +25,11 @@
     "6": "shadow_css.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       }
     ]

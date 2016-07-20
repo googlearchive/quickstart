@@ -5,18 +5,62 @@
       {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "Map",
-          "MapWrapper",
           "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "injector.dart",
+        "2": [
+          "Injector",
+          "THROW_IF_NOT_FOUND"
+        ],
+        "5": false
+      },
+      {
+        "1": "metadata.dart",
+        "2": [
+          "SelfMetadata",
+          "SkipSelfMetadata"
         ],
         "5": false
       },
       {
         "1": "provider.dart",
         "2": [
-          "Provider",
-          "ProviderBuilder",
-          "provide"
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "reflective_exceptions.dart",
+        "2": [
+          "AbstractProviderError",
+          "NoProviderError",
+          "CyclicDependencyError",
+          "InstantiationError",
+          "OutOfBoundsError"
+        ],
+        "5": false
+      },
+      {
+        "1": "reflective_key.dart",
+        "2": [
+          "ReflectiveKey"
         ],
         "5": false
       },
@@ -29,96 +73,44 @@
           "resolveReflectiveProviders"
         ],
         "5": false
-      },
-      {
-        "1": "reflective_exceptions.dart",
-        "2": [
-          "AbstractProviderError",
-          "NoProviderError",
-          "CyclicDependencyError",
-          "InstantiationError",
-          "InvalidProviderError",
-          "OutOfBoundsError"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "unimplemented"
-        ],
-        "5": false
-      },
-      {
-        "1": "reflective_key.dart",
-        "2": [
-          "ReflectiveKey"
-        ],
-        "5": false
-      },
-      {
-        "1": "metadata.dart",
-        "2": [
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "injector.dart",
-        "2": [
-          "Injector",
-          "THROW_IF_NOT_FOUND"
-        ],
-        "5": false
       }
     ],
     "6": "reflective_injector.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i0"
       },
       {
-        "1": "provider.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i1"
       },
       {
-        "1": "reflective_provider.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "reflective_exceptions.ngfactory.dart",
+        "1": "injector.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "metadata.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "provider.template.dart",
         "4": "i5"
       },
       {
-        "1": "reflective_key.ngfactory.dart",
+        "1": "reflective_exceptions.template.dart",
         "4": "i6"
       },
       {
-        "1": "metadata.ngfactory.dart",
+        "1": "reflective_key.template.dart",
         "4": "i7"
       },
       {
-        "1": "injector.ngfactory.dart",
+        "1": "reflective_provider.template.dart",
         "4": "i8"
       }
     ]

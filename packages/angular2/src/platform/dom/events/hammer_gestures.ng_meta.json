@@ -7,14 +7,8 @@
         "5": false
       },
       {
-        "1": "./hammer_common.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
+        "1": "dart:js",
+        "4": "js",
         "5": false
       },
       {
@@ -27,8 +21,14 @@
         "5": false
       },
       {
-        "1": "dart:js",
-        "4": "js",
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "./hammer_common.dart",
         "5": false
       }
     ],
@@ -64,15 +64,15 @@
     "6": "hammer_gestures.dart",
     "7": [
       {
-        "1": "./hammer_common.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "./hammer_common.template.dart",
         "4": "i2"
       }
     ]

@@ -32,6 +32,7 @@
           "CompileQueryMetadata",
           "CompileTemplateMetadata",
           "CompileDirectiveMetadata",
+          "CompileInjectorModuleMetadata",
           "CompilePipeMetadata"
         ]
       },

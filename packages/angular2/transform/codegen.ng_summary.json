@@ -3,14 +3,6 @@
     "1": "angular2.transform.codegen.dart",
     "3": [
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
-        "1": "package:dart_style/dart_style.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/eager_transformer_wrapper.dart",
         "5": false
       },
@@ -45,6 +37,14 @@
       },
       {
         "1": "package:angular2/src/transform/template_compiler/transformer.dart",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "5": false
+      },
+      {
+        "1": "package:dart_style/dart_style.dart",
         "5": false
       }
     ],

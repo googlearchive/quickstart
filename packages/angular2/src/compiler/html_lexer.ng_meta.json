@@ -3,20 +3,28 @@
     "1": "angular2.src.compiler.html_lexer",
     "3": [
       {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "StringWrapper",
           "NumberWrapper",
           "isPresent",
-          "isBlank",
-          "serializeEnum"
+          "isBlank"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "html_tags.dart",
         "2": [
-          "ListWrapper"
+          "getHtmlTagDefinition",
+          "HtmlTagContentType",
+          "NAMED_ENTITIES"
         ],
         "5": false
       },
@@ -29,33 +37,24 @@
           "ParseSourceSpan"
         ],
         "5": false
-      },
-      {
-        "1": "html_tags.dart",
-        "2": [
-          "getHtmlTagDefinition",
-          "HtmlTagContentType",
-          "NAMED_ENTITIES"
-        ],
-        "5": false
       }
     ],
     "6": "html_lexer.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "parse_util.ngfactory.dart",
+        "1": "html_tags.template.dart",
         "4": "i2"
       },
       {
-        "1": "html_tags.ngfactory.dart",
+        "1": "parse_util.template.dart",
         "4": "i3"
       }
     ]

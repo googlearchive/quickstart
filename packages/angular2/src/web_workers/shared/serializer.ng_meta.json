@@ -3,21 +3,24 @@
     "1": "angular2.src.web_workers.shared.serializer",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "Type",
-          "isArray",
-          "isPresent",
-          "serializeEnum",
-          "deserializeEnum"
+          "Injectable"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "package:angular2/src/core/metadata/view.dart",
         "2": [
-          "BaseException",
-          "WrappedException"
+          "ViewEncapsulation",
+          "VIEW_ENCAPSULATION_VALUES"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/render/api.dart",
+        "2": [
+          "RenderComponentType"
         ],
         "5": false
       },
@@ -31,16 +34,19 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/render/api.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "RenderComponentType"
+          "BaseException"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "Injectable"
+          "Type",
+          "isArray",
+          "isPresent",
+          "serializeEnum"
         ],
         "5": false
       },
@@ -48,14 +54,6 @@
         "1": "package:angular2/src/web_workers/shared/render_store.dart",
         "2": [
           "RenderStore"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/view.dart",
-        "2": [
-          "ViewEncapsulation",
-          "VIEW_ENCAPSULATION_VALUES"
         ],
         "5": false
       },
@@ -87,47 +85,40 @@
     "6": "serializer.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/view.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/render/api.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/render_store.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/render_store.template.dart",
         "4": "i6"
       },
       {
-        "1": "serialized_types.ngfactory.dart",
+        "1": "serialized_types.template.dart",
         "4": "i7"
       }
     ]
   },
   "type": {
-    "PRIMITIVE": {
-      "class": "Identifier",
-      "name": "PRIMITIVE",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-      "prefix": null,
-      "value": null
-    },
     "Serializer": {
       "class": "Type",
       "name": "Serializer",

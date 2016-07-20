@@ -14,8 +14,7 @@
       {
         "1": "../../url_parser.dart",
         "2": [
-          "Url",
-          "RootUrl"
+          "Url"
         ],
         "5": false
       },

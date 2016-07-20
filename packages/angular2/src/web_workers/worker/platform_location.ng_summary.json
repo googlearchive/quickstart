@@ -7,9 +7,47 @@
         "5": false
       },
       {
+        "1": "package:angular2/platform/common.dart",
+        "2": [
+          "PlatformLocation",
+          "UrlChangeListener"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper",
+          "EventEmitter",
+          "ObservableWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "StringWrapper"
         ],
         "5": false
       },
@@ -24,11 +62,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/platform/common.dart",
+        "1": "package:angular2/src/web_workers/shared/message_bus.dart",
         "2": [
-          "PlatformLocation",
-          "UrlChangeEvent",
-          "UrlChangeListener"
+          "MessageBus"
         ],
         "5": false
       },
@@ -47,47 +83,10 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "PromiseWrapper",
-          "EventEmitter",
-          "ObservableWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/web_workers/shared/serializer.dart",
         "2": [
           "PRIMITIVE",
           "Serializer"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/message_bus.dart",
-        "2": [
-          "MessageBus"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "StringWrapper"
         ],
         "5": false
       },

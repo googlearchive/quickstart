@@ -3,15 +3,6 @@
     "1": "angular2.src.compiler.provider_parser",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "isArray"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper"
@@ -19,25 +10,18 @@
         "5": false
       },
       {
-        "1": "template_ast.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "TemplateAst",
-          "TemplateAstVisitor",
-          "NgContentAst",
-          "EmbeddedTemplateAst",
-          "ElementAst",
-          "ReferenceAst",
-          "BoundEventAst",
-          "BoundElementPropertyAst",
-          "AttrAst",
-          "BoundTextAst",
-          "TextAst",
-          "DirectiveAst",
-          "BoundDirectivePropertyAst",
-          "templateVisitAll",
-          "PropertyBindingType",
-          "ProviderAst",
-          "ProviderAstType"
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "isArray"
         ],
         "5": false
       },
@@ -66,8 +50,18 @@
         "1": "parse_util.dart",
         "2": [
           "ParseSourceSpan",
-          "ParseError",
-          "ParseLocation"
+          "ParseError"
+        ],
+        "5": false
+      },
+      {
+        "1": "template_ast.dart",
+        "2": [
+          "ReferenceAst",
+          "AttrAst",
+          "DirectiveAst",
+          "ProviderAst",
+          "ProviderAstType"
         ],
         "5": false
       }
@@ -92,6 +86,13 @@
     "ProviderElementContext": {
       "class": "Identifier",
       "name": "ProviderElementContext",
+      "moduleUrl": "asset:angular2/lib/src/compiler/provider_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AppProviderParser": {
+      "class": "Identifier",
+      "name": "AppProviderParser",
       "moduleUrl": "asset:angular2/lib/src/compiler/provider_parser.dart",
       "prefix": null,
       "value": null

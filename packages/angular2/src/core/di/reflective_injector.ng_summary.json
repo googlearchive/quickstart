@@ -5,28 +5,44 @@
       {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "Map",
-          "MapWrapper",
           "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "injector.dart",
+        "2": [
+          "Injector",
+          "THROW_IF_NOT_FOUND"
+        ],
+        "5": false
+      },
+      {
+        "1": "metadata.dart",
+        "2": [
+          "SelfMetadata",
+          "SkipSelfMetadata"
         ],
         "5": false
       },
       {
         "1": "provider.dart",
         "2": [
-          "Provider",
-          "ProviderBuilder",
-          "provide"
-        ],
-        "5": false
-      },
-      {
-        "1": "reflective_provider.dart",
-        "2": [
-          "ResolvedReflectiveProvider",
-          "ReflectiveDependency",
-          "ResolvedReflectiveFactory",
-          "resolveReflectiveProviders"
+          "Provider"
         ],
         "5": false
       },
@@ -37,24 +53,7 @@
           "NoProviderError",
           "CyclicDependencyError",
           "InstantiationError",
-          "InvalidProviderError",
           "OutOfBoundsError"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "unimplemented"
         ],
         "5": false
       },
@@ -66,19 +65,12 @@
         "5": false
       },
       {
-        "1": "metadata.dart",
+        "1": "reflective_provider.dart",
         "2": [
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "injector.dart",
-        "2": [
-          "Injector",
-          "THROW_IF_NOT_FOUND"
+          "ResolvedReflectiveProvider",
+          "ReflectiveDependency",
+          "ResolvedReflectiveFactory",
+          "resolveReflectiveProviders"
         ],
         "5": false
       }

@@ -10,9 +10,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "compile_metadata.dart",
         "2": [
-          "unimplemented"
+          "CompileIdentifierMetadata"
         ],
         "5": false
       },
@@ -20,13 +20,6 @@
         "1": "identifiers.dart",
         "2": [
           "Identifiers"
-        ],
-        "5": false
-      },
-      {
-        "1": "compile_metadata.dart",
-        "2": [
-          "CompileIdentifierMetadata"
         ],
         "5": false
       }

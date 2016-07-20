@@ -3,6 +3,13 @@
     "1": "angular2.src.compiler.view_compiler.compile_query",
     "3": [
       {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
@@ -11,15 +18,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "../compile_metadata.dart",
         "2": [
-          "ListWrapper"
+          "CompileQueryMetadata",
+          "CompileTokenMap"
         ],
-        "5": false
-      },
-      {
-        "1": "../output/output_ast.dart",
-        "4": "o",
         "5": false
       },
       {
@@ -30,19 +33,8 @@
         "5": false
       },
       {
-        "1": "../compile_metadata.dart",
-        "2": [
-          "CompileQueryMetadata",
-          "CompileIdentifierMetadata",
-          "CompileTokenMap"
-        ],
-        "5": false
-      },
-      {
-        "1": "compile_view.dart",
-        "2": [
-          "CompileView"
-        ],
+        "1": "../output/output_ast.dart",
+        "4": "o",
         "5": false
       },
       {
@@ -56,6 +48,13 @@
         "1": "compile_method.dart",
         "2": [
           "CompileMethod"
+        ],
+        "5": false
+      },
+      {
+        "1": "compile_view.dart",
+        "2": [
+          "CompileView"
         ],
         "5": false
       },

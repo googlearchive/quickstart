@@ -3,16 +3,16 @@
     "1": "angular2.src.platform.dom.events.hammer_common",
     "3": [
       {
-        "1": "event_manager.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "EventManagerPlugin"
+          "StringMapWrapper"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "event_manager.dart",
         "2": [
-          "StringMapWrapper"
+          "EventManagerPlugin"
         ],
         "5": false
       }
@@ -20,11 +20,11 @@
     "6": "hammer_common.dart",
     "7": [
       {
-        "1": "event_manager.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "event_manager.template.dart",
         "4": "i1"
       }
     ]

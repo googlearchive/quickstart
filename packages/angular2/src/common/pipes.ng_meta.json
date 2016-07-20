@@ -9,21 +9,33 @@
         ]
       },
       {
+        "1": "pipes/common_pipes.dart",
+        "2": [
+          "COMMON_PIPES"
+        ]
+      },
+      {
         "1": "pipes/date_pipe.dart",
         "2": [
           "DatePipe"
         ]
       },
       {
-        "1": "pipes/json_pipe.dart",
+        "1": "pipes/i18n_plural_pipe.dart",
         "2": [
-          "JsonPipe"
+          "I18nPluralPipe"
         ]
       },
       {
-        "1": "pipes/slice_pipe.dart",
+        "1": "pipes/i18n_select_pipe.dart",
         "2": [
-          "SlicePipe"
+          "I18nSelectPipe"
+        ]
+      },
+      {
+        "1": "pipes/json_pipe.dart",
+        "2": [
+          "JsonPipe"
         ]
       },
       {
@@ -42,80 +54,68 @@
         ]
       },
       {
-        "1": "pipes/uppercase_pipe.dart",
-        "2": [
-          "UpperCasePipe"
-        ]
-      },
-      {
         "1": "pipes/replace_pipe.dart",
         "2": [
           "ReplacePipe"
         ]
       },
       {
-        "1": "pipes/i18n_plural_pipe.dart",
+        "1": "pipes/slice_pipe.dart",
         "2": [
-          "I18nPluralPipe"
+          "SlicePipe"
         ]
       },
       {
-        "1": "pipes/i18n_select_pipe.dart",
+        "1": "pipes/uppercase_pipe.dart",
         "2": [
-          "I18nSelectPipe"
-        ]
-      },
-      {
-        "1": "pipes/common_pipes.dart",
-        "2": [
-          "COMMON_PIPES"
+          "UpperCasePipe"
         ]
       }
     ],
     "6": "pipes.dart",
     "7": [
       {
-        "1": "pipes/async_pipe.ngfactory.dart",
+        "1": "pipes/async_pipe.template.dart",
         "4": "i0"
       },
       {
-        "1": "pipes/date_pipe.ngfactory.dart",
+        "1": "pipes/common_pipes.template.dart",
         "4": "i1"
       },
       {
-        "1": "pipes/json_pipe.ngfactory.dart",
+        "1": "pipes/date_pipe.template.dart",
         "4": "i2"
       },
       {
-        "1": "pipes/slice_pipe.ngfactory.dart",
+        "1": "pipes/i18n_plural_pipe.template.dart",
         "4": "i3"
       },
       {
-        "1": "pipes/lowercase_pipe.ngfactory.dart",
+        "1": "pipes/i18n_select_pipe.template.dart",
         "4": "i4"
       },
       {
-        "1": "pipes/number_pipe.ngfactory.dart",
+        "1": "pipes/json_pipe.template.dart",
         "4": "i5"
       },
       {
-        "1": "pipes/uppercase_pipe.ngfactory.dart",
+        "1": "pipes/lowercase_pipe.template.dart",
         "4": "i6"
       },
       {
-        "1": "pipes/replace_pipe.ngfactory.dart",
+        "1": "pipes/number_pipe.template.dart",
         "4": "i7"
       },
       {
-        "1": "pipes/i18n_plural_pipe.ngfactory.dart",
+        "1": "pipes/replace_pipe.template.dart",
         "4": "i8"
       },
       {
-        "1": "pipes/i18n_select_pipe.ngfactory.dart",
+        "1": "pipes/slice_pipe.template.dart",
         "4": "i9"
       },
       {
-        "1": "pipes/common_pipes.ngfactory.dart",
+        "1": "pipes/uppercase_pipe.template.dart",
         "4": "i10"
       }
     ]
@@ -144,10 +144,459 @@
         "prefix": null,
         "isHost": false,
         "value": null,
-        "diDeps": []
+        "diDeps": [
+          {
+            "token": {
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ChangeDetectorRef",
+                "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detector_ref.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
+            },
+            "query": null,
+            "viewQuery": null,
+            "value": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false,
+            "isValue": false
+          }
+        ]
       },
       "name": "async",
       "pure": false
+    },
+    "COMMON_PIPES": {
+      "class": "Identifier",
+      "name": "COMMON_PIPES",
+      "moduleUrl": "asset:angular2/lib/src/common/pipes/common_pipes.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "AsyncPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "ChangeDetectorRef",
+                      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detector_ref.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "AsyncPipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ChangeDetectorRef",
+                    "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detector_ref.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "UpperCasePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "UpperCasePipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "LowerCasePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/lowercase_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "LowerCasePipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/lowercase_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "JsonPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/json_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "JsonPipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/json_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "SlicePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/slice_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "SlicePipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/slice_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "DecimalPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "DecimalPipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "PercentPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "PercentPipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "CurrencyPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "CurrencyPipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "DatePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/date_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "DatePipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/date_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "ReplacePipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "ReplacePipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "I18nPluralPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "I18nPluralPipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "I18nSelectPipe",
+              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "I18nSelectPipe",
+            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        }
+      ]
     },
     "DatePipe": {
       "class": "Pipe",
@@ -163,6 +612,34 @@
       "name": "date",
       "pure": true
     },
+    "I18nPluralPipe": {
+      "class": "Pipe",
+      "type": {
+        "class": "Type",
+        "name": "I18nPluralPipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": []
+      },
+      "name": "i18nPlural",
+      "pure": true
+    },
+    "I18nSelectPipe": {
+      "class": "Pipe",
+      "type": {
+        "class": "Type",
+        "name": "I18nSelectPipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": []
+      },
+      "name": "i18nSelect",
+      "pure": true
+    },
     "JsonPipe": {
       "class": "Pipe",
       "type": {
@@ -175,20 +652,6 @@
         "diDeps": []
       },
       "name": "json",
-      "pure": false
-    },
-    "SlicePipe": {
-      "class": "Pipe",
-      "type": {
-        "class": "Type",
-        "name": "SlicePipe",
-        "moduleUrl": "asset:angular2/lib/src/common/pipes/slice_pipe.dart",
-        "prefix": null,
-        "isHost": false,
-        "value": null,
-        "diDeps": []
-      },
-      "name": "slice",
       "pure": false
     },
     "LowerCasePipe": {
@@ -256,19 +719,12 @@
       "name": "currency",
       "pure": false
     },
-    "UpperCasePipe": {
-      "class": "Pipe",
-      "type": {
-        "class": "Type",
-        "name": "UpperCasePipe",
-        "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
-        "prefix": null,
-        "isHost": false,
-        "value": null,
-        "diDeps": []
-      },
-      "name": "uppercase",
-      "pure": false
+    "_Matcher": {
+      "class": "Identifier",
+      "name": "_Matcher",
+      "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
+      "prefix": null,
+      "value": null
     },
     "ReplacePipe": {
       "class": "Pipe",
@@ -284,401 +740,33 @@
       "name": "replace",
       "pure": false
     },
-    "I18nPluralPipe": {
+    "SlicePipe": {
       "class": "Pipe",
       "type": {
         "class": "Type",
-        "name": "I18nPluralPipe",
-        "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
+        "name": "SlicePipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/slice_pipe.dart",
         "prefix": null,
         "isHost": false,
         "value": null,
         "diDeps": []
       },
-      "name": "i18nPlural",
-      "pure": true
+      "name": "slice",
+      "pure": false
     },
-    "I18nSelectPipe": {
+    "UpperCasePipe": {
       "class": "Pipe",
       "type": {
         "class": "Type",
-        "name": "I18nSelectPipe",
-        "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
+        "name": "UpperCasePipe",
+        "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
         "prefix": null,
         "isHost": false,
         "value": null,
         "diDeps": []
       },
-      "name": "i18nSelect",
-      "pure": true
-    },
-    "COMMON_PIPES": {
-      "class": "Identifier",
-      "name": "COMMON_PIPES",
-      "moduleUrl": "asset:angular2/lib/src/common/pipes/common_pipes.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "AsyncPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "AsyncPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "UpperCasePipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "UpperCasePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/uppercase_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "LowerCasePipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/lowercase_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "LowerCasePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/lowercase_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "JsonPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/json_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "JsonPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/json_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "SlicePipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/slice_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "SlicePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/slice_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "DecimalPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "DecimalPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "PercentPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "PercentPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "CurrencyPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "CurrencyPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/number_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "DatePipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/date_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "DatePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/date_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "ReplacePipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "ReplacePipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "I18nPluralPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "I18nPluralPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "I18nSelectPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "I18nSelectPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        }
-      ]
+      "name": "uppercase",
+      "pure": false
     }
   },
   "alias": {

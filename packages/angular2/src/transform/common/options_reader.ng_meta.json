@@ -11,6 +11,10 @@
         "5": false
       },
       {
+        "1": "./url_resolver.dart",
+        "5": false
+      },
+      {
         "1": "annotation_matcher.dart",
         "5": false
       },
@@ -21,28 +25,24 @@
       {
         "1": "options.dart",
         "5": false
-      },
-      {
-        "1": "./url_resolver.dart",
-        "5": false
       }
     ],
     "6": "options_reader.dart",
     "7": [
       {
-        "1": "annotation_matcher.ngfactory.dart",
+        "1": "./url_resolver.template.dart",
         "4": "i0"
       },
       {
-        "1": "mirror_mode.ngfactory.dart",
+        "1": "annotation_matcher.template.dart",
         "4": "i1"
       },
       {
-        "1": "options.ngfactory.dart",
+        "1": "mirror_mode.template.dart",
         "4": "i2"
       },
       {
-        "1": "./url_resolver.ngfactory.dart",
+        "1": "options.template.dart",
         "4": "i3"
       }
     ]

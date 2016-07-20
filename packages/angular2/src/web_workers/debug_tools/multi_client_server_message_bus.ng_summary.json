@@ -3,7 +3,7 @@
     "1": "angular2.src.web_workers.debug_tools.multi_client_server_message_bus",
     "3": [
       {
-        "1": "dart:io",
+        "1": "dart:async",
         "5": false
       },
       {
@@ -14,15 +14,15 @@
         "5": false
       },
       {
-        "1": "dart:async",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
+        "1": "dart:io",
         "5": false
       },
       {
         "1": "package:angular2/src/web_workers/shared/generic_message_bus.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
         "5": false
       }
     ],

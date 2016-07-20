@@ -10,21 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "MapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
@@ -32,6 +17,13 @@
           "RegExpWrapper",
           "StringWrapper",
           "RegExp"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
         ],
         "5": false
       }
@@ -50,20 +42,16 @@
     "6": "utils.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i2"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
-        "4": "i3"
       }
     ]
   },

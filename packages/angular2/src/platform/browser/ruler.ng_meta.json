@@ -7,6 +7,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/element_ref.dart",
+        "2": [
+          "ElementRef"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "PromiseWrapper"
@@ -19,27 +26,20 @@
           "DomAdapter"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/element_ref.dart",
-        "2": [
-          "ElementRef"
-        ],
-        "5": false
       }
     ],
     "6": "ruler.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/element_ref.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/linker/element_ref.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i2"
       }
     ]

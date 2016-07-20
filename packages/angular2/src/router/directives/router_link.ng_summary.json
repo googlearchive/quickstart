@@ -24,16 +24,16 @@
         "5": false
       },
       {
-        "1": "../router.dart",
+        "1": "../instruction.dart",
         "2": [
-          "Router"
+          "Instruction"
         ],
         "5": false
       },
       {
-        "1": "../instruction.dart",
+        "1": "../router.dart",
         "2": [
-          "Instruction"
+          "Router"
         ],
         "5": false
       }

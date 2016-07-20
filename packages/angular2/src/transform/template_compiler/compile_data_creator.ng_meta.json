@@ -54,39 +54,39 @@
     "6": "compile_data_creator.dart",
     "7": [
       {
-        "1": "package:angular2/src/compiler/compile_metadata.ngfactory.dart",
+        "1": "package:angular2/src/compiler/compile_metadata.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/offline_compiler.ngfactory.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/logging.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/names.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_meta.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/ng_meta.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/transform/common/url_resolver.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/url_resolver.template.dart",
         "4": "i8"
       }
     ]

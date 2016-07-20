@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
+        "1": "package:angular2/i18n.dart",
         "5": false
       },
       {
@@ -31,6 +31,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/transform/common/logging.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/transform/common/names.dart",
         "5": false
       },
@@ -39,16 +43,12 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/logging.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/zone.dart",
         "4": "zone",
         "5": false
       },
       {
-        "1": "package:angular2/i18n.dart",
+        "1": "package:barback/barback.dart",
         "5": false
       },
       {

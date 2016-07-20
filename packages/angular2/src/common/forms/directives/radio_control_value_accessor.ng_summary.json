@@ -8,9 +8,7 @@
           "Directive",
           "ElementRef",
           "Renderer",
-          "Self",
           "Provider",
-          "Attribute",
           "Input",
           "OnInit",
           "OnDestroy",
@@ -31,21 +29,6 @@
         "1": "package:angular2/src/common/forms/directives/ng_control.dart",
         "2": [
           "NgControl"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "looseIdentical",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
         ],
         "5": false
       }
@@ -122,6 +105,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": true,
         "deps": null
       }

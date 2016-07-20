@@ -1,0 +1,51 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.core.di.map_injector",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "injector.dart",
+        "2": [
+          "Injector",
+          "InjectorFactory",
+          "THROW_IF_NOT_FOUND"
+        ],
+        "5": false
+      }
+    ],
+    "6": "map_injector.dart",
+    "7": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "injector.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "type": {
+    "MapInjector": {
+      "class": "Identifier",
+      "name": "MapInjector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/map_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "MapInjectorFactory": {
+      "class": "Identifier",
+      "name": "MapInjectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/di/map_injector.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

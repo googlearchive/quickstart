@@ -10,9 +10,33 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/render/api.dart",
+        "2": [
+          "RootRenderer",
+          "Renderer",
+          "RenderComponentType"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/web_workers/shared/message_bus.dart",
         "2": [
           "MessageBus"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
+        "2": [
+          "EVENT_CHANNEL",
+          "RENDERER_CHANNEL"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/render_store.dart",
+        "2": [
+          "RenderStore"
         ],
         "5": false
       },
@@ -26,33 +50,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/render/api.dart",
+        "1": "package:angular2/src/web_workers/shared/service_message_broker.dart",
         "2": [
-          "RootRenderer",
-          "Renderer",
-          "RenderComponentType"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
-        "2": [
-          "EVENT_CHANNEL",
-          "RENDERER_CHANNEL"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type"
-        ],
-        "5": false
-      },
-      {
-        "1": "bind.dart",
-        "2": [
-          "bind"
+          "ServiceMessageBrokerFactory"
         ],
         "5": false
       },
@@ -64,16 +64,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/render_store.dart",
+        "1": "bind.dart",
         "2": [
-          "RenderStore"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/service_message_broker.dart",
-        "2": [
-          "ServiceMessageBrokerFactory"
+          "bind"
         ],
         "5": false
       }

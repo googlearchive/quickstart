@@ -10,20 +10,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "compile_metadata.dart",
         "2": [
           "CompileDirectiveMetadata",
           "CompileTokenMetadata",
-          "CompileProviderMetadata",
-          "CompileTokenMap",
-          "CompileQueryMetadata"
+          "CompileProviderMetadata"
         ],
         "5": false
       },
@@ -33,24 +24,28 @@
           "ParseSourceSpan"
         ],
         "5": false
+      },
+      {
+        "1": "../core/security.dart",
+        "5": false
       }
     ],
     "6": "template_ast.dart",
     "7": [
       {
-        "1": "expression_parser/ast.ngfactory.dart",
+        "1": "expression_parser/ast.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "compile_metadata.ngfactory.dart",
+        "1": "parse_util.template.dart",
         "4": "i2"
       },
       {
-        "1": "parse_util.ngfactory.dart",
+        "1": "../core/security.template.dart",
         "4": "i3"
       }
     ]

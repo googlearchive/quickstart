@@ -14,7 +14,7 @@
     "6": "exceptions.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i0"
       }
     ]

@@ -13,7 +13,7 @@
     "6": "normalize_validator.dart",
     "7": [
       {
-        "1": "package:angular2/src/common/forms/directives/validators.ngfactory.dart",
+        "1": "package:angular2/src/common/forms/directives/validators.template.dart",
         "4": "i0"
       }
     ]

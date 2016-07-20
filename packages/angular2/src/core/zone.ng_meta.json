@@ -13,7 +13,7 @@
     "6": "zone.dart",
     "7": [
       {
-        "1": "zone/ng_zone.ngfactory.dart",
+        "1": "zone/ng_zone.template.dart",
         "4": "i0"
       }
     ]

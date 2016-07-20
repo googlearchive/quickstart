@@ -7,10 +7,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "isPresent",
-          "isBlank"
+          "Map"
         ],
         "5": false
       },
@@ -22,23 +21,17 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/promise.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "PromiseWrapper"
+          "isPresent",
+          "isBlank"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "../instruction.dart",
         "2": [
-          "Map"
-        ],
-        "5": false
-      },
-      {
-        "1": "route_handlers/route_handler.dart",
-        "2": [
-          "RouteHandler"
+          "ComponentInstruction"
         ],
         "5": false
       },
@@ -51,16 +44,22 @@
         "5": false
       },
       {
-        "1": "../instruction.dart",
+        "1": "route_handlers/route_handler.dart",
         "2": [
-          "ComponentInstruction"
+          "RouteHandler"
         ],
         "5": false
       },
       {
         "1": "route_paths/route_path.dart",
         "2": [
-          "RoutePath",
+          "RoutePath"
+        ],
+        "5": false
+      },
+      {
+        "1": "route_paths/route_path.dart",
+        "2": [
           "GeneratedUrl"
         ],
         "5": false
@@ -69,36 +68,32 @@
     "6": "rules.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/promise.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "../instruction.template.dart",
         "4": "i3"
       },
       {
-        "1": "route_handlers/route_handler.ngfactory.dart",
+        "1": "../url_parser.template.dart",
         "4": "i4"
       },
       {
-        "1": "../url_parser.ngfactory.dart",
+        "1": "route_handlers/route_handler.template.dart",
         "4": "i5"
       },
       {
-        "1": "../instruction.ngfactory.dart",
+        "1": "route_paths/route_path.template.dart",
         "4": "i6"
-      },
-      {
-        "1": "route_paths/route_path.ngfactory.dart",
-        "4": "i7"
       }
     ]
   },

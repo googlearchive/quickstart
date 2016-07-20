@@ -8,8 +8,14 @@
           "Directive",
           "ElementRef",
           "Renderer",
-          "Self",
           "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank"
         ],
         "5": false
       },
@@ -18,13 +24,6 @@
         "2": [
           "NG_VALUE_ACCESSOR",
           "ControlValueAccessor"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank"
         ],
         "5": false
       }
@@ -50,15 +49,15 @@
     "6": "default_value_accessor.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "control_value_accessor.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "control_value_accessor.template.dart",
         "4": "i2"
       }
     ]
@@ -144,6 +143,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -294,6 +294,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }

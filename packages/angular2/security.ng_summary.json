@@ -1,0 +1,13 @@
+{
+  "ngDeps": {
+    "1": "angular2.security",
+    "4": [
+      {
+        "1": "package:angular2/src/security/dom_sanitization_service.dart"
+      }
+    ],
+    "6": "security.dart"
+  },
+  "type": {},
+  "alias": {}
+}

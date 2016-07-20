@@ -9,7 +9,7 @@
     "6": "dom_adapter.dart",
     "7": [
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i0"
       }
     ]

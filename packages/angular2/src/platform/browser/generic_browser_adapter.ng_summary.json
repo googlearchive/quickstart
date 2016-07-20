@@ -3,19 +3,9 @@
     "1": "angular2.src.platform.browser.generic_browser_adapter",
     "3": [
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/platform/browser/xhr_impl.dart",
         "2": [
-          "ListWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isFunction",
-          "Type"
+          "XHRImpl"
         ],
         "5": false
       },
@@ -23,13 +13,6 @@
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DomAdapter"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/browser/xhr_impl.dart",
-        "2": [
-          "XHRImpl"
         ],
         "5": false
       }

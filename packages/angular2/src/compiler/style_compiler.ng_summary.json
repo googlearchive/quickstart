@@ -3,27 +3,6 @@
     "1": "angular2.src.compiler.style_compiler",
     "3": [
       {
-        "1": "compile_metadata.dart",
-        "2": [
-          "CompileTemplateMetadata",
-          "CompileIdentifierMetadata",
-          "CompileDirectiveMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "output/output_ast.dart",
-        "4": "o",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/view.dart",
-        "2": [
-          "ViewEncapsulation"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/shadow_css.dart",
         "2": [
           "ShadowCss"
@@ -38,13 +17,6 @@
         "5": false
       },
       {
-        "1": "style_url_resolver.dart",
-        "2": [
-          "extractStyleUrls"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injectable"
@@ -52,9 +24,36 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "compile_metadata.dart",
+        "2": [
+          "CompileIdentifierMetadata",
+          "CompileDirectiveMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "output/output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
+        "1": "style_url_resolver.dart",
+        "2": [
+          "extractStyleUrls"
         ],
         "5": false
       }
@@ -82,20 +81,6 @@
     "COMPONENT_VARIABLE": {
       "class": "Identifier",
       "name": "COMPONENT_VARIABLE",
-      "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
-      "prefix": null,
-      "value": null
-    },
-    "HOST_ATTR": {
-      "class": "Identifier",
-      "name": "HOST_ATTR",
-      "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
-      "prefix": null,
-      "value": null
-    },
-    "CONTENT_ATTR": {
-      "class": "Identifier",
-      "name": "CONTENT_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/style_compiler.dart",
       "prefix": null,
       "value": null

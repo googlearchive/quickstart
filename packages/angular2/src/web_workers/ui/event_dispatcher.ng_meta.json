@@ -3,6 +3,21 @@
     "1": "angular2.src.web_workers.ui.event_dispatcher",
     "3": [
       {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "EventEmitter",
+          "ObservableWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/web_workers/shared/serializer.dart",
         "2": [
           "Serializer",
@@ -20,52 +35,25 @@
           "serializeTransitionEvent"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "EventEmitter",
-          "ObservableWrapper"
-        ],
-        "5": false
       }
     ],
     "6": "event_dispatcher.dart",
     "7": [
       {
-        "1": "package:angular2/src/web_workers/shared/serializer.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/web_workers/ui/event_serializer.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/serializer.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/ui/event_serializer.template.dart",
         "4": "i3"
-      },
-      {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
-        "4": "i4"
       }
     ]
   },

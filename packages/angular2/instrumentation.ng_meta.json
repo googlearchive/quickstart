@@ -16,7 +16,7 @@
     "6": "instrumentation.dart",
     "7": [
       {
-        "1": "src/core/profile/profile.ngfactory.dart",
+        "1": "src/core/profile/profile.template.dart",
         "4": "i0"
       }
     ]

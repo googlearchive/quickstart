@@ -14,8 +14,7 @@
       {
         "1": "../../url_parser.dart",
         "2": [
-          "Url",
-          "RootUrl"
+          "Url"
         ],
         "5": false
       },
@@ -32,15 +31,15 @@
     "6": "regex_route_path.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i0"
       },
       {
-        "1": "../../url_parser.ngfactory.dart",
+        "1": "../../url_parser.template.dart",
         "4": "i1"
       },
       {
-        "1": "route_path.ngfactory.dart",
+        "1": "route_path.template.dart",
         "4": "i2"
       }
     ]

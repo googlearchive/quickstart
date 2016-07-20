@@ -3,23 +3,6 @@
     "1": "angular2.src.platform.browser_common",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "IS_DART"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di.dart",
-        "2": [
-          "provide",
-          "Provider",
-          "Injector",
-          "OpaqueToken"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/xhr.dart",
         "2": [
           "XHR"
@@ -27,19 +10,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
-        "2": [
-          "PLATFORM_INITIALIZER",
-          "PLATFORM_DIRECTIVES",
-          "PLATFORM_PIPES",
-          "ComponentRef",
-          "ExceptionHandler",
-          "Reflector",
-          "RootRenderer",
-          "reflector",
-          "APPLICATION_COMMON_PROVIDERS",
-          "PLATFORM_COMMON_PROVIDERS"
-        ],
+        "1": "package:angular2/src/security/dom_sanitization_service.dart",
         "5": false
       },
       {
@@ -52,60 +23,23 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/testability/testability.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "Testability"
+          "PLATFORM_INITIALIZER",
+          "PLATFORM_DIRECTIVES",
+          "PLATFORM_PIPES",
+          "ExceptionHandler",
+          "RootRenderer",
+          "APPLICATION_COMMON_PROVIDERS",
+          "PLATFORM_COMMON_PROVIDERS",
+          "TestabilityRegistry"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "1": "package:angular2/platform/common_dom.dart",
         "2": [
-          "DOM"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/events/dom_events.dart",
-        "2": [
-          "DomEventsPlugin"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/events/key_events.dart",
-        "2": [
-          "KeyEventsPlugin"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_tokens.dart",
-        "2": [
-          "DOCUMENT"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
-        "2": [
-          "DomRootRenderer",
-          "DomRootRenderer_"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
-        "2": [
-          "DomSharedStylesHost",
-          "SharedStylesHost"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/animate/browser_details.dart",
-        "2": [
-          "BrowserDetails"
+          "ELEMENT_PROBE_PROVIDERS"
         ],
         "5": false
       },
@@ -117,9 +51,31 @@
         "5": false
       },
       {
-        "1": "browser/browser_adapter.dart",
+        "1": "package:angular2/src/animate/browser_details.dart",
         "2": [
-          "BrowserDomAdapter"
+          "BrowserDetails"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Provider",
+          "OpaqueToken"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/profile/wtf_init.dart",
+        "2": [
+          "wtfInit"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/testability/testability.dart",
+        "2": [
+          "Testability"
         ],
         "5": false
       },
@@ -138,9 +94,31 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/profile/wtf_init.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
-          "wtfInit"
+          "DOM"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
+        "2": [
+          "DomRootRenderer",
+          "DomRootRenderer_"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_tokens.dart",
+        "2": [
+          "DOCUMENT"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/events/dom_events.dart",
+        "2": [
+          "DomEventsPlugin"
         ],
         "5": false
       },
@@ -155,33 +133,48 @@
       {
         "1": "package:angular2/src/platform/dom/events/hammer_gestures.dart",
         "2": [
-          "HAMMER_GESTURE_CONFIG",
-          "HammerGestureConfig",
           "HammerGesturesPlugin"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/platform/common_dom.dart",
+        "1": "package:angular2/src/platform/dom/events/hammer_gestures.dart",
         "2": [
-          "ELEMENT_PROBE_PROVIDERS"
+          "HAMMER_GESTURE_CONFIG",
+          "HammerGestureConfig"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/events/key_events.dart",
+        "2": [
+          "KeyEventsPlugin"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
+        "2": [
+          "DomSharedStylesHost"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
+        "2": [
+          "SharedStylesHost"
+        ],
+        "5": false
+      },
+      {
+        "1": "browser/browser_adapter.dart",
+        "2": [
+          "BrowserDomAdapter"
         ],
         "5": false
       }
     ],
     "4": [
-      {
-        "1": "package:angular2/src/platform/dom/dom_tokens.dart",
-        "2": [
-          "DOCUMENT"
-        ]
-      },
-      {
-        "1": "package:angular2/src/platform/browser/title.dart",
-        "2": [
-          "Title"
-        ]
-      },
       {
         "1": "package:angular2/platform/common_dom.dart",
         "2": [
@@ -192,9 +185,9 @@
         ]
       },
       {
-        "1": "browser/browser_adapter.dart",
+        "1": "package:angular2/src/platform/browser/title.dart",
         "2": [
-          "BrowserDomAdapter"
+          "Title"
         ]
       },
       {
@@ -202,6 +195,18 @@
         "2": [
           "enableDebugTools",
           "disableDebugTools"
+        ]
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_tokens.dart",
+        "2": [
+          "DOCUMENT"
+        ]
+      },
+      {
+        "1": "browser/browser_adapter.dart",
+        "2": [
+          "BrowserDomAdapter"
         ]
       },
       {
@@ -215,99 +220,99 @@
     "6": "browser_common.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/compiler/xhr.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/security/dom_sanitization_service.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/compiler/xhr.ngfactory.dart",
+        "1": "package:angular2/common.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/common.ngfactory.dart",
+        "1": "package:angular2/platform/common_dom.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/testability/testability.ngfactory.dart",
+        "1": "package:angular2/src/animate/animation_builder.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
+        "1": "package:angular2/src/animate/browser_details.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/platform/dom/events/dom_events.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/platform/dom/events/key_events.ngfactory.dart",
+        "1": "package:angular2/src/core/profile/wtf_init.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_tokens.ngfactory.dart",
+        "1": "package:angular2/src/core/testability/testability.template.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_renderer.ngfactory.dart",
+        "1": "package:angular2/src/platform/browser/testability.template.dart",
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/platform/dom/shared_styles_host.ngfactory.dart",
+        "1": "package:angular2/src/platform/browser/xhr_cache.template.dart",
         "4": "i11"
       },
       {
-        "1": "package:angular2/src/animate/browser_details.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i12"
       },
       {
-        "1": "package:angular2/src/animate/animation_builder.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_renderer.template.dart",
         "4": "i13"
       },
       {
-        "1": "browser/browser_adapter.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_tokens.template.dart",
         "4": "i14"
       },
       {
-        "1": "package:angular2/src/platform/browser/testability.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/events/dom_events.template.dart",
         "4": "i15"
       },
       {
-        "1": "package:angular2/src/platform/browser/xhr_cache.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/events/event_manager.template.dart",
         "4": "i16"
       },
       {
-        "1": "package:angular2/src/core/profile/wtf_init.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/events/hammer_gestures.template.dart",
         "4": "i17"
       },
       {
-        "1": "package:angular2/src/platform/dom/events/event_manager.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/events/key_events.template.dart",
         "4": "i18"
       },
       {
-        "1": "package:angular2/src/platform/dom/events/hammer_gestures.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/shared_styles_host.template.dart",
         "4": "i19"
       },
       {
-        "1": "package:angular2/platform/common_dom.ngfactory.dart",
+        "1": "browser/browser_adapter.template.dart",
         "4": "i20"
       },
       {
-        "1": "package:angular2/src/platform/browser/title.ngfactory.dart",
+        "1": "package:angular2/src/platform/browser/title.template.dart",
         "4": "i21"
       },
       {
-        "1": "package:angular2/src/platform/browser/tools/tools.ngfactory.dart",
+        "1": "package:angular2/src/platform/browser/tools/tools.template.dart",
         "4": "i22"
       },
       {
-        "1": "dom/events/hammer_gestures.ngfactory.dart",
+        "1": "dom/events/hammer_gestures.template.dart",
         "4": "i23"
       }
     ]
@@ -343,6 +348,7 @@
           "useExisting": null,
           "useValue": true,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -357,30 +363,7 @@
               "prefix": null,
               "isHost": false,
               "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
+              "diDeps": []
             },
             "identifierIsInstance": false
           },
@@ -391,34 +374,12 @@
             "prefix": null,
             "isHost": false,
             "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Injector",
-                    "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              }
-            ]
+            "diDeps": []
           },
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -445,35 +406,13 @@
               "prefix": null,
               "isHost": false,
               "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
+              "diDeps": []
             },
             "identifierIsInstance": false
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -495,11 +434,12 @@
           "useValue": null,
           "useFactory": {
             "class": "Identifier",
-            "name": "_reflector",
+            "name": "reflectorFactory",
             "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -530,6 +470,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -560,6 +501,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -590,6 +532,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -608,15 +551,107 @@
           },
           "useClass": null,
           "useExisting": null,
-          "useValue": {
+          "useValue": null,
+          "useFactory": {
             "class": "Identifier",
-            "name": "initDomAdapter",
+            "name": "createInitDomAdapter",
             "moduleUrl": "asset:angular2/lib/src/platform/browser_common.dart",
             "prefix": null,
             "value": null
           },
-          "useFactory": null,
+          "useProperty": null,
           "multi": true,
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "TestabilityRegistry",
+                  "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
+        }
+      ]
+    },
+    "BROWSER_SANITIZATION_PROVIDERS": {
+      "class": "Identifier",
+      "name": "BROWSER_SANITIZATION_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser_common.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "SanitizationService",
+              "moduleUrl": "asset:angular2/lib/src/core/security.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DomSanitizationService",
+              "moduleUrl": "asset:angular2/lib/src/security/dom_sanitization_service.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DomSanitizationService",
+              "moduleUrl": "asset:angular2/lib/src/security/dom_sanitization_service.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "DomSanitizationServiceImpl",
+            "moduleUrl": "asset:angular2/lib/src/security/dom_sanitization_service.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
           "deps": null
         }
       ]
@@ -650,6 +685,7 @@
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -814,6 +850,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -913,6 +950,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -941,6 +979,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -962,11 +1001,12 @@
           "useValue": null,
           "useFactory": {
             "class": "Identifier",
-            "name": "_appIdRandomProviderFactory",
+            "name": "appIdRandomProviderFactory",
             "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -1011,6 +1051,28 @@
                       "class": "Identifier",
                       "name": "APP_ID",
                       "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "SanitizationService",
+                      "moduleUrl": "asset:angular2/lib/src/core/security.dart",
                       "prefix": null,
                       "value": null
                     },
@@ -1081,12 +1143,35 @@
                 "isSkipSelf": false,
                 "isOptional": false,
                 "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "SanitizationService",
+                    "moduleUrl": "asset:angular2/lib/src/core/security.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1113,6 +1198,7 @@
             "value": null
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1139,6 +1225,7 @@
             "value": null
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1190,6 +1277,67 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "SanitizationService",
+              "moduleUrl": "asset:angular2/lib/src/core/security.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DomSanitizationService",
+              "moduleUrl": "asset:angular2/lib/src/security/dom_sanitization_service.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DomSanitizationService",
+              "moduleUrl": "asset:angular2/lib/src/security/dom_sanitization_service.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "DomSanitizationServiceImpl",
+            "moduleUrl": "asset:angular2/lib/src/security/dom_sanitization_service.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1220,6 +1368,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1250,6 +1399,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1285,7 +1435,30 @@
                     "prefix": null,
                     "isHost": false,
                     "value": null,
-                    "diDeps": []
+                    "diDeps": [
+                      {
+                        "token": {
+                          "value": null,
+                          "identifier": {
+                            "class": "Identifier",
+                            "name": "ChangeDetectorRef",
+                            "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detector_ref.dart",
+                            "prefix": null,
+                            "value": null
+                          },
+                          "identifierIsInstance": false
+                        },
+                        "query": null,
+                        "viewQuery": null,
+                        "value": null,
+                        "isAttribute": false,
+                        "isSelf": false,
+                        "isHost": false,
+                        "isSkipSelf": false,
+                        "isOptional": false,
+                        "isValue": false
+                      }
+                    ]
                   },
                   "identifierIsInstance": false
                 },
@@ -1296,11 +1469,35 @@
                   "prefix": null,
                   "isHost": false,
                   "value": null,
-                  "diDeps": []
+                  "diDeps": [
+                    {
+                      "token": {
+                        "value": null,
+                        "identifier": {
+                          "class": "Identifier",
+                          "name": "ChangeDetectorRef",
+                          "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detector_ref.dart",
+                          "prefix": null,
+                          "value": null
+                        },
+                        "identifierIsInstance": false
+                      },
+                      "query": null,
+                      "viewQuery": null,
+                      "value": null,
+                      "isAttribute": false,
+                      "isSelf": false,
+                      "isHost": false,
+                      "isSkipSelf": false,
+                      "isOptional": false,
+                      "isValue": false
+                    }
+                  ]
                 },
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1331,6 +1528,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1361,6 +1559,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1391,6 +1590,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1421,6 +1621,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1451,6 +1652,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1481,6 +1683,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1511,6 +1714,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1541,6 +1745,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1571,6 +1776,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1601,6 +1807,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -1631,12 +1838,14 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               }
             ]
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -1866,6 +2075,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -2074,6 +2284,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -2194,6 +2405,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -2270,6 +2482,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -2434,6 +2647,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -2464,6 +2678,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -2628,6 +2843,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -2792,6 +3008,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -2868,6 +3085,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -3020,6 +3238,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -3228,6 +3447,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -3392,6 +3612,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -3556,6 +3777,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -3720,6 +3942,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -3840,6 +4063,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -3960,6 +4184,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -4124,6 +4349,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -4244,6 +4470,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -4364,6 +4591,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -4484,6 +4712,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -4604,6 +4833,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -4812,6 +5042,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -4888,6 +5119,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -4918,6 +5150,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -4982,6 +5215,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -5046,6 +5280,7 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               },
@@ -5110,12 +5345,14 @@
                 "useExisting": null,
                 "useValue": null,
                 "useFactory": null,
+                "useProperty": null,
                 "multi": false,
                 "deps": null
               }
             ]
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -5137,11 +5374,12 @@
           "useValue": null,
           "useFactory": {
             "class": "Identifier",
-            "name": "_exceptionHandler",
+            "name": "exceptionHandler",
             "moduleUrl": "asset:angular2/lib/src/platform/browser_common.dart",
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -5163,11 +5401,12 @@
           "useValue": null,
           "useFactory": {
             "class": "Identifier",
-            "name": "_document",
+            "name": "document",
             "moduleUrl": "asset:angular2/lib/src/platform/browser_common.dart",
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -5196,6 +5435,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -5224,6 +5464,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -5275,6 +5516,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -5303,6 +5545,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -5420,6 +5663,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -5450,6 +5694,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -5507,6 +5752,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -5583,6 +5829,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -5659,6 +5906,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -5689,6 +5937,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -5765,6 +6014,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -5885,6 +6135,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -5906,11 +6157,12 @@
           "useValue": null,
           "useFactory": {
             "class": "Identifier",
-            "name": "_createConditionalRootRenderer",
+            "name": "createConditionalRootRenderer",
             "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": [
             {
@@ -5970,43 +6222,195 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         }
       ]
     },
-    "_exceptionHandler": {
+    "exceptionHandler": {
       "class": "Identifier",
-      "name": "_exceptionHandler",
+      "name": "exceptionHandler",
       "moduleUrl": "asset:angular2/lib/src/platform/browser_common.dart",
       "prefix": null,
       "value": null
     },
-    "_document": {
+    "document": {
       "class": "Identifier",
-      "name": "_document",
+      "name": "document",
       "moduleUrl": "asset:angular2/lib/src/platform/browser_common.dart",
       "prefix": null,
       "value": null
     },
-    "initDomAdapter": {
+    "createInitDomAdapter": {
       "class": "Identifier",
-      "name": "initDomAdapter",
+      "name": "createInitDomAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/browser_common.dart",
       "prefix": null,
       "value": null
     },
-    "DOCUMENT": {
+    "By": {
       "class": "Identifier",
-      "name": "DOCUMENT",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+      "name": "By",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/by.dart",
       "prefix": null,
       "value": null
     },
-    "Title": {
+    "CORE_TOKENS": {
       "class": "Identifier",
-      "name": "Title",
-      "moduleUrl": "asset:angular2/lib/src/platform/browser/title.dart",
+      "name": "CORE_TOKENS",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "value": null
+    },
+    "INSPECT_GLOBAL_NAME": {
+      "class": "Identifier",
+      "name": "INSPECT_GLOBAL_NAME",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "value": null
+    },
+    "CORE_TOKENS_GLOBAL_NAME": {
+      "class": "Identifier",
+      "name": "CORE_TOKENS_GLOBAL_NAME",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ELEMENT_PROBE_PROVIDERS": {
+      "class": "Identifier",
+      "name": "ELEMENT_PROBE_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RootRenderer",
+              "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Identifier",
+            "name": "createConditionalRootRenderer",
+            "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+            "prefix": null,
+            "value": null
+          },
+          "useProperty": null,
+          "multi": false,
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "DomRootRenderer",
+                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
+        }
+      ]
+    },
+    "ELEMENT_PROBE_PROVIDERS_PROD_MODE": {
+      "class": "Identifier",
+      "name": "ELEMENT_PROBE_PROVIDERS_PROD_MODE",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RootRenderer",
+              "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Identifier",
+            "name": "createRootRenderer",
+            "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+            "prefix": null,
+            "value": null
+          },
+          "useProperty": null,
+          "multi": false,
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "DomRootRenderer",
+                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
+        }
+      ]
+    },
+    "inspectNativeElement": {
+      "class": "Identifier",
+      "name": "inspectNativeElement",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createConditionalRootRenderer": {
+      "class": "Identifier",
+      "name": "createConditionalRootRenderer",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createRootRenderer": {
+      "class": "Identifier",
+      "name": "createRootRenderer",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
       "value": null
     },
@@ -6041,20 +6445,6 @@
     "COMPONENT_VARIABLE": {
       "class": "Identifier",
       "name": "COMPONENT_VARIABLE",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "HOST_ATTR": {
-      "class": "Identifier",
-      "name": "HOST_ATTR",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "CONTENT_ATTR": {
-      "class": "Identifier",
-      "name": "CONTENT_ATTR",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
       "prefix": null,
       "value": null
@@ -6220,46 +6610,12 @@
       "prefix": null,
       "value": null
     },
-    "SharedStylesHost": {
-      "class": "Type",
-      "name": "SharedStylesHost",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
+    "DOCUMENT": {
+      "class": "Identifier",
+      "name": "DOCUMENT",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
       "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
-    },
-    "DomSharedStylesHost": {
-      "class": "Type",
-      "name": "DomSharedStylesHost",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "DOCUMENT",
-              "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        }
-      ]
+      "value": null
     },
     "DomEventsPlugin": {
       "class": "Type",
@@ -6338,166 +6694,65 @@
       "prefix": null,
       "value": null
     },
-    "By": {
-      "class": "Identifier",
-      "name": "By",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/by.dart",
+    "SharedStylesHost": {
+      "class": "Type",
+      "name": "SharedStylesHost",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
       "prefix": null,
-      "value": null
+      "isHost": false,
+      "value": null,
+      "diDeps": []
     },
-    "CORE_TOKENS": {
-      "class": "Identifier",
-      "name": "CORE_TOKENS",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+    "DomSharedStylesHost": {
+      "class": "Type",
+      "name": "DomSharedStylesHost",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
       "prefix": null,
-      "value": null
-    },
-    "INSPECT_GLOBAL_NAME": {
-      "class": "Identifier",
-      "name": "INSPECT_GLOBAL_NAME",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
-      "prefix": null,
-      "value": null
-    },
-    "CORE_TOKENS_GLOBAL_NAME": {
-      "class": "Identifier",
-      "name": "CORE_TOKENS_GLOBAL_NAME",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ELEMENT_PROBE_PROVIDERS": {
-      "class": "Identifier",
-      "name": "ELEMENT_PROBE_PROVIDERS",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
-      "prefix": null,
-      "value": [
+      "isHost": false,
+      "value": null,
+      "diDeps": [
         {
-          "class": "Provider",
           "token": {
             "value": null,
             "identifier": {
               "class": "Identifier",
-              "name": "RootRenderer",
-              "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+              "name": "DOCUMENT",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
               "prefix": null,
               "value": null
             },
             "identifierIsInstance": false
           },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "_createConditionalRootRenderer",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
-            "prefix": null,
-            "value": null
-          },
-          "multi": false,
-          "deps": [
-            {
-              "token": {
-                "value": null,
-                "identifier": {
-                  "class": "Identifier",
-                  "name": "DomRootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-                  "prefix": null,
-                  "value": null
-                },
-                "identifierIsInstance": false
-              },
-              "query": null,
-              "viewQuery": null,
-              "value": null,
-              "isAttribute": false,
-              "isSelf": false,
-              "isHost": false,
-              "isSkipSelf": false,
-              "isOptional": false,
-              "isValue": false
-            }
-          ]
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
-    "ELEMENT_PROBE_PROVIDERS_PROD_MODE": {
+    "Title": {
       "class": "Identifier",
-      "name": "ELEMENT_PROBE_PROVIDERS_PROD_MODE",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "RootRenderer",
-              "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "_createRootRenderer",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
-            "prefix": null,
-            "value": null
-          },
-          "multi": false,
-          "deps": [
-            {
-              "token": {
-                "value": null,
-                "identifier": {
-                  "class": "Identifier",
-                  "name": "DomRootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-                  "prefix": null,
-                  "value": null
-                },
-                "identifierIsInstance": false
-              },
-              "query": null,
-              "viewQuery": null,
-              "value": null,
-              "isAttribute": false,
-              "isSelf": false,
-              "isHost": false,
-              "isSkipSelf": false,
-              "isOptional": false,
-              "isValue": false
-            }
-          ]
-        }
-      ]
-    },
-    "inspectNativeElement": {
-      "class": "Identifier",
-      "name": "inspectNativeElement",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "name": "Title",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/title.dart",
       "prefix": null,
       "value": null
     },
-    "_createConditionalRootRenderer": {
+    "enableDebugTools": {
       "class": "Identifier",
-      "name": "_createConditionalRootRenderer",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "name": "enableDebugTools",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/tools/tools.dart",
       "prefix": null,
       "value": null
     },
-    "_createRootRenderer": {
+    "disableDebugTools": {
       "class": "Identifier",
-      "name": "_createRootRenderer",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
+      "name": "disableDebugTools",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/tools/tools.dart",
       "prefix": null,
       "value": null
     },
@@ -6526,20 +6781,6 @@
       "class": "Identifier",
       "name": "_relativePath",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "enableDebugTools": {
-      "class": "Identifier",
-      "name": "enableDebugTools",
-      "moduleUrl": "asset:angular2/lib/src/platform/browser/tools/tools.dart",
-      "prefix": null,
-      "value": null
-    },
-    "disableDebugTools": {
-      "class": "Identifier",
-      "name": "disableDebugTools",
-      "moduleUrl": "asset:angular2/lib/src/platform/browser/tools/tools.dart",
       "prefix": null,
       "value": null
     },

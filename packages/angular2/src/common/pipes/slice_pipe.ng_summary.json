@@ -3,12 +3,11 @@
     "1": "angular2.src.common.pipes.slice_pipe",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "isBlank",
-          "isString",
-          "isArray",
-          "StringWrapper"
+          "Injectable",
+          "PipeTransform",
+          "Pipe"
         ],
         "5": false
       },
@@ -20,12 +19,12 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "Injectable",
-          "PipeTransform",
-          "WrappedValue",
-          "Pipe"
+          "isBlank",
+          "isString",
+          "isArray",
+          "StringWrapper"
         ],
         "5": false
       },

@@ -3,16 +3,9 @@
     "1": "angular2.src.core.linker.view_ref",
     "3": [
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "package:angular2/src/core/change_detection/constants.dart",
         "2": [
-          "unimplemented"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
+          "ChangeDetectionStrategy"
         ],
         "5": false
       },
@@ -27,13 +20,6 @@
         "1": "view.dart",
         "2": [
           "AppView"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/change_detection/constants.dart",
-        "2": [
-          "ChangeDetectionStrategy"
         ],
         "5": false
       }

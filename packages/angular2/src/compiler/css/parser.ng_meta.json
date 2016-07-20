@@ -3,34 +3,12 @@
     "1": "angular2.src.compiler.css.parser",
     "3": [
       {
-        "1": "package:angular2/src/compiler/parse_util.dart",
-        "2": [
-          "ParseSourceSpan",
-          "ParseSourceFile",
-          "ParseLocation",
-          "ParseError"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "bitWiseOr",
-          "bitWiseAnd",
-          "NumberWrapper",
-          "StringWrapper",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/css/lexer.dart",
         "2": [
           "CssLexerMode",
           "CssToken",
           "CssTokenType",
           "CssScanner",
-          "CssScannerError",
           "generateErrorMessage",
           "$AT",
           "$EOF",
@@ -46,6 +24,25 @@
           "isNewline"
         ],
         "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/parse_util.dart",
+        "2": [
+          "ParseSourceSpan",
+          "ParseSourceFile",
+          "ParseLocation",
+          "ParseError"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "bitWiseOr",
+          "bitWiseAnd",
+          "isPresent"
+        ],
+        "5": false
       }
     ],
     "4": [
@@ -59,15 +56,15 @@
     "6": "parser.dart",
     "7": [
       {
-        "1": "package:angular2/src/compiler/parse_util.ngfactory.dart",
+        "1": "package:angular2/src/compiler/css/lexer.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/compiler/parse_util.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/compiler/css/lexer.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       }
     ]

@@ -7,20 +7,9 @@
         "5": false
       },
       {
-        "1": "compile_metadata.dart",
+        "1": "package:angular2/src/core/linker/component_factory.dart",
         "2": [
-          "CompileDirectiveMetadata",
-          "CompileIdentifierMetadata",
-          "CompilePipeMetadata",
-          "createHostComponentMeta"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "unimplemented"
+          "ComponentFactory"
         ],
         "5": false
       },
@@ -32,26 +21,21 @@
         "5": false
       },
       {
-        "1": "style_compiler.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "StyleCompiler",
-          "StylesCompileDependency",
-          "StylesCompileResult"
+          "BaseException"
         ],
         "5": false
       },
       {
-        "1": "view_compiler/view_compiler.dart",
+        "1": "compile_metadata.dart",
         "2": [
-          "ViewCompiler",
-          "ViewCompileResult"
-        ],
-        "5": false
-      },
-      {
-        "1": "template_parser.dart",
-        "2": [
-          "TemplateParser"
+          "CompileDirectiveMetadata",
+          "CompileIdentifierMetadata",
+          "CompilePipeMetadata",
+          "createHostComponentMeta",
+          "CompileInjectorModuleMetadata",
+          "CompileTypeMetadata"
         ],
         "5": false
       },
@@ -75,9 +59,17 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/component_factory.dart",
+        "1": "style_compiler.dart",
         "2": [
-          "ComponentFactory"
+          "StyleCompiler",
+          "StylesCompileResult"
+        ],
+        "5": false
+      },
+      {
+        "1": "template_parser.dart",
+        "2": [
+          "TemplateParser"
         ],
         "5": false
       },
@@ -87,53 +79,72 @@
           "MODULE_SUFFIX"
         ],
         "5": false
+      },
+      {
+        "1": "view_compiler/injector_compiler.dart",
+        "2": [
+          "InjectorCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_compiler/view_compiler.dart",
+        "2": [
+          "ViewCompiler",
+          "ViewCompileResult"
+        ],
+        "5": false
       }
     ],
     "6": "offline_compiler.dart",
     "7": [
       {
-        "1": "compile_metadata.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/component_factory.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i2"
       },
       {
-        "1": "style_compiler.ngfactory.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i3"
       },
       {
-        "1": "view_compiler/view_compiler.ngfactory.dart",
+        "1": "directive_normalizer.template.dart",
         "4": "i4"
       },
       {
-        "1": "template_parser.ngfactory.dart",
+        "1": "output/abstract_emitter.template.dart",
         "4": "i5"
       },
       {
-        "1": "directive_normalizer.ngfactory.dart",
+        "1": "output/output_ast.template.dart",
         "4": "i6"
       },
       {
-        "1": "output/abstract_emitter.ngfactory.dart",
+        "1": "style_compiler.template.dart",
         "4": "i7"
       },
       {
-        "1": "output/output_ast.ngfactory.dart",
+        "1": "template_parser.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/core/linker/component_factory.ngfactory.dart",
+        "1": "util.template.dart",
         "4": "i9"
       },
       {
-        "1": "util.ngfactory.dart",
+        "1": "view_compiler/injector_compiler.template.dart",
         "4": "i10"
+      },
+      {
+        "1": "view_compiler/view_compiler.template.dart",
+        "4": "i11"
       }
     ]
   },

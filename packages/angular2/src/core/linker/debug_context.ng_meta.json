@@ -3,22 +3,6 @@
     "1": "angular2.src.core.linker.debug_context",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injector"
@@ -33,9 +17,25 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
         "1": "view.dart",
         "2": [
-          "AppView"
+          "DebugAppView"
         ],
         "5": false
       },
@@ -50,27 +50,27 @@
     "6": "debug_context.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/render/api.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "view.ngfactory.dart",
+        "1": "view.template.dart",
         "4": "i4"
       },
       {
-        "1": "view_type.ngfactory.dart",
+        "1": "view_type.template.dart",
         "4": "i5"
       }
     ]

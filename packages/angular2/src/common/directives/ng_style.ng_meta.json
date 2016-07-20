@@ -18,8 +18,7 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
-          "isBlank",
-          "print"
+          "isBlank"
         ],
         "5": false
       },
@@ -56,15 +55,15 @@
     "6": "ng_style.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "../../core/change_detection/differs/default_keyvalue_differ.ngfactory.dart",
+        "1": "../../core/change_detection/differs/default_keyvalue_differ.template.dart",
         "4": "i2"
       }
     ]

@@ -5,8 +5,14 @@
       {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "MapWrapper",
           "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       },
@@ -15,15 +21,7 @@
         "2": [
           "stringify",
           "looseIdentical",
-          "isJsObject",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
+          "isJsObject"
         ],
         "5": false
       },
@@ -46,6 +44,13 @@
     "6": "default_keyvalue_differ.dart"
   },
   "type": {
+    "_MapHandler": {
+      "class": "Identifier",
+      "name": "_MapHandler",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
+      "prefix": null,
+      "value": null
+    },
     "DefaultKeyValueDifferFactory": {
       "class": "Identifier",
       "name": "DefaultKeyValueDifferFactory",

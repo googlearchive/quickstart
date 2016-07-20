@@ -3,7 +3,7 @@
     "1": "angular2.dom.htmlAdapter",
     "3": [
       {
-        "1": "abstract_html_adapter.dart",
+        "1": "dart:io",
         "5": false
       },
       {
@@ -11,7 +11,11 @@
         "5": false
       },
       {
-        "1": "dart:io",
+        "1": "package:html/dom.dart",
+        "5": false
+      },
+      {
+        "1": "abstract_html_adapter.dart",
         "5": false
       }
     ],

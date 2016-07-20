@@ -41,27 +41,27 @@
     "6": "reflection_info_code.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/annotation_matcher.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/annotation_matcher.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/logging.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/model/reflection_info_model.pb.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/names.template.dart",
         "4": "i3"
       },
       {
-        "1": "annotation_code.ngfactory.dart",
+        "1": "annotation_code.template.dart",
         "4": "i4"
       },
       {
-        "1": "parameter_code.ngfactory.dart",
+        "1": "parameter_code.template.dart",
         "4": "i5"
       }
     ]

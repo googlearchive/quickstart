@@ -3,14 +3,14 @@
     "1": "angular2.src.core.metadata",
     "3": [
       {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "List"
         ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/change_detection/change_detection.dart",
         "5": false
       },
       {
@@ -34,12 +34,6 @@
         "1": "./metadata/directives.dart"
       },
       {
-        "1": "./metadata/view.dart",
-        "3": [
-          "VIEW_ENCAPSULATION_VALUES"
-        ]
-      },
-      {
         "1": "./metadata/lifecycle_hooks.dart",
         "2": [
           "AfterContentInit",
@@ -51,32 +45,38 @@
           "OnInit",
           "DoCheck"
         ]
+      },
+      {
+        "1": "./metadata/view.dart",
+        "3": [
+          "VIEW_ENCAPSULATION_VALUES"
+        ]
       }
     ],
     "6": "metadata.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/core/change_detection/change_detection.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/change_detection/change_detection.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "./metadata/di.ngfactory.dart",
+        "1": "./metadata/di.template.dart",
         "4": "i2"
       },
       {
-        "1": "./metadata/directives.ngfactory.dart",
+        "1": "./metadata/directives.template.dart",
         "4": "i3"
       },
       {
-        "1": "./metadata/view.ngfactory.dart",
+        "1": "./metadata/view.template.dart",
         "4": "i4"
       },
       {
-        "1": "./metadata/lifecycle_hooks.ngfactory.dart",
+        "1": "./metadata/lifecycle_hooks.template.dart",
         "4": "i5"
       }
     ]
@@ -187,6 +187,20 @@
       "prefix": null,
       "value": null
     },
+    "InjectorModule": {
+      "class": "Identifier",
+      "name": "InjectorModule",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "prefix": null,
+      "value": null
+    },
+    "Provides": {
+      "class": "Identifier",
+      "name": "Provides",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "prefix": null,
+      "value": null
+    },
     "AttributeMetadata": {
       "class": "Identifier",
       "name": "AttributeMetadata",
@@ -232,6 +246,20 @@
     "ViewChildMetadata": {
       "class": "Identifier",
       "name": "ViewChildMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ProviderPropertyMetadata": {
+      "class": "Identifier",
+      "name": "ProviderPropertyMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "InjectorModuleMetadata": {
+      "class": "Identifier",
+      "name": "InjectorModuleMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
       "prefix": null,
       "value": null
@@ -282,20 +310,6 @@
       "class": "Identifier",
       "name": "HostListenerMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewEncapsulation": {
-      "class": "Identifier",
-      "name": "ViewEncapsulation",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewMetadata": {
-      "class": "Identifier",
-      "name": "ViewMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
       "prefix": null,
       "value": null
     },
@@ -359,6 +373,20 @@
       "class": "Identifier",
       "name": "AfterViewChecked",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewEncapsulation": {
+      "class": "Identifier",
+      "name": "ViewEncapsulation",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewMetadata": {
+      "class": "Identifier",
+      "name": "ViewMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
       "prefix": null,
       "value": null
     }

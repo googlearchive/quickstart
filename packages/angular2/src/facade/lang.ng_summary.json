@@ -253,27 +253,6 @@
       "prefix": null,
       "value": null
     },
-    "lockMode": {
-      "class": "Identifier",
-      "name": "lockMode",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "enableDevMode": {
-      "class": "Identifier",
-      "name": "enableDevMode",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "enableProdMode": {
-      "class": "Identifier",
-      "name": "enableProdMode",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "assertionsEnabled": {
       "class": "Identifier",
       "name": "assertionsEnabled",

@@ -14,35 +14,32 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "ListWrapper",
-          "Map",
-          "MapWrapper"
+          "PromiseCompleter",
+          "PromiseWrapper"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "isBlank",
-          "isPresent"
+          "ListWrapper",
+          "Map"
         ],
         "5": false
       },
       {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "BaseException",
-          "WrappedException"
+          "BaseException"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "PromiseCompleter",
-          "PromiseWrapper"
+          "isBlank"
         ],
         "5": false
       }
@@ -50,23 +47,23 @@
     "6": "xhr_mock.dart",
     "7": [
       {
-        "1": "package:angular2/src/compiler/xhr.ngfactory.dart",
+        "1": "package:angular2/src/compiler/xhr.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i4"
       }
     ]

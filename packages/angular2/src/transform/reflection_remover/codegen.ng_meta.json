@@ -19,7 +19,7 @@
     "6": "codegen.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/names.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/names.template.dart",
         "4": "i0"
       }
     ]

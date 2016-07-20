@@ -1,17 +1,5 @@
 {
-  "ngDeps": {
-    "1": "angular2.src.core.metadata.view",
-    "3": [
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type"
-        ],
-        "5": false
-      }
-    ],
-    "6": "view.dart"
-  },
+  "ngDeps": null,
   "type": {
     "ViewEncapsulation": {
       "class": "Identifier",

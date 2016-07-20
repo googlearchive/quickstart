@@ -10,32 +10,12 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isArray",
-          "Type"
-        ],
+        "1": "directives/validators.dart",
         "5": false
       },
       {
         "1": "model.dart",
         "4": "modelModule",
-        "5": false
-      },
-      {
-        "1": "directives/validators.dart",
-        "2": [
-          "ValidatorFn",
-          "AsyncValidatorFn"
-        ],
         "5": false
       }
     ],
@@ -53,24 +33,16 @@
     "6": "form_builder.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "directives/validators.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "model.template.dart",
         "4": "i2"
-      },
-      {
-        "1": "model.ngfactory.dart",
-        "4": "i3"
-      },
-      {
-        "1": "directives/validators.ngfactory.dart",
-        "4": "i4"
       }
     ]
   },

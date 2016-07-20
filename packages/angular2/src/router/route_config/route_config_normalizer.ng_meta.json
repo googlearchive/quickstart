@@ -3,7 +3,14 @@
     "1": "angular2.src.router.route_config_normalizer",
     "3": [
       {
-        "1": "route_config_decorator.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
         "5": false
       },
       {
@@ -15,37 +22,30 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
+        "1": "route_config_decorator.dart",
         "5": false
       }
     ],
     "6": "route_config_normalizer.dart",
     "7": [
       {
-        "1": "route_config_decorator.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i0"
       },
       {
-        "1": "../route_definition.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "../route_registry.ngfactory.dart",
+        "1": "../route_definition.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "../route_registry.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "route_config_decorator.template.dart",
         "4": "i4"
       }
     ]

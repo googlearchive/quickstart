@@ -3,19 +3,10 @@
     "1": "angular2.src.compiler.output.js_emitter",
     "3": [
       {
-        "1": "output_ast.dart",
-        "4": "o",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
-          "isBlank",
-          "isString",
-          "evalExpression",
-          "RegExpWrapper",
-          "StringWrapper"
+          "isBlank"
         ],
         "5": false
       },
@@ -35,6 +26,11 @@
         "5": false
       },
       {
+        "1": "output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
         "1": "path_util.dart",
         "2": [
           "getImportModulePath",
@@ -46,23 +42,23 @@
     "6": "js_emitter.dart",
     "7": [
       {
-        "1": "output_ast.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "abstract_emitter.template.dart",
         "4": "i1"
       },
       {
-        "1": "abstract_emitter.ngfactory.dart",
+        "1": "abstract_js_emitter.template.dart",
         "4": "i2"
       },
       {
-        "1": "abstract_js_emitter.ngfactory.dart",
+        "1": "output_ast.template.dart",
         "4": "i3"
       },
       {
-        "1": "path_util.ngfactory.dart",
+        "1": "path_util.template.dart",
         "4": "i4"
       }
     ]

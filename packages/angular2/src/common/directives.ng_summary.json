@@ -3,6 +3,12 @@
     "1": "angular2.src.common.directives",
     "4": [
       {
+        "1": "directives/core_directives.dart",
+        "2": [
+          "CORE_DIRECTIVES"
+        ]
+      },
+      {
         "1": "directives/ng_class.dart",
         "2": [
           "NgClass"
@@ -21,9 +27,11 @@
         ]
       },
       {
-        "1": "directives/ng_template_outlet.dart",
+        "1": "directives/ng_plural.dart",
         "2": [
-          "NgTemplateOutlet"
+          "NgPlural",
+          "NgPluralCase",
+          "NgLocalization"
         ]
       },
       {
@@ -41,21 +49,13 @@
         ]
       },
       {
-        "1": "directives/ng_plural.dart",
+        "1": "directives/ng_template_outlet.dart",
         "2": [
-          "NgPlural",
-          "NgPluralCase",
-          "NgLocalization"
+          "NgTemplateOutlet"
         ]
       },
       {
         "1": "directives/observable_list_diff.dart"
-      },
-      {
-        "1": "directives/core_directives.dart",
-        "2": [
-          "CORE_DIRECTIVES"
-        ]
       }
     ],
     "6": "directives.dart"

@@ -22,14 +22,6 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
-        "1": "package:dart_style/dart_style.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/xhr.dart",
         "2": [
           "XHR"
@@ -45,11 +37,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/naive_eval.dart",
+        "1": "package:angular2/src/transform/common/async_string_writer.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/async_string_writer.dart",
+        "1": "package:angular2/src/transform/common/naive_eval.dart",
         "5": false
       },
       {
@@ -71,6 +63,14 @@
       },
       {
         "1": "package:angular2/src/transform/directive_processor/inliner.dart",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "5": false
+      },
+      {
+        "1": "package:dart_style/dart_style.dart",
         "5": false
       }
     ],

@@ -3,6 +3,14 @@
     "1": "angular2.src.platform.worker_app",
     "3": [
       {
+        "1": "dart:isolate",
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/zone/ng_zone.dart",
         "5": false
       },
@@ -15,19 +23,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/web_workers/shared/isolate_message_bus.dart",
         "5": false
       },
       {
         "1": "package:angular2/src/web_workers/shared/message_bus.dart",
-        "5": false
-      },
-      {
-        "1": "dart:isolate",
         "5": false
       }
     ],
@@ -78,6 +78,7 @@
             "value": null,
             "diDeps": []
           },
+          "useProperty": null,
           "multi": false,
           "deps": [
             {
@@ -149,6 +150,7 @@
             "value": null
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }

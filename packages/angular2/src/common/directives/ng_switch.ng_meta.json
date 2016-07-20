@@ -13,18 +13,18 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper",
           "Map"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank"
         ],
         "5": false
       }
@@ -77,15 +77,15 @@
     "6": "ng_switch.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       }
     ]

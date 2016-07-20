@@ -17,17 +17,17 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/facade/browser.dart",
         "2": [
-          "isPresent",
-          "NumberWrapper"
+          "window"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/browser.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "window"
+          "isPresent",
+          "NumberWrapper"
         ],
         "5": false
       },
@@ -42,23 +42,23 @@
     "6": "common_tools.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/application_ref.ngfactory.dart",
+        "1": "package:angular2/src/core/application_ref.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/linker/component_factory.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/component_factory.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/browser.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/browser.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i4"
       }
     ]

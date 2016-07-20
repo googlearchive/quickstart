@@ -6,17 +6,15 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
-          "isBlank",
-          "isString",
-          "evalExpression",
-          "RegExpWrapper",
-          "StringWrapper"
+          "evalExpression"
         ],
         "5": false
       },
       {
-        "1": "output_ast.dart",
-        "4": "o",
+        "1": "../util.dart",
+        "2": [
+          "sanitizeIdentifier"
+        ],
         "5": false
       },
       {
@@ -34,33 +32,31 @@
         "5": false
       },
       {
-        "1": "../util.dart",
-        "2": [
-          "sanitizeIdentifier"
-        ],
+        "1": "output_ast.dart",
+        "4": "o",
         "5": false
       }
     ],
     "6": "output_jit.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i0"
       },
       {
-        "1": "output_ast.ngfactory.dart",
+        "1": "../util.template.dart",
         "4": "i1"
       },
       {
-        "1": "abstract_emitter.ngfactory.dart",
+        "1": "abstract_emitter.template.dart",
         "4": "i2"
       },
       {
-        "1": "abstract_js_emitter.ngfactory.dart",
+        "1": "abstract_js_emitter.template.dart",
         "4": "i3"
       },
       {
-        "1": "../util.ngfactory.dart",
+        "1": "output_ast.template.dart",
         "4": "i4"
       }
     ]

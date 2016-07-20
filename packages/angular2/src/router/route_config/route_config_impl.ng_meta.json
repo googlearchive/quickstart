@@ -7,14 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "../route_definition.dart",
         "2": [
           "RouteDefinition"
@@ -40,16 +32,12 @@
     "6": "route_config_impl.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "../route_definition.template.dart",
         "4": "i0"
       },
       {
-        "1": "../route_definition.ngfactory.dart",
+        "1": "../rules/route_paths/regex_route_path.template.dart",
         "4": "i1"
-      },
-      {
-        "1": "../rules/route_paths/regex_route_path.ngfactory.dart",
-        "4": "i2"
       }
     ]
   },

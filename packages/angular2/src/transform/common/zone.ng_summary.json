@@ -11,15 +11,15 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
+        "5": false
+      },
+      {
         "1": "package:barback/barback.dart",
         "5": false
       },
       {
         "1": "package:source_span/source_span.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       }
     ],

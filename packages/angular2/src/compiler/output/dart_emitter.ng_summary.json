@@ -3,19 +3,6 @@
     "1": "angular2.src.compiler.output.dart_emitter",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "StringWrapper",
-          "RegExpWrapper",
-          "isPresent",
-          "isBlank",
-          "Math",
-          "isString",
-          "isArray"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper"
@@ -30,15 +17,19 @@
         "5": false
       },
       {
-        "1": "../compile_metadata.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "CompileIdentifierMetadata"
+          "isPresent",
+          "isBlank",
+          "isArray"
         ],
         "5": false
       },
       {
-        "1": "output_ast.dart",
-        "4": "o",
+        "1": "../compile_metadata.dart",
+        "2": [
+          "CompileIdentifierMetadata"
+        ],
         "5": false
       },
       {
@@ -48,9 +39,13 @@
           "EmitterVisitorContext",
           "AbstractEmitterVisitor",
           "CATCH_ERROR_VAR",
-          "CATCH_STACK_VAR",
-          "escapeSingleQuoteString"
+          "CATCH_STACK_VAR"
         ],
+        "5": false
+      },
+      {
+        "1": "output_ast.dart",
+        "4": "o",
         "5": false
       },
       {

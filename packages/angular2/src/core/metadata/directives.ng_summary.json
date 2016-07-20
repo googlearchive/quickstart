@@ -3,10 +3,9 @@
     "1": "angular2.src.core.metadata.directives",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/change_detection.dart",
         "2": [
-          "isPresent",
-          "Type"
+          "ChangeDetectionStrategy"
         ],
         "5": false
       },
@@ -18,16 +17,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection.dart",
+        "1": "package:angular2/src/core/metadata/view.dart",
         "2": [
-          "ChangeDetectionStrategy"
+          "ViewEncapsulation"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/view.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "ViewEncapsulation"
+          "isPresent"
         ],
         "5": false
       }

@@ -3,14 +3,6 @@
     "1": "angular2.src.core.linker.element_injector",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "stringify"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di/injector.dart",
         "2": [
           "Injector",
@@ -29,16 +21,12 @@
     "6": "element_injector.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/di/injector.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/di/injector.ngfactory.dart",
+        "1": "view.template.dart",
         "4": "i1"
-      },
-      {
-        "1": "view.ngfactory.dart",
-        "4": "i2"
       }
     ]
   },

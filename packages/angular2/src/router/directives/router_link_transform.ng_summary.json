@@ -8,28 +8,9 @@
           "TemplateAstVisitor",
           "ElementAst",
           "BoundDirectivePropertyAst",
+          "BoundElementPropertyAst",
           "DirectiveAst",
-          "BoundElementPropertyAst"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/expression_parser/ast.dart",
-        "2": [
-          "AstTransformer",
-          "Quote",
-          "AST",
-          "EmptyExpr",
-          "LiteralArray",
-          "LiteralPrimitive",
-          "ASTWithSource"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
+          "TemplateAst"
         ],
         "5": false
       },
@@ -41,9 +22,27 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/expression_parser/ast.dart",
+        "2": [
+          "AstTransformer",
+          "Quote",
+          "AST",
+          "LiteralArray",
+          "LiteralPrimitive"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "2": [
           "Parser"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       }

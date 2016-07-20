@@ -31,9 +31,10 @@
         "5": false
       },
       {
-        "1": "ng_template_outlet.dart",
+        "1": "ng_plural.dart",
         "2": [
-          "NgTemplateOutlet"
+          "NgPlural",
+          "NgPluralCase"
         ],
         "5": false
       },
@@ -54,10 +55,9 @@
         "5": false
       },
       {
-        "1": "ng_plural.dart",
+        "1": "ng_template_outlet.dart",
         "2": [
-          "NgPlural",
-          "NgPluralCase"
+          "NgTemplateOutlet"
         ],
         "5": false
       }

@@ -3,42 +3,9 @@
     "1": "angular2.src.core.linker.view_utils",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/application_tokens.dart",
         "2": [
-          "isBlank",
-          "isPresent",
-          "Type",
-          "stringify",
-          "looseIdentical"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "element.dart",
-        "2": [
-          "AppElement"
-        ],
-        "5": false
-      },
-      {
-        "1": "exceptions.dart",
-        "2": [
-          "ExpressionChangedAfterItHasBeenCheckedException"
+          "APP_ID"
         ],
         "5": false
       },
@@ -59,6 +26,20 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/security.dart",
+        "2": [
+          "SafeValue"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/render/api.dart",
         "2": [
           "RootRenderer",
@@ -68,16 +49,43 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/application_tokens.dart",
+        "1": "package:angular2/src/core/security.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "APP_ID"
+          "ListWrapper",
+          "StringMapWrapper"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/view.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "ViewEncapsulation"
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "looseIdentical"
+        ],
+        "5": false
+      },
+      {
+        "1": "element.dart",
+        "2": [
+          "AppElement"
+        ],
+        "5": false
+      },
+      {
+        "1": "exceptions.dart",
+        "2": [
+          "ExpressionChangedAfterItHasBeenCheckedException"
         ],
         "5": false
       }
@@ -102,6 +110,10 @@
               "const Inject(APP_ID)"
             ],
             "4": "_appId"
+          },
+          {
+            "1": "SanitizationService",
+            "4": "sanitizer"
           }
         ]
       }
@@ -109,16 +121,23 @@
     "6": "view_utils.dart"
   },
   "type": {
-    "EMPTY_ARR": {
+    "MAX_INTERPOLATION_VALUES": {
       "class": "Identifier",
-      "name": "EMPTY_ARR",
+      "name": "MAX_INTERPOLATION_VALUES",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "EMPTY_ARRAY": {
+      "class": "Identifier",
+      "name": "EMPTY_ARRAY",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
       "prefix": null,
       "value": []
     },
-    "MAX_INTERPOLATION_VALUES": {
+    "EMPTY_MAP": {
       "class": "Identifier",
-      "name": "MAX_INTERPOLATION_VALUES",
+      "name": "EMPTY_MAP",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
       "prefix": null,
       "value": null
@@ -174,6 +193,28 @@
           "isSkipSelf": false,
           "isOptional": false,
           "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "SanitizationService",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
         }
       ]
     },
@@ -194,6 +235,13 @@
     "ensureSlotCount": {
       "class": "Identifier",
       "name": "ensureSlotCount",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "interpolate0": {
+      "class": "Identifier",
+      "name": "interpolate0",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
       "prefix": null,
       "value": null
@@ -312,6 +360,6 @@
     }
   },
   "alias": {
-    "EMPTY_ARR": []
+    "EMPTY_ARRAY": []
   }
 }

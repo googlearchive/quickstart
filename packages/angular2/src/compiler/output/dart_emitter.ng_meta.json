@@ -3,19 +3,6 @@
     "1": "angular2.src.compiler.output.dart_emitter",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "StringWrapper",
-          "RegExpWrapper",
-          "isPresent",
-          "isBlank",
-          "Math",
-          "isString",
-          "isArray"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper"
@@ -30,15 +17,19 @@
         "5": false
       },
       {
-        "1": "../compile_metadata.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "CompileIdentifierMetadata"
+          "isPresent",
+          "isBlank",
+          "isArray"
         ],
         "5": false
       },
       {
-        "1": "output_ast.dart",
-        "4": "o",
+        "1": "../compile_metadata.dart",
+        "2": [
+          "CompileIdentifierMetadata"
+        ],
         "5": false
       },
       {
@@ -48,9 +39,13 @@
           "EmitterVisitorContext",
           "AbstractEmitterVisitor",
           "CATCH_ERROR_VAR",
-          "CATCH_STACK_VAR",
-          "escapeSingleQuoteString"
+          "CATCH_STACK_VAR"
         ],
+        "5": false
+      },
+      {
+        "1": "output_ast.dart",
+        "4": "o",
         "5": false
       },
       {
@@ -65,31 +60,31 @@
     "6": "dart_emitter.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "../compile_metadata.ngfactory.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i3"
       },
       {
-        "1": "output_ast.ngfactory.dart",
+        "1": "abstract_emitter.template.dart",
         "4": "i4"
       },
       {
-        "1": "abstract_emitter.ngfactory.dart",
+        "1": "output_ast.template.dart",
         "4": "i5"
       },
       {
-        "1": "path_util.ngfactory.dart",
+        "1": "path_util.template.dart",
         "4": "i6"
       }
     ]

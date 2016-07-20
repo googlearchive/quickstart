@@ -7,16 +7,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/compiler/xhr.dart",
         "2": [
-          "Injectable"
+          "XHR"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/xhr.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "XHR"
+          "Injectable"
         ],
         "5": false
       },

@@ -3,14 +3,14 @@
     "1": "angular2.src.core.metadata",
     "3": [
       {
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "List"
         ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/change_detection/change_detection.dart",
         "5": false
       },
       {
@@ -34,12 +34,6 @@
         "1": "./metadata/directives.dart"
       },
       {
-        "1": "./metadata/view.dart",
-        "3": [
-          "VIEW_ENCAPSULATION_VALUES"
-        ]
-      },
-      {
         "1": "./metadata/lifecycle_hooks.dart",
         "2": [
           "AfterContentInit",
@@ -50,6 +44,12 @@
           "OnDestroy",
           "OnInit",
           "DoCheck"
+        ]
+      },
+      {
+        "1": "./metadata/view.dart",
+        "3": [
+          "VIEW_ENCAPSULATION_VALUES"
         ]
       }
     ],
@@ -157,6 +157,20 @@
     "HostListener": {
       "class": "Identifier",
       "name": "HostListener",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "prefix": null,
+      "value": null
+    },
+    "InjectorModule": {
+      "class": "Identifier",
+      "name": "InjectorModule",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "prefix": null,
+      "value": null
+    },
+    "Provides": {
+      "class": "Identifier",
+      "name": "Provides",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null

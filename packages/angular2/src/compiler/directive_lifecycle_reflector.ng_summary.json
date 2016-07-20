@@ -3,11 +3,11 @@
     "1": "angular2.src.core.compiler.directive_lifecycle_reflector",
     "3": [
       {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
+        "1": "package:angular2/src/core/reflection/reflection.dart",
         "5": false
       }
     ],

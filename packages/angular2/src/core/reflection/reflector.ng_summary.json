@@ -3,26 +3,8 @@
     "1": "angular2.src.core.reflection.reflector",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent",
-          "stringify"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "ListWrapper",
           "Map",
           "MapWrapper",
           "Set",
@@ -32,11 +14,24 @@
         "5": false
       },
       {
-        "1": "types.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "SetterFn",
-          "GetterFn",
-          "MethodFn"
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "platform_reflection_capabilities.dart",
+        "2": [
+          "PlatformReflectionCapabilities"
         ],
         "5": false
       },
@@ -48,26 +43,28 @@
         "5": false
       },
       {
-        "1": "platform_reflection_capabilities.dart",
+        "1": "types.dart",
         "2": [
-          "PlatformReflectionCapabilities"
+          "SetterFn",
+          "GetterFn",
+          "MethodFn"
         ],
         "5": false
       }
     ],
     "4": [
       {
+        "1": "platform_reflection_capabilities.dart",
+        "2": [
+          "PlatformReflectionCapabilities"
+        ]
+      },
+      {
         "1": "types.dart",
         "2": [
           "SetterFn",
           "GetterFn",
           "MethodFn"
-        ]
-      },
-      {
-        "1": "platform_reflection_capabilities.dart",
-        "2": [
-          "PlatformReflectionCapabilities"
         ]
       }
     ],

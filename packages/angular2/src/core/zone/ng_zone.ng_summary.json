@@ -10,17 +10,17 @@
         "5": false
       },
       {
-        "1": "ng_zone_impl.dart",
+        "1": "../../facade/exceptions.dart",
         "2": [
-          "NgZoneImpl",
-          "NgZoneError"
+          "BaseException"
         ],
         "5": false
       },
       {
-        "1": "../../facade/exceptions.dart",
+        "1": "ng_zone_impl.dart",
         "2": [
-          "BaseException"
+          "NgZoneImpl",
+          "NgZoneError"
         ],
         "5": false
       }

@@ -13,7 +13,7 @@
     "6": "route_path.dart",
     "7": [
       {
-        "1": "../../url_parser.ngfactory.dart",
+        "1": "../../url_parser.template.dart",
         "4": "i0"
       }
     ]

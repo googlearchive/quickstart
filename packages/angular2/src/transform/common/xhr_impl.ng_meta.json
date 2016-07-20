@@ -29,19 +29,19 @@
     "6": "xhr_impl.dart",
     "7": [
       {
-        "1": "package:angular2/src/compiler/xhr.ngfactory.dart",
+        "1": "package:angular2/src/compiler/xhr.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/logging.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/url_resolver.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/url_resolver.template.dart",
         "4": "i3"
       }
     ]

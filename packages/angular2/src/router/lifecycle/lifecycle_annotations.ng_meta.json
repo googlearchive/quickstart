@@ -9,7 +9,7 @@
     "6": "lifecycle_annotations.dart",
     "7": [
       {
-        "1": "./lifecycle_annotations_impl.ngfactory.dart",
+        "1": "./lifecycle_annotations_impl.template.dart",
         "4": "i0"
       }
     ]

@@ -3,16 +3,16 @@
     "1": "angular2.src.web_workers.ui.xhr_impl",
     "3": [
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/compiler/xhr.dart",
         "2": [
-          "Injectable"
+          "XHR"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/serializer.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "PRIMITIVE"
+          "Injectable"
         ],
         "5": false
       },
@@ -24,9 +24,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/xhr.dart",
+        "1": "package:angular2/src/web_workers/shared/serializer.dart",
         "2": [
-          "XHR"
+          "PRIMITIVE"
         ],
         "5": false
       },

@@ -10,14 +10,6 @@
         "5": false
       },
       {
-        "1": "platform_location.dart",
-        "2": [
-          "UrlChangeListener",
-          "PlatformLocation"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/browser.dart",
         "2": [
           "History",
@@ -29,6 +21,14 @@
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DOM"
+        ],
+        "5": false
+      },
+      {
+        "1": "platform_location.dart",
+        "2": [
+          "UrlChangeListener",
+          "PlatformLocation"
         ],
         "5": false
       }

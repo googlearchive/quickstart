@@ -3,15 +3,6 @@
     "1": "angular2.dom.abstractHtmlAdapter",
     "3": [
       {
-        "1": "package:html/parser.dart",
-        "4": "parser",
-        "5": false
-      },
-      {
-        "1": "package:html/dom.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/platform/common_dom.dart",
         "5": false
       },
@@ -20,11 +11,12 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent"
-        ],
+        "1": "package:html/dom.dart",
+        "5": false
+      },
+      {
+        "1": "package:html/parser.dart",
+        "4": "parser",
         "5": false
       }
     ],

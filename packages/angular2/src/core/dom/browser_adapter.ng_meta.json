@@ -9,7 +9,7 @@
     "6": "browser_adapter.dart",
     "7": [
       {
-        "1": "package:angular2/src/platform/browser/browser_adapter.ngfactory.dart",
+        "1": "package:angular2/src/platform/browser/browser_adapter.template.dart",
         "4": "i0"
       }
     ]

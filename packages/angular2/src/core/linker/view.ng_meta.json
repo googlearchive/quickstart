@@ -3,14 +3,11 @@
     "1": "angular2.src.core.linker.view",
     "3": [
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/core/change_detection/change_detection.dart",
         "2": [
-          "ListWrapper",
-          "MapWrapper",
-          "Map",
-          "StringMapWrapper",
-          "isListLikeIterable",
-          "areIterablesEqual"
+          "ChangeDetectorRef",
+          "ChangeDetectionStrategy",
+          "ChangeDetectorState"
         ],
         "5": false
       },
@@ -22,24 +19,10 @@
         "5": false
       },
       {
-        "1": "element.dart",
+        "1": "package:angular2/src/core/render/api.dart",
         "2": [
-          "AppElement"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "assertionsEnabled",
-          "isPresent",
-          "isBlank",
-          "Type",
-          "isArray",
-          "isNumber",
-          "stringify",
-          "isPrimitive",
-          "isString"
+          "Renderer",
+          "RenderComponentType"
         ],
         "5": false
       },
@@ -51,11 +34,50 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/render/api.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "Renderer",
-          "RootRenderer",
-          "RenderComponentType"
+          "Map",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "../profile/profile.dart",
+        "2": [
+          "wtfCreateScope",
+          "wtfLeave",
+          "WtfScopeFn"
+        ],
+        "5": false
+      },
+      {
+        "1": "debug_context.dart",
+        "2": [
+          "StaticNodeDebugInfo",
+          "DebugContext"
+        ],
+        "5": false
+      },
+      {
+        "1": "element.dart",
+        "2": [
+          "AppElement"
+        ],
+        "5": false
+      },
+      {
+        "1": "element_injector.dart",
+        "2": [
+          "ElementInjector"
+        ],
+        "5": false
+      },
+      {
+        "1": "exceptions.dart",
+        "2": [
+          "ExpressionChangedAfterItHasBeenCheckedException",
+          "ViewDestroyedException",
+          "ViewWrappedException"
         ],
         "5": false
       },
@@ -78,53 +100,7 @@
         "2": [
           "ViewUtils",
           "flattenNestedViewRenderNodes",
-          "ensureSlotCount",
-          "arrayLooseIdentical",
-          "mapLooseIdentical"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/change_detection/change_detection.dart",
-        "2": [
-          "ChangeDetectorRef",
-          "ChangeDetectionStrategy",
-          "ChangeDetectorState",
-          "isDefaultChangeDetectionStrategy",
-          "devModeEqual"
-        ],
-        "5": false
-      },
-      {
-        "1": "../profile/profile.dart",
-        "2": [
-          "wtfCreateScope",
-          "wtfLeave",
-          "WtfScopeFn"
-        ],
-        "5": false
-      },
-      {
-        "1": "exceptions.dart",
-        "2": [
-          "ExpressionChangedAfterItHasBeenCheckedException",
-          "ViewDestroyedException",
-          "ViewWrappedException"
-        ],
-        "5": false
-      },
-      {
-        "1": "debug_context.dart",
-        "2": [
-          "StaticNodeDebugInfo",
-          "DebugContext"
-        ],
-        "5": false
-      },
-      {
-        "1": "element_injector.dart",
-        "2": [
-          "ElementInjector"
+          "ensureSlotCount"
         ],
         "5": false
       }
@@ -132,60 +108,56 @@
     "6": "view.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/core/change_detection/change_detection.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "element.ngfactory.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/render/api.ngfactory.dart",
+        "1": "../profile/profile.template.dart",
         "4": "i5"
       },
       {
-        "1": "view_ref.ngfactory.dart",
+        "1": "debug_context.template.dart",
         "4": "i6"
       },
       {
-        "1": "view_type.ngfactory.dart",
+        "1": "element.template.dart",
         "4": "i7"
       },
       {
-        "1": "view_utils.ngfactory.dart",
+        "1": "element_injector.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/core/change_detection/change_detection.ngfactory.dart",
+        "1": "exceptions.template.dart",
         "4": "i9"
       },
       {
-        "1": "../profile/profile.ngfactory.dart",
+        "1": "view_ref.template.dart",
         "4": "i10"
       },
       {
-        "1": "exceptions.ngfactory.dart",
+        "1": "view_type.template.dart",
         "4": "i11"
       },
       {
-        "1": "debug_context.ngfactory.dart",
+        "1": "view_utils.template.dart",
         "4": "i12"
-      },
-      {
-        "1": "element_injector.ngfactory.dart",
-        "4": "i13"
       }
     ]
   },
@@ -200,6 +172,13 @@
     "AppView": {
       "class": "Identifier",
       "name": "AppView",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DebugAppView": {
+      "class": "Identifier",
+      "name": "DebugAppView",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view.dart",
       "prefix": null,
       "value": null

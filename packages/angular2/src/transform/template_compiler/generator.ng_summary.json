@@ -7,15 +7,15 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/offline_compiler.dart",
+        "1": "package:angular2/i18n.dart",
         "5": false
       },
       {
         "1": "package:angular2/src/compiler/config.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
         "5": false
       },
       {
@@ -47,19 +47,19 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/transform/common/options.dart",
+        "2": [
+          "CODEGEN_DEBUG_MODE"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/transform/common/zone.dart",
         "4": "zone",
         "5": false
       },
       {
-        "1": "package:angular2/i18n.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/transform/common/options.dart",
-        "2": [
-          "CODEGEN_DEBUG_MODE"
-        ],
+        "1": "package:barback/barback.dart",
         "5": false
       },
       {

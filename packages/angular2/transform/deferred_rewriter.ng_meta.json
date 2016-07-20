@@ -7,22 +7,22 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/deferred_rewriter/transformer.dart",
         "2": [
           "DeferredRewriter"
         ],
         "4": "base",
         "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "5": false
       }
     ],
     "6": "deferred_rewriter.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/deferred_rewriter/transformer.ngfactory.dart",
+        "1": "package:angular2/src/transform/deferred_rewriter/transformer.template.dart",
         "4": "i0"
       }
     ]

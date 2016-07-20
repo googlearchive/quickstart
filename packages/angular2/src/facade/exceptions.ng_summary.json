@@ -39,13 +39,6 @@
       "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
       "prefix": null,
       "value": null
-    },
-    "unimplemented": {
-      "class": "Identifier",
-      "name": "unimplemented",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
     }
   },
   "alias": {}

@@ -10,6 +10,14 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "stringify",
@@ -18,11 +26,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "reflective_injector.dart",
         "2": [
-          "BaseException",
-          "WrappedException",
-          "unimplemented"
+          "ReflectiveInjector"
         ],
         "5": false
       },
@@ -34,10 +40,7 @@
         "5": false
       },
       {
-        "1": "reflective_injector.dart",
-        "2": [
-          "ReflectiveInjector"
-        ],
+        "1": "provider.dart",
         "5": false
       }
     ],

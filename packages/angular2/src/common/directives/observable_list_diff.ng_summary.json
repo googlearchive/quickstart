@@ -3,10 +3,7 @@
     "1": "angular2.directives.observable_list_iterable_diff",
     "3": [
       {
-        "1": "package:observe/observe.dart",
-        "2": [
-          "ObservableList"
-        ],
+        "1": "dart:async",
         "5": false
       },
       {
@@ -18,7 +15,10 @@
         "5": false
       },
       {
-        "1": "dart:async",
+        "1": "package:observe/observe.dart",
+        "2": [
+          "ObservableList"
+        ],
         "5": false
       }
     ],

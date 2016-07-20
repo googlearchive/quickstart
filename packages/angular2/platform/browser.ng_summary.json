@@ -7,49 +7,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/browser_common.dart",
-        "2": [
-          "BROWSER_PROVIDERS",
-          "BROWSER_APP_COMMON_PROVIDERS",
-          "BROWSER_PLATFORM_MARKER"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/compiler.dart",
         "2": [
           "COMPILER_PROVIDERS"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/core.dart",
-        "2": [
-          "ComponentRef",
-          "coreLoadAndBootstrap",
-          "reflector",
-          "ReflectiveInjector",
-          "PlatformRef",
-          "OpaqueToken",
-          "getPlatform",
-          "createPlatform",
-          "assertPlatform"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/browser/xhr_impl.dart",
-        "2": [
-          "XHRImpl"
         ],
         "5": false
       },
@@ -61,14 +21,60 @@
         "5": false
       },
       {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "ComponentRef",
+          "coreLoadAndBootstrap",
+          "reflector",
+          "ReflectiveInjector",
+          "PlatformRef",
+          "getPlatform",
+          "createPlatform",
+          "assertPlatform"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Provider"
         ],
         "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isPresent",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/browser/xhr_impl.dart",
+        "2": [
+          "XHRImpl"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/browser_common.dart",
+        "2": [
+          "BROWSER_PROVIDERS",
+          "BROWSER_APP_COMMON_PROVIDERS",
+          "BROWSER_PLATFORM_MARKER"
+        ],
+        "5": false
       }
     ],
     "4": [
+      {
+        "1": "package:angular2/src/core/security.dart",
+        "2": [
+          "SanitizationService",
+          "TemplateSecurityContext"
+        ]
+      },
       {
         "1": "package:angular2/src/core/angular_entrypoint.dart"
       },
@@ -77,6 +83,7 @@
         "2": [
           "BROWSER_PROVIDERS",
           "CACHED_TEMPLATE_PROVIDER",
+          "BROWSER_SANITIZATION_PROVIDERS",
           "ELEMENT_PROBE_PROVIDERS",
           "ELEMENT_PROBE_PROVIDERS_PROD_MODE",
           "inspectNativeElement",
@@ -137,6 +144,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         }

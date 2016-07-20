@@ -20,11 +20,11 @@
     "6": "html_ast.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i0"
       },
       {
-        "1": "parse_util.ngfactory.dart",
+        "1": "parse_util.template.dart",
         "4": "i1"
       }
     ]

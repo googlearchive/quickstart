@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/asset_reader.dart",
         "5": false
       },
@@ -33,6 +29,10 @@
       {
         "1": "package:angular2/src/transform/common/zone.dart",
         "4": "zone",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
         "5": false
       },
       {

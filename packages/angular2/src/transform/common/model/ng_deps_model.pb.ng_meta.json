@@ -18,11 +18,11 @@
     "6": "ng_deps_model.pb.dart",
     "7": [
       {
-        "1": "import_export_model.pb.ngfactory.dart",
+        "1": "import_export_model.pb.template.dart",
         "4": "i0"
       },
       {
-        "1": "reflection_info_model.pb.ngfactory.dart",
+        "1": "reflection_info_model.pb.template.dart",
         "4": "i1"
       }
     ]

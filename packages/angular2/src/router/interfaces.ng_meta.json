@@ -7,16 +7,16 @@
         "5": false
       },
       {
-        "1": "instruction.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "ComponentInstruction"
+          "global"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "instruction.dart",
         "2": [
-          "global"
+          "ComponentInstruction"
         ],
         "5": false
       }
@@ -24,11 +24,11 @@
     "6": "interfaces.dart",
     "7": [
       {
-        "1": "instruction.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "instruction.template.dart",
         "4": "i1"
       }
     ]

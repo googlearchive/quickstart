@@ -3,14 +3,6 @@
     "1": "angular2.src.common.forms.directives.ng_model",
     "3": [
       {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "EventEmitter",
-          "ObservableWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/core.dart",
         "2": [
           "OnChanges",
@@ -24,17 +16,10 @@
         "5": false
       },
       {
-        "1": "control_value_accessor.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "ControlValueAccessor",
-          "NG_VALUE_ACCESSOR"
-        ],
-        "5": false
-      },
-      {
-        "1": "ng_control.dart",
-        "2": [
-          "NgControl"
+          "EventEmitter",
+          "ObservableWrapper"
         ],
         "5": false
       },
@@ -50,6 +35,21 @@
         "2": [
           "NG_VALIDATORS",
           "NG_ASYNC_VALIDATORS"
+        ],
+        "5": false
+      },
+      {
+        "1": "control_value_accessor.dart",
+        "2": [
+          "ControlValueAccessor",
+          "NG_VALUE_ACCESSOR"
+        ],
+        "5": false
+      },
+      {
+        "1": "ng_control.dart",
+        "2": [
+          "NgControl"
         ],
         "5": false
       },
@@ -148,6 +148,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": false,
         "deps": null
       }

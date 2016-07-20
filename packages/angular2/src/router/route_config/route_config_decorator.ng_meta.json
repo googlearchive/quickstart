@@ -9,7 +9,7 @@
     "6": "route_config_decorator.dart",
     "7": [
       {
-        "1": "./route_config_impl.ngfactory.dart",
+        "1": "./route_config_impl.template.dart",
         "4": "i0"
       }
     ]

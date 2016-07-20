@@ -3,7 +3,7 @@
     "1": "",
     "3": [
       {
-        "1": "package:build/build.dart",
+        "1": "dart:async",
         "5": false
       },
       {
@@ -11,19 +11,7 @@
         "5": false
       },
       {
-        "1": "src/transform/common/url_resolver.dart",
-        "5": false
-      },
-      {
-        "1": "dart:async",
-        "5": false
-      },
-      {
         "1": "package:angular2/i18n.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "5": false
       },
       {
@@ -31,30 +19,42 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/compiler/html_parser.dart",
+        "5": false
+      },
+      {
+        "1": "package:build/build.dart",
+        "5": false
+      },
+      {
+        "1": "src/transform/common/url_resolver.dart",
         "5": false
       }
     ],
     "6": "extract_messages.dart",
     "7": [
       {
-        "1": "src/transform/common/url_resolver.ngfactory.dart",
+        "1": "package:angular2/i18n.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/i18n.ngfactory.dart",
+        "1": "package:angular2/src/compiler/expression_parser/lexer.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/compiler/expression_parser/parser.ngfactory.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/compiler/expression_parser/lexer.ngfactory.dart",
+        "1": "package:angular2/src/compiler/html_parser.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/compiler/html_parser.ngfactory.dart",
+        "1": "src/transform/common/url_resolver.template.dart",
         "4": "i4"
       }
     ]

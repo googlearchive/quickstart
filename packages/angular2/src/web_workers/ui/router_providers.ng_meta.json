@@ -3,9 +3,12 @@
     "1": "angular2.src.web_workers.ui.router_providers",
     "3": [
       {
-        "1": "platform_location.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "MessageBasedPlatformLocation"
+          "APP_INITIALIZER",
+          "Provider",
+          "Injector",
+          "NgZone"
         ],
         "5": false
       },
@@ -17,12 +20,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "platform_location.dart",
         "2": [
-          "APP_INITIALIZER",
-          "Provider",
-          "Injector",
-          "NgZone"
+          "MessageBasedPlatformLocation"
         ],
         "5": false
       }
@@ -30,15 +30,15 @@
     "6": "router_providers.dart",
     "7": [
       {
-        "1": "platform_location.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/platform/browser/location/browser_platform_location.ngfactory.dart",
+        "1": "package:angular2/src/platform/browser/location/browser_platform_location.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "platform_location.template.dart",
         "4": "i2"
       }
     ]
@@ -255,6 +255,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -285,6 +286,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -311,6 +313,7 @@
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": true,
           "deps": [
             {

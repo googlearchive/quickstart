@@ -3,13 +3,6 @@
     "1": "angular2.src.platform.dom.events.dom_events",
     "3": [
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/core.dart",
         "2": [
           "Injectable"
@@ -17,10 +10,16 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      },
+      {
         "1": "event_manager.dart",
         "2": [
-          "EventManagerPlugin",
-          "EventManager"
+          "EventManagerPlugin"
         ],
         "5": false
       }
@@ -39,15 +38,15 @@
     "6": "dom_events.dart",
     "7": [
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i1"
       },
       {
-        "1": "event_manager.ngfactory.dart",
+        "1": "event_manager.template.dart",
         "4": "i2"
       }
     ]

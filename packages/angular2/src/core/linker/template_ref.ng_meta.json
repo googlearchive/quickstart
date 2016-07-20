@@ -3,16 +3,16 @@
     "1": "angular2.src.core.linker.template_ref",
     "3": [
       {
-        "1": "element_ref.dart",
+        "1": "element.dart",
         "2": [
-          "ElementRef"
+          "AppElement"
         ],
         "5": false
       },
       {
-        "1": "element.dart",
+        "1": "element_ref.dart",
         "2": [
-          "AppElement"
+          "ElementRef"
         ],
         "5": false
       },
@@ -34,19 +34,19 @@
     "6": "template_ref.dart",
     "7": [
       {
-        "1": "element_ref.ngfactory.dart",
+        "1": "element.template.dart",
         "4": "i0"
       },
       {
-        "1": "element.ngfactory.dart",
+        "1": "element_ref.template.dart",
         "4": "i1"
       },
       {
-        "1": "view.ngfactory.dart",
+        "1": "view.template.dart",
         "4": "i2"
       },
       {
-        "1": "view_ref.ngfactory.dart",
+        "1": "view_ref.template.dart",
         "4": "i3"
       }
     ]

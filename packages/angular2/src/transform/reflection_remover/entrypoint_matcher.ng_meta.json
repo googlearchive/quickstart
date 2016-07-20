@@ -7,26 +7,26 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/annotation_matcher.dart",
         "5": false
       },
       {
         "1": "package:angular2/src/transform/common/naive_eval.dart",
         "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "5": false
       }
     ],
     "6": "entrypoint_matcher.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/annotation_matcher.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/annotation_matcher.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/naive_eval.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/naive_eval.template.dart",
         "4": "i1"
       }
     ]

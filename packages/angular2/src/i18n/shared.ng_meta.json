@@ -3,10 +3,9 @@
     "1": "angular2.src.i18n.shared",
     "3": [
       {
-        "1": "package:angular2/src/compiler/parse_util.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "2": [
-          "ParseSourceSpan",
-          "ParseError"
+          "Parser"
         ],
         "5": false
       },
@@ -26,6 +25,14 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/parse_util.dart",
+        "2": [
+          "ParseSourceSpan",
+          "ParseError"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
@@ -40,35 +47,28 @@
           "Message"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
-        "2": [
-          "Parser"
-        ],
-        "5": false
       }
     ],
     "6": "shared.dart",
     "7": [
       {
-        "1": "package:angular2/src/compiler/parse_util.ngfactory.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/html_ast.ngfactory.dart",
+        "1": "package:angular2/src/compiler/html_ast.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/compiler/parse_util.template.dart",
         "4": "i2"
       },
       {
-        "1": "message.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/compiler/expression_parser/parser.ngfactory.dart",
+        "1": "message.template.dart",
         "4": "i4"
       }
     ]

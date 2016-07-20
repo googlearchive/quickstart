@@ -7,47 +7,6 @@
         "5": false
       },
       {
-        "1": "compile_metadata.dart",
-        "2": [
-          "CompileTypeMetadata",
-          "CompileDirectiveMetadata",
-          "CompileTemplateMetadata",
-          "CompileProviderMetadata",
-          "CompileTokenMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "isArray"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "PromiseWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/xhr.dart",
-        "2": [
-          "XHR"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/url_resolver.dart",
         "2": [
           "UrlResolver"
@@ -55,10 +14,9 @@
         "5": false
       },
       {
-        "1": "style_url_resolver.dart",
+        "1": "package:angular2/src/compiler/xhr.dart",
         "2": [
-          "extractStyleUrls",
-          "isStyleUrlResolvable"
+          "XHR"
         ],
         "5": false
       },
@@ -77,13 +35,35 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "compile_metadata.dart",
+        "2": [
+          "CompileTypeMetadata",
+          "CompileDirectiveMetadata",
+          "CompileTemplateMetadata"
+        ],
+        "5": false
+      },
+      {
         "1": "html_ast.dart",
         "2": [
           "HtmlAstVisitor",
           "HtmlElementAst",
           "HtmlTextAst",
           "HtmlAttrAst",
-          "HtmlAst",
           "HtmlCommentAst",
           "HtmlExpansionAst",
           "HtmlExpansionCaseAst",
@@ -99,10 +79,17 @@
         "5": false
       },
       {
+        "1": "style_url_resolver.dart",
+        "2": [
+          "extractStyleUrls",
+          "isStyleUrlResolvable"
+        ],
+        "5": false
+      },
+      {
         "1": "template_preparser.dart",
         "2": [
           "preparseElement",
-          "PreparsedElement",
           "PreparsedElementType"
         ],
         "5": false
@@ -136,52 +123,48 @@
     "6": "directive_normalizer.dart",
     "7": [
       {
-        "1": "compile_metadata.ngfactory.dart",
+        "1": "package:angular2/src/compiler/url_resolver.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/compiler/xhr.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/view.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/compiler/xhr.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/compiler/url_resolver.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i5"
       },
       {
-        "1": "style_url_resolver.ngfactory.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "html_ast.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.ngfactory.dart",
+        "1": "html_parser.template.dart",
         "4": "i8"
       },
       {
-        "1": "html_ast.ngfactory.dart",
+        "1": "style_url_resolver.template.dart",
         "4": "i9"
       },
       {
-        "1": "html_parser.ngfactory.dart",
+        "1": "template_preparser.template.dart",
         "4": "i10"
-      },
-      {
-        "1": "template_preparser.ngfactory.dart",
-        "4": "i11"
       }
     ]
   },

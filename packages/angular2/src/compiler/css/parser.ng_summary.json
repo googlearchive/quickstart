@@ -3,6 +3,29 @@
     "1": "angular2.src.compiler.css.parser",
     "3": [
       {
+        "1": "package:angular2/src/compiler/css/lexer.dart",
+        "2": [
+          "CssLexerMode",
+          "CssToken",
+          "CssTokenType",
+          "CssScanner",
+          "generateErrorMessage",
+          "$AT",
+          "$EOF",
+          "$RBRACE",
+          "$LBRACE",
+          "$LBRACKET",
+          "$RBRACKET",
+          "$LPAREN",
+          "$RPAREN",
+          "$COMMA",
+          "$COLON",
+          "$SEMICOLON",
+          "isNewline"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/compiler/parse_util.dart",
         "2": [
           "ParseSourceSpan",
@@ -17,33 +40,7 @@
         "2": [
           "bitWiseOr",
           "bitWiseAnd",
-          "NumberWrapper",
-          "StringWrapper",
           "isPresent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/css/lexer.dart",
-        "2": [
-          "CssLexerMode",
-          "CssToken",
-          "CssTokenType",
-          "CssScanner",
-          "CssScannerError",
-          "generateErrorMessage",
-          "$AT",
-          "$EOF",
-          "$RBRACE",
-          "$LBRACE",
-          "$LBRACKET",
-          "$RBRACKET",
-          "$LPAREN",
-          "$RPAREN",
-          "$COMMA",
-          "$COLON",
-          "$SEMICOLON",
-          "isNewline"
         ],
         "5": false
       }

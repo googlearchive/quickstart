@@ -3,15 +3,9 @@
     "1": "angular2.src.compiler.html_parser",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "isPresent",
-          "isBlank",
-          "StringWrapper",
-          "stringify",
-          "assertionsEnabled",
-          "StringJoiner",
-          "serializeEnum"
+          "Injectable"
         ],
         "5": false
       },
@@ -19,6 +13,14 @@
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank"
         ],
         "5": false
       },
@@ -36,13 +38,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di.dart",
-        "2": [
-          "Injectable"
-        ],
-        "5": false
-      },
-      {
         "1": "html_lexer.dart",
         "2": [
           "HtmlToken",
@@ -52,21 +47,19 @@
         "5": false
       },
       {
-        "1": "parse_util.dart",
+        "1": "html_tags.dart",
         "2": [
-          "ParseError",
-          "ParseLocation",
-          "ParseSourceSpan"
+          "getHtmlTagDefinition",
+          "getNsPrefix",
+          "mergeNsAndName"
         ],
         "5": false
       },
       {
-        "1": "html_tags.dart",
+        "1": "parse_util.dart",
         "2": [
-          "HtmlTagDefinition",
-          "getHtmlTagDefinition",
-          "getNsPrefix",
-          "mergeNsAndName"
+          "ParseError",
+          "ParseSourceSpan"
         ],
         "5": false
       }

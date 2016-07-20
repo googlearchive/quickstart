@@ -7,16 +7,16 @@
         "5": false
       },
       {
-        "1": "instruction.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "ComponentInstruction"
+          "global"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "instruction.dart",
         "2": [
-          "global"
+          "ComponentInstruction"
         ],
         "5": false
       }

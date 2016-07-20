@@ -10,26 +10,7 @@
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injector",
-          "ResolvedReflectiveProvider",
-          "Injectable",
-          "ReflectiveInjector"
-        ],
-        "5": false
-      },
-      {
-        "1": "component_resolver.dart",
-        "2": [
-          "ComponentResolver"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isType",
-          "Type",
-          "stringify",
-          "isPresent"
+          "Injectable"
         ],
         "5": false
       },
@@ -37,6 +18,13 @@
         "1": "component_factory.dart",
         "2": [
           "ComponentRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "component_resolver.dart",
+        "2": [
+          "ComponentResolver"
         ],
         "5": false
       },

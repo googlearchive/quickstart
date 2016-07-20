@@ -3,19 +3,10 @@
     "1": "angular2.src.compiler.output.js_emitter",
     "3": [
       {
-        "1": "output_ast.dart",
-        "4": "o",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
-          "isBlank",
-          "isString",
-          "evalExpression",
-          "RegExpWrapper",
-          "StringWrapper"
+          "isBlank"
         ],
         "5": false
       },
@@ -32,6 +23,11 @@
         "2": [
           "AbstractJsEmitterVisitor"
         ],
+        "5": false
+      },
+      {
+        "1": "output_ast.dart",
+        "4": "o",
         "5": false
       },
       {

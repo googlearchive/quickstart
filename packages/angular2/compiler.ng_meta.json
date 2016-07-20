@@ -32,6 +32,7 @@
           "CompileQueryMetadata",
           "CompileTemplateMetadata",
           "CompileDirectiveMetadata",
+          "CompileInjectorModuleMetadata",
           "CompilePipeMetadata"
         ]
       },
@@ -42,11 +43,11 @@
     "6": "compiler.dart",
     "7": [
       {
-        "1": "package:angular2/src/compiler/compiler.ngfactory.dart",
+        "1": "package:angular2/src/compiler/compiler.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/template_ast.ngfactory.dart",
+        "1": "package:angular2/src/compiler/template_ast.template.dart",
         "4": "i1"
       }
     ]
@@ -85,6 +86,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -161,6 +163,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -191,6 +194,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -443,6 +447,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -607,6 +612,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -731,28 +737,6 @@
                   "isSkipSelf": false,
                   "isOptional": true,
                   "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "ReflectorReader",
-                      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
                 }
               ]
             },
@@ -875,34 +859,13 @@
                 "isSkipSelf": false,
                 "isOptional": true,
                 "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "ReflectorReader",
-                    "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
               }
             ]
           },
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -923,6 +886,7 @@
           "useExisting": null,
           "useValue": "/packages",
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -999,6 +963,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1075,6 +1040,38 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "InjectorCompiler",
+              "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "InjectorCompiler",
+            "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1096,11 +1093,12 @@
           "useValue": null,
           "useFactory": {
             "class": "Identifier",
-            "name": "_createCompilerConfig",
+            "name": "createCompilerConfig",
             "moduleUrl": "asset:angular2/lib/src/compiler/compiler.dart",
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -1233,6 +1231,28 @@
                       "class": "Identifier",
                       "name": "XHR",
                       "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "InjectorCompiler",
+                      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
                       "prefix": null,
                       "value": null
                     },
@@ -1419,6 +1439,28 @@
                   "value": null,
                   "identifier": {
                     "class": "Identifier",
+                    "name": "InjectorCompiler",
+                    "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
                     "name": "CompilerConfig",
                     "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
                     "prefix": null,
@@ -1441,6 +1483,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1605,6 +1648,28 @@
                     "value": null,
                     "identifier": {
                       "class": "Identifier",
+                      "name": "InjectorCompiler",
+                      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
                       "name": "CompilerConfig",
                       "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
                       "prefix": null,
@@ -1628,6 +1693,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1658,6 +1724,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1690,6 +1757,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1766,6 +1834,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1842,6 +1911,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1918,6 +1988,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -1994,29 +2065,16 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         }
       ]
     },
-    "_createCompilerConfig": {
+    "createCompilerConfig": {
       "class": "Identifier",
-      "name": "_createCompilerConfig",
+      "name": "createCompilerConfig",
       "moduleUrl": "asset:angular2/lib/src/compiler/compiler.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PLATFORM_DIRECTIVES": {
-      "class": "Identifier",
-      "name": "PLATFORM_DIRECTIVES",
-      "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PLATFORM_PIPES": {
-      "class": "Identifier",
-      "name": "PLATFORM_PIPES",
-      "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
       "prefix": null,
       "value": null
     },
@@ -2399,24 +2457,113 @@
       "prefix": null,
       "value": null
     },
-    "CompilerConfig": {
+    "_ASSET_SCHEME": {
       "class": "Identifier",
-      "name": "CompilerConfig",
-      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "name": "_ASSET_SCHEME",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
       "prefix": null,
       "value": null
     },
-    "RenderTypes": {
+    "DEFAULT_PACKAGE_URL_PROVIDER": {
       "class": "Identifier",
-      "name": "RenderTypes",
-      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "name": "DEFAULT_PACKAGE_URL_PROVIDER",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PACKAGE_ROOT_URL",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": "/packages",
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        }
+      ]
+    },
+    "createUrlResolverWithoutPackagePrefix": {
+      "class": "Identifier",
+      "name": "createUrlResolverWithoutPackagePrefix",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
       "prefix": null,
       "value": null
     },
-    "DefaultRenderTypes": {
+    "createOfflineCompileUrlResolver": {
       "class": "Identifier",
-      "name": "DefaultRenderTypes",
-      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "name": "createOfflineCompileUrlResolver",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "UrlResolver": {
+      "class": "Type",
+      "name": "UrlResolver",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PACKAGE_ROOT_URL",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        }
+      ]
+    },
+    "getUrlScheme": {
+      "class": "Identifier",
+      "name": "getUrlScheme",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "XHR": {
+      "class": "Identifier",
+      "name": "XHR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PLATFORM_DIRECTIVES": {
+      "class": "Identifier",
+      "name": "PLATFORM_DIRECTIVES",
+      "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PLATFORM_PIPES": {
+      "class": "Identifier",
+      "name": "PLATFORM_PIPES",
+      "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
       "prefix": null,
       "value": null
     },
@@ -2525,6 +2672,13 @@
       "prefix": null,
       "value": null
     },
+    "CompileInjectorModuleMetadata": {
+      "class": "Identifier",
+      "name": "CompileInjectorModuleMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/compile_metadata.dart",
+      "prefix": null,
+      "value": null
+    },
     "_arrayFromJson": {
       "class": "Identifier",
       "name": "_arrayFromJson",
@@ -2559,6 +2713,73 @@
       "moduleUrl": "asset:angular2/lib/src/compiler/compile_metadata.dart",
       "prefix": null,
       "value": null
+    },
+    "CompilerConfig": {
+      "class": "Identifier",
+      "name": "CompilerConfig",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RenderTypes": {
+      "class": "Identifier",
+      "name": "RenderTypes",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DefaultRenderTypes": {
+      "class": "Identifier",
+      "name": "DefaultRenderTypes",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_isDirectiveMetadata": {
+      "class": "Identifier",
+      "name": "_isDirectiveMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NoDirectiveAnnotationError": {
+      "class": "Identifier",
+      "name": "NoDirectiveAnnotationError",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DirectiveResolver": {
+      "class": "Type",
+      "name": "DirectiveResolver",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_resolver.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ReflectorReader",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        }
+      ]
     },
     "SourceModule": {
       "class": "Identifier",
@@ -2615,6 +2836,45 @@
       "moduleUrl": "asset:angular2/lib/src/compiler/offline_compiler.dart",
       "prefix": null,
       "value": null
+    },
+    "_isPipeMetadata": {
+      "class": "Identifier",
+      "name": "_isPipeMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/pipe_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PipeResolver": {
+      "class": "Type",
+      "name": "PipeResolver",
+      "moduleUrl": "asset:angular2/lib/src/compiler/pipe_resolver.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ReflectorReader",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        }
+      ]
     },
     "RuntimeCompiler": {
       "class": "Type",
@@ -2761,6 +3021,28 @@
             "value": null,
             "identifier": {
               "class": "Identifier",
+              "name": "InjectorCompiler",
+              "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
               "name": "CompilerConfig",
               "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
               "prefix": null,
@@ -2794,183 +3076,10 @@
       "prefix": null,
       "value": null
     },
-    "_ASSET_SCHEME": {
-      "class": "Identifier",
-      "name": "_ASSET_SCHEME",
-      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DEFAULT_PACKAGE_URL_PROVIDER": {
-      "class": "Identifier",
-      "name": "DEFAULT_PACKAGE_URL_PROVIDER",
-      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "PACKAGE_ROOT_URL",
-              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": "/packages",
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        }
-      ]
-    },
-    "createUrlResolverWithoutPackagePrefix": {
-      "class": "Identifier",
-      "name": "createUrlResolverWithoutPackagePrefix",
-      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
-      "prefix": null,
-      "value": null
-    },
-    "createOfflineCompileUrlResolver": {
-      "class": "Identifier",
-      "name": "createOfflineCompileUrlResolver",
-      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
-      "prefix": null,
-      "value": null
-    },
-    "UrlResolver": {
-      "class": "Type",
-      "name": "UrlResolver",
-      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "PACKAGE_ROOT_URL",
-              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        }
-      ]
-    },
-    "getUrlScheme": {
-      "class": "Identifier",
-      "name": "getUrlScheme",
-      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
-      "prefix": null,
-      "value": null
-    },
-    "XHR": {
-      "class": "Identifier",
-      "name": "XHR",
-      "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
-      "prefix": null,
-      "value": null
-    },
     "ViewResolver": {
       "class": "Type",
       "name": "ViewResolver",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_resolver.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ReflectorReader",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        }
-      ]
-    },
-    "_isDirectiveMetadata": {
-      "class": "Identifier",
-      "name": "_isDirectiveMetadata",
-      "moduleUrl": "asset:angular2/lib/src/compiler/directive_resolver.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DirectiveResolver": {
-      "class": "Type",
-      "name": "DirectiveResolver",
-      "moduleUrl": "asset:angular2/lib/src/compiler/directive_resolver.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ReflectorReader",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        }
-      ]
-    },
-    "_isPipeMetadata": {
-      "class": "Identifier",
-      "name": "_isPipeMetadata",
-      "moduleUrl": "asset:angular2/lib/src/compiler/pipe_resolver.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PipeResolver": {
-      "class": "Type",
-      "name": "PipeResolver",
-      "moduleUrl": "asset:angular2/lib/src/compiler/pipe_resolver.dart",
       "prefix": null,
       "isHost": false,
       "value": null,

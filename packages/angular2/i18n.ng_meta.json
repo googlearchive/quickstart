@@ -3,39 +3,81 @@
     "1": "angular2.i18n",
     "4": [
       {
-        "1": "src/i18n/message.dart"
+        "1": "src/i18n/i18n_html_parser.dart"
       },
       {
-        "1": "src/i18n/xmb_serializer.dart"
+        "1": "src/i18n/message.dart"
       },
       {
         "1": "src/i18n/message_extractor.dart"
       },
       {
-        "1": "src/i18n/i18n_html_parser.dart"
+        "1": "src/i18n/xmb_serializer.dart"
       }
     ],
     "6": "i18n.dart",
     "7": [
       {
-        "1": "src/i18n/message.ngfactory.dart",
+        "1": "src/i18n/i18n_html_parser.template.dart",
         "4": "i0"
       },
       {
-        "1": "src/i18n/xmb_serializer.ngfactory.dart",
+        "1": "src/i18n/message.template.dart",
         "4": "i1"
       },
       {
-        "1": "src/i18n/message_extractor.ngfactory.dart",
+        "1": "src/i18n/message_extractor.template.dart",
         "4": "i2"
       },
       {
-        "1": "src/i18n/i18n_html_parser.ngfactory.dart",
+        "1": "src/i18n/xmb_serializer.template.dart",
         "4": "i3"
       }
     ]
   },
   "type": {
+    "_I18N_ATTR": {
+      "class": "Identifier",
+      "name": "_I18N_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_PLACEHOLDER_ELEMENT": {
+      "class": "Identifier",
+      "name": "_PLACEHOLDER_ELEMENT",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_NAME_ATTR": {
+      "class": "Identifier",
+      "name": "_NAME_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_I18N_ATTR_PREFIX": {
+      "class": "Identifier",
+      "name": "_I18N_ATTR_PREFIX",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "I18nHtmlParser": {
+      "class": "Identifier",
+      "name": "I18nHtmlParser",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_CreateNodeMapping": {
+      "class": "Identifier",
+      "name": "_CreateNodeMapping",
+      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
+      "prefix": null,
+      "value": null
+    },
     "Message": {
       "class": "Identifier",
       "name": "Message",
@@ -47,6 +89,27 @@
       "class": "Identifier",
       "name": "id",
       "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ExtractionResult": {
+      "class": "Identifier",
+      "name": "ExtractionResult",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
+      "prefix": null,
+      "value": null
+    },
+    "removeDuplicates": {
+      "class": "Identifier",
+      "name": "removeDuplicates",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
+      "prefix": null,
+      "value": null
+    },
+    "MessageExtractor": {
+      "class": "Identifier",
+      "name": "MessageExtractor",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
       "prefix": null,
       "value": null
     },
@@ -131,69 +194,6 @@
       "class": "Identifier",
       "name": "_expandPlaceholder",
       "moduleUrl": "asset:angular2/lib/src/i18n/xmb_serializer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ExtractionResult": {
-      "class": "Identifier",
-      "name": "ExtractionResult",
-      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
-      "prefix": null,
-      "value": null
-    },
-    "removeDuplicates": {
-      "class": "Identifier",
-      "name": "removeDuplicates",
-      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
-      "prefix": null,
-      "value": null
-    },
-    "MessageExtractor": {
-      "class": "Identifier",
-      "name": "MessageExtractor",
-      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_I18N_ATTR": {
-      "class": "Identifier",
-      "name": "_I18N_ATTR",
-      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_PLACEHOLDER_ELEMENT": {
-      "class": "Identifier",
-      "name": "_PLACEHOLDER_ELEMENT",
-      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_NAME_ATTR": {
-      "class": "Identifier",
-      "name": "_NAME_ATTR",
-      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_I18N_ATTR_PREFIX": {
-      "class": "Identifier",
-      "name": "_I18N_ATTR_PREFIX",
-      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "I18nHtmlParser": {
-      "class": "Identifier",
-      "name": "I18nHtmlParser",
-      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_CreateNodeMapping": {
-      "class": "Identifier",
-      "name": "_CreateNodeMapping",
-      "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
       "prefix": null,
       "value": null
     }

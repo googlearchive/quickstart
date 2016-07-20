@@ -3,9 +3,23 @@
     "1": "angular2.src.common.forms.directives.ng_form_model",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "isBlank"
+          "SimpleChange",
+          "OnChanges",
+          "Directive",
+          "Provider",
+          "Inject",
+          "Optional",
+          "Self"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "ObservableWrapper",
+          "EventEmitter"
         ],
         "5": false
       },
@@ -25,37 +39,26 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "ObservableWrapper",
-          "EventEmitter"
+          "isBlank"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "../model.dart",
         "2": [
-          "SimpleChange",
-          "OnChanges",
-          "Directive",
-          "Provider",
-          "Inject",
-          "Optional",
-          "Self"
+          "Control",
+          "ControlGroup"
         ],
         "5": false
       },
       {
-        "1": "ng_control.dart",
+        "1": "../validators.dart",
         "2": [
-          "NgControl"
-        ],
-        "5": false
-      },
-      {
-        "1": "ng_control_group.dart",
-        "2": [
-          "NgControlGroup"
+          "Validators",
+          "NG_VALIDATORS",
+          "NG_ASYNC_VALIDATORS"
         ],
         "5": false
       },
@@ -74,10 +77,16 @@
         "5": false
       },
       {
-        "1": "../model.dart",
+        "1": "ng_control.dart",
         "2": [
-          "Control",
-          "ControlGroup"
+          "NgControl"
+        ],
+        "5": false
+      },
+      {
+        "1": "ng_control_group.dart",
+        "2": [
+          "NgControlGroup"
         ],
         "5": false
       },
@@ -88,15 +97,6 @@
           "setUpControlGroup",
           "composeValidators",
           "composeAsyncValidators"
-        ],
-        "5": false
-      },
-      {
-        "1": "../validators.dart",
-        "2": [
-          "Validators",
-          "NG_VALIDATORS",
-          "NG_ASYNC_VALIDATORS"
         ],
         "5": false
       }
@@ -167,6 +167,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": false,
         "deps": null
       }

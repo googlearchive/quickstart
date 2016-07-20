@@ -3,9 +3,9 @@
     "1": "angular2.src.mock.animation_builder_mock",
     "3": [
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/animate/animation.dart",
         "2": [
-          "Injectable"
+          "Animation"
         ],
         "5": false
       },
@@ -13,6 +13,13 @@
         "1": "package:angular2/src/animate/animation_builder.dart",
         "2": [
           "AnimationBuilder"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/animate/browser_details.dart",
+        "2": [
+          "BrowserDetails"
         ],
         "5": false
       },
@@ -31,16 +38,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/animate/animation.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "Animation"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/animate/browser_details.dart",
-        "2": [
-          "BrowserDetails"
+          "Injectable"
         ],
         "5": false
       }

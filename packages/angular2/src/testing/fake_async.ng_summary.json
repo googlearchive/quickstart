@@ -11,14 +11,22 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
         "1": "package:quiver/testing/async.dart",
         "4": "quiver",
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "test_injector.dart",
         "2": [
-          "BaseException"
+          "getTestInjector",
+          "FunctionWithParamTokens"
         ],
         "5": false
       }

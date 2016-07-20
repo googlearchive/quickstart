@@ -16,15 +16,14 @@
       {
         "1": "package:angular2/src/core/di.dart",
         "2": [
-          "Injectable",
-          "Injector"
+          "Injectable"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "Type"
+          "Injector"
         ],
         "5": false
       },
@@ -40,6 +39,13 @@
         "1": "package:angular2/src/core/zone/ng_zone.dart",
         "2": [
           "NgZone"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type"
         ],
         "5": false
       }

@@ -7,14 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "../route_definition.dart",
         "2": [
           "RouteDefinition"

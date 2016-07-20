@@ -3,6 +3,13 @@
     "1": "angular2.src.compiler.runtime_metadata",
     "3": [
       {
+        "1": "package:angular2/src/compiler/url_resolver.dart",
+        "2": [
+          "getUrlScheme"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "resolveForwardRef"
@@ -10,16 +17,82 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "Type",
-          "isBlank",
-          "isPresent",
-          "isArray",
-          "stringify",
-          "isString",
-          "RegExpWrapper",
-          "StringWrapper"
+          "Injectable",
+          "Inject",
+          "Optional"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/metadata.dart",
+        "2": [
+          "SelfMetadata",
+          "HostMetadata",
+          "SkipSelfMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/provider.dart",
+        "2": [
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di/reflective_provider.dart",
+        "2": [
+          "constructDependencies",
+          "ReflectiveDependency",
+          "getInjectorModuleProviders"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/di.dart",
+        "4": "dimd",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/di.dart",
+        "2": [
+          "AttributeMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/directives.dart",
+        "4": "md",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
+        "2": [
+          "LIFECYCLE_HOOKS_VALUES"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/platform_directives_and_pipes.dart",
+        "2": [
+          "PLATFORM_DIRECTIVES",
+          "PLATFORM_PIPES"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "2": [
+          "reflector"
         ],
         "5": false
       },
@@ -38,9 +111,21 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di/reflective_exceptions.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "NoAnnotationError"
+          "Type",
+          "isBlank",
+          "isPresent",
+          "isArray",
+          "stringify",
+          "isString"
+        ],
+        "5": false
+      },
+      {
+        "1": "assertions.dart",
+        "2": [
+          "assertArrayOfStrings"
         ],
         "5": false
       },
@@ -50,13 +135,10 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/directives.dart",
-        "4": "md",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/di.dart",
-        "4": "dimd",
+        "1": "directive_lifecycle_reflector.dart",
+        "2": [
+          "hasLifecycleHook"
+        ],
         "5": false
       },
       {
@@ -74,59 +156,6 @@
         "5": false
       },
       {
-        "1": "view_resolver.dart",
-        "2": [
-          "ViewResolver"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/view.dart",
-        "2": [
-          "ViewMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "directive_lifecycle_reflector.dart",
-        "2": [
-          "hasLifecycleHook"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
-        "2": [
-          "LifecycleHooks",
-          "LIFECYCLE_HOOKS_VALUES"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
-        "2": [
-          "reflector"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di.dart",
-        "2": [
-          "Injectable",
-          "Inject",
-          "Optional"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/platform_directives_and_pipes.dart",
-        "2": [
-          "PLATFORM_DIRECTIVES",
-          "PLATFORM_PIPES"
-        ],
-        "5": false
-      },
-      {
         "1": "util.dart",
         "2": [
           "MODULE_SUFFIX",
@@ -135,48 +164,9 @@
         "5": false
       },
       {
-        "1": "assertions.dart",
+        "1": "view_resolver.dart",
         "2": [
-          "assertArrayOfStrings"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/url_resolver.dart",
-        "2": [
-          "getUrlScheme"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di/provider.dart",
-        "2": [
-          "Provider"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di/reflective_provider.dart",
-        "2": [
-          "constructDependencies",
-          "ReflectiveDependency"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di/metadata.dart",
-        "2": [
-          "OptionalMetadata",
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflector_reader.dart",
-        "2": [
-          "ReflectorReader"
+          "ViewResolver"
         ],
         "5": false
       }
@@ -220,10 +210,6 @@
               "const Inject(PLATFORM_PIPES)"
             ],
             "4": "_platformPipes"
-          },
-          {
-            "1": "ReflectorReader",
-            "4": "_reflector"
           }
         ]
       }
@@ -231,96 +217,88 @@
     "6": "runtime_metadata.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/compiler/url_resolver.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/core/di/metadata.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/core/di/provider.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/di/reflective_exceptions.ngfactory.dart",
+        "1": "package:angular2/src/core/di/reflective_provider.template.dart",
         "4": "i4"
       },
       {
-        "1": "compile_metadata.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/di.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/metadata/directives.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/directives.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/core/metadata/di.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.template.dart",
         "4": "i7"
       },
       {
-        "1": "directive_resolver.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/view.template.dart",
         "4": "i8"
       },
       {
-        "1": "pipe_resolver.ngfactory.dart",
+        "1": "package:angular2/src/core/platform_directives_and_pipes.template.dart",
         "4": "i9"
       },
       {
-        "1": "view_resolver.ngfactory.dart",
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i11"
       },
       {
-        "1": "directive_lifecycle_reflector.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i12"
       },
       {
-        "1": "package:angular2/src/core/metadata/lifecycle_hooks.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i13"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.ngfactory.dart",
+        "1": "assertions.template.dart",
         "4": "i14"
       },
       {
-        "1": "package:angular2/src/core/platform_directives_and_pipes.ngfactory.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i15"
       },
       {
-        "1": "util.ngfactory.dart",
+        "1": "directive_lifecycle_reflector.template.dart",
         "4": "i16"
       },
       {
-        "1": "assertions.ngfactory.dart",
+        "1": "directive_resolver.template.dart",
         "4": "i17"
       },
       {
-        "1": "package:angular2/src/compiler/url_resolver.ngfactory.dart",
+        "1": "pipe_resolver.template.dart",
         "4": "i18"
       },
       {
-        "1": "package:angular2/src/core/di/provider.ngfactory.dart",
+        "1": "util.template.dart",
         "4": "i19"
       },
       {
-        "1": "package:angular2/src/core/di/reflective_provider.ngfactory.dart",
+        "1": "view_resolver.template.dart",
         "4": "i20"
-      },
-      {
-        "1": "package:angular2/src/core/di/metadata.ngfactory.dart",
-        "4": "i21"
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflector_reader.ngfactory.dart",
-        "4": "i22"
       }
     ]
   },
@@ -441,28 +419,6 @@
           "isHost": false,
           "isSkipSelf": false,
           "isOptional": true,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ReflectorReader",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
           "isValue": false
         }
       ]

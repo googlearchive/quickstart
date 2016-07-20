@@ -52,12 +52,13 @@
         "useValue": null,
         "useFactory": {
           "class": "Factory",
-          "name": "_appIdRandomProviderFactory",
+          "name": "appIdRandomProviderFactory",
           "prefix": null,
           "moduleUrl": null,
           "value": null,
           "diDeps": []
         },
+        "useProperty": null,
         "multi": false,
         "deps": []
       }
@@ -83,9 +84,9 @@
       "prefix": null,
       "value": null
     },
-    "_appIdRandomProviderFactory": {
+    "appIdRandomProviderFactory": {
       "class": "Identifier",
-      "name": "_appIdRandomProviderFactory",
+      "name": "appIdRandomProviderFactory",
       "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
       "prefix": null,
       "value": null

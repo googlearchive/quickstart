@@ -11,31 +11,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent",
-          "isBlank",
-          "stringify"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/metadata.dart",
         "2": [
           "DirectiveMetadata",
@@ -64,6 +39,30 @@
           "ReflectorReader"
         ],
         "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isPresent",
+          "stringify"
+        ],
+        "5": false
       }
     ],
     "5": [
@@ -89,6 +88,13 @@
     "_isDirectiveMetadata": {
       "class": "Identifier",
       "name": "_isDirectiveMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NoDirectiveAnnotationError": {
+      "class": "Identifier",
+      "name": "NoDirectiveAnnotationError",
       "moduleUrl": "asset:angular2/lib/src/compiler/directive_resolver.dart",
       "prefix": null,
       "value": null

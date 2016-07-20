@@ -3,20 +3,19 @@
     "1": "angular2.src.common.pipes.lowercase_pipe",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isString",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/core.dart",
         "2": [
           "Injectable",
           "PipeTransform",
-          "WrappedValue",
           "Pipe"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isString",
+          "isBlank"
         ],
         "5": false
       },
@@ -55,15 +54,15 @@
     "6": "lowercase_pipe.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "invalid_pipe_argument_exception.ngfactory.dart",
+        "1": "invalid_pipe_argument_exception.template.dart",
         "4": "i2"
       }
     ]

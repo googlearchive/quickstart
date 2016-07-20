@@ -3,26 +3,11 @@
     "1": "angular2.src.platform.dom.debug.ng_probe",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "assertionsEnabled",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di.dart",
-        "2": [
-          "Injectable",
-          "provide",
-          "Provider"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM"
+          "RootRenderer",
+          "NgZone",
+          "ApplicationRef"
         ],
         "5": false
       },
@@ -35,25 +20,37 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
-        "2": [
-          "DomRootRenderer"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/core.dart",
-        "2": [
-          "RootRenderer",
-          "NgZone",
-          "ApplicationRef"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/debug/debug_renderer.dart",
         "2": [
           "DebugDomRootRenderer"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "assertionsEnabled"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
+        "2": [
+          "DomRootRenderer"
         ],
         "5": false
       }
@@ -61,31 +58,31 @@
     "6": "ng_probe.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/debug/debug_node.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
+        "1": "package:angular2/src/core/debug/debug_renderer.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/debug/debug_node.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_renderer.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/debug/debug_renderer.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_renderer.template.dart",
         "4": "i6"
       }
     ]
@@ -136,11 +133,12 @@
           "useValue": null,
           "useFactory": {
             "class": "Identifier",
-            "name": "_createConditionalRootRenderer",
+            "name": "createConditionalRootRenderer",
             "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": [
             {
@@ -193,11 +191,12 @@
           "useValue": null,
           "useFactory": {
             "class": "Identifier",
-            "name": "_createRootRenderer",
+            "name": "createRootRenderer",
             "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": [
             {
@@ -233,16 +232,16 @@
       "prefix": null,
       "value": null
     },
-    "_createConditionalRootRenderer": {
+    "createConditionalRootRenderer": {
       "class": "Identifier",
-      "name": "_createConditionalRootRenderer",
+      "name": "createConditionalRootRenderer",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
       "value": null
     },
-    "_createRootRenderer": {
+    "createRootRenderer": {
       "class": "Identifier",
-      "name": "_createRootRenderer",
+      "name": "createRootRenderer",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
       "prefix": null,
       "value": null

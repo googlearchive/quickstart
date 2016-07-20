@@ -9,15 +9,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isPresent",
-          "Type"
-        ],
-        "5": false
-      },
-      {
-        "1": "route_handler.dart",
-        "2": [
-          "RouteHandler"
+          "isPresent"
         ],
         "5": false
       },
@@ -26,6 +18,13 @@
         "2": [
           "RouteData",
           "BLANK_ROUTE_DATA"
+        ],
+        "5": false
+      },
+      {
+        "1": "route_handler.dart",
+        "2": [
+          "RouteHandler"
         ],
         "5": false
       }

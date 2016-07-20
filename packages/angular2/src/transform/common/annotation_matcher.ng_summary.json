@@ -71,6 +71,13 @@
       "prefix": null,
       "value": null
     },
+    "_INJECTOR_MODULES": {
+      "class": "Identifier",
+      "name": "_INJECTOR_MODULES",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
+      "prefix": null,
+      "value": null
+    },
     "AnnotationMatcher": {
       "class": "Identifier",
       "name": "AnnotationMatcher",

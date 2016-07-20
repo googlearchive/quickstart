@@ -7,22 +7,22 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "5": false
       }
     ],
     "6": "query_list.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       }
     ]

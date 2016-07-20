@@ -7,6 +7,21 @@
         "5": false
       },
       {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Directive",
+          "Attribute",
+          "ComponentResolver",
+          "ComponentFactory",
+          "ComponentRef",
+          "ViewContainerRef",
+          "OnDestroy",
+          "Output",
+          "MapInjector"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "PromiseWrapper",
@@ -30,31 +45,22 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
-        "2": [
-          "Directive",
-          "Attribute",
-          "DynamicComponentLoader",
-          "ComponentRef",
-          "ViewContainerRef",
-          "provide",
-          "ReflectiveInjector",
-          "OnDestroy",
-          "Output"
-        ],
-        "5": false
-      },
-      {
-        "1": "../router.dart",
-        "4": "routerMod",
-        "5": false
-      },
-      {
         "1": "../instruction.dart",
         "2": [
           "ComponentInstruction",
           "RouteParams",
           "RouteData"
+        ],
+        "5": false
+      },
+      {
+        "1": "../interfaces.dart",
+        "2": [
+          "OnActivate",
+          "CanReuse",
+          "OnReuse",
+          "OnDeactivate",
+          "CanDeactivate"
         ],
         "5": false
       },
@@ -71,14 +77,8 @@
         "5": false
       },
       {
-        "1": "../interfaces.dart",
-        "2": [
-          "OnActivate",
-          "CanReuse",
-          "OnReuse",
-          "OnDeactivate",
-          "CanDeactivate"
-        ],
+        "1": "../router.dart",
+        "4": "routerMod",
         "5": false
       }
     ],
@@ -91,7 +91,7 @@
             "4": "_viewContainerRef"
           },
           {
-            "1": "DynamicComponentLoader",
+            "1": "ComponentResolver",
             "4": "_loader"
           },
           {
@@ -114,39 +114,39 @@
     "6": "router_outlet.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "../router.ngfactory.dart",
+        "1": "../instruction.template.dart",
         "4": "i4"
       },
       {
-        "1": "../instruction.ngfactory.dart",
+        "1": "../interfaces.template.dart",
         "4": "i5"
       },
       {
-        "1": "../lifecycle/lifecycle_annotations.ngfactory.dart",
+        "1": "../lifecycle/lifecycle_annotations.template.dart",
         "4": "i6"
       },
       {
-        "1": "../lifecycle/route_lifecycle_reflector.ngfactory.dart",
+        "1": "../lifecycle/route_lifecycle_reflector.template.dart",
         "4": "i7"
       },
       {
-        "1": "../interfaces.ngfactory.dart",
+        "1": "../router.template.dart",
         "4": "i8"
       }
     ]
@@ -192,8 +192,8 @@
               "value": null,
               "identifier": {
                 "class": "Identifier",
-                "name": "DynamicComponentLoader",
-                "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+                "name": "ComponentResolver",
+                "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
                 "prefix": null,
                 "value": null
               },

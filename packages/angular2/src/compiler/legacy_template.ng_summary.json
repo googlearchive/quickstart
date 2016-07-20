@@ -5,9 +5,7 @@
       {
         "1": "package:angular2/src/core/di.dart",
         "2": [
-          "Injectable",
-          "Provider",
-          "provide"
+          "Injectable"
         ],
         "5": false
       },
@@ -16,7 +14,6 @@
         "2": [
           "StringWrapper",
           "RegExpWrapper",
-          "isBlank",
           "isPresent"
         ],
         "5": false
@@ -46,8 +43,7 @@
       {
         "1": "util.dart",
         "2": [
-          "dashCaseToCamelCase",
-          "camelCaseToDashCase"
+          "dashCaseToCamelCase"
         ],
         "5": false
       }

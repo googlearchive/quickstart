@@ -3,29 +3,30 @@
     "1": "angular2.src.core.platform_common_providers",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/console.dart",
         "2": [
-          "Type",
-          "isBlank",
-          "isPresent",
-          "assertionsEnabled"
+          "Console"
         ],
         "5": false
       },
       {
         "1": "package:angular2/src/core/di.dart",
         "2": [
-          "provide",
-          "Provider",
-          "Injector",
-          "OpaqueToken"
+          "Provider"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/console.dart",
+        "1": "package:angular2/src/core/testability/testability.dart",
         "2": [
-          "Console"
+          "TestabilityRegistry"
+        ],
+        "5": false
+      },
+      {
+        "1": "application_ref.dart",
+        "2": [
+          "PLATFORM_CORE_PROVIDERS"
         ],
         "5": false
       },
@@ -41,20 +42,6 @@
         "1": "reflection/reflector_reader.dart",
         "2": [
           "ReflectorReader"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/testability/testability.dart",
-        "2": [
-          "TestabilityRegistry"
-        ],
-        "5": false
-      },
-      {
-        "1": "application_ref.dart",
-        "2": [
-          "PLATFORM_CORE_PROVIDERS"
         ],
         "5": false
       }
@@ -93,12 +80,13 @@
           "useValue": null,
           "useFactory": {
             "class": "Factory",
-            "name": "_reflector",
+            "name": "reflectorFactory",
             "prefix": null,
             "moduleUrl": null,
             "value": null,
             "diDeps": []
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -129,6 +117,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -148,9 +137,9 @@
         }
       ]
     },
-    "_reflector": {
+    "reflectorFactory": {
       "class": "Identifier",
-      "name": "_reflector",
+      "name": "reflectorFactory",
       "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
       "prefix": null,
       "value": null

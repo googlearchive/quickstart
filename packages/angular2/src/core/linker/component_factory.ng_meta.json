@@ -10,6 +10,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "2": [
+          "reflector"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "Type",
@@ -19,9 +26,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "../change_detection/change_detection.dart",
         "2": [
-          "unimplemented"
+          "ChangeDetectorRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "element.dart",
+        "2": [
+          "AppElement"
         ],
         "5": false
       },
@@ -35,15 +49,7 @@
       {
         "1": "view_ref.dart",
         "2": [
-          "ViewRef",
-          "ViewRef_"
-        ],
-        "5": false
-      },
-      {
-        "1": "element.dart",
-        "2": [
-          "AppElement"
+          "ViewRef"
         ],
         "5": false
       },
@@ -53,47 +59,40 @@
           "ViewUtils"
         ],
         "5": false
-      },
-      {
-        "1": "../change_detection/change_detection.dart",
-        "2": [
-          "ChangeDetectorRef"
-        ],
-        "5": false
       }
     ],
     "6": "component_factory.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "element_ref.ngfactory.dart",
+        "1": "../change_detection/change_detection.template.dart",
         "4": "i3"
       },
       {
-        "1": "view_ref.ngfactory.dart",
+        "1": "element.template.dart",
         "4": "i4"
       },
       {
-        "1": "element.ngfactory.dart",
+        "1": "element_ref.template.dart",
         "4": "i5"
       },
       {
-        "1": "view_utils.ngfactory.dart",
+        "1": "view_ref.template.dart",
         "4": "i6"
       },
       {
-        "1": "../change_detection/change_detection.ngfactory.dart",
+        "1": "view_utils.template.dart",
         "4": "i7"
       }
     ]

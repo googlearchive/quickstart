@@ -10,21 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "MapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
@@ -32,6 +17,13 @@
           "RegExpWrapper",
           "StringWrapper",
           "RegExp"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
         ],
         "5": false
       }

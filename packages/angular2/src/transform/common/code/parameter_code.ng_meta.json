@@ -26,15 +26,15 @@
     "6": "parameter_code.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/logging.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/logging.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/model/parameter_model.pb.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/model/parameter_model.pb.template.dart",
         "4": "i1"
       },
       {
-        "1": "constify.ngfactory.dart",
+        "1": "constify.template.dart",
         "4": "i2"
       }
     ]

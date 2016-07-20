@@ -3,15 +3,6 @@
     "1": "angular2.src.common.forms.model",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "normalizeBool"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "Stream",
@@ -21,17 +12,26 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/promise.dart",
-        "2": [
-          "PromiseWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "StringMapWrapper",
           "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "normalizeBool"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/promise.dart",
+        "2": [
+          "PromiseWrapper"
         ],
         "5": false
       },

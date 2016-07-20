@@ -36,23 +36,23 @@
     "6": "animate.dart",
     "7": [
       {
-        "1": "src/animate/animation.ngfactory.dart",
+        "1": "src/animate/animation.template.dart",
         "4": "i0"
       },
       {
-        "1": "src/animate/animation_builder.ngfactory.dart",
+        "1": "src/animate/animation_builder.template.dart",
         "4": "i1"
       },
       {
-        "1": "src/animate/browser_details.ngfactory.dart",
+        "1": "src/animate/browser_details.template.dart",
         "4": "i2"
       },
       {
-        "1": "src/animate/css_animation_builder.ngfactory.dart",
+        "1": "src/animate/css_animation_builder.template.dart",
         "4": "i3"
       },
       {
-        "1": "src/animate/css_animation_options.ngfactory.dart",
+        "1": "src/animate/css_animation_options.template.dart",
         "4": "i4"
       }
     ]

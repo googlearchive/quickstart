@@ -10,23 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent",
-          "StringWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper"
@@ -34,24 +17,18 @@
         "5": false
       },
       {
-        "1": "lexer.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "Lexer",
-          "EOF",
-          "isIdentifier",
-          "isQuote",
-          "Token",
-          "$PERIOD",
-          "$COLON",
-          "$SEMICOLON",
-          "$LBRACKET",
-          "$RBRACKET",
-          "$COMMA",
-          "$LBRACE",
-          "$RBRACE",
-          "$LPAREN",
-          "$RPAREN",
-          "$SLASH"
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank",
+          "isPresent",
+          "StringWrapper"
         ],
         "5": false
       },
@@ -84,6 +61,28 @@
           "Quote"
         ],
         "5": false
+      },
+      {
+        "1": "lexer.dart",
+        "2": [
+          "Lexer",
+          "EOF",
+          "isIdentifier",
+          "isQuote",
+          "Token",
+          "$PERIOD",
+          "$COLON",
+          "$SEMICOLON",
+          "$LBRACKET",
+          "$RBRACKET",
+          "$COMMA",
+          "$LBRACE",
+          "$RBRACE",
+          "$LPAREN",
+          "$RPAREN",
+          "$SLASH"
+        ],
+        "5": false
       }
     ],
     "5": [
@@ -106,27 +105,27 @@
     "6": "parser.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di/decorators.ngfactory.dart",
+        "1": "package:angular2/src/core/di/decorators.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "lexer.ngfactory.dart",
+        "1": "ast.template.dart",
         "4": "i4"
       },
       {
-        "1": "ast.ngfactory.dart",
+        "1": "lexer.template.dart",
         "4": "i5"
       }
     ]

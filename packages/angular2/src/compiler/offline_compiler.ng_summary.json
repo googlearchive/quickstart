@@ -7,20 +7,9 @@
         "5": false
       },
       {
-        "1": "compile_metadata.dart",
+        "1": "package:angular2/src/core/linker/component_factory.dart",
         "2": [
-          "CompileDirectiveMetadata",
-          "CompileIdentifierMetadata",
-          "CompilePipeMetadata",
-          "createHostComponentMeta"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "unimplemented"
+          "ComponentFactory"
         ],
         "5": false
       },
@@ -32,26 +21,21 @@
         "5": false
       },
       {
-        "1": "style_compiler.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "StyleCompiler",
-          "StylesCompileDependency",
-          "StylesCompileResult"
+          "BaseException"
         ],
         "5": false
       },
       {
-        "1": "view_compiler/view_compiler.dart",
+        "1": "compile_metadata.dart",
         "2": [
-          "ViewCompiler",
-          "ViewCompileResult"
-        ],
-        "5": false
-      },
-      {
-        "1": "template_parser.dart",
-        "2": [
-          "TemplateParser"
+          "CompileDirectiveMetadata",
+          "CompileIdentifierMetadata",
+          "CompilePipeMetadata",
+          "createHostComponentMeta",
+          "CompileInjectorModuleMetadata",
+          "CompileTypeMetadata"
         ],
         "5": false
       },
@@ -75,9 +59,17 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/component_factory.dart",
+        "1": "style_compiler.dart",
         "2": [
-          "ComponentFactory"
+          "StyleCompiler",
+          "StylesCompileResult"
+        ],
+        "5": false
+      },
+      {
+        "1": "template_parser.dart",
+        "2": [
+          "TemplateParser"
         ],
         "5": false
       },
@@ -85,6 +77,21 @@
         "1": "util.dart",
         "2": [
           "MODULE_SUFFIX"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_compiler/injector_compiler.dart",
+        "2": [
+          "InjectorCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_compiler/view_compiler.dart",
+        "2": [
+          "ViewCompiler",
+          "ViewCompileResult"
         ],
         "5": false
       }

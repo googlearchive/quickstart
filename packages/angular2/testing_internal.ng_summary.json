@@ -3,19 +3,7 @@
     "1": "angular2.testing_internal",
     "4": [
       {
-        "1": "src/testing/testing_internal.dart"
-      },
-      {
-        "1": "src/testing/test_component_builder.dart"
-      },
-      {
-        "1": "src/testing/test_injector.dart"
-      },
-      {
-        "1": "src/testing/fake_async.dart"
-      },
-      {
-        "1": "src/testing/utils.dart"
+        "1": "package:angular2/src/testing/internal.dart"
       }
     ],
     "6": "testing_internal.dart"

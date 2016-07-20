@@ -3,15 +3,6 @@
     "1": "angular2.src.common.forms.model",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "normalizeBool"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "Stream",
@@ -21,17 +12,26 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/promise.dart",
-        "2": [
-          "PromiseWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "StringMapWrapper",
           "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "normalizeBool"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/promise.dart",
+        "2": [
+          "PromiseWrapper"
         ],
         "5": false
       },
@@ -47,23 +47,23 @@
     "6": "model.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/promise.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/promise.template.dart",
         "4": "i3"
       },
       {
-        "1": "directives/validators.ngfactory.dart",
+        "1": "directives/validators.template.dart",
         "4": "i4"
       }
     ]

@@ -3,15 +3,6 @@
     "1": "angular2.src.facade.exception_handler",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "print"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/base_wrapped_exception.dart",
         "2": [
           "BaseWrappedException"
@@ -21,8 +12,15 @@
       {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "ListWrapper",
           "isListLikeIterable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank"
         ],
         "5": false
       }
@@ -30,15 +28,15 @@
     "6": "exception_handler.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/base_wrapped_exception.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/base_wrapped_exception.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       }
     ]

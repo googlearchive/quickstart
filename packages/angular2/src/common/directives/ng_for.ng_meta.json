@@ -21,9 +21,7 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
-          "isBlank",
-          "stringify",
-          "getTypeNameForDebugging"
+          "isBlank"
         ],
         "5": false
       },
@@ -72,19 +70,19 @@
     "6": "ng_for.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "../../core/change_detection/differs/default_iterable_differ.ngfactory.dart",
+        "1": "../../core/change_detection/differs/default_iterable_differ.template.dart",
         "4": "i2"
       },
       {
-        "1": "../../facade/exceptions.ngfactory.dart",
+        "1": "../../facade/exceptions.template.dart",
         "4": "i3"
       }
     ]

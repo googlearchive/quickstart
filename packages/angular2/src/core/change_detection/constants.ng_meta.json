@@ -1,25 +1,5 @@
 {
-  "ngDeps": {
-    "1": "angular2.src.core.change_detection.constants",
-    "3": [
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "StringWrapper",
-          "normalizeBool",
-          "isBlank"
-        ],
-        "5": false
-      }
-    ],
-    "6": "constants.dart",
-    "7": [
-      {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
-        "4": "i0"
-      }
-    ]
-  },
+  "ngDeps": null,
   "type": {
     "ChangeDetectorState": {
       "class": "Identifier",

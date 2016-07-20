@@ -3,13 +3,10 @@
     "1": "angular2.web_worker.worker",
     "4": [
       {
+        "1": "package:angular2/src/platform/worker_app.dart"
+      },
+      {
         "1": "../common.dart"
-      },
-      {
-        "1": "../core.dart"
-      },
-      {
-        "1": "../platform/worker_app.dart"
       },
       {
         "1": "../compiler.dart",
@@ -18,10 +15,13 @@
         ]
       },
       {
+        "1": "../core.dart"
+      },
+      {
         "1": "../instrumentation.dart"
       },
       {
-        "1": "package:angular2/src/platform/worker_app.dart"
+        "1": "../platform/worker_app.dart"
       }
     ],
     "6": "worker.dart"

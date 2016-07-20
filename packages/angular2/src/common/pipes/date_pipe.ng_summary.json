@@ -3,15 +3,18 @@
     "1": "angular2.src.common.pipes.date_pipe",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "isDate",
-          "isNumber",
-          "isPresent",
-          "DateTime",
-          "DateWrapper",
-          "isBlank",
-          "FunctionWrapper"
+          "PipeTransform",
+          "Pipe",
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
         ],
         "5": false
       },
@@ -23,20 +26,12 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "PipeTransform",
-          "WrappedValue",
-          "Pipe",
-          "Injectable"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper",
-          "ListWrapper"
+          "isDate",
+          "isNumber",
+          "DateWrapper",
+          "isBlank"
         ],
         "5": false
       },

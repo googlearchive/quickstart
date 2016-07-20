@@ -20,11 +20,11 @@
     "6": "location_strategy.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "platform_location.ngfactory.dart",
+        "1": "platform_location.template.dart",
         "4": "i1"
       }
     ]

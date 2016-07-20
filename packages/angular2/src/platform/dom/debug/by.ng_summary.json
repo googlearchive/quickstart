@@ -3,11 +3,9 @@
     "1": "angular2.src.platform.dom.debug.by",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "Type",
-          "isPresent",
-          "isBlank"
+          "DebugElement"
         ],
         "5": false
       },
@@ -19,16 +17,17 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "DOM"
+          "Type",
+          "isPresent"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
-          "DebugElement"
+          "DOM"
         ],
         "5": false
       }

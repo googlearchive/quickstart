@@ -29,7 +29,7 @@
     "6": "annotation_matcher.dart",
     "7": [
       {
-        "1": "class_matcher_base.ngfactory.dart",
+        "1": "class_matcher_base.template.dart",
         "4": "i0"
       }
     ]
@@ -73,6 +73,13 @@
     "_ENTRYPOINTS": {
       "class": "Identifier",
       "name": "_ENTRYPOINTS",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_INJECTOR_MODULES": {
+      "class": "Identifier",
+      "name": "_INJECTOR_MODULES",
       "moduleUrl": "asset:angular2/lib/src/transform/common/annotation_matcher.dart",
       "prefix": null,
       "value": null

@@ -3,6 +3,21 @@
     "1": "angular2.platform.testing.browser_static",
     "3": [
       {
+        "1": "package:angular2/compiler.dart",
+        "2": [
+          "DirectiveResolver",
+          "ViewResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/compiler.dart",
+        "2": [
+          "XHR"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/core.dart",
         "2": [
           "APP_ID",
@@ -14,24 +29,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/compiler.dart",
+        "1": "package:angular2/platform/common.dart",
         "2": [
-          "DirectiveResolver",
-          "ViewResolver"
+          "LocationStrategy"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/browser_common.dart",
+        "1": "package:angular2/platform/common_dom.dart",
         "2": [
-          "BROWSER_APP_COMMON_PROVIDERS"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/browser/browser_adapter.dart",
-        "2": [
-          "BrowserDomAdapter"
+          "ELEMENT_PROBE_PROVIDERS"
         ],
         "5": false
       },
@@ -57,23 +64,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/mock/view_resolver_mock.dart",
-        "2": [
-          "MockViewResolver"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/mock/mock_location_strategy.dart",
         "2": [
           "MockLocationStrategy"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/platform/common.dart",
-        "2": [
-          "LocationStrategy"
         ],
         "5": false
       },
@@ -85,6 +78,20 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/mock/view_resolver_mock.dart",
+        "2": [
+          "MockViewResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/browser/browser_adapter.dart",
+        "2": [
+          "BrowserDomAdapter"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/platform/browser/xhr_impl.dart",
         "2": [
           "XHRImpl"
@@ -92,9 +99,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/compiler.dart",
+        "1": "package:angular2/src/platform/browser_common.dart",
         "2": [
-          "XHR"
+          "BROWSER_APP_COMMON_PROVIDERS"
         ],
         "5": false
       },
@@ -109,13 +116,6 @@
         "1": "package:angular2/src/testing/utils.dart",
         "2": [
           "BrowserDetection"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/platform/common_dom.dart",
-        "2": [
-          "ELEMENT_PROBE_PROVIDERS"
         ],
         "5": false
       },
@@ -166,6 +166,7 @@
             "value": null
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -194,6 +195,7 @@
           "useExisting": null,
           "useValue": "a",
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -229,6 +231,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -257,6 +260,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -299,6 +303,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -327,6 +332,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -355,6 +361,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         }
@@ -398,6 +405,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },

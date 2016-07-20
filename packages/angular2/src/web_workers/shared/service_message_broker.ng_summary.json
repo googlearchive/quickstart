@@ -14,18 +14,19 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "ListWrapper",
-          "Map",
-          "MapWrapper"
+          "EventEmitter",
+          "PromiseWrapper",
+          "ObservableWrapper"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/serializer.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "Serializer"
+          "ListWrapper",
+          "Map"
         ],
         "5": false
       },
@@ -46,11 +47,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
+        "1": "package:angular2/src/web_workers/shared/serializer.dart",
         "2": [
-          "EventEmitter",
-          "PromiseWrapper",
-          "ObservableWrapper"
+          "Serializer"
         ],
         "5": false
       }

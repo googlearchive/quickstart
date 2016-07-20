@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/options.dart",
         "5": false
       },
@@ -24,6 +20,10 @@
           "ReflectionRemover"
         ],
         "4": "base",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
         "5": false
       }
     ],

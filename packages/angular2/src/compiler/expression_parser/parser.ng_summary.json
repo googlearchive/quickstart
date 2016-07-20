@@ -10,23 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent",
-          "StringWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper"
@@ -34,24 +17,18 @@
         "5": false
       },
       {
-        "1": "lexer.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "Lexer",
-          "EOF",
-          "isIdentifier",
-          "isQuote",
-          "Token",
-          "$PERIOD",
-          "$COLON",
-          "$SEMICOLON",
-          "$LBRACKET",
-          "$RBRACKET",
-          "$COMMA",
-          "$LBRACE",
-          "$RBRACE",
-          "$LPAREN",
-          "$RPAREN",
-          "$SLASH"
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank",
+          "isPresent",
+          "StringWrapper"
         ],
         "5": false
       },
@@ -82,6 +59,28 @@
           "ASTWithSource",
           "AstVisitor",
           "Quote"
+        ],
+        "5": false
+      },
+      {
+        "1": "lexer.dart",
+        "2": [
+          "Lexer",
+          "EOF",
+          "isIdentifier",
+          "isQuote",
+          "Token",
+          "$PERIOD",
+          "$COLON",
+          "$SEMICOLON",
+          "$LBRACKET",
+          "$RBRACKET",
+          "$COMMA",
+          "$LBRACE",
+          "$RBRACE",
+          "$LPAREN",
+          "$RPAREN",
+          "$SLASH"
         ],
         "5": false
       }

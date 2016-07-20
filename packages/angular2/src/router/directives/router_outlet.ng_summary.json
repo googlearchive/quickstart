@@ -7,6 +7,21 @@
         "5": false
       },
       {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Directive",
+          "Attribute",
+          "ComponentResolver",
+          "ComponentFactory",
+          "ComponentRef",
+          "ViewContainerRef",
+          "OnDestroy",
+          "Output",
+          "MapInjector"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "PromiseWrapper",
@@ -30,31 +45,22 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
-        "2": [
-          "Directive",
-          "Attribute",
-          "DynamicComponentLoader",
-          "ComponentRef",
-          "ViewContainerRef",
-          "provide",
-          "ReflectiveInjector",
-          "OnDestroy",
-          "Output"
-        ],
-        "5": false
-      },
-      {
-        "1": "../router.dart",
-        "4": "routerMod",
-        "5": false
-      },
-      {
         "1": "../instruction.dart",
         "2": [
           "ComponentInstruction",
           "RouteParams",
           "RouteData"
+        ],
+        "5": false
+      },
+      {
+        "1": "../interfaces.dart",
+        "2": [
+          "OnActivate",
+          "CanReuse",
+          "OnReuse",
+          "OnDeactivate",
+          "CanDeactivate"
         ],
         "5": false
       },
@@ -71,14 +77,8 @@
         "5": false
       },
       {
-        "1": "../interfaces.dart",
-        "2": [
-          "OnActivate",
-          "CanReuse",
-          "OnReuse",
-          "OnDeactivate",
-          "CanDeactivate"
-        ],
+        "1": "../router.dart",
+        "4": "routerMod",
         "5": false
       }
     ],
@@ -91,7 +91,7 @@
             "4": "_viewContainerRef"
           },
           {
-            "1": "DynamicComponentLoader",
+            "1": "ComponentResolver",
             "4": "_loader"
           },
           {
@@ -154,7 +154,7 @@
               "value": null,
               "identifier": {
                 "class": "Identifier",
-                "name": "DynamicComponentLoader",
+                "name": "ComponentResolver",
                 "moduleUrl": null,
                 "prefix": null,
                 "value": null

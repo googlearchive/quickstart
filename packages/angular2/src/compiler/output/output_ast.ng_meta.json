@@ -22,11 +22,11 @@
     "6": "output_ast.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i0"
       },
       {
-        "1": "../compile_metadata.ngfactory.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i1"
       }
     ]

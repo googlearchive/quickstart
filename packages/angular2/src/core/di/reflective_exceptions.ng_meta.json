@@ -10,6 +10,14 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException",
+          "WrappedException"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "stringify",
@@ -18,11 +26,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "reflective_injector.dart",
         "2": [
-          "BaseException",
-          "WrappedException",
-          "unimplemented"
+          "ReflectiveInjector"
         ],
         "5": false
       },
@@ -34,34 +40,35 @@
         "5": false
       },
       {
-        "1": "reflective_injector.dart",
-        "2": [
-          "ReflectiveInjector"
-        ],
+        "1": "provider.dart",
         "5": false
       }
     ],
     "6": "reflective_exceptions.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "reflective_key.ngfactory.dart",
+        "1": "reflective_injector.template.dart",
         "4": "i3"
       },
       {
-        "1": "reflective_injector.ngfactory.dart",
+        "1": "reflective_key.template.dart",
         "4": "i4"
+      },
+      {
+        "1": "provider.template.dart",
+        "4": "i5"
       }
     ]
   },

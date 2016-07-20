@@ -10,18 +10,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "Map",
-          "MapWrapper",
-          "ListWrapper"
+          "ObservableWrapper"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "scheduleMicroTask"
+          "MapWrapper"
         ],
         "5": false
       },
@@ -33,16 +31,16 @@
         "5": false
       },
       {
-        "1": "../zone/ng_zone.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "NgZone"
+          "scheduleMicroTask"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
+        "1": "../zone/ng_zone.dart",
         "2": [
-          "ObservableWrapper"
+          "NgZone"
         ],
         "5": false
       }
@@ -127,13 +125,6 @@
     "_NoopGetTestability": {
       "class": "Identifier",
       "name": "_NoopGetTestability",
-      "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
-      "prefix": null,
-      "value": null
-    },
-    "setTestabilityGetter": {
-      "class": "Identifier",
-      "name": "setTestabilityGetter",
       "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
       "prefix": null,
       "value": null

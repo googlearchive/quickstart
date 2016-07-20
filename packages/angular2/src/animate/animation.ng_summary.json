@@ -3,6 +3,13 @@
     "1": "angular2.src.animate.animation",
     "3": [
       {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "DateWrapper",
@@ -21,23 +28,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/util.dart",
-        "2": [
-          "camelCaseToDashCase"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DOM"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/util.dart",
+        "2": [
+          "camelCaseToDashCase"
         ],
         "5": false
       },

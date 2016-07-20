@@ -3,23 +3,6 @@
     "1": "angular2.src.compiler.css.lexer",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "NumberWrapper",
-          "StringWrapper",
-          "isPresent",
-          "resolveEnumToken"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/chars.dart",
         "2": [
           "isWhitespace",
@@ -41,10 +24,6 @@
           "$PLUS",
           "$LPAREN",
           "$RPAREN",
-          "$LBRACE",
-          "$RBRACE",
-          "$LBRACKET",
-          "$RBRACKET",
           "$PIPE",
           "$COMMA",
           "$SEMICOLON",
@@ -64,6 +43,22 @@
           "$CR",
           "$LF",
           "$VTAB"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "StringWrapper",
+          "isPresent",
+          "resolveEnumToken"
         ],
         "5": false
       }

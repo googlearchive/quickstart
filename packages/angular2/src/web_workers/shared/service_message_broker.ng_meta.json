@@ -14,18 +14,19 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "ListWrapper",
-          "Map",
-          "MapWrapper"
+          "EventEmitter",
+          "PromiseWrapper",
+          "ObservableWrapper"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/serializer.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "Serializer"
+          "ListWrapper",
+          "Map"
         ],
         "5": false
       },
@@ -46,11 +47,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
+        "1": "package:angular2/src/web_workers/shared/serializer.dart",
         "2": [
-          "EventEmitter",
-          "PromiseWrapper",
-          "ObservableWrapper"
+          "Serializer"
         ],
         "5": false
       }
@@ -79,27 +78,27 @@
     "6": "service_message_broker.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/serializer.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/message_bus.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/message_bus.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/serializer.template.dart",
         "4": "i5"
       }
     ]

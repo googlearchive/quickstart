@@ -3,37 +3,9 @@
     "1": "angular2.src.compiler.compile_metadata",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/compiler/selector.dart",
         "2": [
-          "isPresent",
-          "isBlank",
-          "isNumber",
-          "isBoolean",
-          "normalizeBool",
-          "serializeEnum",
-          "Type",
-          "isString",
-          "RegExpWrapper",
-          "StringWrapper",
-          "isArray"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "unimplemented",
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper",
-          "MapWrapper",
-          "SetWrapper",
-          "ListWrapper"
+          "CssSelector"
         ],
         "5": false
       },
@@ -46,29 +18,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/view.dart",
-        "2": [
-          "ViewEncapsulation",
-          "VIEW_ENCAPSULATION_VALUES"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/selector.dart",
-        "2": [
-          "CssSelector"
-        ],
-        "5": false
-      },
-      {
-        "1": "util.dart",
-        "2": [
-          "splitAtColon",
-          "sanitizeIdentifier"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "2": [
           "LifecycleHooks",
@@ -77,9 +26,48 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation",
+          "VIEW_ENCAPSULATION_VALUES"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "isNumber",
+          "isBoolean",
+          "normalizeBool",
+          "serializeEnum",
+          "Type",
+          "isString",
+          "RegExpWrapper",
+          "isArray"
+        ],
+        "5": false
+      },
+      {
         "1": "url_resolver.dart",
         "2": [
           "getUrlScheme"
+        ],
+        "5": false
+      },
+      {
+        "1": "util.dart",
+        "2": [
+          "splitAtColon",
+          "sanitizeIdentifier"
         ],
         "5": false
       }
@@ -188,6 +176,13 @@
     "CompilePipeMetadata": {
       "class": "Identifier",
       "name": "CompilePipeMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/compile_metadata.dart",
+      "prefix": null,
+      "value": null
+    },
+    "CompileInjectorModuleMetadata": {
+      "class": "Identifier",
+      "name": "CompileInjectorModuleMetadata",
       "moduleUrl": "asset:angular2/lib/src/compiler/compile_metadata.dart",
       "prefix": null,
       "value": null

@@ -3,16 +3,16 @@
     "1": "angular2.src.router.router_providers",
     "3": [
       {
-        "1": "router_providers_common.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "ROUTER_PROVIDERS_COMMON"
+          "Provider"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/platform/common.dart",
         "2": [
-          "Provider"
+          "PlatformLocation"
         ],
         "5": false
       },
@@ -24,9 +24,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/platform/common.dart",
+        "1": "router_providers_common.dart",
         "2": [
-          "PlatformLocation"
+          "ROUTER_PROVIDERS_COMMON"
         ],
         "5": false
       }
@@ -34,19 +34,19 @@
     "6": "router_providers.dart",
     "7": [
       {
-        "1": "router_providers_common.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/platform/common.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/platform/browser/location/browser_platform_location.ngfactory.dart",
+        "1": "package:angular2/src/platform/browser/location/browser_platform_location.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/platform/common.ngfactory.dart",
+        "1": "router_providers_common.template.dart",
         "4": "i3"
       }
     ]
@@ -131,6 +131,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -204,6 +205,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -280,6 +282,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -397,6 +400,7 @@
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": [
             {
@@ -512,6 +516,7 @@
             "prefix": null,
             "value": null
           },
+          "useProperty": null,
           "multi": false,
           "deps": [
             {
@@ -563,6 +568,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         }

@@ -35,15 +35,15 @@
     "6": "router_link_dsl.dart",
     "7": [
       {
-        "1": "package:angular2/compiler.ngfactory.dart",
+        "1": "package:angular2/compiler.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/router/directives/router_link_transform.ngfactory.dart",
+        "1": "package:angular2/src/router/directives/router_link_transform.template.dart",
         "4": "i2"
       }
     ]
@@ -103,6 +103,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }

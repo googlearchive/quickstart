@@ -8,7 +8,6 @@
           "Directive",
           "Renderer",
           "ElementRef",
-          "Self",
           "Provider"
         ],
         "5": false
@@ -43,11 +42,11 @@
     "6": "checkbox_value_accessor.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "control_value_accessor.ngfactory.dart",
+        "1": "control_value_accessor.template.dart",
         "4": "i1"
       }
     ]
@@ -133,6 +132,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -283,6 +283,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }

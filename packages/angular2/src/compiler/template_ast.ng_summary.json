@@ -10,20 +10,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "compile_metadata.dart",
         "2": [
           "CompileDirectiveMetadata",
           "CompileTokenMetadata",
-          "CompileProviderMetadata",
-          "CompileTokenMap",
-          "CompileQueryMetadata"
+          "CompileProviderMetadata"
         ],
         "5": false
       },
@@ -32,6 +23,10 @@
         "2": [
           "ParseSourceSpan"
         ],
+        "5": false
+      },
+      {
+        "1": "../core/security.dart",
         "5": false
       }
     ],

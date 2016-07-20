@@ -144,6 +144,13 @@
       "prefix": null,
       "value": null
     },
+    "_InjectorModuleMetadataVisitor": {
+      "class": "Identifier",
+      "name": "_InjectorModuleMetadataVisitor",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
+      "prefix": null,
+      "value": null
+    },
     "_readProviders": {
       "class": "Identifier",
       "name": "_readProviders",

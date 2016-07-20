@@ -8,7 +8,6 @@
           "Directive",
           "Renderer",
           "ElementRef",
-          "Self",
           "Provider"
         ],
         "5": false
@@ -75,6 +74,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": true,
         "deps": null
       }

@@ -3,16 +3,16 @@
     "1": "angular2.src.router.router_providers",
     "3": [
       {
-        "1": "router_providers_common.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "ROUTER_PROVIDERS_COMMON"
+          "Provider"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/platform/common.dart",
         "2": [
-          "Provider"
+          "PlatformLocation"
         ],
         "5": false
       },
@@ -24,9 +24,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/platform/common.dart",
+        "1": "router_providers_common.dart",
         "2": [
-          "PlatformLocation"
+          "ROUTER_PROVIDERS_COMMON"
         ],
         "5": false
       }
@@ -72,6 +72,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         }

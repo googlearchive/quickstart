@@ -3,16 +3,9 @@
     "1": "angular2.src.compiler.output.interpretive_view",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/linker/debug_context.dart",
         "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/view.dart",
-        "2": [
-          "AppView"
+          "StaticNodeDebugInfo"
         ],
         "5": false
       },
@@ -24,9 +17,24 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/view.dart",
+        "2": [
+          "AppView",
+          "DebugAppView"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent"
         ],
         "5": false
       },
@@ -42,24 +50,28 @@
     "6": "interpretive_view.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/debug_context.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/linker/view.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/element.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/linker/element.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/view.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i3"
       },
       {
-        "1": "output_interpreter.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i4"
+      },
+      {
+        "1": "output_interpreter.template.dart",
+        "4": "i5"
       }
     ]
   },

@@ -10,13 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/view.dart",
-        "2": [
-          "ViewMetadata"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/metadata/directives.dart",
         "2": [
           "ComponentMetadata"
@@ -24,26 +17,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/metadata/view.dart",
         "2": [
-          "Type",
-          "stringify",
-          "isBlank",
-          "isPresent"
+          "ViewMetadata"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "package:angular2/src/core/reflection/reflection.dart",
         "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "Map"
+          "reflector"
         ],
         "5": false
       },
@@ -55,9 +38,26 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "reflector"
+          "Map"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "stringify",
+          "isBlank",
+          "isPresent"
         ],
         "5": false
       }
@@ -82,35 +82,35 @@
     "6": "view_resolver.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/directives.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/metadata/directives.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/view.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/core/reflection/reflector_reader.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflector_reader.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i7"
       }
     ]

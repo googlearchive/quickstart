@@ -3,14 +3,6 @@
     "1": "angular2.transform.codegen.dart",
     "3": [
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
-        "1": "package:dart_style/dart_style.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/eager_transformer_wrapper.dart",
         "5": false
       },
@@ -46,6 +38,14 @@
       {
         "1": "package:angular2/src/transform/template_compiler/transformer.dart",
         "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "5": false
+      },
+      {
+        "1": "package:dart_style/dart_style.dart",
+        "5": false
       }
     ],
     "4": [
@@ -56,39 +56,39 @@
     "6": "codegen.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/eager_transformer_wrapper.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/eager_transformer_wrapper.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/formatter.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/formatter.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/options.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/options.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/options_reader.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/options_reader.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/directive_metadata_linker/transformer.ngfactory.dart",
+        "1": "package:angular2/src/transform/directive_metadata_linker/transformer.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/directive_processor/transformer.ngfactory.dart",
+        "1": "package:angular2/src/transform/directive_processor/transformer.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/inliner_for_test/transformer.ngfactory.dart",
+        "1": "package:angular2/src/transform/inliner_for_test/transformer.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/stylesheet_compiler/transformer.ngfactory.dart",
+        "1": "package:angular2/src/transform/stylesheet_compiler/transformer.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/transform/template_compiler/transformer.ngfactory.dart",
+        "1": "package:angular2/src/transform/template_compiler/transformer.template.dart",
         "4": "i8"
       }
     ]

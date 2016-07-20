@@ -26,19 +26,19 @@
     "6": "reflection_capabilities.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/metadata/lifecycle_hooks.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "platform_reflection_capabilities.ngfactory.dart",
+        "1": "platform_reflection_capabilities.template.dart",
         "4": "i2"
       },
       {
-        "1": "types.ngfactory.dart",
+        "1": "types.template.dart",
         "4": "i3"
       }
     ]

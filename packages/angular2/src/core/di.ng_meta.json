@@ -28,7 +28,8 @@
       {
         "1": "di/injector.dart",
         "2": [
-          "Injector"
+          "Injector",
+          "InjectorFactory"
         ]
       },
       {
@@ -44,7 +45,8 @@
           "ProviderBuilder",
           "bind",
           "Provider",
-          "provide"
+          "provide",
+          "noValueProvided"
         ]
       },
       {
@@ -79,49 +81,60 @@
         "2": [
           "OpaqueToken"
         ]
+      },
+      {
+        "1": "di/map_injector.dart",
+        "2": [
+          "MapInjector",
+          "MapInjectorFactory"
+        ]
       }
     ],
     "6": "di.dart",
     "7": [
       {
-        "1": "di/metadata.ngfactory.dart",
+        "1": "di/metadata.template.dart",
         "4": "i0"
       },
       {
-        "1": "di/decorators.ngfactory.dart",
+        "1": "di/decorators.template.dart",
         "4": "i1"
       },
       {
-        "1": "di/forward_ref.ngfactory.dart",
+        "1": "di/forward_ref.template.dart",
         "4": "i2"
       },
       {
-        "1": "di/injector.ngfactory.dart",
+        "1": "di/injector.template.dart",
         "4": "i3"
       },
       {
-        "1": "di/reflective_injector.ngfactory.dart",
+        "1": "di/reflective_injector.template.dart",
         "4": "i4"
       },
       {
-        "1": "di/provider.ngfactory.dart",
+        "1": "di/provider.template.dart",
         "4": "i5"
       },
       {
-        "1": "di/reflective_provider.ngfactory.dart",
+        "1": "di/reflective_provider.template.dart",
         "4": "i6"
       },
       {
-        "1": "di/reflective_key.ngfactory.dart",
+        "1": "di/reflective_key.template.dart",
         "4": "i7"
       },
       {
-        "1": "di/reflective_exceptions.ngfactory.dart",
+        "1": "di/reflective_exceptions.template.dart",
         "4": "i8"
       },
       {
-        "1": "di/opaque_token.ngfactory.dart",
+        "1": "di/opaque_token.template.dart",
         "4": "i9"
+      },
+      {
+        "1": "di/map_injector.template.dart",
+        "4": "i10"
       }
     ]
   },
@@ -252,9 +265,37 @@
       "prefix": null,
       "value": null
     },
+    "_NullInjector": {
+      "class": "Identifier",
+      "name": "_NullInjector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
     "Injector": {
       "class": "Identifier",
       "name": "Injector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_EmptyInjectorFactory": {
+      "class": "Identifier",
+      "name": "_EmptyInjectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "InjectorFactory": {
+      "class": "Identifier",
+      "name": "InjectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_BoundInjectorFactory": {
+      "class": "Identifier",
+      "name": "_BoundInjectorFactory",
       "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
       "prefix": null,
       "value": null
@@ -343,6 +384,13 @@
       "prefix": null,
       "value": null
     },
+    "noValueProvided": {
+      "class": "Identifier",
+      "name": "noValueProvided",
+      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
+      "prefix": null,
+      "value": null
+    },
     "Provider": {
       "class": "Identifier",
       "name": "Provider",
@@ -378,16 +426,16 @@
       "prefix": null,
       "value": null
     },
-    "_EMPTY_LIST": {
-      "class": "Identifier",
-      "name": "_EMPTY_LIST",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
-      "prefix": null,
-      "value": []
-    },
     "ReflectiveDependency": {
       "class": "Identifier",
       "name": "ReflectiveDependency",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_identityPostProcess": {
+      "class": "Identifier",
+      "name": "_identityPostProcess",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
       "prefix": null,
       "value": null
@@ -483,6 +531,13 @@
       "prefix": null,
       "value": null
     },
+    "getInjectorModuleProviders": {
+      "class": "Identifier",
+      "name": "getInjectorModuleProviders",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
+      "prefix": null,
+      "value": null
+    },
     "ReflectiveKey": {
       "class": "Identifier",
       "name": "ReflectiveKey",
@@ -573,9 +628,21 @@
       "moduleUrl": "asset:angular2/lib/src/core/di/opaque_token.dart",
       "prefix": null,
       "value": null
+    },
+    "MapInjector": {
+      "class": "Identifier",
+      "name": "MapInjector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/map_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "MapInjectorFactory": {
+      "class": "Identifier",
+      "name": "MapInjectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/di/map_injector.dart",
+      "prefix": null,
+      "value": null
     }
   },
-  "alias": {
-    "_EMPTY_LIST": []
-  }
+  "alias": {}
 }

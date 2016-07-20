@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/options.dart",
         "5": false
       },
@@ -25,20 +21,24 @@
         ],
         "4": "base",
         "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "5": false
       }
     ],
     "6": "reflection_remover.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/options.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/options.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/options_reader.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/options_reader.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/reflection_remover/transformer.ngfactory.dart",
+        "1": "package:angular2/src/transform/reflection_remover/transformer.template.dart",
         "4": "i2"
       }
     ]

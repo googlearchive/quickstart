@@ -3,18 +3,16 @@
     "1": "angular2.src.compiler.view_compiler.compile_method",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "isPresent",
-          "isBlank"
+          "ListWrapper"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "MapWrapper",
-          "ListWrapper"
+          "isPresent"
         ],
         "5": false
       },

@@ -32,11 +32,11 @@
     "6": "annotation_code.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/model/annotation_model.pb.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/model/annotation_model.pb.template.dart",
         "4": "i0"
       },
       {
-        "1": "constify.ngfactory.dart",
+        "1": "constify.template.dart",
         "4": "i1"
       }
     ]

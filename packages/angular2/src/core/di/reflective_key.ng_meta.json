@@ -3,19 +3,17 @@
     "1": "angular2.src.core.di.reflective_key",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "stringify",
-          "Type",
-          "isBlank"
+          "BaseException"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "BaseException",
-          "WrappedException"
+          "stringify",
+          "isBlank"
         ],
         "5": false
       },
@@ -30,15 +28,15 @@
     "6": "reflective_key.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "forward_ref.ngfactory.dart",
+        "1": "forward_ref.template.dart",
         "4": "i2"
       }
     ]

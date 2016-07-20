@@ -3,21 +3,11 @@
     "1": "angular2.src.platform.worker_render",
     "3": [
       {
-        "1": "package:angular2/src/platform/worker_render_common.dart",
-        "2": [
-          "WORKER_RENDER_APPLICATION_COMMON",
-          "WORKER_RENDER_MESSAGING_PROVIDERS",
-          "WORKER_SCRIPT",
-          "initializeGenericWorkerRenderer"
-        ],
+        "1": "dart:async",
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/isolate_message_bus.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/message_bus.dart",
+        "1": "dart:isolate",
         "5": false
       },
       {
@@ -29,34 +19,42 @@
         "5": false
       },
       {
-        "1": "dart:isolate",
+        "1": "package:angular2/src/platform/worker_render_common.dart",
+        "2": [
+          "WORKER_RENDER_APPLICATION_COMMON",
+          "initializeGenericWorkerRenderer"
+        ],
         "5": false
       },
       {
-        "1": "dart:async",
+        "1": "package:angular2/src/web_workers/shared/isolate_message_bus.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/message_bus.dart",
         "5": false
       }
     ],
     "6": "worker_render.dart",
     "7": [
       {
-        "1": "package:angular2/src/platform/worker_render_common.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/isolate_message_bus.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/message_bus.ngfactory.dart",
+        "1": "package:angular2/src/platform/worker_render_common.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/isolate_message_bus.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/message_bus.template.dart",
         "4": "i4"
       }
     ]

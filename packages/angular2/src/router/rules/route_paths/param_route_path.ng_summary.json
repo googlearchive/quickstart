@@ -3,12 +3,9 @@
     "1": "angular2.src.router.rules.route_paths.param_route_path",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "RegExpWrapper",
-          "StringWrapper",
-          "isPresent",
-          "isBlank"
+          "StringMapWrapper"
         ],
         "5": false
       },
@@ -20,17 +17,12 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "../../utils.dart",
-        "2": [
-          "TouchMap",
-          "normalizeString"
+          "RegExpWrapper",
+          "StringWrapper",
+          "isPresent",
+          "isBlank"
         ],
         "5": false
       },
@@ -40,6 +32,14 @@
           "Url",
           "RootUrl",
           "convertUrlParamsToArray"
+        ],
+        "5": false
+      },
+      {
+        "1": "../../utils.dart",
+        "2": [
+          "TouchMap",
+          "normalizeString"
         ],
         "5": false
       },

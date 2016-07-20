@@ -13,11 +13,11 @@
           "IterableDiffers",
           "IterableDiffer",
           "IterableDifferFactory",
+          "KeyValueChangeRecord",
           "KeyValueDiffers",
           "KeyValueDiffer",
           "KeyValueDifferFactory",
           "CollectionChangeRecord",
-          "KeyValueChangeRecord",
           "TrackByFn"
         ]
       }

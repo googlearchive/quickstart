@@ -1,5 +1,17 @@
 {
-  "ngDeps": null,
+  "ngDeps": {
+    "1": "angular2.src.compiler.parse_util",
+    "3": [
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent"
+        ],
+        "5": false
+      }
+    ],
+    "6": "parse_util.dart"
+  },
   "type": {
     "ParseErrorLevel": {
       "class": "Identifier",

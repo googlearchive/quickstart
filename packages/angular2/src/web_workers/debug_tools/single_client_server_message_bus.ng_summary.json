@@ -3,14 +3,14 @@
     "1": "angular2.src.web_workers.debug_tools.single_client_server_message_bus",
     "3": [
       {
-        "1": "dart:io",
-        "5": false
-      },
-      {
         "1": "dart:convert",
         "2": [
           "JSON"
         ],
+        "5": false
+      },
+      {
+        "1": "dart:io",
         "5": false
       },
       {

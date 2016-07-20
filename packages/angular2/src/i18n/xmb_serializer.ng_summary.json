@@ -3,27 +3,10 @@
     "1": "angular2.src.i18n.xmb_serializer",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "RegExpWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/html_ast.dart",
         "2": [
           "HtmlAst",
           "HtmlElementAst"
-        ],
-        "5": false
-      },
-      {
-        "1": "message.dart",
-        "2": [
-          "Message",
-          "id"
         ],
         "5": false
       },
@@ -39,6 +22,23 @@
         "2": [
           "ParseSourceSpan",
           "ParseError"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank",
+          "RegExpWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "message.dart",
+        "2": [
+          "Message",
+          "id"
         ],
         "5": false
       }

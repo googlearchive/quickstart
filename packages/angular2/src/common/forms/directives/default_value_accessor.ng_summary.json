@@ -8,8 +8,14 @@
           "Directive",
           "ElementRef",
           "Renderer",
-          "Self",
           "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isBlank"
         ],
         "5": false
       },
@@ -18,13 +24,6 @@
         "2": [
           "NG_VALUE_ACCESSOR",
           "ControlValueAccessor"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank"
         ],
         "5": false
       }
@@ -82,6 +81,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": true,
         "deps": null
       }

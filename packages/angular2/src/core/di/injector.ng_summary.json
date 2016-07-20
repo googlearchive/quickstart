@@ -5,7 +5,15 @@
       {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "unimplemented"
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "stringify",
+          "isBlank"
         ],
         "5": false
       }
@@ -27,9 +35,37 @@
       "prefix": null,
       "value": null
     },
+    "_NullInjector": {
+      "class": "Identifier",
+      "name": "_NullInjector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
     "Injector": {
       "class": "Identifier",
       "name": "Injector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_EmptyInjectorFactory": {
+      "class": "Identifier",
+      "name": "_EmptyInjectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "InjectorFactory": {
+      "class": "Identifier",
+      "name": "InjectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_BoundInjectorFactory": {
+      "class": "Identifier",
+      "name": "_BoundInjectorFactory",
       "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
       "prefix": null,
       "value": null

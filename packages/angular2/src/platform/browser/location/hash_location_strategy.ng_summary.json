@@ -12,10 +12,9 @@
         "5": false
       },
       {
-        "1": "location_strategy.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "LocationStrategy",
-          "APP_BASE_HREF"
+          "isPresent"
         ],
         "5": false
       },
@@ -27,17 +26,18 @@
         "5": false
       },
       {
-        "1": "platform_location.dart",
+        "1": "location_strategy.dart",
         "2": [
-          "UrlChangeListener",
-          "PlatformLocation"
+          "LocationStrategy",
+          "APP_BASE_HREF"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "platform_location.dart",
         "2": [
-          "isPresent"
+          "UrlChangeListener",
+          "PlatformLocation"
         ],
         "5": false
       }

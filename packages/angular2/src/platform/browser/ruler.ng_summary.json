@@ -7,6 +7,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/element_ref.dart",
+        "2": [
+          "ElementRef"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "PromiseWrapper"
@@ -17,13 +24,6 @@
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DomAdapter"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/element_ref.dart",
-        "2": [
-          "ElementRef"
         ],
         "5": false
       }

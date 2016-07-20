@@ -14,11 +14,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/reflection/reflection.dart",
         "2": [
-          "Type",
-          "isBlank",
-          "stringify"
+          "reflector"
         ],
         "5": false
       },
@@ -30,16 +28,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "PromiseWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
-        "2": [
-          "reflector"
+          "Type",
+          "isBlank",
+          "stringify"
         ],
         "5": false
       },
@@ -47,6 +40,13 @@
         "1": "component_factory.dart",
         "2": [
           "ComponentFactory"
+        ],
+        "5": false
+      },
+      {
+        "1": "injector_factory.dart",
+        "2": [
+          "CodegenInjectorFactory"
         ],
         "5": false
       }
@@ -59,33 +59,36 @@
             "1": "Injectable",
             "4": false
           }
+        ],
+        "6": [
+          "ComponentResolver"
         ]
       }
     ],
     "6": "component_resolver.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.ngfactory.dart",
+        "1": "component_factory.template.dart",
         "4": "i4"
       },
       {
-        "1": "component_factory.ngfactory.dart",
+        "1": "injector_factory.template.dart",
         "4": "i5"
       }
     ]

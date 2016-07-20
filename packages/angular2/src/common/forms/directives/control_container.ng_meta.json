@@ -3,16 +3,16 @@
     "1": "angular2.src.common.forms.directives.control_container",
     "3": [
       {
-        "1": "form_interface.dart",
+        "1": "abstract_control_directive.dart",
         "2": [
-          "Form"
+          "AbstractControlDirective"
         ],
         "5": false
       },
       {
-        "1": "abstract_control_directive.dart",
+        "1": "form_interface.dart",
         "2": [
-          "AbstractControlDirective"
+          "Form"
         ],
         "5": false
       }
@@ -20,11 +20,11 @@
     "6": "control_container.dart",
     "7": [
       {
-        "1": "form_interface.ngfactory.dart",
+        "1": "abstract_control_directive.template.dart",
         "4": "i0"
       },
       {
-        "1": "abstract_control_directive.ngfactory.dart",
+        "1": "form_interface.template.dart",
         "4": "i1"
       }
     ]

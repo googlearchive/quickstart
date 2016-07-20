@@ -5,9 +5,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "stringify",
-          "isBlank",
-          "isPresent"
+          "stringify"
         ],
         "5": false
       }
@@ -15,7 +13,7 @@
     "6": "metadata.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i0"
       }
     ]

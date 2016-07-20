@@ -3,36 +3,16 @@
     "1": "angular2.core",
     "4": [
       {
-        "1": "./src/core/angular_entrypoint.dart",
+        "1": "src/core/angular_entrypoint.dart",
         "2": [
           "AngularEntrypoint"
         ]
       },
       {
-        "1": "./src/core/metadata.dart"
+        "1": "src/core/application_common_providers.dart"
       },
       {
-        "1": "./src/core/util.dart"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "enableProdMode"
-        ]
-      },
-      {
-        "1": "./src/core/di.dart",
-        "3": [
-          "ForwardRefFn",
-          "resolveForwardRef",
-          "forwardRef"
-        ]
-      },
-      {
-        "1": "./src/facade/facade.dart"
-      },
-      {
-        "1": "./src/core/application_ref.dart",
+        "1": "src/core/application_ref.dart",
         "2": [
           "createPlatform",
           "assertPlatform",
@@ -46,7 +26,7 @@
         ]
       },
       {
-        "1": "./src/core/application_tokens.dart",
+        "1": "src/core/application_tokens.dart",
         "2": [
           "APP_ID",
           "APP_INITIALIZER",
@@ -55,16 +35,10 @@
         ]
       },
       {
-        "1": "./src/core/zone.dart"
+        "1": "src/core/change_detection.dart"
       },
       {
-        "1": "./src/core/render.dart"
-      },
-      {
-        "1": "./src/core/linker.dart"
-      },
-      {
-        "1": "./src/core/debug/debug_node.dart",
+        "1": "src/core/debug/debug_node.dart",
         "2": [
           "DebugElement",
           "DebugNode",
@@ -72,93 +46,112 @@
         ]
       },
       {
-        "1": "./src/core/testability/testability.dart"
+        "1": "src/core/di.dart",
+        "3": [
+          "ForwardRefFn",
+          "resolveForwardRef",
+          "forwardRef"
+        ]
       },
       {
-        "1": "./src/core/change_detection.dart"
+        "1": "src/core/linker.dart"
       },
       {
-        "1": "./src/core/platform_directives_and_pipes.dart"
+        "1": "src/core/metadata.dart"
       },
       {
-        "1": "./src/core/platform_common_providers.dart"
+        "1": "src/core/platform_common_providers.dart",
+        "2": [
+          "PLATFORM_COMMON_PROVIDERS"
+        ]
       },
       {
-        "1": "./src/core/application_common_providers.dart"
+        "1": "src/core/platform_directives_and_pipes.dart"
       },
       {
-        "1": "./src/core/reflection/reflection.dart"
+        "1": "src/core/reflection/reflection.dart"
+      },
+      {
+        "1": "src/core/render.dart"
+      },
+      {
+        "1": "src/core/testability/testability.dart"
+      },
+      {
+        "1": "src/core/util.dart"
+      },
+      {
+        "1": "src/core/zone.dart"
+      },
+      {
+        "1": "src/facade/facade.dart"
       }
     ],
     "6": "core.dart",
     "7": [
       {
-        "1": "./src/core/angular_entrypoint.ngfactory.dart",
+        "1": "src/core/angular_entrypoint.template.dart",
         "4": "i0"
       },
       {
-        "1": "./src/core/metadata.ngfactory.dart",
+        "1": "src/core/application_common_providers.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "src/core/application_ref.template.dart",
         "4": "i2"
       },
       {
-        "1": "./src/core/di.ngfactory.dart",
+        "1": "src/core/application_tokens.template.dart",
         "4": "i3"
       },
       {
-        "1": "./src/facade/facade.ngfactory.dart",
+        "1": "src/core/change_detection.template.dart",
         "4": "i4"
       },
       {
-        "1": "./src/core/application_ref.ngfactory.dart",
+        "1": "src/core/debug/debug_node.template.dart",
         "4": "i5"
       },
       {
-        "1": "./src/core/application_tokens.ngfactory.dart",
+        "1": "src/core/di.template.dart",
         "4": "i6"
       },
       {
-        "1": "./src/core/zone.ngfactory.dart",
+        "1": "src/core/linker.template.dart",
         "4": "i7"
       },
       {
-        "1": "./src/core/render.ngfactory.dart",
+        "1": "src/core/metadata.template.dart",
         "4": "i8"
       },
       {
-        "1": "./src/core/linker.ngfactory.dart",
+        "1": "src/core/platform_common_providers.template.dart",
         "4": "i9"
       },
       {
-        "1": "./src/core/debug/debug_node.ngfactory.dart",
+        "1": "src/core/platform_directives_and_pipes.template.dart",
         "4": "i10"
       },
       {
-        "1": "./src/core/testability/testability.ngfactory.dart",
+        "1": "src/core/reflection/reflection.template.dart",
         "4": "i11"
       },
       {
-        "1": "./src/core/change_detection.ngfactory.dart",
+        "1": "src/core/render.template.dart",
         "4": "i12"
       },
       {
-        "1": "./src/core/platform_directives_and_pipes.ngfactory.dart",
+        "1": "src/core/testability/testability.template.dart",
         "4": "i13"
       },
       {
-        "1": "./src/core/platform_common_providers.ngfactory.dart",
+        "1": "src/core/zone.template.dart",
         "4": "i14"
       },
       {
-        "1": "./src/core/application_common_providers.ngfactory.dart",
+        "1": "src/facade/facade.template.dart",
         "4": "i15"
-      },
-      {
-        "1": "./src/core/reflection/reflection.ngfactory.dart",
-        "4": "i16"
       }
     ]
   },
@@ -170,283 +163,1283 @@
       "prefix": null,
       "value": null
     },
-    "Directive": {
+    "APPLICATION_COMMON_PROVIDERS": {
       "class": "Identifier",
-      "name": "Directive",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "APPLICATION_COMMON_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/src/core/application_common_providers.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "NgZone",
+              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Identifier",
+            "name": "createNgZone",
+            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+            "prefix": null,
+            "value": null
+          },
+          "useProperty": null,
+          "multi": false,
+          "deps": []
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "ApplicationRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "PlatformRef_",
+                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "NgZone",
+                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Injector",
+                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "ApplicationRef_",
+            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "PlatformRef_",
+                    "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "NgZone",
+                    "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "Injector",
+                    "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ApplicationRef",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "ApplicationRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "PlatformRef_",
+                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "NgZone",
+                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Injector",
+                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ComponentResolver",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "ReflectorComponentResolver",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "APP_ID",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Identifier",
+            "name": "appIdRandomProviderFactory",
+            "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+            "prefix": null,
+            "value": null
+          },
+          "useProperty": null,
+          "multi": false,
+          "deps": []
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "ViewUtils",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "RootRenderer",
+                      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "APP_ID",
+                      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "SanitizationService",
+                      "moduleUrl": "asset:angular2/lib/src/core/security.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "ViewUtils",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "RootRenderer",
+                    "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "APP_ID",
+                    "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "SanitizationService",
+                    "moduleUrl": "asset:angular2/lib/src/core/security.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "IterableDiffers",
+              "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": {
+            "class": "Identifier",
+            "name": "defaultIterableDiffers",
+            "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
+            "prefix": null,
+            "value": null
+          },
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "KeyValueDiffers",
+              "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": {
+            "class": "Identifier",
+            "name": "defaultKeyValueDiffers",
+            "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
+            "prefix": null,
+            "value": null
+          },
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DynamicComponentLoader",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "DynamicComponentLoader_",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "ComponentResolver",
+                    "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        }
+      ]
+    },
+    "PLATFORM_CORE_PROVIDERS": {
+      "class": "Identifier",
+      "name": "PLATFORM_CORE_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "PlatformRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "PlatformRef_",
+            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PlatformRef",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "PlatformRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        }
+      ]
+    },
+    "APPLICATION_CORE_PROVIDERS": {
+      "class": "Identifier",
+      "name": "APPLICATION_CORE_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "NgZone",
+              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Identifier",
+            "name": "createNgZone",
+            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+            "prefix": null,
+            "value": null
+          },
+          "useProperty": null,
+          "multi": false,
+          "deps": []
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "ApplicationRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "PlatformRef_",
+                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "NgZone",
+                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Injector",
+                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "ApplicationRef_",
+            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "PlatformRef_",
+                    "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "NgZone",
+                    "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "Injector",
+                    "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ApplicationRef",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "ApplicationRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "PlatformRef_",
+                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "NgZone",
+                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "Injector",
+                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        }
+      ]
+    },
+    "createNgZone": {
+      "class": "Identifier",
+      "name": "createNgZone",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null
     },
-    "Component": {
+    "createPlatform": {
       "class": "Identifier",
-      "name": "Component",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "createPlatform",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null
     },
-    "View": {
+    "assertPlatform": {
       "class": "Identifier",
-      "name": "View",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "assertPlatform",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null
     },
-    "Pipe": {
+    "disposePlatform": {
       "class": "Identifier",
-      "name": "Pipe",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "disposePlatform",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null
     },
-    "Attribute": {
+    "getPlatform": {
       "class": "Identifier",
-      "name": "Attribute",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "getPlatform",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null
     },
-    "Query": {
+    "coreBootstrap": {
       "class": "Identifier",
-      "name": "Query",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "coreBootstrap",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null
     },
-    "ContentChildren": {
+    "coreLoadAndBootstrap": {
       "class": "Identifier",
-      "name": "ContentChildren",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "coreLoadAndBootstrap",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null
     },
-    "ContentChild": {
+    "PlatformRef": {
       "class": "Identifier",
-      "name": "ContentChild",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "PlatformRef",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null
     },
-    "ViewQuery": {
+    "PlatformRef_": {
+      "class": "Type",
+      "name": "PlatformRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": []
+    },
+    "ApplicationRef": {
       "class": "Identifier",
-      "name": "ViewQuery",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "ApplicationRef",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null
     },
-    "ViewChildren": {
+    "ApplicationRef_": {
+      "class": "Type",
+      "name": "ApplicationRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PlatformRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "NgZone",
+              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Injector",
+              "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        }
+      ]
+    },
+    "APP_ID": {
       "class": "Identifier",
-      "name": "ViewChildren",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "APP_ID",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
       "prefix": null,
       "value": null
     },
-    "ViewChild": {
+    "APP_ID_RANDOM_PROVIDER": {
       "class": "Identifier",
-      "name": "ViewChild",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "APP_ID_RANDOM_PROVIDER",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "APP_ID",
+              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Identifier",
+            "name": "appIdRandomProviderFactory",
+            "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
+            "prefix": null,
+            "value": null
+          },
+          "useProperty": null,
+          "multi": false,
+          "deps": []
+        }
+      ]
+    },
+    "PLATFORM_INITIALIZER": {
+      "class": "Identifier",
+      "name": "PLATFORM_INITIALIZER",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
       "prefix": null,
       "value": null
     },
-    "Input": {
+    "APP_INITIALIZER": {
       "class": "Identifier",
-      "name": "Input",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "APP_INITIALIZER",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
       "prefix": null,
       "value": null
     },
-    "Output": {
+    "PACKAGE_ROOT_URL": {
       "class": "Identifier",
-      "name": "Output",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "PACKAGE_ROOT_URL",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
       "prefix": null,
       "value": null
     },
-    "HostBinding": {
+    "appIdRandomProviderFactory": {
       "class": "Identifier",
-      "name": "HostBinding",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "appIdRandomProviderFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
       "prefix": null,
       "value": null
     },
-    "HostListener": {
+    "_randomChar": {
       "class": "Identifier",
-      "name": "HostListener",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "name": "_randomChar",
+      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
       "prefix": null,
       "value": null
     },
-    "AttributeMetadata": {
+    "keyValDiff": {
       "class": "Identifier",
-      "name": "AttributeMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "name": "keyValDiff",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
       "prefix": null,
       "value": null
     },
-    "QueryMetadata": {
+    "iterableDiff": {
       "class": "Identifier",
-      "name": "QueryMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "name": "iterableDiff",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
       "prefix": null,
       "value": null
     },
-    "ContentChildrenMetadata": {
+    "defaultIterableDiffers": {
       "class": "Identifier",
-      "name": "ContentChildrenMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "name": "defaultIterableDiffers",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
       "prefix": null,
       "value": null
     },
-    "ContentChildMetadata": {
+    "defaultKeyValueDiffers": {
       "class": "Identifier",
-      "name": "ContentChildMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "name": "defaultKeyValueDiffers",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
       "prefix": null,
       "value": null
     },
-    "ViewQueryMetadata": {
+    "devModeEqual": {
       "class": "Identifier",
-      "name": "ViewQueryMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "name": "devModeEqual",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
       "prefix": null,
       "value": null
     },
-    "ViewChildrenMetadata": {
+    "WrappedValue": {
       "class": "Identifier",
-      "name": "ViewChildrenMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "name": "WrappedValue",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
       "prefix": null,
       "value": null
     },
-    "ViewChildMetadata": {
+    "ValueUnwrapper": {
       "class": "Identifier",
-      "name": "ViewChildMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "name": "ValueUnwrapper",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
       "prefix": null,
       "value": null
     },
-    "DirectiveMetadata": {
+    "SimpleChange": {
       "class": "Identifier",
-      "name": "DirectiveMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ComponentMetadata": {
-      "class": "Identifier",
-      "name": "ComponentMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PipeMetadata": {
-      "class": "Identifier",
-      "name": "PipeMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
-      "prefix": null,
-      "value": null
-    },
-    "InputMetadata": {
-      "class": "Identifier",
-      "name": "InputMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
-      "prefix": null,
-      "value": null
-    },
-    "OutputMetadata": {
-      "class": "Identifier",
-      "name": "OutputMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
-      "prefix": null,
-      "value": null
-    },
-    "HostBindingMetadata": {
-      "class": "Identifier",
-      "name": "HostBindingMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
-      "prefix": null,
-      "value": null
-    },
-    "HostListenerMetadata": {
-      "class": "Identifier",
-      "name": "HostListenerMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewEncapsulation": {
-      "class": "Identifier",
-      "name": "ViewEncapsulation",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewMetadata": {
-      "class": "Identifier",
-      "name": "ViewMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
-      "prefix": null,
-      "value": null
-    },
-    "LifecycleHooks": {
-      "class": "Identifier",
-      "name": "LifecycleHooks",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "OnChanges": {
-      "class": "Identifier",
-      "name": "OnChanges",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "OnInit": {
-      "class": "Identifier",
-      "name": "OnInit",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DoCheck": {
-      "class": "Identifier",
-      "name": "DoCheck",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "OnDestroy": {
-      "class": "Identifier",
-      "name": "OnDestroy",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AfterContentInit": {
-      "class": "Identifier",
-      "name": "AfterContentInit",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AfterContentChecked": {
-      "class": "Identifier",
-      "name": "AfterContentChecked",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AfterViewInit": {
-      "class": "Identifier",
-      "name": "AfterViewInit",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AfterViewChecked": {
-      "class": "Identifier",
-      "name": "AfterViewChecked",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "name": "SimpleChange",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
       "prefix": null,
       "value": null
     },
@@ -702,27 +1695,6 @@
       "prefix": null,
       "value": null
     },
-    "lockMode": {
-      "class": "Identifier",
-      "name": "lockMode",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "enableDevMode": {
-      "class": "Identifier",
-      "name": "enableDevMode",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "enableProdMode": {
-      "class": "Identifier",
-      "name": "enableProdMode",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "assertionsEnabled": {
       "class": "Identifier",
       "name": "assertionsEnabled",
@@ -783,6 +1755,223 @@
       "class": "Identifier",
       "name": "escape",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ChangeDetectorRef": {
+      "class": "Identifier",
+      "name": "ChangeDetectorRef",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detector_ref.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ChangeDetectorState": {
+      "class": "Identifier",
+      "name": "ChangeDetectorState",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ChangeDetectionStrategy": {
+      "class": "Identifier",
+      "name": "ChangeDetectionStrategy",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
+      "prefix": null,
+      "value": null
+    },
+    "isDefaultChangeDetectionStrategy": {
+      "class": "Identifier",
+      "name": "isDefaultChangeDetectionStrategy",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DefaultIterableDifferFactory": {
+      "class": "Identifier",
+      "name": "DefaultIterableDifferFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DefaultIterableDiffer": {
+      "class": "Identifier",
+      "name": "DefaultIterableDiffer",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "CollectionChangeRecord": {
+      "class": "Identifier",
+      "name": "CollectionChangeRecord",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_DuplicateItemRecordList": {
+      "class": "Identifier",
+      "name": "_DuplicateItemRecordList",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_DuplicateMap": {
+      "class": "Identifier",
+      "name": "_DuplicateMap",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_MapHandler": {
+      "class": "Identifier",
+      "name": "_MapHandler",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DefaultKeyValueDifferFactory": {
+      "class": "Identifier",
+      "name": "DefaultKeyValueDifferFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DefaultKeyValueDiffer": {
+      "class": "Identifier",
+      "name": "DefaultKeyValueDiffer",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "KeyValueChangeRecord": {
+      "class": "Identifier",
+      "name": "KeyValueChangeRecord",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "TrackByFn": {
+      "class": "Identifier",
+      "name": "TrackByFn",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
+      "prefix": null,
+      "value": null
+    },
+    "IterableDiffer": {
+      "class": "Identifier",
+      "name": "IterableDiffer",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
+      "prefix": null,
+      "value": null
+    },
+    "IterableDifferFactory": {
+      "class": "Identifier",
+      "name": "IterableDifferFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
+      "prefix": null,
+      "value": null
+    },
+    "IterableDiffers": {
+      "class": "Identifier",
+      "name": "IterableDiffers",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
+      "prefix": null,
+      "value": null
+    },
+    "KeyValueDiffer": {
+      "class": "Identifier",
+      "name": "KeyValueDiffer",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
+      "prefix": null,
+      "value": null
+    },
+    "KeyValueDifferFactory": {
+      "class": "Identifier",
+      "name": "KeyValueDifferFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
+      "prefix": null,
+      "value": null
+    },
+    "KeyValueDiffers": {
+      "class": "Identifier",
+      "name": "KeyValueDiffers",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PipeTransform": {
+      "class": "Identifier",
+      "name": "PipeTransform",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/pipe_transform.dart",
+      "prefix": null,
+      "value": null
+    },
+    "EventListener": {
+      "class": "Identifier",
+      "name": "EventListener",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DebugNode": {
+      "class": "Identifier",
+      "name": "DebugNode",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DebugElement": {
+      "class": "Identifier",
+      "name": "DebugElement",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "asNativeElements": {
+      "class": "Identifier",
+      "name": "asNativeElements",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_queryElementChildren": {
+      "class": "Identifier",
+      "name": "_queryElementChildren",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_queryNodeChildren": {
+      "class": "Identifier",
+      "name": "_queryNodeChildren",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getDebugNode": {
+      "class": "Identifier",
+      "name": "getDebugNode",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getAllDebugNodes": {
+      "class": "Identifier",
+      "name": "getAllDebugNodes",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "indexDebugNode": {
+      "class": "Identifier",
+      "name": "indexDebugNode",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "removeDebugNodeFromIndex": {
+      "class": "Identifier",
+      "name": "removeDebugNodeFromIndex",
+      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
       "prefix": null,
       "value": null
     },
@@ -912,9 +2101,37 @@
       "prefix": null,
       "value": null
     },
+    "_NullInjector": {
+      "class": "Identifier",
+      "name": "_NullInjector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
     "Injector": {
       "class": "Identifier",
       "name": "Injector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_EmptyInjectorFactory": {
+      "class": "Identifier",
+      "name": "_EmptyInjectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "InjectorFactory": {
+      "class": "Identifier",
+      "name": "InjectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_BoundInjectorFactory": {
+      "class": "Identifier",
+      "name": "_BoundInjectorFactory",
       "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
       "prefix": null,
       "value": null
@@ -1003,6 +2220,13 @@
       "prefix": null,
       "value": null
     },
+    "noValueProvided": {
+      "class": "Identifier",
+      "name": "noValueProvided",
+      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
+      "prefix": null,
+      "value": null
+    },
     "Provider": {
       "class": "Identifier",
       "name": "Provider",
@@ -1038,16 +2262,16 @@
       "prefix": null,
       "value": null
     },
-    "_EMPTY_LIST": {
-      "class": "Identifier",
-      "name": "_EMPTY_LIST",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
-      "prefix": null,
-      "value": []
-    },
     "ReflectiveDependency": {
       "class": "Identifier",
       "name": "ReflectiveDependency",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_identityPostProcess": {
+      "class": "Identifier",
+      "name": "_identityPostProcess",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
       "prefix": null,
       "value": null
@@ -1143,6 +2367,13 @@
       "prefix": null,
       "value": null
     },
+    "getInjectorModuleProviders": {
+      "class": "Identifier",
+      "name": "getInjectorModuleProviders",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
+      "prefix": null,
+      "value": null
+    },
     "ReflectiveKey": {
       "class": "Identifier",
       "name": "ReflectiveKey",
@@ -1234,840 +2465,38 @@
       "prefix": null,
       "value": null
     },
-    "TimerWrapper": {
+    "MapInjector": {
       "class": "Identifier",
-      "name": "TimerWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
+      "name": "MapInjector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/map_injector.dart",
       "prefix": null,
       "value": null
     },
-    "ObservableWrapper": {
+    "MapInjectorFactory": {
       "class": "Identifier",
-      "name": "ObservableWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
+      "name": "MapInjectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/di/map_injector.dart",
       "prefix": null,
       "value": null
     },
-    "EventEmitter": {
+    "ComponentRef": {
       "class": "Identifier",
-      "name": "EventEmitter",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
+      "name": "ComponentRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
     },
-    "Subject": {
+    "ComponentRef_": {
       "class": "Identifier",
-      "name": "Subject",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
+      "name": "ComponentRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
     },
-    "PromiseWrapper": {
+    "ComponentFactory": {
       "class": "Identifier",
-      "name": "PromiseWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PromiseCompleter": {
-      "class": "Identifier",
-      "name": "PromiseCompleter",
-      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
-      "prefix": null,
-      "value": null
-    },
-    "BaseException": {
-      "class": "Identifier",
-      "name": "BaseException",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "WrappedException": {
-      "class": "Identifier",
-      "name": "WrappedException",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "makeTypeError": {
-      "class": "Identifier",
-      "name": "makeTypeError",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "unimplemented": {
-      "class": "Identifier",
-      "name": "unimplemented",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_ArrayLogger": {
-      "class": "Identifier",
-      "name": "_ArrayLogger",
-      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ExceptionHandler": {
-      "class": "Identifier",
-      "name": "ExceptionHandler",
-      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PLATFORM_CORE_PROVIDERS": {
-      "class": "Identifier",
-      "name": "PLATFORM_CORE_PROVIDERS",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "PlatformRef_",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "PlatformRef_",
-            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Injector",
-                    "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "PlatformRef",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "PlatformRef_",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        }
-      ]
-    },
-    "APPLICATION_CORE_PROVIDERS": {
-      "class": "Identifier",
-      "name": "APPLICATION_CORE_PROVIDERS",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "NgZone",
-              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "createNgZone",
-            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-            "prefix": null,
-            "value": null
-          },
-          "multi": false,
-          "deps": []
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "ApplicationRef_",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "PlatformRef_",
-                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "NgZone",
-                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "ApplicationRef_",
-            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "PlatformRef_",
-                    "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "NgZone",
-                    "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Injector",
-                    "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ApplicationRef",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "ApplicationRef_",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "PlatformRef_",
-                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "NgZone",
-                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        }
-      ]
-    },
-    "createNgZone": {
-      "class": "Identifier",
-      "name": "createNgZone",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "createPlatform": {
-      "class": "Identifier",
-      "name": "createPlatform",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "assertPlatform": {
-      "class": "Identifier",
-      "name": "assertPlatform",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "disposePlatform": {
-      "class": "Identifier",
-      "name": "disposePlatform",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "getPlatform": {
-      "class": "Identifier",
-      "name": "getPlatform",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "coreBootstrap": {
-      "class": "Identifier",
-      "name": "coreBootstrap",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "coreLoadAndBootstrap": {
-      "class": "Identifier",
-      "name": "coreLoadAndBootstrap",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PlatformRef": {
-      "class": "Identifier",
-      "name": "PlatformRef",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PlatformRef_": {
-      "class": "Type",
-      "name": "PlatformRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "Injector",
-              "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        }
-      ]
-    },
-    "ApplicationRef": {
-      "class": "Identifier",
-      "name": "ApplicationRef",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ApplicationRef_": {
-      "class": "Type",
-      "name": "ApplicationRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "PlatformRef_",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "NgZone",
-              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "Injector",
-              "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        }
-      ]
-    },
-    "APP_ID": {
-      "class": "Identifier",
-      "name": "APP_ID",
-      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-      "prefix": null,
-      "value": null
-    },
-    "APP_ID_RANDOM_PROVIDER": {
-      "class": "Identifier",
-      "name": "APP_ID_RANDOM_PROVIDER",
-      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "APP_ID",
-              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "_appIdRandomProviderFactory",
-            "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-            "prefix": null,
-            "value": null
-          },
-          "multi": false,
-          "deps": []
-        }
-      ]
-    },
-    "PLATFORM_INITIALIZER": {
-      "class": "Identifier",
-      "name": "PLATFORM_INITIALIZER",
-      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-      "prefix": null,
-      "value": null
-    },
-    "APP_INITIALIZER": {
-      "class": "Identifier",
-      "name": "APP_INITIALIZER",
-      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PACKAGE_ROOT_URL": {
-      "class": "Identifier",
-      "name": "PACKAGE_ROOT_URL",
-      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_appIdRandomProviderFactory": {
-      "class": "Identifier",
-      "name": "_appIdRandomProviderFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_randomChar": {
-      "class": "Identifier",
-      "name": "_randomChar",
-      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-      "prefix": null,
-      "value": null
-    },
-    "NgZone": {
-      "class": "Identifier",
-      "name": "NgZone",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ZeroArgFunction": {
-      "class": "Identifier",
-      "name": "ZeroArgFunction",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ErrorHandlingFn": {
-      "class": "Identifier",
-      "name": "ErrorHandlingFn",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
-      "prefix": null,
-      "value": null
-    },
-    "WrappedTimer": {
-      "class": "Identifier",
-      "name": "WrappedTimer",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
-      "prefix": null,
-      "value": null
-    },
-    "NgZoneError": {
-      "class": "Identifier",
-      "name": "NgZoneError",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
-      "prefix": null,
-      "value": null
-    },
-    "NgZoneImpl": {
-      "class": "Identifier",
-      "name": "NgZoneImpl",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
-      "prefix": null,
-      "value": null
-    },
-    "RenderComponentType": {
-      "class": "Identifier",
-      "name": "RenderComponentType",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "value": null
-    },
-    "RenderDebugInfo": {
-      "class": "Identifier",
-      "name": "RenderDebugInfo",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Renderer": {
-      "class": "Identifier",
-      "name": "Renderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "value": null
-    },
-    "RootRenderer": {
-      "class": "Identifier",
-      "name": "RootRenderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "name": "ComponentFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
     },
@@ -2093,13 +2522,6 @@
       "isHost": false,
       "value": null,
       "diDeps": []
-    },
-    "QueryList": {
-      "class": "Identifier",
-      "name": "QueryList",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
-      "prefix": null,
-      "value": null
     },
     "DynamicComponentLoader": {
       "class": "Identifier",
@@ -2147,6 +2569,34 @@
       "prefix": null,
       "value": null
     },
+    "ExpressionChangedAfterItHasBeenCheckedException": {
+      "class": "Identifier",
+      "name": "ExpressionChangedAfterItHasBeenCheckedException",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewWrappedException": {
+      "class": "Identifier",
+      "name": "ViewWrappedException",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewDestroyedException": {
+      "class": "Identifier",
+      "name": "ViewDestroyedException",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "QueryList": {
+      "class": "Identifier",
+      "name": "QueryList",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
+      "prefix": null,
+      "value": null
+    },
     "TemplateRef": {
       "class": "Identifier",
       "name": "TemplateRef",
@@ -2158,6 +2608,20 @@
       "class": "Identifier",
       "name": "TemplateRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewContainerRef": {
+      "class": "Identifier",
+      "name": "ViewContainerRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewContainerRef_": {
+      "class": "Identifier",
+      "name": "ViewContainerRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
       "prefix": null,
       "value": null
     },
@@ -2182,129 +2646,608 @@
       "prefix": null,
       "value": null
     },
-    "ViewContainerRef": {
+    "Directive": {
       "class": "Identifier",
-      "name": "ViewContainerRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+      "name": "Directive",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "ViewContainerRef_": {
+    "Component": {
       "class": "Identifier",
-      "name": "ViewContainerRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+      "name": "Component",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "ComponentRef": {
+    "View": {
       "class": "Identifier",
-      "name": "ComponentRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "name": "View",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "ComponentRef_": {
+    "Pipe": {
       "class": "Identifier",
-      "name": "ComponentRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "name": "Pipe",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "ComponentFactory": {
+    "Attribute": {
       "class": "Identifier",
-      "name": "ComponentFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "name": "Attribute",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "ExpressionChangedAfterItHasBeenCheckedException": {
+    "Query": {
       "class": "Identifier",
-      "name": "ExpressionChangedAfterItHasBeenCheckedException",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "name": "Query",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "ViewWrappedException": {
+    "ContentChildren": {
       "class": "Identifier",
-      "name": "ViewWrappedException",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "name": "ContentChildren",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "ViewDestroyedException": {
+    "ContentChild": {
       "class": "Identifier",
-      "name": "ViewDestroyedException",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "name": "ContentChild",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "EventListener": {
+    "ViewQuery": {
       "class": "Identifier",
-      "name": "EventListener",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "ViewQuery",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "DebugNode": {
+    "ViewChildren": {
       "class": "Identifier",
-      "name": "DebugNode",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "ViewChildren",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "DebugElement": {
+    "ViewChild": {
       "class": "Identifier",
-      "name": "DebugElement",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "ViewChild",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "asNativeElements": {
+    "Input": {
       "class": "Identifier",
-      "name": "asNativeElements",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "Input",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "_queryElementChildren": {
+    "Output": {
       "class": "Identifier",
-      "name": "_queryElementChildren",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "Output",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "_queryNodeChildren": {
+    "HostBinding": {
       "class": "Identifier",
-      "name": "_queryNodeChildren",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "HostBinding",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "getDebugNode": {
+    "HostListener": {
       "class": "Identifier",
-      "name": "getDebugNode",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "HostListener",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "getAllDebugNodes": {
+    "InjectorModule": {
       "class": "Identifier",
-      "name": "getAllDebugNodes",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "InjectorModule",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "indexDebugNode": {
+    "Provides": {
       "class": "Identifier",
-      "name": "indexDebugNode",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "Provides",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
     },
-    "removeDebugNodeFromIndex": {
+    "AttributeMetadata": {
       "class": "Identifier",
-      "name": "removeDebugNodeFromIndex",
-      "moduleUrl": "asset:angular2/lib/src/core/debug/debug_node.dart",
+      "name": "AttributeMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "QueryMetadata": {
+      "class": "Identifier",
+      "name": "QueryMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ContentChildrenMetadata": {
+      "class": "Identifier",
+      "name": "ContentChildrenMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ContentChildMetadata": {
+      "class": "Identifier",
+      "name": "ContentChildMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewQueryMetadata": {
+      "class": "Identifier",
+      "name": "ViewQueryMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewChildrenMetadata": {
+      "class": "Identifier",
+      "name": "ViewChildrenMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewChildMetadata": {
+      "class": "Identifier",
+      "name": "ViewChildMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ProviderPropertyMetadata": {
+      "class": "Identifier",
+      "name": "ProviderPropertyMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "InjectorModuleMetadata": {
+      "class": "Identifier",
+      "name": "InjectorModuleMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DirectiveMetadata": {
+      "class": "Identifier",
+      "name": "DirectiveMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ComponentMetadata": {
+      "class": "Identifier",
+      "name": "ComponentMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PipeMetadata": {
+      "class": "Identifier",
+      "name": "PipeMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
+      "prefix": null,
+      "value": null
+    },
+    "InputMetadata": {
+      "class": "Identifier",
+      "name": "InputMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
+      "prefix": null,
+      "value": null
+    },
+    "OutputMetadata": {
+      "class": "Identifier",
+      "name": "OutputMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
+      "prefix": null,
+      "value": null
+    },
+    "HostBindingMetadata": {
+      "class": "Identifier",
+      "name": "HostBindingMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
+      "prefix": null,
+      "value": null
+    },
+    "HostListenerMetadata": {
+      "class": "Identifier",
+      "name": "HostListenerMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/directives.dart",
+      "prefix": null,
+      "value": null
+    },
+    "LifecycleHooks": {
+      "class": "Identifier",
+      "name": "LifecycleHooks",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "OnChanges": {
+      "class": "Identifier",
+      "name": "OnChanges",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "OnInit": {
+      "class": "Identifier",
+      "name": "OnInit",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DoCheck": {
+      "class": "Identifier",
+      "name": "DoCheck",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "OnDestroy": {
+      "class": "Identifier",
+      "name": "OnDestroy",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AfterContentInit": {
+      "class": "Identifier",
+      "name": "AfterContentInit",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AfterContentChecked": {
+      "class": "Identifier",
+      "name": "AfterContentChecked",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AfterViewInit": {
+      "class": "Identifier",
+      "name": "AfterViewInit",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AfterViewChecked": {
+      "class": "Identifier",
+      "name": "AfterViewChecked",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewEncapsulation": {
+      "class": "Identifier",
+      "name": "ViewEncapsulation",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewMetadata": {
+      "class": "Identifier",
+      "name": "ViewMetadata",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PLATFORM_COMMON_PROVIDERS": {
+      "class": "Identifier",
+      "name": "PLATFORM_COMMON_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "PlatformRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "PlatformRef_",
+            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PlatformRef",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "PlatformRef_",
+              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Reflector",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Identifier",
+            "name": "reflectorFactory",
+            "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
+            "prefix": null,
+            "value": null
+          },
+          "useProperty": null,
+          "multi": false,
+          "deps": []
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ReflectorReader",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Reflector",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "TestabilityRegistry",
+              "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "TestabilityRegistry",
+            "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "Console",
+              "moduleUrl": "asset:angular2/lib/src/core/console.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": []
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "Console",
+            "moduleUrl": "asset:angular2/lib/src/core/console.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        }
+      ]
+    },
+    "reflectorFactory": {
+      "class": "Identifier",
+      "name": "reflectorFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PLATFORM_DIRECTIVES": {
+      "class": "Identifier",
+      "name": "PLATFORM_DIRECTIVES",
+      "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PLATFORM_PIPES": {
+      "class": "Identifier",
+      "name": "PLATFORM_PIPES",
+      "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NoReflectionCapabilities": {
+      "class": "Identifier",
+      "name": "NoReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ReflectionInfo": {
+      "class": "Identifier",
+      "name": "ReflectionInfo",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "Reflector": {
+      "class": "Identifier",
+      "name": "Reflector",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_mergeMaps": {
+      "class": "Identifier",
+      "name": "_mergeMaps",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PlatformReflectionCapabilities": {
+      "class": "Identifier",
+      "name": "PlatformReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
+      "prefix": null,
+      "value": null
+    },
+    "SetterFn": {
+      "class": "Identifier",
+      "name": "SetterFn",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
+      "prefix": null,
+      "value": null
+    },
+    "GetterFn": {
+      "class": "Identifier",
+      "name": "GetterFn",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
+      "prefix": null,
+      "value": null
+    },
+    "MethodFn": {
+      "class": "Identifier",
+      "name": "MethodFn",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RenderComponentType": {
+      "class": "Identifier",
+      "name": "RenderComponentType",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RenderDebugInfo": {
+      "class": "Identifier",
+      "name": "RenderDebugInfo",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "prefix": null,
+      "value": null
+    },
+    "Renderer": {
+      "class": "Identifier",
+      "name": "Renderer",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RootRenderer": {
+      "class": "Identifier",
+      "name": "RootRenderer",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "value": null
     },
@@ -2363,1117 +3306,125 @@
       "prefix": null,
       "value": null
     },
-    "setTestabilityGetter": {
+    "NgZone": {
       "class": "Identifier",
-      "name": "setTestabilityGetter",
-      "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
+      "name": "NgZone",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
       "prefix": null,
       "value": null
     },
-    "keyValDiff": {
+    "ZeroArgFunction": {
       "class": "Identifier",
-      "name": "keyValDiff",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
+      "name": "ZeroArgFunction",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "value": null
     },
-    "iterableDiff": {
+    "ErrorHandlingFn": {
       "class": "Identifier",
-      "name": "iterableDiff",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
+      "name": "ErrorHandlingFn",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "value": null
     },
-    "defaultIterableDiffers": {
+    "WrappedTimer": {
       "class": "Identifier",
-      "name": "defaultIterableDiffers",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
+      "name": "WrappedTimer",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "value": null
     },
-    "defaultKeyValueDiffers": {
+    "NgZoneError": {
       "class": "Identifier",
-      "name": "defaultKeyValueDiffers",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
+      "name": "NgZoneError",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "value": null
     },
-    "DefaultKeyValueDifferFactory": {
+    "NgZoneImpl": {
       "class": "Identifier",
-      "name": "DefaultKeyValueDifferFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
+      "name": "NgZoneImpl",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "value": null
     },
-    "DefaultKeyValueDiffer": {
+    "TimerWrapper": {
       "class": "Identifier",
-      "name": "DefaultKeyValueDiffer",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
+      "name": "TimerWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
       "value": null
     },
-    "KeyValueChangeRecord": {
+    "ObservableWrapper": {
       "class": "Identifier",
-      "name": "KeyValueChangeRecord",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
+      "name": "ObservableWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
       "value": null
     },
-    "DefaultIterableDifferFactory": {
+    "EventEmitter": {
       "class": "Identifier",
-      "name": "DefaultIterableDifferFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "name": "EventEmitter",
+      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
       "value": null
     },
-    "DefaultIterableDiffer": {
+    "Subject": {
       "class": "Identifier",
-      "name": "DefaultIterableDiffer",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "name": "Subject",
+      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
       "value": null
     },
-    "CollectionChangeRecord": {
+    "PromiseWrapper": {
       "class": "Identifier",
-      "name": "CollectionChangeRecord",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "name": "PromiseWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
       "value": null
     },
-    "_DuplicateItemRecordList": {
+    "PromiseCompleter": {
       "class": "Identifier",
-      "name": "_DuplicateItemRecordList",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "name": "PromiseCompleter",
+      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
       "value": null
     },
-    "_DuplicateMap": {
+    "_ArrayLogger": {
       "class": "Identifier",
-      "name": "_DuplicateMap",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "name": "_ArrayLogger",
+      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
       "prefix": null,
       "value": null
     },
-    "ChangeDetectorState": {
+    "ExceptionHandler": {
       "class": "Identifier",
-      "name": "ChangeDetectorState",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
+      "name": "ExceptionHandler",
+      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
       "prefix": null,
       "value": null
     },
-    "ChangeDetectionStrategy": {
+    "BaseException": {
       "class": "Identifier",
-      "name": "ChangeDetectionStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
+      "name": "BaseException",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
       "prefix": null,
       "value": null
     },
-    "isDefaultChangeDetectionStrategy": {
+    "WrappedException": {
       "class": "Identifier",
-      "name": "isDefaultChangeDetectionStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
+      "name": "WrappedException",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
       "prefix": null,
       "value": null
     },
-    "ChangeDetectorRef": {
+    "makeTypeError": {
       "class": "Identifier",
-      "name": "ChangeDetectorRef",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detector_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "TrackByFn": {
-      "class": "Identifier",
-      "name": "TrackByFn",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
-      "prefix": null,
-      "value": null
-    },
-    "IterableDiffer": {
-      "class": "Identifier",
-      "name": "IterableDiffer",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
-      "prefix": null,
-      "value": null
-    },
-    "IterableDifferFactory": {
-      "class": "Identifier",
-      "name": "IterableDifferFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
-      "prefix": null,
-      "value": null
-    },
-    "IterableDiffers": {
-      "class": "Identifier",
-      "name": "IterableDiffers",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
-      "prefix": null,
-      "value": null
-    },
-    "KeyValueDiffer": {
-      "class": "Identifier",
-      "name": "KeyValueDiffer",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
-      "prefix": null,
-      "value": null
-    },
-    "KeyValueDifferFactory": {
-      "class": "Identifier",
-      "name": "KeyValueDifferFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
-      "prefix": null,
-      "value": null
-    },
-    "KeyValueDiffers": {
-      "class": "Identifier",
-      "name": "KeyValueDiffers",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PipeTransform": {
-      "class": "Identifier",
-      "name": "PipeTransform",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/pipe_transform.dart",
-      "prefix": null,
-      "value": null
-    },
-    "devModeEqual": {
-      "class": "Identifier",
-      "name": "devModeEqual",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
-      "prefix": null,
-      "value": null
-    },
-    "WrappedValue": {
-      "class": "Identifier",
-      "name": "WrappedValue",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ValueUnwrapper": {
-      "class": "Identifier",
-      "name": "ValueUnwrapper",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
-      "prefix": null,
-      "value": null
-    },
-    "SimpleChange": {
-      "class": "Identifier",
-      "name": "SimpleChange",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PLATFORM_DIRECTIVES": {
-      "class": "Identifier",
-      "name": "PLATFORM_DIRECTIVES",
-      "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PLATFORM_PIPES": {
-      "class": "Identifier",
-      "name": "PLATFORM_PIPES",
-      "moduleUrl": "asset:angular2/lib/src/core/platform_directives_and_pipes.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PLATFORM_COMMON_PROVIDERS": {
-      "class": "Identifier",
-      "name": "PLATFORM_COMMON_PROVIDERS",
-      "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "PlatformRef_",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "PlatformRef_",
-            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Injector",
-                    "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "PlatformRef",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "PlatformRef_",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "Reflector",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "_reflector",
-            "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
-            "prefix": null,
-            "value": null
-          },
-          "multi": false,
-          "deps": []
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ReflectorReader",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "Reflector",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "TestabilityRegistry",
-              "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "TestabilityRegistry",
-            "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "Console",
-              "moduleUrl": "asset:angular2/lib/src/core/console.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "Console",
-            "moduleUrl": "asset:angular2/lib/src/core/console.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        }
-      ]
-    },
-    "_reflector": {
-      "class": "Identifier",
-      "name": "_reflector",
-      "moduleUrl": "asset:angular2/lib/src/core/platform_common_providers.dart",
-      "prefix": null,
-      "value": null
-    },
-    "APPLICATION_COMMON_PROVIDERS": {
-      "class": "Identifier",
-      "name": "APPLICATION_COMMON_PROVIDERS",
-      "moduleUrl": "asset:angular2/lib/src/core/application_common_providers.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "NgZone",
-              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "createNgZone",
-            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-            "prefix": null,
-            "value": null
-          },
-          "multi": false,
-          "deps": []
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "ApplicationRef_",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "PlatformRef_",
-                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "NgZone",
-                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "ApplicationRef_",
-            "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "PlatformRef_",
-                    "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "NgZone",
-                    "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Injector",
-                    "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ApplicationRef",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "ApplicationRef_",
-              "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "PlatformRef_",
-                      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "NgZone",
-                      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Injector",
-                      "moduleUrl": "asset:angular2/lib/src/core/di/injector.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ComponentResolver",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "ReflectorComponentResolver",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "APP_ID",
-              "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "_appIdRandomProviderFactory",
-            "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-            "prefix": null,
-            "value": null
-          },
-          "multi": false,
-          "deps": []
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "ViewUtils",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "RootRenderer",
-                      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "APP_ID",
-                      "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "ViewUtils",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "RootRenderer",
-                    "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "APP_ID",
-                    "moduleUrl": "asset:angular2/lib/src/core/application_tokens.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "IterableDiffers",
-              "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": {
-            "class": "Identifier",
-            "name": "defaultIterableDiffers",
-            "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
-            "prefix": null,
-            "value": null
-          },
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "KeyValueDiffers",
-              "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": {
-            "class": "Identifier",
-            "name": "defaultKeyValueDiffers",
-            "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
-            "prefix": null,
-            "value": null
-          },
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "DynamicComponentLoader",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "DynamicComponentLoader_",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": [
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "ComponentResolver",
-                    "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              }
-            ]
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "multi": false,
-          "deps": null
-        }
-      ]
-    },
-    "NoReflectionCapabilities": {
-      "class": "Identifier",
-      "name": "NoReflectionCapabilities",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ReflectionInfo": {
-      "class": "Identifier",
-      "name": "ReflectionInfo",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Reflector": {
-      "class": "Identifier",
-      "name": "Reflector",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_mergeMaps": {
-      "class": "Identifier",
-      "name": "_mergeMaps",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "SetterFn": {
-      "class": "Identifier",
-      "name": "SetterFn",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "value": null
-    },
-    "GetterFn": {
-      "class": "Identifier",
-      "name": "GetterFn",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "value": null
-    },
-    "MethodFn": {
-      "class": "Identifier",
-      "name": "MethodFn",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PlatformReflectionCapabilities": {
-      "class": "Identifier",
-      "name": "PlatformReflectionCapabilities",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
+      "name": "makeTypeError",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
       "prefix": null,
       "value": null
     }
   },
-  "alias": {
-    "_EMPTY_LIST": []
-  }
+  "alias": {}
 }

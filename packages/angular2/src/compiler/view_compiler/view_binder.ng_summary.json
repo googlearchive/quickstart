@@ -26,19 +26,21 @@
           "TextAst",
           "DirectiveAst",
           "BoundDirectivePropertyAst",
-          "templateVisitAll",
-          "PropertyBindingType",
-          "ProviderAst"
+          "templateVisitAll"
         ],
         "5": false
       },
       {
-        "1": "property_binder.dart",
+        "1": "compile_element.dart",
         "2": [
-          "bindRenderText",
-          "bindRenderInputs",
-          "bindDirectiveInputs",
-          "bindDirectiveHostProps"
+          "CompileElement"
+        ],
+        "5": false
+      },
+      {
+        "1": "compile_view.dart",
+        "2": [
+          "CompileView"
         ],
         "5": false
       },
@@ -63,17 +65,12 @@
         "5": false
       },
       {
-        "1": "compile_view.dart",
+        "1": "property_binder.dart",
         "2": [
-          "CompileView"
-        ],
-        "5": false
-      },
-      {
-        "1": "compile_element.dart",
-        "2": [
-          "CompileElement",
-          "CompileNode"
+          "bindRenderText",
+          "bindRenderInputs",
+          "bindDirectiveInputs",
+          "bindDirectiveHostProps"
         ],
         "5": false
       }

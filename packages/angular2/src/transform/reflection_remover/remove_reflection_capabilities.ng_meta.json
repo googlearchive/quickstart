@@ -11,10 +11,6 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/annotation_matcher.dart",
         "5": false
       },
@@ -24,6 +20,10 @@
       },
       {
         "1": "package:angular2/src/transform/common/mirror_mode.dart",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
         "5": false
       },
       {
@@ -42,27 +42,27 @@
     "6": "remove_reflection_capabilities.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/annotation_matcher.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/annotation_matcher.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/mirror_mode.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/mirror_mode.template.dart",
         "4": "i2"
       },
       {
-        "1": "codegen.ngfactory.dart",
+        "1": "codegen.template.dart",
         "4": "i3"
       },
       {
-        "1": "entrypoint_matcher.ngfactory.dart",
+        "1": "entrypoint_matcher.template.dart",
         "4": "i4"
       },
       {
-        "1": "rewriter.ngfactory.dart",
+        "1": "rewriter.template.dart",
         "4": "i5"
       }
     ]

@@ -3,6 +3,20 @@
     "1": "angular2.src.web_workers.worker.renderer",
     "3": [
       {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/render/api.dart",
         "2": [
           "Renderer",
@@ -13,21 +27,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/client_message_broker.dart",
+        "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "ClientMessageBroker",
-          "ClientMessageBrokerFactory",
-          "FnArg",
-          "UiArguments"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "print"
+          "ObservableWrapper"
         ],
         "5": false
       },
@@ -39,38 +41,19 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "Injectable"
+          "isPresent",
+          "isBlank"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/render_store.dart",
+        "1": "package:angular2/src/web_workers/shared/client_message_broker.dart",
         "2": [
-          "RenderStore"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
-        "2": [
-          "RENDERER_CHANNEL"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/serializer.dart",
-        "2": [
-          "Serializer",
-          "RenderStoreObject"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
-        "2": [
-          "EVENT_CHANNEL"
+          "ClientMessageBrokerFactory",
+          "FnArg",
+          "UiArguments"
         ],
         "5": false
       },
@@ -82,17 +65,31 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
+        "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
         "2": [
-          "EventEmitter",
-          "ObservableWrapper"
+          "RENDERER_CHANNEL"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/view.dart",
+        "1": "package:angular2/src/web_workers/shared/messaging_api.dart",
         "2": [
-          "ViewEncapsulation"
+          "EVENT_CHANNEL"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/render_store.dart",
+        "2": [
+          "RenderStore"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/serializer.dart",
+        "2": [
+          "Serializer",
+          "RenderStoreObject"
         ],
         "5": false
       },
@@ -139,51 +136,51 @@
     "6": "renderer.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/render/api.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/client_message_broker.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/view.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/render_store.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/messaging_api.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/client_message_broker.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/serializer.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/message_bus.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/message_bus.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/messaging_api.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/render_store.template.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/serializer.template.dart",
         "4": "i10"
       },
       {
-        "1": "event_deserializer.ngfactory.dart",
+        "1": "event_deserializer.template.dart",
         "4": "i11"
       }
     ]

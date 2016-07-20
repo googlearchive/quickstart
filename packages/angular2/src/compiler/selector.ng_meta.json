@@ -6,8 +6,14 @@
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "Map",
-          "ListWrapper",
-          "MapWrapper"
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       },
@@ -21,28 +27,20 @@
           "StringWrapper"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
       }
     ],
     "6": "selector.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       }
     ]
@@ -51,6 +49,13 @@
     "_EMPTY_ATTR_VALUE": {
       "class": "Identifier",
       "name": "_EMPTY_ATTR_VALUE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/selector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "MatchCallbackHandler": {
+      "class": "Identifier",
+      "name": "MatchCallbackHandler",
       "moduleUrl": "asset:angular2/lib/src/compiler/selector.dart",
       "prefix": null,
       "value": null

@@ -24,11 +24,11 @@
     "6": "tools.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/linker/component_factory.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/component_factory.template.dart",
         "4": "i0"
       },
       {
-        "1": "common_tools.ngfactory.dart",
+        "1": "common_tools.template.dart",
         "4": "i1"
       }
     ]

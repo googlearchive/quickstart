@@ -10,9 +10,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "compile_metadata.dart",
         "2": [
-          "unimplemented"
+          "CompileIdentifierMetadata"
         ],
         "5": false
       },
@@ -22,32 +22,21 @@
           "Identifiers"
         ],
         "5": false
-      },
-      {
-        "1": "compile_metadata.dart",
-        "2": [
-          "CompileIdentifierMetadata"
-        ],
-        "5": false
       }
     ],
     "6": "config.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "identifiers.ngfactory.dart",
+        "1": "identifiers.template.dart",
         "4": "i2"
-      },
-      {
-        "1": "compile_metadata.ngfactory.dart",
-        "4": "i3"
       }
     ]
   },

@@ -3,11 +3,7 @@
     "1": "reflection.reflection",
     "3": [
       {
-        "1": "reflector.dart",
-        "5": false
-      },
-      {
-        "1": "types.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "5": false
       },
       {
@@ -15,7 +11,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "reflector.dart",
+        "5": false
+      },
+      {
+        "1": "types.dart",
         "5": false
       }
     ],

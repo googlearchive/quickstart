@@ -3,6 +3,15 @@
     "1": "angular2.src.common.pipes.replace_pipe",
     "3": [
       {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Injectable",
+          "PipeTransform",
+          "Pipe"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isBlank",
@@ -11,15 +20,6 @@
           "isFunction",
           "RegExpWrapper",
           "StringWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/core.dart",
-        "2": [
-          "Injectable",
-          "PipeTransform",
-          "Pipe"
         ],
         "5": false
       },
@@ -58,6 +58,13 @@
     "6": "replace_pipe.dart"
   },
   "type": {
+    "_Matcher": {
+      "class": "Identifier",
+      "name": "_Matcher",
+      "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
+      "prefix": null,
+      "value": null
+    },
     "ReplacePipe": {
       "class": "Pipe",
       "type": {

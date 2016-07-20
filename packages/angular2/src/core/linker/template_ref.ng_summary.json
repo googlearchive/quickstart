@@ -3,16 +3,16 @@
     "1": "angular2.src.core.linker.template_ref",
     "3": [
       {
-        "1": "element_ref.dart",
+        "1": "element.dart",
         "2": [
-          "ElementRef"
+          "AppElement"
         ],
         "5": false
       },
       {
-        "1": "element.dart",
+        "1": "element_ref.dart",
         "2": [
-          "AppElement"
+          "ElementRef"
         ],
         "5": false
       },

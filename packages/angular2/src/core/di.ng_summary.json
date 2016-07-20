@@ -28,7 +28,8 @@
       {
         "1": "di/injector.dart",
         "2": [
-          "Injector"
+          "Injector",
+          "InjectorFactory"
         ]
       },
       {
@@ -44,7 +45,8 @@
           "ProviderBuilder",
           "bind",
           "Provider",
-          "provide"
+          "provide",
+          "noValueProvided"
         ]
       },
       {
@@ -78,6 +80,13 @@
         "1": "di/opaque_token.dart",
         "2": [
           "OpaqueToken"
+        ]
+      },
+      {
+        "1": "di/map_injector.dart",
+        "2": [
+          "MapInjector",
+          "MapInjectorFactory"
         ]
       }
     ],

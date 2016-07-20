@@ -11,31 +11,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent",
-          "isBlank",
-          "stringify"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/metadata.dart",
         "2": [
           "DirectiveMetadata",
@@ -64,6 +39,30 @@
           "ReflectorReader"
         ],
         "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "Type",
+          "isPresent",
+          "stringify"
+        ],
+        "5": false
       }
     ],
     "5": [
@@ -86,31 +85,31 @@
     "6": "directive_resolver.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/core/reflection/reflector_reader.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/metadata.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflector_reader.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i6"
       }
     ]
@@ -119,6 +118,13 @@
     "_isDirectiveMetadata": {
       "class": "Identifier",
       "name": "_isDirectiveMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/directive_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NoDirectiveAnnotationError": {
+      "class": "Identifier",
+      "name": "NoDirectiveAnnotationError",
       "moduleUrl": "asset:angular2/lib/src/compiler/directive_resolver.dart",
       "prefix": null,
       "value": null

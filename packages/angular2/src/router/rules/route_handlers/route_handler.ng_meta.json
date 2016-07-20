@@ -7,13 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type"
-        ],
-        "5": false
-      },
-      {
         "1": "../../instruction.dart",
         "2": [
           "RouteData"
@@ -24,12 +17,8 @@
     "6": "route_handler.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "../../instruction.template.dart",
         "4": "i0"
-      },
-      {
-        "1": "../../instruction.ngfactory.dart",
-        "4": "i1"
       }
     ]
   },

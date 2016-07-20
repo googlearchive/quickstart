@@ -3,13 +3,6 @@
     "1": "angular2.src.compiler.output.abstract_js_emitter",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -17,8 +10,10 @@
         "5": false
       },
       {
-        "1": "output_ast.dart",
-        "4": "o",
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent"
+        ],
         "5": false
       },
       {
@@ -29,6 +24,11 @@
           "CATCH_ERROR_VAR",
           "CATCH_STACK_VAR"
         ],
+        "5": false
+      },
+      {
+        "1": "output_ast.dart",
+        "4": "o",
         "5": false
       }
     ],

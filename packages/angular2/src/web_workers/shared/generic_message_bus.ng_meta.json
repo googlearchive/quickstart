@@ -7,10 +7,22 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/zone/ng_zone.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "EventEmitter"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
         "5": false
       },
       {
@@ -21,40 +33,28 @@
           "MessageBusSource"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/core/zone/ng_zone.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "5": false
       }
     ],
     "6": "generic_message_bus.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/web_workers/shared/message_bus.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/web_workers/shared/message_bus.template.dart",
         "4": "i4"
       }
     ]

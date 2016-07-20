@@ -18,11 +18,11 @@
     "6": "reflection_info_model.pb.dart",
     "7": [
       {
-        "1": "annotation_model.pb.ngfactory.dart",
+        "1": "annotation_model.pb.template.dart",
         "4": "i0"
       },
       {
-        "1": "parameter_model.pb.ngfactory.dart",
+        "1": "parameter_model.pb.template.dart",
         "4": "i1"
       }
     ]

@@ -3,6 +3,13 @@
     "1": "angular2.src.services.url_resolver",
     "3": [
       {
+        "1": "package:angular2/src/core/application_tokens.dart",
+        "2": [
+          "PACKAGE_ROOT_URL"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injectable",
@@ -16,13 +23,6 @@
         "2": [
           "isPresent",
           "StringWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/application_tokens.dart",
-        "2": [
-          "PACKAGE_ROOT_URL"
         ],
         "5": false
       }
@@ -79,6 +79,7 @@
         "useExisting": null,
         "useValue": "/packages",
         "useFactory": null,
+        "useProperty": null,
         "multi": false,
         "deps": null
       }

@@ -3,7 +3,37 @@
     "1": "angular2.testing",
     "4": [
       {
-        "1": "src/testing/testing.dart"
+        "1": "package:angular2/src/compiler/xhr_mock.dart",
+        "2": [
+          "MockXHR"
+        ]
+      },
+      {
+        "1": "package:angular2/src/mock/directive_resolver_mock.dart",
+        "2": [
+          "MockDirectiveResolver"
+        ]
+      },
+      {
+        "1": "package:angular2/src/mock/mock_application_ref.dart",
+        "2": [
+          "MockApplicationRef"
+        ]
+      },
+      {
+        "1": "package:angular2/src/mock/ng_zone_mock.dart",
+        "2": [
+          "MockNgZone"
+        ]
+      },
+      {
+        "1": "package:angular2/src/mock/view_resolver_mock.dart",
+        "2": [
+          "MockViewResolver"
+        ]
+      },
+      {
+        "1": "src/testing/fake_async.dart"
       },
       {
         "1": "src/testing/test_component_builder.dart",
@@ -16,76 +46,145 @@
         "1": "src/testing/test_injector.dart"
       },
       {
-        "1": "src/testing/fake_async.dart"
-      },
-      {
-        "1": "package:angular2/src/mock/view_resolver_mock.dart",
-        "2": [
-          "MockViewResolver"
-        ]
-      },
-      {
-        "1": "package:angular2/src/compiler/xhr_mock.dart",
-        "2": [
-          "MockXHR"
-        ]
-      },
-      {
-        "1": "package:angular2/src/mock/ng_zone_mock.dart",
-        "2": [
-          "MockNgZone"
-        ]
-      },
-      {
-        "1": "package:angular2/src/mock/mock_application_ref.dart",
-        "2": [
-          "MockApplicationRef"
-        ]
-      },
-      {
-        "1": "package:angular2/src/mock/directive_resolver_mock.dart",
-        "2": [
-          "MockDirectiveResolver"
-        ]
+        "1": "src/testing/testing.dart"
       }
     ],
     "6": "testing.dart",
     "7": [
       {
-        "1": "src/testing/test_component_builder.ngfactory.dart",
+        "1": "package:angular2/src/compiler/xhr_mock.template.dart",
         "4": "i0"
       },
       {
-        "1": "src/testing/test_injector.ngfactory.dart",
+        "1": "package:angular2/src/mock/directive_resolver_mock.template.dart",
         "4": "i1"
       },
       {
-        "1": "src/testing/fake_async.ngfactory.dart",
+        "1": "package:angular2/src/mock/mock_application_ref.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/mock/view_resolver_mock.ngfactory.dart",
+        "1": "package:angular2/src/mock/ng_zone_mock.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/compiler/xhr_mock.ngfactory.dart",
+        "1": "package:angular2/src/mock/view_resolver_mock.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/mock/ng_zone_mock.ngfactory.dart",
+        "1": "src/testing/fake_async.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/mock/mock_application_ref.ngfactory.dart",
+        "1": "src/testing/test_component_builder.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/mock/directive_resolver_mock.ngfactory.dart",
+        "1": "src/testing/test_injector.template.dart",
         "4": "i7"
       }
     ]
   },
   "type": {
+    "MockXHR": {
+      "class": "Identifier",
+      "name": "MockXHR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_PendingRequest": {
+      "class": "Identifier",
+      "name": "_PendingRequest",
+      "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_Expectation": {
+      "class": "Identifier",
+      "name": "_Expectation",
+      "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
+      "prefix": null,
+      "value": null
+    },
+    "MockDirectiveResolver": {
+      "class": "Type",
+      "name": "MockDirectiveResolver",
+      "moduleUrl": "asset:angular2/lib/src/mock/directive_resolver_mock.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": []
+    },
+    "MockApplicationRef": {
+      "class": "Type",
+      "name": "MockApplicationRef",
+      "moduleUrl": "asset:angular2/lib/src/mock/mock_application_ref.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": []
+    },
+    "MockNgZone": {
+      "class": "Type",
+      "name": "MockNgZone",
+      "moduleUrl": "asset:angular2/lib/src/mock/ng_zone_mock.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": []
+    },
+    "MockViewResolver": {
+      "class": "Type",
+      "name": "MockViewResolver",
+      "moduleUrl": "asset:angular2/lib/src/mock/view_resolver_mock.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": []
+    },
+    "_u": {
+      "class": "Identifier",
+      "name": "_u",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
+      "prefix": null,
+      "value": null
+    },
+    "fakeAsync": {
+      "class": "Identifier",
+      "name": "fakeAsync",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
+      "prefix": null,
+      "value": null
+    },
+    "tick": {
+      "class": "Identifier",
+      "name": "tick",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
+      "prefix": null,
+      "value": null
+    },
+    "clearPendingTimers": {
+      "class": "Identifier",
+      "name": "clearPendingTimers",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
+      "prefix": null,
+      "value": null
+    },
+    "flushMicrotasks": {
+      "class": "Identifier",
+      "name": "flushMicrotasks",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_assertInFakeAsyncZone": {
+      "class": "Identifier",
+      "name": "_assertInFakeAsyncZone",
+      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
+      "prefix": null,
+      "value": null
+    },
     "ComponentFixture": {
       "class": "Identifier",
       "name": "ComponentFixture",
@@ -184,115 +283,23 @@
     "async": {
       "class": "Identifier",
       "name": "async",
-      "moduleUrl": "asset:angular2/lib/src/testing/async.dart",
+      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
       "value": null
     },
-    "_u": {
+    "emptyArray": {
       "class": "Identifier",
-      "name": "_u",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
+      "name": "emptyArray",
+      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
       "value": null
     },
-    "fakeAsync": {
+    "FunctionWithParamTokens": {
       "class": "Identifier",
-      "name": "fakeAsync",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
+      "name": "FunctionWithParamTokens",
+      "moduleUrl": "asset:angular2/lib/src/testing/test_injector.dart",
       "prefix": null,
       "value": null
-    },
-    "tick": {
-      "class": "Identifier",
-      "name": "tick",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "clearPendingTimers": {
-      "class": "Identifier",
-      "name": "clearPendingTimers",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "flushMicrotasks": {
-      "class": "Identifier",
-      "name": "flushMicrotasks",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_assertInFakeAsyncZone": {
-      "class": "Identifier",
-      "name": "_assertInFakeAsyncZone",
-      "moduleUrl": "asset:angular2/lib/src/testing/fake_async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "MockViewResolver": {
-      "class": "Type",
-      "name": "MockViewResolver",
-      "moduleUrl": "asset:angular2/lib/src/mock/view_resolver_mock.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
-    },
-    "flattenArray": {
-      "class": "Identifier",
-      "name": "flattenArray",
-      "moduleUrl": "asset:angular2/lib/src/mock/view_resolver_mock.dart",
-      "prefix": null,
-      "value": null
-    },
-    "MockXHR": {
-      "class": "Identifier",
-      "name": "MockXHR",
-      "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_PendingRequest": {
-      "class": "Identifier",
-      "name": "_PendingRequest",
-      "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_Expectation": {
-      "class": "Identifier",
-      "name": "_Expectation",
-      "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
-      "prefix": null,
-      "value": null
-    },
-    "MockNgZone": {
-      "class": "Type",
-      "name": "MockNgZone",
-      "moduleUrl": "asset:angular2/lib/src/mock/ng_zone_mock.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
-    },
-    "MockApplicationRef": {
-      "class": "Type",
-      "name": "MockApplicationRef",
-      "moduleUrl": "asset:angular2/lib/src/mock/mock_application_ref.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
-    },
-    "MockDirectiveResolver": {
-      "class": "Type",
-      "name": "MockDirectiveResolver",
-      "moduleUrl": "asset:angular2/lib/src/mock/directive_resolver_mock.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
     }
   },
   "alias": {}

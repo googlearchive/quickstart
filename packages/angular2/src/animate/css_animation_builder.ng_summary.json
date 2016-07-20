@@ -3,13 +3,6 @@
     "1": "angular2.src.animate.css_animation_builder",
     "3": [
       {
-        "1": "css_animation_options.dart",
-        "2": [
-          "CssAnimationOptions"
-        ],
-        "5": false
-      },
-      {
         "1": "animation.dart",
         "2": [
           "Animation"
@@ -20,6 +13,13 @@
         "1": "browser_details.dart",
         "2": [
           "BrowserDetails"
+        ],
+        "5": false
+      },
+      {
+        "1": "css_animation_options.dart",
+        "2": [
+          "CssAnimationOptions"
         ],
         "5": false
       }

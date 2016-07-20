@@ -10,26 +10,7 @@
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injector",
-          "ResolvedReflectiveProvider",
-          "Injectable",
-          "ReflectiveInjector"
-        ],
-        "5": false
-      },
-      {
-        "1": "component_resolver.dart",
-        "2": [
-          "ComponentResolver"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isType",
-          "Type",
-          "stringify",
-          "isPresent"
+          "Injectable"
         ],
         "5": false
       },
@@ -37,6 +18,13 @@
         "1": "component_factory.dart",
         "2": [
           "ComponentRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "component_resolver.dart",
+        "2": [
+          "ComponentResolver"
         ],
         "5": false
       },
@@ -68,24 +56,20 @@
     "6": "dynamic_component_loader.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "component_resolver.ngfactory.dart",
+        "1": "component_factory.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "component_resolver.template.dart",
         "4": "i2"
       },
       {
-        "1": "component_factory.ngfactory.dart",
+        "1": "view_container_ref.template.dart",
         "4": "i3"
-      },
-      {
-        "1": "view_container_ref.ngfactory.dart",
-        "4": "i4"
       }
     ]
   },

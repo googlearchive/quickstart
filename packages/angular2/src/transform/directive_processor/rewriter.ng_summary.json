@@ -11,17 +11,9 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "2": [
-          "AssetId"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/compile_metadata.dart",
         "2": [
-          "CompileIdentifierMetadata",
-          "CompileProviderMetadata"
+          "CompileIdentifierMetadata"
         ],
         "5": false
       },
@@ -42,10 +34,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/type_metadata_reader.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/interface_matcher.dart",
         "5": false
       },
@@ -62,12 +50,23 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/transform/common/type_metadata_reader.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/transform/common/url_resolver.dart",
         "5": false
       },
       {
         "1": "package:angular2/src/transform/common/zone.dart",
         "4": "zone",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
+        "2": [
+          "AssetId"
+        ],
         "5": false
       },
       {

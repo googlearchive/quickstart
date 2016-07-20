@@ -24,16 +24,16 @@
         "5": false
       },
       {
-        "1": "../router.dart",
+        "1": "../instruction.dart",
         "2": [
-          "Router"
+          "Instruction"
         ],
         "5": false
       },
       {
-        "1": "../instruction.dart",
+        "1": "../router.dart",
         "2": [
-          "Instruction"
+          "Router"
         ],
         "5": false
       }
@@ -56,23 +56,23 @@
     "6": "router_link.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/platform/common.ngfactory.dart",
+        "1": "package:angular2/platform/common.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "../router.ngfactory.dart",
+        "1": "../instruction.template.dart",
         "4": "i3"
       },
       {
-        "1": "../instruction.ngfactory.dart",
+        "1": "../router.template.dart",
         "4": "i4"
       }
     ]

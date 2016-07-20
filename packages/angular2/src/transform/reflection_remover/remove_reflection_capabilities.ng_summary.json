@@ -11,10 +11,6 @@
         "5": false
       },
       {
-        "1": "package:barback/barback.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/annotation_matcher.dart",
         "5": false
       },
@@ -24,6 +20,10 @@
       },
       {
         "1": "package:angular2/src/transform/common/mirror_mode.dart",
+        "5": false
+      },
+      {
+        "1": "package:barback/barback.dart",
         "5": false
       },
       {

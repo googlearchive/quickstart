@@ -3,23 +3,6 @@
     "1": "angular2.src.compiler.view_compiler.expression_converter",
     "3": [
       {
-        "1": "../expression_parser/ast.dart",
-        "4": "cdAst",
-        "5": false
-      },
-      {
-        "1": "../output/output_ast.dart",
-        "4": "o",
-        "5": false
-      },
-      {
-        "1": "../identifiers.dart",
-        "2": [
-          "Identifiers"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -33,6 +16,23 @@
           "isPresent",
           "isArray"
         ],
+        "5": false
+      },
+      {
+        "1": "../expression_parser/ast.dart",
+        "4": "cdAst",
+        "5": false
+      },
+      {
+        "1": "../identifiers.dart",
+        "2": [
+          "Identifiers"
+        ],
+        "5": false
+      },
+      {
+        "1": "../output/output_ast.dart",
+        "4": "o",
         "5": false
       }
     ],

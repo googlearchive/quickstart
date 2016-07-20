@@ -25,14 +25,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "dart:js",
         "4": "js",
         "5": false
@@ -41,20 +33,16 @@
     "6": "browser_adapter.dart",
     "7": [
       {
-        "1": "package:angular2/platform/common_dom.ngfactory.dart",
+        "1": "package:angular2/platform/common_dom.template.dart",
         "4": "i0"
       },
       {
-        "1": "generic_browser_adapter.ngfactory.dart",
+        "1": "generic_browser_adapter.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/browser.ngfactory.dart",
+        "1": "package:angular2/src/facade/browser.template.dart",
         "4": "i2"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
-        "4": "i3"
       }
     ]
   },

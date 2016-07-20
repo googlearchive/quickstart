@@ -3,18 +3,17 @@
     "1": "angular2.src.core.change_detection.differs.default_iterable_differ",
     "3": [
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "BaseException"
+          "isListLikeIterable",
+          "iterateListLike"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "isListLikeIterable",
-          "iterateListLike",
-          "ListWrapper"
+          "BaseException"
         ],
         "5": false
       },

@@ -7,6 +7,22 @@
         "5": false
       },
       {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Inject",
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/platform/common.dart",
+        "2": [
+          "Location",
+          "PathLocationStrategy"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "PromiseWrapper",
@@ -19,9 +35,14 @@
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "Map",
-          "StringMapWrapper",
-          "MapWrapper",
-          "ListWrapper"
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       },
@@ -29,41 +50,14 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isBlank",
-          "isString",
-          "isPresent",
-          "Type",
-          "isArray"
+          "isPresent"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "directives/router_outlet.dart",
         "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/platform/common.dart",
-        "2": [
-          "Location"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/core.dart",
-        "2": [
-          "Inject",
-          "Injectable"
-        ],
-        "5": false
-      },
-      {
-        "1": "route_registry.dart",
-        "2": [
-          "RouteRegistry",
-          "ROUTER_PRIMARY_COMPONENT"
+          "RouterOutlet"
         ],
         "5": false
       },
@@ -76,23 +70,24 @@
         "5": false
       },
       {
-        "1": "directives/router_outlet.dart",
-        "2": [
-          "RouterOutlet"
-        ],
-        "5": false
-      },
-      {
-        "1": "lifecycle/route_lifecycle_reflector.dart",
-        "2": [
-          "getCanActivateHook"
-        ],
-        "5": false
-      },
-      {
         "1": "route_config/route_config_impl.dart",
         "2": [
           "RouteDefinition"
+        ],
+        "5": false
+      },
+      {
+        "1": "route_registry.dart",
+        "2": [
+          "RouteRegistry",
+          "ROUTER_PRIMARY_COMPONENT"
+        ],
+        "5": false
+      },
+      {
+        "1": "utils.dart",
+        "2": [
+          "getCanActivateHook"
         ],
         "5": false
       }
@@ -143,7 +138,7 @@
             "4": "location"
           },
           {
-            "1": "Type",
+            "1": "dynamic",
             "3": [
               "const Inject(ROUTER_PRIMARY_COMPONENT)"
             ],
@@ -155,47 +150,47 @@
     "6": "router.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/platform/common.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/platform/common.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i5"
       },
       {
-        "1": "route_registry.ngfactory.dart",
+        "1": "directives/router_outlet.template.dart",
         "4": "i6"
       },
       {
-        "1": "instruction.ngfactory.dart",
+        "1": "instruction.template.dart",
         "4": "i7"
       },
       {
-        "1": "directives/router_outlet.ngfactory.dart",
+        "1": "route_config/route_config_impl.template.dart",
         "4": "i8"
       },
       {
-        "1": "lifecycle/route_lifecycle_reflector.ngfactory.dart",
+        "1": "route_registry.template.dart",
         "4": "i9"
       },
       {
-        "1": "route_config/route_config_impl.ngfactory.dart",
+        "1": "utils.template.dart",
         "4": "i10"
       }
     ]

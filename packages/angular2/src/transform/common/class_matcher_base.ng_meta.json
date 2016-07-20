@@ -33,11 +33,11 @@
     "6": "class_matcher_base.dart",
     "7": [
       {
-        "1": "logging.ngfactory.dart",
+        "1": "logging.template.dart",
         "4": "i0"
       },
       {
-        "1": "url_resolver.ngfactory.dart",
+        "1": "url_resolver.template.dart",
         "4": "i1"
       }
     ]

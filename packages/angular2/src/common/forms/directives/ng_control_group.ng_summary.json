@@ -18,25 +18,24 @@
         "5": false
       },
       {
-        "1": "control_container.dart",
-        "2": [
-          "ControlContainer"
-        ],
-        "5": false
-      },
-      {
-        "1": "shared.dart",
-        "2": [
-          "controlPath",
-          "composeValidators",
-          "composeAsyncValidators"
-        ],
-        "5": false
-      },
-      {
         "1": "../model.dart",
         "2": [
           "ControlGroup"
+        ],
+        "5": false
+      },
+      {
+        "1": "../validators.dart",
+        "2": [
+          "NG_VALIDATORS",
+          "NG_ASYNC_VALIDATORS"
+        ],
+        "5": false
+      },
+      {
+        "1": "control_container.dart",
+        "2": [
+          "ControlContainer"
         ],
         "5": false
       },
@@ -48,10 +47,11 @@
         "5": false
       },
       {
-        "1": "../validators.dart",
+        "1": "shared.dart",
         "2": [
-          "NG_VALIDATORS",
-          "NG_ASYNC_VALIDATORS"
+          "controlPath",
+          "composeValidators",
+          "composeAsyncValidators"
         ],
         "5": false
       },
@@ -138,6 +138,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": false,
         "deps": null
       }

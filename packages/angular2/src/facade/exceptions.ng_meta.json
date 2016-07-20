@@ -19,11 +19,11 @@
     "6": "exceptions.dart",
     "7": [
       {
-        "1": "base_wrapped_exception.ngfactory.dart",
+        "1": "base_wrapped_exception.template.dart",
         "4": "i0"
       },
       {
-        "1": "exception_handler.ngfactory.dart",
+        "1": "exception_handler.template.dart",
         "4": "i1"
       }
     ]
@@ -46,13 +46,6 @@
     "makeTypeError": {
       "class": "Identifier",
       "name": "makeTypeError",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "unimplemented": {
-      "class": "Identifier",
-      "name": "unimplemented",
       "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
       "prefix": null,
       "value": null

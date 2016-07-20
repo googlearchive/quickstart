@@ -22,15 +22,15 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/names.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/model/import_export_model.pb.dart",
         "5": false
       },
       {
         "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/names.dart",
         "5": false
       },
       {

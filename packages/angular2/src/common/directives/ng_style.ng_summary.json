@@ -18,8 +18,7 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
-          "isBlank",
-          "print"
+          "isBlank"
         ],
         "5": false
       },

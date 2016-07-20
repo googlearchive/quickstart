@@ -3,20 +3,6 @@
     "1": "angular2.src.core.linker.view_container_ref",
     "3": [
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "unimplemented"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di/injector.dart",
         "2": [
           "Injector"
@@ -24,10 +10,16 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isPresent",
-          "isBlank"
+          "isPresent"
         ],
         "5": false
       },
@@ -37,6 +29,14 @@
           "wtfCreateScope",
           "wtfLeave",
           "WtfScopeFn"
+        ],
+        "5": false
+      },
+      {
+        "1": "component_factory.dart",
+        "2": [
+          "ComponentFactory",
+          "ComponentRef"
         ],
         "5": false
       },
@@ -57,8 +57,7 @@
       {
         "1": "template_ref.dart",
         "2": [
-          "TemplateRef",
-          "TemplateRef_"
+          "TemplateRef"
         ],
         "5": false
       },
@@ -68,14 +67,6 @@
           "EmbeddedViewRef",
           "ViewRef",
           "ViewRef_"
-        ],
-        "5": false
-      },
-      {
-        "1": "component_factory.dart",
-        "2": [
-          "ComponentFactory",
-          "ComponentRef"
         ],
         "5": false
       }

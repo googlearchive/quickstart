@@ -3,15 +3,16 @@
     "1": "angular2.src.core.linker",
     "4": [
       {
-        "1": "linker/component_resolver.dart",
+        "1": "linker/component_factory.dart",
         "2": [
-          "ComponentResolver"
+          "ComponentRef",
+          "ComponentFactory"
         ]
       },
       {
-        "1": "linker/query_list.dart",
+        "1": "linker/component_resolver.dart",
         "2": [
-          "QueryList"
+          "ComponentResolver"
         ]
       },
       {
@@ -27,16 +28,21 @@
         ]
       },
       {
-        "1": "linker/template_ref.dart",
+        "1": "linker/exceptions.dart",
         "2": [
-          "TemplateRef"
+          "ExpressionChangedAfterItHasBeenCheckedException"
         ]
       },
       {
-        "1": "linker/view_ref.dart",
+        "1": "linker/query_list.dart",
         "2": [
-          "EmbeddedViewRef",
-          "ViewRef"
+          "QueryList"
+        ]
+      },
+      {
+        "1": "linker/template_ref.dart",
+        "2": [
+          "TemplateRef"
         ]
       },
       {
@@ -46,60 +52,75 @@
         ]
       },
       {
-        "1": "linker/component_factory.dart",
+        "1": "linker/view_ref.dart",
         "2": [
-          "ComponentRef",
-          "ComponentFactory"
-        ]
-      },
-      {
-        "1": "linker/exceptions.dart",
-        "2": [
-          "ExpressionChangedAfterItHasBeenCheckedException"
+          "EmbeddedViewRef",
+          "ViewRef"
         ]
       }
     ],
     "6": "linker.dart",
     "7": [
       {
-        "1": "linker/component_resolver.ngfactory.dart",
+        "1": "linker/component_factory.template.dart",
         "4": "i0"
       },
       {
-        "1": "linker/query_list.ngfactory.dart",
+        "1": "linker/component_resolver.template.dart",
         "4": "i1"
       },
       {
-        "1": "linker/dynamic_component_loader.ngfactory.dart",
+        "1": "linker/dynamic_component_loader.template.dart",
         "4": "i2"
       },
       {
-        "1": "linker/element_ref.ngfactory.dart",
+        "1": "linker/element_ref.template.dart",
         "4": "i3"
       },
       {
-        "1": "linker/template_ref.ngfactory.dart",
+        "1": "linker/exceptions.template.dart",
         "4": "i4"
       },
       {
-        "1": "linker/view_ref.ngfactory.dart",
+        "1": "linker/query_list.template.dart",
         "4": "i5"
       },
       {
-        "1": "linker/view_container_ref.ngfactory.dart",
+        "1": "linker/template_ref.template.dart",
         "4": "i6"
       },
       {
-        "1": "linker/component_factory.ngfactory.dart",
+        "1": "linker/view_container_ref.template.dart",
         "4": "i7"
       },
       {
-        "1": "linker/exceptions.ngfactory.dart",
+        "1": "linker/view_ref.template.dart",
         "4": "i8"
       }
     ]
   },
   "type": {
+    "ComponentRef": {
+      "class": "Identifier",
+      "name": "ComponentRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ComponentRef_": {
+      "class": "Identifier",
+      "name": "ComponentRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ComponentFactory": {
+      "class": "Identifier",
+      "name": "ComponentFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "prefix": null,
+      "value": null
+    },
     "ComponentResolver": {
       "class": "Identifier",
       "name": "ComponentResolver",
@@ -122,13 +143,6 @@
       "isHost": false,
       "value": null,
       "diDeps": []
-    },
-    "QueryList": {
-      "class": "Identifier",
-      "name": "QueryList",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
-      "prefix": null,
-      "value": null
     },
     "DynamicComponentLoader": {
       "class": "Identifier",
@@ -176,6 +190,34 @@
       "prefix": null,
       "value": null
     },
+    "ExpressionChangedAfterItHasBeenCheckedException": {
+      "class": "Identifier",
+      "name": "ExpressionChangedAfterItHasBeenCheckedException",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewWrappedException": {
+      "class": "Identifier",
+      "name": "ViewWrappedException",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewDestroyedException": {
+      "class": "Identifier",
+      "name": "ViewDestroyedException",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "QueryList": {
+      "class": "Identifier",
+      "name": "QueryList",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
+      "prefix": null,
+      "value": null
+    },
     "TemplateRef": {
       "class": "Identifier",
       "name": "TemplateRef",
@@ -187,6 +229,20 @@
       "class": "Identifier",
       "name": "TemplateRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewContainerRef": {
+      "class": "Identifier",
+      "name": "ViewContainerRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewContainerRef_": {
+      "class": "Identifier",
+      "name": "ViewContainerRef_",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
       "prefix": null,
       "value": null
     },
@@ -208,62 +264,6 @@
       "class": "Identifier",
       "name": "ViewRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewContainerRef": {
-      "class": "Identifier",
-      "name": "ViewContainerRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewContainerRef_": {
-      "class": "Identifier",
-      "name": "ViewContainerRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ComponentRef": {
-      "class": "Identifier",
-      "name": "ComponentRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ComponentRef_": {
-      "class": "Identifier",
-      "name": "ComponentRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ComponentFactory": {
-      "class": "Identifier",
-      "name": "ComponentFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ExpressionChangedAfterItHasBeenCheckedException": {
-      "class": "Identifier",
-      "name": "ExpressionChangedAfterItHasBeenCheckedException",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewWrappedException": {
-      "class": "Identifier",
-      "name": "ViewWrappedException",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewDestroyedException": {
-      "class": "Identifier",
-      "name": "ViewDestroyedException",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
       "prefix": null,
       "value": null
     }

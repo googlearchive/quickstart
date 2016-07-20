@@ -1,41 +1,13 @@
 {
-  "ngDeps": {
-    "1": "angular2.src.router.instruction",
-    "3": [
-      {
-        "1": "dart:async",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "Map",
-          "MapWrapper",
-          "StringMapWrapper",
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "Type"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "PromiseWrapper"
-        ],
-        "5": false
-      }
-    ],
-    "6": "instruction.dart"
-  },
+  "ngDeps": null,
   "type": {
+    "BLANK_ROUTE_DATA": {
+      "class": "Identifier",
+      "name": "BLANK_ROUTE_DATA",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "value": null
+    },
     "RouteParams": {
       "class": "Identifier",
       "name": "RouteParams",

@@ -17,10 +17,9 @@
         "5": false
       },
       {
-        "1": "control_value_accessor.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "NG_VALUE_ACCESSOR",
-          "ControlValueAccessor"
+          "MapWrapper"
         ],
         "5": false
       },
@@ -36,9 +35,10 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "control_value_accessor.dart",
         "2": [
-          "MapWrapper"
+          "NG_VALUE_ACCESSOR",
+          "ControlValueAccessor"
         ],
         "5": false
       }
@@ -120,6 +120,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": true,
         "deps": null
       }

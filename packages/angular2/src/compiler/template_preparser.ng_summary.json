@@ -3,17 +3,16 @@
     "1": "angular2.src.compiler.template_preparser",
     "3": [
       {
-        "1": "html_ast.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "HtmlElementAst"
+          "isBlank"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "html_ast.dart",
         "2": [
-          "isBlank",
-          "isPresent"
+          "HtmlElementAst"
         ],
         "5": false
       },

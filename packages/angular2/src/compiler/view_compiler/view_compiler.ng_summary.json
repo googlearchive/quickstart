@@ -10,8 +10,30 @@
         "5": false
       },
       {
+        "1": "../compile_metadata.dart",
+        "2": [
+          "CompileDirectiveMetadata",
+          "CompilePipeMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "../config.dart",
+        "2": [
+          "CompilerConfig"
+        ],
+        "5": false
+      },
+      {
         "1": "../output/output_ast.dart",
         "4": "o",
+        "5": false
+      },
+      {
+        "1": "../template_ast.dart",
+        "2": [
+          "TemplateAst"
+        ],
         "5": false
       },
       {
@@ -29,15 +51,6 @@
         "5": false
       },
       {
-        "1": "view_builder.dart",
-        "2": [
-          "buildView",
-          "finishView",
-          "ViewCompileDependency"
-        ],
-        "5": false
-      },
-      {
         "1": "view_binder.dart",
         "2": [
           "bindView"
@@ -45,24 +58,11 @@
         "5": false
       },
       {
-        "1": "../compile_metadata.dart",
+        "1": "view_builder.dart",
         "2": [
-          "CompileDirectiveMetadata",
-          "CompilePipeMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "../template_ast.dart",
-        "2": [
-          "TemplateAst"
-        ],
-        "5": false
-      },
-      {
-        "1": "../config.dart",
-        "2": [
-          "CompilerConfig"
+          "buildView",
+          "finishView",
+          "ViewCompileDependency"
         ],
         "5": false
       }

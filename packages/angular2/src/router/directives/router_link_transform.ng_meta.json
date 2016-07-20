@@ -8,28 +8,9 @@
           "TemplateAstVisitor",
           "ElementAst",
           "BoundDirectivePropertyAst",
+          "BoundElementPropertyAst",
           "DirectiveAst",
-          "BoundElementPropertyAst"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/expression_parser/ast.dart",
-        "2": [
-          "AstTransformer",
-          "Quote",
-          "AST",
-          "EmptyExpr",
-          "LiteralArray",
-          "LiteralPrimitive",
-          "ASTWithSource"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
+          "TemplateAst"
         ],
         "5": false
       },
@@ -41,9 +22,27 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/expression_parser/ast.dart",
+        "2": [
+          "AstTransformer",
+          "Quote",
+          "AST",
+          "LiteralArray",
+          "LiteralPrimitive"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "2": [
           "Parser"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       }
@@ -71,23 +70,23 @@
     "6": "router_link_transform.dart",
     "7": [
       {
-        "1": "package:angular2/compiler.ngfactory.dart",
+        "1": "package:angular2/compiler.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/expression_parser/ast.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/compiler/expression_parser/ast.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/compiler/expression_parser/parser.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i4"
       }
     ]

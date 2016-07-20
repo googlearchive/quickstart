@@ -3,13 +3,6 @@
     "1": "angular2.src.common.forms.directives.ng_control",
     "3": [
       {
-        "1": "control_value_accessor.dart",
-        "2": [
-          "ControlValueAccessor"
-        ],
-        "5": false
-      },
-      {
         "1": "abstract_control_directive.dart",
         "2": [
           "AbstractControlDirective"
@@ -17,9 +10,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "control_value_accessor.dart",
         "2": [
-          "unimplemented"
+          "ControlValueAccessor"
         ],
         "5": false
       },
@@ -35,20 +28,16 @@
     "6": "ng_control.dart",
     "7": [
       {
-        "1": "control_value_accessor.ngfactory.dart",
+        "1": "abstract_control_directive.template.dart",
         "4": "i0"
       },
       {
-        "1": "abstract_control_directive.ngfactory.dart",
+        "1": "control_value_accessor.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "validators.template.dart",
         "4": "i2"
-      },
-      {
-        "1": "validators.ngfactory.dart",
-        "4": "i3"
       }
     ]
   },

@@ -17,17 +17,17 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "isPresent",
-          "NumberWrapper"
+          "Map"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "Map"
+          "isPresent",
+          "NumberWrapper"
         ],
         "5": false
       },
@@ -76,19 +76,19 @@
     "6": "ng_plural.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "ng_switch.ngfactory.dart",
+        "1": "ng_switch.template.dart",
         "4": "i3"
       }
     ]

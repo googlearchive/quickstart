@@ -3,6 +3,21 @@
     "1": "angular2.src.web_workers.ui.event_dispatcher",
     "3": [
       {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "EventEmitter",
+          "ObservableWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/web_workers/shared/serializer.dart",
         "2": [
           "Serializer",
@@ -18,29 +33,6 @@
           "serializeGenericEvent",
           "serializeEventWithTarget",
           "serializeTransitionEvent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "EventEmitter",
-          "ObservableWrapper"
         ],
         "5": false
       }

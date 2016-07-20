@@ -10,17 +10,17 @@
         "5": false
       },
       {
-        "1": "ng_zone_impl.dart",
+        "1": "../../facade/exceptions.dart",
         "2": [
-          "NgZoneImpl",
-          "NgZoneError"
+          "BaseException"
         ],
         "5": false
       },
       {
-        "1": "../../facade/exceptions.dart",
+        "1": "ng_zone_impl.dart",
         "2": [
-          "BaseException"
+          "NgZoneImpl",
+          "NgZoneError"
         ],
         "5": false
       }
@@ -36,15 +36,15 @@
     "6": "ng_zone.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i0"
       },
       {
-        "1": "ng_zone_impl.ngfactory.dart",
+        "1": "../../facade/exceptions.template.dart",
         "4": "i1"
       },
       {
-        "1": "../../facade/exceptions.ngfactory.dart",
+        "1": "ng_zone_impl.template.dart",
         "4": "i2"
       }
     ]

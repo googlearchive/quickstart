@@ -19,14 +19,6 @@
         "5": false
       },
       {
-        "1": "../validators.dart",
-        "2": [
-          "Validators",
-          "NG_VALIDATORS"
-        ],
-        "5": false
-      },
-      {
         "1": "../model.dart",
         "2": [
           "AbstractControl"
@@ -36,6 +28,14 @@
       {
         "1": "../model.dart",
         "4": "modelModule",
+        "5": false
+      },
+      {
+        "1": "../validators.dart",
+        "2": [
+          "Validators",
+          "NG_VALIDATORS"
+        ],
         "5": false
       }
     ],
@@ -92,19 +92,19 @@
     "6": "validators.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "../validators.ngfactory.dart",
+        "1": "../model.template.dart",
         "4": "i2"
       },
       {
-        "1": "../model.ngfactory.dart",
+        "1": "../validators.template.dart",
         "4": "i3"
       }
     ]
@@ -146,6 +146,7 @@
             "value": null
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -217,6 +218,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -274,6 +276,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -331,6 +334,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -389,6 +393,7 @@
             "value": null
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -483,6 +488,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -577,6 +583,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -671,6 +678,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }

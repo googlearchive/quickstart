@@ -3,22 +3,22 @@
     "1": "angular2.src.core.compiler.directive_lifecycle_reflector",
     "3": [
       {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
+        "1": "package:angular2/src/core/reflection/reflection.dart",
         "5": false
       }
     ],
     "6": "directive_lifecycle_reflector.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/reflection/reflection.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/metadata/lifecycle_hooks.ngfactory.dart",
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
         "4": "i1"
       }
     ]

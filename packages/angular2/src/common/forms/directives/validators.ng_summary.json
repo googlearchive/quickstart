@@ -19,14 +19,6 @@
         "5": false
       },
       {
-        "1": "../validators.dart",
-        "2": [
-          "Validators",
-          "NG_VALIDATORS"
-        ],
-        "5": false
-      },
-      {
         "1": "../model.dart",
         "2": [
           "AbstractControl"
@@ -36,6 +28,14 @@
       {
         "1": "../model.dart",
         "4": "modelModule",
+        "5": false
+      },
+      {
+        "1": "../validators.dart",
+        "2": [
+          "Validators",
+          "NG_VALIDATORS"
+        ],
         "5": false
       }
     ],
@@ -127,6 +127,7 @@
           "value": null
         },
         "useFactory": null,
+        "useProperty": null,
         "multi": true,
         "deps": null
       }
@@ -177,6 +178,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": true,
         "deps": null
       }
@@ -213,6 +215,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": true,
         "deps": null
       }
@@ -249,6 +252,7 @@
         },
         "useValue": null,
         "useFactory": null,
+        "useProperty": null,
         "multi": true,
         "deps": null
       }

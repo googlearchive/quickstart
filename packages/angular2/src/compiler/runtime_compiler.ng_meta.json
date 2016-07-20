@@ -7,115 +7,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "IS_DART",
-          "Type",
-          "Json",
-          "isBlank",
-          "isPresent",
-          "stringify",
-          "evalExpression"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "SetWrapper",
-          "MapWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "PromiseWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "compile_metadata.dart",
-        "2": [
-          "createHostComponentMeta",
-          "CompileDirectiveMetadata",
-          "CompileTypeMetadata",
-          "CompileTemplateMetadata",
-          "CompilePipeMetadata",
-          "CompileMetadataWithType",
-          "CompileIdentifierMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "template_ast.dart",
-        "2": [
-          "TemplateAst",
-          "TemplateAstVisitor",
-          "NgContentAst",
-          "EmbeddedTemplateAst",
-          "ElementAst",
-          "BoundEventAst",
-          "BoundElementPropertyAst",
-          "AttrAst",
-          "BoundTextAst",
-          "TextAst",
-          "DirectiveAst",
-          "BoundDirectivePropertyAst",
-          "templateVisitAll"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injectable"
-        ],
-        "5": false
-      },
-      {
-        "1": "style_compiler.dart",
-        "2": [
-          "StyleCompiler",
-          "StylesCompileDependency",
-          "StylesCompileResult"
-        ],
-        "5": false
-      },
-      {
-        "1": "view_compiler/view_compiler.dart",
-        "2": [
-          "ViewCompiler"
-        ],
-        "5": false
-      },
-      {
-        "1": "template_parser.dart",
-        "2": [
-          "TemplateParser"
-        ],
-        "5": false
-      },
-      {
-        "1": "directive_normalizer.dart",
-        "2": [
-          "DirectiveNormalizer"
-        ],
-        "5": false
-      },
-      {
-        "1": "runtime_metadata.dart",
-        "2": [
-          "RuntimeMetadataResolver"
         ],
         "5": false
       },
@@ -129,8 +23,54 @@
       {
         "1": "package:angular2/src/core/linker/component_resolver.dart",
         "2": [
-          "ComponentResolver",
-          "ReflectorComponentResolver"
+          "ComponentResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/injector_factory.dart",
+        "2": [
+          "CodegenInjectorFactory"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "PromiseWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "IS_DART",
+          "Type",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "compile_metadata.dart",
+        "2": [
+          "createHostComponentMeta",
+          "CompileDirectiveMetadata",
+          "CompilePipeMetadata",
+          "CompileIdentifierMetadata"
         ],
         "5": false
       },
@@ -142,21 +82,16 @@
         "5": false
       },
       {
-        "1": "output/output_ast.dart",
-        "4": "ir",
-        "5": false
-      },
-      {
-        "1": "output/output_jit.dart",
+        "1": "directive_normalizer.dart",
         "2": [
-          "jitStatements"
+          "DirectiveNormalizer"
         ],
         "5": false
       },
       {
-        "1": "output/output_interpreter.dart",
+        "1": "output/interpretive_injector.dart",
         "2": [
-          "interpretStatements"
+          "InterpretiveInjectorInstanceFactory"
         ],
         "5": false
       },
@@ -168,7 +103,70 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/xhr.dart",
+        "1": "output/output_ast.dart",
+        "4": "ir",
+        "5": false
+      },
+      {
+        "1": "output/output_interpreter.dart",
+        "2": [
+          "interpretStatements"
+        ],
+        "5": false
+      },
+      {
+        "1": "output/output_jit.dart",
+        "2": [
+          "jitStatements"
+        ],
+        "5": false
+      },
+      {
+        "1": "runtime_metadata.dart",
+        "2": [
+          "RuntimeMetadataResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "style_compiler.dart",
+        "2": [
+          "StyleCompiler",
+          "StylesCompileDependency",
+          "StylesCompileResult"
+        ],
+        "5": false
+      },
+      {
+        "1": "template_ast.dart",
+        "2": [
+          "TemplateAst"
+        ],
+        "5": false
+      },
+      {
+        "1": "template_parser.dart",
+        "2": [
+          "TemplateParser"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_compiler/injector_compiler.dart",
+        "2": [
+          "InjectorCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_compiler/view_compiler.dart",
+        "2": [
+          "ViewCompiler"
+        ],
+        "5": false
+      },
+      {
+        "1": "xhr.dart",
         "2": [
           "XHR"
         ],
@@ -210,6 +208,10 @@
             "4": "_xhr"
           },
           {
+            "1": "InjectorCompiler",
+            "4": "_injectorCompiler"
+          },
+          {
             "1": "CompilerConfig",
             "4": "_genConfig"
           }
@@ -222,84 +224,96 @@
     "6": "runtime_compiler.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/component_factory.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/component_resolver.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/core/linker/injector_factory.template.dart",
         "4": "i3"
       },
       {
-        "1": "compile_metadata.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i4"
       },
       {
-        "1": "template_ast.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i6"
       },
       {
-        "1": "style_compiler.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i7"
       },
       {
-        "1": "view_compiler/view_compiler.ngfactory.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i8"
       },
       {
-        "1": "template_parser.ngfactory.dart",
+        "1": "config.template.dart",
         "4": "i9"
       },
       {
-        "1": "directive_normalizer.ngfactory.dart",
+        "1": "directive_normalizer.template.dart",
         "4": "i10"
       },
       {
-        "1": "runtime_metadata.ngfactory.dart",
+        "1": "output/interpretive_injector.template.dart",
         "4": "i11"
       },
       {
-        "1": "package:angular2/src/core/linker/component_factory.ngfactory.dart",
+        "1": "output/interpretive_view.template.dart",
         "4": "i12"
       },
       {
-        "1": "package:angular2/src/core/linker/component_resolver.ngfactory.dart",
+        "1": "output/output_ast.template.dart",
         "4": "i13"
       },
       {
-        "1": "config.ngfactory.dart",
+        "1": "output/output_interpreter.template.dart",
         "4": "i14"
       },
       {
-        "1": "output/output_ast.ngfactory.dart",
+        "1": "output/output_jit.template.dart",
         "4": "i15"
       },
       {
-        "1": "output/output_jit.ngfactory.dart",
+        "1": "runtime_metadata.template.dart",
         "4": "i16"
       },
       {
-        "1": "output/output_interpreter.ngfactory.dart",
+        "1": "style_compiler.template.dart",
         "4": "i17"
       },
       {
-        "1": "output/interpretive_view.ngfactory.dart",
+        "1": "template_ast.template.dart",
         "4": "i18"
       },
       {
-        "1": "package:angular2/src/compiler/xhr.ngfactory.dart",
+        "1": "template_parser.template.dart",
         "4": "i19"
+      },
+      {
+        "1": "view_compiler/injector_compiler.template.dart",
+        "4": "i20"
+      },
+      {
+        "1": "view_compiler/view_compiler.template.dart",
+        "4": "i21"
+      },
+      {
+        "1": "xhr.template.dart",
+        "4": "i22"
       }
     ]
   },
@@ -429,6 +443,28 @@
               "class": "Identifier",
               "name": "XHR",
               "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "InjectorCompiler",
+              "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
               "prefix": null,
               "value": null
             },

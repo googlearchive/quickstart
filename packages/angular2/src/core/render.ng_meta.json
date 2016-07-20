@@ -14,7 +14,7 @@
     "6": "render.dart",
     "7": [
       {
-        "1": "render/api.ngfactory.dart",
+        "1": "render/api.template.dart",
         "4": "i0"
       }
     ]

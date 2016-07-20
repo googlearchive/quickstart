@@ -3,12 +3,12 @@
     "1": "angular2.transform.common.model.source_module",
     "3": [
       {
-        "1": "package:path/path.dart",
-        "4": "path",
+        "1": "package:angular2/src/transform/common/url_resolver.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/url_resolver.dart",
+        "1": "package:path/path.dart",
+        "4": "path",
         "5": false
       },
       {
@@ -19,11 +19,11 @@
     "6": "source_module.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/common/url_resolver.ngfactory.dart",
+        "1": "package:angular2/src/transform/common/url_resolver.template.dart",
         "4": "i0"
       },
       {
-        "1": "import_export_model.pb.ngfactory.dart",
+        "1": "import_export_model.pb.template.dart",
         "4": "i1"
       }
     ]

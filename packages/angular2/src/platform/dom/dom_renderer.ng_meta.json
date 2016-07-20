@@ -3,18 +3,41 @@
     "1": "angular2.src.platform.dom.dom_renderer",
     "3": [
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/animate/animation_builder.dart",
         "2": [
-          "Inject",
-          "Injectable",
-          "OpaqueToken"
+          "AnimationBuilder"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/animate/animation_builder.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "AnimationBuilder"
+          "Inject",
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata.dart",
+        "2": [
+          "ViewEncapsulation"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/render/api.dart",
+        "2": [
+          "Renderer",
+          "RootRenderer",
+          "RenderComponentType",
+          "RenderDebugInfo"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       },
@@ -33,34 +56,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
-          "BaseException",
-          "WrappedException"
-        ],
-        "5": false
-      },
-      {
-        "1": "shared_styles_host.dart",
-        "2": [
-          "DomSharedStylesHost"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/render/api.dart",
-        "2": [
-          "Renderer",
-          "RootRenderer",
-          "RenderComponentType",
-          "RenderDebugInfo"
-        ],
-        "5": false
-      },
-      {
-        "1": "events/event_manager.dart",
-        "2": [
-          "EventManager"
+          "DOM"
         ],
         "5": false
       },
@@ -72,16 +70,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata.dart",
+        "1": "events/event_manager.dart",
         "2": [
-          "ViewEncapsulation"
+          "EventManager"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "1": "shared_styles_host.dart",
         "2": [
-          "DOM"
+          "DomSharedStylesHost"
         ],
         "5": false
       },
@@ -128,47 +126,47 @@
     "6": "dom_renderer.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/animate/animation_builder.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/animate/animation_builder.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/metadata.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i3"
       },
       {
-        "1": "shared_styles_host.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/render/api.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i5"
       },
       {
-        "1": "events/event_manager.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i6"
       },
       {
-        "1": "dom_tokens.ngfactory.dart",
+        "1": "dom_tokens.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/core/metadata.ngfactory.dart",
+        "1": "events/event_manager.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
+        "1": "shared_styles_host.template.dart",
         "4": "i9"
       },
       {
-        "1": "util.ngfactory.dart",
+        "1": "util.template.dart",
         "4": "i10"
       }
     ]
@@ -191,20 +189,6 @@
     "COMPONENT_VARIABLE": {
       "class": "Identifier",
       "name": "COMPONENT_VARIABLE",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "HOST_ATTR": {
-      "class": "Identifier",
-      "name": "HOST_ATTR",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "CONTENT_ATTR": {
-      "class": "Identifier",
-      "name": "CONTENT_ATTR",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
       "prefix": null,
       "value": null

@@ -3,19 +3,16 @@
     "1": "angular2.src.compiler.output.ts_emitter",
     "3": [
       {
-        "1": "output_ast.dart",
-        "4": "o",
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
         "5": false
       },
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
-          "isBlank",
-          "isString",
-          "evalExpression",
-          "RegExpWrapper",
-          "StringWrapper",
           "isArray"
         ],
         "5": false
@@ -24,13 +21,6 @@
         "1": "../compile_metadata.dart",
         "2": [
           "CompileIdentifierMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException"
         ],
         "5": false
       },
@@ -46,6 +36,11 @@
         "5": false
       },
       {
+        "1": "output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
         "1": "path_util.dart",
         "2": [
           "getImportModulePath",
@@ -57,27 +52,27 @@
     "6": "ts_emitter.dart",
     "7": [
       {
-        "1": "output_ast.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "../compile_metadata.ngfactory.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "abstract_emitter.template.dart",
         "4": "i3"
       },
       {
-        "1": "abstract_emitter.ngfactory.dart",
+        "1": "output_ast.template.dart",
         "4": "i4"
       },
       {
-        "1": "path_util.ngfactory.dart",
+        "1": "path_util.template.dart",
         "4": "i5"
       }
     ]

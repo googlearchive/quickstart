@@ -3,9 +3,9 @@
     "1": "angular2.src.core.render.api",
     "3": [
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "unimplemented"
+          "Injector"
         ],
         "5": false
       },
@@ -13,14 +13,6 @@
         "1": "package:angular2/src/core/metadata/view.dart",
         "2": [
           "ViewEncapsulation"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di.dart",
-        "2": [
-          "Injector",
-          "Injectable"
         ],
         "5": false
       }

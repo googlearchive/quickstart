@@ -7,10 +7,22 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/zone/ng_zone.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
           "EventEmitter"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
         "5": false
       },
       {
@@ -20,18 +32,6 @@
           "MessageBusSink",
           "MessageBusSource"
         ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/zone/ng_zone.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
         "5": false
       }
     ],

@@ -10,16 +10,23 @@
         "5": false
       },
       {
-        "1": "uppercase_pipe.dart",
+        "1": "date_pipe.dart",
         "2": [
-          "UpperCasePipe"
+          "DatePipe"
         ],
         "5": false
       },
       {
-        "1": "lowercase_pipe.dart",
+        "1": "i18n_plural_pipe.dart",
         "2": [
-          "LowerCasePipe"
+          "I18nPluralPipe"
+        ],
+        "5": false
+      },
+      {
+        "1": "i18n_select_pipe.dart",
+        "2": [
+          "I18nSelectPipe"
         ],
         "5": false
       },
@@ -31,16 +38,9 @@
         "5": false
       },
       {
-        "1": "slice_pipe.dart",
+        "1": "lowercase_pipe.dart",
         "2": [
-          "SlicePipe"
-        ],
-        "5": false
-      },
-      {
-        "1": "date_pipe.dart",
-        "2": [
-          "DatePipe"
+          "LowerCasePipe"
         ],
         "5": false
       },
@@ -61,16 +61,16 @@
         "5": false
       },
       {
-        "1": "i18n_plural_pipe.dart",
+        "1": "slice_pipe.dart",
         "2": [
-          "I18nPluralPipe"
+          "SlicePipe"
         ],
         "5": false
       },
       {
-        "1": "i18n_select_pipe.dart",
+        "1": "uppercase_pipe.dart",
         "2": [
-          "I18nSelectPipe"
+          "UpperCasePipe"
         ],
         "5": false
       }

@@ -3,9 +3,14 @@
     "1": "angular2.src.core.debug.debug_renderer",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/debug/debug_node.dart",
         "2": [
-          "isPresent"
+          "DebugNode",
+          "DebugElement",
+          "EventListener",
+          "getDebugNode",
+          "indexDebugNode",
+          "removeDebugNodeFromIndex"
         ],
         "5": false
       },
@@ -20,14 +25,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/debug/debug_node.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "DebugNode",
-          "DebugElement",
-          "EventListener",
-          "getDebugNode",
-          "indexDebugNode",
-          "removeDebugNodeFromIndex"
+          "isPresent"
         ],
         "5": false
       }

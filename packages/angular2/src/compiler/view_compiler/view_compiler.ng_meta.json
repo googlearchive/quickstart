@@ -10,8 +10,30 @@
         "5": false
       },
       {
+        "1": "../compile_metadata.dart",
+        "2": [
+          "CompileDirectiveMetadata",
+          "CompilePipeMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "../config.dart",
+        "2": [
+          "CompilerConfig"
+        ],
+        "5": false
+      },
+      {
         "1": "../output/output_ast.dart",
         "4": "o",
+        "5": false
+      },
+      {
+        "1": "../template_ast.dart",
+        "2": [
+          "TemplateAst"
+        ],
         "5": false
       },
       {
@@ -29,15 +51,6 @@
         "5": false
       },
       {
-        "1": "view_builder.dart",
-        "2": [
-          "buildView",
-          "finishView",
-          "ViewCompileDependency"
-        ],
-        "5": false
-      },
-      {
         "1": "view_binder.dart",
         "2": [
           "bindView"
@@ -45,24 +58,11 @@
         "5": false
       },
       {
-        "1": "../compile_metadata.dart",
+        "1": "view_builder.dart",
         "2": [
-          "CompileDirectiveMetadata",
-          "CompilePipeMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "../template_ast.dart",
-        "2": [
-          "TemplateAst"
-        ],
-        "5": false
-      },
-      {
-        "1": "../config.dart",
-        "2": [
-          "CompilerConfig"
+          "buildView",
+          "finishView",
+          "ViewCompileDependency"
         ],
         "5": false
       }
@@ -87,39 +87,39 @@
     "6": "view_compiler.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "../output/output_ast.ngfactory.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "compile_element.ngfactory.dart",
+        "1": "../config.template.dart",
         "4": "i2"
       },
       {
-        "1": "compile_view.ngfactory.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i3"
       },
       {
-        "1": "view_builder.ngfactory.dart",
+        "1": "../template_ast.template.dart",
         "4": "i4"
       },
       {
-        "1": "view_binder.ngfactory.dart",
+        "1": "compile_element.template.dart",
         "4": "i5"
       },
       {
-        "1": "../compile_metadata.ngfactory.dart",
+        "1": "compile_view.template.dart",
         "4": "i6"
       },
       {
-        "1": "../template_ast.ngfactory.dart",
+        "1": "view_binder.template.dart",
         "4": "i7"
       },
       {
-        "1": "../config.ngfactory.dart",
+        "1": "view_builder.template.dart",
         "4": "i8"
       }
     ]

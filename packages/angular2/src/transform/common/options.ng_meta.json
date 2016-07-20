@@ -3,6 +3,10 @@
     "1": "angular2.transform.common.options",
     "3": [
       {
+        "1": "package:barback/src/asset/asset_id.dart",
+        "5": false
+      },
+      {
         "1": "package:glob/glob.dart",
         "5": false
       },
@@ -13,20 +17,16 @@
       {
         "1": "mirror_mode.dart",
         "5": false
-      },
-      {
-        "1": "package:barback/src/asset/asset_id.dart",
-        "5": false
       }
     ],
     "6": "options.dart",
     "7": [
       {
-        "1": "annotation_matcher.ngfactory.dart",
+        "1": "annotation_matcher.template.dart",
         "4": "i0"
       },
       {
-        "1": "mirror_mode.ngfactory.dart",
+        "1": "mirror_mode.template.dart",
         "4": "i1"
       }
     ]

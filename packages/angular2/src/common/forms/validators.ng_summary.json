@@ -3,6 +3,27 @@
     "1": "angular2.src.common.forms.validators",
     "3": [
       {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "OpaqueToken"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "ObservableWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isBlank",
@@ -19,38 +40,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/async.dart",
+        "1": "directives/validators.dart",
         "2": [
-          "ObservableWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/core.dart",
-        "2": [
-          "OpaqueToken"
+          "ValidatorFn",
+          "AsyncValidatorFn"
         ],
         "5": false
       },
       {
         "1": "model.dart",
         "4": "modelModule",
-        "5": false
-      },
-      {
-        "1": "directives/validators.dart",
-        "2": [
-          "ValidatorFn",
-          "AsyncValidatorFn"
-        ],
         "5": false
       }
     ],

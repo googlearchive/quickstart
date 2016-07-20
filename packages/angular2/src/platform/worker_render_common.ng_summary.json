@@ -26,17 +26,12 @@
       {
         "1": "package:angular2/core.dart",
         "2": [
-          "PLATFORM_DIRECTIVES",
-          "PLATFORM_PIPES",
-          "ComponentRef",
           "ExceptionHandler",
-          "Reflector",
-          "reflector",
           "APPLICATION_COMMON_PROVIDERS",
           "PLATFORM_COMMON_PROVIDERS",
           "RootRenderer",
           "PLATFORM_INITIALIZER",
-          "APP_INITIALIZER"
+          "TestabilityRegistry"
         ],
         "5": false
       },
@@ -51,7 +46,6 @@
       {
         "1": "package:angular2/src/core/di.dart",
         "2": [
-          "provide",
           "Provider",
           "Injector",
           "OpaqueToken"
@@ -80,6 +74,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/platform/dom/events/hammer_gestures.dart",
+        "2": [
+          "HammerGesturesPlugin"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/platform/dom/dom_tokens.dart",
         "2": [
           "DOCUMENT"
@@ -97,7 +98,13 @@
       {
         "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
         "2": [
-          "DomSharedStylesHost",
+          "DomSharedStylesHost"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
+        "2": [
           "SharedStylesHost"
         ],
         "5": false
@@ -217,11 +224,17 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/events/hammer_gestures.dart",
+        "1": "dom/events/hammer_gestures.dart",
         "2": [
           "HAMMER_GESTURE_CONFIG",
-          "HammerGestureConfig",
-          "HammerGesturesPlugin"
+          "HammerGestureConfig"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/browser_common.dart",
+        "2": [
+          "BROWSER_SANITIZATION_PROVIDERS"
         ],
         "5": false
       }
@@ -295,6 +308,7 @@
           "useExisting": null,
           "useValue": true,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -313,16 +327,41 @@
           },
           "useClass": null,
           "useExisting": null,
-          "useValue": {
-            "class": "Identifier",
+          "useValue": null,
+          "useFactory": {
+            "class": "Factory",
             "name": "initWebWorkerRenderPlatform",
-            "moduleUrl": null,
             "prefix": null,
-            "value": null
+            "moduleUrl": null,
+            "value": null,
+            "diDeps": []
           },
-          "useFactory": null,
+          "useProperty": null,
           "multi": true,
-          "deps": null
+          "deps": [
+            {
+              "token": {
+                "value": null,
+                "identifier": {
+                  "class": "Identifier",
+                  "name": "TestabilityRegistry",
+                  "moduleUrl": null,
+                  "prefix": null,
+                  "value": null
+                },
+                "identifierIsInstance": false
+              },
+              "query": null,
+              "viewQuery": null,
+              "value": null,
+              "isAttribute": false,
+              "isSelf": false,
+              "isHost": false,
+              "isSkipSelf": false,
+              "isOptional": false,
+              "isValue": false
+            }
+          ]
         }
       ]
     },
@@ -362,6 +401,13 @@
           "value": null
         },
         {
+          "class": "Identifier",
+          "name": "BROWSER_SANITIZATION_PROVIDERS",
+          "moduleUrl": null,
+          "prefix": null,
+          "value": null
+        },
+        {
           "class": "Provider",
           "token": {
             "value": null,
@@ -379,12 +425,13 @@
           "useValue": null,
           "useFactory": {
             "class": "Factory",
-            "name": "_exceptionHandler",
+            "name": "exceptionHandler",
             "prefix": null,
             "moduleUrl": null,
             "value": null,
             "diDeps": []
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -406,12 +453,13 @@
           "useValue": null,
           "useFactory": {
             "class": "Factory",
-            "name": "_document",
+            "name": "document",
             "prefix": null,
             "moduleUrl": null,
             "value": null,
             "diDeps": []
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -440,6 +488,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -468,6 +517,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -496,6 +546,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -524,6 +575,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -552,6 +604,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -582,6 +635,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -612,6 +666,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -640,6 +695,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -675,6 +731,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -703,6 +760,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -730,6 +788,7 @@
           "useExisting": null,
           "useValue": false,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -791,16 +850,16 @@
       "prefix": null,
       "value": null
     },
-    "_exceptionHandler": {
+    "exceptionHandler": {
       "class": "Identifier",
-      "name": "_exceptionHandler",
+      "name": "exceptionHandler",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
       "value": null
     },
-    "_document": {
+    "document": {
       "class": "Identifier",
-      "name": "_document",
+      "name": "document",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_render_common.dart",
       "prefix": null,
       "value": null

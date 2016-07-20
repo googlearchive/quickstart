@@ -3,16 +3,16 @@
     "1": "angular2.src.facade.facade",
     "4": [
       {
-        "1": "lang.dart",
-        "2": [
-          "Type"
-        ]
-      },
-      {
         "1": "async.dart",
         "2": [
           "Stream",
           "EventEmitter"
+        ]
+      },
+      {
+        "1": "exception_handler.dart",
+        "2": [
+          "ExceptionHandler"
         ]
       },
       {
@@ -22,33 +22,110 @@
         ]
       },
       {
-        "1": "exception_handler.dart",
+        "1": "lang.dart",
         "2": [
-          "ExceptionHandler"
+          "Type"
         ]
       }
     ],
     "6": "facade.dart",
     "7": [
       {
-        "1": "lang.ngfactory.dart",
+        "1": "async.template.dart",
         "4": "i0"
       },
       {
-        "1": "async.ngfactory.dart",
+        "1": "exception_handler.template.dart",
         "4": "i1"
       },
       {
-        "1": "exceptions.ngfactory.dart",
+        "1": "exceptions.template.dart",
         "4": "i2"
       },
       {
-        "1": "exception_handler.ngfactory.dart",
+        "1": "lang.template.dart",
         "4": "i3"
       }
     ]
   },
   "type": {
+    "TimerWrapper": {
+      "class": "Identifier",
+      "name": "TimerWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ObservableWrapper": {
+      "class": "Identifier",
+      "name": "ObservableWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
+      "prefix": null,
+      "value": null
+    },
+    "EventEmitter": {
+      "class": "Identifier",
+      "name": "EventEmitter",
+      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
+      "prefix": null,
+      "value": null
+    },
+    "Subject": {
+      "class": "Identifier",
+      "name": "Subject",
+      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PromiseWrapper": {
+      "class": "Identifier",
+      "name": "PromiseWrapper",
+      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PromiseCompleter": {
+      "class": "Identifier",
+      "name": "PromiseCompleter",
+      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ArrayLogger": {
+      "class": "Identifier",
+      "name": "_ArrayLogger",
+      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ExceptionHandler": {
+      "class": "Identifier",
+      "name": "ExceptionHandler",
+      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "BaseException": {
+      "class": "Identifier",
+      "name": "BaseException",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "WrappedException": {
+      "class": "Identifier",
+      "name": "WrappedException",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "makeTypeError": {
+      "class": "Identifier",
+      "name": "makeTypeError",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
     "IS_DART": {
       "class": "Identifier",
       "name": "IS_DART",
@@ -301,27 +378,6 @@
       "prefix": null,
       "value": null
     },
-    "lockMode": {
-      "class": "Identifier",
-      "name": "lockMode",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "enableDevMode": {
-      "class": "Identifier",
-      "name": "enableDevMode",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "enableProdMode": {
-      "class": "Identifier",
-      "name": "enableProdMode",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "assertionsEnabled": {
       "class": "Identifier",
       "name": "assertionsEnabled",
@@ -382,90 +438,6 @@
       "class": "Identifier",
       "name": "escape",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "TimerWrapper": {
-      "class": "Identifier",
-      "name": "TimerWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ObservableWrapper": {
-      "class": "Identifier",
-      "name": "ObservableWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "EventEmitter": {
-      "class": "Identifier",
-      "name": "EventEmitter",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Subject": {
-      "class": "Identifier",
-      "name": "Subject",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PromiseWrapper": {
-      "class": "Identifier",
-      "name": "PromiseWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PromiseCompleter": {
-      "class": "Identifier",
-      "name": "PromiseCompleter",
-      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
-      "prefix": null,
-      "value": null
-    },
-    "BaseException": {
-      "class": "Identifier",
-      "name": "BaseException",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "WrappedException": {
-      "class": "Identifier",
-      "name": "WrappedException",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "makeTypeError": {
-      "class": "Identifier",
-      "name": "makeTypeError",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "unimplemented": {
-      "class": "Identifier",
-      "name": "unimplemented",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_ArrayLogger": {
-      "class": "Identifier",
-      "name": "_ArrayLogger",
-      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ExceptionHandler": {
-      "class": "Identifier",
-      "name": "ExceptionHandler",
-      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
       "prefix": null,
       "value": null
     }

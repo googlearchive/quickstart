@@ -10,16 +10,16 @@
         "5": false
       },
       {
-        "1": "forms.dart",
+        "1": "directives.dart",
         "2": [
-          "FORM_DIRECTIVES"
+          "CORE_DIRECTIVES"
         ],
         "5": false
       },
       {
-        "1": "directives.dart",
+        "1": "forms.dart",
         "2": [
-          "CORE_DIRECTIVES"
+          "FORM_DIRECTIVES"
         ],
         "5": false
       }

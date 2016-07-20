@@ -3,6 +3,14 @@
     "1": "angular2.src.common.forms.directives.form_interface",
     "3": [
       {
+        "1": "../model.dart",
+        "2": [
+          "Control",
+          "ControlGroup"
+        ],
+        "5": false
+      },
+      {
         "1": "ng_control.dart",
         "2": [
           "NgControl"
@@ -15,28 +23,20 @@
           "NgControlGroup"
         ],
         "5": false
-      },
-      {
-        "1": "../model.dart",
-        "2": [
-          "Control",
-          "ControlGroup"
-        ],
-        "5": false
       }
     ],
     "6": "form_interface.dart",
     "7": [
       {
-        "1": "ng_control.ngfactory.dart",
+        "1": "../model.template.dart",
         "4": "i0"
       },
       {
-        "1": "ng_control_group.ngfactory.dart",
+        "1": "ng_control.template.dart",
         "4": "i1"
       },
       {
-        "1": "../model.ngfactory.dart",
+        "1": "ng_control_group.template.dart",
         "4": "i2"
       }
     ]

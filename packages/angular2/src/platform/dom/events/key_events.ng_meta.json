@@ -7,20 +7,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "1": "package:angular2/src/core/di.dart",
         "2": [
-          "DOM"
+          "Injectable"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/zone/ng_zone.dart",
         "2": [
-          "isPresent",
-          "isBlank",
-          "StringWrapper",
-          "RegExpWrapper",
-          "NumberWrapper"
+          "NgZone"
         ],
         "5": false
       },
@@ -33,23 +29,24 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "StringWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      },
+      {
         "1": "event_manager.dart",
         "2": [
           "EventManagerPlugin"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/zone/ng_zone.dart",
-        "2": [
-          "NgZone"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di.dart",
-        "2": [
-          "Injectable"
         ],
         "5": false
       }
@@ -68,27 +65,27 @@
     "6": "key_events.dart",
     "7": [
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i2"
       },
       {
-        "1": "event_manager.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.ngfactory.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "event_manager.template.dart",
         "4": "i5"
       }
     ]

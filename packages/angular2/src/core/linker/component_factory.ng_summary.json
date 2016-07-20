@@ -10,6 +10,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "2": [
+          "reflector"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "Type",
@@ -19,9 +26,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "../change_detection/change_detection.dart",
         "2": [
-          "unimplemented"
+          "ChangeDetectorRef"
+        ],
+        "5": false
+      },
+      {
+        "1": "element.dart",
+        "2": [
+          "AppElement"
         ],
         "5": false
       },
@@ -35,15 +49,7 @@
       {
         "1": "view_ref.dart",
         "2": [
-          "ViewRef",
-          "ViewRef_"
-        ],
-        "5": false
-      },
-      {
-        "1": "element.dart",
-        "2": [
-          "AppElement"
+          "ViewRef"
         ],
         "5": false
       },
@@ -51,13 +57,6 @@
         "1": "view_utils.dart",
         "2": [
           "ViewUtils"
-        ],
-        "5": false
-      },
-      {
-        "1": "../change_detection/change_detection.dart",
-        "2": [
-          "ChangeDetectorRef"
         ],
         "5": false
       }

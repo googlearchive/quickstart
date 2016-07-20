@@ -3,6 +3,22 @@
     "1": "angular2.src.core.di.reflective_provider",
     "3": [
       {
+        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "2": [
+          "reflector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "MapWrapper",
+          "ListWrapper",
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "Type",
@@ -14,24 +30,17 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "../metadata/di.dart",
         "2": [
-          "MapWrapper",
-          "ListWrapper"
+          "InjectorModuleMetadata",
+          "ProviderPropertyMetadata"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "1": "forward_ref.dart",
         "2": [
-          "reflector"
-        ],
-        "5": false
-      },
-      {
-        "1": "reflective_key.dart",
-        "2": [
-          "ReflectiveKey"
+          "resolveForwardRef"
         ],
         "5": false
       },
@@ -39,12 +48,21 @@
         "1": "metadata.dart",
         "2": [
           "InjectMetadata",
-          "InjectableMetadata",
           "OptionalMetadata",
           "SelfMetadata",
           "HostMetadata",
           "SkipSelfMetadata",
           "DependencyMetadata"
+        ],
+        "5": false
+      },
+      {
+        "1": "provider.dart",
+        "2": [
+          "Provider",
+          "ProviderBuilder",
+          "provide",
+          "noValueProvided"
         ],
         "5": false
       },
@@ -58,18 +76,9 @@
         "5": false
       },
       {
-        "1": "forward_ref.dart",
+        "1": "reflective_key.dart",
         "2": [
-          "resolveForwardRef"
-        ],
-        "5": false
-      },
-      {
-        "1": "provider.dart",
-        "2": [
-          "Provider",
-          "ProviderBuilder",
-          "provide"
+          "ReflectiveKey"
         ],
         "5": false
       }
@@ -77,16 +86,16 @@
     "6": "reflective_provider.dart"
   },
   "type": {
-    "_EMPTY_LIST": {
-      "class": "Identifier",
-      "name": "_EMPTY_LIST",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
-      "prefix": null,
-      "value": []
-    },
     "ReflectiveDependency": {
       "class": "Identifier",
       "name": "ReflectiveDependency",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_identityPostProcess": {
+      "class": "Identifier",
+      "name": "_identityPostProcess",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
       "prefix": null,
       "value": null
@@ -181,9 +190,14 @@
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
       "prefix": null,
       "value": null
+    },
+    "getInjectorModuleProviders": {
+      "class": "Identifier",
+      "name": "getInjectorModuleProviders",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
+      "prefix": null,
+      "value": null
     }
   },
-  "alias": {
-    "_EMPTY_LIST": []
-  }
+  "alias": {}
 }

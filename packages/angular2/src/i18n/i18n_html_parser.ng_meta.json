@@ -3,18 +3,9 @@
     "1": "angular2.src.i18n.i18n_html_parser",
     "3": [
       {
-        "1": "package:angular2/src/compiler/html_parser.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "2": [
-          "HtmlParser",
-          "HtmlParseTreeResult"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/parse_util.dart",
-        "2": [
-          "ParseSourceSpan",
-          "ParseError"
+          "Parser"
         ],
         "5": false
       },
@@ -34,10 +25,33 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/html_parser.dart",
+        "2": [
+          "HtmlParser",
+          "HtmlParseTreeResult"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/parse_util.dart",
+        "2": [
+          "ParseSourceSpan",
+          "ParseError"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
           "ListWrapper",
           "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       },
@@ -51,31 +65,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "expander.dart",
         "2": [
-          "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
-        "2": [
-          "Parser"
+          "expandNodes"
         ],
         "5": false
       },
       {
         "1": "message.dart",
         "2": [
-          "Message",
           "id"
-        ],
-        "5": false
-      },
-      {
-        "1": "expander.dart",
-        "2": [
-          "expandNodes"
         ],
         "5": false
       },
@@ -88,8 +87,6 @@
           "I18N_ATTR",
           "partition",
           "Part",
-          "stringifyNodes",
-          "meaning",
           "getPhNameFromBinding",
           "dedupePhName"
         ],
@@ -99,43 +96,43 @@
     "6": "i18n_html_parser.dart",
     "7": [
       {
-        "1": "package:angular2/src/compiler/html_parser.ngfactory.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/parse_util.ngfactory.dart",
+        "1": "package:angular2/src/compiler/html_ast.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/compiler/html_ast.ngfactory.dart",
+        "1": "package:angular2/src/compiler/html_parser.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/compiler/parse_util.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/compiler/expression_parser/parser.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i6"
       },
       {
-        "1": "message.ngfactory.dart",
+        "1": "expander.template.dart",
         "4": "i7"
       },
       {
-        "1": "expander.ngfactory.dart",
+        "1": "message.template.dart",
         "4": "i8"
       },
       {
-        "1": "shared.ngfactory.dart",
+        "1": "shared.template.dart",
         "4": "i9"
       }
     ]

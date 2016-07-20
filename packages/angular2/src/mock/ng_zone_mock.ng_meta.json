@@ -19,8 +19,7 @@
       {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "EventEmitter",
-          "ObservableWrapper"
+          "EventEmitter"
         ],
         "5": false
       }
@@ -39,15 +38,15 @@
     "6": "ng_zone_mock.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.ngfactory.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.ngfactory.dart",
+        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i2"
       }
     ]

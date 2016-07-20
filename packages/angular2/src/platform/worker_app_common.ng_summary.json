@@ -3,39 +3,11 @@
     "1": "angular2.src.platform.worker_app_common",
     "3": [
       {
-        "1": "package:angular2/src/compiler/xhr.dart",
+        "1": "package:angular2/common.dart",
         "2": [
-          "XHR"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/worker/xhr_impl.dart",
-        "2": [
-          "WebWorkerXHRImpl"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/web_workers/worker/renderer.dart",
-        "2": [
-          "WebWorkerRootRenderer"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "print",
-          "Type",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/render/api.dart",
-        "2": [
-          "RootRenderer"
+          "COMMON_DIRECTIVES",
+          "COMMON_PIPES",
+          "FORM_PROVIDERS"
         ],
         "5": false
       },
@@ -52,11 +24,30 @@
         "5": false
       },
       {
-        "1": "package:angular2/common.dart",
+        "1": "package:angular2/src/compiler/xhr.dart",
         "2": [
-          "COMMON_DIRECTIVES",
-          "COMMON_PIPES",
-          "FORM_PROVIDERS"
+          "XHR"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/render/api.dart",
+        "2": [
+          "RootRenderer"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/web_workers/shared/api.dart",
+        "2": [
+          "ON_WEB_WORKER"
         ],
         "5": false
       },
@@ -69,10 +60,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/service_message_broker.dart",
+        "1": "package:angular2/src/web_workers/shared/render_store.dart",
         "2": [
-          "ServiceMessageBrokerFactory",
-          "ServiceMessageBrokerFactory_"
+          "RenderStore"
         ],
         "5": false
       },
@@ -84,23 +74,24 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/api.dart",
+        "1": "package:angular2/src/web_workers/shared/service_message_broker.dart",
         "2": [
-          "ON_WEB_WORKER"
+          "ServiceMessageBrokerFactory",
+          "ServiceMessageBrokerFactory_"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/web_workers/worker/renderer.dart",
         "2": [
-          "Provider"
+          "WebWorkerRootRenderer"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/web_workers/shared/render_store.dart",
+        "1": "package:angular2/src/web_workers/worker/xhr_impl.dart",
         "2": [
-          "RenderStore"
+          "WebWorkerXHRImpl"
         ],
         "5": false
       }
@@ -145,6 +136,7 @@
           "useExisting": null,
           "useValue": true,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         }
@@ -200,6 +192,7 @@
             "value": null
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -226,6 +219,7 @@
             "value": null
           },
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         },
@@ -254,6 +248,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -282,6 +277,7 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -319,6 +315,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -339,6 +336,7 @@
           "useExisting": null,
           "useValue": true,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -367,12 +365,13 @@
           "useValue": null,
           "useFactory": {
             "class": "Factory",
-            "name": "_exceptionHandler",
+            "name": "exceptionHandler",
             "prefix": null,
             "moduleUrl": null,
             "value": null,
             "diDeps": []
           },
+          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -410,6 +409,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": false,
           "deps": null
         }
@@ -422,9 +422,9 @@
       "prefix": null,
       "value": null
     },
-    "_exceptionHandler": {
+    "exceptionHandler": {
       "class": "Identifier",
-      "name": "_exceptionHandler",
+      "name": "exceptionHandler",
       "moduleUrl": "asset:angular2/lib/src/platform/worker_app_common.dart",
       "prefix": null,
       "value": null

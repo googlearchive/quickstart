@@ -3,9 +3,9 @@
     "1": "angular2.src.mock.view_resolver_mock",
     "3": [
       {
-        "1": "package:angular2/src/core/di.dart",
+        "1": "package:angular2/src/compiler/view_resolver.dart",
         "2": [
-          "resolveForwardRef"
+          "ViewResolver"
         ],
         "5": false
       },
@@ -19,9 +19,14 @@
       {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "Map",
-          "MapWrapper",
           "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
         ],
         "5": false
       },
@@ -30,17 +35,8 @@
         "2": [
           "Type",
           "isPresent",
-          "isArray",
           "stringify",
           "isBlank"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/exceptions.dart",
-        "2": [
-          "BaseException",
-          "WrappedException"
         ],
         "5": false
       },
@@ -48,13 +44,6 @@
         "1": "../core/metadata.dart",
         "2": [
           "ViewMetadata"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/view_resolver.dart",
-        "2": [
-          "ViewResolver"
         ],
         "5": false
       }
@@ -81,13 +70,6 @@
       "isHost": false,
       "value": null,
       "diDeps": []
-    },
-    "flattenArray": {
-      "class": "Identifier",
-      "name": "flattenArray",
-      "moduleUrl": "asset:angular2/lib/src/mock/view_resolver_mock.dart",
-      "prefix": null,
-      "value": null
     }
   },
   "alias": {}

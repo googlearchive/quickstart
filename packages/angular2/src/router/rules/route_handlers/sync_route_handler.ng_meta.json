@@ -16,15 +16,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isPresent",
-          "Type"
-        ],
-        "5": false
-      },
-      {
-        "1": "route_handler.dart",
-        "2": [
-          "RouteHandler"
+          "isPresent"
         ],
         "5": false
       },
@@ -35,24 +27,31 @@
           "BLANK_ROUTE_DATA"
         ],
         "5": false
+      },
+      {
+        "1": "route_handler.dart",
+        "2": [
+          "RouteHandler"
+        ],
+        "5": false
       }
     ],
     "6": "sync_route_handler.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/async.ngfactory.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "route_handler.ngfactory.dart",
+        "1": "../../instruction.template.dart",
         "4": "i2"
       },
       {
-        "1": "../../instruction.ngfactory.dart",
+        "1": "route_handler.template.dart",
         "4": "i3"
       }
     ]

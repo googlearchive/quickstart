@@ -3,6 +3,21 @@
     "1": "angular2.src.i18n.message_extractor",
     "3": [
       {
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
+        "2": [
+          "Parser"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/html_ast.dart",
+        "2": [
+          "HtmlAst",
+          "HtmlElementAst"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/compiler/html_parser.dart",
         "2": [
           "HtmlParser"
@@ -12,29 +27,7 @@
       {
         "1": "package:angular2/src/compiler/parse_util.dart",
         "2": [
-          "ParseSourceSpan",
           "ParseError"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/html_ast.dart",
-        "2": [
-          "HtmlAst",
-          "HtmlAstVisitor",
-          "HtmlElementAst",
-          "HtmlAttrAst",
-          "HtmlTextAst",
-          "HtmlCommentAst",
-          "htmlVisitAll"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank"
         ],
         "5": false
       },
@@ -46,9 +39,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "Parser"
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "expander.dart",
+        "2": [
+          "expandNodes"
         ],
         "5": false
       },
@@ -61,22 +61,12 @@
         "5": false
       },
       {
-        "1": "expander.dart",
-        "2": [
-          "expandNodes"
-        ],
-        "5": false
-      },
-      {
         "1": "shared.dart",
         "2": [
           "I18nError",
           "Part",
           "I18N_ATTR_PREFIX",
           "partition",
-          "meaning",
-          "description",
-          "stringifyNodes",
           "messageFromAttribute"
         ],
         "5": false

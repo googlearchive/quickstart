@@ -8,9 +8,7 @@
           "Directive",
           "ElementRef",
           "Renderer",
-          "Self",
           "Provider",
-          "Attribute",
           "Input",
           "OnInit",
           "OnDestroy",
@@ -31,21 +29,6 @@
         "1": "package:angular2/src/common/forms/directives/ng_control.dart",
         "2": [
           "NgControl"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "looseIdentical",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
         ],
         "5": false
       }
@@ -90,24 +73,16 @@
     "6": "radio_control_value_accessor.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/common/forms/directives/control_value_accessor.ngfactory.dart",
+        "1": "package:angular2/src/common/forms/directives/control_value_accessor.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/common/forms/directives/ng_control.ngfactory.dart",
+        "1": "package:angular2/src/common/forms/directives/ng_control.template.dart",
         "4": "i2"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
-        "4": "i3"
-      },
-      {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
-        "4": "i4"
       }
     ]
   },
@@ -236,6 +211,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -495,6 +471,7 @@
           },
           "useValue": null,
           "useFactory": null,
+          "useProperty": null,
           "multi": true,
           "deps": null
         }

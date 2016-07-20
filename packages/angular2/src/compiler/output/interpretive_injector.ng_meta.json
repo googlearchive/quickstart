@@ -1,0 +1,61 @@
+{
+  "ngDeps": {
+    "1": "angular2.src.compiler.output.interpretive_injector",
+    "3": [
+      {
+        "1": "package:angular2/src/core/linker/injector_factory.dart",
+        "2": [
+          "CodegenInjector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "BaseException"
+        ],
+        "5": false
+      },
+      {
+        "1": "output_interpreter.dart",
+        "2": [
+          "InstanceFactory",
+          "DynamicInstance"
+        ],
+        "5": false
+      }
+    ],
+    "6": "interpretive_injector.dart",
+    "7": [
+      {
+        "1": "package:angular2/src/core/linker/injector_factory.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "output_interpreter.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "InterpretiveInjectorInstanceFactory": {
+      "class": "Identifier",
+      "name": "InterpretiveInjectorInstanceFactory",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/interpretive_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_InterpretiveInjector": {
+      "class": "Identifier",
+      "name": "_InterpretiveInjector",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/interpretive_injector.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

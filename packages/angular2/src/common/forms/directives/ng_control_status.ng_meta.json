@@ -11,17 +11,16 @@
         "5": false
       },
       {
-        "1": "ng_control.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "NgControl"
+          "isPresent"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "ng_control.dart",
         "2": [
-          "isBlank",
-          "isPresent"
+          "NgControl"
         ],
         "5": false
       }
@@ -43,15 +42,15 @@
     "6": "ng_control_status.dart",
     "7": [
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "ng_control.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "ng_control.template.dart",
         "4": "i2"
       }
     ]

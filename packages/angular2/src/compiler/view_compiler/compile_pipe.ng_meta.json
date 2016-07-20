@@ -3,14 +3,6 @@
     "1": "angular2.src.compiler.view_compiler.compile_pipe",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -18,14 +10,9 @@
         "5": false
       },
       {
-        "1": "../output/output_ast.dart",
-        "4": "o",
-        "5": false
-      },
-      {
-        "1": "compile_view.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "CompileView"
+          "isBlank"
         ],
         "5": false
       },
@@ -45,6 +32,18 @@
         "5": false
       },
       {
+        "1": "../output/output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
+        "1": "compile_view.dart",
+        "2": [
+          "CompileView"
+        ],
+        "5": false
+      },
+      {
         "1": "util.dart",
         "2": [
           "injectFromViewParentInjector",
@@ -57,31 +56,31 @@
     "6": "compile_pipe.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "../output/output_ast.ngfactory.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i2"
       },
       {
-        "1": "compile_view.ngfactory.dart",
+        "1": "../identifiers.template.dart",
         "4": "i3"
       },
       {
-        "1": "../compile_metadata.ngfactory.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i4"
       },
       {
-        "1": "../identifiers.ngfactory.dart",
+        "1": "compile_view.template.dart",
         "4": "i5"
       },
       {
-        "1": "util.ngfactory.dart",
+        "1": "util.template.dart",
         "4": "i6"
       }
     ]

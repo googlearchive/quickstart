@@ -6,9 +6,7 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "IS_DART",
-          "StringWrapper",
-          "Math",
-          "isBlank"
+          "StringWrapper"
         ],
         "5": false
       }

@@ -3,11 +3,15 @@
     "1": "angular2.dom.webWorkerAdapter",
     "3": [
       {
-        "1": "abstract_html_adapter.dart",
+        "1": "package:angular2/platform/common_dom.dart",
         "5": false
       },
       {
-        "1": "package:angular2/platform/common_dom.dart",
+        "1": "package:html/dom.dart",
+        "5": false
+      },
+      {
+        "1": "abstract_html_adapter.dart",
         "5": false
       }
     ],

@@ -9,7 +9,7 @@
     "6": "server.dart",
     "7": [
       {
-        "1": "package:angular2/src/platform/server/html_adapter.ngfactory.dart",
+        "1": "package:angular2/src/platform/server/html_adapter.template.dart",
         "4": "i0"
       }
     ]

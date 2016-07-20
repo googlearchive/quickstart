@@ -3,9 +3,11 @@
     "1": "angular2.src.common.pipes.i18n_select_pipe",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/core.dart",
         "2": [
-          "isStringMap"
+          "Injectable",
+          "PipeTransform",
+          "Pipe"
         ],
         "5": false
       },
@@ -17,11 +19,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "Injectable",
-          "PipeTransform",
-          "Pipe"
+          "isStringMap"
         ],
         "5": false
       },
@@ -64,19 +64,19 @@
     "6": "i18n_select_pipe.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.ngfactory.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.ngfactory.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/core.ngfactory.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "invalid_pipe_argument_exception.ngfactory.dart",
+        "1": "invalid_pipe_argument_exception.template.dart",
         "4": "i3"
       }
     ]

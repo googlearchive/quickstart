@@ -3,14 +3,9 @@
     "1": "angular2.src.compiler.output.output_interpreter",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/core/reflection/reflection.dart",
         "2": [
-          "isPresent",
-          "isBlank",
-          "isString",
-          "evalExpression",
-          "IS_DART",
-          "FunctionWrapper"
+          "reflector"
         ],
         "5": false
       },
@@ -22,30 +17,25 @@
         "5": false
       },
       {
-        "1": "output_ast.dart",
-        "4": "o",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflection.dart",
+        "1": "package:angular2/src/facade/collection.dart",
         "2": [
-          "reflector"
+          "ListWrapper"
         ],
         "5": false
       },
       {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "BaseException",
-          "unimplemented"
+          "BaseException"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "MapWrapper",
-          "ListWrapper"
+          "isPresent",
+          "IS_DART",
+          "FunctionWrapper"
         ],
         "5": false
       },
@@ -54,6 +44,11 @@
         "2": [
           "debugOutputAstAsDart"
         ],
+        "5": false
+      },
+      {
+        "1": "output_ast.dart",
+        "4": "o",
         "5": false
       },
       {
