@@ -29,7 +29,7 @@
       "type": {
         "class": "Type",
         "name": "AppComponent",
-        "moduleUrl": "asset:angular2_getting_started/lib/app_component.dart",
+        "moduleUrl": "asset:angular2_quickstart/lib/app_component.dart",
         "prefix": null,
         "isHost": false,
         "value": null,
@@ -45,7 +45,7 @@
       "template": {
         "encapsulation": 2,
         "template": "<h1>My First Angular 2 App</h1>",
-        "templateUrl": "asset:angular2_getting_started/lib/app_component.dart",
+        "templateUrl": "asset:angular2_quickstart/lib/app_component.dart",
         "styles": [],
         "styleUrls": [],
         "ngContentSelectors": []
