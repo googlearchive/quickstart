@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.compiler.output.output_ast",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/facade/lang.dart",
@@ -64,9 +64,9 @@
       "prefix": null,
       "value": null
     },
-    "Type": {
+    "OutputType": {
       "class": "Identifier",
-      "name": "Type",
+      "name": "OutputType",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
       "prefix": null,
       "value": null

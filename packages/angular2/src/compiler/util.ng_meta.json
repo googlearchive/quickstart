@@ -1,11 +1,10 @@
 {
   "ngDeps": {
-    "1": "angular2.src.compiler.util",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "IS_DART",
           "StringWrapper"
         ],
         "5": false
@@ -20,6 +19,13 @@
     ]
   },
   "type": {
+    "MODULE_SUFFIX": {
+      "class": "Identifier",
+      "name": "MODULE_SUFFIX",
+      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
+      "prefix": null,
+      "value": null
+    },
     "camelCaseToDashCase": {
       "class": "Identifier",
       "name": "camelCaseToDashCase",

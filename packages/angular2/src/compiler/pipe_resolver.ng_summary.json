@@ -1,11 +1,10 @@
 {
   "ngDeps": {
-    "1": "angular2.src.compiler.pipe_resolver",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/core/di.dart",
         "2": [
-          "resolveForwardRef",
           "Injectable"
         ],
         "5": false
@@ -37,15 +36,6 @@
           "BaseException"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent",
-          "stringify"
-        ],
-        "5": false
       }
     ],
     "5": [
@@ -68,13 +58,6 @@
     "6": "pipe_resolver.dart"
   },
   "type": {
-    "_isPipeMetadata": {
-      "class": "Identifier",
-      "name": "_isPipeMetadata",
-      "moduleUrl": "asset:angular2/lib/src/compiler/pipe_resolver.dart",
-      "prefix": null,
-      "value": null
-    },
     "PipeResolver": {
       "class": "Type",
       "name": "PipeResolver",
@@ -106,6 +89,13 @@
           "isValue": false
         }
       ]
+    },
+    "_isPipeMetadata": {
+      "class": "Identifier",
+      "name": "_isPipeMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/pipe_resolver.dart",
+      "prefix": null,
+      "value": null
     }
   },
   "alias": {}

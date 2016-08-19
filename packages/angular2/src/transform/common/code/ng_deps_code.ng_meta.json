@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.transform.common.code.ng_deps_code",
+    "1": "",
     "3": [
       {
         "1": "package:analyzer/analyzer.dart",
@@ -91,6 +91,13 @@
     "_ignoredProblems": {
       "class": "Identifier",
       "name": "_ignoredProblems",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/code/ng_deps_code.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ignoredRealTemplateIssues": {
+      "class": "Identifier",
+      "name": "_ignoredRealTemplateIssues",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/ng_deps_code.dart",
       "prefix": null,
       "value": null

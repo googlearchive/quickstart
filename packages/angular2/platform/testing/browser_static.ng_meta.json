@@ -36,16 +36,23 @@
         "5": false
       },
       {
-        "1": "package:angular2/platform/common_dom.dart",
+        "1": "package:angular2/src/animate/animation_builder.dart",
         "2": [
-          "ELEMENT_PROBE_PROVIDERS"
+          "AnimationBuilder"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/animate/animation_builder.dart",
+        "1": "package:angular2/src/core/render/api.dart",
         "2": [
-          "AnimationBuilder"
+          "RootRenderer"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/testing/debug_renderer.dart",
+        "2": [
+          "DebugDomRootRenderer"
         ],
         "5": false
       },
@@ -142,52 +149,56 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/platform/common_dom.template.dart",
+        "1": "package:angular2/src/animate/animation_builder.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/animate/animation_builder.template.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/mock/animation_builder_mock.template.dart",
+        "1": "package:angular2/src/testing/debug_renderer.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/mock/directive_resolver_mock.template.dart",
+        "1": "package:angular2/src/mock/animation_builder_mock.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/mock/mock_location_strategy.template.dart",
+        "1": "package:angular2/src/mock/directive_resolver_mock.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/mock/ng_zone_mock.template.dart",
+        "1": "package:angular2/src/mock/mock_location_strategy.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/mock/view_resolver_mock.template.dart",
+        "1": "package:angular2/src/mock/ng_zone_mock.template.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/platform/browser/browser_adapter.template.dart",
+        "1": "package:angular2/src/mock/view_resolver_mock.template.dart",
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/platform/browser/xhr_impl.template.dart",
+        "1": "package:angular2/src/platform/browser/browser_adapter.template.dart",
         "4": "i11"
       },
       {
-        "1": "package:angular2/src/platform/browser_common.template.dart",
+        "1": "package:angular2/src/platform/browser/xhr_impl.template.dart",
         "4": "i12"
       },
       {
-        "1": "package:angular2/src/testing/test_component_builder.template.dart",
+        "1": "package:angular2/src/platform/browser_common.template.dart",
         "4": "i13"
       },
       {
-        "1": "package:angular2/src/testing/utils.template.dart",
+        "1": "package:angular2/src/testing/test_component_builder.template.dart",
         "4": "i14"
+      },
+      {
+        "1": "package:angular2/src/testing/utils.template.dart",
+        "4": "i15"
       }
     ]
   },
@@ -451,42 +462,110 @@
             },
             "identifierIsInstance": false
           },
-          "useClass": null,
+          "useClass": {
+            "class": "Type",
+            "name": "DebugDomRootRenderer",
+            "moduleUrl": "asset:angular2/lib/src/testing/debug_renderer.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "DOCUMENT",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "EventManager",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "DomSharedStylesHost",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "AnimationBuilder",
+                    "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
           "useExisting": null,
           "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "createConditionalRootRenderer",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
-            "prefix": null,
-            "value": null
-          },
+          "useFactory": null,
           "useProperty": null,
           "multi": false,
-          "deps": [
-            {
-              "token": {
-                "value": null,
-                "identifier": {
-                  "class": "Identifier",
-                  "name": "DomRootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-                  "prefix": null,
-                  "value": null
-                },
-                "identifierIsInstance": false
-              },
-              "query": null,
-              "viewQuery": null,
-              "value": null,
-              "isAttribute": false,
-              "isSelf": false,
-              "isHost": false,
-              "isSkipSelf": false,
-              "isOptional": false,
-              "isValue": false
-            }
-          ]
+          "deps": null
         },
         {
           "class": "Provider",
@@ -5716,17 +5795,108 @@
           "token": {
             "value": null,
             "identifier": {
-              "class": "Identifier",
+              "class": "Type",
               "name": "DomRootRenderer",
               "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
               "prefix": null,
-              "value": null
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "DOCUMENT",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "EventManager",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "DomSharedStylesHost",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "AnimationBuilder",
+                      "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
             },
             "identifierIsInstance": false
           },
           "useClass": {
             "class": "Type",
-            "name": "DomRootRenderer_",
+            "name": "DomRootRenderer",
             "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
             "prefix": null,
             "isHost": false,
@@ -5846,11 +6016,102 @@
           "useExisting": {
             "value": null,
             "identifier": {
-              "class": "Identifier",
+              "class": "Type",
               "name": "DomRootRenderer",
               "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
               "prefix": null,
-              "value": null
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "DOCUMENT",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "EventManager",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "DomSharedStylesHost",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "AnimationBuilder",
+                      "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
             },
             "identifierIsInstance": false
           },
@@ -6307,56 +6568,6 @@
             "value": null,
             "identifier": {
               "class": "Identifier",
-              "name": "RootRenderer",
-              "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "createConditionalRootRenderer",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
-            "prefix": null,
-            "value": null
-          },
-          "useProperty": null,
-          "multi": false,
-          "deps": [
-            {
-              "token": {
-                "value": null,
-                "identifier": {
-                  "class": "Identifier",
-                  "name": "DomRootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-                  "prefix": null,
-                  "value": null
-                },
-                "identifierIsInstance": false
-              },
-              "query": null,
-              "viewQuery": null,
-              "value": null,
-              "isAttribute": false,
-              "isSelf": false,
-              "isHost": false,
-              "isSkipSelf": false,
-              "isOptional": false,
-              "isValue": false
-            }
-          ]
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
               "name": "XHR",
               "moduleUrl": "asset:angular2/lib/src/compiler/xhr.dart",
               "prefix": null,
@@ -6414,42 +6625,110 @@
             },
             "identifierIsInstance": false
           },
-          "useClass": null,
+          "useClass": {
+            "class": "Type",
+            "name": "DebugDomRootRenderer",
+            "moduleUrl": "asset:angular2/lib/src/testing/debug_renderer.dart",
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "DOCUMENT",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "EventManager",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "DomSharedStylesHost",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "AnimationBuilder",
+                    "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
           "useExisting": null,
           "useValue": null,
-          "useFactory": {
-            "class": "Identifier",
-            "name": "createConditionalRootRenderer",
-            "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/ng_probe.dart",
-            "prefix": null,
-            "value": null
-          },
+          "useFactory": null,
           "useProperty": null,
           "multi": false,
-          "deps": [
-            {
-              "token": {
-                "value": null,
-                "identifier": {
-                  "class": "Identifier",
-                  "name": "DomRootRenderer",
-                  "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-                  "prefix": null,
-                  "value": null
-                },
-                "identifierIsInstance": false
-              },
-              "query": null,
-              "viewQuery": null,
-              "value": null,
-              "isAttribute": false,
-              "isSelf": false,
-              "isHost": false,
-              "isSkipSelf": false,
-              "isOptional": false,
-              "isValue": false
-            }
-          ]
+          "deps": null
         },
         {
           "class": "Provider",

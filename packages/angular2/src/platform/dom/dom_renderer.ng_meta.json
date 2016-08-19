@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.platform.dom.dom_renderer",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/animate/animation_builder.dart",
@@ -44,14 +44,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isPresent",
-          "isBlank",
-          "Json",
-          "RegExpWrapper",
-          "stringify",
-          "StringWrapper",
-          "isArray",
-          "isString"
+          "Json"
         ],
         "5": false
       },
@@ -93,7 +86,7 @@
     ],
     "5": [
       {
-        "1": "DomRootRenderer_",
+        "1": "DomRootRenderer",
         "4": [
           {
             "1": "Injectable",
@@ -106,11 +99,11 @@
             "3": [
               "const Inject(DOCUMENT)"
             ],
-            "4": "_document"
+            "4": "document"
           },
           {
             "1": "EventManager",
-            "4": "_eventManager"
+            "4": "eventManager"
           },
           {
             "1": "DomSharedStylesHost",
@@ -120,6 +113,9 @@
             "1": "AnimationBuilder",
             "4": "animate"
           }
+        ],
+        "6": [
+          "RootRenderer"
         ]
       }
     ],
@@ -194,15 +190,8 @@
       "value": null
     },
     "DomRootRenderer": {
-      "class": "Identifier",
-      "name": "DomRootRenderer",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DomRootRenderer_": {
       "class": "Type",
-      "name": "DomRootRenderer_",
+      "name": "DomRootRenderer",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
       "prefix": null,
       "isHost": false,

@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "reflection.reflection",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/facade/lang.dart",

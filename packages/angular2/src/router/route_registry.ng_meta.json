@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.router.route_registry",
+    "1": "",
     "3": [
       {
         "1": "dart:async",
@@ -13,13 +13,6 @@
           "Inject",
           "OpaqueToken",
           "ComponentFactory"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/async.dart",
-        "2": [
-          "PromiseWrapper"
         ],
         "5": false
       },
@@ -151,52 +144,48 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "instruction.template.dart",
         "4": "i4"
       },
       {
-        "1": "instruction.template.dart",
+        "1": "route_config/route_config_impl.template.dart",
         "4": "i5"
       },
       {
-        "1": "route_config/route_config_impl.template.dart",
+        "1": "route_config/route_config_normalizer.template.dart",
         "4": "i6"
       },
       {
-        "1": "route_config/route_config_normalizer.template.dart",
+        "1": "rules/route_paths/route_path.template.dart",
         "4": "i7"
       },
       {
-        "1": "rules/route_paths/route_path.template.dart",
+        "1": "rules/rule_set.template.dart",
         "4": "i8"
       },
       {
-        "1": "rules/rule_set.template.dart",
+        "1": "rules/rules.template.dart",
         "4": "i9"
       },
       {
-        "1": "rules/rules.template.dart",
+        "1": "url_parser.template.dart",
         "4": "i10"
       },
       {
-        "1": "url_parser.template.dart",
-        "4": "i11"
-      },
-      {
         "1": "utils.template.dart",
-        "4": "i12"
+        "4": "i11"
       }
     ]
   },

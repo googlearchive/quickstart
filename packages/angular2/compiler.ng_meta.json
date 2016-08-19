@@ -1267,28 +1267,6 @@
                   "isSkipSelf": false,
                   "isOptional": false,
                   "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "CompilerConfig",
-                      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
                 }
               ]
             },
@@ -1441,28 +1419,6 @@
                     "class": "Identifier",
                     "name": "InjectorCompiler",
                     "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "CompilerConfig",
-                    "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
                     "prefix": null,
                     "value": null
                   },
@@ -1650,28 +1606,6 @@
                       "class": "Identifier",
                       "name": "InjectorCompiler",
                       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "CompilerConfig",
-                      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
                       "prefix": null,
                       "value": null
                     },
@@ -2707,13 +2641,6 @@
       "prefix": null,
       "value": null
     },
-    "_normalizeArray": {
-      "class": "Identifier",
-      "name": "_normalizeArray",
-      "moduleUrl": "asset:angular2/lib/src/compiler/compile_metadata.dart",
-      "prefix": null,
-      "value": null
-    },
     "CompilerConfig": {
       "class": "Identifier",
       "name": "CompilerConfig",
@@ -2837,13 +2764,6 @@
       "prefix": null,
       "value": null
     },
-    "_isPipeMetadata": {
-      "class": "Identifier",
-      "name": "_isPipeMetadata",
-      "moduleUrl": "asset:angular2/lib/src/compiler/pipe_resolver.dart",
-      "prefix": null,
-      "value": null
-    },
     "PipeResolver": {
       "class": "Type",
       "name": "PipeResolver",
@@ -2875,6 +2795,13 @@
           "isValue": false
         }
       ]
+    },
+    "_isPipeMetadata": {
+      "class": "Identifier",
+      "name": "_isPipeMetadata",
+      "moduleUrl": "asset:angular2/lib/src/compiler/pipe_resolver.dart",
+      "prefix": null,
+      "value": null
     },
     "RuntimeCompiler": {
       "class": "Type",
@@ -3023,28 +2950,6 @@
               "class": "Identifier",
               "name": "InjectorCompiler",
               "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "CompilerConfig",
-              "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
               "prefix": null,
               "value": null
             },

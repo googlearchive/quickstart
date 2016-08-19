@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.common.directives",
+    "1": "",
     "4": [
       {
         "1": "directives/core_directives.dart",

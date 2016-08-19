@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.platform.location",
+    "1": "",
     "4": [
       {
         "1": "browser/location/hash_location_strategy.dart"
@@ -211,23 +211,9 @@
         }
       ]
     },
-    "UrlChangeListener": {
-      "class": "Identifier",
-      "name": "UrlChangeListener",
-      "moduleUrl": "asset:angular2/lib/src/platform/browser/location/platform_location.dart",
-      "prefix": null,
-      "value": null
-    },
     "PlatformLocation": {
       "class": "Identifier",
       "name": "PlatformLocation",
-      "moduleUrl": "asset:angular2/lib/src/platform/browser/location/platform_location.dart",
-      "prefix": null,
-      "value": null
-    },
-    "UrlChangeEvent": {
-      "class": "Identifier",
-      "name": "UrlChangeEvent",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/location/platform_location.dart",
       "prefix": null,
       "value": null

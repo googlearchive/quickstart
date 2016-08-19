@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular.core.facade.dom",
+    "1": "browser_adapter",
     "3": [
       {
         "1": "dart:html",
@@ -25,8 +25,7 @@
         "5": false
       },
       {
-        "1": "dart:js",
-        "4": "js",
+        "1": "package:js/js.dart",
         "5": false
       }
     ],
@@ -36,6 +35,41 @@
     "_IdentitySanitizer": {
       "class": "Identifier",
       "name": "_IdentitySanitizer",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ngSetProperty": {
+      "class": "Identifier",
+      "name": "ngSetProperty",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ngGetProperty": {
+      "class": "Identifier",
+      "name": "ngGetProperty",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ngHasProperty": {
+      "class": "Identifier",
+      "name": "ngHasProperty",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ngSetGlobalVar": {
+      "class": "Identifier",
+      "name": "ngSetGlobalVar",
+      "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ngCreateDocument": {
+      "class": "Identifier",
+      "name": "ngCreateDocument",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/browser_adapter.dart",
       "prefix": null,
       "value": null

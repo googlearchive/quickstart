@@ -1,18 +1,11 @@
 {
   "ngDeps": {
-    "1": "angular2.src.compiler.runtime_metadata",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/compiler/url_resolver.dart",
         "2": [
           "getUrlScheme"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di.dart",
-        "2": [
-          "resolveForwardRef"
         ],
         "5": false
       },
@@ -113,19 +106,11 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "Type",
           "isBlank",
           "isPresent",
           "isArray",
           "stringify",
           "isString"
-        ],
-        "5": false
-      },
-      {
-        "1": "assertions.dart",
-        "2": [
-          "assertArrayOfStrings"
         ],
         "5": false
       },

@@ -3,12 +3,6 @@
     "1": "angular2.platform.common_dom",
     "4": [
       {
-        "1": "package:angular2/src/platform/dom/debug/by.dart"
-      },
-      {
-        "1": "package:angular2/src/platform/dom/debug/ng_probe.dart"
-      },
-      {
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DOM",

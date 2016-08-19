@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.transform.directive_processor.inliner",
+    "1": "",
     "3": [
       {
         "1": "dart:async",
@@ -11,7 +11,7 @@
         "5": false
       },
       {
-        "1": "package:analyzer/src/generated/ast.dart",
+        "1": "package:analyzer/dart/ast/ast.dart",
         "5": false
       },
       {

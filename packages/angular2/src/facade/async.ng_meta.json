@@ -1,33 +1,5 @@
 {
-  "ngDeps": {
-    "1": "angular2.core.facade.async",
-    "3": [
-      {
-        "1": "dart:async",
-        "5": false
-      }
-    ],
-    "4": [
-      {
-        "1": "dart:async",
-        "2": [
-          "Stream",
-          "StreamController",
-          "StreamSubscription"
-        ]
-      },
-      {
-        "1": "promise.dart"
-      }
-    ],
-    "6": "async.dart",
-    "7": [
-      {
-        "1": "promise.template.dart",
-        "4": "i0"
-      }
-    ]
-  },
+  "ngDeps": null,
   "type": {
     "TimerWrapper": {
       "class": "Identifier",
@@ -54,20 +26,6 @@
       "class": "Identifier",
       "name": "Subject",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PromiseWrapper": {
-      "class": "Identifier",
-      "name": "PromiseWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PromiseCompleter": {
-      "class": "Identifier",
-      "name": "PromiseCompleter",
-      "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
       "prefix": null,
       "value": null
     }

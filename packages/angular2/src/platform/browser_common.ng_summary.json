@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.platform.browser_common",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/compiler/xhr.dart",
@@ -33,13 +33,6 @@
           "APPLICATION_COMMON_PROVIDERS",
           "PLATFORM_COMMON_PROVIDERS",
           "TestabilityRegistry"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/platform/common_dom.dart",
-        "2": [
-          "ELEMENT_PROBE_PROVIDERS"
         ],
         "5": false
       },
@@ -103,8 +96,7 @@
       {
         "1": "package:angular2/src/platform/dom/dom_renderer.dart",
         "2": [
-          "DomRootRenderer",
-          "DomRootRenderer_"
+          "DomRootRenderer"
         ],
         "5": false
       },
@@ -175,15 +167,6 @@
       }
     ],
     "4": [
-      {
-        "1": "package:angular2/platform/common_dom.dart",
-        "2": [
-          "ELEMENT_PROBE_PROVIDERS",
-          "ELEMENT_PROBE_PROVIDERS_PROD_MODE",
-          "inspectNativeElement",
-          "By"
-        ]
-      },
       {
         "1": "package:angular2/src/platform/browser/title.dart",
         "2": [
@@ -636,33 +619,11 @@
           "deps": null
         },
         {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "DomRootRenderer",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "DomRootRenderer_",
-            "moduleUrl": null,
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
+          "class": "Identifier",
+          "name": "DomRootRenderer",
+          "moduleUrl": null,
+          "prefix": null,
+          "value": null
         },
         {
           "class": "Provider",
@@ -757,13 +718,6 @@
         {
           "class": "Identifier",
           "name": "EventManager",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
-        },
-        {
-          "class": "Identifier",
-          "name": "ELEMENT_PROBE_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
           "value": null

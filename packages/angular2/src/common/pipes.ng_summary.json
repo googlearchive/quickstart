@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.common.pipes",
+    "1": "",
     "4": [
       {
         "1": "pipes/async_pipe.dart",

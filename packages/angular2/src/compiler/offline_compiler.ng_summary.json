@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.compiler.offline_compiler",
+    "1": "",
     "3": [
       {
         "1": "dart:async",
@@ -10,13 +10,6 @@
         "1": "package:angular2/src/core/linker/component_factory.dart",
         "2": [
           "ComponentFactory"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
         ],
         "5": false
       },

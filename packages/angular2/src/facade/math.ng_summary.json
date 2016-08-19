@@ -7,13 +7,6 @@
       "moduleUrl": "asset:angular2/lib/src/facade/math.dart",
       "prefix": null,
       "value": null
-    },
-    "Math": {
-      "class": "Identifier",
-      "name": "Math",
-      "moduleUrl": "asset:angular2/lib/src/facade/math.dart",
-      "prefix": null,
-      "value": null
     }
   },
   "alias": {}

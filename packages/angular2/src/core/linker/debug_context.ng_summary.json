@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.linker.debug_context",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/core/di.dart",
@@ -13,22 +13,6 @@
         "1": "package:angular2/src/core/render/api.dart",
         "2": [
           "RenderDebugInfo"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank"
         ],
         "5": false
       },
@@ -65,5 +49,7 @@
       "value": null
     }
   },
-  "alias": {}
+  "alias": {
+    "_EMPTY_DEBUG_PROVIDERS": []
+  }
 }

@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.change_detection",
+    "1": "",
     "4": [
       {
         "1": "change_detection/change_detection.dart",
@@ -87,13 +87,6 @@
       "prefix": null,
       "value": null
     },
-    "IS_DART": {
-      "class": "Identifier",
-      "name": "IS_DART",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "_NAN_KEY": {
       "class": "Identifier",
       "name": "_NAN_KEY",
@@ -118,13 +111,6 @@
     "Math": {
       "class": "Identifier",
       "name": "Math",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "CONST": {
-      "class": "Identifier",
-      "name": "CONST",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null
@@ -220,13 +206,6 @@
       "prefix": null,
       "value": null
     },
-    "serializeEnum": {
-      "class": "Identifier",
-      "name": "serializeEnum",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "deserializeEnum": {
       "class": "Identifier",
       "name": "deserializeEnum",
@@ -244,13 +223,6 @@
     "StringWrapper": {
       "class": "Identifier",
       "name": "StringWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "StringJoiner": {
-      "class": "Identifier",
-      "name": "StringJoiner",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null
@@ -283,13 +255,6 @@
       "prefix": null,
       "value": null
     },
-    "FunctionWrapper": {
-      "class": "Identifier",
-      "name": "FunctionWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "looseIdentical": {
       "class": "Identifier",
       "name": "looseIdentical",
@@ -311,30 +276,9 @@
       "prefix": null,
       "value": null
     },
-    "normalizeBlank": {
-      "class": "Identifier",
-      "name": "normalizeBlank",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "normalizeBool": {
       "class": "Identifier",
       "name": "normalizeBool",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isJsObject": {
-      "class": "Identifier",
-      "name": "isJsObject",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "warn": {
-      "class": "Identifier",
-      "name": "warn",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null
@@ -367,20 +311,6 @@
       "prefix": null,
       "value": null
     },
-    "evalExpression": {
-      "class": "Identifier",
-      "name": "evalExpression",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "hasConstructor": {
-      "class": "Identifier",
-      "name": "hasConstructor",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "bitWiseOr": {
       "class": "Identifier",
       "name": "bitWiseOr",
@@ -391,13 +321,6 @@
     "bitWiseAnd": {
       "class": "Identifier",
       "name": "bitWiseAnd",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "escape": {
-      "class": "Identifier",
-      "name": "escape",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null

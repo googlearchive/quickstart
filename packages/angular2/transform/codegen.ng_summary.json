@@ -3,6 +3,10 @@
     "1": "angular2.transform.codegen.dart",
     "3": [
       {
+        "1": "package:angular2/src/transform/asset_consumer/transformer.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/transform/common/eager_transformer_wrapper.dart",
         "5": false
       },

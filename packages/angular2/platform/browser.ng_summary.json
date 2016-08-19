@@ -42,15 +42,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/browser/xhr_impl.dart",
         "2": [
           "XHRImpl"
@@ -84,11 +75,7 @@
           "BROWSER_PROVIDERS",
           "CACHED_TEMPLATE_PROVIDER",
           "BROWSER_SANITIZATION_PROVIDERS",
-          "ELEMENT_PROBE_PROVIDERS",
-          "ELEMENT_PROBE_PROVIDERS_PROD_MODE",
-          "inspectNativeElement",
           "BrowserDomAdapter",
-          "By",
           "Title",
           "DOCUMENT",
           "enableDebugTools",

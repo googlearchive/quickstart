@@ -1,7 +1,11 @@
 {
   "ngDeps": {
-    "1": "angular2.src.common.forms.model",
+    "1": "",
     "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
       {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
@@ -25,13 +29,6 @@
           "isPresent",
           "isBlank",
           "normalizeBool"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/promise.dart",
-        "2": [
-          "PromiseWrapper"
         ],
         "5": false
       },
@@ -82,9 +79,9 @@
       "prefix": null,
       "value": null
     },
-    "toObservable": {
+    "_toStream": {
       "class": "Identifier",
-      "name": "toObservable",
+      "name": "_toStream",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
       "value": null

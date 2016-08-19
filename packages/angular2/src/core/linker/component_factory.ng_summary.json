@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.linker.component_factory",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/core/di.dart",
@@ -13,15 +13,6 @@
         "1": "package:angular2/src/core/reflection/reflection.dart",
         "2": [
           "reflector"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent",
-          "isBlank"
         ],
         "5": false
       },
@@ -56,6 +47,7 @@
       {
         "1": "view_utils.dart",
         "2": [
+          "OnDestroyCallback",
           "ViewUtils"
         ],
         "5": false

@@ -58,15 +58,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type",
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/browser_common.dart",
         "2": [
           "BROWSER_APP_COMMON_PROVIDERS",
@@ -84,11 +75,7 @@
         "1": "package:angular2/src/platform/browser_common.dart",
         "2": [
           "BROWSER_PROVIDERS",
-          "ELEMENT_PROBE_PROVIDERS",
-          "ELEMENT_PROBE_PROVIDERS_PROD_MODE",
-          "inspectNativeElement",
           "BrowserDomAdapter",
-          "By",
           "Title",
           "enableDebugTools",
           "disableDebugTools"

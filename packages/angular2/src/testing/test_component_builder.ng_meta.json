@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.testing.test_component_builder",
+    "1": "",
     "3": [
       {
         "1": "dart:async",
@@ -28,11 +28,15 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/debug/debug_node.dart",
+        "1": "package:angular2/src/testing/debug_node.dart",
         "2": [
           "DebugElement",
           "getDebugNode"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_utils.dart",
         "5": false
       },
       {
@@ -92,24 +96,28 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/debug/debug_node.template.dart",
+        "1": "package:angular2/src/testing/debug_node.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "1": "package:angular2/src/core/linker/view_utils.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_tokens.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i4"
       },
       {
-        "1": "fake_async.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_tokens.template.dart",
         "4": "i5"
       },
       {
-        "1": "utils.template.dart",
+        "1": "fake_async.template.dart",
         "4": "i6"
+      },
+      {
+        "1": "utils.template.dart",
+        "4": "i7"
       }
     ]
   },

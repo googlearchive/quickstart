@@ -9447,7 +9447,8 @@
       "changeDetection": 5,
       "inputs": {},
       "outputs": {
-        "ngSubmit": "ngSubmit"
+        "ngSubmit": "ngSubmit",
+        "ngBeforeSubmit": "ngBeforeSubmit"
       },
       "hostListeners": {
         "submit": "onSubmit()"
@@ -9914,7 +9915,8 @@
         "form": "ngFormModel"
       },
       "outputs": {
-        "ngSubmit": "ngSubmit"
+        "ngSubmit": "ngSubmit",
+        "ngBeforeSubmit": "ngBeforeSubmit"
       },
       "hostListeners": {
         "submit": "onSubmit()"
@@ -11839,9 +11841,9 @@
       "prefix": null,
       "value": null
     },
-    "toObservable": {
+    "_toStream": {
       "class": "Identifier",
-      "name": "toObservable",
+      "name": "_toStream",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
       "value": null
@@ -11895,9 +11897,9 @@
       "prefix": null,
       "value": null
     },
-    "_convertToPromise": {
+    "_toFuture": {
       "class": "Identifier",
-      "name": "_convertToPromise",
+      "name": "_toFuture",
       "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
       "prefix": null,
       "value": null

@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.zone",
+    "1": "",
     "4": [
       {
         "1": "zone/ng_zone.dart",

@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.platform.location",
+    "1": "",
     "4": [
       {
         "1": "browser/location/hash_location_strategy.dart"

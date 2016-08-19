@@ -1,17 +1,5 @@
 {
-  "ngDeps": {
-    "1": "angular2.src.core.di.metadata",
-    "3": [
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "stringify"
-        ],
-        "5": false
-      }
-    ],
-    "6": "metadata.dart"
-  },
+  "ngDeps": null,
   "type": {
     "InjectMetadata": {
       "class": "Identifier",

@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.change_detection",
+    "1": "",
     "4": [
       {
         "1": "change_detection/change_detection.dart",

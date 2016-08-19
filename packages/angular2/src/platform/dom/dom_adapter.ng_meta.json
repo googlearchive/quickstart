@@ -1,24 +1,5 @@
 {
-  "ngDeps": {
-    "1": "angular2.src.platform.dom.dom_adapter",
-    "3": [
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "Type"
-        ],
-        "5": false
-      }
-    ],
-    "6": "dom_adapter.dart",
-    "7": [
-      {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i0"
-      }
-    ]
-  },
+  "ngDeps": null,
   "type": {
     "setRootDomAdapter": {
       "class": "Identifier",

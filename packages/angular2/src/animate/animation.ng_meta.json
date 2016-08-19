@@ -1,7 +1,12 @@
 {
   "ngDeps": {
-    "1": "angular2.src.animate.animation",
+    "1": "",
     "3": [
+      {
+        "1": "dart:math",
+        "4": "math",
+        "5": false
+      },
       {
         "1": "package:angular2/src/facade/collection.dart",
         "2": [
@@ -12,18 +17,10 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "DateWrapper",
           "StringWrapper",
           "RegExpWrapper",
           "NumberWrapper",
           "isPresent"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/math.dart",
-        "2": [
-          "Math"
         ],
         "5": false
       },
@@ -67,24 +64,20 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/math.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "1": "package:angular2/src/platform/dom/util.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/platform/dom/util.template.dart",
+        "1": "browser_details.template.dart",
         "4": "i4"
       },
       {
-        "1": "browser_details.template.dart",
-        "4": "i5"
-      },
-      {
         "1": "css_animation_options.template.dart",
-        "4": "i6"
+        "4": "i5"
       }
     ]
   },

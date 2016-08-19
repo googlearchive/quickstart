@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:analyzer/src/generated/element.dart",
+        "1": "package:analyzer/dart/element/element.dart",
         "5": false
       },
       {

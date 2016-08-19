@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.router.route_config_decorator",
+    "1": "",
     "4": [
       {
         "1": "./route_config_impl.dart"

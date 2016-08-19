@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.testing.internal_injector",
+    "1": "",
     "3": [
       {
         "1": "dart:async",

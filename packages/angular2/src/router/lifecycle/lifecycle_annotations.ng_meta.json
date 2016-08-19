@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.router.lifecycle_annotations",
+    "1": "",
     "4": [
       {
         "1": "./lifecycle_annotations_impl.dart"

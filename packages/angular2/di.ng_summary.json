@@ -1,0 +1,71 @@
+{
+  "ngDeps": {
+    "1": "",
+    "4": [
+      {
+        "1": "package:angular2/src/core/di/decorators.dart"
+      },
+      {
+        "1": "package:angular2/src/core/di/injector.dart",
+        "2": [
+          "Injector",
+          "InjectorFactory"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/di/reflective_injector.dart",
+        "2": [
+          "ReflectiveInjector"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/di/provider.dart",
+        "2": [
+          "ProviderBuilder",
+          "Provider",
+          "provide",
+          "noValueProvided"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/di/reflective_provider.dart",
+        "2": [
+          "ResolvedReflectiveBinding",
+          "ResolvedReflectiveFactory",
+          "ReflectiveDependency",
+          "ResolvedReflectiveProvider"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/di/reflective_key.dart",
+        "2": [
+          "ReflectiveKey"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/di/reflective_exceptions.dart",
+        "2": [
+          "NoProviderError",
+          "AbstractProviderError",
+          "CyclicDependencyError",
+          "InstantiationError",
+          "InvalidProviderError",
+          "NoAnnotationError",
+          "OutOfBoundsError"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/di/opaque_token.dart",
+        "2": [
+          "OpaqueToken"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/zone/ng_zone.dart"
+      }
+    ],
+    "6": "di.dart"
+  },
+  "type": {},
+  "alias": {}
+}

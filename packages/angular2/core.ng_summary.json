@@ -38,20 +38,7 @@
         "1": "src/core/change_detection.dart"
       },
       {
-        "1": "src/core/debug/debug_node.dart",
-        "2": [
-          "DebugElement",
-          "DebugNode",
-          "asNativeElements"
-        ]
-      },
-      {
-        "1": "src/core/di.dart",
-        "3": [
-          "ForwardRefFn",
-          "resolveForwardRef",
-          "forwardRef"
-        ]
+        "1": "src/core/di.dart"
       },
       {
         "1": "src/core/linker.dart"
@@ -76,9 +63,6 @@
       },
       {
         "1": "src/core/testability/testability.dart"
-      },
-      {
-        "1": "src/core/util.dart"
       },
       {
         "1": "src/core/zone.dart"

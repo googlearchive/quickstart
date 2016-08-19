@@ -1,21 +1,9 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.reflection.platform_reflection_capabilities",
+    "1": "",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "Type"
-        ],
-        "5": false
-      },
-      {
         "1": "types.dart",
-        "2": [
-          "GetterFn",
-          "SetterFn",
-          "MethodFn"
-        ],
         "5": false
       }
     ],

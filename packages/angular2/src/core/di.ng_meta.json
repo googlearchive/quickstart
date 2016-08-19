@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.di",
+    "1": "",
     "4": [
       {
         "1": "di/metadata.dart",
@@ -16,14 +16,6 @@
       },
       {
         "1": "di/decorators.dart"
-      },
-      {
-        "1": "di/forward_ref.dart",
-        "2": [
-          "forwardRef",
-          "resolveForwardRef",
-          "ForwardRefFn"
-        ]
       },
       {
         "1": "di/injector.dart",
@@ -101,40 +93,36 @@
         "4": "i1"
       },
       {
-        "1": "di/forward_ref.template.dart",
+        "1": "di/injector.template.dart",
         "4": "i2"
       },
       {
-        "1": "di/injector.template.dart",
+        "1": "di/reflective_injector.template.dart",
         "4": "i3"
       },
       {
-        "1": "di/reflective_injector.template.dart",
+        "1": "di/provider.template.dart",
         "4": "i4"
       },
       {
-        "1": "di/provider.template.dart",
+        "1": "di/reflective_provider.template.dart",
         "4": "i5"
       },
       {
-        "1": "di/reflective_provider.template.dart",
+        "1": "di/reflective_key.template.dart",
         "4": "i6"
       },
       {
-        "1": "di/reflective_key.template.dart",
+        "1": "di/reflective_exceptions.template.dart",
         "4": "i7"
       },
       {
-        "1": "di/reflective_exceptions.template.dart",
+        "1": "di/opaque_token.template.dart",
         "4": "i8"
       },
       {
-        "1": "di/opaque_token.template.dart",
-        "4": "i9"
-      },
-      {
         "1": "di/map_injector.template.dart",
-        "4": "i10"
+        "4": "i9"
       }
     ]
   },
@@ -227,27 +215,6 @@
       "class": "Identifier",
       "name": "SkipSelf",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ForwardRefFn": {
-      "class": "Identifier",
-      "name": "ForwardRefFn",
-      "moduleUrl": "asset:angular2/lib/src/core/di/forward_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "forwardRef": {
-      "class": "Identifier",
-      "name": "forwardRef",
-      "moduleUrl": "asset:angular2/lib/src/core/di/forward_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "resolveForwardRef": {
-      "class": "Identifier",
-      "name": "resolveForwardRef",
-      "moduleUrl": "asset:angular2/lib/src/core/di/forward_ref.dart",
       "prefix": null,
       "value": null
     },
@@ -555,6 +522,13 @@
     "findFirstClosedCycle": {
       "class": "Identifier",
       "name": "findFirstClosedCycle",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "findFirstClosedCycleReversed": {
+      "class": "Identifier",
+      "name": "findFirstClosedCycleReversed",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
       "prefix": null,
       "value": null

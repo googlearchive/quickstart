@@ -120,6 +120,13 @@
       "prefix": null,
       "value": null
     },
+    "IGNORE_REAL_TEMPLATE_ISSUES_PARAM": {
+      "class": "Identifier",
+      "name": "IGNORE_REAL_TEMPLATE_ISSUES_PARAM",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/options.dart",
+      "prefix": null,
+      "value": null
+    },
     "CODEGEN_DEBUG_MODE": {
       "class": "Identifier",
       "name": "CODEGEN_DEBUG_MODE",

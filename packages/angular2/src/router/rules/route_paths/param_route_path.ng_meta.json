@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.router.rules.route_paths.param_route_path",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/facade/collection.dart",
