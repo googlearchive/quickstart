@@ -33,9 +33,6 @@
       {
         "1": "di/provider.dart",
         "2": [
-          "Binding",
-          "ProviderBuilder",
-          "bind",
           "Provider",
           "provide",
           "noValueProvided"

@@ -7,13 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "../../instruction.dart",
         "2": [
           "RouteData",
@@ -32,16 +25,12 @@
     "6": "sync_route_handler.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../../instruction.template.dart",
         "4": "i0"
       },
       {
-        "1": "../../instruction.template.dart",
-        "4": "i1"
-      },
-      {
         "1": "route_handler.template.dart",
-        "4": "i2"
+        "4": "i1"
       }
     ]
   },

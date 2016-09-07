@@ -10,13 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "../di/injector.dart",
         "2": [
           "Injector",
@@ -32,12 +25,8 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i1"
-      },
-      {
         "1": "../di/injector.template.dart",
-        "4": "i2"
+        "4": "i1"
       }
     ]
   },

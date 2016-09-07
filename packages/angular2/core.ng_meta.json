@@ -182,7 +182,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "ApplicationRef_",
+              "name": "ApplicationRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,
@@ -193,7 +193,7 @@
                     "value": null,
                     "identifier": {
                       "class": "Identifier",
-                      "name": "PlatformRef_",
+                      "name": "PlatformRefImpl",
                       "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
                       "prefix": null,
                       "value": null
@@ -260,7 +260,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "ApplicationRef_",
+            "name": "ApplicationRefImpl",
             "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
             "prefix": null,
             "isHost": false,
@@ -271,7 +271,7 @@
                   "value": null,
                   "identifier": {
                     "class": "Identifier",
-                    "name": "PlatformRef_",
+                    "name": "PlatformRefImpl",
                     "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
                     "prefix": null,
                     "value": null
@@ -359,7 +359,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "ApplicationRef_",
+              "name": "ApplicationRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,
@@ -370,7 +370,7 @@
                     "value": null,
                     "identifier": {
                       "class": "Identifier",
-                      "name": "PlatformRef_",
+                      "name": "PlatformRefImpl",
                       "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
                       "prefix": null,
                       "value": null
@@ -782,7 +782,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "PlatformRef_",
+              "name": "PlatformRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,
@@ -793,7 +793,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "PlatformRef_",
+            "name": "PlatformRefImpl",
             "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
             "prefix": null,
             "isHost": false,
@@ -825,7 +825,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "PlatformRef_",
+              "name": "PlatformRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,
@@ -881,7 +881,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "ApplicationRef_",
+              "name": "ApplicationRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,
@@ -892,7 +892,7 @@
                     "value": null,
                     "identifier": {
                       "class": "Identifier",
-                      "name": "PlatformRef_",
+                      "name": "PlatformRefImpl",
                       "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
                       "prefix": null,
                       "value": null
@@ -959,7 +959,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "ApplicationRef_",
+            "name": "ApplicationRefImpl",
             "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
             "prefix": null,
             "isHost": false,
@@ -970,7 +970,7 @@
                   "value": null,
                   "identifier": {
                     "class": "Identifier",
-                    "name": "PlatformRef_",
+                    "name": "PlatformRefImpl",
                     "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
                     "prefix": null,
                     "value": null
@@ -1058,7 +1058,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "ApplicationRef_",
+              "name": "ApplicationRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,
@@ -1069,7 +1069,7 @@
                     "value": null,
                     "identifier": {
                       "class": "Identifier",
-                      "name": "PlatformRef_",
+                      "name": "PlatformRefImpl",
                       "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
                       "prefix": null,
                       "value": null
@@ -1198,9 +1198,9 @@
       "prefix": null,
       "value": null
     },
-    "PlatformRef_": {
+    "PlatformRefImpl": {
       "class": "Type",
-      "name": "PlatformRef_",
+      "name": "PlatformRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "isHost": false,
@@ -1214,9 +1214,9 @@
       "prefix": null,
       "value": null
     },
-    "ApplicationRef_": {
+    "ApplicationRefImpl": {
       "class": "Type",
-      "name": "ApplicationRef_",
+      "name": "ApplicationRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "isHost": false,
@@ -1227,7 +1227,7 @@
             "value": null,
             "identifier": {
               "class": "Identifier",
-              "name": "PlatformRef_",
+              "name": "PlatformRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "value": null
@@ -1395,6 +1395,13 @@
       "prefix": null,
       "value": null
     },
+    "_DevModeEquality": {
+      "class": "Identifier",
+      "name": "_DevModeEquality",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
+      "prefix": null,
+      "value": null
+    },
     "devModeEqual": {
       "class": "Identifier",
       "name": "devModeEqual",
@@ -1423,114 +1430,9 @@
       "prefix": null,
       "value": null
     },
-    "_NAN_KEY": {
-      "class": "Identifier",
-      "name": "_NAN_KEY",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "_IS_DART_VM": {
       "class": "Identifier",
       "name": "_IS_DART_VM",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "getTypeNameForDebugging": {
-      "class": "Identifier",
-      "name": "getTypeNameForDebugging",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Math": {
-      "class": "Identifier",
-      "name": "Math",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "scheduleMicroTask": {
-      "class": "Identifier",
-      "name": "scheduleMicroTask",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isPresent": {
-      "class": "Identifier",
-      "name": "isPresent",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isBlank": {
-      "class": "Identifier",
-      "name": "isBlank",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isString": {
-      "class": "Identifier",
-      "name": "isString",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isFunction": {
-      "class": "Identifier",
-      "name": "isFunction",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isType": {
-      "class": "Identifier",
-      "name": "isType",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isStringMap": {
-      "class": "Identifier",
-      "name": "isStringMap",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isArray": {
-      "class": "Identifier",
-      "name": "isArray",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isPromise": {
-      "class": "Identifier",
-      "name": "isPromise",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isNumber": {
-      "class": "Identifier",
-      "name": "isNumber",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isBoolean": {
-      "class": "Identifier",
-      "name": "isBoolean",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isDate": {
-      "class": "Identifier",
-      "name": "isDate",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null
@@ -1542,13 +1444,6 @@
       "prefix": null,
       "value": null
     },
-    "deserializeEnum": {
-      "class": "Identifier",
-      "name": "deserializeEnum",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "resolveEnumToken": {
       "class": "Identifier",
       "name": "resolveEnumToken",
@@ -1556,37 +1451,9 @@
       "prefix": null,
       "value": null
     },
-    "StringWrapper": {
+    "jsSplit": {
       "class": "Identifier",
-      "name": "StringWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "NumberWrapper": {
-      "class": "Identifier",
-      "name": "NumberWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "RegExpWrapper": {
-      "class": "Identifier",
-      "name": "RegExpWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "RegExpMatcherWrapper": {
-      "class": "Identifier",
-      "name": "RegExpMatcherWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_JSLikeMatch": {
-      "class": "Identifier",
-      "name": "_JSLikeMatch",
+      "name": "jsSplit",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null
@@ -1605,20 +1472,6 @@
       "prefix": null,
       "value": null
     },
-    "getMapKey": {
-      "class": "Identifier",
-      "name": "getMapKey",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "normalizeBool": {
-      "class": "Identifier",
-      "name": "normalizeBool",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "assertionsEnabled": {
       "class": "Identifier",
       "name": "assertionsEnabled",
@@ -1629,13 +1482,6 @@
     "Json": {
       "class": "Identifier",
       "name": "Json",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DateWrapper": {
-      "class": "Identifier",
-      "name": "DateWrapper",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null
@@ -2046,27 +1892,6 @@
       "prefix": null,
       "value": null
     },
-    "Binding": {
-      "class": "Identifier",
-      "name": "Binding",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "value": null
-    },
-    "bind": {
-      "class": "Identifier",
-      "name": "bind",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ProviderBuilder": {
-      "class": "Identifier",
-      "name": "ProviderBuilder",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "value": null
-    },
     "provide": {
       "class": "Identifier",
       "name": "provide",
@@ -2416,6 +2241,13 @@
       "prefix": null,
       "value": null
     },
+    "_flattenList": {
+      "class": "Identifier",
+      "name": "_flattenList",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
+      "prefix": null,
+      "value": null
+    },
     "TemplateRef": {
       "class": "Identifier",
       "name": "TemplateRef",
@@ -2423,23 +2255,9 @@
       "prefix": null,
       "value": null
     },
-    "TemplateRef_": {
-      "class": "Identifier",
-      "name": "TemplateRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
-      "prefix": null,
-      "value": null
-    },
     "ViewContainerRef": {
       "class": "Identifier",
       "name": "ViewContainerRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewContainerRef_": {
-      "class": "Identifier",
-      "name": "ViewContainerRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
       "prefix": null,
       "value": null
@@ -2580,6 +2398,13 @@
     "Provides": {
       "class": "Identifier",
       "name": "Provides",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "prefix": null,
+      "value": null
+    },
+    "SkipAngularInitCheck": {
+      "class": "Identifier",
+      "name": "SkipAngularInitCheck",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null
@@ -2785,7 +2610,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "PlatformRef_",
+              "name": "PlatformRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,
@@ -2796,7 +2621,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "PlatformRef_",
+            "name": "PlatformRefImpl",
             "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
             "prefix": null,
             "isHost": false,
@@ -2828,7 +2653,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "PlatformRef_",
+              "name": "PlatformRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,
@@ -3042,6 +2867,13 @@
       "prefix": null,
       "value": null
     },
+    "SharedStylesHost": {
+      "class": "Identifier",
+      "name": "SharedStylesHost",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "prefix": null,
+      "value": null
+    },
     "RenderComponentType": {
       "class": "Identifier",
       "name": "RenderComponentType",
@@ -3167,30 +2999,9 @@
       "prefix": null,
       "value": null
     },
-    "TimerWrapper": {
-      "class": "Identifier",
-      "name": "TimerWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ObservableWrapper": {
-      "class": "Identifier",
-      "name": "ObservableWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
     "EventEmitter": {
       "class": "Identifier",
       "name": "EventEmitter",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Subject": {
-      "class": "Identifier",
-      "name": "Subject",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
       "value": null

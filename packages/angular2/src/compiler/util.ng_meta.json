@@ -5,7 +5,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "StringWrapper"
+          "jsSplit"
         ],
         "5": false
       }

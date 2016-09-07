@@ -7,34 +7,27 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "List"
-        ],
+        "1": "metadata/di.dart",
         "5": false
       },
       {
-        "1": "./metadata/di.dart",
+        "1": "metadata/directives.dart",
         "5": false
       },
       {
-        "1": "./metadata/directives.dart",
-        "5": false
-      },
-      {
-        "1": "./metadata/view.dart",
+        "1": "metadata/view.dart",
         "5": false
       }
     ],
     "4": [
       {
-        "1": "./metadata/di.dart"
+        "1": "metadata/di.dart"
       },
       {
-        "1": "./metadata/directives.dart"
+        "1": "metadata/directives.dart"
       },
       {
-        "1": "./metadata/lifecycle_hooks.dart",
+        "1": "metadata/lifecycle_hooks.dart",
         "2": [
           "AfterContentInit",
           "AfterContentChecked",
@@ -60,23 +53,23 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "metadata/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "./metadata/di.template.dart",
+        "1": "metadata/directives.template.dart",
         "4": "i2"
       },
       {
-        "1": "./metadata/directives.template.dart",
+        "1": "metadata/view.template.dart",
         "4": "i3"
       },
       {
-        "1": "./metadata/view.template.dart",
+        "1": "metadata/lifecycle_hooks.template.dart",
         "4": "i4"
       },
       {
-        "1": "./metadata/lifecycle_hooks.template.dart",
+        "1": "./metadata/view.template.dart",
         "4": "i5"
       }
     ]
@@ -197,6 +190,13 @@
     "Provides": {
       "class": "Identifier",
       "name": "Provides",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
+      "prefix": null,
+      "value": null
+    },
+    "SkipAngularInitCheck": {
+      "class": "Identifier",
+      "name": "SkipAngularInitCheck",
       "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
       "prefix": null,
       "value": null

@@ -1443,7 +1443,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false
@@ -1543,7 +1543,7 @@
                 "value": null,
                 "isAttribute": false,
                 "isSelf": false,
-                "isHost": true,
+                "isHost": false,
                 "isSkipSelf": true,
                 "isOptional": false,
                 "isValue": false
@@ -1652,7 +1652,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false
@@ -1730,7 +1730,7 @@
                 "value": null,
                 "isAttribute": false,
                 "isSelf": false,
-                "isHost": true,
+                "isHost": false,
                 "isSkipSelf": true,
                 "isOptional": false,
                 "isValue": false
@@ -5976,7 +5976,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false
@@ -6076,7 +6076,7 @@
                 "value": null,
                 "isAttribute": false,
                 "isSelf": false,
-                "isHost": true,
+                "isHost": false,
                 "isSkipSelf": true,
                 "isOptional": false,
                 "isValue": false
@@ -6185,7 +6185,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false
@@ -6263,7 +6263,7 @@
                 "value": null,
                 "isAttribute": false,
                 "isSelf": false,
-                "isHost": true,
+                "isHost": false,
                 "isSkipSelf": true,
                 "isOptional": false,
                 "isValue": false
@@ -8604,7 +8604,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false
@@ -8695,7 +8695,7 @@
             "value": null,
             "isAttribute": false,
             "isSelf": false,
-            "isHost": true,
+            "isHost": false,
             "isSkipSelf": true,
             "isOptional": false,
             "isValue": false
@@ -8801,7 +8801,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false
@@ -8912,7 +8912,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false
@@ -9025,7 +9025,7 @@
             "value": null,
             "isAttribute": false,
             "isSelf": false,
-            "isHost": true,
+            "isHost": false,
             "isSkipSelf": true,
             "isOptional": false,
             "isValue": false
@@ -9156,7 +9156,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false
@@ -12337,68 +12337,6 @@
           "useProperty": null,
           "multi": false,
           "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "I18nPluralPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "I18nPluralPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "I18nSelectPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "I18nSelectPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
         }
       ]
     },
@@ -12414,34 +12352,6 @@
         "diDeps": []
       },
       "name": "date",
-      "pure": true
-    },
-    "I18nPluralPipe": {
-      "class": "Pipe",
-      "type": {
-        "class": "Type",
-        "name": "I18nPluralPipe",
-        "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
-        "prefix": null,
-        "isHost": false,
-        "value": null,
-        "diDeps": []
-      },
-      "name": "i18nPlural",
-      "pure": true
-    },
-    "I18nSelectPipe": {
-      "class": "Pipe",
-      "type": {
-        "class": "Type",
-        "name": "I18nSelectPipe",
-        "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
-        "prefix": null,
-        "isHost": false,
-        "value": null,
-        "diDeps": []
-      },
-      "name": "i18nSelect",
       "pure": true
     },
     "JsonPipe": {
@@ -12623,9 +12533,7 @@
       "PercentPipe",
       "CurrencyPipe",
       "DatePipe",
-      "ReplacePipe",
-      "I18nPluralPipe",
-      "I18nSelectPipe"
+      "ReplacePipe"
     ]
   }
 }

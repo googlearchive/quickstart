@@ -21,7 +21,7 @@
         "5": false
       },
       {
-        "1": "view.dart",
+        "1": "app_view.dart",
         "2": [
           "AppView"
         ],
@@ -43,7 +43,7 @@
         "4": "i2"
       },
       {
-        "1": "view.template.dart",
+        "1": "app_view.template.dart",
         "4": "i3"
       }
     ]

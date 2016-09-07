@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/i18n.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/config.dart",
         "5": false
       },

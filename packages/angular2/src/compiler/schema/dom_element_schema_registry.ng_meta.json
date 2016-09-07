@@ -14,20 +14,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "element_schema_registry.dart",
         "2": [
           "ElementSchemaRegistry"
@@ -57,16 +43,8 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
-        "4": "i2"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i3"
-      },
-      {
         "1": "element_schema_registry.template.dart",
-        "4": "i4"
+        "4": "i2"
       }
     ]
   },

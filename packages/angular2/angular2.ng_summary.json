@@ -1,6 +1,12 @@
 {
   "ngDeps": {
     "1": "angular2",
+    "3": [
+      {
+        "1": "dart:html",
+        "5": false
+      }
+    ],
     "4": [
       {
         "1": "package:angular2/core.dart"

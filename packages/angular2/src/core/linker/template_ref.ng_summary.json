@@ -3,24 +3,15 @@
     "1": "",
     "3": [
       {
-        "1": "element.dart",
-        "2": [
-          "AppElement"
-        ],
+        "1": "app_element.dart",
         "5": false
       },
       {
         "1": "element_ref.dart",
-        "2": [
-          "ElementRef"
-        ],
         "5": false
       },
       {
-        "1": "view.dart",
-        "2": [
-          "AppView"
-        ],
+        "1": "app_view.dart",
         "5": false
       },
       {
@@ -37,13 +28,6 @@
     "TemplateRef": {
       "class": "Identifier",
       "name": "TemplateRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "TemplateRef_": {
-      "class": "Identifier",
-      "name": "TemplateRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
       "prefix": null,
       "value": null

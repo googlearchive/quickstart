@@ -9,10 +9,6 @@
       {
         "1": "package:angular2/src/facade/async.dart",
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "5": false
       }
     ],
     "6": "query_list.dart",
@@ -20,10 +16,6 @@
       {
         "1": "package:angular2/src/facade/async.template.dart",
         "4": "i0"
-      },
-      {
-        "1": "package:angular2/src/facade/collection.template.dart",
-        "4": "i1"
       }
     ]
   },
@@ -31,6 +23,13 @@
     "QueryList": {
       "class": "Identifier",
       "name": "QueryList",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_flattenList": {
+      "class": "Identifier",
+      "name": "_flattenList",
       "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
       "prefix": null,
       "value": null

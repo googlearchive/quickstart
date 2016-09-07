@@ -21,16 +21,8 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "../expression_parser/ast.dart",
-        "4": "cdAst",
+        "4": "ast",
         "5": false
       },
       {

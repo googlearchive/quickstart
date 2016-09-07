@@ -1,0 +1,170 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "package:angular2/src/debug/debug_node.dart",
+        "2": [
+          "DebugNode",
+          "DebugElement",
+          "EventListener",
+          "getDebugNode",
+          "indexDebugNode",
+          "inspectNativeElement",
+          "removeDebugNodeFromIndex"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Inject",
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/render/api.dart",
+        "2": [
+          "Renderer",
+          "RootRenderer",
+          "RenderComponentType",
+          "RenderDebugInfo"
+        ],
+        "5": false
+      },
+      {
+        "1": "../platform/dom/dom_tokens.dart",
+        "2": [
+          "DOCUMENT"
+        ],
+        "5": false
+      },
+      {
+        "1": "../platform/dom/dom_renderer.dart",
+        "2": [
+          "DomRenderer",
+          "DomRootRenderer"
+        ],
+        "5": false
+      },
+      {
+        "1": "../platform/dom/events/event_manager.dart",
+        "2": [
+          "EventManager"
+        ],
+        "5": false
+      },
+      {
+        "1": "../platform/dom/shared_styles_host.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "DebugDomRootRenderer",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false
+          }
+        ],
+        "5": [
+          {
+            "1": "dynamic",
+            "3": [
+              "const Inject(DOCUMENT)"
+            ],
+            "4": "document"
+          },
+          {
+            "1": "EventManager",
+            "4": "eventManager"
+          }
+        ],
+        "6": [
+          "DomRootRenderer"
+        ]
+      }
+    ],
+    "6": "debug_renderer.dart"
+  },
+  "type": {
+    "INSPECT_GLOBAL_NAME": {
+      "class": "Identifier",
+      "name": "INSPECT_GLOBAL_NAME",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_renderer.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DebugDomRootRenderer": {
+      "class": "Type",
+      "name": "DebugDomRootRenderer",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_renderer.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DOCUMENT",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EventManager",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        }
+      ]
+    },
+    "DebugDomRenderer": {
+      "class": "Identifier",
+      "name": "DebugDomRenderer",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_renderer.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

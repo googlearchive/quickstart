@@ -3,7 +3,7 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/di.dart",
         "2": [
           "Injectable"
         ],

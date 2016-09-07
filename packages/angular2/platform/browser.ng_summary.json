@@ -9,14 +9,15 @@
       {
         "1": "package:angular2/compiler.dart",
         "2": [
-          "COMPILER_PROVIDERS"
+          "COMPILER_PROVIDERS",
+          "XHR"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/compiler.dart",
+        "1": "package:angular2/src/compiler/runtime_compiler.dart",
         "2": [
-          "XHR"
+          "RuntimeCompiler"
         ],
         "5": false
       },
@@ -38,6 +39,13 @@
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/component_resolver.dart",
+        "2": [
+          "ComponentResolver"
         ],
         "5": false
       },
@@ -86,6 +94,52 @@
     "6": "browser.dart"
   },
   "type": {
+    "RUNTIME_COMPILER_PROVIDERS": {
+      "class": "Identifier",
+      "name": "RUNTIME_COMPILER_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/platform/browser.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Identifier",
+          "name": "RuntimeCompiler",
+          "moduleUrl": null,
+          "prefix": null,
+          "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ComponentResolver",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RuntimeCompiler",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
+        }
+      ]
+    },
     "BROWSER_APP_PROVIDERS": {
       "class": "Identifier",
       "name": "BROWSER_APP_PROVIDERS",
@@ -102,6 +156,13 @@
         {
           "class": "Identifier",
           "name": "COMPILER_PROVIDERS",
+          "moduleUrl": null,
+          "prefix": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "RUNTIME_COMPILER_PROVIDERS",
           "moduleUrl": null,
           "prefix": null,
           "value": null

@@ -17,14 +17,6 @@
           "Provider"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "StringWrapper"
-        ],
-        "5": false
       }
     ],
     "5": [
@@ -129,6 +121,20 @@
           "isValue": false
         }
       ]
+    },
+    "_removeLeadingChars": {
+      "class": "Identifier",
+      "name": "_removeLeadingChars",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_removeTrailingSlash": {
+      "class": "Identifier",
+      "name": "_removeTrailingSlash",
+      "moduleUrl": "asset:angular2/lib/src/compiler/url_resolver.dart",
+      "prefix": null,
+      "value": null
     },
     "getUrlScheme": {
       "class": "Identifier",

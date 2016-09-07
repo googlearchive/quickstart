@@ -18,16 +18,7 @@
       {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "ObservableWrapper",
           "EventEmitter"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
         ],
         "5": false
       },
@@ -35,13 +26,6 @@
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank"
         ],
         "5": false
       },
@@ -85,9 +69,6 @@
       },
       {
         "1": "ng_control_group.dart",
-        "2": [
-          "NgControlGroup"
-        ],
         "5": false
       },
       {

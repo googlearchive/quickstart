@@ -39,7 +39,7 @@
         "1": "src/testing/by.dart"
       },
       {
-        "1": "src/testing/debug_node.dart",
+        "1": "src/debug/debug_node.dart",
         "2": [
           "DebugElement"
         ]

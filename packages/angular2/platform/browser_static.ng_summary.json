@@ -24,7 +24,7 @@
       {
         "1": "package:angular2/src/core/application_ref.dart",
         "2": [
-          "PlatformRef_"
+          "PlatformRefImpl"
         ],
         "5": false
       },

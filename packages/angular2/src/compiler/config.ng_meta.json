@@ -3,13 +3,6 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "compile_metadata.dart",
         "2": [
           "CompileIdentifierMetadata"
@@ -27,16 +20,12 @@
     "6": "config.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i0"
       },
       {
-        "1": "compile_metadata.template.dart",
-        "4": "i1"
-      },
-      {
         "1": "identifiers.template.dart",
-        "4": "i2"
+        "4": "i1"
       }
     ]
   },

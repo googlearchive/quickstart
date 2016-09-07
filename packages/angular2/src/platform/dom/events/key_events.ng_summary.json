@@ -21,22 +21,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper",
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "StringWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DOM"

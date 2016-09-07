@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/i18n.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/server/html_adapter.dart",
         "5": false
       },
@@ -28,10 +24,6 @@
       },
       {
         "1": "package:angular2/src/transform/common/formatter.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/transform/common/logging.dart",
         "5": false
       },
       {
@@ -59,48 +51,40 @@
     "6": "transformer.dart",
     "7": [
       {
-        "1": "package:angular2/i18n.template.dart",
+        "1": "package:angular2/src/platform/server/html_adapter.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/platform/server/html_adapter.template.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "package:angular2/src/transform/common/code/ng_deps_code.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/code/ng_deps_code.template.dart",
+        "1": "package:angular2/src/transform/common/code/source_module.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/common/code/source_module.template.dart",
+        "1": "package:angular2/src/transform/common/formatter.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/common/formatter.template.dart",
+        "1": "package:angular2/src/transform/common/names.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "1": "package:angular2/src/transform/common/options.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/transform/common/zone.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/transform/common/options.template.dart",
-        "4": "i8"
-      },
-      {
-        "1": "package:angular2/src/transform/common/zone.template.dart",
-        "4": "i9"
-      },
-      {
         "1": "generator.template.dart",
-        "4": "i10"
+        "4": "i8"
       }
     ]
   },

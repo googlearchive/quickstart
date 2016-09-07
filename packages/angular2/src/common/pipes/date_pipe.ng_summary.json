@@ -3,7 +3,7 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/di.dart",
         "2": [
           "PipeTransform",
           "Pipe",
@@ -12,26 +12,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/intl.dart",
         "2": [
           "DateFormatter"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isDate",
-          "isNumber",
-          "DateWrapper",
-          "isBlank"
         ],
         "5": false
       },

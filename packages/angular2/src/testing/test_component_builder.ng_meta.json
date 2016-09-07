@@ -28,7 +28,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/testing/debug_node.dart",
+        "1": "package:angular2/src/debug/debug_node.dart",
         "2": [
           "DebugElement",
           "getDebugNode"
@@ -96,7 +96,7 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/testing/debug_node.template.dart",
+        "1": "package:angular2/src/debug/debug_node.template.dart",
         "4": "i2"
       },
       {

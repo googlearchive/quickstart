@@ -10,21 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "html_ast.dart",
         "2": [
           "HtmlAst",
@@ -82,28 +67,20 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "html_ast.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "html_lexer.template.dart",
         "4": "i2"
       },
       {
-        "1": "html_ast.template.dart",
+        "1": "html_tags.template.dart",
         "4": "i3"
       },
       {
-        "1": "html_lexer.template.dart",
-        "4": "i4"
-      },
-      {
-        "1": "html_tags.template.dart",
-        "4": "i5"
-      },
-      {
         "1": "parse_util.template.dart",
-        "4": "i6"
+        "4": "i4"
       }
     ]
   },

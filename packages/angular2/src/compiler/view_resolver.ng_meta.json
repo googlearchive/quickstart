@@ -38,13 +38,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "Map"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -54,9 +47,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "stringify",
-          "isBlank",
-          "isPresent"
+          "stringify"
         ],
         "5": false
       }
@@ -101,16 +92,12 @@
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
-        "4": "i6"
-      },
-      {
         "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i7"
+        "4": "i6"
       }
     ]
   },

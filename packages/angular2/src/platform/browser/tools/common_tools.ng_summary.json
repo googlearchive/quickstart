@@ -24,14 +24,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "NumberWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DOM"

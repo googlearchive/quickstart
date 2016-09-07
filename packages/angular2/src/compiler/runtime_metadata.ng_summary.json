@@ -90,13 +90,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -106,11 +99,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isBlank",
-          "isPresent",
-          "isArray",
-          "stringify",
-          "isString"
+          "stringify"
         ],
         "5": false
       },

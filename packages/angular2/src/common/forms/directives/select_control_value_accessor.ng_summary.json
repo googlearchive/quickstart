@@ -17,19 +17,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "MapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "StringWrapper",
           "isPrimitive",
-          "isPresent",
-          "isBlank",
           "looseIdentical"
         ],
         "5": false

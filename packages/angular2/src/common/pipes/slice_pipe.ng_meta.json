@@ -3,28 +3,16 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/core.dart",
+        "1": "dart:math",
+        "4": "math",
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
         "2": [
           "Injectable",
           "PipeTransform",
           "Pipe"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isString",
-          "isArray",
-          "StringWrapper"
         ],
         "5": false
       },
@@ -67,20 +55,12 @@
     "6": "slice_pipe.dart",
     "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
-        "4": "i1"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i2"
-      },
-      {
         "1": "invalid_pipe_argument_exception.template.dart",
-        "4": "i3"
+        "4": "i1"
       }
     ]
   },

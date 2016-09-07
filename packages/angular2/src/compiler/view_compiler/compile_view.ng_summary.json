@@ -10,21 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "../compile_metadata.dart",
         "2": [
           "CompileDirectiveMetadata",

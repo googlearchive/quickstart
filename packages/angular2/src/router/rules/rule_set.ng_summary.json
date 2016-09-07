@@ -14,15 +14,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent",
-          "isFunction"
-        ],
-        "5": false
-      },
-      {
         "1": "../instruction.dart",
         "2": [
           "ComponentInstruction"

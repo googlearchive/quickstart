@@ -1,30 +1,9 @@
 {
   "ngDeps": null,
   "type": {
-    "TimerWrapper": {
-      "class": "Identifier",
-      "name": "TimerWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ObservableWrapper": {
-      "class": "Identifier",
-      "name": "ObservableWrapper",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
     "EventEmitter": {
       "class": "Identifier",
       "name": "EventEmitter",
-      "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Subject": {
-      "class": "Identifier",
-      "name": "Subject",
       "moduleUrl": "asset:angular2/lib/src/facade/async.dart",
       "prefix": null,
       "value": null

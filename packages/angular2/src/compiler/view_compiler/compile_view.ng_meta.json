@@ -10,21 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "../compile_metadata.dart",
         "2": [
           "CompileDirectiveMetadata",
@@ -122,60 +107,52 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../config.template.dart",
         "4": "i2"
       },
       {
-        "1": "../compile_metadata.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i3"
       },
       {
-        "1": "../config.template.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i4"
       },
       {
-        "1": "../identifiers.template.dart",
+        "1": "compile_binding.template.dart",
         "4": "i5"
       },
       {
-        "1": "../output/output_ast.template.dart",
+        "1": "compile_element.template.dart",
         "4": "i6"
       },
       {
-        "1": "compile_binding.template.dart",
+        "1": "compile_method.template.dart",
         "4": "i7"
       },
       {
-        "1": "compile_element.template.dart",
+        "1": "compile_pipe.template.dart",
         "4": "i8"
       },
       {
-        "1": "compile_method.template.dart",
+        "1": "compile_query.template.dart",
         "4": "i9"
       },
       {
-        "1": "compile_pipe.template.dart",
+        "1": "constants.template.dart",
         "4": "i10"
       },
       {
-        "1": "compile_query.template.dart",
+        "1": "expression_converter.template.dart",
         "4": "i11"
       },
       {
-        "1": "constants.template.dart",
-        "4": "i12"
-      },
-      {
-        "1": "expression_converter.template.dart",
-        "4": "i13"
-      },
-      {
         "1": "util.template.dart",
-        "4": "i14"
+        "4": "i12"
       }
     ]
   },

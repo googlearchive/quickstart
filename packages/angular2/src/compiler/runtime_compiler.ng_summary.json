@@ -35,13 +35,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -364,6 +357,13 @@
     "assertComponent": {
       "class": "Identifier",
       "name": "assertComponent",
+      "moduleUrl": "asset:angular2/lib/src/compiler/runtime_compiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ResolvedStyles": {
+      "class": "Identifier",
+      "name": "_ResolvedStyles",
       "moduleUrl": "asset:angular2/lib/src/compiler/runtime_compiler.dart",
       "prefix": null,
       "value": null

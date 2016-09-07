@@ -18,16 +18,7 @@
       {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "ObservableWrapper",
           "EventEmitter"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
         ],
         "5": false
       },
@@ -35,13 +26,6 @@
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank"
         ],
         "5": false
       },
@@ -85,9 +69,6 @@
       },
       {
         "1": "ng_control_group.dart",
-        "2": [
-          "NgControlGroup"
-        ],
         "5": false
       },
       {
@@ -143,44 +124,36 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "../model.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../validators.template.dart",
         "4": "i4"
       },
       {
-        "1": "../model.template.dart",
+        "1": "control_container.template.dart",
         "4": "i5"
       },
       {
-        "1": "../validators.template.dart",
+        "1": "form_interface.template.dart",
         "4": "i6"
       },
       {
-        "1": "control_container.template.dart",
+        "1": "ng_control.template.dart",
         "4": "i7"
       },
       {
-        "1": "form_interface.template.dart",
+        "1": "ng_control_group.template.dart",
         "4": "i8"
       },
       {
-        "1": "ng_control.template.dart",
-        "4": "i9"
-      },
-      {
-        "1": "ng_control_group.template.dart",
-        "4": "i10"
-      },
-      {
         "1": "shared.template.dart",
-        "4": "i11"
+        "4": "i9"
       }
     ]
   },

@@ -25,23 +25,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper",
-          "SetWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "StringWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "../compile_metadata.dart",
         "2": [
           "CompileIdentifierMetadata",
@@ -54,6 +37,13 @@
         "2": [
           "Identifiers",
           "identifierToken"
+        ],
+        "5": false
+      },
+      {
+        "1": "../style_compiler.dart",
+        "2": [
+          "StylesCompileResult"
         ],
         "5": false
       },
@@ -136,44 +126,40 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i4"
       },
       {
-        "1": "../compile_metadata.template.dart",
+        "1": "../style_compiler.template.dart",
         "4": "i5"
       },
       {
-        "1": "../identifiers.template.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i6"
       },
       {
-        "1": "../output/output_ast.template.dart",
+        "1": "../template_ast.template.dart",
         "4": "i7"
       },
       {
-        "1": "../template_ast.template.dart",
+        "1": "compile_element.template.dart",
         "4": "i8"
       },
       {
-        "1": "compile_element.template.dart",
+        "1": "compile_view.template.dart",
         "4": "i9"
       },
       {
-        "1": "compile_view.template.dart",
+        "1": "constants.template.dart",
         "4": "i10"
       },
       {
-        "1": "constants.template.dart",
-        "4": "i11"
-      },
-      {
         "1": "util.template.dart",
-        "4": "i12"
+        "4": "i11"
       }
     ]
   },
@@ -195,6 +181,13 @@
     "STYLE_ATTR": {
       "class": "Identifier",
       "name": "STYLE_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_NAMESPACE_URIS": {
+      "class": "Identifier",
+      "name": "_NAMESPACE_URIS",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
       "prefix": null,
       "value": null
@@ -314,6 +307,13 @@
     "getChangeDetectionMode": {
       "class": "Identifier",
       "name": "getChangeDetectionMode",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "detectHtmlElementFromTagName": {
+      "class": "Identifier",
+      "name": "detectHtmlElementFromTagName",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
       "prefix": null,
       "value": null

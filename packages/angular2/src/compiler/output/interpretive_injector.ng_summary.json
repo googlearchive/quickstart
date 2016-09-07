@@ -17,11 +17,7 @@
         "5": false
       },
       {
-        "1": "output_interpreter.dart",
-        "2": [
-          "InstanceFactory",
-          "DynamicInstance"
-        ],
+        "1": "dynamic_instance.dart",
         "5": false
       }
     ],

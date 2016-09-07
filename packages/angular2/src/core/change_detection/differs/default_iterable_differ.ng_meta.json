@@ -3,14 +3,6 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "isListLikeIterable",
-          "iterateListLike"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -20,12 +12,8 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isBlank",
-          "isPresent",
           "stringify",
-          "getMapKey",
-          "looseIdentical",
-          "isArray"
+          "looseIdentical"
         ],
         "5": false
       },
@@ -49,24 +37,20 @@
     "6": "default_iterable_differ.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../change_detector_ref.template.dart",
         "4": "i2"
       },
       {
-        "1": "../change_detector_ref.template.dart",
-        "4": "i3"
-      },
-      {
         "1": "../differs/iterable_differs.template.dart",
-        "4": "i4"
+        "4": "i3"
       }
     ]
   },

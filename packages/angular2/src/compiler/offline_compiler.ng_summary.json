@@ -7,13 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/component_factory.dart",
-        "2": [
-          "ComponentFactory"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -24,7 +17,6 @@
         "1": "compile_metadata.dart",
         "2": [
           "CompileDirectiveMetadata",
-          "CompileIdentifierMetadata",
           "CompilePipeMetadata",
           "createHostComponentMeta",
           "CompileInjectorModuleMetadata",
@@ -86,6 +78,10 @@
           "ViewCompiler",
           "ViewCompileResult"
         ],
+        "5": false
+      },
+      {
+        "1": "identifiers.dart",
         "5": false
       }
     ],

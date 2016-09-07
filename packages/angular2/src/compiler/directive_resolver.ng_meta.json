@@ -40,14 +40,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -91,12 +83,8 @@
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
-        "4": "i4"
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.template.dart",
-        "4": "i5"
+        "4": "i4"
       }
     ]
   },

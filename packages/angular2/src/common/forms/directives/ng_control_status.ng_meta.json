@@ -11,13 +11,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "ng_control.dart",
         "2": [
           "NgControl"
@@ -46,12 +39,8 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i1"
-      },
-      {
         "1": "ng_control.template.dart",
-        "4": "i2"
+        "4": "i1"
       }
     ]
   },

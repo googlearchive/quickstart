@@ -21,18 +21,6 @@
         ]
       },
       {
-        "1": "pipes/i18n_plural_pipe.dart",
-        "2": [
-          "I18nPluralPipe"
-        ]
-      },
-      {
-        "1": "pipes/i18n_select_pipe.dart",
-        "2": [
-          "I18nSelectPipe"
-        ]
-      },
-      {
         "1": "pipes/json_pipe.dart",
         "2": [
           "JsonPipe"

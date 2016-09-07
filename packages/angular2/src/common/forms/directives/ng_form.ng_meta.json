@@ -25,20 +25,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "../model.dart",
         "2": [
           "AbstractControl",
@@ -135,40 +121,32 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "../model.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../validators.template.dart",
         "4": "i3"
       },
       {
-        "1": "../model.template.dart",
+        "1": "control_container.template.dart",
         "4": "i4"
       },
       {
-        "1": "../validators.template.dart",
+        "1": "form_interface.template.dart",
         "4": "i5"
       },
       {
-        "1": "control_container.template.dart",
+        "1": "ng_control.template.dart",
         "4": "i6"
       },
       {
-        "1": "form_interface.template.dart",
+        "1": "ng_control_group.template.dart",
         "4": "i7"
       },
       {
-        "1": "ng_control.template.dart",
-        "4": "i8"
-      },
-      {
-        "1": "ng_control_group.template.dart",
-        "4": "i9"
-      },
-      {
         "1": "shared.template.dart",
-        "4": "i10"
+        "4": "i8"
       }
     ]
   },

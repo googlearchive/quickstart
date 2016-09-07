@@ -7,25 +7,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/di.dart",
         "2": [
           "OpaqueToken"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent",
-          "isString"
         ],
         "5": false
       },
@@ -39,7 +23,7 @@
       },
       {
         "1": "model.dart",
-        "4": "modelModule",
+        "4": "model_module",
         "5": false
       }
     ],

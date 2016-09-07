@@ -18,23 +18,6 @@
           "KeyValueChangeRecord"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper",
-          "isListLikeIterable"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isString",
-          "isArray"
-        ],
-        "5": false
       }
     ],
     "5": [
@@ -69,14 +52,6 @@
       {
         "1": "package:angular2/core.template.dart",
         "4": "i0"
-      },
-      {
-        "1": "package:angular2/src/facade/collection.template.dart",
-        "4": "i1"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i2"
       }
     ]
   },

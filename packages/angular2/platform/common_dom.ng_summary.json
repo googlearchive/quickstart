@@ -39,8 +39,7 @@
       {
         "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
         "2": [
-          "SharedStylesHost",
-          "DomSharedStylesHost"
+          "sharedStylesHost"
         ]
       }
     ],

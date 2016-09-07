@@ -8,17 +8,6 @@
           "UrlResolver"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "RegExp",
-          "RegExpWrapper",
-          "StringWrapper",
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
       }
     ],
     "6": "style_url_resolver.dart",
@@ -26,10 +15,6 @@
       {
         "1": "package:angular2/src/compiler/url_resolver.template.dart",
         "4": "i0"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i1"
       }
     ]
   },

@@ -15,14 +15,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "../../core/change_detection/differs/default_keyvalue_differ.dart",
         "2": [
           "KeyValueChangeRecord"

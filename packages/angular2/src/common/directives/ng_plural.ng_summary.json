@@ -17,21 +17,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "Map"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "NumberWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "ng_switch.dart",
         "2": [
           "SwitchView"

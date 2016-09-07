@@ -41,20 +41,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "isNumber",
-          "isBoolean",
-          "normalizeBool",
-          "isString",
-          "RegExpWrapper",
-          "isArray"
-        ],
-        "5": false
-      },
-      {
         "1": "url_resolver.dart",
         "2": [
           "getUrlScheme"

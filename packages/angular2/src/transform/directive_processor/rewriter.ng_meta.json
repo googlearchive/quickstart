@@ -42,6 +42,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/transform/common/options.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/transform/common/ng_compiler.dart",
         "5": false
       },
@@ -67,6 +71,10 @@
         "2": [
           "AssetId"
         ],
+        "5": false
+      },
+      {
+        "1": "deferred_import_validator.dart",
         "5": false
       },
       {
@@ -105,28 +113,36 @@
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_compiler.template.dart",
+        "1": "package:angular2/src/transform/common/options.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_meta.template.dart",
+        "1": "package:angular2/src/transform/common/ng_compiler.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/transform/common/type_metadata_reader.template.dart",
+        "1": "package:angular2/src/transform/common/ng_meta.template.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/transform/common/url_resolver.template.dart",
+        "1": "package:angular2/src/transform/common/type_metadata_reader.template.dart",
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/transform/common/zone.template.dart",
+        "1": "package:angular2/src/transform/common/url_resolver.template.dart",
         "4": "i11"
       },
       {
-        "1": "inliner.template.dart",
+        "1": "package:angular2/src/transform/common/zone.template.dart",
         "4": "i12"
+      },
+      {
+        "1": "deferred_import_validator.template.dart",
+        "4": "i13"
+      },
+      {
+        "1": "inliner.template.dart",
+        "4": "i14"
       }
     ]
   },

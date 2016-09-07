@@ -17,20 +17,6 @@
         "5": false
       },
       {
-        "1": "i18n_plural_pipe.dart",
-        "2": [
-          "I18nPluralPipe"
-        ],
-        "5": false
-      },
-      {
-        "1": "i18n_select_pipe.dart",
-        "2": [
-          "I18nSelectPipe"
-        ],
-        "5": false
-      },
-      {
         "1": "json_pipe.dart",
         "2": [
           "JsonPipe"
@@ -153,20 +139,6 @@
           "moduleUrl": null,
           "prefix": null,
           "value": null
-        },
-        {
-          "class": "Identifier",
-          "name": "I18nPluralPipe",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
-        },
-        {
-          "class": "Identifier",
-          "name": "I18nSelectPipe",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
         }
       ]
     }
@@ -182,9 +154,7 @@
       "PercentPipe",
       "CurrencyPipe",
       "DatePipe",
-      "ReplacePipe",
-      "I18nPluralPipe",
-      "I18nSelectPipe"
+      "ReplacePipe"
     ]
   }
 }

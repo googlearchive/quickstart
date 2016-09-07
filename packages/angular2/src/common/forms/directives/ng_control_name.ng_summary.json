@@ -9,7 +9,6 @@
           "OnDestroy",
           "SimpleChange",
           "Directive",
-          "Host",
           "SkipSelf",
           "Provider",
           "Inject",
@@ -21,8 +20,7 @@
       {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "EventEmitter",
-          "ObservableWrapper"
+          "EventEmitter"
         ],
         "5": false
       },
@@ -90,7 +88,6 @@
           {
             "1": "ControlContainer",
             "3": [
-              "const Host()",
               "const SkipSelf()"
             ],
             "4": "_parent"
@@ -202,7 +199,7 @@
             "value": null,
             "isAttribute": false,
             "isSelf": false,
-            "isHost": true,
+            "isHost": false,
             "isSkipSelf": true,
             "isOptional": false,
             "isValue": false

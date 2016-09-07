@@ -90,13 +90,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -106,11 +99,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isBlank",
-          "isPresent",
-          "isArray",
-          "stringify",
-          "isString"
+          "stringify"
         ],
         "5": false
       },
@@ -246,40 +235,36 @@
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i11"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i12"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i13"
       },
       {
-        "1": "compile_metadata.template.dart",
+        "1": "directive_lifecycle_reflector.template.dart",
         "4": "i14"
       },
       {
-        "1": "directive_lifecycle_reflector.template.dart",
+        "1": "directive_resolver.template.dart",
         "4": "i15"
       },
       {
-        "1": "directive_resolver.template.dart",
+        "1": "pipe_resolver.template.dart",
         "4": "i16"
       },
       {
-        "1": "pipe_resolver.template.dart",
+        "1": "util.template.dart",
         "4": "i17"
       },
       {
-        "1": "util.template.dart",
-        "4": "i18"
-      },
-      {
         "1": "view_resolver.template.dart",
-        "4": "i19"
+        "4": "i18"
       }
     ]
   },

@@ -13,13 +13,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "NumberWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "control_value_accessor.dart",
         "2": [
           "NG_VALUE_ACCESSOR",

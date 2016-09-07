@@ -1,0 +1,27 @@
+{
+  "ngDeps": null,
+  "type": {
+    "InstanceFactory": {
+      "class": "Identifier",
+      "name": "InstanceFactory",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/dynamic_instance.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DynamicInstance": {
+      "class": "Identifier",
+      "name": "DynamicInstance",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/dynamic_instance.dart",
+      "prefix": null,
+      "value": null
+    },
+    "isDynamicInstance": {
+      "class": "Identifier",
+      "name": "isDynamicInstance",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/dynamic_instance.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

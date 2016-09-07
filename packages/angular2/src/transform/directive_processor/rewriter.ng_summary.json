@@ -42,6 +42,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/transform/common/options.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/transform/common/ng_compiler.dart",
         "5": false
       },
@@ -67,6 +71,10 @@
         "2": [
           "AssetId"
         ],
+        "5": false
+      },
+      {
+        "1": "deferred_import_validator.dart",
         "5": false
       },
       {

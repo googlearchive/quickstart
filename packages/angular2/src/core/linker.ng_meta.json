@@ -218,6 +218,13 @@
       "prefix": null,
       "value": null
     },
+    "_flattenList": {
+      "class": "Identifier",
+      "name": "_flattenList",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
+      "prefix": null,
+      "value": null
+    },
     "TemplateRef": {
       "class": "Identifier",
       "name": "TemplateRef",
@@ -225,23 +232,9 @@
       "prefix": null,
       "value": null
     },
-    "TemplateRef_": {
-      "class": "Identifier",
-      "name": "TemplateRef_",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/template_ref.dart",
-      "prefix": null,
-      "value": null
-    },
     "ViewContainerRef": {
       "class": "Identifier",
       "name": "ViewContainerRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewContainerRef_": {
-      "class": "Identifier",
-      "name": "ViewContainerRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
       "prefix": null,
       "value": null

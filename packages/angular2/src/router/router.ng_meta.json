@@ -30,25 +30,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "Map",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent"
         ],
         "5": false
       },
@@ -160,36 +144,28 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "directives/router_outlet.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "instruction.template.dart",
         "4": "i5"
       },
       {
-        "1": "directives/router_outlet.template.dart",
+        "1": "route_config/route_config_impl.template.dart",
         "4": "i6"
       },
       {
-        "1": "instruction.template.dart",
+        "1": "route_registry.template.dart",
         "4": "i7"
       },
       {
-        "1": "route_config/route_config_impl.template.dart",
-        "4": "i8"
-      },
-      {
-        "1": "route_registry.template.dart",
-        "4": "i9"
-      },
-      {
         "1": "utils.template.dart",
-        "4": "i10"
+        "4": "i8"
       }
     ]
   },

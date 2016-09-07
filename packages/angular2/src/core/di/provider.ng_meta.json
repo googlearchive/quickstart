@@ -15,27 +15,6 @@
       "prefix": null,
       "value": null
     },
-    "Binding": {
-      "class": "Identifier",
-      "name": "Binding",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "value": null
-    },
-    "bind": {
-      "class": "Identifier",
-      "name": "bind",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ProviderBuilder": {
-      "class": "Identifier",
-      "name": "ProviderBuilder",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "value": null
-    },
     "provide": {
       "class": "Identifier",
       "name": "provide",

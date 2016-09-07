@@ -3,12 +3,9 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/di.dart",
         "2": [
-          "Injectable",
-          "Inject",
-          "OpaqueToken",
-          "Optional"
+          "Injectable"
         ],
         "5": false
       },
@@ -42,15 +39,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper",
-          "SetWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -60,8 +48,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "RegExpWrapper",
-          "StringWrapper"
+          "jsSplit"
         ],
         "5": false
       },
@@ -161,8 +148,6 @@
           "BoundEventAst",
           "ReferenceAst",
           "TemplateAst",
-          "TemplateAstVisitor",
-          "templateVisitAll",
           "TextAst",
           "BoundTextAst",
           "EmbeddedTemplateAst",
@@ -213,15 +198,6 @@
           {
             "1": "Console",
             "4": "_console"
-          },
-          {
-            "1": "List",
-            "2": "<TemplateAstVisitor>",
-            "3": [
-              "const Optional()",
-              "const Inject(TEMPLATE_TRANSFORMS)"
-            ],
-            "4": "transforms"
           }
         ]
       }
@@ -274,13 +250,6 @@
     "STYLE_PREFIX": {
       "class": "Identifier",
       "name": "STYLE_PREFIX",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "TEMPLATE_TRANSFORMS": {
-      "class": "Identifier",
-      "name": "TEMPLATE_TRANSFORMS",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
       "value": null
@@ -393,28 +362,6 @@
           "isHost": false,
           "isSkipSelf": false,
           "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "TEMPLATE_TRANSFORMS",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": true,
           "isValue": false
         }
       ]

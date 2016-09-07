@@ -24,10 +24,7 @@
         "5": false
       },
       {
-        "1": "element.dart",
-        "2": [
-          "AppElement"
-        ],
+        "1": "app_element.dart",
         "5": false
       },
       {

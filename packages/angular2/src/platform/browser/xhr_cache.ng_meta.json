@@ -19,7 +19,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/di.dart",
         "5": false
       },
       {
@@ -48,7 +48,7 @@
     "6": "xhr_cache.dart",
     "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/di.template.dart",
         "4": "i0"
       },
       {

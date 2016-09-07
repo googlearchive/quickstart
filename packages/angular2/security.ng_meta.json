@@ -57,15 +57,6 @@
       "prefix": null,
       "value": null
     },
-    "DomSanitizationServiceImpl": {
-      "class": "Type",
-      "name": "DomSanitizationServiceImpl",
-      "moduleUrl": "asset:angular2/lib/src/security/dom_sanitization_service.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
-    },
     "SafeValueImpl": {
       "class": "Identifier",
       "name": "SafeValueImpl",

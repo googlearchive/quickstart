@@ -3,13 +3,6 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/src/animate/animation_builder.dart",
-        "2": [
-          "AnimationBuilder"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Inject",
@@ -71,9 +64,6 @@
       },
       {
         "1": "shared_styles_host.dart",
-        "2": [
-          "DomSharedStylesHost"
-        ],
         "5": false
       },
       {
@@ -104,14 +94,6 @@
           {
             "1": "EventManager",
             "4": "eventManager"
-          },
-          {
-            "1": "DomSharedStylesHost",
-            "4": "sharedStylesHost"
-          },
-          {
-            "1": "AnimationBuilder",
-            "4": "animate"
           }
         ],
         "6": [
@@ -122,48 +104,44 @@
     "6": "dom_renderer.dart",
     "7": [
       {
-        "1": "package:angular2/src/animate/animation_builder.template.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/metadata.template.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/render/api.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "1": "dom_tokens.template.dart",
         "4": "i6"
       },
       {
-        "1": "dom_tokens.template.dart",
+        "1": "events/event_manager.template.dart",
         "4": "i7"
       },
       {
-        "1": "events/event_manager.template.dart",
+        "1": "shared_styles_host.template.dart",
         "4": "i8"
       },
       {
-        "1": "shared_styles_host.template.dart",
-        "4": "i9"
-      },
-      {
         "1": "util.template.dart",
-        "4": "i10"
+        "4": "i9"
       }
     ]
   },
@@ -178,13 +156,6 @@
     "TEMPLATE_COMMENT_TEXT": {
       "class": "Identifier",
       "name": "TEMPLATE_COMMENT_TEXT",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "COMPONENT_VARIABLE": {
-      "class": "Identifier",
-      "name": "COMPONENT_VARIABLE",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
       "prefix": null,
       "value": null
@@ -240,50 +211,6 @@
           "isSkipSelf": false,
           "isOptional": false,
           "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "DomSharedStylesHost",
-              "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "AnimationBuilder",
-              "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
         }
       ]
     },
@@ -311,27 +238,6 @@
     "decoratePreventDefault": {
       "class": "Identifier",
       "name": "decoratePreventDefault",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_shimContentAttribute": {
-      "class": "Identifier",
-      "name": "_shimContentAttribute",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_shimHostAttribute": {
-      "class": "Identifier",
-      "name": "_shimHostAttribute",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_flattenStyles": {
-      "class": "Identifier",
-      "name": "_flattenStyles",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
       "prefix": null,
       "value": null

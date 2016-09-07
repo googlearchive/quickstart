@@ -10,20 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "../profile/profile.dart",
         "2": [
           "wtfCreateScope",
@@ -41,24 +27,15 @@
         "5": false
       },
       {
-        "1": "element.dart",
-        "2": [
-          "AppElement"
-        ],
+        "1": "app_element.dart",
         "5": false
       },
       {
         "1": "element_ref.dart",
-        "2": [
-          "ElementRef"
-        ],
         "5": false
       },
       {
         "1": "template_ref.dart",
-        "2": [
-          "TemplateRef"
-        ],
         "5": false
       },
       {
@@ -77,13 +54,6 @@
     "ViewContainerRef": {
       "class": "Identifier",
       "name": "ViewContainerRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewContainerRef_": {
-      "class": "Identifier",
-      "name": "ViewContainerRef_",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_container_ref.dart",
       "prefix": null,
       "value": null

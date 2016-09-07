@@ -31,13 +31,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "compile_metadata.dart",
         "2": [
           "CompileIdentifierMetadata",

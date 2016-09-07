@@ -69,7 +69,7 @@
         "1": "by.dart"
       },
       {
-        "1": "debug_node.dart"
+        "1": "package:angular2/src/debug/debug_node.dart"
       }
     ],
     "6": "internal.dart"

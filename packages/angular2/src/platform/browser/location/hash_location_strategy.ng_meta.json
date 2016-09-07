@@ -8,18 +8,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/di.dart",
         "2": [
           "Injectable",
           "Inject",
           "Optional"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
         ],
         "5": false
       },
@@ -74,24 +67,20 @@
     "6": "hash_location_strategy.dart",
     "7": [
       {
-        "1": "package:angular2/core.template.dart",
+        "1": "package:angular2/di.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "location.template.dart",
         "4": "i1"
       },
       {
-        "1": "location.template.dart",
+        "1": "location_strategy.template.dart",
         "4": "i2"
       },
       {
-        "1": "location_strategy.template.dart",
-        "4": "i3"
-      },
-      {
         "1": "platform_location.template.dart",
-        "4": "i4"
+        "4": "i3"
       }
     ]
   },

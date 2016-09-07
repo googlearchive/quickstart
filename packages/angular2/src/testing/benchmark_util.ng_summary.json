@@ -18,14 +18,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "NumberWrapper",
-          "isBlank"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/browser/browser_adapter.dart",
         "2": [
           "BrowserDomAdapter"

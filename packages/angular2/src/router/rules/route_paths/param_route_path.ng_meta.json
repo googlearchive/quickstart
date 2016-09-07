@@ -3,26 +3,9 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "RegExpWrapper",
-          "StringWrapper",
-          "isPresent",
-          "isBlank"
         ],
         "5": false
       },
@@ -56,28 +39,20 @@
     "6": "param_route_path.dart",
     "7": [
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "../../url_parser.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../../utils.template.dart",
         "4": "i2"
       },
       {
-        "1": "../../url_parser.template.dart",
-        "4": "i3"
-      },
-      {
-        "1": "../../utils.template.dart",
-        "4": "i4"
-      },
-      {
         "1": "route_path.template.dart",
-        "4": "i5"
+        "4": "i3"
       }
     ]
   },

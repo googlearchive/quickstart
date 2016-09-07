@@ -10,13 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -26,9 +19,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isBlank",
-          "isPresent",
-          "StringWrapper"
+          "jsSplit"
         ],
         "5": false
       },
@@ -45,6 +36,7 @@
           "Binary",
           "PrefixNot",
           "Conditional",
+          "IfNull",
           "BindingPipe",
           "Chain",
           "KeyedRead",
@@ -109,24 +101,20 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "ast.template.dart",
         "4": "i3"
       },
       {
-        "1": "ast.template.dart",
-        "4": "i4"
-      },
-      {
         "1": "lexer.template.dart",
-        "4": "i5"
+        "4": "i4"
       }
     ]
   },

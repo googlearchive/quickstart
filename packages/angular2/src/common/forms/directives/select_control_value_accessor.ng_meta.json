@@ -17,19 +17,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "MapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "StringWrapper",
           "isPrimitive",
-          "isPresent",
-          "isBlank",
           "looseIdentical"
         ],
         "5": false
@@ -92,16 +82,12 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i2"
-      },
-      {
         "1": "control_value_accessor.template.dart",
-        "4": "i3"
+        "4": "i2"
       }
     ]
   },

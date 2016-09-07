@@ -21,16 +21,8 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent"
-        ],
-        "5": false
-      },
-      {
         "1": "../expression_parser/ast.dart",
-        "4": "cdAst",
+        "4": "ast",
         "5": false
       },
       {
@@ -122,52 +114,48 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../expression_parser/ast.template.dart",
         "4": "i3"
       },
       {
-        "1": "../expression_parser/ast.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i4"
       },
       {
-        "1": "../identifiers.template.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i5"
       },
       {
-        "1": "../output/output_ast.template.dart",
+        "1": "../template_ast.template.dart",
         "4": "i6"
       },
       {
-        "1": "../template_ast.template.dart",
+        "1": "../util.template.dart",
         "4": "i7"
       },
       {
-        "1": "../util.template.dart",
+        "1": "expression_converter.template.dart",
         "4": "i8"
       },
       {
-        "1": "expression_converter.template.dart",
+        "1": "compile_binding.template.dart",
         "4": "i9"
       },
       {
-        "1": "compile_binding.template.dart",
+        "1": "compile_element.template.dart",
         "4": "i10"
       },
       {
-        "1": "compile_element.template.dart",
+        "1": "compile_method.template.dart",
         "4": "i11"
       },
       {
-        "1": "compile_method.template.dart",
+        "1": "compile_view.template.dart",
         "4": "i12"
       },
       {
-        "1": "compile_view.template.dart",
-        "4": "i13"
-      },
-      {
         "1": "constants.template.dart",
-        "4": "i14"
+        "4": "i13"
       }
     ]
   },

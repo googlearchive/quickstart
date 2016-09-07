@@ -37,6 +37,13 @@
         "5": false
       },
       {
+        "1": "../style_compiler.dart",
+        "2": [
+          "StylesCompileResult"
+        ],
+        "5": false
+      },
+      {
         "1": "compile_element.dart",
         "2": [
           "CompileElement"
@@ -107,20 +114,24 @@
         "4": "i4"
       },
       {
-        "1": "compile_element.template.dart",
+        "1": "../style_compiler.template.dart",
         "4": "i5"
       },
       {
-        "1": "compile_view.template.dart",
+        "1": "compile_element.template.dart",
         "4": "i6"
       },
       {
-        "1": "view_binder.template.dart",
+        "1": "compile_view.template.dart",
         "4": "i7"
       },
       {
-        "1": "view_builder.template.dart",
+        "1": "view_binder.template.dart",
         "4": "i8"
+      },
+      {
+        "1": "view_builder.template.dart",
+        "4": "i9"
       }
     ]
   },

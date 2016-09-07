@@ -25,23 +25,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper",
-          "SetWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "StringWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "../compile_metadata.dart",
         "2": [
           "CompileIdentifierMetadata",
@@ -54,6 +37,13 @@
         "2": [
           "Identifiers",
           "identifierToken"
+        ],
+        "5": false
+      },
+      {
+        "1": "../style_compiler.dart",
+        "2": [
+          "StylesCompileResult"
         ],
         "5": false
       },
@@ -141,6 +131,13 @@
     "STYLE_ATTR": {
       "class": "Identifier",
       "name": "STYLE_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_NAMESPACE_URIS": {
+      "class": "Identifier",
+      "name": "_NAMESPACE_URIS",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
       "prefix": null,
       "value": null
@@ -260,6 +257,13 @@
     "getChangeDetectionMode": {
       "class": "Identifier",
       "name": "getChangeDetectionMode",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "detectHtmlElementFromTagName": {
+      "class": "Identifier",
+      "name": "detectHtmlElementFromTagName",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
       "prefix": null,
       "value": null

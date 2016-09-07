@@ -1,23 +1,5 @@
 {
-  "ngDeps": {
-    "1": "",
-    "3": [
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper"
-        ],
-        "5": false
-      }
-    ],
-    "6": "ast.dart",
-    "7": [
-      {
-        "1": "package:angular2/src/facade/collection.template.dart",
-        "4": "i0"
-      }
-    ]
-  },
+  "ngDeps": null,
   "type": {
     "AST": {
       "class": "Identifier",
@@ -57,6 +39,13 @@
     "Conditional": {
       "class": "Identifier",
       "name": "Conditional",
+      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "IfNull": {
+      "class": "Identifier",
+      "name": "IfNull",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null

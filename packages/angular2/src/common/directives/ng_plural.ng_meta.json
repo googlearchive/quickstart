@@ -17,21 +17,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "Map"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "NumberWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "ng_switch.dart",
         "2": [
           "SwitchView"
@@ -80,16 +65,8 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
-        "4": "i1"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i2"
-      },
-      {
         "1": "ng_switch.template.dart",
-        "4": "i3"
+        "4": "i1"
       }
     ]
   },

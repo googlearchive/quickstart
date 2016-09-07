@@ -17,20 +17,6 @@
         "5": false
       },
       {
-        "1": "i18n_plural_pipe.dart",
-        "2": [
-          "I18nPluralPipe"
-        ],
-        "5": false
-      },
-      {
-        "1": "i18n_select_pipe.dart",
-        "2": [
-          "I18nSelectPipe"
-        ],
-        "5": false
-      },
-      {
         "1": "json_pipe.dart",
         "2": [
           "JsonPipe"
@@ -86,36 +72,28 @@
         "4": "i1"
       },
       {
-        "1": "i18n_plural_pipe.template.dart",
+        "1": "json_pipe.template.dart",
         "4": "i2"
       },
       {
-        "1": "i18n_select_pipe.template.dart",
+        "1": "lowercase_pipe.template.dart",
         "4": "i3"
       },
       {
-        "1": "json_pipe.template.dart",
+        "1": "number_pipe.template.dart",
         "4": "i4"
       },
       {
-        "1": "lowercase_pipe.template.dart",
+        "1": "replace_pipe.template.dart",
         "4": "i5"
       },
       {
-        "1": "number_pipe.template.dart",
+        "1": "slice_pipe.template.dart",
         "4": "i6"
       },
       {
-        "1": "replace_pipe.template.dart",
-        "4": "i7"
-      },
-      {
-        "1": "slice_pipe.template.dart",
-        "4": "i8"
-      },
-      {
         "1": "uppercase_pipe.template.dart",
-        "4": "i9"
+        "4": "i7"
       }
     ]
   },
@@ -481,68 +459,6 @@
           "useProperty": null,
           "multi": false,
           "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "I18nPluralPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "I18nPluralPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_plural_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "I18nSelectPipe",
-              "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "I18nSelectPipe",
-            "moduleUrl": "asset:angular2/lib/src/common/pipes/i18n_select_pipe.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
         }
       ]
     }
@@ -558,9 +474,7 @@
       "PercentPipe",
       "CurrencyPipe",
       "DatePipe",
-      "ReplacePipe",
-      "I18nPluralPipe",
-      "I18nSelectPipe"
+      "ReplacePipe"
     ]
   }
 }

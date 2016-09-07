@@ -33,9 +33,6 @@
       {
         "1": "di/provider.dart",
         "2": [
-          "Binding",
-          "ProviderBuilder",
-          "bind",
           "Provider",
           "provide",
           "noValueProvided"
@@ -361,27 +358,6 @@
     "Provider": {
       "class": "Identifier",
       "name": "Provider",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Binding": {
-      "class": "Identifier",
-      "name": "Binding",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "value": null
-    },
-    "bind": {
-      "class": "Identifier",
-      "name": "bind",
-      "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ProviderBuilder": {
-      "class": "Identifier",
-      "name": "ProviderBuilder",
       "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
       "prefix": null,
       "value": null

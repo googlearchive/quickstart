@@ -12,13 +12,6 @@
           "TemplateRef"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent"
-        ],
-        "5": false
       }
     ],
     "5": [
@@ -37,10 +30,6 @@
       {
         "1": "package:angular2/core.template.dart",
         "4": "i0"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i1"
       }
     ]
   },

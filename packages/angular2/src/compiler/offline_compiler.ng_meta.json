@@ -7,13 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/component_factory.dart",
-        "2": [
-          "ComponentFactory"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -24,7 +17,6 @@
         "1": "compile_metadata.dart",
         "2": [
           "CompileDirectiveMetadata",
-          "CompileIdentifierMetadata",
           "CompilePipeMetadata",
           "createHostComponentMeta",
           "CompileInjectorModuleMetadata",
@@ -87,52 +79,56 @@
           "ViewCompileResult"
         ],
         "5": false
+      },
+      {
+        "1": "identifiers.dart",
+        "5": false
       }
     ],
     "6": "offline_compiler.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/linker/component_factory.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "compile_metadata.template.dart",
+        "1": "directive_normalizer.template.dart",
         "4": "i2"
       },
       {
-        "1": "directive_normalizer.template.dart",
+        "1": "output/abstract_emitter.template.dart",
         "4": "i3"
       },
       {
-        "1": "output/abstract_emitter.template.dart",
+        "1": "output/output_ast.template.dart",
         "4": "i4"
       },
       {
-        "1": "output/output_ast.template.dart",
+        "1": "style_compiler.template.dart",
         "4": "i5"
       },
       {
-        "1": "style_compiler.template.dart",
+        "1": "template_parser.template.dart",
         "4": "i6"
       },
       {
-        "1": "template_parser.template.dart",
+        "1": "util.template.dart",
         "4": "i7"
       },
       {
-        "1": "util.template.dart",
+        "1": "view_compiler/injector_compiler.template.dart",
         "4": "i8"
       },
       {
-        "1": "view_compiler/injector_compiler.template.dart",
+        "1": "view_compiler/view_compiler.template.dart",
         "4": "i9"
       },
       {
-        "1": "view_compiler/view_compiler.template.dart",
+        "1": "identifiers.template.dart",
         "4": "i10"
       }
     ]

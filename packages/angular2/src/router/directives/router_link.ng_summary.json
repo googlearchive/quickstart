@@ -17,13 +17,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isString"
-        ],
-        "5": false
-      },
-      {
         "1": "../instruction.dart",
         "2": [
           "Instruction"

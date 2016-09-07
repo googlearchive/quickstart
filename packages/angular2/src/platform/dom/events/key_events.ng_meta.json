@@ -21,22 +21,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper",
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "StringWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DOM"
@@ -73,20 +57,12 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i3"
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
-        "4": "i4"
-      },
-      {
         "1": "event_manager.template.dart",
-        "4": "i5"
+        "4": "i3"
       }
     ]
   },

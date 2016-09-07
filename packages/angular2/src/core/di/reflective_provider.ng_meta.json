@@ -33,7 +33,6 @@
         "1": "provider.dart",
         "2": [
           "Provider",
-          "ProviderBuilder",
           "provide",
           "noValueProvided"
         ],

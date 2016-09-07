@@ -17,13 +17,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isString"
-        ],
-        "5": false
-      },
-      {
         "1": "../instruction.dart",
         "2": [
           "Instruction"
@@ -64,16 +57,12 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../instruction.template.dart",
         "4": "i2"
       },
       {
-        "1": "../instruction.template.dart",
-        "4": "i3"
-      },
-      {
         "1": "../router.template.dart",
-        "4": "i4"
+        "4": "i3"
       }
     ]
   },

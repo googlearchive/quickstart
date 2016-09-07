@@ -10,7 +10,6 @@
           "Directive",
           "Optional",
           "Inject",
-          "Host",
           "SkipSelf",
           "Provider",
           "Self"
@@ -71,7 +70,6 @@
           {
             "1": "ControlContainer",
             "3": [
-              "const Host()",
               "const SkipSelf()"
             ],
             "4": "parent"
@@ -183,7 +181,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false
@@ -274,7 +272,7 @@
             "value": null,
             "isAttribute": false,
             "isSelf": false,
-            "isHost": true,
+            "isHost": false,
             "isSkipSelf": true,
             "isOptional": false,
             "isValue": false
@@ -380,7 +378,7 @@
                   "value": null,
                   "isAttribute": false,
                   "isSelf": false,
-                  "isHost": true,
+                  "isHost": false,
                   "isSkipSelf": true,
                   "isOptional": false,
                   "isValue": false

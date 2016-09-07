@@ -53,14 +53,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -70,15 +62,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "isPresent",
           "looseIdentical"
-        ],
-        "5": false
-      },
-      {
-        "1": "element.dart",
-        "2": [
-          "AppElement"
         ],
         "5": false
       },
@@ -145,24 +129,16 @@
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i8"
-      },
-      {
-        "1": "element.template.dart",
-        "4": "i9"
-      },
-      {
         "1": "exceptions.template.dart",
-        "4": "i10"
+        "4": "i8"
       }
     ]
   },
@@ -270,20 +246,6 @@
           "isValue": false
         }
       ]
-    },
-    "flattenNestedViewRenderNodes": {
-      "class": "Identifier",
-      "name": "flattenNestedViewRenderNodes",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_flattenNestedViewRenderNodes": {
-      "class": "Identifier",
-      "name": "_flattenNestedViewRenderNodes",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
-      "prefix": null,
-      "value": null
     },
     "ensureSlotCount": {
       "class": "Identifier",

@@ -7,6 +7,11 @@
         "5": false
       },
       {
+        "1": "dart:math",
+        "4": "math",
+        "5": false
+      },
+      {
         "1": "package:angular2/core.dart",
         "2": [
           "Injectable",
@@ -17,33 +22,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "ListWrapper",
-          "Map",
-          "StringMapWrapper"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isArray",
-          "isBlank",
-          "isType",
-          "isString",
-          "isStringMap",
-          "StringWrapper",
-          "Math",
-          "getTypeNameForDebugging"
         ],
         "5": false
       },

@@ -23,28 +23,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker.dart",
-        "2": [
-          "QueryList"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/debug_context.dart",
-        "2": [
-          "StaticNodeDebugInfo",
-          "DebugContext"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/element.dart",
-        "2": [
-          "AppElement"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/linker/element_ref.dart",
         "2": [
           "ElementRef"
@@ -60,29 +38,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/template_ref.dart",
-        "2": [
-          "TemplateRef",
-          "TemplateRef_"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/view.dart",
-        "2": [
-          "AppView",
-          "DebugAppView"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/view_container_ref.dart",
-        "2": [
-          "ViewContainerRef"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/linker/view_type.dart",
         "2": [
           "ViewType"
@@ -93,7 +48,6 @@
         "1": "package:angular2/src/core/linker/view_utils.dart",
         "2": [
           "ViewUtils",
-          "flattenNestedViewRenderNodes",
           "interpolate",
           "interpolate0",
           "checkBinding",
@@ -142,13 +96,6 @@
           "CompileTokenMetadata"
         ],
         "5": false
-      },
-      {
-        "1": "util.dart",
-        "2": [
-          "MODULE_SUFFIX"
-        ],
-        "5": false
       }
     ],
     "6": "identifiers.dart",
@@ -162,64 +109,36 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/linker.template.dart",
+        "1": "package:angular2/src/core/linker/element_ref.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/linker/debug_context.template.dart",
+        "1": "package:angular2/src/core/linker/injector_factory.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/linker/element.template.dart",
+        "1": "package:angular2/src/core/linker/view_type.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/linker/element_ref.template.dart",
+        "1": "package:angular2/src/core/linker/view_utils.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/linker/injector_factory.template.dart",
+        "1": "package:angular2/src/core/metadata/view.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/core/linker/template_ref.template.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/core/linker/view.template.dart",
+        "1": "package:angular2/src/core/security.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/core/linker/view_container_ref.template.dart",
-        "4": "i9"
-      },
-      {
-        "1": "package:angular2/src/core/linker/view_type.template.dart",
-        "4": "i10"
-      },
-      {
-        "1": "package:angular2/src/core/linker/view_utils.template.dart",
-        "4": "i11"
-      },
-      {
-        "1": "package:angular2/src/core/metadata/view.template.dart",
-        "4": "i12"
-      },
-      {
-        "1": "package:angular2/src/core/render/api.template.dart",
-        "4": "i13"
-      },
-      {
-        "1": "package:angular2/src/core/security.template.dart",
-        "4": "i14"
-      },
-      {
         "1": "compile_metadata.template.dart",
-        "4": "i15"
-      },
-      {
-        "1": "util.template.dart",
-        "4": "i16"
+        "4": "i9"
       }
     ]
   },

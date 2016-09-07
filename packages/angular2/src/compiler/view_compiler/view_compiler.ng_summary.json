@@ -37,6 +37,13 @@
         "5": false
       },
       {
+        "1": "../style_compiler.dart",
+        "2": [
+          "StylesCompileResult"
+        ],
+        "5": false
+      },
+      {
         "1": "compile_element.dart",
         "2": [
           "CompileElement"

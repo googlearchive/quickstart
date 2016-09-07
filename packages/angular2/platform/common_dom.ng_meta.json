@@ -39,8 +39,7 @@
       {
         "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
         "2": [
-          "SharedStylesHost",
-          "DomSharedStylesHost"
+          "sharedStylesHost"
         ]
       }
     ],
@@ -101,13 +100,6 @@
       "prefix": null,
       "value": null
     },
-    "COMPONENT_VARIABLE": {
-      "class": "Identifier",
-      "name": "COMPONENT_VARIABLE",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
     "DomRootRenderer": {
       "class": "Type",
       "name": "DomRootRenderer",
@@ -159,50 +151,6 @@
           "isSkipSelf": false,
           "isOptional": false,
           "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "DomSharedStylesHost",
-              "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "AnimationBuilder",
-              "moduleUrl": "asset:angular2/lib/src/animate/animation_builder.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
         }
       ]
     },
@@ -230,27 +178,6 @@
     "decoratePreventDefault": {
       "class": "Identifier",
       "name": "decoratePreventDefault",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_shimContentAttribute": {
-      "class": "Identifier",
-      "name": "_shimContentAttribute",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_shimHostAttribute": {
-      "class": "Identifier",
-      "name": "_shimHostAttribute",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_flattenStyles": {
-      "class": "Identifier",
-      "name": "_flattenStyles",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
       "prefix": null,
       "value": null
@@ -346,46 +273,12 @@
       "prefix": null,
       "value": null
     },
-    "SharedStylesHost": {
-      "class": "Type",
-      "name": "SharedStylesHost",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
-    },
     "DomSharedStylesHost": {
-      "class": "Type",
+      "class": "Identifier",
       "name": "DomSharedStylesHost",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/shared_styles_host.dart",
       "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "DOCUMENT",
-              "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        }
-      ]
+      "value": null
     }
   },
   "alias": {}

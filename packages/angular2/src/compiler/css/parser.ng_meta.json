@@ -39,8 +39,7 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "bitWiseOr",
-          "bitWiseAnd",
-          "isPresent"
+          "bitWiseAnd"
         ],
         "5": false
       }

@@ -9,26 +9,7 @@
       {
         "1": "package:angular2/src/facade/async.dart",
         "2": [
-          "Stream",
-          "EventEmitter",
-          "ObservableWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/collection.dart",
-        "2": [
-          "StringMapWrapper",
-          "ListWrapper"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isPresent",
-          "isBlank",
-          "normalizeBool"
+          "EventEmitter"
         ],
         "5": false
       },
@@ -48,16 +29,8 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/collection.template.dart",
-        "4": "i1"
-      },
-      {
-        "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i2"
-      },
-      {
         "1": "directives/validators.template.dart",
-        "4": "i3"
+        "4": "i1"
       }
     ]
   },

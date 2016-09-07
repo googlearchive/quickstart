@@ -10,17 +10,8 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "isBlank",
-          "isPresent",
-          "isArray"
-        ],
-        "5": false
-      },
-      {
         "1": "../expression_parser/ast.dart",
-        "4": "cdAst",
+        "4": "compiler_ast",
         "5": false
       },
       {

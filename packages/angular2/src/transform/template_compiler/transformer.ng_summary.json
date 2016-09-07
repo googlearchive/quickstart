@@ -7,10 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/i18n.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/server/html_adapter.dart",
         "5": false
       },
@@ -28,10 +24,6 @@
       },
       {
         "1": "package:angular2/src/transform/common/formatter.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/transform/common/logging.dart",
         "5": false
       },
       {

@@ -21,7 +21,6 @@
       {
         "1": "package:angular2/src/core/di/provider.dart",
         "2": [
-          "ProviderBuilder",
           "Provider",
           "provide",
           "noValueProvided"
@@ -61,7 +60,52 @@
         ]
       },
       {
+        "1": "package:angular2/src/core/testability/testability.dart"
+      },
+      {
+        "1": "package:angular2/src/facade/exception_handler.dart",
+        "2": [
+          "ExceptionHandler"
+        ]
+      },
+      {
         "1": "package:angular2/src/core/zone/ng_zone.dart"
+      },
+      {
+        "1": "package:angular2/src/core/change_detection/pipe_transform.dart"
+      },
+      {
+        "1": "package:angular2/src/core/metadata.dart",
+        "2": [
+          "Component",
+          "Directive",
+          "Input",
+          "Output"
+        ]
+      },
+      {
+        "1": "package:angular2/src/core/metadata.dart",
+        "2": [
+          "Pipe"
+        ]
+      },
+      {
+        "1": "package:angular2/src/facade/exceptions.dart",
+        "2": [
+          "WrappedException"
+        ]
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "EventEmitter"
+        ]
+      },
+      {
+        "1": "package:angular2/src/compiler/url_resolver.dart",
+        "2": [
+          "UrlResolver"
+        ]
       }
     ],
     "6": "di.dart"

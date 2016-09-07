@@ -17,13 +17,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/runtime_compiler.dart",
-        "2": [
-          "RuntimeCompiler"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/compiler/runtime_metadata.dart",
         "2": [
           "RuntimeMetadataResolver"
@@ -88,13 +81,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/component_resolver.dart",
-        "2": [
-          "ComponentResolver"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "assertionsEnabled"
@@ -149,12 +135,6 @@
         "1": "package:angular2/src/compiler/template_ast.dart"
       },
       {
-        "1": "package:angular2/src/compiler/template_parser.dart",
-        "2": [
-          "TEMPLATE_TRANSFORMS"
-        ]
-      },
-      {
         "1": "package:angular2/src/compiler/url_resolver.dart"
       },
       {
@@ -190,12 +170,6 @@
         "1": "pipe_resolver.dart",
         "2": [
           "PipeResolver"
-        ]
-      },
-      {
-        "1": "runtime_compiler.dart",
-        "2": [
-          "RuntimeCompiler"
         ]
       },
       {
@@ -311,44 +285,6 @@
           "useProperty": null,
           "multi": false,
           "deps": []
-        },
-        {
-          "class": "Identifier",
-          "name": "RuntimeCompiler",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ComponentResolver",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "RuntimeCompiler",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
         },
         {
           "class": "Identifier",
