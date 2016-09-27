@@ -7748,7 +7748,7 @@ y=document
 y=y.createElement("h1")
 this.k2=y
 J.mW(z,y)
-x=document.createTextNode("My First Angular 2 App")
+x=document.createTextNode("My First Angular App")
 this.k2.appendChild(x)
 this.eE([],[this.k2,x],[])
 return},

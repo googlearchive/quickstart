@@ -38,7 +38,7 @@
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 2,
-        "template": "<h1>My First Angular 2 App</h1>",
+        "template": "<h1>My First Angular App</h1>",
         "templateUrl": "asset:angular2_quickstart/lib/app_component.dart",
         "styles": [],
         "styleUrls": [],
