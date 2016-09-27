@@ -93,13 +93,6 @@
       "prefix": null,
       "value": null
     },
-    "TEMPLATE_COMMENT_TEXT": {
-      "class": "Identifier",
-      "name": "TEMPLATE_COMMENT_TEXT",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
     "DomRootRenderer": {
       "class": "Type",
       "name": "DomRootRenderer",

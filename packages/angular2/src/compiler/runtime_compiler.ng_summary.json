@@ -9,15 +9,21 @@
       {
         "1": "package:angular2/src/core/di.dart",
         "2": [
-          "Injectable"
+          "Injectable",
+          "Injector"
         ],
         "5": false
       },
       {
         "1": "package:angular2/src/core/linker/component_factory.dart",
         "2": [
-          "ComponentFactory"
+          "ComponentFactory",
+          "NgViewFactory"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/app_element.dart",
         "5": false
       },
       {

@@ -14,15 +14,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/platform/testing/browser.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di/provider.dart",
+        "1": "package:angular2/di.dart",
         "2": [
+          "Injector",
           "provide",
           "Provider"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/platform/testing/browser.dart",
         "5": false
       },
       {
@@ -34,6 +35,10 @@
         "2": [
           "NgZone"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "5": false
       },
       {
@@ -79,11 +84,11 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/platform/testing/browser.template.dart",
+        "1": "package:angular2/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di/provider.template.dart",
+        "1": "package:angular2/platform/testing/browser.template.dart",
         "4": "i2"
       },
       {
@@ -95,32 +100,36 @@
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i5"
       },
       {
-        "1": "internal_injector.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
         "4": "i6"
       },
       {
-        "1": "fake_async.template.dart",
+        "1": "internal_injector.template.dart",
         "4": "i7"
       },
       {
-        "1": "test_component_builder.template.dart",
+        "1": "fake_async.template.dart",
         "4": "i8"
       },
       {
-        "1": "utils.template.dart",
+        "1": "test_component_builder.template.dart",
         "4": "i9"
       },
       {
-        "1": "by.template.dart",
+        "1": "utils.template.dart",
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/debug/debug_node.template.dart",
+        "1": "by.template.dart",
         "4": "i11"
+      },
+      {
+        "1": "package:angular2/src/debug/debug_node.template.dart",
+        "4": "i12"
       }
     ]
   },
@@ -303,6 +312,13 @@
           "isValue": false
         }
       ]
+    },
+    "LogFunction": {
+      "class": "Identifier",
+      "name": "LogFunction",
+      "moduleUrl": "asset:angular2/lib/src/testing/utils.dart",
+      "prefix": null,
+      "value": null
     },
     "Log": {
       "class": "Type",

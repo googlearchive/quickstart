@@ -10,41 +10,47 @@
         "5": false
       }
     ],
-    "6": "util.dart"
+    "6": "compiler_utils.dart",
+    "7": [
+      {
+        "1": "package:angular2/src/facade/lang.template.dart",
+        "4": "i0"
+      }
+    ]
   },
   "type": {
     "MODULE_SUFFIX": {
       "class": "Identifier",
       "name": "MODULE_SUFFIX",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "camelCaseToDashCase": {
       "class": "Identifier",
       "name": "camelCaseToDashCase",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "dashCaseToCamelCase": {
       "class": "Identifier",
       "name": "dashCaseToCamelCase",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "splitAtColon": {
       "class": "Identifier",
       "name": "splitAtColon",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "sanitizeIdentifier": {
       "class": "Identifier",
       "name": "sanitizeIdentifier",
-      "moduleUrl": "asset:angular2/lib/src/compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/compiler_utils.dart",
       "prefix": null,
       "value": null
     }

@@ -4,6 +4,9 @@
     "4": [
       {
         "1": "package:angular2/src/security/dom_sanitization_service.dart"
+      },
+      {
+        "1": "package:angular2/src/security/safe_inner_html.dart"
       }
     ],
     "6": "security.dart",
@@ -11,6 +14,10 @@
       {
         "1": "package:angular2/src/security/dom_sanitization_service.template.dart",
         "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/security/safe_inner_html.template.dart",
+        "4": "i1"
       }
     ]
   },
@@ -119,6 +126,58 @@
       "moduleUrl": "asset:angular2/lib/src/core/security.dart",
       "prefix": null,
       "value": null
+    },
+    "SafeInnerHtmlDirective": {
+      "class": "Directive",
+      "isComponent": false,
+      "selector": "[safeInnerHtml]",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "SafeInnerHtmlDirective",
+        "moduleUrl": "asset:angular2/lib/src/security/safe_inner_html.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": [
+          {
+            "token": {
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "ElementRef",
+                "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
+            },
+            "query": null,
+            "viewQuery": null,
+            "value": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false,
+            "isValue": false
+          }
+        ]
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "safeInnerHtml": "safeInnerHtml"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null,
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
     }
   },
   "alias": {}

@@ -17,6 +17,14 @@
       {
         "1": "package:angular2/platform/browser_static.dart",
         "5": false
+      },
+      {
+        "1": "package:angular2/src/core/application_ref.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "5": false
       }
     ],
     "6": "test_injector.dart",
@@ -28,6 +36,14 @@
       {
         "1": "package:angular2/platform/browser_static.template.dart",
         "4": "i1"
+      },
+      {
+        "1": "package:angular2/src/core/application_ref.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
+        "4": "i3"
       }
     ]
   },

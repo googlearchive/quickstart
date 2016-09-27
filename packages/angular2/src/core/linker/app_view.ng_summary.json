@@ -42,6 +42,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
+        "2": [
+          "DomRootRenderer"
+        ],
+        "5": false
+      },
+      {
         "1": "app_element.dart",
         "5": false
       },
@@ -62,7 +69,7 @@
       {
         "1": "view_ref.dart",
         "2": [
-          "ViewRef_"
+          "ViewRefImpl"
         ],
         "5": false
       },
@@ -74,9 +81,9 @@
         "5": false
       },
       {
-        "1": "view_utils.dart",
+        "1": "app_view_utils.dart",
         "2": [
-          "ViewUtils",
+          "appViewUtils",
           "ensureSlotCount",
           "OnDestroyCallback"
         ],
@@ -107,9 +114,16 @@
       "prefix": null,
       "value": null
     },
-    "flattenNestedViewRenderNodes": {
+    "_appendNestedViewRenderNodes": {
       "class": "Identifier",
-      "name": "flattenNestedViewRenderNodes",
+      "name": "_appendNestedViewRenderNodes",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/app_view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_flattenNestedViews": {
+      "class": "Identifier",
+      "name": "_flattenNestedViews",
       "moduleUrl": "asset:angular2/lib/src/core/linker/app_view.dart",
       "prefix": null,
       "value": null

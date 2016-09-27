@@ -68,7 +68,7 @@
         "diDeps": []
       },
       "name": "uppercase",
-      "pure": false
+      "pure": true
     }
   },
   "alias": {}

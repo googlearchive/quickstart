@@ -130,7 +130,7 @@
         "5": false
       },
       {
-        "1": "util.dart",
+        "1": "compiler_utils.dart",
         "2": [
           "MODULE_SUFFIX",
           "sanitizeIdentifier"

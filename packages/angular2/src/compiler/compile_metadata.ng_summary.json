@@ -48,11 +48,7 @@
         "5": false
       },
       {
-        "1": "util.dart",
-        "2": [
-          "splitAtColon",
-          "sanitizeIdentifier"
-        ],
+        "1": "compiler_utils.dart",
         "5": false
       }
     ],

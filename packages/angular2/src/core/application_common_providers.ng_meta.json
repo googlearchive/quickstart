@@ -57,14 +57,14 @@
       {
         "1": "linker/dynamic_component_loader.dart",
         "2": [
-          "DynamicComponentLoader_"
+          "DynamicComponentLoaderImpl"
         ],
         "5": false
       },
       {
-        "1": "linker/view_utils.dart",
+        "1": "linker/app_view_utils.dart",
         "2": [
-          "ViewUtils"
+          "AppViewUtils"
         ],
         "5": false
       }
@@ -96,7 +96,7 @@
         "4": "i5"
       },
       {
-        "1": "linker/view_utils.template.dart",
+        "1": "linker/app_view_utils.template.dart",
         "4": "i6"
       }
     ]
@@ -462,8 +462,8 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "ViewUtils",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+              "name": "AppViewUtils",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
               "prefix": null,
               "isHost": false,
               "value": null,
@@ -540,8 +540,8 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "ViewUtils",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+            "name": "AppViewUtils",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
             "prefix": null,
             "isHost": false,
             "value": null,
@@ -690,7 +690,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "DynamicComponentLoader_",
+            "name": "DynamicComponentLoaderImpl",
             "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
             "prefix": null,
             "isHost": false,

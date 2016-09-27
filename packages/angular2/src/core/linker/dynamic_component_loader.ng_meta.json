@@ -7,6 +7,10 @@
         "5": false
       },
       {
+        "1": "dart:html",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injector",
@@ -36,7 +40,7 @@
         "5": false
       },
       {
-        "1": "view_utils.dart",
+        "1": "app_view_utils.dart",
         "2": [
           "OnDestroyCallback"
         ],
@@ -45,7 +49,7 @@
     ],
     "5": [
       {
-        "1": "DynamicComponentLoader_",
+        "1": "DynamicComponentLoaderImpl",
         "4": [
           {
             "1": "Injectable",
@@ -79,7 +83,7 @@
         "4": "i3"
       },
       {
-        "1": "view_utils.template.dart",
+        "1": "app_view_utils.template.dart",
         "4": "i4"
       }
     ]
@@ -92,9 +96,9 @@
       "prefix": null,
       "value": null
     },
-    "DynamicComponentLoader_": {
+    "DynamicComponentLoaderImpl": {
       "class": "Type",
-      "name": "DynamicComponentLoader_",
+      "name": "DynamicComponentLoaderImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
       "prefix": null,
       "isHost": false,

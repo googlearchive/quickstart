@@ -325,6 +325,13 @@
         }
       ]
     },
+    "LogFunction": {
+      "class": "Identifier",
+      "name": "LogFunction",
+      "moduleUrl": "asset:angular2/lib/src/testing/utils.dart",
+      "prefix": null,
+      "value": null
+    },
     "Log": {
       "class": "Type",
       "name": "Log",

@@ -75,7 +75,7 @@
         "diDeps": []
       },
       "name": "replace",
-      "pure": false
+      "pure": true
     }
   },
   "alias": {}

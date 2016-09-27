@@ -713,28 +713,6 @@
                   "isSkipSelf": false,
                   "isOptional": false,
                   "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Renderer",
-                      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
                 }
               ]
             },
@@ -777,28 +755,6 @@
                     "class": "Identifier",
                     "name": "ElementRef",
                     "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Renderer",
-                    "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
                     "prefix": null,
                     "value": null
                   },
@@ -4200,28 +4156,6 @@
                   "isSkipSelf": false,
                   "isOptional": false,
                   "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Renderer",
-                      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
                 }
               ]
             },
@@ -4264,28 +4198,6 @@
                     "class": "Identifier",
                     "name": "ElementRef",
                     "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Renderer",
-                    "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
                     "prefix": null,
                     "value": null
                   },
@@ -5509,28 +5421,6 @@
                 "class": "Identifier",
                 "name": "ElementRef",
                 "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-                "prefix": null,
-                "value": null
-              },
-              "identifierIsInstance": false
-            },
-            "query": null,
-            "viewQuery": null,
-            "value": null,
-            "isAttribute": false,
-            "isSelf": false,
-            "isHost": false,
-            "isSkipSelf": false,
-            "isOptional": false,
-            "isValue": false
-          },
-          {
-            "token": {
-              "value": null,
-              "identifier": {
-                "class": "Identifier",
-                "name": "Renderer",
-                "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
                 "prefix": null,
                 "value": null
               },
@@ -12380,7 +12270,7 @@
         "diDeps": []
       },
       "name": "lowercase",
-      "pure": false
+      "pure": true
     },
     "NumberPipe": {
       "class": "Type",
@@ -12403,7 +12293,7 @@
         "diDeps": []
       },
       "name": "number",
-      "pure": false
+      "pure": true
     },
     "PercentPipe": {
       "class": "Pipe",
@@ -12417,7 +12307,7 @@
         "diDeps": []
       },
       "name": "percent",
-      "pure": false
+      "pure": true
     },
     "CurrencyPipe": {
       "class": "Pipe",
@@ -12431,7 +12321,7 @@
         "diDeps": []
       },
       "name": "currency",
-      "pure": false
+      "pure": true
     },
     "_Matcher": {
       "class": "Identifier",
@@ -12452,7 +12342,7 @@
         "diDeps": []
       },
       "name": "replace",
-      "pure": false
+      "pure": true
     },
     "SlicePipe": {
       "class": "Pipe",
@@ -12480,7 +12370,7 @@
         "diDeps": []
       },
       "name": "uppercase",
-      "pure": false
+      "pure": true
     }
   },
   "alias": {

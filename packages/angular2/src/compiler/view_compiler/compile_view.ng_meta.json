@@ -91,7 +91,7 @@
         "5": false
       },
       {
-        "1": "util.dart",
+        "1": "view_compiler_utils.dart",
         "2": [
           "getViewFactoryName",
           "getPropertyInView",
@@ -151,7 +151,7 @@
         "4": "i11"
       },
       {
-        "1": "util.template.dart",
+        "1": "view_compiler_utils.template.dart",
         "4": "i12"
       }
     ]

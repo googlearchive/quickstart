@@ -59,7 +59,7 @@
         "5": false
       },
       {
-        "1": "util.dart",
+        "1": "compiler_utils.dart",
         "2": [
           "MODULE_SUFFIX"
         ],
@@ -116,7 +116,7 @@
         "4": "i6"
       },
       {
-        "1": "util.template.dart",
+        "1": "compiler_utils.template.dart",
         "4": "i7"
       },
       {

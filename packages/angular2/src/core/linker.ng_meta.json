@@ -100,6 +100,13 @@
     ]
   },
   "type": {
+    "NgViewFactory": {
+      "class": "Identifier",
+      "name": "NgViewFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "prefix": null,
+      "value": null
+    },
     "ComponentRef": {
       "class": "Identifier",
       "name": "ComponentRef",
@@ -107,9 +114,9 @@
       "prefix": null,
       "value": null
     },
-    "ComponentRef_": {
+    "ComponentRefImpl": {
       "class": "Identifier",
-      "name": "ComponentRef_",
+      "name": "ComponentRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
@@ -151,9 +158,9 @@
       "prefix": null,
       "value": null
     },
-    "DynamicComponentLoader_": {
+    "DynamicComponentLoaderImpl": {
       "class": "Type",
-      "name": "DynamicComponentLoader_",
+      "name": "DynamicComponentLoaderImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
       "prefix": null,
       "isHost": false,
@@ -253,9 +260,9 @@
       "prefix": null,
       "value": null
     },
-    "ViewRef_": {
+    "ViewRefImpl": {
       "class": "Identifier",
-      "name": "ViewRef_",
+      "name": "ViewRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
       "prefix": null,
       "value": null

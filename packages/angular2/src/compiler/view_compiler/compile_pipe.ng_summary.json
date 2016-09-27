@@ -37,7 +37,7 @@
         "5": false
       },
       {
-        "1": "util.dart",
+        "1": "view_compiler_utils.dart",
         "2": [
           "injectFromViewParentInjector",
           "createPureProxy",

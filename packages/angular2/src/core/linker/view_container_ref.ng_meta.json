@@ -43,7 +43,7 @@
         "2": [
           "EmbeddedViewRef",
           "ViewRef",
-          "ViewRef_"
+          "ViewRefImpl"
         ],
         "5": false
       }

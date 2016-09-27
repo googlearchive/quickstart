@@ -25,6 +25,10 @@
         "5": false
       },
       {
+        "1": "../identifiers.dart",
+        "5": false
+      },
+      {
         "1": "../output/output_ast.dart",
         "4": "o",
         "5": false
@@ -32,7 +36,8 @@
       {
         "1": "../template_ast.dart",
         "2": [
-          "TemplateAst"
+          "TemplateAst",
+          "templateVisitAll"
         ],
         "5": false
       },
@@ -66,11 +71,6 @@
       },
       {
         "1": "view_builder.dart",
-        "2": [
-          "buildView",
-          "finishView",
-          "ViewCompileDependency"
-        ],
         "5": false
       }
     ],
@@ -106,32 +106,36 @@
         "4": "i2"
       },
       {
-        "1": "../output/output_ast.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i3"
       },
       {
-        "1": "../template_ast.template.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i4"
       },
       {
-        "1": "../style_compiler.template.dart",
+        "1": "../template_ast.template.dart",
         "4": "i5"
       },
       {
-        "1": "compile_element.template.dart",
+        "1": "../style_compiler.template.dart",
         "4": "i6"
       },
       {
-        "1": "compile_view.template.dart",
+        "1": "compile_element.template.dart",
         "4": "i7"
       },
       {
-        "1": "view_binder.template.dart",
+        "1": "compile_view.template.dart",
         "4": "i8"
       },
       {
-        "1": "view_builder.template.dart",
+        "1": "view_binder.template.dart",
         "4": "i9"
+      },
+      {
+        "1": "view_builder.template.dart",
+        "4": "i10"
       }
     ]
   },

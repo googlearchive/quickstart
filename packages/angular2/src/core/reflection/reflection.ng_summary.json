@@ -33,6 +33,13 @@
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
       "prefix": null,
       "value": null
+    },
+    "NoReflectionCapabilitiesError": {
+      "class": "Identifier",
+      "name": "NoReflectionCapabilitiesError",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
+      "prefix": null,
+      "value": null
     }
   },
   "alias": {}

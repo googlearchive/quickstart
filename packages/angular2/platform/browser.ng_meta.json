@@ -1029,8 +1029,8 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "ViewUtils",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+              "name": "AppViewUtils",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
               "prefix": null,
               "isHost": false,
               "value": null,
@@ -1107,8 +1107,8 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "ViewUtils",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+            "name": "AppViewUtils",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
             "prefix": null,
             "isHost": false,
             "value": null,
@@ -1257,7 +1257,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "DynamicComponentLoader_",
+            "name": "DynamicComponentLoaderImpl",
             "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
             "prefix": null,
             "isHost": false,
@@ -2492,28 +2492,6 @@
                         "isSkipSelf": false,
                         "isOptional": false,
                         "isValue": false
-                      },
-                      {
-                        "token": {
-                          "value": null,
-                          "identifier": {
-                            "class": "Identifier",
-                            "name": "Renderer",
-                            "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                            "prefix": null,
-                            "value": null
-                          },
-                          "identifierIsInstance": false
-                        },
-                        "query": null,
-                        "viewQuery": null,
-                        "value": null,
-                        "isAttribute": false,
-                        "isSelf": false,
-                        "isHost": false,
-                        "isSkipSelf": false,
-                        "isOptional": false,
-                        "isValue": false
                       }
                     ]
                   },
@@ -2556,28 +2534,6 @@
                           "class": "Identifier",
                           "name": "ElementRef",
                           "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-                          "prefix": null,
-                          "value": null
-                        },
-                        "identifierIsInstance": false
-                      },
-                      "query": null,
-                      "viewQuery": null,
-                      "value": null,
-                      "isAttribute": false,
-                      "isSelf": false,
-                      "isHost": false,
-                      "isSkipSelf": false,
-                      "isOptional": false,
-                      "isValue": false
-                    },
-                    {
-                      "token": {
-                        "value": null,
-                        "identifier": {
-                          "class": "Identifier",
-                          "name": "Renderer",
-                          "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
                           "prefix": null,
                           "value": null
                         },
@@ -8568,8 +8524,8 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "ViewUtils",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+              "name": "AppViewUtils",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
               "prefix": null,
               "isHost": false,
               "value": null,
@@ -8646,8 +8602,8 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "ViewUtils",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+            "name": "AppViewUtils",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
             "prefix": null,
             "isHost": false,
             "value": null,
@@ -8796,7 +8752,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "DynamicComponentLoader_",
+            "name": "DynamicComponentLoaderImpl",
             "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
             "prefix": null,
             "isHost": false,
@@ -10031,28 +9987,6 @@
                         "isSkipSelf": false,
                         "isOptional": false,
                         "isValue": false
-                      },
-                      {
-                        "token": {
-                          "value": null,
-                          "identifier": {
-                            "class": "Identifier",
-                            "name": "Renderer",
-                            "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                            "prefix": null,
-                            "value": null
-                          },
-                          "identifierIsInstance": false
-                        },
-                        "query": null,
-                        "viewQuery": null,
-                        "value": null,
-                        "isAttribute": false,
-                        "isSelf": false,
-                        "isHost": false,
-                        "isSkipSelf": false,
-                        "isOptional": false,
-                        "isValue": false
                       }
                     ]
                   },
@@ -10095,28 +10029,6 @@
                           "class": "Identifier",
                           "name": "ElementRef",
                           "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-                          "prefix": null,
-                          "value": null
-                        },
-                        "identifierIsInstance": false
-                      },
-                      "query": null,
-                      "viewQuery": null,
-                      "value": null,
-                      "isAttribute": false,
-                      "isSelf": false,
-                      "isHost": false,
-                      "isSkipSelf": false,
-                      "isOptional": false,
-                      "isValue": false
-                    },
-                    {
-                      "token": {
-                        "value": null,
-                        "identifier": {
-                          "class": "Identifier",
-                          "name": "Renderer",
-                          "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
                           "prefix": null,
                           "value": null
                         },

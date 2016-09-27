@@ -15,6 +15,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
+        "2": [
+          "DomRootRenderer"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injector"
@@ -32,6 +39,7 @@
         "1": "package:angular2/src/debug/debug_node.dart",
         "2": [
           "DebugElement",
+          "DebugNode",
           "getDebugNode",
           "indexDebugNode"
         ],
@@ -73,10 +81,6 @@
       {
         "1": "package:angular2/src/core/linker/view_type.dart",
         "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/view_utils.dart",
-        "5": false
       }
     ],
     "4": [
@@ -97,6 +101,13 @@
     "DebugAppView": {
       "class": "Identifier",
       "name": "DebugAppView",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_app_view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_appendDebugNestedViewRenderNodes": {
+      "class": "Identifier",
+      "name": "_appendDebugNestedViewRenderNodes",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_app_view.dart",
       "prefix": null,
       "value": null

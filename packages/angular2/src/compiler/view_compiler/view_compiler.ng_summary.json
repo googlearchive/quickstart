@@ -25,6 +25,10 @@
         "5": false
       },
       {
+        "1": "../identifiers.dart",
+        "5": false
+      },
+      {
         "1": "../output/output_ast.dart",
         "4": "o",
         "5": false
@@ -32,7 +36,8 @@
       {
         "1": "../template_ast.dart",
         "2": [
-          "TemplateAst"
+          "TemplateAst",
+          "templateVisitAll"
         ],
         "5": false
       },
@@ -66,11 +71,6 @@
       },
       {
         "1": "view_builder.dart",
-        "2": [
-          "buildView",
-          "finishView",
-          "ViewCompileDependency"
-        ],
         "5": false
       }
     ],

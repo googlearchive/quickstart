@@ -1,0 +1,96 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/zone/ng_zone.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "NgZoneStabilizer",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false
+          }
+        ],
+        "5": [
+          {
+            "1": "NgZone",
+            "4": "_ngZone"
+          }
+        ]
+      }
+    ],
+    "6": "ng_dom_stabilizer.dart",
+    "7": [
+      {
+        "1": "package:angular2/di.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "type": {
+    "NgDomStabilizer": {
+      "class": "Identifier",
+      "name": "NgDomStabilizer",
+      "moduleUrl": "asset:angular2/lib/src/testing/test_bed/ng_dom_stabilizer.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_CompoundStabilizer": {
+      "class": "Identifier",
+      "name": "_CompoundStabilizer",
+      "moduleUrl": "asset:angular2/lib/src/testing/test_bed/ng_dom_stabilizer.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NgZoneStabilizer": {
+      "class": "Type",
+      "name": "NgZoneStabilizer",
+      "moduleUrl": "asset:angular2/lib/src/testing/test_bed/ng_dom_stabilizer.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "NgZone",
+              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        }
+      ]
+    }
+  },
+  "alias": {}
+}

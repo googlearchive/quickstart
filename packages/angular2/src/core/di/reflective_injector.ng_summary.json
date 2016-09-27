@@ -134,9 +134,9 @@
       "prefix": null,
       "value": null
     },
-    "ReflectiveInjector_": {
+    "ReflectiveInjectorImpl": {
       "class": "Identifier",
-      "name": "ReflectiveInjector_",
+      "name": "ReflectiveInjectorImpl",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
       "prefix": null,
       "value": null

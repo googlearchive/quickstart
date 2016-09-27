@@ -387,9 +387,9 @@
       "prefix": null,
       "value": null
     },
-    "ReflectiveInjector_": {
+    "ReflectiveInjectorImpl": {
       "class": "Identifier",
-      "name": "ReflectiveInjector_",
+      "name": "ReflectiveInjectorImpl",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
       "prefix": null,
       "value": null
@@ -450,9 +450,9 @@
       "prefix": null,
       "value": null
     },
-    "ResolvedReflectiveProvider_": {
+    "ResolvedReflectiveProviderImpl": {
       "class": "Identifier",
-      "name": "ResolvedReflectiveProvider_",
+      "name": "ResolvedReflectiveProviderImpl",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
       "prefix": null,
       "value": null

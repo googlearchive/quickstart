@@ -15,7 +15,7 @@
         "5": false
       },
       {
-        "1": "package:observe/observe.dart",
+        "1": "package:observable/observable.dart",
         "2": [
           "ObservableList"
         ],

@@ -14,15 +14,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/platform/testing/browser.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/di/provider.dart",
+        "1": "package:angular2/di.dart",
         "2": [
+          "Injector",
           "provide",
           "Provider"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/platform/testing/browser.dart",
         "5": false
       },
       {
@@ -34,6 +35,10 @@
         "2": [
           "NgZone"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "5": false
       },
       {

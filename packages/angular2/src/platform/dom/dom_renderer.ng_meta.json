@@ -49,6 +49,14 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/view_compiler/view_compiler_utils.dart",
+        "2": [
+          "TEMPLATE_COMMENT_TEXT",
+          "TEMPLATE_BINDINGS_EXP"
+        ],
+        "5": false
+      },
+      {
         "1": "dom_tokens.dart",
         "2": [
           "DOCUMENT"
@@ -128,20 +136,24 @@
         "4": "i5"
       },
       {
-        "1": "dom_tokens.template.dart",
+        "1": "package:angular2/src/compiler/view_compiler/view_compiler_utils.template.dart",
         "4": "i6"
       },
       {
-        "1": "events/event_manager.template.dart",
+        "1": "dom_tokens.template.dart",
         "4": "i7"
       },
       {
-        "1": "shared_styles_host.template.dart",
+        "1": "events/event_manager.template.dart",
         "4": "i8"
       },
       {
-        "1": "util.template.dart",
+        "1": "shared_styles_host.template.dart",
         "4": "i9"
+      },
+      {
+        "1": "util.template.dart",
+        "4": "i10"
       }
     ]
   },
@@ -149,13 +161,6 @@
     "NAMESPACE_URIS": {
       "class": "Identifier",
       "name": "NAMESPACE_URIS",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "TEMPLATE_COMMENT_TEXT": {
-      "class": "Identifier",
-      "name": "TEMPLATE_COMMENT_TEXT",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
       "prefix": null,
       "value": null

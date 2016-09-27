@@ -44,6 +44,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/debug/debug_app_view.dart",
         "5": false
       },

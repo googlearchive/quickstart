@@ -135,7 +135,7 @@
         "diDeps": []
       },
       "name": "number",
-      "pure": false
+      "pure": true
     },
     "PercentPipe": {
       "class": "Pipe",
@@ -149,7 +149,7 @@
         "diDeps": []
       },
       "name": "percent",
-      "pure": false
+      "pure": true
     },
     "CurrencyPipe": {
       "class": "Pipe",
@@ -163,7 +163,7 @@
         "diDeps": []
       },
       "name": "currency",
-      "pure": false
+      "pure": true
     }
   },
   "alias": {}

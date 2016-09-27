@@ -845,8 +845,8 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "ViewUtils",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+              "name": "AppViewUtils",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
               "prefix": null,
               "isHost": false,
               "value": null,
@@ -923,8 +923,8 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "ViewUtils",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+            "name": "AppViewUtils",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
             "prefix": null,
             "isHost": false,
             "value": null,
@@ -1073,7 +1073,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "DynamicComponentLoader_",
+            "name": "DynamicComponentLoaderImpl",
             "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
             "prefix": null,
             "isHost": false,
@@ -2206,9 +2206,9 @@
       "prefix": null,
       "value": null
     },
-    "ReflectiveInjector_": {
+    "ReflectiveInjectorImpl": {
       "class": "Identifier",
-      "name": "ReflectiveInjector_",
+      "name": "ReflectiveInjectorImpl",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
       "prefix": null,
       "value": null
@@ -2269,9 +2269,9 @@
       "prefix": null,
       "value": null
     },
-    "ResolvedReflectiveProvider_": {
+    "ResolvedReflectiveProviderImpl": {
       "class": "Identifier",
-      "name": "ResolvedReflectiveProvider_",
+      "name": "ResolvedReflectiveProviderImpl",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
       "prefix": null,
       "value": null
@@ -2465,6 +2465,13 @@
       "prefix": null,
       "value": null
     },
+    "NgViewFactory": {
+      "class": "Identifier",
+      "name": "NgViewFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "prefix": null,
+      "value": null
+    },
     "ComponentRef": {
       "class": "Identifier",
       "name": "ComponentRef",
@@ -2472,9 +2479,9 @@
       "prefix": null,
       "value": null
     },
-    "ComponentRef_": {
+    "ComponentRefImpl": {
       "class": "Identifier",
-      "name": "ComponentRef_",
+      "name": "ComponentRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
@@ -2516,9 +2523,9 @@
       "prefix": null,
       "value": null
     },
-    "DynamicComponentLoader_": {
+    "DynamicComponentLoaderImpl": {
       "class": "Type",
-      "name": "DynamicComponentLoader_",
+      "name": "DynamicComponentLoaderImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
       "prefix": null,
       "isHost": false,
@@ -2618,9 +2625,9 @@
       "prefix": null,
       "value": null
     },
-    "ViewRef_": {
+    "ViewRefImpl": {
       "class": "Identifier",
-      "name": "ViewRef_",
+      "name": "ViewRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
       "prefix": null,
       "value": null
@@ -3156,6 +3163,13 @@
     "NoReflectionCapabilities": {
       "class": "Identifier",
       "name": "NoReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NoReflectionCapabilitiesError": {
+      "class": "Identifier",
+      "name": "NoReflectionCapabilitiesError",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
       "prefix": null,
       "value": null

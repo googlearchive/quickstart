@@ -102,11 +102,14 @@
         "5": false
       },
       {
-        "1": "util.dart",
+        "1": "view_compiler_utils.dart",
         "2": [
           "getViewFactoryName",
           "createFlatArray",
-          "createDiTokenExpression"
+          "createDiTokenExpression",
+          "NAMESPACE_URIS",
+          "createSetAttributeParams",
+          "TEMPLATE_COMMENT_TEXT"
         ],
         "5": false
       }
@@ -158,7 +161,7 @@
         "4": "i10"
       },
       {
-        "1": "util.template.dart",
+        "1": "view_compiler_utils.template.dart",
         "4": "i11"
       }
     ]
@@ -185,30 +188,9 @@
       "prefix": null,
       "value": null
     },
-    "_NAMESPACE_URIS": {
-      "class": "Identifier",
-      "name": "_NAMESPACE_URIS",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
-      "prefix": null,
-      "value": null
-    },
     "ViewCompileDependency": {
       "class": "Identifier",
       "name": "ViewCompileDependency",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
-      "prefix": null,
-      "value": null
-    },
-    "buildView": {
-      "class": "Identifier",
-      "name": "buildView",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
-      "prefix": null,
-      "value": null
-    },
-    "finishView": {
-      "class": "Identifier",
-      "name": "finishView",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
       "prefix": null,
       "value": null
@@ -244,13 +226,6 @@
     "mapToKeyValueArray": {
       "class": "Identifier",
       "name": "mapToKeyValueArray",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
-      "prefix": null,
-      "value": null
-    },
-    "createViewTopLevelStmts": {
-      "class": "Identifier",
-      "name": "createViewTopLevelStmts",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
       "prefix": null,
       "value": null

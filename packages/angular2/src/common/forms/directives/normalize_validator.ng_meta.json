@@ -5,7 +5,8 @@
       {
         "1": "package:angular2/src/common/forms/directives/validators.dart",
         "2": [
-          "Validator"
+          "Validator",
+          "ValidatorFn"
         ],
         "5": false
       }

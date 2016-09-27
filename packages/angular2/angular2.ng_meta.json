@@ -464,8 +464,8 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "ViewUtils",
-              "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+              "name": "AppViewUtils",
+              "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
               "prefix": null,
               "isHost": false,
               "value": null,
@@ -542,8 +542,8 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "ViewUtils",
-            "moduleUrl": "asset:angular2/lib/src/core/linker/view_utils.dart",
+            "name": "AppViewUtils",
+            "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
             "prefix": null,
             "isHost": false,
             "value": null,
@@ -692,7 +692,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "DynamicComponentLoader_",
+            "name": "DynamicComponentLoaderImpl",
             "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
             "prefix": null,
             "isHost": false,
@@ -1825,9 +1825,9 @@
       "prefix": null,
       "value": null
     },
-    "ReflectiveInjector_": {
+    "ReflectiveInjectorImpl": {
       "class": "Identifier",
-      "name": "ReflectiveInjector_",
+      "name": "ReflectiveInjectorImpl",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
       "prefix": null,
       "value": null
@@ -1888,9 +1888,9 @@
       "prefix": null,
       "value": null
     },
-    "ResolvedReflectiveProvider_": {
+    "ResolvedReflectiveProviderImpl": {
       "class": "Identifier",
-      "name": "ResolvedReflectiveProvider_",
+      "name": "ResolvedReflectiveProviderImpl",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
       "prefix": null,
       "value": null
@@ -2084,6 +2084,13 @@
       "prefix": null,
       "value": null
     },
+    "NgViewFactory": {
+      "class": "Identifier",
+      "name": "NgViewFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
+      "prefix": null,
+      "value": null
+    },
     "ComponentRef": {
       "class": "Identifier",
       "name": "ComponentRef",
@@ -2091,9 +2098,9 @@
       "prefix": null,
       "value": null
     },
-    "ComponentRef_": {
+    "ComponentRefImpl": {
       "class": "Identifier",
-      "name": "ComponentRef_",
+      "name": "ComponentRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
@@ -2135,9 +2142,9 @@
       "prefix": null,
       "value": null
     },
-    "DynamicComponentLoader_": {
+    "DynamicComponentLoaderImpl": {
       "class": "Type",
-      "name": "DynamicComponentLoader_",
+      "name": "DynamicComponentLoaderImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/dynamic_component_loader.dart",
       "prefix": null,
       "isHost": false,
@@ -2237,9 +2244,9 @@
       "prefix": null,
       "value": null
     },
-    "ViewRef_": {
+    "ViewRefImpl": {
       "class": "Identifier",
-      "name": "ViewRef_",
+      "name": "ViewRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
       "prefix": null,
       "value": null
@@ -2775,6 +2782,13 @@
     "NoReflectionCapabilities": {
       "class": "Identifier",
       "name": "NoReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NoReflectionCapabilitiesError": {
+      "class": "Identifier",
+      "name": "NoReflectionCapabilitiesError",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
       "prefix": null,
       "value": null
@@ -3679,28 +3693,6 @@
                   "isSkipSelf": false,
                   "isOptional": false,
                   "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Renderer",
-                      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
                 }
               ]
             },
@@ -3743,28 +3735,6 @@
                     "class": "Identifier",
                     "name": "ElementRef",
                     "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Renderer",
-                    "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
                     "prefix": null,
                     "value": null
                   },
@@ -7166,28 +7136,6 @@
                   "isSkipSelf": false,
                   "isOptional": false,
                   "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Renderer",
-                      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
                 }
               ]
             },
@@ -7230,28 +7178,6 @@
                     "class": "Identifier",
                     "name": "ElementRef",
                     "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Renderer",
-                    "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
                     "prefix": null,
                     "value": null
                   },
@@ -8475,28 +8401,6 @@
                 "class": "Identifier",
                 "name": "ElementRef",
                 "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-                "prefix": null,
-                "value": null
-              },
-              "identifierIsInstance": false
-            },
-            "query": null,
-            "viewQuery": null,
-            "value": null,
-            "isAttribute": false,
-            "isSelf": false,
-            "isHost": false,
-            "isSkipSelf": false,
-            "isOptional": false,
-            "isValue": false
-          },
-          {
-            "token": {
-              "value": null,
-              "identifier": {
-                "class": "Identifier",
-                "name": "Renderer",
-                "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
                 "prefix": null,
                 "value": null
               },
@@ -15346,7 +15250,7 @@
         "diDeps": []
       },
       "name": "lowercase",
-      "pure": false
+      "pure": true
     },
     "NumberPipe": {
       "class": "Type",
@@ -15369,7 +15273,7 @@
         "diDeps": []
       },
       "name": "number",
-      "pure": false
+      "pure": true
     },
     "PercentPipe": {
       "class": "Pipe",
@@ -15383,7 +15287,7 @@
         "diDeps": []
       },
       "name": "percent",
-      "pure": false
+      "pure": true
     },
     "CurrencyPipe": {
       "class": "Pipe",
@@ -15397,7 +15301,7 @@
         "diDeps": []
       },
       "name": "currency",
-      "pure": false
+      "pure": true
     },
     "_Matcher": {
       "class": "Identifier",
@@ -15418,7 +15322,7 @@
         "diDeps": []
       },
       "name": "replace",
-      "pure": false
+      "pure": true
     },
     "SlicePipe": {
       "class": "Pipe",
@@ -15446,7 +15350,7 @@
         "diDeps": []
       },
       "name": "uppercase",
-      "pure": false
+      "pure": true
     },
     "noopScope": {
       "class": "Identifier",

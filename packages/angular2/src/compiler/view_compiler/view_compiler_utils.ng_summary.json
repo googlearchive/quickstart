@@ -38,55 +38,76 @@
         "5": false
       }
     ],
-    "6": "util.dart"
+    "6": "view_compiler_utils.dart"
   },
   "type": {
+    "NAMESPACE_URIS": {
+      "class": "Identifier",
+      "name": "NAMESPACE_URIS",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "TEMPLATE_COMMENT_TEXT": {
+      "class": "Identifier",
+      "name": "TEMPLATE_COMMENT_TEXT",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createSetAttributeParams": {
+      "class": "Identifier",
+      "name": "createSetAttributeParams",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
+      "prefix": null,
+      "value": null
+    },
     "getPropertyInView": {
       "class": "Identifier",
       "name": "getPropertyInView",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "injectFromViewParentInjector": {
       "class": "Identifier",
       "name": "injectFromViewParentInjector",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "getViewFactoryName": {
       "class": "Identifier",
       "name": "getViewFactoryName",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "createDiTokenExpression": {
       "class": "Identifier",
       "name": "createDiTokenExpression",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "createFlatArray": {
       "class": "Identifier",
       "name": "createFlatArray",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "convertValueToOutputAst": {
       "class": "Identifier",
       "name": "convertValueToOutputAst",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     },
     "createPureProxy": {
       "class": "Identifier",
       "name": "createPureProxy",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/util.dart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     }

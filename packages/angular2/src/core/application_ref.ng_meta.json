@@ -19,7 +19,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/view_utils.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "5": false
       },
       {
@@ -132,7 +132,7 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/linker/view_utils.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i3"
       },
       {

@@ -63,7 +63,7 @@
         "5": false
       },
       {
-        "1": "util.dart",
+        "1": "view_compiler_utils.dart",
         "2": [
           "createDiTokenExpression",
           "convertValueToOutputAst"
@@ -117,7 +117,7 @@
         "4": "i7"
       },
       {
-        "1": "util.template.dart",
+        "1": "view_compiler_utils.template.dart",
         "4": "i8"
       }
     ]

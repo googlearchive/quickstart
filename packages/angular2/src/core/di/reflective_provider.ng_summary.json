@@ -18,6 +18,13 @@
         "5": false
       },
       {
+        "1": "../reflection/reflection.dart",
+        "2": [
+          "NoReflectionCapabilitiesError"
+        ],
+        "5": false
+      },
+      {
         "1": "metadata.dart",
         "2": [
           "InjectMetadata",
@@ -83,9 +90,9 @@
       "prefix": null,
       "value": null
     },
-    "ResolvedReflectiveProvider_": {
+    "ResolvedReflectiveProviderImpl": {
       "class": "Identifier",
-      "name": "ResolvedReflectiveProvider_",
+      "name": "ResolvedReflectiveProviderImpl",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
       "prefix": null,
       "value": null

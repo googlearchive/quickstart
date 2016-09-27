@@ -48,9 +48,17 @@
         "5": false
       },
       {
-        "1": "../util.dart",
+        "1": "../compiler_utils.dart",
         "2": [
           "camelCaseToDashCase"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_compiler_utils.dart",
+        "2": [
+          "NAMESPACE_URIS",
+          "createSetAttributeParams"
         ],
         "5": false
       },
@@ -93,8 +101,7 @@
       {
         "1": "constants.dart",
         "2": [
-          "DetectChangesVars",
-          "ViewProperties"
+          "DetectChangesVars"
         ],
         "5": false
       }

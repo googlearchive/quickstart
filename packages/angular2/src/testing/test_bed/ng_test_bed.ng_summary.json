@@ -19,6 +19,10 @@
         "5": false
       },
       {
+        "1": "ng_dom_stabilizer.dart",
+        "5": false
+      },
+      {
         "1": "test_injector.dart",
         "5": false
       }

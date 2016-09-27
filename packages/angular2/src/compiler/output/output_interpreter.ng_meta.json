@@ -44,6 +44,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/debug/debug_app_view.dart",
         "5": false
       },
@@ -110,36 +114,40 @@
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/debug/debug_app_view.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/core/linker/component_factory.template.dart",
+        "1": "package:angular2/src/debug/debug_app_view.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/core/linker/app_element.template.dart",
+        "1": "package:angular2/src/core/linker/component_factory.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/core/linker/template_ref.template.dart",
+        "1": "package:angular2/src/core/linker/app_element.template.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/core/linker/view_container_ref.template.dart",
+        "1": "package:angular2/src/core/linker/template_ref.template.dart",
         "4": "i10"
       },
       {
-        "1": "dart_emitter.template.dart",
+        "1": "package:angular2/src/core/linker/view_container_ref.template.dart",
         "4": "i11"
       },
       {
-        "1": "output_ast.template.dart",
+        "1": "dart_emitter.template.dart",
         "4": "i12"
       },
       {
-        "1": "dynamic_instance.template.dart",
+        "1": "output_ast.template.dart",
         "4": "i13"
+      },
+      {
+        "1": "dynamic_instance.template.dart",
+        "4": "i14"
       }
     ]
   },

@@ -24,13 +24,6 @@
     ]
   },
   "type": {
-    "ImportEnv": {
-      "class": "Identifier",
-      "name": "ImportEnv",
-      "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
-      "prefix": null,
-      "value": null
-    },
     "getImportModulePath": {
       "class": "Identifier",
       "name": "getImportModulePath",

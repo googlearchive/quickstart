@@ -397,6 +397,20 @@
       "prefix": null,
       "value": null
     },
+    "replaceReadClassMemberInExpression": {
+      "class": "Identifier",
+      "name": "replaceReadClassMemberInExpression",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ReplaceReadClassMemberTransformer": {
+      "class": "Identifier",
+      "name": "_ReplaceReadClassMemberTransformer",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
+      "prefix": null,
+      "value": null
+    },
     "replaceVarInExpression": {
       "class": "Identifier",
       "name": "replaceVarInExpression",

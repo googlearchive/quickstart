@@ -10,7 +10,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/view_utils.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "5": false
       },
       {
@@ -45,9 +45,9 @@
       "prefix": null,
       "value": null
     },
-    "ViewRef_": {
+    "ViewRefImpl": {
       "class": "Identifier",
-      "name": "ViewRef_",
+      "name": "ViewRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
       "prefix": null,
       "value": null
