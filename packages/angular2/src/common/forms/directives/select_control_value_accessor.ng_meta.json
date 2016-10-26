@@ -251,8 +251,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {
         "blur": "onTouched()",
@@ -427,10 +428,14 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngValue": "ngValue",
         "value": "value"
+      },
+      "inputTypes": {
+        "ngValue": " dynamic",
+        "value": " dynamic"
       },
       "outputs": {},
       "hostListeners": {},

@@ -7,11 +7,11 @@
         "5": false
       },
       {
-        "1": "element_ref.dart",
+        "1": "app_view.dart",
         "5": false
       },
       {
-        "1": "app_view.dart",
+        "1": "element_ref.dart",
         "5": false
       },
       {
@@ -29,11 +29,11 @@
         "4": "i0"
       },
       {
-        "1": "element_ref.template.dart",
+        "1": "app_view.template.dart",
         "4": "i1"
       },
       {
-        "1": "app_view.template.dart",
+        "1": "element_ref.template.dart",
         "4": "i2"
       },
       {

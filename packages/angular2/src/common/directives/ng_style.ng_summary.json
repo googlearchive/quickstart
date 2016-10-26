@@ -105,10 +105,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "rawStyle": "ngStyle"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},

@@ -53,16 +53,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/console.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/asset_reader.dart",
-        "5": false
-      },
-      {
-        "1": "logging.dart",
-        "4": "logging",
         "5": false
       },
       {
@@ -125,35 +116,20 @@
         "4": "i11"
       },
       {
-        "1": "package:angular2/src/core/console.template.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
         "4": "i12"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "url_resolver.template.dart",
         "4": "i13"
       },
       {
-        "1": "logging.template.dart",
-        "4": "i14"
-      },
-      {
-        "1": "url_resolver.template.dart",
-        "4": "i15"
-      },
-      {
         "1": "xhr_impl.template.dart",
-        "4": "i16"
+        "4": "i14"
       }
     ]
   },
   "type": {
-    "_LoggerConsole": {
-      "class": "Identifier",
-      "name": "_LoggerConsole",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/ng_compiler.dart",
-      "prefix": null,
-      "value": null
-    },
     "createTemplateCompiler": {
       "class": "Identifier",
       "name": "createTemplateCompiler",

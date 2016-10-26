@@ -11,6 +11,7 @@
           "IterableDiffer",
           "IterableDiffers",
           "ViewContainerRef",
+          "ViewRef",
           "TemplateRef",
           "EmbeddedViewRef",
           "TrackByFn"
@@ -165,12 +166,13 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngForTrackBy": "ngForTrackBy",
         "ngForOf": "ngForOf",
         "ngForTemplate": "ngForTemplate"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},

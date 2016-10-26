@@ -19,12 +19,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di/metadata.dart",
-        "2": [
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata"
-        ],
+        "1": "package:angular2/src/core/di/decorators.dart",
         "5": false
       },
       {
@@ -44,33 +39,19 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/di.dart",
-        "4": "dimd",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/di.dart",
+        "1": "package:angular2/src/core/metadata.dart",
         "2": [
-          "AttributeMetadata"
+          "View",
+          "Attribute",
+          "Query",
+          "Component"
         ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/directives.dart",
-        "4": "md",
         "5": false
       },
       {
         "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "2": [
           "LIFECYCLE_HOOKS_VALUES"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/view.dart",
-        "2": [
-          "ViewMetadata"
         ],
         "5": false
       },
@@ -109,6 +90,14 @@
         "5": false
       },
       {
+        "1": "compiler_utils.dart",
+        "2": [
+          "MODULE_SUFFIX",
+          "sanitizeIdentifier"
+        ],
+        "5": false
+      },
+      {
         "1": "directive_lifecycle_reflector.dart",
         "2": [
           "hasLifecycleHook"
@@ -126,14 +115,6 @@
         "1": "pipe_resolver.dart",
         "2": [
           "PipeResolver"
-        ],
-        "5": false
-      },
-      {
-        "1": "compiler_utils.dart",
-        "2": [
-          "MODULE_SUFFIX",
-          "sanitizeIdentifier"
         ],
         "5": false
       },

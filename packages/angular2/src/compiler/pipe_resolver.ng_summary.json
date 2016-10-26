@@ -12,7 +12,7 @@
       {
         "1": "package:angular2/src/core/metadata.dart",
         "2": [
-          "PipeMetadata"
+          "Pipe"
         ],
         "5": false
       },

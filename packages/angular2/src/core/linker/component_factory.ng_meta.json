@@ -36,6 +36,13 @@
         "5": false
       },
       {
+        "1": "app_view_utils.dart",
+        "2": [
+          "OnDestroyCallback"
+        ],
+        "5": false
+      },
+      {
         "1": "element_ref.dart",
         "2": [
           "ElementRef"
@@ -46,13 +53,6 @@
         "1": "view_ref.dart",
         "2": [
           "ViewRef"
-        ],
-        "5": false
-      },
-      {
-        "1": "app_view_utils.dart",
-        "2": [
-          "OnDestroyCallback"
         ],
         "5": false
       }
@@ -80,15 +80,15 @@
         "4": "i4"
       },
       {
-        "1": "element_ref.template.dart",
+        "1": "app_view_utils.template.dart",
         "4": "i5"
       },
       {
-        "1": "view_ref.template.dart",
+        "1": "element_ref.template.dart",
         "4": "i6"
       },
       {
-        "1": "app_view_utils.template.dart",
+        "1": "view_ref.template.dart",
         "4": "i7"
       }
     ]

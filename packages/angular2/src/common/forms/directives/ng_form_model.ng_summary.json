@@ -212,10 +212,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "form": "ngFormModel"
       },
+      "inputTypes": {},
       "outputs": {
         "ngSubmit": "ngSubmit",
         "ngBeforeSubmit": "ngBeforeSubmit"

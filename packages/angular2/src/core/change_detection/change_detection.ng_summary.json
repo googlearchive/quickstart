@@ -55,9 +55,7 @@
         "1": "constants.dart",
         "2": [
           "ChangeDetectionStrategy",
-          "CHANGE_DETECTION_STRATEGY_VALUES",
           "ChangeDetectorState",
-          "CHANGE_DETECTOR_STATE_VALUES",
           "isDefaultChangeDetectionStrategy"
         ]
       },

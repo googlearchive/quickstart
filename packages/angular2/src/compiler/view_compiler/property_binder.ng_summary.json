@@ -5,7 +5,8 @@
       {
         "1": "package:angular2/src/core/change_detection/constants.dart",
         "2": [
-          "isDefaultChangeDetectionStrategy"
+          "isDefaultChangeDetectionStrategy",
+          "ChangeDetectionStrategy"
         ],
         "5": false
       },
@@ -18,6 +19,17 @@
       },
       {
         "1": "package:angular2/src/core/security.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/names.dart",
+        "2": [
+          "toTemplateExtension"
+        ],
+        "5": false
+      },
+      {
+        "1": "../compile_metadata.dart",
         "5": false
       },
       {
@@ -44,28 +56,6 @@
           "BoundElementPropertyAst",
           "DirectiveAst",
           "PropertyBindingType"
-        ],
-        "5": false
-      },
-      {
-        "1": "../compiler_utils.dart",
-        "2": [
-          "camelCaseToDashCase"
-        ],
-        "5": false
-      },
-      {
-        "1": "view_compiler_utils.dart",
-        "2": [
-          "NAMESPACE_URIS",
-          "createSetAttributeParams"
-        ],
-        "5": false
-      },
-      {
-        "1": "expression_converter.dart",
-        "2": [
-          "convertCdExpressionToIr"
         ],
         "5": false
       },
@@ -102,6 +92,28 @@
         "1": "constants.dart",
         "2": [
           "DetectChangesVars"
+        ],
+        "5": false
+      },
+      {
+        "1": "expression_converter.dart",
+        "2": [
+          "convertCdExpressionToIr"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_builder.dart",
+        "2": [
+          "buildUpdaterFunctionName"
+        ],
+        "5": false
+      },
+      {
+        "1": "view_compiler_utils.dart",
+        "2": [
+          "NAMESPACE_URIS",
+          "createSetAttributeParams"
         ],
         "5": false
       }
@@ -172,9 +184,30 @@
       "prefix": null,
       "value": null
     },
+    "bindToUpdateMethod": {
+      "class": "Identifier",
+      "name": "bindToUpdateMethod",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
+      "prefix": null,
+      "value": null
+    },
     "logBindingUpdateStmt": {
       "class": "Identifier",
       "name": "logBindingUpdateStmt",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_isPrimitiveFieldType": {
+      "class": "Identifier",
+      "name": "_isPrimitiveFieldType",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "isPrimitiveTypeName": {
+      "class": "Identifier",
+      "name": "isPrimitiveTypeName",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
       "prefix": null,
       "value": null

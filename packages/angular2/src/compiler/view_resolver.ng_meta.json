@@ -10,16 +10,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/directives.dart",
+        "1": "package:angular2/src/core/metadata.dart",
         "2": [
-          "ComponentMetadata"
+          "Component"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/view.dart",
+        "1": "package:angular2/src/core/metadata.dart",
         "2": [
-          "ViewMetadata"
+          "View"
         ],
         "5": false
       },
@@ -76,28 +76,24 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/metadata/directives.template.dart",
+        "1": "package:angular2/src/core/metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.template.dart",
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.template.dart",
+        "1": "package:angular2/src/core/reflection/reflector_reader.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflector_reader.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
-        "4": "i5"
-      },
-      {
         "1": "package:angular2/src/facade/lang.template.dart",
-        "4": "i6"
+        "4": "i5"
       }
     ]
   },

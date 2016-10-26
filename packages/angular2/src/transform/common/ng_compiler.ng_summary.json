@@ -53,16 +53,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/console.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/asset_reader.dart",
-        "5": false
-      },
-      {
-        "1": "logging.dart",
-        "4": "logging",
         "5": false
       },
       {
@@ -77,13 +68,6 @@
     "6": "ng_compiler.dart"
   },
   "type": {
-    "_LoggerConsole": {
-      "class": "Identifier",
-      "name": "_LoggerConsole",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/ng_compiler.dart",
-      "prefix": null,
-      "value": null
-    },
     "createTemplateCompiler": {
       "class": "Identifier",
       "name": "createTemplateCompiler",

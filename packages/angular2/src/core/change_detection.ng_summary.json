@@ -20,6 +20,9 @@
           "CollectionChangeRecord",
           "TrackByFn"
         ]
+      },
+      {
+        "1": "change_detection/component_state.dart"
       }
     ],
     "6": "change_detection.dart"

@@ -153,11 +153,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "rawClass": "ngClass",
         "initialClasses": "class"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},

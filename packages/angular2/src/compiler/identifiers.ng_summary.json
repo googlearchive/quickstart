@@ -23,6 +23,31 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "2": [
+          "AppViewUtils",
+          "interpolate",
+          "interpolate0",
+          "interpolate1",
+          "interpolate2",
+          "checkBinding",
+          "castByValue",
+          "EMPTY_ARRAY",
+          "EMPTY_MAP",
+          "pureProxy1",
+          "pureProxy2",
+          "pureProxy3",
+          "pureProxy4",
+          "pureProxy5",
+          "pureProxy6",
+          "pureProxy7",
+          "pureProxy8",
+          "pureProxy9",
+          "pureProxy10"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/linker/element_ref.dart",
         "2": [
           "ElementRef"
@@ -41,29 +66,6 @@
         "1": "package:angular2/src/core/linker/view_type.dart",
         "2": [
           "ViewType"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/app_view_utils.dart",
-        "2": [
-          "AppViewUtils",
-          "interpolate",
-          "interpolate0",
-          "checkBinding",
-          "castByValue",
-          "EMPTY_ARRAY",
-          "EMPTY_MAP",
-          "pureProxy1",
-          "pureProxy2",
-          "pureProxy3",
-          "pureProxy4",
-          "pureProxy5",
-          "pureProxy6",
-          "pureProxy7",
-          "pureProxy8",
-          "pureProxy9",
-          "pureProxy10"
         ],
         "5": false
       },

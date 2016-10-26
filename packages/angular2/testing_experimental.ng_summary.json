@@ -3,10 +3,10 @@
     "1": "",
     "4": [
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart"
+        "1": "src/modules/testing/lib/testing.dart"
       }
     ],
-    "6": "dom_adapter.dart"
+    "6": "testing_experimental.dart"
   },
   "type": {},
   "alias": {}

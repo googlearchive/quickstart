@@ -124,7 +124,8 @@
           "MinLengthValidator",
           "MaxLengthValidator",
           "PatternValidator",
-          "Validator"
+          "Validator",
+          "ValidatorFn"
         ]
       },
       {
@@ -2577,8 +2578,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {
         "blur": "onTouched()",
@@ -2831,8 +2833,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {
         "input": "onChange($event.target.value)",
@@ -3122,10 +3125,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "name": "ngControlGroup"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -3474,11 +3478,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "name": "ngControl",
         "model": "ngModel"
       },
+      "inputTypes": {},
       "outputs": {
         "update": "ngModelChange"
       },
@@ -3655,8 +3660,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {
@@ -3820,8 +3826,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {
         "ngSubmit": "ngSubmit",
         "ngBeforeSubmit": "ngBeforeSubmit"
@@ -4106,11 +4113,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "form": "ngFormControl",
         "model": "ngModel"
       },
+      "inputTypes": {},
       "outputs": {
         "update": "ngModelChange"
       },
@@ -4286,10 +4294,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "form": "ngFormModel"
       },
+      "inputTypes": {},
       "outputs": {
         "ngSubmit": "ngSubmit",
         "ngBeforeSubmit": "ngBeforeSubmit"
@@ -4468,10 +4477,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "model": "ngModel"
       },
+      "inputTypes": {},
       "outputs": {
         "update": "ngModelChange"
       },
@@ -4733,8 +4743,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {
         "input": "onChange($event.target.value)",
@@ -5078,9 +5089,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "name": "name"
+      },
+      "inputTypes": {
+        "name": " String"
       },
       "outputs": {},
       "hostListeners": {
@@ -5381,8 +5395,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {
         "blur": "onTouched()",
@@ -5557,10 +5572,14 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngValue": "ngValue",
         "value": "value"
+      },
+      "inputTypes": {
+        "ngValue": " dynamic",
+        "value": " dynamic"
       },
       "outputs": {},
       "hostListeners": {},
@@ -5826,8 +5845,9 @@
         "value": null,
         "diDeps": []
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -5898,8 +5918,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -5993,8 +6014,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -6088,8 +6110,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},

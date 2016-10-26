@@ -7,18 +7,11 @@
         "5": false
       },
       {
-        "1": "package:test/test.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/angular2.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di/metadata.dart",
-        "2": [
-          "InjectMetadata"
-        ],
+        "1": "package:angular2/platform/testing/browser.dart",
         "5": false
       },
       {
@@ -44,11 +37,11 @@
         "5": false
       },
       {
-        "1": "internal_injector.dart",
+        "1": "package:test/test.dart",
         "5": false
       },
       {
-        "1": "package:angular2/platform/testing/browser.dart",
+        "1": "internal_injector.dart",
         "5": false
       }
     ],

@@ -3,6 +3,12 @@
     "1": "angular2.platform.common_dom",
     "4": [
       {
+        "1": "package:angular2/src/core/render/api.dart",
+        "2": [
+          "sharedStylesHost"
+        ]
+      },
+      {
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DOM",
@@ -34,12 +40,6 @@
           "EVENT_MANAGER_PLUGINS",
           "EventManager",
           "EventManagerPlugin"
-        ]
-      },
-      {
-        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
-        "2": [
-          "sharedStylesHost"
         ]
       }
     ],

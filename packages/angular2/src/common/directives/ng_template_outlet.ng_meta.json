@@ -71,9 +71,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngTemplateOutlet": "ngTemplateOutlet"
+      },
+      "inputTypes": {
+        "ngTemplateOutlet": " TemplateRef"
       },
       "outputs": {},
       "hostListeners": {},

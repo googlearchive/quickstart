@@ -35,8 +35,9 @@
         "value": null,
         "diDeps": []
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},

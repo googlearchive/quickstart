@@ -25,33 +25,30 @@
       {
         "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/exception_handler.dart",
+        "5": false
+      },
+      {
+        "1": "error_handler.dart",
+        "5": false
       }
     ],
-    "6": "test_injector.dart",
-    "7": [
-      {
-        "1": "package:angular2/angular2.template.dart",
-        "4": "i0"
-      },
-      {
-        "1": "package:angular2/platform/browser_static.template.dart",
-        "4": "i1"
-      },
-      {
-        "1": "package:angular2/src/core/application_ref.template.dart",
-        "4": "i2"
-      },
-      {
-        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
-        "4": "i3"
-      }
-    ]
+    "6": "ng_test_bootstrap.dart"
   },
   "type": {
-    "TestInjector": {
+    "ngTestBootstrap": {
       "class": "Identifier",
-      "name": "TestInjector",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_bed/test_injector.dart",
+      "name": "ngTestBootstrap",
+      "moduleUrl": "asset:angular2/lib/src/modules/testing/lib/src/ng_test_bootstrap.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_runAndLoadComponent": {
+      "class": "Identifier",
+      "name": "_runAndLoadComponent",
+      "moduleUrl": "asset:angular2/lib/src/modules/testing/lib/src/ng_test_bootstrap.dart",
       "prefix": null,
       "value": null
     }

@@ -867,6 +867,13 @@
       "prefix": null,
       "value": null
     },
+    "$NGSP": {
+      "class": "Identifier",
+      "name": "$NGSP",
+      "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
+      "prefix": null,
+      "value": null
+    },
     "$PIPE": {
       "class": "Identifier",
       "name": "$PIPE",
@@ -884,6 +891,20 @@
     "$AT": {
       "class": "Identifier",
       "name": "$AT",
+      "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ngSpace": {
+      "class": "Identifier",
+      "name": "ngSpace",
+      "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
+      "prefix": null,
+      "value": null
+    },
+    "replaceNgSpace": {
+      "class": "Identifier",
+      "name": "replaceNgSpace",
       "moduleUrl": "asset:angular2/lib/src/compiler/chars.dart",
       "prefix": null,
       "value": null

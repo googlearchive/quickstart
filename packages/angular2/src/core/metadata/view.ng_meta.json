@@ -7,13 +7,6 @@
       "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
       "prefix": null,
       "value": null
-    },
-    "ViewMetadata": {
-      "class": "Identifier",
-      "name": "ViewMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
-      "prefix": null,
-      "value": null
     }
   },
   "alias": {}

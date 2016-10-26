@@ -15,13 +15,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/runtime_compiler.dart",
-        "2": [
-          "RuntimeCompiler"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/core.dart",
         "2": [
           "ComponentRef",
@@ -30,8 +23,14 @@
           "ReflectiveInjector",
           "PlatformRef",
           "getPlatform",
-          "createPlatform",
-          "assertPlatform"
+          "createPlatform"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/runtime_compiler.dart",
+        "2": [
+          "RuntimeCompiler"
         ],
         "5": false
       },
@@ -60,22 +59,21 @@
         "1": "package:angular2/src/platform/browser_common.dart",
         "2": [
           "BROWSER_PROVIDERS",
-          "BROWSER_APP_COMMON_PROVIDERS",
-          "BROWSER_PLATFORM_MARKER"
+          "BROWSER_APP_COMMON_PROVIDERS"
         ],
         "5": false
       }
     ],
     "4": [
       {
+        "1": "package:angular2/src/core/angular_entrypoint.dart"
+      },
+      {
         "1": "package:angular2/src/core/security.dart",
         "2": [
           "SanitizationService",
           "TemplateSecurityContext"
         ]
-      },
-      {
-        "1": "package:angular2/src/core/angular_entrypoint.dart"
       },
       {
         "1": "package:angular2/src/platform/browser_common.dart",

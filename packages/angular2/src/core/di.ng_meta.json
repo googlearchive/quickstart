@@ -3,18 +3,6 @@
     "1": "",
     "4": [
       {
-        "1": "di/metadata.dart",
-        "2": [
-          "InjectMetadata",
-          "OptionalMetadata",
-          "InjectableMetadata",
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata",
-          "DependencyMetadata"
-        ]
-      },
-      {
         "1": "di/decorators.dart"
       },
       {
@@ -82,107 +70,54 @@
     "6": "di.dart",
     "7": [
       {
-        "1": "di/metadata.template.dart",
+        "1": "di/decorators.template.dart",
         "4": "i0"
       },
       {
-        "1": "di/decorators.template.dart",
+        "1": "di/injector.template.dart",
         "4": "i1"
       },
       {
-        "1": "di/injector.template.dart",
+        "1": "di/reflective_injector.template.dart",
         "4": "i2"
       },
       {
-        "1": "di/reflective_injector.template.dart",
+        "1": "di/provider.template.dart",
         "4": "i3"
       },
       {
-        "1": "di/provider.template.dart",
+        "1": "di/reflective_provider.template.dart",
         "4": "i4"
       },
       {
-        "1": "di/reflective_provider.template.dart",
+        "1": "di/reflective_key.template.dart",
         "4": "i5"
       },
       {
-        "1": "di/reflective_key.template.dart",
+        "1": "di/reflective_exceptions.template.dart",
         "4": "i6"
       },
       {
-        "1": "di/reflective_exceptions.template.dart",
+        "1": "di/opaque_token.template.dart",
         "4": "i7"
       },
       {
-        "1": "di/opaque_token.template.dart",
-        "4": "i8"
-      },
-      {
         "1": "di/map_injector.template.dart",
-        "4": "i9"
+        "4": "i8"
       }
     ]
   },
   "type": {
-    "InjectMetadata": {
-      "class": "Identifier",
-      "name": "InjectMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "OptionalMetadata": {
-      "class": "Identifier",
-      "name": "OptionalMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
     "DependencyMetadata": {
       "class": "Identifier",
       "name": "DependencyMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "InjectableMetadata": {
-      "class": "Identifier",
-      "name": "InjectableMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "SelfMetadata": {
-      "class": "Identifier",
-      "name": "SelfMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "SkipSelfMetadata": {
-      "class": "Identifier",
-      "name": "SkipSelfMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "HostMetadata": {
-      "class": "Identifier",
-      "name": "HostMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
+      "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null
     },
     "Inject": {
       "class": "Identifier",
       "name": "Inject",
-      "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Optional": {
-      "class": "Identifier",
-      "name": "Optional",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null
@@ -194,6 +129,13 @@
       "prefix": null,
       "value": null
     },
+    "Optional": {
+      "class": "Identifier",
+      "name": "Optional",
+      "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
+      "prefix": null,
+      "value": null
+    },
     "Self": {
       "class": "Identifier",
       "name": "Self",
@@ -201,16 +143,16 @@
       "prefix": null,
       "value": null
     },
-    "Host": {
+    "SkipSelf": {
       "class": "Identifier",
-      "name": "Host",
+      "name": "SkipSelf",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null
     },
-    "SkipSelf": {
+    "Host": {
       "class": "Identifier",
-      "name": "SkipSelf",
+      "name": "Host",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null

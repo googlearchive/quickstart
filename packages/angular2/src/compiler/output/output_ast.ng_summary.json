@@ -27,6 +27,55 @@
       "prefix": null,
       "value": null
     },
+    "DYNAMIC_TYPE": {
+      "class": "Identifier",
+      "name": "DYNAMIC_TYPE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "BOOL_TYPE": {
+      "class": "Identifier",
+      "name": "BOOL_TYPE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "INT_TYPE": {
+      "class": "Identifier",
+      "name": "INT_TYPE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DOUBLE_TYPE": {
+      "class": "Identifier",
+      "name": "DOUBLE_TYPE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NUMBER_TYPE": {
+      "class": "Identifier",
+      "name": "NUMBER_TYPE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "STRING_TYPE": {
+      "class": "Identifier",
+      "name": "STRING_TYPE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "FUNCTION_TYPE": {
+      "class": "Identifier",
+      "name": "FUNCTION_TYPE",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_ast.dart",
+      "prefix": null,
+      "value": null
+    },
     "BinaryOperator": {
       "class": "Identifier",
       "name": "BinaryOperator",

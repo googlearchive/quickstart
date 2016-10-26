@@ -11,7 +11,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.dart",
+        "1": "package:angular2/src/core/zone.dart",
         "5": false
       }
     ],
@@ -29,30 +29,50 @@
             "1": "NgZone",
             "4": "_ngZone"
           }
+        ],
+        "6": [
+          "NgTestStabilizer"
         ]
       }
     ],
-    "6": "ng_dom_stabilizer.dart"
+    "6": "ng_test_stabilizer.dart",
+    "7": [
+      {
+        "1": "package:angular2/di.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/core/zone.template.dart",
+        "4": "i1"
+      }
+    ]
   },
   "type": {
-    "NgDomStabilizer": {
+    "NgTestStabilizer": {
       "class": "Identifier",
-      "name": "NgDomStabilizer",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_bed/ng_dom_stabilizer.dart",
+      "name": "NgTestStabilizer",
+      "moduleUrl": "asset:angular2/lib/src/modules/testing/lib/src/ng_test_stabilizer.dart",
       "prefix": null,
       "value": null
     },
-    "_CompoundStabilizer": {
+    "WillNeverStabilizeError": {
       "class": "Identifier",
-      "name": "_CompoundStabilizer",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_bed/ng_dom_stabilizer.dart",
+      "name": "WillNeverStabilizeError",
+      "moduleUrl": "asset:angular2/lib/src/modules/testing/lib/src/ng_test_stabilizer.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_DelegatingNgTestStabilizer": {
+      "class": "Identifier",
+      "name": "_DelegatingNgTestStabilizer",
+      "moduleUrl": "asset:angular2/lib/src/modules/testing/lib/src/ng_test_stabilizer.dart",
       "prefix": null,
       "value": null
     },
     "NgZoneStabilizer": {
       "class": "Type",
       "name": "NgZoneStabilizer",
-      "moduleUrl": "asset:angular2/lib/src/testing/test_bed/ng_dom_stabilizer.dart",
+      "moduleUrl": "asset:angular2/lib/src/modules/testing/lib/src/ng_test_stabilizer.dart",
       "prefix": null,
       "isHost": false,
       "value": null,
@@ -63,7 +83,7 @@
             "identifier": {
               "class": "Identifier",
               "name": "NgZone",
-              "moduleUrl": null,
+              "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
               "prefix": null,
               "value": null
             },
@@ -80,6 +100,13 @@
           "isValue": false
         }
       ]
+    },
+    "RegisterStabilizer": {
+      "class": "Identifier",
+      "name": "RegisterStabilizer",
+      "moduleUrl": "asset:angular2/lib/src/modules/testing/lib/src/ng_test_stabilizer.dart",
+      "prefix": null,
+      "value": null
     }
   },
   "alias": {}

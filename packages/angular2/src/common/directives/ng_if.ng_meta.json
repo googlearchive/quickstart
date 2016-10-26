@@ -95,10 +95,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngIf": "ngIf"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},

@@ -15,7 +15,6 @@
         "1": "src/core/application_ref.dart",
         "2": [
           "createPlatform",
-          "assertPlatform",
           "disposePlatform",
           "getPlatform",
           "coreLoadAndBootstrap",

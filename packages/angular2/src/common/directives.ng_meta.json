@@ -1538,11 +1538,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "rawClass": "ngClass",
         "initialClasses": "class"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -1660,12 +1661,13 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngForTrackBy": "ngForTrackBy",
         "ngForOf": "ngForOf",
         "ngForTemplate": "ngForTemplate"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -1745,10 +1747,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngIf": "ngIf"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -1849,8 +1852,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -1899,9 +1903,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngPlural": "ngPlural"
+      },
+      "inputTypes": {
+        "ngPlural": " num"
       },
       "outputs": {},
       "hostListeners": {},
@@ -2058,10 +2065,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "rawStyle": "ngStyle"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -2103,10 +2111,11 @@
         "value": null,
         "diDeps": []
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngSwitch": "ngSwitch"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -2199,10 +2208,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngSwitchWhen": "ngSwitchWhen"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -2295,8 +2305,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -2345,9 +2356,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngTemplateOutlet": "ngTemplateOutlet"
+      },
+      "inputTypes": {
+        "ngTemplateOutlet": " TemplateRef"
       },
       "outputs": {},
       "hostListeners": {},

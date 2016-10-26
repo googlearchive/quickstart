@@ -135,13 +135,6 @@
       "prefix": null,
       "value": null
     },
-    "_isComponentFactory": {
-      "class": "Identifier",
-      "name": "_isComponentFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
-      "prefix": null,
-      "value": null
-    },
     "ReflectorComponentResolver": {
       "class": "Type",
       "name": "ReflectorComponentResolver",

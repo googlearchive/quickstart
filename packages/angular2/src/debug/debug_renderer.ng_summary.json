@@ -3,19 +3,6 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/src/debug/debug_node.dart",
-        "2": [
-          "DebugNode",
-          "DebugElement",
-          "EventListener",
-          "getDebugNode",
-          "indexDebugNode",
-          "inspectNativeElement",
-          "removeDebugNodeFromIndex"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Inject",
@@ -34,9 +21,22 @@
         "5": false
       },
       {
-        "1": "../platform/dom/dom_tokens.dart",
+        "1": "package:angular2/src/debug/debug_node.dart",
         "2": [
-          "DOCUMENT"
+          "DebugNode",
+          "DebugElement",
+          "EventListener",
+          "getDebugNode",
+          "indexDebugNode",
+          "inspectNativeElement",
+          "removeDebugNodeFromIndex"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
         ],
         "5": false
       },
@@ -49,20 +49,16 @@
         "5": false
       },
       {
-        "1": "../platform/dom/events/event_manager.dart",
+        "1": "../platform/dom/dom_tokens.dart",
         "2": [
-          "EventManager"
+          "DOCUMENT"
         ],
         "5": false
       },
       {
-        "1": "../platform/dom/shared_styles_host.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "1": "../platform/dom/events/event_manager.dart",
         "2": [
-          "DOM"
+          "EventManager"
         ],
         "5": false
       }

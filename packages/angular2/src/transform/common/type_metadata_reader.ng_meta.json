@@ -109,6 +109,13 @@
     ]
   },
   "type": {
+    "_componentStateClassName": {
+      "class": "Identifier",
+      "name": "_componentStateClassName",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
+      "prefix": null,
+      "value": null
+    },
     "TypeMetadataReader": {
       "class": "Identifier",
       "name": "TypeMetadataReader",
@@ -168,6 +175,13 @@
     "_LifecycleHookVisitor": {
       "class": "Identifier",
       "name": "_LifecycleHookVisitor",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ComponentMixinVisitor": {
+      "class": "Identifier",
+      "name": "_ComponentMixinVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
       "value": null

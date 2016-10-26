@@ -10,14 +10,6 @@
         "5": false
       },
       {
-        "1": "../metadata/di.dart",
-        "2": [
-          "InjectorModuleMetadata",
-          "ProviderPropertyMetadata"
-        ],
-        "5": false
-      },
-      {
         "1": "../reflection/reflection.dart",
         "2": [
           "NoReflectionCapabilitiesError"
@@ -25,15 +17,11 @@
         "5": false
       },
       {
-        "1": "metadata.dart",
-        "2": [
-          "InjectMetadata",
-          "OptionalMetadata",
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata",
-          "DependencyMetadata"
-        ],
+        "1": "../metadata.dart",
+        "5": false
+      },
+      {
+        "1": "decorators.dart",
         "5": false
       },
       {
@@ -66,15 +54,15 @@
         "4": "i0"
       },
       {
-        "1": "../metadata/di.template.dart",
+        "1": "../reflection/reflection.template.dart",
         "4": "i1"
       },
       {
-        "1": "../reflection/reflection.template.dart",
+        "1": "../metadata.template.dart",
         "4": "i2"
       },
       {
-        "1": "metadata.template.dart",
+        "1": "decorators.template.dart",
         "4": "i3"
       },
       {

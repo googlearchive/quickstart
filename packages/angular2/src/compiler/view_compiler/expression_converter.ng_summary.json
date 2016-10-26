@@ -10,6 +10,10 @@
         "5": false
       },
       {
+        "1": "../chars.dart",
+        "5": false
+      },
+      {
         "1": "../expression_parser/ast.dart",
         "4": "compiler_ast",
         "5": false

@@ -19,12 +19,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/di/metadata.dart",
-        "2": [
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata"
-        ],
+        "1": "package:angular2/src/core/di/decorators.dart",
         "5": false
       },
       {
@@ -44,33 +39,19 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/di.dart",
-        "4": "dimd",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/di.dart",
+        "1": "package:angular2/src/core/metadata.dart",
         "2": [
-          "AttributeMetadata"
+          "View",
+          "Attribute",
+          "Query",
+          "Component"
         ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/directives.dart",
-        "4": "md",
         "5": false
       },
       {
         "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "2": [
           "LIFECYCLE_HOOKS_VALUES"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/metadata/view.dart",
-        "2": [
-          "ViewMetadata"
         ],
         "5": false
       },
@@ -109,6 +90,14 @@
         "5": false
       },
       {
+        "1": "compiler_utils.dart",
+        "2": [
+          "MODULE_SUFFIX",
+          "sanitizeIdentifier"
+        ],
+        "5": false
+      },
+      {
         "1": "directive_lifecycle_reflector.dart",
         "2": [
           "hasLifecycleHook"
@@ -126,14 +115,6 @@
         "1": "pipe_resolver.dart",
         "2": [
           "PipeResolver"
-        ],
-        "5": false
-      },
-      {
-        "1": "compiler_utils.dart",
-        "2": [
-          "MODULE_SUFFIX",
-          "sanitizeIdentifier"
         ],
         "5": false
       },
@@ -199,7 +180,7 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di/metadata.template.dart",
+        "1": "package:angular2/src/core/di/decorators.template.dart",
         "4": "i2"
       },
       {
@@ -211,60 +192,52 @@
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/metadata/di.template.dart",
+        "1": "package:angular2/src/core/metadata.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/metadata/directives.template.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/core/metadata/lifecycle_hooks.template.dart",
+        "1": "package:angular2/src/core/platform_directives_and_pipes.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.template.dart",
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/core/platform_directives_and_pipes.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i9"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i11"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "compiler_utils.template.dart",
         "4": "i12"
       },
       {
-        "1": "compile_metadata.template.dart",
+        "1": "directive_lifecycle_reflector.template.dart",
         "4": "i13"
       },
       {
-        "1": "directive_lifecycle_reflector.template.dart",
+        "1": "directive_resolver.template.dart",
         "4": "i14"
       },
       {
-        "1": "directive_resolver.template.dart",
+        "1": "pipe_resolver.template.dart",
         "4": "i15"
       },
       {
-        "1": "pipe_resolver.template.dart",
-        "4": "i16"
-      },
-      {
-        "1": "compiler_utils.template.dart",
-        "4": "i17"
-      },
-      {
         "1": "view_resolver.template.dart",
-        "4": "i18"
+        "4": "i16"
       }
     ]
   },

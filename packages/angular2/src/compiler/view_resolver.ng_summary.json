@@ -10,16 +10,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/directives.dart",
+        "1": "package:angular2/src/core/metadata.dart",
         "2": [
-          "ComponentMetadata"
+          "Component"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/metadata/view.dart",
+        "1": "package:angular2/src/core/metadata.dart",
         "2": [
-          "ViewMetadata"
+          "View"
         ],
         "5": false
       },

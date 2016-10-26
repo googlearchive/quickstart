@@ -10,6 +10,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/view_type.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/render/api.dart",
         "2": [
           "RenderDebugInfo"
@@ -18,10 +22,6 @@
       },
       {
         "1": "package:angular2/src/debug/debug_app_view.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/view_type.dart",
         "5": false
       }
     ],
@@ -32,15 +32,15 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/render/api.template.dart",
+        "1": "package:angular2/src/core/linker/view_type.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/debug/debug_app_view.template.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/linker/view_type.template.dart",
+        "1": "package:angular2/src/debug/debug_app_view.template.dart",
         "4": "i3"
       }
     ]

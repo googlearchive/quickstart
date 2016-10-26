@@ -23,6 +23,31 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "2": [
+          "AppViewUtils",
+          "interpolate",
+          "interpolate0",
+          "interpolate1",
+          "interpolate2",
+          "checkBinding",
+          "castByValue",
+          "EMPTY_ARRAY",
+          "EMPTY_MAP",
+          "pureProxy1",
+          "pureProxy2",
+          "pureProxy3",
+          "pureProxy4",
+          "pureProxy5",
+          "pureProxy6",
+          "pureProxy7",
+          "pureProxy8",
+          "pureProxy9",
+          "pureProxy10"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/linker/element_ref.dart",
         "2": [
           "ElementRef"
@@ -41,29 +66,6 @@
         "1": "package:angular2/src/core/linker/view_type.dart",
         "2": [
           "ViewType"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/app_view_utils.dart",
-        "2": [
-          "AppViewUtils",
-          "interpolate",
-          "interpolate0",
-          "checkBinding",
-          "castByValue",
-          "EMPTY_ARRAY",
-          "EMPTY_MAP",
-          "pureProxy1",
-          "pureProxy2",
-          "pureProxy3",
-          "pureProxy4",
-          "pureProxy5",
-          "pureProxy6",
-          "pureProxy7",
-          "pureProxy8",
-          "pureProxy9",
-          "pureProxy10"
         ],
         "5": false
       },
@@ -109,19 +111,19 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/linker/element_ref.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/linker/injector_factory.template.dart",
+        "1": "package:angular2/src/core/linker/element_ref.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/linker/view_type.template.dart",
+        "1": "package:angular2/src/core/linker/injector_factory.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
+        "1": "package:angular2/src/core/linker/view_type.template.dart",
         "4": "i5"
       },
       {

@@ -6,8 +6,8 @@
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Provider",
-          "SkipSelfMetadata",
-          "OptionalMetadata"
+          "SkipSelf",
+          "Optional"
         ],
         "5": false
       },

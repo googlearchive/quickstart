@@ -36,16 +36,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/render/api.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "2": [
-          "RootRenderer"
+          "AppViewUtils"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "1": "package:angular2/src/core/render/api.dart",
         "2": [
-          "AppViewUtils"
+          "RootRenderer"
         ],
         "5": false
       },
@@ -142,11 +142,11 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/render/api.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
+        "1": "package:angular2/src/core/render/api.template.dart",
         "4": "i4"
       },
       {
@@ -339,37 +339,6 @@
             "class": "Type",
             "name": "TestabilityRegistry",
             "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "Console",
-              "moduleUrl": "asset:angular2/lib/src/core/console.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "Console",
-            "moduleUrl": "asset:angular2/lib/src/core/console.dart",
             "prefix": null,
             "isHost": false,
             "value": null,
@@ -5606,11 +5575,13 @@
           "token": {
             "value": null,
             "identifier": {
-              "class": "Identifier",
-              "name": "EVENT_MANAGER_PLUGINS",
-              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+              "class": "Type",
+              "name": "DomEventsPlugin",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/dom_events.dart",
               "prefix": null,
-              "value": null
+              "isHost": false,
+              "value": null,
+              "diDeps": []
             },
             "identifierIsInstance": false
           },
@@ -5627,7 +5598,7 @@
           "useValue": null,
           "useFactory": null,
           "useProperty": null,
-          "multi": true,
+          "multi": false,
           "deps": null
         },
         {
@@ -5635,11 +5606,13 @@
           "token": {
             "value": null,
             "identifier": {
-              "class": "Identifier",
-              "name": "EVENT_MANAGER_PLUGINS",
-              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+              "class": "Type",
+              "name": "KeyEventsPlugin",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/key_events.dart",
               "prefix": null,
-              "value": null
+              "isHost": false,
+              "value": null,
+              "diDeps": []
             },
             "identifierIsInstance": false
           },
@@ -5656,7 +5629,7 @@
           "useValue": null,
           "useFactory": null,
           "useProperty": null,
-          "multi": true,
+          "multi": false,
           "deps": null
         },
         {
@@ -5664,11 +5637,36 @@
           "token": {
             "value": null,
             "identifier": {
-              "class": "Identifier",
-              "name": "EVENT_MANAGER_PLUGINS",
-              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+              "class": "Type",
+              "name": "HammerGesturesPlugin",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
               "prefix": null,
-              "value": null
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "HAMMER_GESTURE_CONFIG",
+                      "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "query": null,
+                  "viewQuery": null,
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": false,
+                  "isValue": false
+                }
+              ]
             },
             "identifierIsInstance": false
           },
@@ -5708,7 +5706,102 @@
           "useValue": null,
           "useFactory": null,
           "useProperty": null,
-          "multi": true,
+          "multi": false,
+          "deps": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EVENT_MANAGER_PLUGINS",
+              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Factory",
+            "name": "createEventPlugins",
+            "prefix": null,
+            "moduleUrl": "asset:angular2/lib/src/platform/browser_common.dart",
+            "value": null,
+            "diDeps": [
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "DomEventsPlugin",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/events/dom_events.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "KeyEventsPlugin",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/events/key_events.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              },
+              {
+                "token": {
+                  "value": null,
+                  "identifier": {
+                    "class": "Identifier",
+                    "name": "HammerGesturesPlugin",
+                    "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
+                    "prefix": null,
+                    "value": null
+                  },
+                  "identifierIsInstance": false
+                },
+                "query": null,
+                "viewQuery": null,
+                "value": null,
+                "isAttribute": false,
+                "isSelf": false,
+                "isHost": false,
+                "isSkipSelf": false,
+                "isOptional": false,
+                "isValue": false
+              }
+            ]
+          },
+          "useProperty": null,
+          "multi": false,
           "deps": null
         },
         {

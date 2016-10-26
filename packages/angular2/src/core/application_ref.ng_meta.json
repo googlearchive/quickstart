@@ -11,10 +11,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/console.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di.dart",
         "5": false
       },
@@ -124,48 +120,44 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/console.template.dart",
+        "1": "package:angular2/src/core/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
+        "1": "package:angular2/src/core/linker/component_factory.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/linker/component_factory.template.dart",
+        "1": "package:angular2/src/core/linker/component_resolver.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/linker/component_resolver.template.dart",
+        "1": "package:angular2/src/core/testability/testability.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/core/testability/testability.template.dart",
+        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "application_tokens.template.dart",
         "4": "i9"
       },
       {
-        "1": "application_tokens.template.dart",
-        "4": "i10"
-      },
-      {
         "1": "profile/profile.template.dart",
-        "4": "i11"
+        "4": "i10"
       }
     ]
   },
@@ -552,13 +544,6 @@
     "createPlatform": {
       "class": "Identifier",
       "name": "createPlatform",
-      "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
-      "prefix": null,
-      "value": null
-    },
-    "assertPlatform": {
-      "class": "Identifier",
-      "name": "assertPlatform",
       "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
       "prefix": null,
       "value": null

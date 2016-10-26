@@ -11,20 +11,19 @@
         "5": false
       },
       {
-        "1": "metadata/directives.dart",
-        "5": false
-      },
-      {
         "1": "metadata/view.dart",
         "5": false
       }
     ],
     "4": [
       {
-        "1": "metadata/di.dart"
+        "1": "./metadata/view.dart",
+        "3": [
+          "VIEW_ENCAPSULATION_VALUES"
+        ]
       },
       {
-        "1": "metadata/directives.dart"
+        "1": "metadata/di.dart"
       },
       {
         "1": "metadata/lifecycle_hooks.dart",
@@ -37,12 +36,6 @@
           "OnDestroy",
           "OnInit",
           "DoCheck"
-        ]
-      },
-      {
-        "1": "./metadata/view.dart",
-        "3": [
-          "VIEW_ENCAPSULATION_VALUES"
         ]
       }
     ],

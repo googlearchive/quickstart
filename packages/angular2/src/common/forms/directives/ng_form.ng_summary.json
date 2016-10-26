@@ -209,8 +209,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {
         "ngSubmit": "ngSubmit",
         "ngBeforeSubmit": "ngBeforeSubmit"

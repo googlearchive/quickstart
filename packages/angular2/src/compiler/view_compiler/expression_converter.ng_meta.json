@@ -10,6 +10,10 @@
         "5": false
       },
       {
+        "1": "../chars.dart",
+        "5": false
+      },
+      {
         "1": "../expression_parser/ast.dart",
         "4": "compiler_ast",
         "5": false
@@ -34,16 +38,20 @@
         "4": "i0"
       },
       {
-        "1": "../expression_parser/ast.template.dart",
+        "1": "../chars.template.dart",
         "4": "i1"
       },
       {
-        "1": "../identifiers.template.dart",
+        "1": "../expression_parser/ast.template.dart",
         "4": "i2"
       },
       {
-        "1": "../output/output_ast.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i3"
+      },
+      {
+        "1": "../output/output_ast.template.dart",
+        "4": "i4"
       }
     ]
   },

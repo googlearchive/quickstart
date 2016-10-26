@@ -19,8 +19,8 @@
       {
         "1": "../core/metadata.dart",
         "2": [
-          "DirectiveMetadata",
-          "ComponentMetadata"
+          "Directive",
+          "Component"
         ],
         "5": false
       }

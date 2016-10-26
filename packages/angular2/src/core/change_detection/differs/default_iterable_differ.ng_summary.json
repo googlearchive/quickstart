@@ -37,6 +37,13 @@
     "6": "default_iterable_differ.dart"
   },
   "type": {
+    "DefaultIterableCallback": {
+      "class": "Identifier",
+      "name": "DefaultIterableCallback",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "prefix": null,
+      "value": null
+    },
     "DefaultIterableDifferFactory": {
       "class": "Identifier",
       "name": "DefaultIterableDifferFactory",
@@ -68,6 +75,13 @@
     "_DuplicateMap": {
       "class": "Identifier",
       "name": "_DuplicateMap",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_getPreviousIndex": {
+      "class": "Identifier",
+      "name": "_getPreviousIndex",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_iterable_differ.dart",
       "prefix": null,
       "value": null

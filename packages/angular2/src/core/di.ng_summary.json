@@ -3,18 +3,6 @@
     "1": "",
     "4": [
       {
-        "1": "di/metadata.dart",
-        "2": [
-          "InjectMetadata",
-          "OptionalMetadata",
-          "InjectableMetadata",
-          "SelfMetadata",
-          "HostMetadata",
-          "SkipSelfMetadata",
-          "DependencyMetadata"
-        ]
-      },
-      {
         "1": "di/decorators.dart"
       },
       {

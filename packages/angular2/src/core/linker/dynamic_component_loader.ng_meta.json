@@ -19,6 +19,13 @@
         "5": false
       },
       {
+        "1": "app_view_utils.dart",
+        "2": [
+          "OnDestroyCallback"
+        ],
+        "5": false
+      },
+      {
         "1": "component_factory.dart",
         "2": [
           "ComponentRef"
@@ -36,13 +43,6 @@
         "1": "view_container_ref.dart",
         "2": [
           "ViewContainerRef"
-        ],
-        "5": false
-      },
-      {
-        "1": "app_view_utils.dart",
-        "2": [
-          "OnDestroyCallback"
         ],
         "5": false
       }
@@ -71,19 +71,19 @@
         "4": "i0"
       },
       {
-        "1": "component_factory.template.dart",
+        "1": "app_view_utils.template.dart",
         "4": "i1"
       },
       {
-        "1": "component_resolver.template.dart",
+        "1": "component_factory.template.dart",
         "4": "i2"
       },
       {
-        "1": "view_container_ref.template.dart",
+        "1": "component_resolver.template.dart",
         "4": "i3"
       },
       {
-        "1": "app_view_utils.template.dart",
+        "1": "view_container_ref.template.dart",
         "4": "i4"
       }
     ]

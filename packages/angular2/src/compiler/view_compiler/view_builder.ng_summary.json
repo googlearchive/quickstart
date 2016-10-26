@@ -41,15 +41,15 @@
         "5": false
       },
       {
+        "1": "../output/output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
         "1": "../style_compiler.dart",
         "2": [
           "StylesCompileResult"
         ],
-        "5": false
-      },
-      {
-        "1": "../output/output_ast.dart",
-        "4": "o",
         "5": false
       },
       {
@@ -99,6 +99,10 @@
           "ChangeDetectionStrategyEnum",
           "ViewProperties"
         ],
+        "5": false
+      },
+      {
+        "1": "property_binder.dart",
         "5": false
       },
       {
@@ -194,6 +198,13 @@
       "prefix": null,
       "value": null
     },
+    "createInputUpdateFunction": {
+      "class": "Identifier",
+      "name": "createInputUpdateFunction",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
+      "prefix": null,
+      "value": null
+    },
     "createViewFactory": {
       "class": "Identifier",
       "name": "createViewFactory",
@@ -239,6 +250,27 @@
     "detectHtmlElementFromTagName": {
       "class": "Identifier",
       "name": "detectHtmlElementFromTagName",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "writeInputUpdaters": {
+      "class": "Identifier",
+      "name": "writeInputUpdaters",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "writeInputUpdater": {
+      "class": "Identifier",
+      "name": "writeInputUpdater",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "buildUpdaterFunctionName": {
+      "class": "Identifier",
+      "name": "buildUpdaterFunctionName",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_builder.dart",
       "prefix": null,
       "value": null

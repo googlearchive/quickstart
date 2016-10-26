@@ -25,13 +25,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/console.dart",
-        "2": [
-          "Console"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "2": [
           "MAX_INTERPOLATION_VALUES"
@@ -50,6 +43,18 @@
         "2": [
           "jsSplit"
         ],
+        "5": false
+      },
+      {
+        "1": "package:logging/logging.dart",
+        "5": false
+      },
+      {
+        "1": "../core/security.dart",
+        "5": false
+      },
+      {
+        "1": "chars.dart",
         "5": false
       },
       {
@@ -167,10 +172,6 @@
           "PreparsedElementType"
         ],
         "5": false
-      },
-      {
-        "1": "../core/security.dart",
-        "5": false
       }
     ],
     "5": [
@@ -194,10 +195,6 @@
           {
             "1": "HtmlParser",
             "4": "_htmlParser"
-          },
-          {
-            "1": "Console",
-            "4": "_console"
           }
         ]
       }
@@ -217,71 +214,71 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/console.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../core/security.template.dart",
         "4": "i6"
       },
       {
-        "1": "compile_metadata.template.dart",
+        "1": "chars.template.dart",
         "4": "i7"
       },
       {
-        "1": "expression_parser/ast.template.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i8"
       },
       {
-        "1": "expression_parser/parser.template.dart",
+        "1": "expression_parser/ast.template.dart",
         "4": "i9"
       },
       {
-        "1": "html_ast.template.dart",
+        "1": "expression_parser/parser.template.dart",
         "4": "i10"
       },
       {
-        "1": "html_parser.template.dart",
+        "1": "html_ast.template.dart",
         "4": "i11"
       },
       {
-        "1": "html_tags.template.dart",
+        "1": "html_parser.template.dart",
         "4": "i12"
       },
       {
-        "1": "identifiers.template.dart",
+        "1": "html_tags.template.dart",
         "4": "i13"
       },
       {
-        "1": "parse_util.template.dart",
+        "1": "identifiers.template.dart",
         "4": "i14"
       },
       {
-        "1": "provider_parser.template.dart",
+        "1": "parse_util.template.dart",
         "4": "i15"
       },
       {
-        "1": "style_url_resolver.template.dart",
+        "1": "provider_parser.template.dart",
         "4": "i16"
       },
       {
-        "1": "template_ast.template.dart",
+        "1": "style_url_resolver.template.dart",
         "4": "i17"
       },
       {
-        "1": "template_preparser.template.dart",
+        "1": "template_ast.template.dart",
         "4": "i18"
       },
       {
-        "1": "../core/security.template.dart",
+        "1": "template_preparser.template.dart",
         "4": "i19"
       }
     ]
@@ -409,28 +406,6 @@
               "class": "Identifier",
               "name": "HtmlParser",
               "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "Console",
-              "moduleUrl": "asset:angular2/lib/src/core/console.dart",
               "prefix": null,
               "value": null
             },

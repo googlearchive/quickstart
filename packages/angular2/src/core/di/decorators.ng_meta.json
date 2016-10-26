@@ -1,36 +1,16 @@
 {
-  "ngDeps": {
-    "1": "",
-    "3": [
-      {
-        "1": "metadata.dart",
-        "5": false
-      }
-    ],
-    "4": [
-      {
-        "1": "metadata.dart"
-      }
-    ],
-    "6": "decorators.dart",
-    "7": [
-      {
-        "1": "metadata.template.dart",
-        "4": "i0"
-      }
-    ]
-  },
+  "ngDeps": null,
   "type": {
-    "Inject": {
+    "DependencyMetadata": {
       "class": "Identifier",
-      "name": "Inject",
+      "name": "DependencyMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null
     },
-    "Optional": {
+    "Inject": {
       "class": "Identifier",
-      "name": "Optional",
+      "name": "Inject",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null
@@ -42,16 +22,16 @@
       "prefix": null,
       "value": null
     },
-    "Self": {
+    "Optional": {
       "class": "Identifier",
-      "name": "Self",
+      "name": "Optional",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null
     },
-    "Host": {
+    "Self": {
       "class": "Identifier",
-      "name": "Host",
+      "name": "Self",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null
@@ -63,52 +43,10 @@
       "prefix": null,
       "value": null
     },
-    "InjectMetadata": {
+    "Host": {
       "class": "Identifier",
-      "name": "InjectMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "OptionalMetadata": {
-      "class": "Identifier",
-      "name": "OptionalMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DependencyMetadata": {
-      "class": "Identifier",
-      "name": "DependencyMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "InjectableMetadata": {
-      "class": "Identifier",
-      "name": "InjectableMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "SelfMetadata": {
-      "class": "Identifier",
-      "name": "SelfMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "SkipSelfMetadata": {
-      "class": "Identifier",
-      "name": "SkipSelfMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
-    "HostMetadata": {
-      "class": "Identifier",
-      "name": "HostMetadata",
-      "moduleUrl": "asset:angular2/lib/src/core/di/metadata.dart",
+      "name": "Host",
+      "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null
     }

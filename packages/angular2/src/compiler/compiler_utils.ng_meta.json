@@ -26,20 +26,6 @@
       "prefix": null,
       "value": null
     },
-    "camelCaseToDashCase": {
-      "class": "Identifier",
-      "name": "camelCaseToDashCase",
-      "moduleUrl": "asset:angular2/lib/src/compiler/compiler_utils.dart",
-      "prefix": null,
-      "value": null
-    },
-    "dashCaseToCamelCase": {
-      "class": "Identifier",
-      "name": "dashCaseToCamelCase",
-      "moduleUrl": "asset:angular2/lib/src/compiler/compiler_utils.dart",
-      "prefix": null,
-      "value": null
-    },
     "splitAtColon": {
       "class": "Identifier",
       "name": "splitAtColon",

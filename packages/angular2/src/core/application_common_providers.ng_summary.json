@@ -34,6 +34,13 @@
         "5": false
       },
       {
+        "1": "linker/app_view_utils.dart",
+        "2": [
+          "AppViewUtils"
+        ],
+        "5": false
+      },
+      {
         "1": "linker/component_resolver.dart",
         "2": [
           "ComponentResolver"
@@ -58,13 +65,6 @@
         "1": "linker/dynamic_component_loader.dart",
         "2": [
           "DynamicComponentLoaderImpl"
-        ],
-        "5": false
-      },
-      {
-        "1": "linker/app_view_utils.dart",
-        "2": [
-          "AppViewUtils"
         ],
         "5": false
       }

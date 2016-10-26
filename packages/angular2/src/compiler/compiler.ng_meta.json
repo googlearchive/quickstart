@@ -498,28 +498,6 @@
                   "isSkipSelf": false,
                   "isOptional": false,
                   "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "Console",
-                      "moduleUrl": "asset:angular2/lib/src/core/console.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "query": null,
-                  "viewQuery": null,
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": false,
-                  "isValue": false
                 }
               ]
             },
@@ -584,28 +562,6 @@
                     "class": "Identifier",
                     "name": "HtmlParser",
                     "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
-                    "prefix": null,
-                    "value": null
-                  },
-                  "identifierIsInstance": false
-                },
-                "query": null,
-                "viewQuery": null,
-                "value": null,
-                "isAttribute": false,
-                "isSelf": false,
-                "isHost": false,
-                "isSkipSelf": false,
-                "isOptional": false,
-                "isValue": false
-              },
-              {
-                "token": {
-                  "value": null,
-                  "identifier": {
-                    "class": "Identifier",
-                    "name": "Console",
-                    "moduleUrl": "asset:angular2/lib/src/core/console.dart",
                     "prefix": null,
                     "value": null
                   },

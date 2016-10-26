@@ -42,15 +42,15 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/options.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/ng_compiler.dart",
         "5": false
       },
       {
         "1": "package:angular2/src/transform/common/ng_meta.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/options.dart",
         "5": false
       },
       {
@@ -113,15 +113,15 @@
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/common/options.template.dart",
+        "1": "package:angular2/src/transform/common/ng_compiler.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_compiler.template.dart",
+        "1": "package:angular2/src/transform/common/ng_meta.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_meta.template.dart",
+        "1": "package:angular2/src/transform/common/options.template.dart",
         "4": "i9"
       },
       {

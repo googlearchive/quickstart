@@ -10,12 +10,7 @@
         "5": false
       },
       {
-        "1": "../profile/profile.dart",
-        "2": [
-          "wtfCreateScope",
-          "wtfLeave",
-          "WtfScopeFn"
-        ],
+        "1": "app_element.dart",
         "5": false
       },
       {
@@ -24,10 +19,6 @@
           "ComponentFactory",
           "ComponentRef"
         ],
-        "5": false
-      },
-      {
-        "1": "app_element.dart",
         "5": false
       },
       {

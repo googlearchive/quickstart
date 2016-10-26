@@ -150,8 +150,9 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {},
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
@@ -200,9 +201,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "ngPlural": "ngPlural"
+      },
+      "inputTypes": {
+        "ngPlural": " num"
       },
       "outputs": {},
       "hostListeners": {},

@@ -11,18 +11,6 @@
       },
       {
         "1": "package:angular2/src/core/metadata.dart",
-        "2": [
-          "DirectiveMetadata",
-          "ComponentMetadata",
-          "InputMetadata",
-          "OutputMetadata",
-          "HostBindingMetadata",
-          "HostListenerMetadata",
-          "ContentChildrenMetadata",
-          "ViewChildrenMetadata",
-          "ContentChildMetadata",
-          "ViewChildMetadata"
-        ],
         "5": false
       },
       {

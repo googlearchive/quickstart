@@ -15,7 +15,6 @@
           "PlatformRef",
           "getPlatform",
           "createPlatform",
-          "assertPlatform",
           "PLATFORM_INITIALIZER",
           "MapInjector"
         ],
@@ -25,13 +24,6 @@
         "1": "package:angular2/src/core/application_ref.dart",
         "2": [
           "PlatformRefImpl"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/console.dart",
-        "2": [
-          "Console"
         ],
         "5": false
       },
@@ -61,7 +53,6 @@
         "1": "package:angular2/src/platform/browser_common.dart",
         "2": [
           "BROWSER_APP_COMMON_PROVIDERS",
-          "BROWSER_PLATFORM_MARKER",
           "createInitDomAdapter"
         ],
         "5": false

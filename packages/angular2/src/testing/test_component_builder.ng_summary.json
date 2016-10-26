@@ -21,10 +21,14 @@
           "DynamicComponentLoader",
           "Injector",
           "Injectable",
-          "ViewMetadata",
+          "View",
           "ElementRef",
           "ChangeDetectorRef"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "5": false
       },
       {
@@ -33,10 +37,6 @@
           "DebugElement",
           "getDebugNode"
         ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "5": false
       },
       {

@@ -403,11 +403,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "name": "ngControl",
         "model": "ngModel"
       },
+      "inputTypes": {},
       "outputs": {
         "update": "ngModelChange"
       },

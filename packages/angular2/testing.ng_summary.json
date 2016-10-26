@@ -33,16 +33,16 @@
         ]
       },
       {
-        "1": "src/testing/fake_async.dart"
+        "1": "src/debug/debug_node.dart",
+        "2": [
+          "DebugElement"
+        ]
       },
       {
         "1": "src/testing/by.dart"
       },
       {
-        "1": "src/debug/debug_node.dart",
-        "2": [
-          "DebugElement"
-        ]
+        "1": "src/testing/fake_async.dart"
       },
       {
         "1": "src/testing/test_component_builder.dart",

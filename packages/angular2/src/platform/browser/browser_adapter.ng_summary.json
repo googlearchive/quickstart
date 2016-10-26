@@ -19,18 +19,18 @@
         "5": false
       },
       {
-        "1": "generic_browser_adapter.dart",
-        "2": [
-          "GenericBrowserDomAdapter"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/facade/browser.dart",
         "5": false
       },
       {
         "1": "package:js/js.dart",
+        "5": false
+      },
+      {
+        "1": "generic_browser_adapter.dart",
+        "2": [
+          "GenericBrowserDomAdapter"
+        ],
         "5": false
       }
     ],

@@ -31,14 +31,6 @@
       },
       {
         "1": "package:angular2/src/core/render/api.dart",
-        "2": [
-          "Renderer",
-          "RenderComponentType"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
         "5": false
       },
       {
@@ -49,7 +41,20 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
+        "5": false
+      },
+      {
         "1": "app_element.dart",
+        "5": false
+      },
+      {
+        "1": "app_view_utils.dart",
+        "2": [
+          "appViewUtils",
+          "ensureSlotCount",
+          "OnDestroyCallback"
+        ],
         "5": false
       },
       {
@@ -79,15 +84,11 @@
           "ViewType"
         ],
         "5": false
-      },
+      }
+    ],
+    "4": [
       {
-        "1": "app_view_utils.dart",
-        "2": [
-          "appViewUtils",
-          "ensureSlotCount",
-          "OnDestroyCallback"
-        ],
-        "5": false
+        "1": "package:angular2/src/core/change_detection/component_state.dart"
       }
     ],
     "6": "app_view.dart"

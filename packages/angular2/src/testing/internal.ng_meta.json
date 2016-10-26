@@ -27,6 +27,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/reflection/reflection.dart",
         "5": false
       },
@@ -35,10 +39,6 @@
         "2": [
           "NgZone"
         ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "5": false
       },
       {
@@ -59,6 +59,12 @@
     ],
     "4": [
       {
+        "1": "package:angular2/src/debug/debug_node.dart"
+      },
+      {
+        "1": "by.dart"
+      },
+      {
         "1": "fake_async.dart"
       },
       {
@@ -69,12 +75,6 @@
       },
       {
         "1": "utils.dart"
-      },
-      {
-        "1": "by.dart"
-      },
-      {
-        "1": "package:angular2/src/debug/debug_node.dart"
       }
     ],
     "6": "internal.dart",
@@ -92,15 +92,15 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflection.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
+        "1": "package:angular2/src/core/reflection/reflection.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
+        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
         "4": "i5"
       },
       {
@@ -112,23 +112,23 @@
         "4": "i7"
       },
       {
-        "1": "fake_async.template.dart",
+        "1": "package:angular2/src/debug/debug_node.template.dart",
         "4": "i8"
       },
       {
-        "1": "test_component_builder.template.dart",
+        "1": "by.template.dart",
         "4": "i9"
       },
       {
-        "1": "utils.template.dart",
+        "1": "fake_async.template.dart",
         "4": "i10"
       },
       {
-        "1": "by.template.dart",
+        "1": "test_component_builder.template.dart",
         "4": "i11"
       },
       {
-        "1": "package:angular2/src/debug/debug_node.template.dart",
+        "1": "utils.template.dart",
         "4": "i12"
       }
     ]
@@ -208,6 +208,97 @@
       "class": "Identifier",
       "name": "getTestInjector",
       "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
+      "prefix": null,
+      "value": null
+    },
+    "Predicate": {
+      "class": "Identifier",
+      "name": "Predicate",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "EventListener": {
+      "class": "Identifier",
+      "name": "EventListener",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DebugNode": {
+      "class": "Identifier",
+      "name": "DebugNode",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DebugElement": {
+      "class": "Identifier",
+      "name": "DebugElement",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "asNativeElements": {
+      "class": "Identifier",
+      "name": "asNativeElements",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_queryElementChildren": {
+      "class": "Identifier",
+      "name": "_queryElementChildren",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_queryNodeChildren": {
+      "class": "Identifier",
+      "name": "_queryNodeChildren",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getDebugNode": {
+      "class": "Identifier",
+      "name": "getDebugNode",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getAllDebugNodes": {
+      "class": "Identifier",
+      "name": "getAllDebugNodes",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "indexDebugNode": {
+      "class": "Identifier",
+      "name": "indexDebugNode",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "removeDebugNodeFromIndex": {
+      "class": "Identifier",
+      "name": "removeDebugNodeFromIndex",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "inspectNativeElement": {
+      "class": "Identifier",
+      "name": "inspectNativeElement",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
+    "By": {
+      "class": "Identifier",
+      "name": "By",
+      "moduleUrl": "asset:angular2/lib/src/testing/by.dart",
       "prefix": null,
       "value": null
     },
@@ -368,97 +459,6 @@
       "class": "Identifier",
       "name": "stringifyElement",
       "moduleUrl": "asset:angular2/lib/src/testing/utils.dart",
-      "prefix": null,
-      "value": null
-    },
-    "By": {
-      "class": "Identifier",
-      "name": "By",
-      "moduleUrl": "asset:angular2/lib/src/testing/by.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Predicate": {
-      "class": "Identifier",
-      "name": "Predicate",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "EventListener": {
-      "class": "Identifier",
-      "name": "EventListener",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DebugNode": {
-      "class": "Identifier",
-      "name": "DebugNode",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DebugElement": {
-      "class": "Identifier",
-      "name": "DebugElement",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "asNativeElements": {
-      "class": "Identifier",
-      "name": "asNativeElements",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_queryElementChildren": {
-      "class": "Identifier",
-      "name": "_queryElementChildren",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_queryNodeChildren": {
-      "class": "Identifier",
-      "name": "_queryNodeChildren",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "getDebugNode": {
-      "class": "Identifier",
-      "name": "getDebugNode",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "getAllDebugNodes": {
-      "class": "Identifier",
-      "name": "getAllDebugNodes",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "indexDebugNode": {
-      "class": "Identifier",
-      "name": "indexDebugNode",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "removeDebugNodeFromIndex": {
-      "class": "Identifier",
-      "name": "removeDebugNodeFromIndex",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "inspectNativeElement": {
-      "class": "Identifier",
-      "name": "inspectNativeElement",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
       "prefix": null,
       "value": null
     }

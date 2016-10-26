@@ -124,7 +124,8 @@
           "MinLengthValidator",
           "MaxLengthValidator",
           "PatternValidator",
-          "Validator"
+          "Validator",
+          "ValidatorFn"
         ]
       },
       {

@@ -10,7 +10,7 @@
         "5": false
       },
       {
-        "1": "metadata.dart",
+        "1": "decorators.dart",
         "5": false
       }
     ],
@@ -21,7 +21,7 @@
         "4": "i0"
       },
       {
-        "1": "metadata.template.dart",
+        "1": "decorators.template.dart",
         "4": "i1"
       }
     ]

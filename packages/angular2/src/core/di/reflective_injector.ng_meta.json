@@ -18,11 +18,7 @@
         "5": false
       },
       {
-        "1": "metadata.dart",
-        "2": [
-          "SelfMetadata",
-          "SkipSelfMetadata"
-        ],
+        "1": "decorators.dart",
         "5": false
       },
       {
@@ -72,7 +68,7 @@
         "4": "i1"
       },
       {
-        "1": "metadata.template.dart",
+        "1": "decorators.template.dart",
         "4": "i2"
       },
       {

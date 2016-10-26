@@ -126,11 +126,12 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "routeParams": "routerLink",
         "target": "target"
       },
+      "inputTypes": {},
       "outputs": {},
       "hostListeners": {
         "click": "onClick()"

@@ -10,12 +10,7 @@
         "5": false
       },
       {
-        "1": "../profile/profile.dart",
-        "2": [
-          "wtfCreateScope",
-          "wtfLeave",
-          "WtfScopeFn"
-        ],
+        "1": "app_element.dart",
         "5": false
       },
       {
@@ -24,10 +19,6 @@
           "ComponentFactory",
           "ComponentRef"
         ],
-        "5": false
-      },
-      {
-        "1": "app_element.dart",
         "5": false
       },
       {
@@ -55,7 +46,7 @@
         "4": "i0"
       },
       {
-        "1": "../profile/profile.template.dart",
+        "1": "app_element.template.dart",
         "4": "i1"
       },
       {
@@ -63,20 +54,16 @@
         "4": "i2"
       },
       {
-        "1": "app_element.template.dart",
+        "1": "element_ref.template.dart",
         "4": "i3"
       },
       {
-        "1": "element_ref.template.dart",
+        "1": "template_ref.template.dart",
         "4": "i4"
       },
       {
-        "1": "template_ref.template.dart",
-        "4": "i5"
-      },
-      {
         "1": "view_ref.template.dart",
-        "4": "i6"
+        "4": "i5"
       }
     ]
   },

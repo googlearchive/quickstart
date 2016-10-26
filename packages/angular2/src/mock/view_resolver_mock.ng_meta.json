@@ -26,7 +26,7 @@
       {
         "1": "../core/metadata.dart",
         "2": [
-          "ViewMetadata"
+          "View"
         ],
         "5": false
       }

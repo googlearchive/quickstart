@@ -25,13 +25,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/console.dart",
-        "2": [
-          "Console"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "2": [
           "MAX_INTERPOLATION_VALUES"
@@ -50,6 +43,18 @@
         "2": [
           "jsSplit"
         ],
+        "5": false
+      },
+      {
+        "1": "package:logging/logging.dart",
+        "5": false
+      },
+      {
+        "1": "../core/security.dart",
+        "5": false
+      },
+      {
+        "1": "chars.dart",
         "5": false
       },
       {
@@ -167,10 +172,6 @@
           "PreparsedElementType"
         ],
         "5": false
-      },
-      {
-        "1": "../core/security.dart",
-        "5": false
       }
     ],
     "5": [
@@ -194,10 +195,6 @@
           {
             "1": "HtmlParser",
             "4": "_htmlParser"
-          },
-          {
-            "1": "Console",
-            "4": "_console"
           }
         ]
       }
@@ -326,28 +323,6 @@
             "identifier": {
               "class": "Identifier",
               "name": "HtmlParser",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "Console",
               "moduleUrl": null,
               "prefix": null,
               "value": null

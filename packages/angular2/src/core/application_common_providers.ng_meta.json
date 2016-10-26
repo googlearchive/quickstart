@@ -34,6 +34,13 @@
         "5": false
       },
       {
+        "1": "linker/app_view_utils.dart",
+        "2": [
+          "AppViewUtils"
+        ],
+        "5": false
+      },
+      {
         "1": "linker/component_resolver.dart",
         "2": [
           "ComponentResolver"
@@ -60,13 +67,6 @@
           "DynamicComponentLoaderImpl"
         ],
         "5": false
-      },
-      {
-        "1": "linker/app_view_utils.dart",
-        "2": [
-          "AppViewUtils"
-        ],
-        "5": false
       }
     ],
     "6": "application_common_providers.dart",
@@ -88,15 +88,15 @@
         "4": "i3"
       },
       {
-        "1": "linker/component_resolver.template.dart",
+        "1": "linker/app_view_utils.template.dart",
         "4": "i4"
       },
       {
-        "1": "linker/dynamic_component_loader.template.dart",
+        "1": "linker/component_resolver.template.dart",
         "4": "i5"
       },
       {
-        "1": "linker/app_view_utils.template.dart",
+        "1": "linker/dynamic_component_loader.template.dart",
         "4": "i6"
       }
     ]

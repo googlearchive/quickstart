@@ -18,6 +18,10 @@
         "5": false
       },
       {
+        "1": "../identifiers.dart",
+        "5": false
+      },
+      {
         "1": "../output/output_ast.dart",
         "4": "o",
         "5": false
@@ -27,10 +31,6 @@
         "2": [
           "DirectiveAst"
         ],
-        "5": false
-      },
-      {
-        "1": "../identifiers.dart",
         "5": false
       },
       {
@@ -67,15 +67,15 @@
         "4": "i1"
       },
       {
-        "1": "../output/output_ast.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i2"
       },
       {
-        "1": "../template_ast.template.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i3"
       },
       {
-        "1": "../identifiers.template.dart",
+        "1": "../template_ast.template.dart",
         "4": "i4"
       },
       {

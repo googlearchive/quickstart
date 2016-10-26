@@ -233,10 +233,11 @@
           }
         ]
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "model": "ngModel"
       },
+      "inputTypes": {},
       "outputs": {
         "update": "ngModelChange"
       },

@@ -3,13 +3,6 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/src/core/console.dart",
-        "2": [
-          "Console"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Provider"
@@ -124,13 +117,6 @@
         {
           "class": "Identifier",
           "name": "TestabilityRegistry",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
-        },
-        {
-          "class": "Identifier",
-          "name": "Console",
           "moduleUrl": null,
           "prefix": null,
           "value": null
