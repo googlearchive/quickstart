@@ -21,6 +21,14 @@
         "5": false
       },
       {
+        "1": "component_factory.dart",
+        "2": [
+          "ComponentFactory",
+          "ComponentRef"
+        ],
+        "5": false
+      },
+      {
         "1": "element_ref.dart",
         "5": false
       },
@@ -32,15 +40,28 @@
         "5": false
       },
       {
+        "1": "template_ref.dart",
+        "5": false
+      },
+      {
         "1": "view_container_ref.dart",
         "5": false
       },
       {
         "1": "view_type.dart",
         "5": false
+      },
+      {
+        "1": "view_ref.dart",
+        "2": [
+          "EmbeddedViewRef",
+          "ViewRef",
+          "ViewRefImpl"
+        ],
+        "5": false
       }
     ],
-    "6": "app_element.dart",
+    "6": "view_container.dart",
     "7": [
       {
         "1": "package:angular2/src/core/di.template.dart",
@@ -55,28 +76,40 @@
         "4": "i2"
       },
       {
-        "1": "element_ref.template.dart",
+        "1": "component_factory.template.dart",
         "4": "i3"
       },
       {
-        "1": "query_list.template.dart",
+        "1": "element_ref.template.dart",
         "4": "i4"
       },
       {
-        "1": "view_container_ref.template.dart",
+        "1": "query_list.template.dart",
         "4": "i5"
       },
       {
-        "1": "view_type.template.dart",
+        "1": "template_ref.template.dart",
         "4": "i6"
+      },
+      {
+        "1": "view_container_ref.template.dart",
+        "4": "i7"
+      },
+      {
+        "1": "view_type.template.dart",
+        "4": "i8"
+      },
+      {
+        "1": "view_ref.template.dart",
+        "4": "i9"
       }
     ]
   },
   "type": {
-    "AppElement": {
+    "ViewContainer": {
       "class": "Identifier",
-      "name": "AppElement",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/app_element.dart",
+      "name": "ViewContainer",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container.dart",
       "prefix": null,
       "value": null
     }

@@ -21,6 +21,15 @@
     "5": [
       {
         "1": "NgControlStatus",
+        "4": [
+          {
+            "1": "Deprecated",
+            "2": [
+              "\"Use listeners or variable binding on the control itself instead. \" \"This adds overhead for every form control whether the class is \" \"used or not.\""
+            ],
+            "4": false
+          }
+        ],
         "5": [
           {
             "1": "NgControl",

@@ -18,7 +18,6 @@
           "PLATFORM_DIRECTIVES",
           "PLATFORM_PIPES",
           "ExceptionHandler",
-          "RootRenderer",
           "APPLICATION_COMMON_PROVIDERS",
           "PLATFORM_COMMON_PROVIDERS",
           "TestabilityRegistry"
@@ -72,13 +71,6 @@
         "1": "package:angular2/src/platform/dom/dom_adapter.dart",
         "2": [
           "DOM"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
-        "2": [
-          "DomRootRenderer"
         ],
         "5": false
       },
@@ -549,44 +541,6 @@
             "diDeps": []
           },
           "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Identifier",
-          "name": "DomRootRenderer",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "RootRenderer",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "DomRootRenderer",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
           "useValue": null,
           "useFactory": null,
           "useProperty": null,

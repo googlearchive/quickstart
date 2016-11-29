@@ -18,6 +18,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "2": [
+          "NAMESPACE_URIS"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/metadata/view.dart",
         "2": [
           "ViewEncapsulation"
@@ -111,7 +118,6 @@
           "getViewFactoryName",
           "createFlatArray",
           "createDiTokenExpression",
-          "NAMESPACE_URIS",
           "createSetAttributeParams",
           "TEMPLATE_COMMENT_TEXT"
         ],

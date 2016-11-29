@@ -10,13 +10,6 @@
         "5": false
       },
       {
-        "1": "../reflection/reflection.dart",
-        "2": [
-          "NoReflectionCapabilitiesError"
-        ],
-        "5": false
-      },
-      {
         "1": "../metadata.dart",
         "5": false
       },
@@ -54,28 +47,24 @@
         "4": "i0"
       },
       {
-        "1": "../reflection/reflection.template.dart",
+        "1": "../metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "../metadata.template.dart",
+        "1": "decorators.template.dart",
         "4": "i2"
       },
       {
-        "1": "decorators.template.dart",
+        "1": "provider.template.dart",
         "4": "i3"
       },
       {
-        "1": "provider.template.dart",
+        "1": "reflective_exceptions.template.dart",
         "4": "i4"
       },
       {
-        "1": "reflective_exceptions.template.dart",
-        "4": "i5"
-      },
-      {
         "1": "reflective_key.template.dart",
-        "4": "i6"
+        "4": "i5"
       }
     ]
   },
@@ -181,13 +170,6 @@
     "_createDependency": {
       "class": "Identifier",
       "name": "_createDependency",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
-      "prefix": null,
-      "value": null
-    },
-    "getInjectorModuleProviders": {
-      "class": "Identifier",
-      "name": "getInjectorModuleProviders",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
       "prefix": null,
       "value": null

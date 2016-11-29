@@ -19,7 +19,6 @@
           "CompileDirectiveMetadata",
           "CompilePipeMetadata",
           "createHostComponentMeta",
-          "CompileInjectorModuleMetadata",
           "CompileTypeMetadata"
         ],
         "5": false
@@ -66,13 +65,6 @@
         "1": "template_parser.dart",
         "2": [
           "TemplateParser"
-        ],
-        "5": false
-      },
-      {
-        "1": "view_compiler/injector_compiler.dart",
-        "2": [
-          "InjectorCompiler"
         ],
         "5": false
       },

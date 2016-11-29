@@ -30,13 +30,6 @@
           "reflector"
         ],
         "5": false
-      },
-      {
-        "1": "reflection/reflector_reader.dart",
-        "2": [
-          "ReflectorReader"
-        ],
-        "5": false
       }
     ],
     "6": "platform_common_providers.dart",
@@ -56,10 +49,6 @@
       {
         "1": "reflection/reflection.template.dart",
         "4": "i3"
-      },
-      {
-        "1": "reflection/reflector_reader.template.dart",
-        "4": "i4"
       }
     ]
   },
@@ -160,37 +149,6 @@
           "useProperty": null,
           "multi": false,
           "deps": []
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ReflectorReader",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "Reflector",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
         },
         {
           "class": "Provider",

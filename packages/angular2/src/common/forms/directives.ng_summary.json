@@ -31,13 +31,6 @@
         "5": false
       },
       {
-        "1": "directives/ng_control_status.dart",
-        "2": [
-          "NgControlStatus"
-        ],
-        "5": false
-      },
-      {
         "1": "directives/ng_form.dart",
         "2": [
           "NgForm"
@@ -290,13 +283,6 @@
         },
         {
           "class": "Identifier",
-          "name": "NgControlStatus",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
-        },
-        {
-          "class": "Identifier",
           "name": "RequiredValidator",
           "moduleUrl": null,
           "prefix": null,
@@ -340,7 +326,6 @@
       "CheckboxControlValueAccessor",
       "SelectControlValueAccessor",
       "RadioControlValueAccessor",
-      "NgControlStatus",
       "RequiredValidator",
       "MinLengthValidator",
       "MaxLengthValidator",

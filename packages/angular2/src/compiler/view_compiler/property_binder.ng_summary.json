@@ -112,8 +112,14 @@
       {
         "1": "view_compiler_utils.dart",
         "2": [
-          "NAMESPACE_URIS",
           "createSetAttributeParams"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "2": [
+          "NAMESPACE_URIS"
         ],
         "5": false
       }

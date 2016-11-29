@@ -10,10 +10,6 @@
         "5": false
       },
       {
-        "1": "app_element.dart",
-        "5": false
-      },
-      {
         "1": "component_factory.dart",
         "2": [
           "ComponentFactory",
@@ -33,8 +29,7 @@
         "1": "view_ref.dart",
         "2": [
           "EmbeddedViewRef",
-          "ViewRef",
-          "ViewRefImpl"
+          "ViewRef"
         ],
         "5": false
       }
@@ -46,24 +41,20 @@
         "4": "i0"
       },
       {
-        "1": "app_element.template.dart",
+        "1": "component_factory.template.dart",
         "4": "i1"
       },
       {
-        "1": "component_factory.template.dart",
+        "1": "element_ref.template.dart",
         "4": "i2"
       },
       {
-        "1": "element_ref.template.dart",
+        "1": "template_ref.template.dart",
         "4": "i3"
       },
       {
-        "1": "template_ref.template.dart",
-        "4": "i4"
-      },
-      {
         "1": "view_ref.template.dart",
-        "4": "i5"
+        "4": "i4"
       }
     ]
   },

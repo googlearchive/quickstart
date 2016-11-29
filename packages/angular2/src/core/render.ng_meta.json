@@ -6,7 +6,6 @@
         "1": "render/api.dart",
         "2": [
           "RootRenderer",
-          "Renderer",
           "RenderComponentType"
         ]
       }

@@ -33,13 +33,6 @@
           "ComponentFactory"
         ],
         "5": false
-      },
-      {
-        "1": "injector_factory.dart",
-        "2": [
-          "CodegenInjectorFactory"
-        ],
-        "5": false
       }
     ],
     "5": [

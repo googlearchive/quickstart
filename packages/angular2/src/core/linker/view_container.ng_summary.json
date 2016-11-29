@@ -21,6 +21,14 @@
         "5": false
       },
       {
+        "1": "component_factory.dart",
+        "2": [
+          "ComponentFactory",
+          "ComponentRef"
+        ],
+        "5": false
+      },
+      {
         "1": "element_ref.dart",
         "5": false
       },
@@ -32,21 +40,34 @@
         "5": false
       },
       {
+        "1": "template_ref.dart",
+        "5": false
+      },
+      {
         "1": "view_container_ref.dart",
         "5": false
       },
       {
         "1": "view_type.dart",
         "5": false
+      },
+      {
+        "1": "view_ref.dart",
+        "2": [
+          "EmbeddedViewRef",
+          "ViewRef",
+          "ViewRefImpl"
+        ],
+        "5": false
       }
     ],
-    "6": "app_element.dart"
+    "6": "view_container.dart"
   },
   "type": {
-    "AppElement": {
+    "ViewContainer": {
       "class": "Identifier",
-      "name": "AppElement",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/app_element.dart",
+      "name": "ViewContainer",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_container.dart",
       "prefix": null,
       "value": null
     }

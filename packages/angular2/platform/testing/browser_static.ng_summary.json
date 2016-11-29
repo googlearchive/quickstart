@@ -43,20 +43,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/render/api.dart",
-        "2": [
-          "RootRenderer"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/debug/debug_renderer.dart",
-        "2": [
-          "DebugDomRootRenderer"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/mock/directive_resolver_mock.dart",
         "2": [
           "MockDirectiveResolver"
@@ -194,35 +180,6 @@
           "useClass": null,
           "useExisting": null,
           "useValue": "a",
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "RootRenderer",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "DebugDomRootRenderer",
-            "moduleUrl": null,
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
           "useFactory": null,
           "useProperty": null,
           "multi": false,

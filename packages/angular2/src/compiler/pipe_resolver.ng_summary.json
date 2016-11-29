@@ -19,14 +19,8 @@
       {
         "1": "package:angular2/src/core/reflection/reflection.dart",
         "2": [
+          "Reflector",
           "reflector"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflector_reader.dart",
-        "2": [
-          "ReflectorReader"
         ],
         "5": false
       },
@@ -49,7 +43,7 @@
         ],
         "5": [
           {
-            "1": "ReflectorReader",
+            "1": "Reflector",
             "4": "_reflector"
           }
         ]
@@ -71,7 +65,7 @@
             "value": null,
             "identifier": {
               "class": "Identifier",
-              "name": "ReflectorReader",
+              "name": "Reflector",
               "moduleUrl": null,
               "prefix": null,
               "value": null

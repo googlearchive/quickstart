@@ -18,6 +18,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "2": [
+          "NAMESPACE_URIS"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/metadata/view.dart",
         "2": [
           "ViewEncapsulation"
@@ -111,7 +118,6 @@
           "getViewFactoryName",
           "createFlatArray",
           "createDiTokenExpression",
-          "NAMESPACE_URIS",
           "createSetAttributeParams",
           "TEMPLATE_COMMENT_TEXT"
         ],
@@ -129,48 +135,52 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/metadata/view.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i2"
       },
       {
-        "1": "../compile_metadata.template.dart",
+        "1": "package:angular2/src/core/metadata/view.template.dart",
         "4": "i3"
       },
       {
-        "1": "../identifiers.template.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i4"
       },
       {
-        "1": "../output/output_ast.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i5"
       },
       {
-        "1": "../style_compiler.template.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i6"
       },
       {
-        "1": "../template_ast.template.dart",
+        "1": "../style_compiler.template.dart",
         "4": "i7"
       },
       {
-        "1": "compile_element.template.dart",
+        "1": "../template_ast.template.dart",
         "4": "i8"
       },
       {
-        "1": "compile_view.template.dart",
+        "1": "compile_element.template.dart",
         "4": "i9"
       },
       {
-        "1": "constants.template.dart",
+        "1": "compile_view.template.dart",
         "4": "i10"
       },
       {
-        "1": "property_binder.template.dart",
+        "1": "constants.template.dart",
         "4": "i11"
       },
       {
-        "1": "view_compiler_utils.template.dart",
+        "1": "property_binder.template.dart",
         "4": "i12"
+      },
+      {
+        "1": "view_compiler_utils.template.dart",
+        "4": "i13"
       }
     ]
   },

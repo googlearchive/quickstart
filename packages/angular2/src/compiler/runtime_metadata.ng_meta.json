@@ -33,8 +33,7 @@
         "1": "package:angular2/src/core/di/reflective_provider.dart",
         "2": [
           "constructDependencies",
-          "ReflectiveDependency",
-          "getInjectorModuleProviders"
+          "ReflectiveDependency"
         ],
         "5": false
       },

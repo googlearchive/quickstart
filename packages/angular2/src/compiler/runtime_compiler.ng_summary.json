@@ -15,7 +15,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/app_element.dart",
+        "1": "package:angular2/src/core/linker/view_container.dart",
         "5": false
       },
       {
@@ -30,13 +30,6 @@
         "1": "package:angular2/src/core/linker/component_resolver.dart",
         "2": [
           "ComponentResolver"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/injector_factory.dart",
-        "2": [
-          "CodegenInjectorFactory"
         ],
         "5": false
       },
@@ -61,13 +54,6 @@
         "1": "directive_normalizer.dart",
         "2": [
           "DirectiveNormalizer"
-        ],
-        "5": false
-      },
-      {
-        "1": "output/interpretive_injector.dart",
-        "2": [
-          "InterpretiveInjectorInstanceFactory"
         ],
         "5": false
       },
@@ -121,13 +107,6 @@
         "5": false
       },
       {
-        "1": "view_compiler/injector_compiler.dart",
-        "2": [
-          "InjectorCompiler"
-        ],
-        "5": false
-      },
-      {
         "1": "view_compiler/view_compiler.dart",
         "2": [
           "ViewCompiler"
@@ -175,10 +154,6 @@
           {
             "1": "XHR",
             "4": "_xhr"
-          },
-          {
-            "1": "InjectorCompiler",
-            "4": "_injectorCompiler"
           }
         ],
         "6": [
@@ -313,28 +288,6 @@
             "identifier": {
               "class": "Identifier",
               "name": "XHR",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "InjectorCompiler",
               "moduleUrl": null,
               "prefix": null,
               "value": null

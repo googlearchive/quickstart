@@ -52,16 +52,6 @@
       },
       {
         "1": "html_ast.dart",
-        "2": [
-          "HtmlAstVisitor",
-          "HtmlElementAst",
-          "HtmlTextAst",
-          "HtmlAttrAst",
-          "HtmlCommentAst",
-          "HtmlExpansionAst",
-          "HtmlExpansionCaseAst",
-          "htmlVisitAll"
-        ],
         "5": false
       },
       {

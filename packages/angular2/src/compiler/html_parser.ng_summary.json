@@ -10,15 +10,17 @@
         "5": false
       },
       {
+        "1": "package:source_span/source_span.dart",
+        "5": false
+      },
+      {
         "1": "html_ast.dart",
         "2": [
           "HtmlAst",
           "HtmlAttrAst",
           "HtmlTextAst",
           "HtmlCommentAst",
-          "HtmlElementAst",
-          "HtmlExpansionAst",
-          "HtmlExpansionCaseAst"
+          "HtmlElementAst"
         ],
         "5": false
       },
@@ -43,8 +45,7 @@
       {
         "1": "parse_util.dart",
         "2": [
-          "ParseError",
-          "ParseSourceSpan"
+          "ParseError"
         ],
         "5": false
       }

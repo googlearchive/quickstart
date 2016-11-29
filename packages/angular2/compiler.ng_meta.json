@@ -9,7 +9,6 @@
           "PLATFORM_PIPES",
           "COMPILER_PROVIDERS",
           "CompilerConfig",
-          "RenderTypes",
           "UrlResolver",
           "DEFAULT_PACKAGE_URL_PROVIDER",
           "createOfflineCompileUrlResolver",
@@ -31,7 +30,6 @@
           "CompileQueryMetadata",
           "CompileTemplateMetadata",
           "CompileDirectiveMetadata",
-          "CompileInjectorModuleMetadata",
           "CompilePipeMetadata"
         ]
       },
@@ -960,37 +958,6 @@
           "token": {
             "value": null,
             "identifier": {
-              "class": "Type",
-              "name": "InjectorCompiler",
-              "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": []
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "InjectorCompiler",
-            "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/injector_compiler.dart",
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
               "class": "Identifier",
               "name": "CompilerConfig",
               "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
@@ -1171,8 +1138,8 @@
                     "value": null,
                     "identifier": {
                       "class": "Identifier",
-                      "name": "ReflectorReader",
-                      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+                      "name": "Reflector",
+                      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
                       "prefix": null,
                       "value": null
                     },
@@ -1205,8 +1172,8 @@
                   "value": null,
                   "identifier": {
                     "class": "Identifier",
-                    "name": "ReflectorReader",
-                    "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+                    "name": "Reflector",
+                    "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
                     "prefix": null,
                     "value": null
                   },
@@ -1248,8 +1215,8 @@
                     "value": null,
                     "identifier": {
                       "class": "Identifier",
-                      "name": "ReflectorReader",
-                      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+                      "name": "Reflector",
+                      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
                       "prefix": null,
                       "value": null
                     },
@@ -1282,8 +1249,8 @@
                   "value": null,
                   "identifier": {
                     "class": "Identifier",
-                    "name": "ReflectorReader",
-                    "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+                    "name": "Reflector",
+                    "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
                     "prefix": null,
                     "value": null
                   },
@@ -1325,8 +1292,8 @@
                     "value": null,
                     "identifier": {
                       "class": "Identifier",
-                      "name": "ReflectorReader",
-                      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+                      "name": "Reflector",
+                      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
                       "prefix": null,
                       "value": null
                     },
@@ -1359,8 +1326,8 @@
                   "value": null,
                   "identifier": {
                     "class": "Identifier",
-                    "name": "ReflectorReader",
-                    "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+                    "name": "Reflector",
+                    "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
                     "prefix": null,
                     "value": null
                   },
@@ -1749,13 +1716,6 @@
       "prefix": null,
       "value": null
     },
-    "CompileInjectorModuleMetadata": {
-      "class": "Identifier",
-      "name": "CompileInjectorModuleMetadata",
-      "moduleUrl": "asset:angular2/lib/src/compiler/compile_metadata.dart",
-      "prefix": null,
-      "value": null
-    },
     "_arrayFromJson": {
       "class": "Identifier",
       "name": "_arrayFromJson",
@@ -1791,20 +1751,6 @@
       "prefix": null,
       "value": null
     },
-    "RenderTypes": {
-      "class": "Identifier",
-      "name": "RenderTypes",
-      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DefaultRenderTypes": {
-      "class": "Identifier",
-      "name": "DefaultRenderTypes",
-      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
-      "prefix": null,
-      "value": null
-    },
     "_isDirectiveMetadata": {
       "class": "Identifier",
       "name": "_isDirectiveMetadata",
@@ -1832,8 +1778,8 @@
             "value": null,
             "identifier": {
               "class": "Identifier",
-              "name": "ReflectorReader",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+              "name": "Reflector",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
               "prefix": null,
               "value": null
             },
@@ -1920,8 +1866,8 @@
             "value": null,
             "identifier": {
               "class": "Identifier",
-              "name": "ReflectorReader",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+              "name": "Reflector",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
               "prefix": null,
               "value": null
             },
@@ -1959,8 +1905,8 @@
             "value": null,
             "identifier": {
               "class": "Identifier",
-              "name": "ReflectorReader",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+              "name": "Reflector",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
               "prefix": null,
               "value": null
             },

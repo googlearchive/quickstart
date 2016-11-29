@@ -116,6 +116,13 @@
       "moduleUrl": "asset:angular2/lib/src/compiler/shadow_css.dart",
       "prefix": null,
       "value": null
+    },
+    "_extractSourceMappingUrl": {
+      "class": "Identifier",
+      "name": "_extractSourceMappingUrl",
+      "moduleUrl": "asset:angular2/lib/src/compiler/shadow_css.dart",
+      "prefix": null,
+      "value": null
     }
   },
   "alias": {}

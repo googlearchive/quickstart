@@ -11,7 +11,6 @@
           "ElementRef",
           "IterableDiffers",
           "KeyValueDiffers",
-          "Renderer",
           "IterableDiffer",
           "KeyValueDiffer",
           "CollectionChangeRecord",
@@ -35,10 +34,6 @@
           {
             "1": "ElementRef",
             "4": "_ngEl"
-          },
-          {
-            "1": "Renderer",
-            "4": "_renderer"
           }
         ],
         "6": [
@@ -120,28 +115,6 @@
                 "class": "Identifier",
                 "name": "ElementRef",
                 "moduleUrl": "asset:angular2/lib/src/core/linker/element_ref.dart",
-                "prefix": null,
-                "value": null
-              },
-              "identifierIsInstance": false
-            },
-            "query": null,
-            "viewQuery": null,
-            "value": null,
-            "isAttribute": false,
-            "isSelf": false,
-            "isHost": false,
-            "isSkipSelf": false,
-            "isOptional": false,
-            "isValue": false
-          },
-          {
-            "token": {
-              "value": null,
-              "identifier": {
-                "class": "Identifier",
-                "name": "Renderer",
-                "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
                 "prefix": null,
                 "value": null
               },

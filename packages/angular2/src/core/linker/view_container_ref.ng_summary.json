@@ -10,10 +10,6 @@
         "5": false
       },
       {
-        "1": "app_element.dart",
-        "5": false
-      },
-      {
         "1": "component_factory.dart",
         "2": [
           "ComponentFactory",
@@ -33,8 +29,7 @@
         "1": "view_ref.dart",
         "2": [
           "EmbeddedViewRef",
-          "ViewRef",
-          "ViewRefImpl"
+          "ViewRef"
         ],
         "5": false
       }

@@ -17,12 +17,6 @@
         ]
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_renderer.dart",
-        "2": [
-          "DomRenderer"
-        ]
-      },
-      {
         "1": "package:angular2/src/platform/dom/dom_tokens.dart",
         "2": [
           "DOCUMENT"
@@ -54,20 +48,16 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_renderer.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_tokens.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_tokens.template.dart",
+        "1": "package:angular2/src/platform/dom/events/dom_events.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/platform/dom/events/dom_events.template.dart",
-        "4": "i4"
-      },
-      {
         "1": "package:angular2/src/platform/dom/events/event_manager.template.dart",
-        "4": "i5"
+        "4": "i4"
       }
     ]
   },
@@ -118,102 +108,6 @@
       "class": "Identifier",
       "name": "DomAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_adapter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "NAMESPACE_URIS": {
-      "class": "Identifier",
-      "name": "NAMESPACE_URIS",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DomRootRenderer": {
-      "class": "Type",
-      "name": "DomRootRenderer",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "DOCUMENT",
-              "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "EventManager",
-              "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        }
-      ]
-    },
-    "DomRenderer": {
-      "class": "Identifier",
-      "name": "DomRenderer",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "moveNodesAfterSibling": {
-      "class": "Identifier",
-      "name": "moveNodesAfterSibling",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "appendNodes": {
-      "class": "Identifier",
-      "name": "appendNodes",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "decoratePreventDefault": {
-      "class": "Identifier",
-      "name": "decoratePreventDefault",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
-      "prefix": null,
-      "value": null
-    },
-    "splitNamespace": {
-      "class": "Identifier",
-      "name": "splitNamespace",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
       "prefix": null,
       "value": null
     },

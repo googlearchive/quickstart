@@ -16,14 +16,8 @@
       {
         "1": "package:angular2/src/core/reflection/reflection.dart",
         "2": [
+          "Reflector",
           "reflector"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflector_reader.dart",
-        "2": [
-          "ReflectorReader"
         ],
         "5": false
       },
@@ -46,7 +40,7 @@
         ],
         "5": [
           {
-            "1": "ReflectorReader",
+            "1": "Reflector",
             "4": "_reflector"
           }
         ]
@@ -67,12 +61,8 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/reflection/reflector_reader.template.dart",
-        "4": "i3"
-      },
-      {
         "1": "package:angular2/src/facade/exceptions.template.dart",
-        "4": "i4"
+        "4": "i3"
       }
     ]
   },
@@ -104,8 +94,8 @@
             "value": null,
             "identifier": {
               "class": "Identifier",
-              "name": "ReflectorReader",
-              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector_reader.dart",
+              "name": "Reflector",
+              "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
               "prefix": null,
               "value": null
             },

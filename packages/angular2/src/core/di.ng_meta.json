@@ -416,13 +416,6 @@
       "prefix": null,
       "value": null
     },
-    "getInjectorModuleProviders": {
-      "class": "Identifier",
-      "name": "getInjectorModuleProviders",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
-      "prefix": null,
-      "value": null
-    },
     "ReflectiveKey": {
       "class": "Identifier",
       "name": "ReflectiveKey",

@@ -18,7 +18,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/app_element.dart",
+        "1": "package:angular2/src/core/linker/view_container.dart",
         "5": false
       },
       {
@@ -98,7 +98,7 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/linker/app_element.template.dart",
+        "1": "package:angular2/src/core/linker/view_container.template.dart",
         "4": "i2"
       },
       {

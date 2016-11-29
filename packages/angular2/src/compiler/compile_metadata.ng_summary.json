@@ -159,13 +159,6 @@
       "prefix": null,
       "value": null
     },
-    "CompileInjectorModuleMetadata": {
-      "class": "Identifier",
-      "name": "CompileInjectorModuleMetadata",
-      "moduleUrl": "asset:angular2/lib/src/compiler/compile_metadata.dart",
-      "prefix": null,
-      "value": null
-    },
     "_arrayFromJson": {
       "class": "Identifier",
       "name": "_arrayFromJson",

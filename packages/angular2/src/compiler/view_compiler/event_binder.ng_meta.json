@@ -46,8 +46,7 @@
       {
         "1": "constants.dart",
         "2": [
-          "EventHandlerVars",
-          "ViewProperties"
+          "EventHandlerVars"
         ],
         "5": false
       },

@@ -169,13 +169,6 @@
       "prefix": null,
       "value": null
     },
-    "InjectorModule": {
-      "class": "Identifier",
-      "name": "InjectorModule",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
     "Provides": {
       "class": "Identifier",
       "name": "Provides",

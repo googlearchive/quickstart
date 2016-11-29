@@ -10,13 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM"
-        ],
-        "5": false
-      },
-      {
         "1": "event_manager.dart",
         "2": [
           "EventManagerPlugin"

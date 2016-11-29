@@ -79,7 +79,6 @@
       {
         "1": "package:angular2/src/core/render/api.dart",
         "2": [
-          "Renderer",
           "RenderComponentType"
         ],
         "5": false

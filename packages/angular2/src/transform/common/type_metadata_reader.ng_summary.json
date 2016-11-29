@@ -56,6 +56,10 @@
         "5": false
       },
       {
+        "1": "package:logging/logging.dart",
+        "5": false
+      },
+      {
         "1": "naive_eval.dart",
         "5": false
       },
@@ -158,13 +162,6 @@
       "prefix": null,
       "value": null
     },
-    "_InjectorModuleMetadataVisitor": {
-      "class": "Identifier",
-      "name": "_InjectorModuleMetadataVisitor",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
-      "prefix": null,
-      "value": null
-    },
     "_readProviders": {
       "class": "Identifier",
       "name": "_readProviders",
@@ -196,6 +193,13 @@
     "_getCompileDiDependencyMetadata": {
       "class": "Identifier",
       "name": "_getCompileDiDependencyMetadata",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_reportDeprecation": {
+      "class": "Identifier",
+      "name": "_reportDeprecation",
       "moduleUrl": "asset:angular2/lib/src/transform/common/type_metadata_reader.dart",
       "prefix": null,
       "value": null

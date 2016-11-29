@@ -50,6 +50,14 @@
         "5": false
       },
       {
+        "1": "package:source_span/source_span.dart",
+        "5": false
+      },
+      {
+        "1": "expression_parser/ast.dart",
+        "5": false
+      },
+      {
         "1": "../core/security.dart",
         "5": false
       },
@@ -63,6 +71,10 @@
           "CompileDirectiveMetadata",
           "CompilePipeMetadata"
         ],
+        "5": false
+      },
+      {
+        "1": "html_ast.dart",
         "5": false
       },
       {
@@ -81,20 +93,6 @@
         "1": "expression_parser/parser.dart",
         "2": [
           "Parser"
-        ],
-        "5": false
-      },
-      {
-        "1": "html_ast.dart",
-        "2": [
-          "HtmlAstVisitor",
-          "HtmlElementAst",
-          "HtmlAttrAst",
-          "HtmlTextAst",
-          "HtmlCommentAst",
-          "HtmlExpansionAst",
-          "HtmlExpansionCaseAst",
-          "htmlVisitAll"
         ],
         "5": false
       },
@@ -124,7 +122,6 @@
       {
         "1": "parse_util.dart",
         "2": [
-          "ParseSourceSpan",
           "ParseError",
           "ParseErrorLevel"
         ],

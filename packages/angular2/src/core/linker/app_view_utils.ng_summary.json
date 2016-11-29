@@ -35,9 +35,7 @@
       {
         "1": "package:angular2/src/core/render/api.dart",
         "2": [
-          "RootRenderer",
-          "RenderComponentType",
-          "Renderer"
+          "RenderComponentType"
         ],
         "5": false
       },
@@ -67,6 +65,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/platform/dom/events/event_manager.dart",
+        "2": [
+          "EventManager"
+        ],
+        "5": false
+      },
+      {
         "1": "exceptions.dart",
         "2": [
           "ExpressionChangedAfterItHasBeenCheckedException"
@@ -85,10 +90,6 @@
         ],
         "5": [
           {
-            "1": "RootRenderer",
-            "4": "_renderer"
-          },
-          {
             "1": "String",
             "3": [
               "const Inject(APP_ID)"
@@ -98,6 +99,10 @@
           {
             "1": "SanitizationService",
             "4": "sanitizer"
+          },
+          {
+            "1": "EventManager",
+            "4": "eventManager"
           }
         ]
       }
@@ -133,6 +138,13 @@
       "prefix": null,
       "value": null
     },
+    "NAMESPACE_URIS": {
+      "class": "Identifier",
+      "name": "NAMESPACE_URIS",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
     "AppViewUtils": {
       "class": "Type",
       "name": "AppViewUtils",
@@ -141,28 +153,6 @@
       "isHost": false,
       "value": null,
       "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "RootRenderer",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "query": null,
-          "viewQuery": null,
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
         {
           "token": {
             "value": null,
@@ -191,6 +181,28 @@
             "identifier": {
               "class": "Identifier",
               "name": "SanitizationService",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "query": null,
+          "viewQuery": null,
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "EventManager",
               "moduleUrl": null,
               "prefix": null,
               "value": null
@@ -345,6 +357,13 @@
     "pureProxy10": {
       "class": "Identifier",
       "name": "pureProxy10",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "splitNamespace": {
+      "class": "Identifier",
+      "name": "splitNamespace",
       "moduleUrl": "asset:angular2/lib/src/core/linker/app_view_utils.dart",
       "prefix": null,
       "value": null

@@ -41,13 +41,6 @@
     "6": "view_compiler_utils.dart"
   },
   "type": {
-    "NAMESPACE_URIS": {
-      "class": "Identifier",
-      "name": "NAMESPACE_URIS",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
-      "prefix": null,
-      "value": null
-    },
     "TEMPLATE_COMMENT_TEXT": {
       "class": "Identifier",
       "name": "TEMPLATE_COMMENT_TEXT",
