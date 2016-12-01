@@ -311,8 +311,6 @@
               "identifier": null,
               "identifierIsInstance": false
             },
-            "query": null,
-            "viewQuery": null,
             "value": null,
             "isAttribute": true,
             "isSelf": false,
@@ -364,8 +362,6 @@
               "identifier": null,
               "identifierIsInstance": false
             },
-            "query": null,
-            "viewQuery": null,
             "value": null,
             "isAttribute": true,
             "isSelf": false,
@@ -417,8 +413,6 @@
               "identifier": null,
               "identifierIsInstance": false
             },
-            "query": null,
-            "viewQuery": null,
             "value": null,
             "isAttribute": true,
             "isSelf": false,

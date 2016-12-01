@@ -32,6 +32,13 @@
       "prefix": null,
       "value": null
     },
+    "isInjectable": {
+      "class": "Identifier",
+      "name": "isInjectable",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/common/annotation_matcher.dart",
+      "prefix": null,
+      "value": null
+    },
     "isComponent": {
       "class": "Identifier",
       "name": "isComponent",
@@ -63,6 +70,13 @@
     "matchAnnotation": {
       "class": "Identifier",
       "name": "matchAnnotation",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/common/annotation_matcher.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_isInjectable": {
+      "class": "Identifier",
+      "name": "_isInjectable",
       "moduleUrl": "asset:angular2/lib/src/source_gen/common/annotation_matcher.dart",
       "prefix": null,
       "value": null

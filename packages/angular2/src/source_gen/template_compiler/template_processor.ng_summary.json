@@ -23,11 +23,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/source_gen/common/ng_deps_model.dart",
+        "1": "package:angular2/src/source_gen/template_compiler/find_components.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/source_gen/template_compiler/find_components.dart",
+        "1": "package:angular2/src/source_gen/template_compiler/ng_deps_visitor.dart",
         "5": false
       },
       {

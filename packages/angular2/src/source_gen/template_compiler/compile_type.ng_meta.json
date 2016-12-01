@@ -3,10 +3,6 @@
     "1": "",
     "3": [
       {
-        "1": "package:analyzer/dart/constant/value.dart",
-        "5": false
-      },
-      {
         "1": "package:analyzer/dart/element/element.dart",
         "5": false
       },
@@ -76,13 +72,6 @@
     "CompileTypeMetadataVisitor": {
       "class": "Identifier",
       "name": "CompileTypeMetadataVisitor",
-      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/compile_type.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_isInjectable": {
-      "class": "Identifier",
-      "name": "_isInjectable",
       "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/compile_type.dart",
       "prefix": null,
       "value": null
