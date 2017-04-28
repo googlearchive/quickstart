@@ -24,16 +24,16 @@
     "6": "tools.dart"
   },
   "type": {
-    "enableDebugTools": {
+    "disableDebugTools": {
       "class": "Identifier",
-      "name": "enableDebugTools",
+      "name": "disableDebugTools",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/tools/tools.dart",
       "prefix": null,
       "value": null
     },
-    "disableDebugTools": {
+    "enableDebugTools": {
       "class": "Identifier",
-      "name": "disableDebugTools",
+      "name": "enableDebugTools",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/tools/tools.dart",
       "prefix": null,
       "value": null

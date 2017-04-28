@@ -11,9 +11,27 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "2": [
+          "NAMESPACE_URIS"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_type.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/metadata/lifecycle_hooks.dart",
         "2": [
           "LifecycleHooks"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/metadata/view.dart",
+        "2": [
+          "ViewEncapsulation"
         ],
         "5": false
       },
@@ -98,6 +116,7 @@
       {
         "1": "expression_converter.dart",
         "2": [
+          "ExpressionWithWrappedValueInfo",
           "convertCdExpressionToIr"
         ],
         "5": false
@@ -115,13 +134,6 @@
           "createSetAttributeParams"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/app_view_utils.dart",
-        "2": [
-          "NAMESPACE_URIS"
-        ],
-        "5": false
       }
     ],
     "6": "property_binder.dart",
@@ -131,86 +143,101 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/core/metadata/lifecycle_hooks.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/core/security.template.dart",
+        "1": "package:angular2/src/core/linker/view_type.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/names.template.dart",
+        "1": "package:angular2/src/core/metadata/lifecycle_hooks.template.dart",
         "4": "i3"
       },
       {
-        "1": "../compile_metadata.template.dart",
+        "1": "package:angular2/src/core/metadata/view.template.dart",
         "4": "i4"
       },
       {
-        "1": "../expression_parser/ast.template.dart",
+        "1": "package:angular2/src/core/security.template.dart",
         "4": "i5"
       },
       {
-        "1": "../identifiers.template.dart",
+        "1": "package:angular2/src/transform/common/names.template.dart",
         "4": "i6"
       },
       {
-        "1": "../output/output_ast.template.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i7"
       },
       {
-        "1": "../template_ast.template.dart",
+        "1": "../expression_parser/ast.template.dart",
         "4": "i8"
       },
       {
-        "1": "compile_binding.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i9"
       },
       {
-        "1": "compile_element.template.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i10"
       },
       {
-        "1": "compile_method.template.dart",
+        "1": "../template_ast.template.dart",
         "4": "i11"
       },
       {
-        "1": "compile_view.template.dart",
+        "1": "compile_binding.template.dart",
         "4": "i12"
       },
       {
-        "1": "constants.template.dart",
+        "1": "compile_element.template.dart",
         "4": "i13"
       },
       {
-        "1": "expression_converter.template.dart",
+        "1": "compile_method.template.dart",
         "4": "i14"
       },
       {
-        "1": "view_builder.template.dart",
+        "1": "compile_view.template.dart",
         "4": "i15"
       },
       {
-        "1": "view_compiler_utils.template.dart",
+        "1": "constants.template.dart",
         "4": "i16"
       },
       {
-        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
+        "1": "expression_converter.template.dart",
         "4": "i17"
+      },
+      {
+        "1": "view_builder.template.dart",
+        "4": "i18"
+      },
+      {
+        "1": "view_compiler_utils.template.dart",
+        "4": "i19"
       }
     ]
   },
   "type": {
-    "createBindFieldExpr": {
+    "_bindLiteral": {
       "class": "Identifier",
-      "name": "createBindFieldExpr",
+      "name": "_bindLiteral",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
       "prefix": null,
       "value": null
     },
-    "createCurrValueExpr": {
+    "_createSetClassNameStmt": {
       "class": "Identifier",
-      "name": "createCurrValueExpr",
+      "name": "_createSetClassNameStmt",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_isPrimitiveFieldType": {
+      "class": "Identifier",
+      "name": "_isPrimitiveFieldType",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
       "prefix": null,
       "value": null
@@ -222,30 +249,9 @@
       "prefix": null,
       "value": null
     },
-    "bindRenderText": {
-      "class": "Identifier",
-      "name": "bindRenderText",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
-      "prefix": null,
-      "value": null
-    },
     "bindAndWriteToRenderer": {
       "class": "Identifier",
       "name": "bindAndWriteToRenderer",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
-      "prefix": null,
-      "value": null
-    },
-    "sanitizedValue": {
-      "class": "Identifier",
-      "name": "sanitizedValue",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
-      "prefix": null,
-      "value": null
-    },
-    "bindRenderInputs": {
-      "class": "Identifier",
-      "name": "bindRenderInputs",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
       "prefix": null,
       "value": null
@@ -264,9 +270,44 @@
       "prefix": null,
       "value": null
     },
+    "bindRenderInputs": {
+      "class": "Identifier",
+      "name": "bindRenderInputs",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "bindRenderText": {
+      "class": "Identifier",
+      "name": "bindRenderText",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
+      "prefix": null,
+      "value": null
+    },
     "bindToUpdateMethod": {
       "class": "Identifier",
       "name": "bindToUpdateMethod",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createBindFieldExpr": {
+      "class": "Identifier",
+      "name": "createBindFieldExpr",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createCurrValueExpr": {
+      "class": "Identifier",
+      "name": "createCurrValueExpr",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
+      "prefix": null,
+      "value": null
+    },
+    "isPrimitiveTypeName": {
+      "class": "Identifier",
+      "name": "isPrimitiveTypeName",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
       "prefix": null,
       "value": null
@@ -278,16 +319,9 @@
       "prefix": null,
       "value": null
     },
-    "_isPrimitiveFieldType": {
+    "sanitizedValue": {
       "class": "Identifier",
-      "name": "_isPrimitiveFieldType",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isPrimitiveTypeName": {
-      "class": "Identifier",
-      "name": "isPrimitiveTypeName",
+      "name": "sanitizedValue",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/property_binder.dart",
       "prefix": null,
       "value": null

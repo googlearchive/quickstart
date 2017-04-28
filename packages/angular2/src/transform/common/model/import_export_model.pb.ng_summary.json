@@ -10,9 +10,9 @@
     "6": "import_export_model.pb.dart"
   },
   "type": {
-    "ImportModel$json": {
+    "ExportModel": {
       "class": "Identifier",
-      "name": "ImportModel$json",
+      "name": "ExportModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
       "prefix": null,
       "value": null
@@ -31,16 +31,9 @@
       "prefix": null,
       "value": null
     },
-    "_ReadonlyImportModel": {
+    "ImportModel$json": {
       "class": "Identifier",
-      "name": "_ReadonlyImportModel",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ExportModel": {
-      "class": "Identifier",
-      "name": "ExportModel",
+      "name": "ImportModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
       "prefix": null,
       "value": null
@@ -48,6 +41,13 @@
     "_ReadonlyExportModel": {
       "class": "Identifier",
       "name": "_ReadonlyExportModel",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ReadonlyImportModel": {
+      "class": "Identifier",
+      "name": "_ReadonlyImportModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/import_export_model.pb.dart",
       "prefix": null,
       "value": null

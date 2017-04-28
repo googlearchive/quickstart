@@ -17,9 +17,9 @@
       "prefix": null,
       "value": null
     },
-    "HtmlTextAst": {
+    "HtmlAstVisitor": {
       "class": "Identifier",
-      "name": "HtmlTextAst",
+      "name": "HtmlAstVisitor",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
       "prefix": null,
       "value": null
@@ -31,13 +31,6 @@
       "prefix": null,
       "value": null
     },
-    "HtmlElementAst": {
-      "class": "Identifier",
-      "name": "HtmlElementAst",
-      "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
-      "prefix": null,
-      "value": null
-    },
     "HtmlCommentAst": {
       "class": "Identifier",
       "name": "HtmlCommentAst",
@@ -45,9 +38,16 @@
       "prefix": null,
       "value": null
     },
-    "HtmlAstVisitor": {
+    "HtmlElementAst": {
       "class": "Identifier",
-      "name": "HtmlAstVisitor",
+      "name": "HtmlElementAst",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "HtmlTextAst": {
+      "class": "Identifier",
+      "name": "HtmlTextAst",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
       "prefix": null,
       "value": null

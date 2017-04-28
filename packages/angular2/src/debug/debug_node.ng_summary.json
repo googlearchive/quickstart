@@ -31,12 +31,17 @@
         "5": false
       }
     ],
+    "4": [
+      {
+        "1": "by.dart"
+      }
+    ],
     "6": "debug_node.dart"
   },
   "type": {
-    "Predicate": {
+    "DebugElement": {
       "class": "Identifier",
-      "name": "Predicate",
+      "name": "DebugElement",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
       "prefix": null,
       "value": null
@@ -55,16 +60,9 @@
       "prefix": null,
       "value": null
     },
-    "DebugElement": {
+    "Predicate": {
       "class": "Identifier",
-      "name": "DebugElement",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
-    "asNativeElements": {
-      "class": "Identifier",
-      "name": "asNativeElements",
+      "name": "Predicate",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
       "prefix": null,
       "value": null
@@ -83,9 +81,9 @@
       "prefix": null,
       "value": null
     },
-    "getDebugNode": {
+    "asNativeElements": {
       "class": "Identifier",
-      "name": "getDebugNode",
+      "name": "asNativeElements",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
       "prefix": null,
       "value": null
@@ -97,6 +95,13 @@
       "prefix": null,
       "value": null
     },
+    "getDebugNode": {
+      "class": "Identifier",
+      "name": "getDebugNode",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
+      "prefix": null,
+      "value": null
+    },
     "indexDebugNode": {
       "class": "Identifier",
       "name": "indexDebugNode",
@@ -104,16 +109,16 @@
       "prefix": null,
       "value": null
     },
-    "removeDebugNodeFromIndex": {
+    "inspectNativeElement": {
       "class": "Identifier",
-      "name": "removeDebugNodeFromIndex",
+      "name": "inspectNativeElement",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
       "prefix": null,
       "value": null
     },
-    "inspectNativeElement": {
+    "removeDebugNodeFromIndex": {
       "class": "Identifier",
-      "name": "inspectNativeElement",
+      "name": "removeDebugNodeFromIndex",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
       "prefix": null,
       "value": null

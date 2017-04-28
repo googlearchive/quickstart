@@ -43,13 +43,6 @@
     "6": "dart_emitter.dart"
   },
   "type": {
-    "debugOutputAstAsDart": {
-      "class": "Identifier",
-      "name": "debugOutputAstAsDart",
-      "moduleUrl": "asset:angular2/lib/src/compiler/output/dart_emitter.dart",
-      "prefix": null,
-      "value": null
-    },
     "DartEmitter": {
       "class": "Identifier",
       "name": "DartEmitter",
@@ -60,6 +53,13 @@
     "_DartEmitterVisitor": {
       "class": "Identifier",
       "name": "_DartEmitterVisitor",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/dart_emitter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "debugOutputAstAsDart": {
+      "class": "Identifier",
+      "name": "debugOutputAstAsDart",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/dart_emitter.dart",
       "prefix": null,
       "value": null

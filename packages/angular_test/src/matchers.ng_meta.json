@@ -1,0 +1,34 @@
+{
+  "ngDeps": {
+    "1": "",
+    "4": [
+      {
+        "1": "package:angular_test/src/matchers/throws_in_angular.dart"
+      }
+    ],
+    "6": "matchers.dart",
+    "7": [
+      {
+        "1": "package:angular_test/src/matchers/throws_in_angular.template.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "type": {
+    "_OrWrapped": {
+      "class": "Identifier",
+      "name": "_OrWrapped",
+      "moduleUrl": "asset:angular_test/lib/src/matchers/throws_in_angular.dart",
+      "prefix": null,
+      "value": null
+    },
+    "throwsInAngular": {
+      "class": "Identifier",
+      "name": "throwsInAngular",
+      "moduleUrl": "asset:angular_test/lib/src/matchers/throws_in_angular.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

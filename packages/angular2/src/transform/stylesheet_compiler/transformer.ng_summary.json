@@ -7,15 +7,15 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/server/html_adapter.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/asset_reader.dart",
         "5": false
       },
       {
         "1": "package:angular2/src/transform/common/names.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/options.dart",
         "5": false
       },
       {

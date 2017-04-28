@@ -20,16 +20,16 @@
       "prefix": null,
       "value": null
     },
-    "splitAtColon": {
+    "sanitizeIdentifier": {
       "class": "Identifier",
-      "name": "splitAtColon",
+      "name": "sanitizeIdentifier",
       "moduleUrl": "asset:angular2/lib/src/compiler/compiler_utils.dart",
       "prefix": null,
       "value": null
     },
-    "sanitizeIdentifier": {
+    "splitAtColon": {
       "class": "Identifier",
-      "name": "sanitizeIdentifier",
+      "name": "splitAtColon",
       "moduleUrl": "asset:angular2/lib/src/compiler/compiler_utils.dart",
       "prefix": null,
       "value": null

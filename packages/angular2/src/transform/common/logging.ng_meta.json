@@ -18,6 +18,10 @@
         "5": false
       },
       {
+        "1": "package:logging/logging.dart",
+        "5": false
+      },
+      {
         "1": "package:source_span/source_span.dart",
         "5": false
       },
@@ -39,6 +43,48 @@
     ]
   },
   "type": {
+    "DeduppingLogger": {
+      "class": "Identifier",
+      "name": "DeduppingLogger",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PrintLogger": {
+      "class": "Identifier",
+      "name": "PrintLogger",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PrintLoggerError": {
+      "class": "Identifier",
+      "name": "PrintLoggerError",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
+      "prefix": null,
+      "value": null
+    },
+    "SinkLogger": {
+      "class": "Identifier",
+      "name": "SinkLogger",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_logElapsed": {
+      "class": "Identifier",
+      "name": "_logElapsed",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
+      "prefix": null,
+      "value": null
+    },
+    "forwardLogRecord": {
+      "class": "Identifier",
+      "name": "forwardLogRecord",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
+      "prefix": null,
+      "value": null
+    },
     "log": {
       "class": "Identifier",
       "name": "log",
@@ -56,41 +102,6 @@
     "logElapsedSync": {
       "class": "Identifier",
       "name": "logElapsedSync",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_logElapsed": {
-      "class": "Identifier",
-      "name": "_logElapsed",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
-      "prefix": null,
-      "value": null
-    },
-    "SinkLogger": {
-      "class": "Identifier",
-      "name": "SinkLogger",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PrintLogger": {
-      "class": "Identifier",
-      "name": "PrintLogger",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DeduppingLogger": {
-      "class": "Identifier",
-      "name": "DeduppingLogger",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PrintLoggerError": {
-      "class": "Identifier",
-      "name": "PrintLoggerError",
       "moduleUrl": "asset:angular2/lib/src/transform/common/logging.dart",
       "prefix": null,
       "value": null

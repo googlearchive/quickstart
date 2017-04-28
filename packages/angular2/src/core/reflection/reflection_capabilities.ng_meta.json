@@ -11,10 +11,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "5": false
-      },
-      {
         "1": "platform_reflection_capabilities.dart",
         "5": false
       },
@@ -30,20 +26,23 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "platform_reflection_capabilities.template.dart",
         "4": "i1"
       },
       {
-        "1": "platform_reflection_capabilities.template.dart",
-        "4": "i2"
-      },
-      {
         "1": "types.template.dart",
-        "4": "i3"
+        "4": "i2"
       }
     ]
   },
   "type": {
+    "MissingInterfaceError": {
+      "class": "Identifier",
+      "name": "MissingInterfaceError",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
+      "prefix": null,
+      "value": null
+    },
     "ReflectionCapabilities": {
       "class": "Identifier",
       "name": "ReflectionCapabilities",
@@ -68,13 +67,6 @@
     "_checkImplements": {
       "class": "Identifier",
       "name": "_checkImplements",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
-      "prefix": null,
-      "value": null
-    },
-    "MissingInterfaceError": {
-      "class": "Identifier",
-      "name": "MissingInterfaceError",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
       "value": null

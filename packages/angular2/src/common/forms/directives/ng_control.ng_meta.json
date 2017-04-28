@@ -19,7 +19,6 @@
       {
         "1": "validators.dart",
         "2": [
-          "AsyncValidatorFn",
           "ValidatorFn"
         ],
         "5": false

@@ -3,6 +3,10 @@
     "1": "",
     "3": [
       {
+        "1": "package:angular2/src/core/linker/view_type.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -41,37 +45,23 @@
     "6": "view_compiler_utils.dart"
   },
   "type": {
-    "TEMPLATE_COMMENT_TEXT": {
+    "componentFromDirectives": {
       "class": "Identifier",
-      "name": "TEMPLATE_COMMENT_TEXT",
+      "name": "componentFromDirectives",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     },
-    "createSetAttributeParams": {
+    "convertValueToOutputAst": {
       "class": "Identifier",
-      "name": "createSetAttributeParams",
+      "name": "convertValueToOutputAst",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     },
-    "getPropertyInView": {
+    "createDebugInfoTokenExpression": {
       "class": "Identifier",
-      "name": "getPropertyInView",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
-      "prefix": null,
-      "value": null
-    },
-    "injectFromViewParentInjector": {
-      "class": "Identifier",
-      "name": "injectFromViewParentInjector",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
-      "prefix": null,
-      "value": null
-    },
-    "getViewFactoryName": {
-      "class": "Identifier",
-      "name": "getViewFactoryName",
+      "name": "createDebugInfoTokenExpression",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
@@ -90,16 +80,37 @@
       "prefix": null,
       "value": null
     },
-    "convertValueToOutputAst": {
+    "createPureProxy": {
       "class": "Identifier",
-      "name": "convertValueToOutputAst",
+      "name": "createPureProxy",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null
     },
-    "createPureProxy": {
+    "createSetAttributeParams": {
       "class": "Identifier",
-      "name": "createPureProxy",
+      "name": "createSetAttributeParams",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getPropertyInView": {
+      "class": "Identifier",
+      "name": "getPropertyInView",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getViewFactoryName": {
+      "class": "Identifier",
+      "name": "getViewFactoryName",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "injectFromViewParentInjector": {
+      "class": "Identifier",
+      "name": "injectFromViewParentInjector",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/view_compiler_utils.dart",
       "prefix": null,
       "value": null

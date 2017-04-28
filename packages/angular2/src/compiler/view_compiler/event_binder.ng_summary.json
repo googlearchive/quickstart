@@ -56,6 +56,10 @@
           "convertCdStatementToIr"
         ],
         "5": false
+      },
+      {
+        "1": "parse_utils.dart",
+        "5": false
       }
     ],
     "6": "event_binder.dart"
@@ -68,9 +72,9 @@
       "prefix": null,
       "value": null
     },
-    "collectEventListeners": {
+    "_extractFunction": {
       "class": "Identifier",
-      "name": "collectEventListeners",
+      "name": "_extractFunction",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/event_binder.dart",
       "prefix": null,
       "value": null
@@ -89,6 +93,13 @@
       "prefix": null,
       "value": null
     },
+    "collectEventListeners": {
+      "class": "Identifier",
+      "name": "collectEventListeners",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/event_binder.dart",
+      "prefix": null,
+      "value": null
+    },
     "convertStmtIntoExpression": {
       "class": "Identifier",
       "name": "convertStmtIntoExpression",
@@ -96,9 +107,9 @@
       "prefix": null,
       "value": null
     },
-    "sanitizeEventName": {
+    "isNativeHtmlEvent": {
       "class": "Identifier",
-      "name": "sanitizeEventName",
+      "name": "isNativeHtmlEvent",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/event_binder.dart",
       "prefix": null,
       "value": null

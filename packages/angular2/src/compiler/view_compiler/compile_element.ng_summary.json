@@ -7,6 +7,7 @@
         "2": [
           "CompileTokenMap",
           "CompileDirectiveMetadata",
+          "CompileIdentifierMetadata",
           "CompileTokenMetadata",
           "CompileQueryMetadata",
           "CompileProviderMetadata",
@@ -48,7 +49,7 @@
         "1": "compile_query.dart",
         "2": [
           "CompileQuery",
-          "createQueryList",
+          "createQueryListField",
           "addQueryToTokenMap"
         ],
         "5": false
@@ -71,6 +72,7 @@
         "1": "view_compiler_utils.dart",
         "2": [
           "getPropertyInView",
+          "getViewFactoryName",
           "createDiTokenExpression",
           "injectFromViewParentInjector",
           "convertValueToOutputAst"
@@ -81,13 +83,6 @@
     "6": "compile_element.dart"
   },
   "type": {
-    "CompileNode": {
-      "class": "Identifier",
-      "name": "CompileNode",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_element.dart",
-      "prefix": null,
-      "value": null
-    },
     "CompileElement": {
       "class": "Identifier",
       "name": "CompileElement",
@@ -95,16 +90,9 @@
       "prefix": null,
       "value": null
     },
-    "createInjectInternalCondition": {
+    "CompileNode": {
       "class": "Identifier",
-      "name": "createInjectInternalCondition",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_element.dart",
-      "prefix": null,
-      "value": null
-    },
-    "createProviderProperty": {
-      "class": "Identifier",
-      "name": "createProviderProperty",
+      "name": "CompileNode",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_element.dart",
       "prefix": null,
       "value": null
@@ -112,6 +100,20 @@
     "_QueryWithRead": {
       "class": "Identifier",
       "name": "_QueryWithRead",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_element.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_createInjectInternalCondition": {
+      "class": "Identifier",
+      "name": "_createInjectInternalCondition",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_element.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createProviderProperty": {
+      "class": "Identifier",
+      "name": "createProviderProperty",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_element.dart",
       "prefix": null,
       "value": null

@@ -3,6 +3,10 @@
     "1": "angular2.platform.testing.browser_static",
     "3": [
       {
+        "1": "dart:html",
+        "5": false
+      },
+      {
         "1": "package:angular2/compiler.dart",
         "2": [
           "DirectiveResolver",
@@ -71,13 +75,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/browser/browser_adapter.dart",
-        "2": [
-          "BrowserDomAdapter"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/platform/browser/xhr_impl.dart",
         "2": [
           "XHRImpl"
@@ -92,6 +89,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/platform/dom/dom_tokens.dart",
+        "2": [
+          "DOCUMENT"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/testing/test_component_builder.dart",
         "2": [
           "TestComponentBuilder"
@@ -101,13 +105,7 @@
       {
         "1": "package:angular2/src/testing/utils.dart",
         "2": [
-          "BrowserDetection"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/testing/utils.dart",
-        "2": [
+          "BrowserDetection",
           "Log"
         ],
         "5": false
@@ -116,48 +114,6 @@
     "6": "browser_static.dart"
   },
   "type": {
-    "TEST_BROWSER_STATIC_PLATFORM_PROVIDERS": {
-      "class": "Identifier",
-      "name": "TEST_BROWSER_STATIC_PLATFORM_PROVIDERS",
-      "moduleUrl": "asset:angular2/lib/platform/testing/browser_static.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Identifier",
-          "name": "PLATFORM_COMMON_PROVIDERS",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "PLATFORM_INITIALIZER",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": {
-            "class": "Identifier",
-            "name": "initBrowserTests",
-            "moduleUrl": null,
-            "prefix": null,
-            "value": null
-          },
-          "useFactory": null,
-          "useProperty": null,
-          "multi": true,
-          "deps": null
-        }
-      ]
-    },
     "ADDITIONAL_TEST_BROWSER_PROVIDERS": {
       "class": "Identifier",
       "name": "ADDITIONAL_TEST_BROWSER_PROVIDERS",
@@ -181,7 +137,6 @@
           "useExisting": null,
           "useValue": "a",
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -210,7 +165,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -239,7 +193,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -289,7 +242,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -318,7 +270,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         }
@@ -362,7 +313,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -372,8 +322,83 @@
           "moduleUrl": null,
           "prefix": null,
           "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DOCUMENT",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Factory",
+            "name": "createDoc",
+            "prefix": null,
+            "moduleUrl": null,
+            "value": null,
+            "diDeps": []
+          },
+          "multi": false,
+          "deps": []
         }
       ]
+    },
+    "TEST_BROWSER_STATIC_PLATFORM_PROVIDERS": {
+      "class": "Identifier",
+      "name": "TEST_BROWSER_STATIC_PLATFORM_PROVIDERS",
+      "moduleUrl": "asset:angular2/lib/platform/testing/browser_static.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Identifier",
+          "name": "PLATFORM_COMMON_PROVIDERS",
+          "moduleUrl": null,
+          "prefix": null,
+          "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "PLATFORM_INITIALIZER",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": {
+            "class": "Identifier",
+            "name": "initBrowserTests",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "useFactory": null,
+          "multi": true,
+          "deps": null
+        }
+      ]
+    },
+    "createDoc": {
+      "class": "Identifier",
+      "name": "createDoc",
+      "moduleUrl": "asset:angular2/lib/platform/testing/browser_static.dart",
+      "prefix": null,
+      "value": null
     },
     "initBrowserTests": {
       "class": "Identifier",

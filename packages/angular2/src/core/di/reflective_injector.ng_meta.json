@@ -10,15 +10,15 @@
         "5": false
       },
       {
+        "1": "decorators.dart",
+        "5": false
+      },
+      {
         "1": "injector.dart",
         "2": [
           "Injector",
           "THROW_IF_NOT_FOUND"
         ],
-        "5": false
-      },
-      {
-        "1": "decorators.dart",
         "5": false
       },
       {
@@ -64,11 +64,11 @@
         "4": "i0"
       },
       {
-        "1": "injector.template.dart",
+        "1": "decorators.template.dart",
         "4": "i1"
       },
       {
-        "1": "decorators.template.dart",
+        "1": "injector.template.dart",
         "4": "i2"
       },
       {
@@ -90,58 +90,9 @@
     ]
   },
   "type": {
-    "_MAX_CONSTRUCTION_COUNTER": {
+    "ReflectiveInjector": {
       "class": "Identifier",
-      "name": "_MAX_CONSTRUCTION_COUNTER",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "UNDEFINED": {
-      "class": "Identifier",
-      "name": "UNDEFINED",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ReflectiveProtoInjectorStrategy": {
-      "class": "Identifier",
-      "name": "ReflectiveProtoInjectorStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ReflectiveProtoInjectorInlineStrategy": {
-      "class": "Identifier",
-      "name": "ReflectiveProtoInjectorInlineStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ReflectiveProtoInjectorDynamicStrategy": {
-      "class": "Identifier",
-      "name": "ReflectiveProtoInjectorDynamicStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ReflectiveProtoInjector": {
-      "class": "Identifier",
-      "name": "ReflectiveProtoInjector",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ReflectiveInjectorStrategy": {
-      "class": "Identifier",
-      "name": "ReflectiveInjectorStrategy",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ReflectiveInjectorInlineStrategy": {
-      "class": "Identifier",
-      "name": "ReflectiveInjectorInlineStrategy",
+      "name": "ReflectiveInjector",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
       "prefix": null,
       "value": null
@@ -153,16 +104,65 @@
       "prefix": null,
       "value": null
     },
-    "ReflectiveInjector": {
+    "ReflectiveInjectorImpl": {
       "class": "Identifier",
-      "name": "ReflectiveInjector",
+      "name": "ReflectiveInjectorImpl",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
       "prefix": null,
       "value": null
     },
-    "ReflectiveInjectorImpl": {
+    "ReflectiveInjectorInlineStrategy": {
       "class": "Identifier",
-      "name": "ReflectiveInjectorImpl",
+      "name": "ReflectiveInjectorInlineStrategy",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ReflectiveInjectorStrategy": {
+      "class": "Identifier",
+      "name": "ReflectiveInjectorStrategy",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ReflectiveProtoInjector": {
+      "class": "Identifier",
+      "name": "ReflectiveProtoInjector",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ReflectiveProtoInjectorDynamicStrategy": {
+      "class": "Identifier",
+      "name": "ReflectiveProtoInjectorDynamicStrategy",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ReflectiveProtoInjectorInlineStrategy": {
+      "class": "Identifier",
+      "name": "ReflectiveProtoInjectorInlineStrategy",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ReflectiveProtoInjectorStrategy": {
+      "class": "Identifier",
+      "name": "ReflectiveProtoInjectorStrategy",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "UNDEFINED": {
+      "class": "Identifier",
+      "name": "UNDEFINED",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_MAX_CONSTRUCTION_COUNTER": {
+      "class": "Identifier",
+      "name": "_MAX_CONSTRUCTION_COUNTER",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_injector.dart",
       "prefix": null,
       "value": null

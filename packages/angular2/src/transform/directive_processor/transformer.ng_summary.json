@@ -11,10 +11,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/server/html_adapter.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/transform/common/asset_reader.dart",
         "5": false
       },
@@ -50,16 +46,16 @@
       "prefix": null,
       "value": null
     },
-    "_ngSummaryAssetId": {
+    "_deferredAssetId": {
       "class": "Identifier",
-      "name": "_ngSummaryAssetId",
+      "name": "_deferredAssetId",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/transformer.dart",
       "prefix": null,
       "value": null
     },
-    "_deferredAssetId": {
+    "_ngSummaryAssetId": {
       "class": "Identifier",
-      "name": "_deferredAssetId",
+      "name": "_ngSummaryAssetId",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/transformer.dart",
       "prefix": null,
       "value": null

@@ -7,16 +7,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/xhr.dart",
+        "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
-          "XHR"
+          "BaseException"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/exceptions.dart",
+        "1": "xhr.dart",
         "2": [
-          "BaseException"
+          "XHR"
         ],
         "5": false
       }
@@ -24,11 +24,11 @@
     "6": "xhr_mock.dart",
     "7": [
       {
-        "1": "package:angular2/src/compiler/xhr.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "xhr.template.dart",
         "4": "i1"
       }
     ]
@@ -41,16 +41,16 @@
       "prefix": null,
       "value": null
     },
-    "_PendingRequest": {
+    "_Expectation": {
       "class": "Identifier",
-      "name": "_PendingRequest",
+      "name": "_Expectation",
       "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
       "prefix": null,
       "value": null
     },
-    "_Expectation": {
+    "_PendingRequest": {
       "class": "Identifier",
-      "name": "_Expectation",
+      "name": "_PendingRequest",
       "moduleUrl": "asset:angular2/lib/src/compiler/xhr_mock.dart",
       "prefix": null,
       "value": null

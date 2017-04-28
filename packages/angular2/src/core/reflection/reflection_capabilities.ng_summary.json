@@ -11,10 +11,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "5": false
-      },
-      {
         "1": "platform_reflection_capabilities.dart",
         "5": false
       },
@@ -26,6 +22,13 @@
     "6": "reflection_capabilities.dart"
   },
   "type": {
+    "MissingInterfaceError": {
+      "class": "Identifier",
+      "name": "MissingInterfaceError",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
+      "prefix": null,
+      "value": null
+    },
     "ReflectionCapabilities": {
       "class": "Identifier",
       "name": "ReflectionCapabilities",
@@ -50,13 +53,6 @@
     "_checkImplements": {
       "class": "Identifier",
       "name": "_checkImplements",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
-      "prefix": null,
-      "value": null
-    },
-    "MissingInterfaceError": {
-      "class": "Identifier",
-      "name": "MissingInterfaceError",
       "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection_capabilities.dart",
       "prefix": null,
       "value": null

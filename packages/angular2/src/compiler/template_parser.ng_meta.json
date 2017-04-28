@@ -10,21 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/schema/element_schema_registry.dart",
-        "2": [
-          "ElementSchemaRegistry"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/selector.dart",
-        "2": [
-          "CssSelector",
-          "SelectorMatcher"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/linker/app_view_utils.dart",
         "2": [
           "MAX_INTERPOLATION_VALUES"
@@ -46,15 +31,7 @@
         "5": false
       },
       {
-        "1": "package:logging/logging.dart",
-        "5": false
-      },
-      {
         "1": "package:source_span/source_span.dart",
-        "5": false
-      },
-      {
-        "1": "expression_parser/ast.dart",
         "5": false
       },
       {
@@ -74,10 +51,6 @@
         "5": false
       },
       {
-        "1": "html_ast.dart",
-        "5": false
-      },
-      {
         "1": "expression_parser/ast.dart",
         "2": [
           "AST",
@@ -90,10 +63,18 @@
         "5": false
       },
       {
+        "1": "expression_parser/ast.dart",
+        "5": false
+      },
+      {
         "1": "expression_parser/parser.dart",
         "2": [
           "Parser"
         ],
+        "5": false
+      },
+      {
+        "1": "html_ast.dart",
         "5": false
       },
       {
@@ -120,6 +101,13 @@
         "5": false
       },
       {
+        "1": "logging.dart",
+        "2": [
+          "logger"
+        ],
+        "5": false
+      },
+      {
         "1": "parse_util.dart",
         "2": [
           "ParseError",
@@ -132,6 +120,21 @@
         "2": [
           "ProviderElementContext",
           "ProviderViewContext"
+        ],
+        "5": false
+      },
+      {
+        "1": "schema/element_schema_registry.dart",
+        "2": [
+          "ElementSchemaRegistry"
+        ],
+        "5": false
+      },
+      {
+        "1": "selector.dart",
+        "2": [
+          "CssSelector",
+          "SelectorMatcher"
         ],
         "5": false
       },
@@ -203,87 +206,147 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/compiler/schema/element_schema_registry.template.dart",
+        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/compiler/selector.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/core/linker/app_view_utils.template.dart",
+        "1": "package:angular2/src/facade/lang.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "../core/security.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "chars.template.dart",
         "4": "i5"
       },
       {
-        "1": "expression_parser/ast.template.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i6"
       },
       {
-        "1": "../core/security.template.dart",
+        "1": "expression_parser/ast.template.dart",
         "4": "i7"
       },
       {
-        "1": "chars.template.dart",
+        "1": "expression_parser/parser.template.dart",
         "4": "i8"
       },
       {
-        "1": "compile_metadata.template.dart",
+        "1": "html_ast.template.dart",
         "4": "i9"
       },
       {
-        "1": "html_ast.template.dart",
+        "1": "html_parser.template.dart",
         "4": "i10"
       },
       {
-        "1": "expression_parser/parser.template.dart",
+        "1": "html_tags.template.dart",
         "4": "i11"
       },
       {
-        "1": "html_parser.template.dart",
+        "1": "identifiers.template.dart",
         "4": "i12"
       },
       {
-        "1": "html_tags.template.dart",
+        "1": "logging.template.dart",
         "4": "i13"
       },
       {
-        "1": "identifiers.template.dart",
+        "1": "parse_util.template.dart",
         "4": "i14"
       },
       {
-        "1": "parse_util.template.dart",
+        "1": "provider_parser.template.dart",
         "4": "i15"
       },
       {
-        "1": "provider_parser.template.dart",
+        "1": "schema/element_schema_registry.template.dart",
         "4": "i16"
       },
       {
-        "1": "style_url_resolver.template.dart",
+        "1": "selector.template.dart",
         "4": "i17"
       },
       {
-        "1": "template_ast.template.dart",
+        "1": "style_url_resolver.template.dart",
         "4": "i18"
       },
       {
-        "1": "template_preparser.template.dart",
+        "1": "template_ast.template.dart",
         "4": "i19"
+      },
+      {
+        "1": "template_preparser.template.dart",
+        "4": "i20"
       }
     ]
   },
   "type": {
-    "TEMPLATE_ELEMENT": {
+    "ATTRIBUTE_PREFIX": {
       "class": "Identifier",
-      "name": "TEMPLATE_ELEMENT",
+      "name": "ATTRIBUTE_PREFIX",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "BoundElementOrDirectiveProperty": {
+      "class": "Identifier",
+      "name": "BoundElementOrDirectiveProperty",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "CLASS_ATTR": {
+      "class": "Identifier",
+      "name": "CLASS_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "CLASS_PREFIX": {
+      "class": "Identifier",
+      "name": "CLASS_PREFIX",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ElementContext": {
+      "class": "Identifier",
+      "name": "ElementContext",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ElementOrDirectiveRef": {
+      "class": "Identifier",
+      "name": "ElementOrDirectiveRef",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NonBindableVisitor": {
+      "class": "Identifier",
+      "name": "NonBindableVisitor",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PipeCollector": {
+      "class": "Identifier",
+      "name": "PipeCollector",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "STYLE_PREFIX": {
+      "class": "Identifier",
+      "name": "STYLE_PREFIX",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
       "value": null
@@ -302,30 +365,16 @@
       "prefix": null,
       "value": null
     },
-    "CLASS_ATTR": {
+    "TEMPLATE_DEFERRED_ATTR": {
       "class": "Identifier",
-      "name": "CLASS_ATTR",
+      "name": "TEMPLATE_DEFERRED_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
       "value": null
     },
-    "ATTRIBUTE_PREFIX": {
+    "TEMPLATE_ELEMENT": {
       "class": "Identifier",
-      "name": "ATTRIBUTE_PREFIX",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "CLASS_PREFIX": {
-      "class": "Identifier",
-      "name": "CLASS_PREFIX",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "STYLE_PREFIX": {
-      "class": "Identifier",
-      "name": "STYLE_PREFIX",
+      "name": "TEMPLATE_ELEMENT",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
       "value": null
@@ -340,6 +389,13 @@
     "TemplateParseResult": {
       "class": "Identifier",
       "name": "TemplateParseResult",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "TemplateParseVisitor": {
+      "class": "Identifier",
+      "name": "TemplateParseVisitor",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
       "value": null
@@ -414,48 +470,6 @@
         }
       ]
     },
-    "TemplateParseVisitor": {
-      "class": "Identifier",
-      "name": "TemplateParseVisitor",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "NonBindableVisitor": {
-      "class": "Identifier",
-      "name": "NonBindableVisitor",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "BoundElementOrDirectiveProperty": {
-      "class": "Identifier",
-      "name": "BoundElementOrDirectiveProperty",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ElementOrDirectiveRef": {
-      "class": "Identifier",
-      "name": "ElementOrDirectiveRef",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "splitClasses": {
-      "class": "Identifier",
-      "name": "splitClasses",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ElementContext": {
-      "class": "Identifier",
-      "name": "ElementContext",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
-      "prefix": null,
-      "value": null
-    },
     "createElementCssSelector": {
       "class": "Identifier",
       "name": "createElementCssSelector",
@@ -463,16 +477,16 @@
       "prefix": null,
       "value": null
     },
-    "PipeCollector": {
+    "removeDuplicates": {
       "class": "Identifier",
-      "name": "PipeCollector",
+      "name": "removeDuplicates",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
       "value": null
     },
-    "removeDuplicates": {
+    "splitClasses": {
       "class": "Identifier",
-      "name": "removeDuplicates",
+      "name": "splitClasses",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_parser.dart",
       "prefix": null,
       "value": null

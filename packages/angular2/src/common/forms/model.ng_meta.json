@@ -14,10 +14,13 @@
         "5": false
       },
       {
+        "1": "package:meta/meta.dart",
+        "5": false
+      },
+      {
         "1": "directives/validators.dart",
         "2": [
-          "ValidatorFn",
-          "AsyncValidatorFn"
+          "ValidatorFn"
         ],
         "5": false
       }
@@ -35,48 +38,6 @@
     ]
   },
   "type": {
-    "VALID": {
-      "class": "Identifier",
-      "name": "VALID",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
-      "prefix": null,
-      "value": null
-    },
-    "INVALID": {
-      "class": "Identifier",
-      "name": "INVALID",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PENDING": {
-      "class": "Identifier",
-      "name": "PENDING",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isControl": {
-      "class": "Identifier",
-      "name": "isControl",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_find": {
-      "class": "Identifier",
-      "name": "_find",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_toStream": {
-      "class": "Identifier",
-      "name": "_toStream",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
-      "prefix": null,
-      "value": null
-    },
     "AbstractControl": {
       "class": "Identifier",
       "name": "AbstractControl",
@@ -91,6 +52,13 @@
       "prefix": null,
       "value": null
     },
+    "ControlArray": {
+      "class": "Identifier",
+      "name": "ControlArray",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
+      "prefix": null,
+      "value": null
+    },
     "ControlGroup": {
       "class": "Identifier",
       "name": "ControlGroup",
@@ -98,9 +66,9 @@
       "prefix": null,
       "value": null
     },
-    "ControlArray": {
+    "_find": {
       "class": "Identifier",
-      "name": "ControlArray",
+      "name": "_find",
       "moduleUrl": "asset:angular2/lib/src/common/forms/model.dart",
       "prefix": null,
       "value": null

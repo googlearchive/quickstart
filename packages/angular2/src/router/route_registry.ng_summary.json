@@ -14,10 +14,16 @@
       {
         "1": "package:angular2/core.dart",
         "2": [
-          "Injectable",
-          "Inject",
           "OpaqueToken",
           "ComponentFactory"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
+        "2": [
+          "Injectable",
+          "Inject"
         ],
         "5": false
       },
@@ -40,7 +46,7 @@
         "5": false
       },
       {
-        "1": "route_config/route_config_impl.dart",
+        "1": "route_config/route_config_decorator.dart",
         "2": [
           "RouteConfig",
           "Route",
@@ -158,16 +164,9 @@
         }
       ]
     },
-    "splitAndFlattenLinkParams": {
+    "assertTerminalComponent": {
       "class": "Identifier",
-      "name": "splitAndFlattenLinkParams",
-      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-      "prefix": null,
-      "value": null
-    },
-    "mostSpecific": {
-      "class": "Identifier",
-      "name": "mostSpecific",
+      "name": "assertTerminalComponent",
       "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
       "prefix": null,
       "value": null
@@ -179,9 +178,16 @@
       "prefix": null,
       "value": null
     },
-    "assertTerminalComponent": {
+    "mostSpecific": {
       "class": "Identifier",
-      "name": "assertTerminalComponent",
+      "name": "mostSpecific",
+      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+      "prefix": null,
+      "value": null
+    },
+    "splitAndFlattenLinkParams": {
+      "class": "Identifier",
+      "name": "splitAndFlattenLinkParams",
       "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
       "prefix": null,
       "value": null

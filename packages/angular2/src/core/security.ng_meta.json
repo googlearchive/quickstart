@@ -1,9 +1,9 @@
 {
   "ngDeps": null,
   "type": {
-    "TemplateSecurityContext": {
+    "SafeValue": {
       "class": "Identifier",
-      "name": "TemplateSecurityContext",
+      "name": "SafeValue",
       "moduleUrl": "asset:angular2/lib/src/core/security.dart",
       "prefix": null,
       "value": null
@@ -15,9 +15,9 @@
       "prefix": null,
       "value": null
     },
-    "SafeValue": {
+    "TemplateSecurityContext": {
       "class": "Identifier",
-      "name": "SafeValue",
+      "name": "TemplateSecurityContext",
       "moduleUrl": "asset:angular2/lib/src/core/security.dart",
       "prefix": null,
       "value": null

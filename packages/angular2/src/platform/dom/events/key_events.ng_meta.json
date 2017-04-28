@@ -21,13 +21,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM"
-        ],
-        "5": false
-      },
-      {
         "1": "event_manager.dart",
         "2": [
           "EventManagerPlugin"
@@ -57,12 +50,8 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
-        "4": "i2"
-      },
-      {
         "1": "event_manager.template.dart",
-        "4": "i3"
+        "4": "i2"
       }
     ]
   },

@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/router/lifecycle/lifecycle_annotations_impl.dart",
+        "1": "lifecycle_annotations.dart",
         "5": false
       }
     ],
@@ -18,7 +18,7 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/router/lifecycle/lifecycle_annotations_impl.template.dart",
+        "1": "lifecycle_annotations.template.dart",
         "4": "i1"
       }
     ]

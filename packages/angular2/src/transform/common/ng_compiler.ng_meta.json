@@ -49,7 +49,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.dart",
+        "1": "asset_reader.dart",
         "5": false
       },
       {
@@ -108,7 +108,7 @@
         "4": "i10"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "asset_reader.template.dart",
         "4": "i11"
       },
       {

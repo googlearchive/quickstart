@@ -3,13 +3,6 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/src/core/di.dart",
-        "2": [
-          "Provider"
-        ],
-        "5": false
-      },
-      {
         "1": "application_ref.dart",
         "2": [
           "APPLICATION_CORE_PROVIDERS"
@@ -24,12 +17,9 @@
         "5": false
       },
       {
-        "1": "change_detection/change_detection.dart",
+        "1": "di.dart",
         "2": [
-          "IterableDiffers",
-          "defaultIterableDiffers",
-          "KeyValueDiffers",
-          "defaultKeyValueDiffers"
+          "Provider"
         ],
         "5": false
       },
@@ -72,32 +62,28 @@
     "6": "application_common_providers.dart",
     "7": [
       {
-        "1": "package:angular2/src/core/di.template.dart",
+        "1": "application_ref.template.dart",
         "4": "i0"
       },
       {
-        "1": "application_ref.template.dart",
+        "1": "application_tokens.template.dart",
         "4": "i1"
       },
       {
-        "1": "application_tokens.template.dart",
+        "1": "di.template.dart",
         "4": "i2"
       },
       {
-        "1": "change_detection/change_detection.template.dart",
+        "1": "linker/app_view_utils.template.dart",
         "4": "i3"
       },
       {
-        "1": "linker/app_view_utils.template.dart",
+        "1": "linker/component_resolver.template.dart",
         "4": "i4"
       },
       {
-        "1": "linker/component_resolver.template.dart",
-        "4": "i5"
-      },
-      {
         "1": "linker/dynamic_component_loader.template.dart",
-        "4": "i6"
+        "4": "i5"
       }
     ]
   },
@@ -131,7 +117,6 @@
             "prefix": null,
             "value": null
           },
-          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -284,7 +269,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -378,7 +362,6 @@
           },
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -407,7 +390,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -434,7 +416,6 @@
             "prefix": null,
             "value": null
           },
-          "useProperty": null,
           "multi": false,
           "deps": []
         },
@@ -587,61 +568,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "IterableDiffers",
-              "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/iterable_differs.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": {
-            "class": "Identifier",
-            "name": "defaultIterableDiffers",
-            "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
-            "prefix": null,
-            "value": null
-          },
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "KeyValueDiffers",
-              "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/keyvalue_differs.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": null,
-          "useValue": {
-            "class": "Identifier",
-            "name": "defaultKeyValueDiffers",
-            "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection.dart",
-            "prefix": null,
-            "value": null
-          },
-          "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -691,7 +617,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         }

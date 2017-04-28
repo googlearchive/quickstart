@@ -14,16 +14,16 @@
     "6": "constify.dart"
   },
   "type": {
-    "constify": {
+    "_ConstifyingVisitor": {
       "class": "Identifier",
-      "name": "constify",
+      "name": "_ConstifyingVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/constify.dart",
       "prefix": null,
       "value": null
     },
-    "_ConstifyingVisitor": {
+    "constify": {
       "class": "Identifier",
-      "name": "_ConstifyingVisitor",
+      "name": "constify",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/constify.dart",
       "prefix": null,
       "value": null

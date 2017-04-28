@@ -1,22 +1,22 @@
 {
   "ngDeps": {
-    "1": "",
+    "1": "browser.testability",
     "3": [
       {
         "1": "dart:html",
         "5": false
       },
       {
-        "1": "dart:js",
-        "4": "js",
+        "1": "package:js/js.dart",
+        "5": false
+      },
+      {
+        "1": "package:js/js_util.dart",
+        "4": "js_util",
         "5": false
       },
       {
         "1": "package:angular2/di.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/platform/common_dom.dart",
         "5": false
       }
     ],
@@ -25,45 +25,13 @@
       {
         "1": "package:angular2/di.template.dart",
         "4": "i0"
-      },
-      {
-        "1": "package:angular2/platform/common_dom.template.dart",
-        "4": "i1"
       }
     ]
   },
   "type": {
-    "__varargSentinel": {
+    "BrowserGetTestability": {
       "class": "Identifier",
-      "name": "__varargSentinel",
-      "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_jsFunction": {
-      "class": "Identifier",
-      "name": "_jsFunction",
-      "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
-      "prefix": null,
-      "value": null
-    },
-    "__invokeFn": {
-      "class": "Identifier",
-      "name": "__invokeFn",
-      "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_jsify": {
-      "class": "Identifier",
-      "name": "_jsify",
-      "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_JsObjectProxyable": {
-      "class": "Identifier",
-      "name": "_JsObjectProxyable",
+      "name": "BrowserGetTestability",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
       "prefix": null,
       "value": null
@@ -75,9 +43,9 @@
       "prefix": null,
       "value": null
     },
-    "BrowserGetTestability": {
+    "_self": {
       "class": "Identifier",
-      "name": "BrowserGetTestability",
+      "name": "_self",
       "moduleUrl": "asset:angular2/lib/src/platform/browser/testability.dart",
       "prefix": null,
       "value": null

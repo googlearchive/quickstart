@@ -20,30 +20,9 @@
     "6": "template_preparser.dart"
   },
   "type": {
-    "NG_CONTENT_SELECT_ATTR": {
-      "class": "Identifier",
-      "name": "NG_CONTENT_SELECT_ATTR",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "NG_CONTENT_ELEMENT": {
-      "class": "Identifier",
-      "name": "NG_CONTENT_ELEMENT",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
-      "prefix": null,
-      "value": null
-    },
     "LINK_ELEMENT": {
       "class": "Identifier",
       "name": "LINK_ELEMENT",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "LINK_STYLE_REL_ATTR": {
-      "class": "Identifier",
-      "name": "LINK_STYLE_REL_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
       "value": null
@@ -55,6 +34,13 @@
       "prefix": null,
       "value": null
     },
+    "LINK_STYLE_REL_ATTR": {
+      "class": "Identifier",
+      "name": "LINK_STYLE_REL_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
+      "prefix": null,
+      "value": null
+    },
     "LINK_STYLE_REL_VALUE": {
       "class": "Identifier",
       "name": "LINK_STYLE_REL_VALUE",
@@ -62,16 +48,16 @@
       "prefix": null,
       "value": null
     },
-    "STYLE_ELEMENT": {
+    "NG_CONTENT_ELEMENT": {
       "class": "Identifier",
-      "name": "STYLE_ELEMENT",
+      "name": "NG_CONTENT_ELEMENT",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
       "value": null
     },
-    "SCRIPT_ELEMENT": {
+    "NG_CONTENT_SELECT_ATTR": {
       "class": "Identifier",
-      "name": "SCRIPT_ELEMENT",
+      "name": "NG_CONTENT_SELECT_ATTR",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
       "value": null
@@ -90,20 +76,6 @@
       "prefix": null,
       "value": null
     },
-    "PreparsedElementType": {
-      "class": "Identifier",
-      "name": "PreparsedElementType",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "preparseElement": {
-      "class": "Identifier",
-      "name": "preparseElement",
-      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
-      "prefix": null,
-      "value": null
-    },
     "PreparsedElement": {
       "class": "Identifier",
       "name": "PreparsedElement",
@@ -111,9 +83,37 @@
       "prefix": null,
       "value": null
     },
+    "PreparsedElementType": {
+      "class": "Identifier",
+      "name": "PreparsedElementType",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "SCRIPT_ELEMENT": {
+      "class": "Identifier",
+      "name": "SCRIPT_ELEMENT",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "STYLE_ELEMENT": {
+      "class": "Identifier",
+      "name": "STYLE_ELEMENT",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
+      "prefix": null,
+      "value": null
+    },
     "normalizeNgContentSelect": {
       "class": "Identifier",
       "name": "normalizeNgContentSelect",
+      "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "preparseElement": {
+      "class": "Identifier",
+      "name": "preparseElement",
       "moduleUrl": "asset:angular2/lib/src/compiler/template_preparser.dart",
       "prefix": null,
       "value": null

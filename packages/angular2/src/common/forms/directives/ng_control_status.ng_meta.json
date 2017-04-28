@@ -5,7 +5,13 @@
       {
         "1": "package:angular2/core.dart",
         "2": [
-          "Directive",
+          "Directive"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
+        "2": [
           "Self"
         ],
         "5": false
@@ -25,7 +31,7 @@
           {
             "1": "Deprecated",
             "2": [
-              "\"Use listeners or variable binding on the control itself instead. \" \"This adds overhead for every form control whether the class is \" \"used or not.\""
+              "'Use listeners or variable binding on the control itself instead. ' 'This adds overhead for every form control whether the class is ' 'used or not.'"
             ],
             "4": false
           }
@@ -36,7 +42,7 @@
             "3": [
               "const Self()"
             ],
-            "4": "cd"
+            "4": "_cd"
           }
         ]
       }
@@ -48,8 +54,12 @@
         "4": "i0"
       },
       {
-        "1": "ng_control.template.dart",
+        "1": "package:angular2/di.template.dart",
         "4": "i1"
+      },
+      {
+        "1": "ng_control.template.dart",
+        "4": "i2"
       }
     ]
   },

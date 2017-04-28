@@ -17,7 +17,7 @@
         "5": false
       },
       {
-        "1": "lifecycle/lifecycle_annotations_impl.dart",
+        "1": "lifecycle/lifecycle_annotations.dart",
         "2": [
           "CanActivate"
         ],
@@ -35,7 +35,7 @@
         "4": "i1"
       },
       {
-        "1": "lifecycle/lifecycle_annotations_impl.template.dart",
+        "1": "lifecycle/lifecycle_annotations.template.dart",
         "4": "i2"
       }
     ]
@@ -48,9 +48,9 @@
       "prefix": null,
       "value": null
     },
-    "normalizeString": {
+    "getCanActivateHook": {
       "class": "Identifier",
-      "name": "normalizeString",
+      "name": "getCanActivateHook",
       "moduleUrl": "asset:angular2/lib/src/router/utils.dart",
       "prefix": null,
       "value": null
@@ -69,9 +69,9 @@
       "prefix": null,
       "value": null
     },
-    "getCanActivateHook": {
+    "normalizeString": {
       "class": "Identifier",
-      "name": "getCanActivateHook",
+      "name": "normalizeString",
       "moduleUrl": "asset:angular2/lib/src/router/utils.dart",
       "prefix": null,
       "value": null

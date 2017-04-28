@@ -27,16 +27,16 @@
       "prefix": null,
       "value": null
     },
-    "ViewWrappedException": {
+    "ViewDestroyedException": {
       "class": "Identifier",
-      "name": "ViewWrappedException",
+      "name": "ViewDestroyedException",
       "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
       "prefix": null,
       "value": null
     },
-    "ViewDestroyedException": {
+    "ViewWrappedException": {
       "class": "Identifier",
-      "name": "ViewDestroyedException",
+      "name": "ViewWrappedException",
       "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
       "prefix": null,
       "value": null

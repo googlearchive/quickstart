@@ -55,23 +55,9 @@
       "prefix": null,
       "value": null
     },
-    "parseBarbackSettings": {
-      "class": "Identifier",
-      "name": "parseBarbackSettings",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/options_reader.dart",
-      "prefix": null,
-      "value": null
-    },
     "_checkEntryPointsExist": {
       "class": "Identifier",
       "name": "_checkEntryPointsExist",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/options_reader.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_readBool": {
-      "class": "Identifier",
-      "name": "_readBool",
       "moduleUrl": "asset:angular2/lib/src/transform/common/options_reader.dart",
       "prefix": null,
       "value": null
@@ -83,9 +69,9 @@
       "prefix": null,
       "value": null
     },
-    "_readStringList": {
+    "_readBool": {
       "class": "Identifier",
-      "name": "_readStringList",
+      "name": "_readBool",
       "moduleUrl": "asset:angular2/lib/src/transform/common/options_reader.dart",
       "prefix": null,
       "value": null
@@ -93,6 +79,20 @@
     "_readCustomAnnotations": {
       "class": "Identifier",
       "name": "_readCustomAnnotations",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/options_reader.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_readStringList": {
+      "class": "Identifier",
+      "name": "_readStringList",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/options_reader.dart",
+      "prefix": null,
+      "value": null
+    },
+    "parseBarbackSettings": {
+      "class": "Identifier",
+      "name": "parseBarbackSettings",
       "moduleUrl": "asset:angular2/lib/src/transform/common/options_reader.dart",
       "prefix": null,
       "value": null

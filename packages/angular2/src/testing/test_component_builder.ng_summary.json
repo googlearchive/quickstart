@@ -7,6 +7,10 @@
         "5": false
       },
       {
+        "1": "dart:html",
+        "5": false
+      },
+      {
         "1": "package:angular2/compiler.dart",
         "2": [
           "DirectiveResolver",
@@ -20,11 +24,21 @@
           "ComponentRef",
           "DynamicComponentLoader",
           "Injector",
-          "Injectable",
           "View",
           "ElementRef",
           "ChangeDetectorRef"
         ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
+        "2": [
+          "Injectable"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/platform/common_dom.dart",
         "5": false
       },
       {
@@ -36,13 +50,6 @@
         "2": [
           "DebugElement",
           "getDebugNode"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM"
         ],
         "5": false
       },
@@ -61,10 +68,7 @@
         "5": false
       },
       {
-        "1": "utils.dart",
-        "2": [
-          "el"
-        ],
+        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
         "5": false
       }
     ],

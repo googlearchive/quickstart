@@ -3,6 +3,9 @@
     "1": "",
     "4": [
       {
+        "1": "browser/location/browser_platform_location.dart"
+      },
+      {
         "1": "browser/location/hash_location_strategy.dart"
       },
       {

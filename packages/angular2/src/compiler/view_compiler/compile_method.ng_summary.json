@@ -25,16 +25,16 @@
     "6": "compile_method.dart"
   },
   "type": {
-    "_DebugState": {
+    "CompileMethod": {
       "class": "Identifier",
-      "name": "_DebugState",
+      "name": "CompileMethod",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_method.dart",
       "prefix": null,
       "value": null
     },
-    "CompileMethod": {
+    "_DebugState": {
       "class": "Identifier",
-      "name": "CompileMethod",
+      "name": "_DebugState",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_method.dart",
       "prefix": null,
       "value": null

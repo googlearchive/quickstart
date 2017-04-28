@@ -35,24 +35,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.dart",
-        "2": [
-          "NgZone"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:test/test.dart",
-        "5": false
-      },
-      {
         "1": "internal_injector.dart",
         "5": false
       }
@@ -62,13 +44,13 @@
         "1": "package:angular2/src/debug/debug_node.dart"
       },
       {
-        "1": "by.dart"
-      },
-      {
         "1": "fake_async.dart"
       },
       {
         "1": "internal_injector.dart"
+      },
+      {
+        "1": "matchers.dart"
       },
       {
         "1": "test_component_builder.dart"
@@ -80,9 +62,9 @@
     "6": "internal.dart"
   },
   "type": {
-    "inject": {
+    "_bootstrapInternalTests": {
       "class": "Identifier",
-      "name": "inject",
+      "name": "_bootstrapInternalTests",
       "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
@@ -94,9 +76,16 @@
       "prefix": null,
       "value": null
     },
-    "_bootstrapInternalTests": {
+    "getTestInjector": {
       "class": "Identifier",
-      "name": "_bootstrapInternalTests",
+      "name": "getTestInjector",
+      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
+      "prefix": null,
+      "value": null
+    },
+    "inject": {
+      "class": "Identifier",
+      "name": "inject",
       "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null
@@ -104,55 +93,6 @@
     "setBaseTestProviders": {
       "class": "Identifier",
       "name": "setBaseTestProviders",
-      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
-      "prefix": null,
-      "value": null
-    },
-    "isInInnerZone": {
-      "class": "Identifier",
-      "name": "isInInnerZone",
-      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_HasTextContent": {
-      "class": "Identifier",
-      "name": "_HasTextContent",
-      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
-      "prefix": null,
-      "value": null
-    },
-    "hasTextContent": {
-      "class": "Identifier",
-      "name": "hasTextContent",
-      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_ThrowsWith": {
-      "class": "Identifier",
-      "name": "_ThrowsWith",
-      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
-      "prefix": null,
-      "value": null
-    },
-    "throwsWith": {
-      "class": "Identifier",
-      "name": "throwsWith",
-      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_elementText": {
-      "class": "Identifier",
-      "name": "_elementText",
-      "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
-      "prefix": null,
-      "value": null
-    },
-    "getTestInjector": {
-      "class": "Identifier",
-      "name": "getTestInjector",
       "moduleUrl": "asset:angular2/lib/src/testing/internal.dart",
       "prefix": null,
       "value": null

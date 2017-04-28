@@ -53,11 +53,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/source_gen/common/xhr_impl.dart",
+        "1": "package:build/build.dart",
         "5": false
       },
       {
-        "1": "package:build/build.dart",
+        "1": "xhr_impl.dart",
         "5": false
       }
     ],

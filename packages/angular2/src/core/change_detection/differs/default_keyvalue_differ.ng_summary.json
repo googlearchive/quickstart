@@ -12,23 +12,7 @@
       {
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
-          "stringify",
           "looseIdentical"
-        ],
-        "5": false
-      },
-      {
-        "1": "../change_detector_ref.dart",
-        "2": [
-          "ChangeDetectorRef"
-        ],
-        "5": false
-      },
-      {
-        "1": "../differs/keyvalue_differs.dart",
-        "2": [
-          "KeyValueDiffer",
-          "KeyValueDifferFactory"
         ],
         "5": false
       }
@@ -36,20 +20,6 @@
     "6": "default_keyvalue_differ.dart"
   },
   "type": {
-    "_MapHandler": {
-      "class": "Identifier",
-      "name": "_MapHandler",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DefaultKeyValueDifferFactory": {
-      "class": "Identifier",
-      "name": "DefaultKeyValueDifferFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
-      "prefix": null,
-      "value": null
-    },
     "DefaultKeyValueDiffer": {
       "class": "Identifier",
       "name": "DefaultKeyValueDiffer",
@@ -60,6 +30,13 @@
     "KeyValueChangeRecord": {
       "class": "Identifier",
       "name": "KeyValueChangeRecord",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_MapHandler": {
+      "class": "Identifier",
+      "name": "_MapHandler",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/differs/default_keyvalue_differ.dart",
       "prefix": null,
       "value": null

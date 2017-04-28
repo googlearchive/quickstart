@@ -21,7 +21,7 @@
         "5": false
       },
       {
-        "1": "../route_config/route_config_impl.dart",
+        "1": "../route_config/route_config_decorator.dart",
         "2": [
           "Route",
           "AsyncRoute",

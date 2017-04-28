@@ -21,10 +21,6 @@
       {
         "1": "package:build/build.dart",
         "5": false
-      },
-      {
-        "1": "package:source_gen/source_gen.dart",
-        "5": false
       }
     ],
     "6": "component_extractor_generator.dart"

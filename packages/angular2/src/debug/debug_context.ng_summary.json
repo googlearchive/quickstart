@@ -10,10 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/view_type.dart",
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/render/api.dart",
         "2": [
           "RenderDebugInfo"
@@ -21,23 +17,23 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/debug/debug_app_view.dart",
+        "1": "debug_app_view.dart",
         "5": false
       }
     ],
     "6": "debug_context.dart"
   },
   "type": {
-    "StaticNodeDebugInfo": {
+    "DebugContext": {
       "class": "Identifier",
-      "name": "StaticNodeDebugInfo",
+      "name": "DebugContext",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_context.dart",
       "prefix": null,
       "value": null
     },
-    "DebugContext": {
+    "StaticNodeDebugInfo": {
       "class": "Identifier",
-      "name": "DebugContext",
+      "name": "StaticNodeDebugInfo",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_context.dart",
       "prefix": null,
       "value": null

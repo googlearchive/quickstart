@@ -10,10 +10,16 @@
         "1": "package:angular2/core.dart",
         "2": [
           "Pipe",
-          "Injectable",
           "ChangeDetectorRef",
           "OnDestroy",
           "WrappedValue"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
+        "2": [
+          "Injectable"
         ],
         "5": false
       },
@@ -31,11 +37,10 @@
         "4": [
           {
             "1": "Pipe",
+            "2": [
+              "\"async\""
+            ],
             "3": [
-              {
-                "1": "name",
-                "2": "\"async\""
-              },
               {
                 "1": "pure",
                 "2": "false"
@@ -66,26 +71,16 @@
         "4": "i0"
       },
       {
-        "1": "invalid_pipe_argument_exception.template.dart",
+        "1": "package:angular2/di.template.dart",
         "4": "i1"
+      },
+      {
+        "1": "invalid_pipe_argument_exception.template.dart",
+        "4": "i2"
       }
     ]
   },
   "type": {
-    "ObservableStrategy": {
-      "class": "Identifier",
-      "name": "ObservableStrategy",
-      "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PromiseStrategy": {
-      "class": "Identifier",
-      "name": "PromiseStrategy",
-      "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
-      "prefix": null,
-      "value": null
-    },
     "AsyncPipe": {
       "class": "Pipe",
       "type": {
@@ -120,6 +115,20 @@
       },
       "name": "async",
       "pure": false
+    },
+    "ObservableStrategy": {
+      "class": "Identifier",
+      "name": "ObservableStrategy",
+      "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PromiseStrategy": {
+      "class": "Identifier",
+      "name": "PromiseStrategy",
+      "moduleUrl": "asset:angular2/lib/src/common/pipes/async_pipe.dart",
+      "prefix": null,
+      "value": null
     }
   },
   "alias": {}

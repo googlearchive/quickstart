@@ -8,23 +8,37 @@
       "prefix": null,
       "value": null
     },
-    "Quote": {
+    "ASTWithSource": {
       "class": "Identifier",
-      "name": "Quote",
+      "name": "ASTWithSource",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null
     },
-    "EmptyExpr": {
+    "AstTransformer": {
       "class": "Identifier",
-      "name": "EmptyExpr",
+      "name": "AstTransformer",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null
     },
-    "ImplicitReceiver": {
+    "AstVisitor": {
       "class": "Identifier",
-      "name": "ImplicitReceiver",
+      "name": "AstVisitor",
+      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "Binary": {
+      "class": "Identifier",
+      "name": "Binary",
+      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "BindingPipe": {
+      "class": "Identifier",
+      "name": "BindingPipe",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null
@@ -43,6 +57,20 @@
       "prefix": null,
       "value": null
     },
+    "EmptyExpr": {
+      "class": "Identifier",
+      "name": "EmptyExpr",
+      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "FunctionCall": {
+      "class": "Identifier",
+      "name": "FunctionCall",
+      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
+      "prefix": null,
+      "value": null
+    },
     "IfNull": {
       "class": "Identifier",
       "name": "IfNull",
@@ -50,23 +78,16 @@
       "prefix": null,
       "value": null
     },
-    "PropertyRead": {
+    "ImplicitReceiver": {
       "class": "Identifier",
-      "name": "PropertyRead",
+      "name": "ImplicitReceiver",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null
     },
-    "PropertyWrite": {
+    "Interpolation": {
       "class": "Identifier",
-      "name": "PropertyWrite",
-      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
-      "prefix": null,
-      "value": null
-    },
-    "SafePropertyRead": {
-      "class": "Identifier",
-      "name": "SafePropertyRead",
+      "name": "Interpolation",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null
@@ -85,20 +106,6 @@
       "prefix": null,
       "value": null
     },
-    "BindingPipe": {
-      "class": "Identifier",
-      "name": "BindingPipe",
-      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
-      "prefix": null,
-      "value": null
-    },
-    "LiteralPrimitive": {
-      "class": "Identifier",
-      "name": "LiteralPrimitive",
-      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
-      "prefix": null,
-      "value": null
-    },
     "LiteralArray": {
       "class": "Identifier",
       "name": "LiteralArray",
@@ -113,23 +120,9 @@
       "prefix": null,
       "value": null
     },
-    "Interpolation": {
+    "LiteralPrimitive": {
       "class": "Identifier",
-      "name": "Interpolation",
-      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Binary": {
-      "class": "Identifier",
-      "name": "Binary",
-      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
-      "prefix": null,
-      "value": null
-    },
-    "PrefixNot": {
-      "class": "Identifier",
-      "name": "PrefixNot",
+      "name": "LiteralPrimitive",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null
@@ -141,37 +134,23 @@
       "prefix": null,
       "value": null
     },
-    "SafeMethodCall": {
+    "PrefixNot": {
       "class": "Identifier",
-      "name": "SafeMethodCall",
+      "name": "PrefixNot",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null
     },
-    "FunctionCall": {
+    "PropertyRead": {
       "class": "Identifier",
-      "name": "FunctionCall",
+      "name": "PropertyRead",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null
     },
-    "ASTWithSource": {
+    "PropertyWrite": {
       "class": "Identifier",
-      "name": "ASTWithSource",
-      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
-      "prefix": null,
-      "value": null
-    },
-    "TemplateBinding": {
-      "class": "Identifier",
-      "name": "TemplateBinding",
-      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AstVisitor": {
-      "class": "Identifier",
-      "name": "AstVisitor",
+      "name": "PropertyWrite",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null
@@ -183,9 +162,23 @@
       "prefix": null,
       "value": null
     },
-    "AstTransformer": {
+    "SafeMethodCall": {
       "class": "Identifier",
-      "name": "AstTransformer",
+      "name": "SafeMethodCall",
+      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "SafePropertyRead": {
+      "class": "Identifier",
+      "name": "SafePropertyRead",
+      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
+      "prefix": null,
+      "value": null
+    },
+    "TemplateBinding": {
+      "class": "Identifier",
+      "name": "TemplateBinding",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/ast.dart",
       "prefix": null,
       "value": null

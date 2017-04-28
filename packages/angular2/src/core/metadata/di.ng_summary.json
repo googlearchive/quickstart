@@ -8,14 +8,6 @@
     ],
     "6": "di.dart"
   },
-  "type": {
-    "ProviderProperty": {
-      "class": "Identifier",
-      "name": "ProviderProperty",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/di.dart",
-      "prefix": null,
-      "value": null
-    }
-  },
+  "type": {},
   "alias": {}
 }

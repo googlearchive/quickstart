@@ -1,16 +1,16 @@
 {
   "ngDeps": null,
   "type": {
-    "InstanceFactory": {
+    "DynamicInstance": {
       "class": "Identifier",
-      "name": "InstanceFactory",
+      "name": "DynamicInstance",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/dynamic_instance.dart",
       "prefix": null,
       "value": null
     },
-    "DynamicInstance": {
+    "InstanceFactory": {
       "class": "Identifier",
-      "name": "DynamicInstance",
+      "name": "InstanceFactory",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/dynamic_instance.dart",
       "prefix": null,
       "value": null

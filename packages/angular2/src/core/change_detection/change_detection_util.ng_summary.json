@@ -26,23 +26,9 @@
     "6": "change_detection_util.dart"
   },
   "type": {
-    "_DevModeEquality": {
+    "SimpleChange": {
       "class": "Identifier",
-      "name": "_DevModeEquality",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
-      "prefix": null,
-      "value": null
-    },
-    "devModeEqual": {
-      "class": "Identifier",
-      "name": "devModeEqual",
-      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
-      "prefix": null,
-      "value": null
-    },
-    "WrappedValue": {
-      "class": "Identifier",
-      "name": "WrappedValue",
+      "name": "SimpleChange",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
       "prefix": null,
       "value": null
@@ -54,9 +40,23 @@
       "prefix": null,
       "value": null
     },
-    "SimpleChange": {
+    "WrappedValue": {
       "class": "Identifier",
-      "name": "SimpleChange",
+      "name": "WrappedValue",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_DevModeEquality": {
+      "class": "Identifier",
+      "name": "_DevModeEquality",
+      "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
+      "prefix": null,
+      "value": null
+    },
+    "devModeEqual": {
+      "class": "Identifier",
+      "name": "devModeEqual",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/change_detection_util.dart",
       "prefix": null,
       "value": null

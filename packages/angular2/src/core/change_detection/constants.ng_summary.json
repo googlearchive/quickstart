@@ -1,16 +1,16 @@
 {
   "ngDeps": null,
   "type": {
-    "ChangeDetectorState": {
+    "ChangeDetectionStrategy": {
       "class": "Identifier",
-      "name": "ChangeDetectorState",
+      "name": "ChangeDetectionStrategy",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
       "prefix": null,
       "value": null
     },
-    "ChangeDetectionStrategy": {
+    "ChangeDetectorState": {
       "class": "Identifier",
-      "name": "ChangeDetectionStrategy",
+      "name": "ChangeDetectorState",
       "moduleUrl": "asset:angular2/lib/src/core/change_detection/constants.dart",
       "prefix": null,
       "value": null

@@ -118,6 +118,12 @@
         ]
       },
       {
+        "1": "forms/directives/shared.dart",
+        "2": [
+          "composeValidators"
+        ]
+      },
+      {
         "1": "forms/directives/validators.dart",
         "2": [
           "RequiredValidator",
@@ -147,7 +153,6 @@
         "1": "forms/validators.dart",
         "2": [
           "NG_VALIDATORS",
-          "NG_ASYNC_VALIDATORS",
           "Validators"
         ]
       }
@@ -155,6 +160,13 @@
     "6": "forms.dart"
   },
   "type": {
+    "FORM_BINDINGS": {
+      "class": "Identifier",
+      "name": "FORM_BINDINGS",
+      "moduleUrl": "asset:angular2/lib/src/common/forms.dart",
+      "prefix": null,
+      "value": null
+    },
     "FORM_PROVIDERS": {
       "class": "Identifier",
       "name": "FORM_PROVIDERS",
@@ -176,13 +188,6 @@
           "value": null
         }
       ]
-    },
-    "FORM_BINDINGS": {
-      "class": "Identifier",
-      "name": "FORM_BINDINGS",
-      "moduleUrl": "asset:angular2/lib/src/common/forms.dart",
-      "prefix": null,
-      "value": null
     }
   },
   "alias": {

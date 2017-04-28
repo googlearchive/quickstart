@@ -9,30 +9,14 @@
         ]
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM",
-          "setRootDomAdapter",
-          "DomAdapter"
-        ]
-      },
-      {
         "1": "package:angular2/src/platform/dom/dom_tokens.dart",
         "2": [
           "DOCUMENT"
         ]
       },
       {
-        "1": "package:angular2/src/platform/dom/events/dom_events.dart",
-        "2": [
-          "DomEventsPlugin"
-        ]
-      },
-      {
         "1": "package:angular2/src/platform/dom/events/event_manager.dart",
         "2": [
-          "EVENT_MANAGER_PLUGINS",
-          "EventManager",
           "EventManagerPlugin"
         ]
       }
@@ -44,88 +28,22 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.template.dart",
+        "1": "package:angular2/src/platform/dom/dom_tokens.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_tokens.template.dart",
-        "4": "i2"
-      },
-      {
-        "1": "package:angular2/src/platform/dom/events/dom_events.template.dart",
-        "4": "i3"
-      },
-      {
         "1": "package:angular2/src/platform/dom/events/event_manager.template.dart",
-        "4": "i4"
+        "4": "i2"
       }
     ]
   },
   "type": {
-    "SharedStylesHost": {
-      "class": "Identifier",
-      "name": "SharedStylesHost",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "value": null
-    },
-    "RenderComponentType": {
-      "class": "Identifier",
-      "name": "RenderComponentType",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "value": null
-    },
-    "RenderDebugInfo": {
-      "class": "Identifier",
-      "name": "RenderDebugInfo",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Renderer": {
-      "class": "Identifier",
-      "name": "Renderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "value": null
-    },
-    "RootRenderer": {
-      "class": "Identifier",
-      "name": "RootRenderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "value": null
-    },
-    "setRootDomAdapter": {
-      "class": "Identifier",
-      "name": "setRootDomAdapter",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_adapter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DomAdapter": {
-      "class": "Identifier",
-      "name": "DomAdapter",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_adapter.dart",
-      "prefix": null,
-      "value": null
-    },
     "DOCUMENT": {
       "class": "Identifier",
       "name": "DOCUMENT",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
       "prefix": null,
       "value": null
-    },
-    "DomEventsPlugin": {
-      "class": "Type",
-      "name": "DomEventsPlugin",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/events/dom_events.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
     },
     "EVENT_MANAGER_PLUGINS": {
       "class": "Identifier",
@@ -188,6 +106,27 @@
       "class": "Identifier",
       "name": "EventManagerPlugin",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RenderComponentType": {
+      "class": "Identifier",
+      "name": "RenderComponentType",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RenderDebugInfo": {
+      "class": "Identifier",
+      "name": "RenderDebugInfo",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "prefix": null,
+      "value": null
+    },
+    "SharedStylesHost": {
+      "class": "Identifier",
+      "name": "SharedStylesHost",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "value": null
     }

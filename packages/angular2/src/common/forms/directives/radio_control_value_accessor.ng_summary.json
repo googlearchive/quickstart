@@ -3,6 +3,11 @@
     "1": "",
     "3": [
       {
+        "1": "dart:js_util",
+        "4": "js_util",
+        "5": false
+      },
+      {
         "1": "package:angular2/core.dart",
         "2": [
           "Directive",
@@ -11,20 +16,27 @@
           "Input",
           "OnInit",
           "OnDestroy",
-          "Injector",
+          "Injector"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
+        "2": [
           "Injectable"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "1": "package:func/func.dart",
         "2": [
-          "DOM"
+          "Func0",
+          "VoidFunc0"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/common/forms/directives/control_value_accessor.dart",
+        "1": "control_value_accessor.dart",
         "2": [
           "NG_VALUE_ACCESSOR",
           "ControlValueAccessor"
@@ -32,7 +44,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/common/forms/directives/ng_control.dart",
+        "1": "ng_control.dart",
         "2": [
           "NgControl"
         ],
@@ -107,10 +119,16 @@
         },
         "useValue": null,
         "useFactory": null,
-        "useProperty": null,
         "multi": true,
         "deps": null
       }
+    },
+    "RadioButtonState": {
+      "class": "Identifier",
+      "name": "RadioButtonState",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/radio_control_value_accessor.dart",
+      "prefix": null,
+      "value": null
     },
     "RadioControlRegistry": {
       "class": "Type",
@@ -120,13 +138,6 @@
       "isHost": false,
       "value": null,
       "diDeps": []
-    },
-    "RadioButtonState": {
-      "class": "Identifier",
-      "name": "RadioButtonState",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/radio_control_value_accessor.dart",
-      "prefix": null,
-      "value": null
     },
     "RadioControlValueAccessor": {
       "class": "Directive",
@@ -212,8 +223,8 @@
       },
       "outputs": {},
       "hostListeners": {
-        "blur": "onTouched()",
-        "change": "onChange()"
+        "blur": "touchHandler()",
+        "change": "changeHandler()"
       },
       "hostProperties": {},
       "hostAttributes": {},

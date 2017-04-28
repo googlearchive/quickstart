@@ -17,7 +17,7 @@
           "ViewContainerRef",
           "OnDestroy",
           "Output",
-          "MapInjector"
+          "Injector"
         ],
         "5": false
       },

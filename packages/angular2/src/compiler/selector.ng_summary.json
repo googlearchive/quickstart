@@ -13,9 +13,9 @@
     "6": "selector.dart"
   },
   "type": {
-    "_EMPTY_ATTR_VALUE": {
+    "CssSelector": {
       "class": "Identifier",
-      "name": "_EMPTY_ATTR_VALUE",
+      "name": "CssSelector",
       "moduleUrl": "asset:angular2/lib/src/compiler/selector.dart",
       "prefix": null,
       "value": null
@@ -27,16 +27,9 @@
       "prefix": null,
       "value": null
     },
-    "CssSelector": {
+    "SelectorContext": {
       "class": "Identifier",
-      "name": "CssSelector",
-      "moduleUrl": "asset:angular2/lib/src/compiler/selector.dart",
-      "prefix": null,
-      "value": null
-    },
-    "SelectorMatcher": {
-      "class": "Identifier",
-      "name": "SelectorMatcher",
+      "name": "SelectorContext",
       "moduleUrl": "asset:angular2/lib/src/compiler/selector.dart",
       "prefix": null,
       "value": null
@@ -48,9 +41,16 @@
       "prefix": null,
       "value": null
     },
-    "SelectorContext": {
+    "SelectorMatcher": {
       "class": "Identifier",
-      "name": "SelectorContext",
+      "name": "SelectorMatcher",
+      "moduleUrl": "asset:angular2/lib/src/compiler/selector.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_EMPTY_ATTR_VALUE": {
+      "class": "Identifier",
+      "name": "_EMPTY_ATTR_VALUE",
       "moduleUrl": "asset:angular2/lib/src/compiler/selector.dart",
       "prefix": null,
       "value": null

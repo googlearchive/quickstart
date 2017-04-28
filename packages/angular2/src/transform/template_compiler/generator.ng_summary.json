@@ -11,11 +11,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/offline_compiler.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
+        "1": "package:angular2/src/compiler/source_module.dart",
         "5": false
       },
       {
@@ -44,9 +40,6 @@
       },
       {
         "1": "package:angular2/src/transform/common/options.dart",
-        "2": [
-          "CODEGEN_DEBUG_MODE"
-        ],
         "5": false
       },
       {
@@ -66,6 +59,13 @@
     "6": "generator.dart"
   },
   "type": {
+    "Outputs": {
+      "class": "Identifier",
+      "name": "Outputs",
+      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
+      "prefix": null,
+      "value": null
+    },
     "processTemplates": {
       "class": "Identifier",
       "name": "processTemplates",
@@ -76,13 +76,6 @@
     "templatesAssetId": {
       "class": "Identifier",
       "name": "templatesAssetId",
-      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Outputs": {
-      "class": "Identifier",
-      "name": "Outputs",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/generator.dart",
       "prefix": null,
       "value": null

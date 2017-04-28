@@ -23,9 +23,9 @@
     ]
   },
   "type": {
-    "TestInjector": {
+    "AsyncTestCompleter": {
       "class": "Identifier",
-      "name": "TestInjector",
+      "name": "AsyncTestCompleter",
       "moduleUrl": "asset:angular2/lib/src/testing/internal_injector.dart",
       "prefix": null,
       "value": null
@@ -37,9 +37,9 @@
       "prefix": null,
       "value": null
     },
-    "AsyncTestCompleter": {
+    "TestInjector": {
       "class": "Identifier",
-      "name": "AsyncTestCompleter",
+      "name": "TestInjector",
       "moduleUrl": "asset:angular2/lib/src/testing/internal_injector.dart",
       "prefix": null,
       "value": null

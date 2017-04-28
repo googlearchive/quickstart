@@ -10,8 +10,6 @@
         "1": "package:angular2/core.dart",
         "2": [
           "DoCheck",
-          "KeyValueDiffer",
-          "KeyValueDiffers",
           "ElementRef",
           "Directive"
         ],
@@ -20,6 +18,7 @@
       {
         "1": "../../core/change_detection/differs/default_keyvalue_differ.dart",
         "2": [
+          "DefaultKeyValueDiffer",
           "KeyValueChangeRecord"
         ],
         "5": false
@@ -29,10 +28,6 @@
       {
         "1": "NgStyle",
         "5": [
-          {
-            "1": "KeyValueDiffers",
-            "4": "_differs"
-          },
           {
             "1": "ElementRef",
             "4": "elementRef"
@@ -59,26 +54,6 @@
         "isHost": false,
         "value": null,
         "diDeps": [
-          {
-            "token": {
-              "value": null,
-              "identifier": {
-                "class": "Identifier",
-                "name": "KeyValueDiffers",
-                "moduleUrl": null,
-                "prefix": null,
-                "value": null
-              },
-              "identifierIsInstance": false
-            },
-            "value": null,
-            "isAttribute": false,
-            "isSelf": false,
-            "isHost": false,
-            "isSkipSelf": false,
-            "isOptional": false,
-            "isValue": false
-          },
           {
             "token": {
               "value": null,

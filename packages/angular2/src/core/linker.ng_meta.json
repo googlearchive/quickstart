@@ -100,9 +100,9 @@
     ]
   },
   "type": {
-    "NgViewFactory": {
+    "ComponentFactory": {
       "class": "Identifier",
-      "name": "NgViewFactory",
+      "name": "ComponentFactory",
       "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
@@ -114,35 +114,12 @@
       "prefix": null,
       "value": null
     },
-    "ComponentRefImpl": {
-      "class": "Identifier",
-      "name": "ComponentRefImpl",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ComponentFactory": {
-      "class": "Identifier",
-      "name": "ComponentFactory",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
-      "prefix": null,
-      "value": null
-    },
     "ComponentResolver": {
       "class": "Identifier",
       "name": "ComponentResolver",
       "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
       "prefix": null,
       "value": null
-    },
-    "ReflectorComponentResolver": {
-      "class": "Type",
-      "name": "ReflectorComponentResolver",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
     },
     "DynamicComponentLoader": {
       "class": "Identifier",
@@ -188,6 +165,13 @@
       "prefix": null,
       "value": null
     },
+    "EmbeddedViewRef": {
+      "class": "Identifier",
+      "name": "EmbeddedViewRef",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
+      "prefix": null,
+      "value": null
+    },
     "ExpressionChangedAfterItHasBeenCheckedException": {
       "class": "Identifier",
       "name": "ExpressionChangedAfterItHasBeenCheckedException",
@@ -195,17 +179,10 @@
       "prefix": null,
       "value": null
     },
-    "ViewWrappedException": {
+    "NgViewFactory": {
       "class": "Identifier",
-      "name": "ViewWrappedException",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewDestroyedException": {
-      "class": "Identifier",
-      "name": "ViewDestroyedException",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "name": "NgViewFactory",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
     },
@@ -216,12 +193,14 @@
       "prefix": null,
       "value": null
     },
-    "_flattenList": {
-      "class": "Identifier",
-      "name": "_flattenList",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
+    "ReflectorComponentResolver": {
+      "class": "Type",
+      "name": "ReflectorComponentResolver",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/component_resolver.dart",
       "prefix": null,
-      "value": null
+      "isHost": false,
+      "value": null,
+      "diDeps": []
     },
     "TemplateRef": {
       "class": "Identifier",
@@ -237,16 +216,16 @@
       "prefix": null,
       "value": null
     },
-    "ViewRef": {
+    "ViewDestroyedException": {
       "class": "Identifier",
-      "name": "ViewRef",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
+      "name": "ViewDestroyedException",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
       "prefix": null,
       "value": null
     },
-    "EmbeddedViewRef": {
+    "ViewRef": {
       "class": "Identifier",
-      "name": "EmbeddedViewRef",
+      "name": "ViewRef",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
       "prefix": null,
       "value": null
@@ -255,6 +234,20 @@
       "class": "Identifier",
       "name": "ViewRefImpl",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewWrappedException": {
+      "class": "Identifier",
+      "name": "ViewWrappedException",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_flattenList": {
+      "class": "Identifier",
+      "name": "_flattenList",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/query_list.dart",
       "prefix": null,
       "value": null
     }

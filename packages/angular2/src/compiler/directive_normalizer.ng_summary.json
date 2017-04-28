@@ -7,20 +7,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/url_resolver.dart",
-        "2": [
-          "UrlResolver"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/xhr.dart",
-        "2": [
-          "XHR"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injectable"
@@ -74,6 +60,20 @@
         "2": [
           "preparseElement",
           "PreparsedElementType"
+        ],
+        "5": false
+      },
+      {
+        "1": "url_resolver.dart",
+        "2": [
+          "UrlResolver"
+        ],
+        "5": false
+      },
+      {
+        "1": "xhr.dart",
+        "2": [
+          "XHR"
         ],
         "5": false
       }

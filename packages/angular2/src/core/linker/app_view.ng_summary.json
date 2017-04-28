@@ -3,7 +3,16 @@
     "1": "",
     "3": [
       {
+        "1": "dart:async",
+        "5": false
+      },
+      {
         "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "dart:js_util",
+        "4": "js_util",
         "5": false
       },
       {
@@ -23,6 +32,13 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/di/injector.dart",
+        "2": [
+          "THROW_IF_NOT_FOUND"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/metadata/view.dart",
         "2": [
           "ViewEncapsulation"
@@ -38,11 +54,19 @@
         "5": false
       },
       {
-        "1": "view_container.dart",
+        "1": "package:meta/meta.dart",
+        "5": false
+      },
+      {
+        "1": "../zone/ng_zone.dart",
         "5": false
       },
       {
         "1": "app_view_utils.dart",
+        "5": false
+      },
+      {
+        "1": "component_factory.dart",
         "5": false
       },
       {
@@ -60,6 +84,14 @@
         "5": false
       },
       {
+        "1": "template_ref.dart",
+        "5": false
+      },
+      {
+        "1": "view_container.dart",
+        "5": false
+      },
+      {
         "1": "view_ref.dart",
         "2": [
           "ViewRefImpl"
@@ -72,11 +104,6 @@
           "ViewType"
         ],
         "5": false
-      },
-      {
-        "1": "dart:js_util",
-        "4": "js_util",
-        "5": false
       }
     ],
     "4": [
@@ -87,13 +114,6 @@
     "6": "app_view.dart"
   },
   "type": {
-    "EMPTY_CONTEXT": {
-      "class": "Identifier",
-      "name": "EMPTY_CONTEXT",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/app_view.dart",
-      "prefix": null,
-      "value": null
-    },
     "AppView": {
       "class": "Identifier",
       "name": "AppView",
@@ -101,9 +121,9 @@
       "prefix": null,
       "value": null
     },
-    "_findLastRenderNode": {
+    "_UndefinedInjectorResult": {
       "class": "Identifier",
-      "name": "_findLastRenderNode",
+      "name": "_UndefinedInjectorResult",
       "moduleUrl": "asset:angular2/lib/src/core/linker/app_view.dart",
       "prefix": null,
       "value": null
@@ -115,9 +135,9 @@
       "prefix": null,
       "value": null
     },
-    "_flattenNestedViews": {
+    "_findLastRenderNode": {
       "class": "Identifier",
-      "name": "_flattenNestedViews",
+      "name": "_findLastRenderNode",
       "moduleUrl": "asset:angular2/lib/src/core/linker/app_view.dart",
       "prefix": null,
       "value": null
@@ -125,6 +145,27 @@
     "_flattenNestedViewRenderNodes": {
       "class": "Identifier",
       "name": "_flattenNestedViewRenderNodes",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/app_view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_flattenNestedViews": {
+      "class": "Identifier",
+      "name": "_flattenNestedViews",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/app_view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createAndAppend": {
+      "class": "Identifier",
+      "name": "createAndAppend",
+      "moduleUrl": "asset:angular2/lib/src/core/linker/app_view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createAndAppendToShadowRoot": {
+      "class": "Identifier",
+      "name": "createAndAppendToShadowRoot",
       "moduleUrl": "asset:angular2/lib/src/core/linker/app_view.dart",
       "prefix": null,
       "value": null

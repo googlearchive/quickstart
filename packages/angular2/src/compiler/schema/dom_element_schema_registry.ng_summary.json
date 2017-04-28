@@ -35,13 +35,6 @@
     "6": "dom_element_schema_registry.dart"
   },
   "type": {
-    "EVENT": {
-      "class": "Identifier",
-      "name": "EVENT",
-      "moduleUrl": "asset:angular2/lib/src/compiler/schema/dom_element_schema_registry.dart",
-      "prefix": null,
-      "value": null
-    },
     "BOOLEAN": {
       "class": "Identifier",
       "name": "BOOLEAN",
@@ -49,16 +42,25 @@
       "prefix": null,
       "value": null
     },
-    "NUMBER": {
+    "DomElementSchemaRegistry": {
+      "class": "Type",
+      "name": "DomElementSchemaRegistry",
+      "moduleUrl": "asset:angular2/lib/src/compiler/schema/dom_element_schema_registry.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": []
+    },
+    "EVENT": {
       "class": "Identifier",
-      "name": "NUMBER",
+      "name": "EVENT",
       "moduleUrl": "asset:angular2/lib/src/compiler/schema/dom_element_schema_registry.dart",
       "prefix": null,
       "value": null
     },
-    "STRING": {
+    "NUMBER": {
       "class": "Identifier",
-      "name": "STRING",
+      "name": "NUMBER",
       "moduleUrl": "asset:angular2/lib/src/compiler/schema/dom_element_schema_registry.dart",
       "prefix": null,
       "value": null
@@ -77,21 +79,19 @@
       "prefix": null,
       "value": null
     },
+    "STRING": {
+      "class": "Identifier",
+      "name": "STRING",
+      "moduleUrl": "asset:angular2/lib/src/compiler/schema/dom_element_schema_registry.dart",
+      "prefix": null,
+      "value": null
+    },
     "attrToPropMap": {
       "class": "Identifier",
       "name": "attrToPropMap",
       "moduleUrl": "asset:angular2/lib/src/compiler/schema/dom_element_schema_registry.dart",
       "prefix": null,
       "value": null
-    },
-    "DomElementSchemaRegistry": {
-      "class": "Type",
-      "name": "DomElementSchemaRegistry",
-      "moduleUrl": "asset:angular2/lib/src/compiler/schema/dom_element_schema_registry.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": []
     }
   },
   "alias": {}

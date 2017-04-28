@@ -50,9 +50,9 @@
     "6": "inliner.dart"
   },
   "type": {
-    "inlineParts": {
+    "_NgDepsDirectivesVisitor": {
       "class": "Identifier",
-      "name": "inlineParts",
+      "name": "_NgDepsDirectivesVisitor",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/inliner.dart",
       "prefix": null,
       "value": null
@@ -64,9 +64,9 @@
       "prefix": null,
       "value": null
     },
-    "_NgDepsDirectivesVisitor": {
+    "inlineParts": {
       "class": "Identifier",
-      "name": "_NgDepsDirectivesVisitor",
+      "name": "inlineParts",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_processor/inliner.dart",
       "prefix": null,
       "value": null

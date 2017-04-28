@@ -173,7 +173,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -204,7 +203,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -235,7 +233,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -266,7 +263,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -297,7 +293,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -328,7 +323,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -359,7 +353,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -390,7 +383,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -421,7 +413,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -452,7 +443,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         }
@@ -462,15 +452,15 @@
   "alias": {
     "COMMON_PIPES": [
       "AsyncPipe",
-      "UpperCasePipe",
-      "LowerCasePipe",
-      "JsonPipe",
-      "SlicePipe",
-      "DecimalPipe",
-      "PercentPipe",
       "CurrencyPipe",
       "DatePipe",
-      "ReplacePipe"
+      "DecimalPipe",
+      "JsonPipe",
+      "LowerCasePipe",
+      "PercentPipe",
+      "ReplacePipe",
+      "SlicePipe",
+      "UpperCasePipe"
     ]
   }
 }

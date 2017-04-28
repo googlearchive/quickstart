@@ -32,16 +32,16 @@
     ]
   },
   "type": {
-    "RegexSerializer": {
+    "RegexRoutePath": {
       "class": "Identifier",
-      "name": "RegexSerializer",
+      "name": "RegexRoutePath",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/regex_route_path.dart",
       "prefix": null,
       "value": null
     },
-    "RegexRoutePath": {
+    "RegexSerializer": {
       "class": "Identifier",
-      "name": "RegexRoutePath",
+      "name": "RegexSerializer",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/regex_route_path.dart",
       "prefix": null,
       "value": null

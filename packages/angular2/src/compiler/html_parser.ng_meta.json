@@ -15,13 +15,6 @@
       },
       {
         "1": "html_ast.dart",
-        "2": [
-          "HtmlAst",
-          "HtmlAttrAst",
-          "HtmlTextAst",
-          "HtmlCommentAst",
-          "HtmlElementAst"
-        ],
         "5": false
       },
       {
@@ -86,13 +79,6 @@
     ]
   },
   "type": {
-    "HtmlTreeError": {
-      "class": "Identifier",
-      "name": "HtmlTreeError",
-      "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
-      "prefix": null,
-      "value": null
-    },
     "HtmlParseTreeResult": {
       "class": "Identifier",
       "name": "HtmlParseTreeResult",
@@ -109,9 +95,16 @@
       "value": null,
       "diDeps": []
     },
-    "TreeBuilder": {
+    "HtmlTreeBuilder": {
       "class": "Identifier",
-      "name": "TreeBuilder",
+      "name": "HtmlTreeBuilder",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "HtmlTreeError": {
+      "class": "Identifier",
+      "name": "HtmlTreeError",
       "moduleUrl": "asset:angular2/lib/src/compiler/html_parser.dart",
       "prefix": null,
       "value": null

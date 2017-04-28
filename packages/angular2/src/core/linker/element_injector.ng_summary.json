@@ -11,6 +11,10 @@
         "5": false
       },
       {
+        "1": "package:meta/meta.dart",
+        "5": false
+      },
+      {
         "1": "app_view.dart",
         "5": false
       }
@@ -18,13 +22,6 @@
     "6": "element_injector.dart"
   },
   "type": {
-    "_UNDEFINED": {
-      "class": "Identifier",
-      "name": "_UNDEFINED",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/element_injector.dart",
-      "prefix": null,
-      "value": null
-    },
     "ElementInjector": {
       "class": "Identifier",
       "name": "ElementInjector",

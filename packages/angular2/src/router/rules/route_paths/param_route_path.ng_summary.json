@@ -39,23 +39,9 @@
     "6": "param_route_path.dart"
   },
   "type": {
-    "PathSegment": {
-      "class": "Identifier",
-      "name": "PathSegment",
-      "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
-      "prefix": null,
-      "value": null
-    },
     "ContinuationPathSegment": {
       "class": "Identifier",
       "name": "ContinuationPathSegment",
-      "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
-      "prefix": null,
-      "value": null
-    },
-    "StaticPathSegment": {
-      "class": "Identifier",
-      "name": "StaticPathSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
       "value": null
@@ -67,13 +53,6 @@
       "prefix": null,
       "value": null
     },
-    "StarPathSegment": {
-      "class": "Identifier",
-      "name": "StarPathSegment",
-      "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
-      "prefix": null,
-      "value": null
-    },
     "ParamRoutePath": {
       "class": "Identifier",
       "name": "ParamRoutePath",
@@ -81,9 +60,23 @@
       "prefix": null,
       "value": null
     },
-    "encodeDynamicSegment": {
+    "PathSegment": {
       "class": "Identifier",
-      "name": "encodeDynamicSegment",
+      "name": "PathSegment",
+      "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
+      "prefix": null,
+      "value": null
+    },
+    "StarPathSegment": {
+      "class": "Identifier",
+      "name": "StarPathSegment",
+      "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
+      "prefix": null,
+      "value": null
+    },
+    "StaticPathSegment": {
+      "class": "Identifier",
+      "name": "StaticPathSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
       "value": null
@@ -91,6 +84,13 @@
     "decodeDynamicSegment": {
       "class": "Identifier",
       "name": "decodeDynamicSegment",
+      "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
+      "prefix": null,
+      "value": null
+    },
+    "encodeDynamicSegment": {
+      "class": "Identifier",
+      "name": "encodeDynamicSegment",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/param_route_path.dart",
       "prefix": null,
       "value": null

@@ -10,16 +10,16 @@
     "6": "parse_util.dart"
   },
   "type": {
-    "ParseErrorLevel": {
+    "ParseError": {
       "class": "Identifier",
-      "name": "ParseErrorLevel",
+      "name": "ParseError",
       "moduleUrl": "asset:angular2/lib/src/compiler/parse_util.dart",
       "prefix": null,
       "value": null
     },
-    "ParseError": {
+    "ParseErrorLevel": {
       "class": "Identifier",
-      "name": "ParseError",
+      "name": "ParseErrorLevel",
       "moduleUrl": "asset:angular2/lib/src/compiler/parse_util.dart",
       "prefix": null,
       "value": null

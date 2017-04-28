@@ -27,7 +27,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/router/route_registry.dart",
+        "1": "route_registry.dart",
         "2": [
           "RouteRegistry",
           "ROUTER_PRIMARY_COMPONENT"
@@ -35,7 +35,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/router/router.dart",
+        "1": "router.dart",
         "2": [
           "Router",
           "RootRouter"
@@ -84,7 +84,6 @@
           "useExisting": null,
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         },
@@ -119,7 +118,6 @@
             "value": null,
             "diDeps": []
           },
-          "useProperty": null,
           "multi": false,
           "deps": [
             {
@@ -228,7 +226,6 @@
             "value": null,
             "diDeps": []
           },
-          "useProperty": null,
           "multi": false,
           "deps": [
             {

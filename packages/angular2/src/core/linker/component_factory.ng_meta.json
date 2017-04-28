@@ -28,10 +28,6 @@
         "5": false
       },
       {
-        "1": "view_container.dart",
-        "5": false
-      },
-      {
         "1": "app_view.dart",
         "5": false
       },
@@ -72,31 +68,27 @@
         "4": "i2"
       },
       {
-        "1": "view_container.template.dart",
+        "1": "app_view.template.dart",
         "4": "i3"
       },
       {
-        "1": "app_view.template.dart",
+        "1": "app_view_utils.template.dart",
         "4": "i4"
       },
       {
-        "1": "app_view_utils.template.dart",
+        "1": "element_ref.template.dart",
         "4": "i5"
       },
       {
-        "1": "element_ref.template.dart",
-        "4": "i6"
-      },
-      {
         "1": "view_ref.template.dart",
-        "4": "i7"
+        "4": "i6"
       }
     ]
   },
   "type": {
-    "NgViewFactory": {
+    "ComponentFactory": {
       "class": "Identifier",
-      "name": "NgViewFactory",
+      "name": "ComponentFactory",
       "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
@@ -108,16 +100,9 @@
       "prefix": null,
       "value": null
     },
-    "ComponentRefImpl": {
+    "NgViewFactory": {
       "class": "Identifier",
-      "name": "ComponentRefImpl",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ComponentFactory": {
-      "class": "Identifier",
-      "name": "ComponentFactory",
+      "name": "NgViewFactory",
       "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null

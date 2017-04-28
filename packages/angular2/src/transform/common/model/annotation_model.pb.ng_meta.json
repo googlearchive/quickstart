@@ -10,9 +10,9 @@
     "6": "annotation_model.pb.dart"
   },
   "type": {
-    "NamedParameter$json": {
+    "AnnotationModel": {
       "class": "Identifier",
-      "name": "NamedParameter$json",
+      "name": "AnnotationModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
       "prefix": null,
       "value": null
@@ -31,16 +31,9 @@
       "prefix": null,
       "value": null
     },
-    "_ReadonlyNamedParameter": {
+    "NamedParameter$json": {
       "class": "Identifier",
-      "name": "_ReadonlyNamedParameter",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AnnotationModel": {
-      "class": "Identifier",
-      "name": "AnnotationModel",
+      "name": "NamedParameter$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
       "prefix": null,
       "value": null
@@ -48,6 +41,13 @@
     "_ReadonlyAnnotationModel": {
       "class": "Identifier",
       "name": "_ReadonlyAnnotationModel",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ReadonlyNamedParameter": {
+      "class": "Identifier",
+      "name": "_ReadonlyNamedParameter",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/annotation_model.pb.dart",
       "prefix": null,
       "value": null

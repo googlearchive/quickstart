@@ -19,15 +19,19 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/source_gen/template_compiler/compile_type.dart",
+        "1": "package:logging/logging.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/source_gen/template_compiler/dart_object_utils.dart",
+        "1": "compile_metadata.dart",
         "5": false
       },
       {
-        "1": "package:build/build.dart",
+        "1": "find_components.dart",
+        "5": false
+      },
+      {
+        "1": "dart_object_utils.dart",
         "5": false
       }
     ],

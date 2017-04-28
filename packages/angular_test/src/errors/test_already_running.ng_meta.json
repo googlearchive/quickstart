@@ -1,0 +1,13 @@
+{
+  "ngDeps": null,
+  "type": {
+    "TestAlreadyRunningError": {
+      "class": "Identifier",
+      "name": "TestAlreadyRunningError",
+      "moduleUrl": "asset:angular_test/lib/src/errors/test_already_running.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

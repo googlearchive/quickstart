@@ -56,9 +56,16 @@
     ]
   },
   "type": {
-    "rewriteLibrary": {
+    "_FindDeferredLibraries": {
       "class": "Identifier",
-      "name": "rewriteLibrary",
+      "name": "_FindDeferredLibraries",
+      "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_FindLoadLibraryCalls": {
+      "class": "Identifier",
+      "name": "_FindLoadLibraryCalls",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
       "prefix": null,
       "value": null
@@ -70,16 +77,9 @@
       "prefix": null,
       "value": null
     },
-    "_FindDeferredLibraries": {
+    "rewriteLibrary": {
       "class": "Identifier",
-      "name": "_FindDeferredLibraries",
-      "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_FindLoadLibraryCalls": {
-      "class": "Identifier",
-      "name": "_FindLoadLibraryCalls",
+      "name": "rewriteLibrary",
       "moduleUrl": "asset:angular2/lib/src/transform/deferred_rewriter/rewriter.dart",
       "prefix": null,
       "value": null

@@ -14,10 +14,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "5": false
-      },
-      {
         "1": "../route_definition.dart",
         "5": false
       },
@@ -33,16 +29,16 @@
     "6": "route_config_normalizer.dart"
   },
   "type": {
-    "normalizeRouteConfig": {
+    "assertComponentExists": {
       "class": "Identifier",
-      "name": "normalizeRouteConfig",
+      "name": "assertComponentExists",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_normalizer.dart",
       "prefix": null,
       "value": null
     },
-    "assertComponentExists": {
+    "normalizeRouteConfig": {
       "class": "Identifier",
-      "name": "assertComponentExists",
+      "name": "normalizeRouteConfig",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_normalizer.dart",
       "prefix": null,
       "value": null

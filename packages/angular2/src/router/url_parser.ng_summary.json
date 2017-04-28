@@ -13,16 +13,9 @@
     "6": "url_parser.dart"
   },
   "type": {
-    "convertUrlParamsToArray": {
+    "RootUrl": {
       "class": "Identifier",
-      "name": "convertUrlParamsToArray",
-      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "serializeParams": {
-      "class": "Identifier",
-      "name": "serializeParams",
+      "name": "RootUrl",
       "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
       "prefix": null,
       "value": null
@@ -34,23 +27,16 @@
       "prefix": null,
       "value": null
     },
-    "RootUrl": {
+    "UrlParser": {
       "class": "Identifier",
-      "name": "RootUrl",
+      "name": "UrlParser",
       "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
       "prefix": null,
       "value": null
     },
-    "pathSegmentsToUrl": {
+    "convertUrlParamsToArray": {
       "class": "Identifier",
-      "name": "pathSegmentsToUrl",
-      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "matchUrlSegment": {
-      "class": "Identifier",
-      "name": "matchUrlSegment",
+      "name": "convertUrlParamsToArray",
       "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
       "prefix": null,
       "value": null
@@ -62,9 +48,23 @@
       "prefix": null,
       "value": null
     },
-    "UrlParser": {
+    "matchUrlSegment": {
       "class": "Identifier",
-      "name": "UrlParser",
+      "name": "matchUrlSegment",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "pathSegmentsToUrl": {
+      "class": "Identifier",
+      "name": "pathSegmentsToUrl",
+      "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "serializeParams": {
+      "class": "Identifier",
+      "name": "serializeParams",
       "moduleUrl": "asset:angular2/lib/src/router/url_parser.dart",
       "prefix": null,
       "value": null

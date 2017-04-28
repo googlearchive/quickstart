@@ -36,9 +36,16 @@
     ]
   },
   "type": {
-    "_mirrorMatcher": {
+    "ExportVisitor": {
       "class": "Identifier",
-      "name": "_mirrorMatcher",
+      "name": "ExportVisitor",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ExportWriterMixin": {
+      "class": "Identifier",
+      "name": "ExportWriterMixin",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
       "value": null
@@ -50,16 +57,16 @@
       "prefix": null,
       "value": null
     },
-    "ExportVisitor": {
+    "ImportWriterMixin": {
       "class": "Identifier",
-      "name": "ExportVisitor",
+      "name": "ImportWriterMixin",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
       "value": null
     },
-    "_updateIfBootstrap": {
+    "_mirrorMatcher": {
       "class": "Identifier",
-      "name": "_updateIfBootstrap",
+      "name": "_mirrorMatcher",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
       "value": null
@@ -71,16 +78,9 @@
       "prefix": null,
       "value": null
     },
-    "ImportWriterMixin": {
+    "_updateIfBootstrap": {
       "class": "Identifier",
-      "name": "ImportWriterMixin",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ExportWriterMixin": {
-      "class": "Identifier",
-      "name": "ExportWriterMixin",
+      "name": "_updateIfBootstrap",
       "moduleUrl": "asset:angular2/lib/src/transform/common/code/import_export_code.dart",
       "prefix": null,
       "value": null

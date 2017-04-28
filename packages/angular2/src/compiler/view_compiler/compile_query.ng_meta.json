@@ -84,6 +84,13 @@
     ]
   },
   "type": {
+    "CompileQuery": {
+      "class": "Identifier",
+      "name": "CompileQuery",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_query.dart",
+      "prefix": null,
+      "value": null
+    },
     "ViewQueryValues": {
       "class": "Identifier",
       "name": "ViewQueryValues",
@@ -91,9 +98,16 @@
       "prefix": null,
       "value": null
     },
-    "CompileQuery": {
+    "addQueryToTokenMap": {
       "class": "Identifier",
-      "name": "CompileQuery",
+      "name": "addQueryToTokenMap",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_query.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createQueryListField": {
+      "class": "Identifier",
+      "name": "createQueryListField",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_query.dart",
       "prefix": null,
       "value": null
@@ -108,20 +122,6 @@
     "mapNestedViews": {
       "class": "Identifier",
       "name": "mapNestedViews",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_query.dart",
-      "prefix": null,
-      "value": null
-    },
-    "createQueryList": {
-      "class": "Identifier",
-      "name": "createQueryList",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_query.dart",
-      "prefix": null,
-      "value": null
-    },
-    "addQueryToTokenMap": {
-      "class": "Identifier",
-      "name": "addQueryToTokenMap",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_query.dart",
       "prefix": null,
       "value": null

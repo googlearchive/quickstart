@@ -18,13 +18,6 @@
     "6": "path_util.dart"
   },
   "type": {
-    "getImportModulePath": {
-      "class": "Identifier",
-      "name": "getImportModulePath",
-      "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
-      "prefix": null,
-      "value": null
-    },
     "_AssetUrl": {
       "class": "Identifier",
       "name": "_AssetUrl",
@@ -32,9 +25,9 @@
       "prefix": null,
       "value": null
     },
-    "getRelativePath": {
+    "getImportModulePath": {
       "class": "Identifier",
-      "name": "getRelativePath",
+      "name": "getImportModulePath",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
       "prefix": null,
       "value": null
@@ -42,6 +35,13 @@
     "getLongestPathSegmentPrefix": {
       "class": "Identifier",
       "name": "getLongestPathSegmentPrefix",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getRelativePath": {
+      "class": "Identifier",
+      "name": "getRelativePath",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/path_util.dart",
       "prefix": null,
       "value": null

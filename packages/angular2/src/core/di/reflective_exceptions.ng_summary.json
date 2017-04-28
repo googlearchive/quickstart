@@ -36,37 +36,9 @@
     "6": "reflective_exceptions.dart"
   },
   "type": {
-    "findFirstClosedCycle": {
-      "class": "Identifier",
-      "name": "findFirstClosedCycle",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "findFirstClosedCycleReversed": {
-      "class": "Identifier",
-      "name": "findFirstClosedCycleReversed",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "constructResolvingPath": {
-      "class": "Identifier",
-      "name": "constructResolvingPath",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
     "AbstractProviderError": {
       "class": "Identifier",
       "name": "AbstractProviderError",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
-      "prefix": null,
-      "value": null
-    },
-    "NoProviderError": {
-      "class": "Identifier",
-      "name": "NoProviderError",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
       "prefix": null,
       "value": null
@@ -92,9 +64,23 @@
       "prefix": null,
       "value": null
     },
+    "MixingMultiProvidersWithRegularProvidersError": {
+      "class": "Identifier",
+      "name": "MixingMultiProvidersWithRegularProvidersError",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
     "NoAnnotationError": {
       "class": "Identifier",
       "name": "NoAnnotationError",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NoProviderError": {
+      "class": "Identifier",
+      "name": "NoProviderError",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
       "prefix": null,
       "value": null
@@ -106,9 +92,23 @@
       "prefix": null,
       "value": null
     },
-    "MixingMultiProvidersWithRegularProvidersError": {
+    "constructResolvingPath": {
       "class": "Identifier",
-      "name": "MixingMultiProvidersWithRegularProvidersError",
+      "name": "constructResolvingPath",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "findFirstClosedCycle": {
+      "class": "Identifier",
+      "name": "findFirstClosedCycle",
+      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
+    "findFirstClosedCycleReversed": {
+      "class": "Identifier",
+      "name": "findFirstClosedCycleReversed",
       "moduleUrl": "asset:angular2/lib/src/core/di/reflective_exceptions.dart",
       "prefix": null,
       "value": null

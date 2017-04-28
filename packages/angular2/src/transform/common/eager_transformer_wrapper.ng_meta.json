@@ -17,16 +17,16 @@
       "prefix": null,
       "value": null
     },
-    "_EagerTransformerWrapper": {
+    "_EagerAggregateTransformerWrapper": {
       "class": "Identifier",
-      "name": "_EagerTransformerWrapper",
+      "name": "_EagerAggregateTransformerWrapper",
       "moduleUrl": "asset:angular2/lib/src/transform/common/eager_transformer_wrapper.dart",
       "prefix": null,
       "value": null
     },
-    "_EagerAggregateTransformerWrapper": {
+    "_EagerTransformerWrapper": {
       "class": "Identifier",
-      "name": "_EagerAggregateTransformerWrapper",
+      "name": "_EagerTransformerWrapper",
       "moduleUrl": "asset:angular2/lib/src/transform/common/eager_transformer_wrapper.dart",
       "prefix": null,
       "value": null

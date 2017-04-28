@@ -25,11 +25,8 @@
         "4": [
           {
             "1": "Pipe",
-            "3": [
-              {
-                "1": "name",
-                "2": "\"replace\""
-              }
+            "2": [
+              "\"replace\""
             ],
             "4": false
           },
@@ -46,13 +43,6 @@
     "6": "replace_pipe.dart"
   },
   "type": {
-    "_Matcher": {
-      "class": "Identifier",
-      "name": "_Matcher",
-      "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
-      "prefix": null,
-      "value": null
-    },
     "ReplacePipe": {
       "class": "Pipe",
       "type": {
@@ -66,6 +56,13 @@
       },
       "name": "replace",
       "pure": true
+    },
+    "_Matcher": {
+      "class": "Identifier",
+      "name": "_Matcher",
+      "moduleUrl": "asset:angular2/lib/src/common/pipes/replace_pipe.dart",
+      "prefix": null,
+      "value": null
     }
   },
   "alias": {}

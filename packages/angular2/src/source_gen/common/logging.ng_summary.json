@@ -18,6 +18,13 @@
     "6": "logging.dart"
   },
   "type": {
+    "_logElapsed": {
+      "class": "Identifier",
+      "name": "_logElapsed",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/common/logging.dart",
+      "prefix": null,
+      "value": null
+    },
     "logElapsedAsync": {
       "class": "Identifier",
       "name": "logElapsedAsync",
@@ -28,13 +35,6 @@
     "logElapsedSync": {
       "class": "Identifier",
       "name": "logElapsedSync",
-      "moduleUrl": "asset:angular2/lib/src/source_gen/common/logging.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_logElapsed": {
-      "class": "Identifier",
-      "name": "_logElapsed",
       "moduleUrl": "asset:angular2/lib/src/source_gen/common/logging.dart",
       "prefix": null,
       "value": null

@@ -1,0 +1,104 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_test/src/bootstrap.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_test/src/errors.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_test/src/frontend/fixture.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular_test/src/frontend/stabilizer.dart",
+        "5": false
+      },
+      {
+        "1": "package:func/func.dart",
+        "5": false
+      },
+      {
+        "1": "package:pageloader/html.dart",
+        "5": false
+      }
+    ],
+    "6": "bed.dart",
+    "7": [
+      {
+        "1": "package:angular2/angular2.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular_test/src/bootstrap.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular_test/src/errors.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:angular_test/src/frontend/fixture.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:angular_test/src/frontend/stabilizer.template.dart",
+        "4": "i4"
+      }
+    ]
+  },
+  "type": {
+    "NgTestBed": {
+      "class": "Identifier",
+      "name": "NgTestBed",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_concat": {
+      "class": "Identifier",
+      "name": "_concat",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createDynamicFixture": {
+      "class": "Identifier",
+      "name": "createDynamicFixture",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createDynamicTestBed": {
+      "class": "Identifier",
+      "name": "createDynamicTestBed",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    },
+    "disposeAnyRunningTest": {
+      "class": "Identifier",
+      "name": "disposeAnyRunningTest",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -28,9 +28,23 @@
     ]
   },
   "type": {
+    "PrefixedType": {
+      "class": "Identifier",
+      "name": "PrefixedType",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
+      "prefix": null,
+      "value": null
+    },
     "PrefixedType$json": {
       "class": "Identifier",
       "name": "PrefixedType$json",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ReflectionInfoModel": {
+      "class": "Identifier",
+      "name": "ReflectionInfoModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
       "prefix": null,
       "value": null
@@ -42,23 +56,9 @@
       "prefix": null,
       "value": null
     },
-    "PrefixedType": {
-      "class": "Identifier",
-      "name": "PrefixedType",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
-      "prefix": null,
-      "value": null
-    },
     "_ReadonlyPrefixedType": {
       "class": "Identifier",
       "name": "_ReadonlyPrefixedType",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ReflectionInfoModel": {
-      "class": "Identifier",
-      "name": "ReflectionInfoModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/reflection_info_model.pb.dart",
       "prefix": null,
       "value": null

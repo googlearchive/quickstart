@@ -18,16 +18,16 @@
     "6": "ng_deps_model.pb.dart"
   },
   "type": {
-    "NgDepsModel$json": {
+    "NgDepsModel": {
       "class": "Identifier",
-      "name": "NgDepsModel$json",
+      "name": "NgDepsModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/ng_deps_model.pb.dart",
       "prefix": null,
       "value": null
     },
-    "NgDepsModel": {
+    "NgDepsModel$json": {
       "class": "Identifier",
-      "name": "NgDepsModel",
+      "name": "NgDepsModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/ng_deps_model.pb.dart",
       "prefix": null,
       "value": null

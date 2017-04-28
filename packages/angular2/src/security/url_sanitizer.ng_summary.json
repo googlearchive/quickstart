@@ -1,16 +1,16 @@
 {
   "ngDeps": null,
   "type": {
-    "internalSanitizeUrl": {
+    "internalSanitizeSrcset": {
       "class": "Identifier",
-      "name": "internalSanitizeUrl",
+      "name": "internalSanitizeSrcset",
       "moduleUrl": "asset:angular2/lib/src/security/url_sanitizer.dart",
       "prefix": null,
       "value": null
     },
-    "internalSanitizeSrcset": {
+    "internalSanitizeUrl": {
       "class": "Identifier",
-      "name": "internalSanitizeSrcset",
+      "name": "internalSanitizeUrl",
       "moduleUrl": "asset:angular2/lib/src/security/url_sanitizer.dart",
       "prefix": null,
       "value": null

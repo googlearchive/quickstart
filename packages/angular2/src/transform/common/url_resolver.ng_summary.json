@@ -18,16 +18,23 @@
     "6": "url_resolver.dart"
   },
   "type": {
-    "toAssetUri": {
+    "fromUri": {
       "class": "Identifier",
-      "name": "toAssetUri",
+      "name": "fromUri",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
       "value": null
     },
-    "fromUri": {
+    "isDartCoreUri": {
       "class": "Identifier",
-      "name": "fromUri",
+      "name": "isDartCoreUri",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
+      "prefix": null,
+      "value": null
+    },
+    "packageToAssetScheme": {
+      "class": "Identifier",
+      "name": "packageToAssetScheme",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
       "value": null
@@ -39,9 +46,9 @@
       "prefix": null,
       "value": null
     },
-    "isDartCoreUri": {
+    "toAssetUri": {
       "class": "Identifier",
-      "name": "isDartCoreUri",
+      "name": "toAssetUri",
       "moduleUrl": "asset:angular2/lib/src/transform/common/url_resolver.dart",
       "prefix": null,
       "value": null

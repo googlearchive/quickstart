@@ -19,22 +19,9 @@
     ],
     "4": [
       {
-        "1": "package:angular2/core.dart",
+        "1": "core.dart",
         "2": [
           "OpaqueToken"
-        ]
-      },
-      {
-        "1": "package:angular2/src/router/router_providers.dart",
-        "2": [
-          "ROUTER_PROVIDERS",
-          "ROUTER_BINDINGS"
-        ]
-      },
-      {
-        "1": "package:angular2/src/router/router_providers_common.dart",
-        "2": [
-          "ROUTER_PROVIDERS_COMMON"
         ]
       },
       {
@@ -52,15 +39,10 @@
       {
         "1": "src/router/instruction.dart",
         "2": [
+          "Instruction",
+          "ComponentInstruction",
           "RouteParams",
           "RouteData"
-        ]
-      },
-      {
-        "1": "src/router/instruction.dart",
-        "2": [
-          "Instruction",
-          "ComponentInstruction"
         ]
       },
       {
@@ -97,6 +79,19 @@
         "2": [
           "Router"
         ]
+      },
+      {
+        "1": "src/router/router_providers.dart",
+        "2": [
+          "ROUTER_PROVIDERS",
+          "ROUTER_BINDINGS"
+        ]
+      },
+      {
+        "1": "src/router/router_providers_common.dart",
+        "2": [
+          "ROUTER_PROVIDERS_COMMON"
+        ]
       }
     ],
     "6": "router.dart"
@@ -127,8 +122,8 @@
   },
   "alias": {
     "ROUTER_DIRECTIVES": [
-      "RouterOutlet",
-      "RouterLink"
+      "RouterLink",
+      "RouterOutlet"
     ]
   }
 }

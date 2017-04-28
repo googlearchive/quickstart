@@ -5,10 +5,6 @@
       {
         "1": "package:analyzer/dart/constant/value.dart",
         "5": false
-      },
-      {
-        "1": "package:analyzer/dart/element/element.dart",
-        "5": false
       }
     ],
     "6": "dart_object_utils.dart"
@@ -17,6 +13,48 @@
     "RecurseFn": {
       "class": "Identifier",
       "name": "RecurseFn",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_findEnumByIndex": {
+      "class": "Identifier",
+      "name": "_findEnumByIndex",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_findEnumByName": {
+      "class": "Identifier",
+      "name": "_findEnumByName",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "coerceBool": {
+      "class": "Identifier",
+      "name": "coerceBool",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "coerceEnum": {
+      "class": "Identifier",
+      "name": "coerceEnum",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "coerceList": {
+      "class": "Identifier",
+      "name": "coerceList",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
+      "prefix": null,
+      "value": null
+    },
+    "coerceMap": {
+      "class": "Identifier",
+      "name": "coerceMap",
       "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
       "prefix": null,
       "value": null
@@ -35,37 +73,9 @@
       "prefix": null,
       "value": null
     },
-    "coerceList": {
+    "coerceStringMap": {
       "class": "Identifier",
-      "name": "coerceList",
-      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
-      "prefix": null,
-      "value": null
-    },
-    "coerceEnumValue": {
-      "class": "Identifier",
-      "name": "coerceEnumValue",
-      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_findEnumByFieldName": {
-      "class": "Identifier",
-      "name": "_findEnumByFieldName",
-      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_findEnumByIndex": {
-      "class": "Identifier",
-      "name": "_findEnumByIndex",
-      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
-      "prefix": null,
-      "value": null
-    },
-    "coerceBool": {
-      "class": "Identifier",
-      "name": "coerceBool",
+      "name": "coerceStringMap",
       "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
       "prefix": null,
       "value": null
@@ -77,16 +87,16 @@
       "prefix": null,
       "value": null
     },
-    "visitAll": {
+    "isNull": {
       "class": "Identifier",
-      "name": "visitAll",
+      "name": "isNull",
       "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
       "prefix": null,
       "value": null
     },
-    "_isNull": {
+    "visitAll": {
       "class": "Identifier",
-      "name": "_isNull",
+      "name": "visitAll",
       "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/dart_object_utils.dart",
       "prefix": null,
       "value": null

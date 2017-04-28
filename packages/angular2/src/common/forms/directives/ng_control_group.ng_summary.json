@@ -8,10 +8,16 @@
           "OnInit",
           "OnDestroy",
           "Directive",
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
+        "2": [
           "Optional",
           "Inject",
           "SkipSelf",
-          "Provider",
           "Self"
         ],
         "5": false
@@ -26,8 +32,7 @@
       {
         "1": "../validators.dart",
         "2": [
-          "NG_VALIDATORS",
-          "NG_ASYNC_VALIDATORS"
+          "NG_VALIDATORS"
         ],
         "5": false
       },
@@ -49,15 +54,13 @@
         "1": "shared.dart",
         "2": [
           "controlPath",
-          "composeValidators",
-          "composeAsyncValidators"
+          "composeValidators"
         ],
         "5": false
       },
       {
         "1": "validators.dart",
         "2": [
-          "AsyncValidatorFn",
           "ValidatorFn"
         ],
         "5": false
@@ -83,16 +86,6 @@
               "const Inject(NG_VALIDATORS)"
             ],
             "4": "_validators"
-          },
-          {
-            "1": "List",
-            "2": "<dynamic>",
-            "3": [
-              "const Optional()",
-              "const Self()",
-              "const Inject(NG_ASYNC_VALIDATORS)"
-            ],
-            "4": "_asyncValidators"
           }
         ],
         "6": [
@@ -104,43 +97,6 @@
     "6": "ng_control_group.dart"
   },
   "type": {
-    "controlGroupProvider": {
-      "class": "Identifier",
-      "name": "controlGroupProvider",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control_group.dart",
-      "prefix": null,
-      "value": {
-        "class": "Provider",
-        "token": {
-          "value": null,
-          "identifier": {
-            "class": "Identifier",
-            "name": "ControlContainer",
-            "moduleUrl": null,
-            "prefix": null,
-            "value": null
-          },
-          "identifierIsInstance": false
-        },
-        "useClass": null,
-        "useExisting": {
-          "value": null,
-          "identifier": {
-            "class": "Identifier",
-            "name": "NgControlGroup",
-            "moduleUrl": null,
-            "prefix": null,
-            "value": null
-          },
-          "identifierIsInstance": false
-        },
-        "useValue": null,
-        "useFactory": null,
-        "useProperty": null,
-        "multi": false,
-        "deps": null
-      }
-    },
     "NgControlGroup": {
       "class": "Directive",
       "isComponent": false,
@@ -193,26 +149,6 @@
             "isSkipSelf": false,
             "isOptional": true,
             "isValue": false
-          },
-          {
-            "token": {
-              "value": null,
-              "identifier": {
-                "class": "Identifier",
-                "name": "NG_ASYNC_VALIDATORS",
-                "moduleUrl": null,
-                "prefix": null,
-                "value": null
-              },
-              "identifierIsInstance": false
-            },
-            "value": null,
-            "isAttribute": false,
-            "isSelf": true,
-            "isHost": false,
-            "isSkipSelf": false,
-            "isOptional": true,
-            "isValue": false
           }
         ]
       },
@@ -242,6 +178,42 @@
       "viewProviders": [],
       "queries": [],
       "viewQueries": []
+    },
+    "controlGroupProvider": {
+      "class": "Identifier",
+      "name": "controlGroupProvider",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control_group.dart",
+      "prefix": null,
+      "value": {
+        "class": "Provider",
+        "token": {
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "ControlContainer",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
+        },
+        "useClass": null,
+        "useExisting": {
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "NgControlGroup",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
+        },
+        "useValue": null,
+        "useFactory": null,
+        "multi": false,
+        "deps": null
+      }
     }
   },
   "alias": {}

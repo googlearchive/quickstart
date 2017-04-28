@@ -8,30 +8,9 @@
       "prefix": null,
       "value": null
     },
-    "RouteParams": {
+    "ComponentInstruction": {
       "class": "Identifier",
-      "name": "RouteParams",
-      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
-      "prefix": null,
-      "value": null
-    },
-    "RouteData": {
-      "class": "Identifier",
-      "name": "RouteData",
-      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Instruction": {
-      "class": "Identifier",
-      "name": "Instruction",
-      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ResolvedInstruction": {
-      "class": "Identifier",
-      "name": "ResolvedInstruction",
+      "name": "ComponentInstruction",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
       "value": null
@@ -43,9 +22,9 @@
       "prefix": null,
       "value": null
     },
-    "UnresolvedInstruction": {
+    "Instruction": {
       "class": "Identifier",
-      "name": "UnresolvedInstruction",
+      "name": "Instruction",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
       "value": null
@@ -57,9 +36,30 @@
       "prefix": null,
       "value": null
     },
-    "ComponentInstruction": {
+    "ResolvedInstruction": {
       "class": "Identifier",
-      "name": "ComponentInstruction",
+      "name": "ResolvedInstruction",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RouteData": {
+      "class": "Identifier",
+      "name": "RouteData",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RouteParams": {
+      "class": "Identifier",
+      "name": "RouteParams",
+      "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
+      "prefix": null,
+      "value": null
+    },
+    "UnresolvedInstruction": {
+      "class": "Identifier",
+      "name": "UnresolvedInstruction",
       "moduleUrl": "asset:angular2/lib/src/router/instruction.dart",
       "prefix": null,
       "value": null

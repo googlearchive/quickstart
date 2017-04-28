@@ -1,0 +1,26 @@
+{
+  "ngDeps": {
+    "1": "",
+    "4": [
+      {
+        "1": "package:angular_test/src/frontend.dart",
+        "2": [
+          "disposeAnyRunningTest",
+          "NgTestBed",
+          "NgTestFixture",
+          "NgTestStabilizer",
+          "NgZoneStabilizer"
+        ]
+      },
+      {
+        "1": "package:angular_test/src/matchers.dart",
+        "2": [
+          "throwsInAngular"
+        ]
+      }
+    ],
+    "6": "angular_test.dart"
+  },
+  "type": {},
+  "alias": {}
+}

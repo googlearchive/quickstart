@@ -7,7 +7,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/platform/server/html_adapter.dart",
+        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/compiler/source_module.dart",
         "5": false
       },
       {
@@ -16,10 +20,6 @@
       },
       {
         "1": "package:angular2/src/transform/common/code/ng_deps_code.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/transform/common/code/source_module.dart",
         "5": false
       },
       {
@@ -51,19 +51,19 @@
     "6": "transformer.dart",
     "7": [
       {
-        "1": "package:angular2/src/platform/server/html_adapter.template.dart",
+        "1": "package:angular2/src/transform/common/model/ng_deps_model.pb.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "package:angular2/src/compiler/source_module.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/code/ng_deps_code.template.dart",
+        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/code/source_module.template.dart",
+        "1": "package:angular2/src/transform/common/code/ng_deps_code.template.dart",
         "4": "i3"
       },
       {
@@ -89,6 +89,13 @@
     ]
   },
   "type": {
+    "TemplateCompiler": {
+      "class": "Identifier",
+      "name": "TemplateCompiler",
+      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/transformer.dart",
+      "prefix": null,
+      "value": null
+    },
     "_emptyNgDepsContents": {
       "class": "Identifier",
       "name": "_emptyNgDepsContents",
@@ -96,9 +103,9 @@
       "prefix": null,
       "value": null
     },
-    "TemplateCompiler": {
+    "writeTemplateFile": {
       "class": "Identifier",
-      "name": "TemplateCompiler",
+      "name": "writeTemplateFile",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/transformer.dart",
       "prefix": null,
       "value": null

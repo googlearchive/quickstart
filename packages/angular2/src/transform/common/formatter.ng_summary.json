@@ -10,20 +10,6 @@
     "6": "formatter.dart"
   },
   "type": {
-    "init": {
-      "class": "Identifier",
-      "name": "init",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/formatter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "formatter": {
-      "class": "Identifier",
-      "name": "formatter",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/formatter.dart",
-      "prefix": null,
-      "value": null
-    },
     "AngularDartFormatter": {
       "class": "Identifier",
       "name": "AngularDartFormatter",
@@ -41,6 +27,20 @@
     "_RealFormatter": {
       "class": "Identifier",
       "name": "_RealFormatter",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/formatter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "formatter": {
+      "class": "Identifier",
+      "name": "formatter",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/formatter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "init": {
+      "class": "Identifier",
+      "name": "init",
       "moduleUrl": "asset:angular2/lib/src/transform/common/formatter.dart",
       "prefix": null,
       "value": null

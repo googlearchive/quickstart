@@ -14,10 +14,16 @@
       {
         "1": "package:angular2/core.dart",
         "2": [
-          "Injectable",
-          "Inject",
           "OpaqueToken",
           "ComponentFactory"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
+        "2": [
+          "Injectable",
+          "Inject"
         ],
         "5": false
       },
@@ -40,7 +46,7 @@
         "5": false
       },
       {
-        "1": "route_config/route_config_impl.dart",
+        "1": "route_config/route_config_decorator.dart",
         "2": [
           "RouteConfig",
           "Route",
@@ -125,40 +131,44 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.template.dart",
+        "1": "package:angular2/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "instruction.template.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i2"
       },
       {
-        "1": "route_config/route_config_impl.template.dart",
+        "1": "instruction.template.dart",
         "4": "i3"
       },
       {
-        "1": "route_config/route_config_normalizer.template.dart",
+        "1": "route_config/route_config_decorator.template.dart",
         "4": "i4"
       },
       {
-        "1": "rules/route_paths/route_path.template.dart",
+        "1": "route_config/route_config_normalizer.template.dart",
         "4": "i5"
       },
       {
-        "1": "rules/rule_set.template.dart",
+        "1": "rules/route_paths/route_path.template.dart",
         "4": "i6"
       },
       {
-        "1": "rules/rules.template.dart",
+        "1": "rules/rule_set.template.dart",
         "4": "i7"
       },
       {
-        "1": "url_parser.template.dart",
+        "1": "rules/rules.template.dart",
         "4": "i8"
       },
       {
-        "1": "utils.template.dart",
+        "1": "url_parser.template.dart",
         "4": "i9"
+      },
+      {
+        "1": "utils.template.dart",
+        "4": "i10"
       }
     ]
   },
@@ -200,16 +210,9 @@
         }
       ]
     },
-    "splitAndFlattenLinkParams": {
+    "assertTerminalComponent": {
       "class": "Identifier",
-      "name": "splitAndFlattenLinkParams",
-      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-      "prefix": null,
-      "value": null
-    },
-    "mostSpecific": {
-      "class": "Identifier",
-      "name": "mostSpecific",
+      "name": "assertTerminalComponent",
       "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
       "prefix": null,
       "value": null
@@ -221,9 +224,16 @@
       "prefix": null,
       "value": null
     },
-    "assertTerminalComponent": {
+    "mostSpecific": {
       "class": "Identifier",
-      "name": "assertTerminalComponent",
+      "name": "mostSpecific",
+      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+      "prefix": null,
+      "value": null
+    },
+    "splitAndFlattenLinkParams": {
+      "class": "Identifier",
+      "name": "splitAndFlattenLinkParams",
       "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
       "prefix": null,
       "value": null

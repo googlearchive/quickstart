@@ -10,16 +10,16 @@
     "6": "parameter_model.pb.dart"
   },
   "type": {
-    "ParameterModel$json": {
+    "ParameterModel": {
       "class": "Identifier",
-      "name": "ParameterModel$json",
+      "name": "ParameterModel",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/parameter_model.pb.dart",
       "prefix": null,
       "value": null
     },
-    "ParameterModel": {
+    "ParameterModel$json": {
       "class": "Identifier",
-      "name": "ParameterModel",
+      "name": "ParameterModel$json",
       "moduleUrl": "asset:angular2/lib/src/transform/common/model/parameter_model.pb.dart",
       "prefix": null,
       "value": null

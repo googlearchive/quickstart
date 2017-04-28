@@ -146,15 +146,15 @@
   "alias": {
     "COMMON_PIPES": [
       "AsyncPipe",
-      "UpperCasePipe",
-      "LowerCasePipe",
-      "JsonPipe",
-      "SlicePipe",
-      "DecimalPipe",
-      "PercentPipe",
       "CurrencyPipe",
       "DatePipe",
-      "ReplacePipe"
+      "DecimalPipe",
+      "JsonPipe",
+      "LowerCasePipe",
+      "PercentPipe",
+      "ReplacePipe",
+      "SlicePipe",
+      "UpperCasePipe"
     ]
   }
 }

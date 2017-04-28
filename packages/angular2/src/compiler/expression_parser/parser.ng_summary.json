@@ -49,8 +49,7 @@
           "FunctionCall",
           "TemplateBinding",
           "ASTWithSource",
-          "AstVisitor",
-          "Quote"
+          "AstVisitor"
         ],
         "5": false
       },
@@ -59,7 +58,6 @@
         "2": [
           "Lexer",
           "EOF",
-          "isIdentifier",
           "isQuote",
           "Token",
           "$PERIOD",
@@ -104,20 +102,6 @@
       "prefix": null,
       "value": null
     },
-    "SplitInterpolation": {
-      "class": "Identifier",
-      "name": "SplitInterpolation",
-      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/parser.dart",
-      "prefix": null,
-      "value": null
-    },
-    "TemplateBindingParseResult": {
-      "class": "Identifier",
-      "name": "TemplateBindingParseResult",
-      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/parser.dart",
-      "prefix": null,
-      "value": null
-    },
     "Parser": {
       "class": "Type",
       "name": "Parser",
@@ -148,16 +132,30 @@
         }
       ]
     },
-    "_ParseAST": {
+    "SimpleExpressionChecker": {
       "class": "Identifier",
-      "name": "_ParseAST",
+      "name": "SimpleExpressionChecker",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/parser.dart",
       "prefix": null,
       "value": null
     },
-    "SimpleExpressionChecker": {
+    "SplitInterpolation": {
       "class": "Identifier",
-      "name": "SimpleExpressionChecker",
+      "name": "SplitInterpolation",
+      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "TemplateBindingParseResult": {
+      "class": "Identifier",
+      "name": "TemplateBindingParseResult",
+      "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ParseAST": {
+      "class": "Identifier",
+      "name": "_ParseAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/expression_parser/parser.dart",
       "prefix": null,
       "value": null

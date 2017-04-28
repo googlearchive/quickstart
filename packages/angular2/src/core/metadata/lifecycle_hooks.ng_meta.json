@@ -19,6 +19,41 @@
     ]
   },
   "type": {
+    "AfterContentChecked": {
+      "class": "Identifier",
+      "name": "AfterContentChecked",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AfterContentInit": {
+      "class": "Identifier",
+      "name": "AfterContentInit",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AfterViewChecked": {
+      "class": "Identifier",
+      "name": "AfterViewChecked",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AfterViewInit": {
+      "class": "Identifier",
+      "name": "AfterViewInit",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
+    "DoCheck": {
+      "class": "Identifier",
+      "name": "DoCheck",
+      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
+      "prefix": null,
+      "value": null
+    },
     "LifecycleHooks": {
       "class": "Identifier",
       "name": "LifecycleHooks",
@@ -33,20 +68,6 @@
       "prefix": null,
       "value": null
     },
-    "OnInit": {
-      "class": "Identifier",
-      "name": "OnInit",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "DoCheck": {
-      "class": "Identifier",
-      "name": "DoCheck",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
     "OnDestroy": {
       "class": "Identifier",
       "name": "OnDestroy",
@@ -54,30 +75,9 @@
       "prefix": null,
       "value": null
     },
-    "AfterContentInit": {
+    "OnInit": {
       "class": "Identifier",
-      "name": "AfterContentInit",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AfterContentChecked": {
-      "class": "Identifier",
-      "name": "AfterContentChecked",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AfterViewInit": {
-      "class": "Identifier",
-      "name": "AfterViewInit",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AfterViewChecked": {
-      "class": "Identifier",
-      "name": "AfterViewChecked",
+      "name": "OnInit",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/lifecycle_hooks.dart",
       "prefix": null,
       "value": null

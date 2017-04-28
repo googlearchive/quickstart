@@ -19,7 +19,18 @@
         "5": false
       },
       {
+        "1": "package:logging/logging.dart",
+        "5": false
+      },
+      {
         "1": "package:source_span/source_span.dart",
+        "5": false
+      },
+      {
+        "1": "logging.dart",
+        "2": [
+          "forwardLogRecord"
+        ],
         "5": false
       }
     ],
@@ -29,6 +40,13 @@
     "_SimpleCallback": {
       "class": "Identifier",
       "name": "_SimpleCallback",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/zone.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_friendlyError": {
+      "class": "Identifier",
+      "name": "_friendlyError",
       "moduleUrl": "asset:angular2/lib/src/transform/common/zone.dart",
       "prefix": null,
       "value": null
@@ -50,13 +68,6 @@
     "templateCompiler": {
       "class": "Identifier",
       "name": "templateCompiler",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/zone.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_friendlyError": {
-      "class": "Identifier",
-      "name": "_friendlyError",
       "moduleUrl": "asset:angular2/lib/src/transform/common/zone.dart",
       "prefix": null,
       "value": null

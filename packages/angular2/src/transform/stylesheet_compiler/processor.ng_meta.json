@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/offline_compiler.dart",
+        "1": "package:angular2/src/compiler/config.dart",
         "5": false
       },
       {
@@ -15,7 +15,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/code/source_module.dart",
+        "1": "package:angular2/src/compiler/source_module.dart",
         "5": false
       },
       {
@@ -24,6 +24,10 @@
       },
       {
         "1": "package:angular2/src/transform/common/names.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/options.dart",
         "5": false
       },
       {
@@ -36,6 +40,13 @@
         "5": false
       },
       {
+        "1": "package:analyzer/dart/ast/token.dart",
+        "2": [
+          "Keyword"
+        ],
+        "5": false
+      },
+      {
         "1": "package:barback/barback.dart",
         "5": false
       }
@@ -43,7 +54,7 @@
     "6": "processor.dart",
     "7": [
       {
-        "1": "package:angular2/src/compiler/offline_compiler.template.dart",
+        "1": "package:angular2/src/compiler/config.template.dart",
         "4": "i0"
       },
       {
@@ -51,7 +62,7 @@
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/code/source_module.template.dart",
+        "1": "package:angular2/src/compiler/source_module.template.dart",
         "4": "i2"
       },
       {
@@ -63,19 +74,23 @@
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/common/ng_compiler.template.dart",
+        "1": "package:angular2/src/transform/common/options.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/common/zone.template.dart",
+        "1": "package:angular2/src/transform/common/ng_compiler.template.dart",
         "4": "i6"
+      },
+      {
+        "1": "package:angular2/src/transform/common/zone.template.dart",
+        "4": "i7"
       }
     ]
   },
   "type": {
-    "shimmedStylesheetAssetId": {
+    "_sanitizeLibName": {
       "class": "Identifier",
-      "name": "shimmedStylesheetAssetId",
+      "name": "_sanitizeLibName",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
       "value": null
@@ -90,6 +105,20 @@
     "processStylesheet": {
       "class": "Identifier",
       "name": "processStylesheet",
+      "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
+      "prefix": null,
+      "value": null
+    },
+    "shimmedStylesheetAssetId": {
+      "class": "Identifier",
+      "name": "shimmedStylesheetAssetId",
+      "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
+      "prefix": null,
+      "value": null
+    },
+    "writeSourceModule": {
+      "class": "Identifier",
+      "name": "writeSourceModule",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
       "value": null

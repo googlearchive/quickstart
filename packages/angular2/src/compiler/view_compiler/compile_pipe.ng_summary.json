@@ -49,16 +49,16 @@
     "6": "compile_pipe.dart"
   },
   "type": {
-    "_PurePipeProxy": {
+    "CompilePipe": {
       "class": "Identifier",
-      "name": "_PurePipeProxy",
+      "name": "CompilePipe",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_pipe.dart",
       "prefix": null,
       "value": null
     },
-    "CompilePipe": {
+    "_PurePipeProxy": {
       "class": "Identifier",
-      "name": "CompilePipe",
+      "name": "_PurePipeProxy",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/compile_pipe.dart",
       "prefix": null,
       "value": null

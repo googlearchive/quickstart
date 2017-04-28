@@ -84,9 +84,9 @@
       "prefix": null,
       "value": null
     },
-    "inline": {
+    "_InlinedValue": {
       "class": "Identifier",
-      "name": "inline",
+      "name": "_InlinedValue",
       "moduleUrl": "asset:angular2/lib/src/transform/inliner_for_test/transformer.dart",
       "prefix": null,
       "value": null
@@ -98,9 +98,9 @@
       "prefix": null,
       "value": null
     },
-    "_InlinedValue": {
+    "inline": {
       "class": "Identifier",
-      "name": "_InlinedValue",
+      "name": "inline",
       "moduleUrl": "asset:angular2/lib/src/transform/inliner_for_test/transformer.dart",
       "prefix": null,
       "value": null

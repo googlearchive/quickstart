@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/router/lifecycle/lifecycle_annotations_impl.dart",
+        "1": "lifecycle_annotations.dart",
         "5": false
       }
     ],

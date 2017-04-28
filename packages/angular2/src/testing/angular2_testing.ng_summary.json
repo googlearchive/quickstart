@@ -26,7 +26,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/testing/internal.dart",
+        "1": "package:test/test.dart",
+        "5": false
+      },
+      {
+        "1": "internal.dart",
         "2": [
           "TestComponentBuilder",
           "ComponentFixture",
@@ -37,17 +41,13 @@
         "5": false
       },
       {
-        "1": "package:test/test.dart",
-        "5": false
-      },
-      {
         "1": "internal_injector.dart",
         "5": false
       }
     ],
     "4": [
       {
-        "1": "package:angular2/src/testing/internal.dart",
+        "1": "internal.dart",
         "2": [
           "TestComponentBuilder",
           "ComponentFixture",
@@ -60,13 +60,6 @@
     "6": "angular2_testing.dart"
   },
   "type": {
-    "initAngularTests": {
-      "class": "Identifier",
-      "name": "initAngularTests",
-      "moduleUrl": "asset:angular2/lib/src/testing/angular2_testing.dart",
-      "prefix": null,
-      "value": null
-    },
     "_addTestInjectorTearDown": {
       "class": "Identifier",
       "name": "_addTestInjectorTearDown",
@@ -74,16 +67,23 @@
       "prefix": null,
       "value": null
     },
-    "setUpProviders": {
+    "_runInjectableFunction": {
       "class": "Identifier",
-      "name": "setUpProviders",
+      "name": "_runInjectableFunction",
       "moduleUrl": "asset:angular2/lib/src/testing/angular2_testing.dart",
       "prefix": null,
       "value": null
     },
-    "_runInjectableFunction": {
+    "initAngularTests": {
       "class": "Identifier",
-      "name": "_runInjectableFunction",
+      "name": "initAngularTests",
+      "moduleUrl": "asset:angular2/lib/src/testing/angular2_testing.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ngComponentTest": {
+      "class": "Identifier",
+      "name": "ngComponentTest",
       "moduleUrl": "asset:angular2/lib/src/testing/angular2_testing.dart",
       "prefix": null,
       "value": null
@@ -102,9 +102,9 @@
       "prefix": null,
       "value": null
     },
-    "ngComponentTest": {
+    "setUpProviders": {
       "class": "Identifier",
-      "name": "ngComponentTest",
+      "name": "setUpProviders",
       "moduleUrl": "asset:angular2/lib/src/testing/angular2_testing.dart",
       "prefix": null,
       "value": null

@@ -57,6 +57,13 @@
     ]
   },
   "type": {
+    "GetTestability": {
+      "class": "Identifier",
+      "name": "GetTestability",
+      "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
+      "prefix": null,
+      "value": null
+    },
     "Testability": {
       "class": "Type",
       "name": "Testability",
@@ -95,13 +102,6 @@
       "isHost": false,
       "value": null,
       "diDeps": []
-    },
-    "GetTestability": {
-      "class": "Identifier",
-      "name": "GetTestability",
-      "moduleUrl": "asset:angular2/lib/src/core/testability/testability.dart",
-      "prefix": null,
-      "value": null
     },
     "_NoopGetTestability": {
       "class": "Identifier",

@@ -3,6 +3,10 @@
     "1": "",
     "3": [
       {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/facade/exceptions.dart",
         "2": [
           "BaseException"
@@ -83,8 +87,7 @@
       {
         "1": "normalize_validator.dart",
         "2": [
-          "normalizeValidator",
-          "normalizeAsyncValidator"
+          "normalizeValidator"
         ],
         "5": false
       },
@@ -112,8 +115,7 @@
       {
         "1": "validators.dart",
         "2": [
-          "ValidatorFn",
-          "AsyncValidatorFn"
+          "ValidatorFn"
         ],
         "5": false
       }
@@ -121,27 +123,6 @@
     "6": "shared.dart"
   },
   "type": {
-    "controlPath": {
-      "class": "Identifier",
-      "name": "controlPath",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
-      "prefix": null,
-      "value": null
-    },
-    "setUpControl": {
-      "class": "Identifier",
-      "name": "setUpControl",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
-      "prefix": null,
-      "value": null
-    },
-    "setUpControlGroup": {
-      "class": "Identifier",
-      "name": "setUpControlGroup",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
-      "prefix": null,
-      "value": null
-    },
     "_throwError": {
       "class": "Identifier",
       "name": "_throwError",
@@ -156,9 +137,9 @@
       "prefix": null,
       "value": null
     },
-    "composeAsyncValidators": {
+    "controlPath": {
       "class": "Identifier",
-      "name": "composeAsyncValidators",
+      "name": "controlPath",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
       "value": null
@@ -173,6 +154,20 @@
     "selectValueAccessor": {
       "class": "Identifier",
       "name": "selectValueAccessor",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "setUpControl": {
+      "class": "Identifier",
+      "name": "setUpControl",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "setUpControlGroup": {
+      "class": "Identifier",
+      "name": "setUpControlGroup",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/shared.dart",
       "prefix": null,
       "value": null

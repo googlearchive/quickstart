@@ -33,6 +33,13 @@
     "6": "class_matcher_base.dart"
   },
   "type": {
+    "ClassDescriptor": {
+      "class": "Identifier",
+      "name": "ClassDescriptor",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
+      "prefix": null,
+      "value": null
+    },
     "ClassMatcherBase": {
       "class": "Identifier",
       "name": "ClassMatcherBase",
@@ -50,13 +57,6 @@
     "isMatch": {
       "class": "Identifier",
       "name": "isMatch",
-      "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ClassDescriptor": {
-      "class": "Identifier",
-      "name": "ClassDescriptor",
       "moduleUrl": "asset:angular2/lib/src/transform/common/class_matcher_base.dart",
       "prefix": null,
       "value": null

@@ -1,41 +1,6 @@
 {
   "ngDeps": null,
   "type": {
-    "_IS_DART_VM": {
-      "class": "Identifier",
-      "name": "_IS_DART_VM",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "stringify": {
-      "class": "Identifier",
-      "name": "stringify",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "resolveEnumToken": {
-      "class": "Identifier",
-      "name": "resolveEnumToken",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "jsSplit": {
-      "class": "Identifier",
-      "name": "jsSplit",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
-    "looseIdentical": {
-      "class": "Identifier",
-      "name": "looseIdentical",
-      "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
-      "prefix": null,
-      "value": null
-    },
     "_looseIdentical": {
       "class": "Identifier",
       "name": "_looseIdentical",
@@ -50,9 +15,9 @@
       "prefix": null,
       "value": null
     },
-    "Json": {
+    "isDartVM": {
       "class": "Identifier",
-      "name": "Json",
+      "name": "isDartVM",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null
@@ -64,16 +29,16 @@
       "prefix": null,
       "value": null
     },
-    "bitWiseOr": {
+    "jsSplit": {
       "class": "Identifier",
-      "name": "bitWiseOr",
+      "name": "jsSplit",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null
     },
-    "bitWiseAnd": {
+    "looseIdentical": {
       "class": "Identifier",
-      "name": "bitWiseAnd",
+      "name": "looseIdentical",
       "moduleUrl": "asset:angular2/lib/src/facade/lang.dart",
       "prefix": null,
       "value": null

@@ -19,16 +19,16 @@
     ]
   },
   "type": {
-    "MatchedUrl": {
+    "GeneratedUrl": {
       "class": "Identifier",
-      "name": "MatchedUrl",
+      "name": "GeneratedUrl",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/route_path.dart",
       "prefix": null,
       "value": null
     },
-    "GeneratedUrl": {
+    "MatchedUrl": {
       "class": "Identifier",
-      "name": "GeneratedUrl",
+      "name": "MatchedUrl",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/route_path.dart",
       "prefix": null,
       "value": null

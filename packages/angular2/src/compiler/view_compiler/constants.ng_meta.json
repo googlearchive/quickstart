@@ -25,13 +25,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "resolveEnumToken"
-        ],
-        "5": false
-      },
-      {
         "1": "../compile_metadata.dart",
         "2": [
           "CompileIdentifierMetadata"
@@ -66,41 +59,23 @@
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "../compile_metadata.template.dart",
         "4": "i3"
       },
       {
-        "1": "../compile_metadata.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i4"
       },
       {
-        "1": "../identifiers.template.dart",
-        "4": "i5"
-      },
-      {
         "1": "../output/output_ast.template.dart",
-        "4": "i6"
+        "4": "i5"
       }
     ]
   },
   "type": {
-    "_enumExpression": {
+    "ChangeDetectionStrategyEnum": {
       "class": "Identifier",
-      "name": "_enumExpression",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewTypeEnum": {
-      "class": "Identifier",
-      "name": "ViewTypeEnum",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewEncapsulationEnum": {
-      "class": "Identifier",
-      "name": "ViewEncapsulationEnum",
+      "name": "ChangeDetectionStrategyEnum",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
       "prefix": null,
       "value": null
@@ -112,23 +87,9 @@
       "prefix": null,
       "value": null
     },
-    "ChangeDetectionStrategyEnum": {
+    "DetectChangesVars": {
       "class": "Identifier",
-      "name": "ChangeDetectionStrategyEnum",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewConstructorVars": {
-      "class": "Identifier",
-      "name": "ViewConstructorVars",
-      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ViewProperties": {
-      "class": "Identifier",
-      "name": "ViewProperties",
+      "name": "DetectChangesVars",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
       "prefix": null,
       "value": null
@@ -147,9 +108,44 @@
       "prefix": null,
       "value": null
     },
-    "DetectChangesVars": {
+    "ViewConstructorVars": {
       "class": "Identifier",
-      "name": "DetectChangesVars",
+      "name": "ViewConstructorVars",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewEncapsulationEnum": {
+      "class": "Identifier",
+      "name": "ViewEncapsulationEnum",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewProperties": {
+      "class": "Identifier",
+      "name": "ViewProperties",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ViewTypeEnum": {
+      "class": "Identifier",
+      "name": "ViewTypeEnum",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_enumExpression": {
+      "class": "Identifier",
+      "name": "_enumExpression",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_resolveEnumToken": {
+      "class": "Identifier",
+      "name": "_resolveEnumToken",
       "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/constants.dart",
       "prefix": null,
       "value": null

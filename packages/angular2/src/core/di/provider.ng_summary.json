@@ -1,16 +1,16 @@
 {
   "ngDeps": null,
   "type": {
-    "noValueProvided": {
+    "Provider": {
       "class": "Identifier",
-      "name": "noValueProvided",
+      "name": "Provider",
       "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
       "prefix": null,
       "value": null
     },
-    "Provider": {
+    "noValueProvided": {
       "class": "Identifier",
-      "name": "Provider",
+      "name": "noValueProvided",
       "moduleUrl": "asset:angular2/lib/src/core/di/provider.dart",
       "prefix": null,
       "value": null

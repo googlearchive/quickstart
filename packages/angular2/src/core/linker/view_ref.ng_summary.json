@@ -10,10 +10,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/linker/app_view_utils.dart",
-        "5": false
-      },
-      {
         "1": "../change_detection/change_detector_ref.dart",
         "2": [
           "ChangeDetectorRef"
@@ -26,21 +22,25 @@
           "AppView"
         ],
         "5": false
+      },
+      {
+        "1": "app_view_utils.dart",
+        "5": false
       }
     ],
     "6": "view_ref.dart"
   },
   "type": {
-    "ViewRef": {
+    "EmbeddedViewRef": {
       "class": "Identifier",
-      "name": "ViewRef",
+      "name": "EmbeddedViewRef",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
       "prefix": null,
       "value": null
     },
-    "EmbeddedViewRef": {
+    "ViewRef": {
       "class": "Identifier",
-      "name": "EmbeddedViewRef",
+      "name": "ViewRef",
       "moduleUrl": "asset:angular2/lib/src/core/linker/view_ref.dart",
       "prefix": null,
       "value": null

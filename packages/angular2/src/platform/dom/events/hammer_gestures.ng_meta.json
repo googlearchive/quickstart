@@ -85,9 +85,9 @@
       "prefix": null,
       "value": null
     },
-    "overrideDefault": {
+    "HammerEvent": {
       "class": "Identifier",
-      "name": "overrideDefault",
+      "name": "HammerEvent",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
       "prefix": null,
       "value": null
@@ -131,9 +131,9 @@
         }
       ]
     },
-    "HammerEvent": {
+    "overrideDefault": {
       "class": "Identifier",
-      "name": "HammerEvent",
+      "name": "overrideDefault",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/hammer_gestures.dart",
       "prefix": null,
       "value": null

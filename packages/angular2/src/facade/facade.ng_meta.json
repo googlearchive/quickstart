@@ -5,7 +5,6 @@
       {
         "1": "async.dart",
         "2": [
-          "Stream",
           "EventEmitter"
         ]
       },
@@ -39,6 +38,13 @@
     ]
   },
   "type": {
+    "BaseException": {
+      "class": "Identifier",
+      "name": "BaseException",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "prefix": null,
+      "value": null
+    },
     "EventEmitter": {
       "class": "Identifier",
       "name": "EventEmitter",
@@ -46,24 +52,10 @@
       "prefix": null,
       "value": null
     },
-    "_ArrayLogger": {
-      "class": "Identifier",
-      "name": "_ArrayLogger",
-      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
-      "prefix": null,
-      "value": null
-    },
     "ExceptionHandler": {
       "class": "Identifier",
       "name": "ExceptionHandler",
       "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
-      "prefix": null,
-      "value": null
-    },
-    "BaseException": {
-      "class": "Identifier",
-      "name": "BaseException",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
       "prefix": null,
       "value": null
     },

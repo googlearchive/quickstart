@@ -14,15 +14,15 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.dart",
+        "1": "asset_reader.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/logging.dart",
+        "1": "logging.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/url_resolver.dart",
+        "1": "url_resolver.dart",
         "5": false
       }
     ],

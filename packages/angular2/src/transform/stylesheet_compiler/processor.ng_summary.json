@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/compiler/offline_compiler.dart",
+        "1": "package:angular2/src/compiler/config.dart",
         "5": false
       },
       {
@@ -15,7 +15,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/code/source_module.dart",
+        "1": "package:angular2/src/compiler/source_module.dart",
         "5": false
       },
       {
@@ -24,6 +24,10 @@
       },
       {
         "1": "package:angular2/src/transform/common/names.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/transform/common/options.dart",
         "5": false
       },
       {
@@ -36,6 +40,13 @@
         "5": false
       },
       {
+        "1": "package:analyzer/dart/ast/token.dart",
+        "2": [
+          "Keyword"
+        ],
+        "5": false
+      },
+      {
         "1": "package:barback/barback.dart",
         "5": false
       }
@@ -43,9 +54,9 @@
     "6": "processor.dart"
   },
   "type": {
-    "shimmedStylesheetAssetId": {
+    "_sanitizeLibName": {
       "class": "Identifier",
-      "name": "shimmedStylesheetAssetId",
+      "name": "_sanitizeLibName",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
       "value": null
@@ -60,6 +71,20 @@
     "processStylesheet": {
       "class": "Identifier",
       "name": "processStylesheet",
+      "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
+      "prefix": null,
+      "value": null
+    },
+    "shimmedStylesheetAssetId": {
+      "class": "Identifier",
+      "name": "shimmedStylesheetAssetId",
+      "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
+      "prefix": null,
+      "value": null
+    },
+    "writeSourceModule": {
+      "class": "Identifier",
+      "name": "writeSourceModule",
       "moduleUrl": "asset:angular2/lib/src/transform/stylesheet_compiler/processor.dart",
       "prefix": null,
       "value": null

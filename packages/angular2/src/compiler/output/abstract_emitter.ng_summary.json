@@ -18,6 +18,20 @@
     "6": "abstract_emitter.dart"
   },
   "type": {
+    "AbstractEmitterVisitor": {
+      "class": "Identifier",
+      "name": "AbstractEmitterVisitor",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/abstract_emitter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "EmitterVisitorContext": {
+      "class": "Identifier",
+      "name": "EmitterVisitorContext",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/abstract_emitter.dart",
+      "prefix": null,
+      "value": null
+    },
     "OutputEmitter": {
       "class": "Identifier",
       "name": "OutputEmitter",
@@ -32,16 +46,9 @@
       "prefix": null,
       "value": null
     },
-    "EmitterVisitorContext": {
+    "_createIndent": {
       "class": "Identifier",
-      "name": "EmitterVisitorContext",
-      "moduleUrl": "asset:angular2/lib/src/compiler/output/abstract_emitter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "AbstractEmitterVisitor": {
-      "class": "Identifier",
-      "name": "AbstractEmitterVisitor",
+      "name": "_createIndent",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/abstract_emitter.dart",
       "prefix": null,
       "value": null
@@ -49,13 +56,6 @@
     "escapeSingleQuoteString": {
       "class": "Identifier",
       "name": "escapeSingleQuoteString",
-      "moduleUrl": "asset:angular2/lib/src/compiler/output/abstract_emitter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_createIndent": {
-      "class": "Identifier",
-      "name": "_createIndent",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/abstract_emitter.dart",
       "prefix": null,
       "value": null

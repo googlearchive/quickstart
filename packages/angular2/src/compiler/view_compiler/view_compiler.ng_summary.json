@@ -17,6 +17,10 @@
         "5": false
       },
       {
+        "1": "package:logging/logging.dart",
+        "5": false
+      },
+      {
         "1": "../compile_metadata.dart",
         "2": [
           "CompileDirectiveMetadata",
@@ -79,6 +83,10 @@
       {
         "1": "view_builder.dart",
         "5": false
+      },
+      {
+        "1": "../expression_parser/parser.dart",
+        "5": false
       }
     ],
     "5": [
@@ -94,6 +102,10 @@
           {
             "1": "CompilerConfig",
             "4": "_genConfig"
+          },
+          {
+            "1": "Parser",
+            "4": "parser"
           }
         ]
       }
@@ -122,6 +134,26 @@
             "identifier": {
               "class": "Identifier",
               "name": "CompilerConfig",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Parser",
               "moduleUrl": null,
               "prefix": null,
               "value": null

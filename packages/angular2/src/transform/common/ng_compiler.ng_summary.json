@@ -49,7 +49,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.dart",
+        "1": "asset_reader.dart",
         "5": false
       },
       {

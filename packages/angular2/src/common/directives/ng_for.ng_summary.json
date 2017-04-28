@@ -7,14 +7,10 @@
         "2": [
           "DoCheck",
           "Directive",
-          "ChangeDetectorRef",
-          "IterableDiffer",
-          "IterableDiffers",
           "ViewContainerRef",
           "ViewRef",
           "TemplateRef",
-          "EmbeddedViewRef",
-          "TrackByFn"
+          "EmbeddedViewRef"
         ],
         "5": false
       },
@@ -22,14 +18,8 @@
         "1": "../../core/change_detection/differs/default_iterable_differ.dart",
         "2": [
           "DefaultIterableDiffer",
-          "CollectionChangeRecord"
-        ],
-        "5": false
-      },
-      {
-        "1": "../../facade/exceptions.dart",
-        "2": [
-          "BaseException"
+          "CollectionChangeRecord",
+          "TrackByFn"
         ],
         "5": false
       }
@@ -45,14 +35,6 @@
           {
             "1": "TemplateRef",
             "4": "_templateRef"
-          },
-          {
-            "1": "IterableDiffers",
-            "4": "_iterableDiffers"
-          },
-          {
-            "1": "ChangeDetectorRef",
-            "4": "_cdr"
           }
         ],
         "6": [
@@ -102,46 +84,6 @@
               "identifier": {
                 "class": "Identifier",
                 "name": "TemplateRef",
-                "moduleUrl": null,
-                "prefix": null,
-                "value": null
-              },
-              "identifierIsInstance": false
-            },
-            "value": null,
-            "isAttribute": false,
-            "isSelf": false,
-            "isHost": false,
-            "isSkipSelf": false,
-            "isOptional": false,
-            "isValue": false
-          },
-          {
-            "token": {
-              "value": null,
-              "identifier": {
-                "class": "Identifier",
-                "name": "IterableDiffers",
-                "moduleUrl": null,
-                "prefix": null,
-                "value": null
-              },
-              "identifierIsInstance": false
-            },
-            "value": null,
-            "isAttribute": false,
-            "isSelf": false,
-            "isHost": false,
-            "isSkipSelf": false,
-            "isOptional": false,
-            "isValue": false
-          },
-          {
-            "token": {
-              "value": null,
-              "identifier": {
-                "class": "Identifier",
-                "name": "ChangeDetectorRef",
                 "moduleUrl": null,
                 "prefix": null,
                 "value": null

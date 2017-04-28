@@ -18,8 +18,10 @@
       {
         "1": "control_value_accessor.dart",
         "2": [
+          "ChangeFunction",
+          "ControlValueAccessor",
           "NG_VALUE_ACCESSOR",
-          "ControlValueAccessor"
+          "TouchFunction"
         ],
         "5": false
       }
@@ -107,7 +109,6 @@
           },
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": true,
           "deps": null
         }
@@ -153,7 +154,7 @@
       "inputTypes": {},
       "outputs": {},
       "hostListeners": {
-        "blur": "onTouched()",
+        "blur": "touchHandler()",
         "change": "onChange($event.target.checked)"
       },
       "hostProperties": {},
@@ -211,7 +212,6 @@
           },
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": true,
           "deps": null
         }

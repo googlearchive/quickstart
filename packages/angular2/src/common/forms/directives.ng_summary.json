@@ -314,22 +314,22 @@
   },
   "alias": {
     "FORM_DIRECTIVES": [
-      "NgControlName",
-      "NgControlGroup",
-      "NgFormControl",
-      "NgModel",
-      "NgFormModel",
-      "NgForm",
-      "NgSelectOption",
-      "DefaultValueAccessor",
-      "NumberValueAccessor",
       "CheckboxControlValueAccessor",
-      "SelectControlValueAccessor",
+      "DefaultValueAccessor",
+      "MaxLengthValidator",
+      "MinLengthValidator",
+      "NgControlGroup",
+      "NgControlName",
+      "NgForm",
+      "NgFormControl",
+      "NgFormModel",
+      "NgModel",
+      "NgSelectOption",
+      "NumberValueAccessor",
+      "PatternValidator",
       "RadioControlValueAccessor",
       "RequiredValidator",
-      "MinLengthValidator",
-      "MaxLengthValidator",
-      "PatternValidator"
+      "SelectControlValueAccessor"
     ]
   }
 }

@@ -28,10 +28,6 @@
         "5": false
       },
       {
-        "1": "view_container.dart",
-        "5": false
-      },
-      {
         "1": "app_view.dart",
         "5": false
       },
@@ -60,9 +56,9 @@
     "6": "component_factory.dart"
   },
   "type": {
-    "NgViewFactory": {
+    "ComponentFactory": {
       "class": "Identifier",
-      "name": "NgViewFactory",
+      "name": "ComponentFactory",
       "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null
@@ -74,16 +70,9 @@
       "prefix": null,
       "value": null
     },
-    "ComponentRefImpl": {
+    "NgViewFactory": {
       "class": "Identifier",
-      "name": "ComponentRefImpl",
-      "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
-      "prefix": null,
-      "value": null
-    },
-    "ComponentFactory": {
-      "class": "Identifier",
-      "name": "ComponentFactory",
+      "name": "NgViewFactory",
       "moduleUrl": "asset:angular2/lib/src/core/linker/component_factory.dart",
       "prefix": null,
       "value": null

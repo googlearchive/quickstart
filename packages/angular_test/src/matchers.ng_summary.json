@@ -1,0 +1,13 @@
+{
+  "ngDeps": {
+    "1": "",
+    "4": [
+      {
+        "1": "package:angular_test/src/matchers/throws_in_angular.dart"
+      }
+    ],
+    "6": "matchers.dart"
+  },
+  "type": {},
+  "alias": {}
+}

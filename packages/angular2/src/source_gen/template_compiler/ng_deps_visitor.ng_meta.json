@@ -3,6 +3,17 @@
     "1": "",
     "3": [
       {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:analyzer/analyzer.dart",
+        "3": [
+          "Directive"
+        ],
+        "5": false
+      },
+      {
         "1": "package:analyzer/dart/element/element.dart",
         "5": false
       },
@@ -28,6 +39,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/source_gen/common/namespace_model.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/source_gen/common/ng_deps_model.dart",
         "5": false
       },
@@ -36,11 +51,15 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/source_gen/common/references.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/source_gen/common/reflection_info_model.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/source_gen/template_compiler/compile_type.dart",
+        "1": "package:angular2/src/transform/common/names.dart",
         "5": false
       },
       {
@@ -48,7 +67,15 @@
         "5": false
       },
       {
-        "1": "package:logging/logging.dart",
+        "1": "package:code_builder/code_builder.dart",
+        "5": false
+      },
+      {
+        "1": "package:meta/meta.dart",
+        "5": false
+      },
+      {
+        "1": "compile_metadata.dart",
         "5": false
       }
     ],
@@ -71,34 +98,53 @@
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/source_gen/common/ng_deps_model.template.dart",
+        "1": "package:angular2/src/source_gen/common/namespace_model.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/source_gen/common/parameter_model.template.dart",
+        "1": "package:angular2/src/source_gen/common/ng_deps_model.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/source_gen/common/reflection_info_model.template.dart",
+        "1": "package:angular2/src/source_gen/common/parameter_model.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/source_gen/template_compiler/compile_type.template.dart",
+        "1": "package:angular2/src/source_gen/common/references.template.dart",
         "4": "i7"
+      },
+      {
+        "1": "package:angular2/src/source_gen/common/reflection_info_model.template.dart",
+        "4": "i8"
+      },
+      {
+        "1": "package:angular2/src/transform/common/names.template.dart",
+        "4": "i9"
+      },
+      {
+        "1": "compile_metadata.template.dart",
+        "4": "i10"
       }
     ]
   },
   "type": {
-    "NgDepsVisitor": {
+    "ReflectableVisitor": {
       "class": "Identifier",
-      "name": "NgDepsVisitor",
+      "name": "ReflectableVisitor",
       "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/ng_deps_visitor.dart",
       "prefix": null,
       "value": null
     },
-    "ReflectableVisitor": {
+    "_isDeferred": {
       "class": "Identifier",
-      "name": "ReflectableVisitor",
+      "name": "_isDeferred",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/ng_deps_visitor.dart",
+      "prefix": null,
+      "value": null
+    },
+    "resolveNgDepsFor": {
+      "class": "Identifier",
+      "name": "resolveNgDepsFor",
       "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/ng_deps_visitor.dart",
       "prefix": null,
       "value": null

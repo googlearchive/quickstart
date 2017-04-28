@@ -3,10 +3,6 @@
     "1": "",
     "3": [
       {
-        "1": "package:angular2/src/facade/lang.dart",
-        "5": false
-      },
-      {
         "1": "platform_reflection_capabilities.dart",
         "5": false
       },

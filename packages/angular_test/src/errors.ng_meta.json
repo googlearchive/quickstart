@@ -1,0 +1,55 @@
+{
+  "ngDeps": {
+    "1": "",
+    "4": [
+      {
+        "1": "package:angular_test/src/errors/generic_type_missing.dart"
+      },
+      {
+        "1": "package:angular_test/src/errors/test_already_running.dart"
+      },
+      {
+        "1": "package:angular_test/src/errors/will_never_stabilize.dart"
+      }
+    ],
+    "6": "errors.dart",
+    "7": [
+      {
+        "1": "package:angular_test/src/errors/generic_type_missing.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular_test/src/errors/test_already_running.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular_test/src/errors/will_never_stabilize.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "type": {
+    "GenericTypeMissingError": {
+      "class": "Identifier",
+      "name": "GenericTypeMissingError",
+      "moduleUrl": "asset:angular_test/lib/src/errors/generic_type_missing.dart",
+      "prefix": null,
+      "value": null
+    },
+    "TestAlreadyRunningError": {
+      "class": "Identifier",
+      "name": "TestAlreadyRunningError",
+      "moduleUrl": "asset:angular_test/lib/src/errors/test_already_running.dart",
+      "prefix": null,
+      "value": null
+    },
+    "WillNeverStabilizeError": {
+      "class": "Identifier",
+      "name": "WillNeverStabilizeError",
+      "moduleUrl": "asset:angular_test/lib/src/errors/will_never_stabilize.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

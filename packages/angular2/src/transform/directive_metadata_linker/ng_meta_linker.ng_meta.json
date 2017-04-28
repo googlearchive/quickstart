@@ -76,9 +76,16 @@
     ]
   },
   "type": {
-    "linkDirectiveMetadata": {
+    "_Linker": {
       "class": "Identifier",
-      "name": "linkDirectiveMetadata",
+      "name": "_Linker",
+      "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/ng_meta_linker.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_NgMetaIdentifierResolver": {
+      "class": "Identifier",
+      "name": "_NgMetaIdentifierResolver",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/ng_meta_linker.dart",
       "prefix": null,
       "value": null
@@ -90,16 +97,9 @@
       "prefix": null,
       "value": null
     },
-    "_Linker": {
+    "linkDirectiveMetadata": {
       "class": "Identifier",
-      "name": "_Linker",
-      "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/ng_meta_linker.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_NgMetaIdentifierResolver": {
-      "class": "Identifier",
-      "name": "_NgMetaIdentifierResolver",
+      "name": "linkDirectiveMetadata",
       "moduleUrl": "asset:angular2/lib/src/transform/directive_metadata_linker/ng_meta_linker.dart",
       "prefix": null,
       "value": null

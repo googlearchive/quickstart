@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/core.dart",
+        "1": "package:angular2/di.dart",
         "2": [
           "Inject",
           "Injectable"
@@ -52,7 +52,7 @@
         "5": false
       },
       {
-        "1": "route_config/route_config_impl.dart",
+        "1": "route_config/route_config_decorator.dart",
         "2": [
           "RouteDefinition"
         ],
@@ -117,7 +117,7 @@
           },
           {
             "1": "Location",
-            "4": "location"
+            "4": "_location"
           },
           {
             "1": "dynamic",
@@ -132,6 +132,83 @@
     "6": "router.dart"
   },
   "type": {
+    "ChildRouter": {
+      "class": "Identifier",
+      "name": "ChildRouter",
+      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+      "prefix": null,
+      "value": null
+    },
+    "RootRouter": {
+      "class": "Type",
+      "name": "RootRouter",
+      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
+      "prefix": null,
+      "isHost": false,
+      "value": null,
+      "diDeps": [
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RouteRegistry",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "Location",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        },
+        {
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ROUTER_PRIMARY_COMPONENT",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "value": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false,
+          "isValue": false
+        }
+      ]
+    },
     "Router": {
       "class": "Type",
       "name": "Router",
@@ -221,83 +298,6 @@
           "isValue": false
         }
       ]
-    },
-    "RootRouter": {
-      "class": "Type",
-      "name": "RootRouter",
-      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
-      "prefix": null,
-      "isHost": false,
-      "value": null,
-      "diDeps": [
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "RouteRegistry",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "Location",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        },
-        {
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "ROUTER_PRIMARY_COMPONENT",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "value": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false,
-          "isValue": false
-        }
-      ]
-    },
-    "ChildRouter": {
-      "class": "Identifier",
-      "name": "ChildRouter",
-      "moduleUrl": "asset:angular2/lib/src/router/router.dart",
-      "prefix": null,
-      "value": null
     },
     "canActivateOne": {
       "class": "Identifier",

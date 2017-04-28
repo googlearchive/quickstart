@@ -7,6 +7,10 @@
         "5": false
       },
       {
+        "1": "dart:html",
+        "5": false
+      },
+      {
         "1": "package:angular2/core.dart",
         "2": [
           "ComponentRef",
@@ -16,7 +20,7 @@
           "getPlatform",
           "createPlatform",
           "PLATFORM_INITIALIZER",
-          "MapInjector"
+          "Injector"
         ],
         "5": false
       },
@@ -24,6 +28,13 @@
         "1": "package:angular2/src/core/application_ref.dart",
         "2": [
           "PlatformRefImpl"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/di.dart",
+        "2": [
+          "Provider"
         ],
         "5": false
       },
@@ -49,6 +60,13 @@
           "createInitDomAdapter"
         ],
         "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_tokens.dart",
+        "2": [
+          "DOCUMENT"
+        ],
+        "5": false
       }
     ],
     "4": [
@@ -59,8 +77,6 @@
         "1": "package:angular2/src/platform/browser_common.dart",
         "2": [
           "BROWSER_PROVIDERS",
-          "BrowserDomAdapter",
-          "Title",
           "enableDebugTools",
           "disableDebugTools"
         ]
@@ -81,8 +97,42 @@
           "moduleUrl": null,
           "prefix": null,
           "value": null
+        },
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "DOCUMENT",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": {
+            "class": "Factory",
+            "name": "createDoc",
+            "prefix": null,
+            "moduleUrl": null,
+            "value": null,
+            "diDeps": []
+          },
+          "multi": false,
+          "deps": []
         }
       ]
+    },
+    "bootstrapStatic": {
+      "class": "Identifier",
+      "name": "bootstrapStatic",
+      "moduleUrl": "asset:angular2/lib/platform/browser_static.dart",
+      "prefix": null,
+      "value": null
     },
     "browserStaticPlatform": {
       "class": "Identifier",
@@ -91,17 +141,13 @@
       "prefix": null,
       "value": null
     },
-    "bootstrapStatic": {
+    "createDoc": {
       "class": "Identifier",
-      "name": "bootstrapStatic",
+      "name": "createDoc",
       "moduleUrl": "asset:angular2/lib/platform/browser_static.dart",
       "prefix": null,
       "value": null
     }
   },
-  "alias": {
-    "BROWSER_APP_PROVIDERS": [
-      "BROWSER_APP_COMMON_PROVIDERS"
-    ]
-  }
+  "alias": {}
 }

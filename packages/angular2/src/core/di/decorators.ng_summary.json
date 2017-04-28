@@ -8,6 +8,13 @@
       "prefix": null,
       "value": null
     },
+    "Host": {
+      "class": "Identifier",
+      "name": "Host",
+      "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
+      "prefix": null,
+      "value": null
+    },
     "Inject": {
       "class": "Identifier",
       "name": "Inject",
@@ -39,13 +46,6 @@
     "SkipSelf": {
       "class": "Identifier",
       "name": "SkipSelf",
-      "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
-      "prefix": null,
-      "value": null
-    },
-    "Host": {
-      "class": "Identifier",
-      "name": "Host",
       "moduleUrl": "asset:angular2/lib/src/core/di/decorators.dart",
       "prefix": null,
       "value": null

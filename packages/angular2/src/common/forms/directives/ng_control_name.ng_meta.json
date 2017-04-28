@@ -9,8 +9,14 @@
           "OnDestroy",
           "SimpleChange",
           "Directive",
+          "Provider"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/di.dart",
+        "2": [
           "SkipSelf",
-          "Provider",
           "Inject",
           "Optional",
           "Self"
@@ -34,8 +40,7 @@
       {
         "1": "../validators.dart",
         "2": [
-          "NG_VALIDATORS",
-          "NG_ASYNC_VALIDATORS"
+          "NG_VALIDATORS"
         ],
         "5": false
       },
@@ -55,6 +60,13 @@
         "5": false
       },
       {
+        "1": "form_interface.dart",
+        "2": [
+          "Form"
+        ],
+        "5": false
+      },
+      {
         "1": "ng_control.dart",
         "2": [
           "NgControl"
@@ -66,7 +78,6 @@
         "2": [
           "controlPath",
           "composeValidators",
-          "composeAsyncValidators",
           "isPropertyUpdated",
           "selectValueAccessor"
         ],
@@ -75,8 +86,7 @@
       {
         "1": "validators.dart",
         "2": [
-          "ValidatorFn",
-          "AsyncValidatorFn"
+          "ValidatorFn"
         ],
         "5": false
       }
@@ -104,16 +114,6 @@
           },
           {
             "1": "List",
-            "2": "<dynamic>",
-            "3": [
-              "const Optional()",
-              "const Self()",
-              "const Inject(NG_ASYNC_VALIDATORS)"
-            ],
-            "4": "_asyncValidators"
-          },
-          {
-            "1": "List",
             "2": "<ControlValueAccessor>",
             "3": [
               "const Optional()",
@@ -136,162 +136,48 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/async.template.dart",
+        "1": "package:angular2/di.template.dart",
         "4": "i1"
       },
       {
-        "1": "../model.template.dart",
+        "1": "package:angular2/src/facade/async.template.dart",
         "4": "i2"
       },
       {
-        "1": "../validators.template.dart",
+        "1": "../model.template.dart",
         "4": "i3"
       },
       {
-        "1": "control_container.template.dart",
+        "1": "../validators.template.dart",
         "4": "i4"
       },
       {
-        "1": "control_value_accessor.template.dart",
+        "1": "control_container.template.dart",
         "4": "i5"
       },
       {
-        "1": "ng_control.template.dart",
+        "1": "control_value_accessor.template.dart",
         "4": "i6"
       },
       {
-        "1": "shared.template.dart",
+        "1": "form_interface.template.dart",
         "4": "i7"
       },
       {
-        "1": "validators.template.dart",
+        "1": "ng_control.template.dart",
         "4": "i8"
+      },
+      {
+        "1": "shared.template.dart",
+        "4": "i9"
+      },
+      {
+        "1": "validators.template.dart",
+        "4": "i10"
       }
     ]
   },
   "type": {
-    "controlNameBinding": {
-      "class": "Identifier",
-      "name": "controlNameBinding",
-      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control_name.dart",
-      "prefix": null,
-      "value": [
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "NgControl",
-              "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control.dart",
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": null,
-          "useExisting": {
-            "value": null,
-            "identifier": {
-              "class": "Type",
-              "name": "NgControlName",
-              "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control_name.dart",
-              "prefix": null,
-              "isHost": false,
-              "value": null,
-              "diDeps": [
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "ControlContainer",
-                      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/control_container.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": false,
-                  "isHost": false,
-                  "isSkipSelf": true,
-                  "isOptional": false,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "NG_VALIDATORS",
-                      "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": true,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": true,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "NG_ASYNC_VALIDATORS",
-                      "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": true,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": true,
-                  "isValue": false
-                },
-                {
-                  "token": {
-                    "value": null,
-                    "identifier": {
-                      "class": "Identifier",
-                      "name": "NG_VALUE_ACCESSOR",
-                      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/control_value_accessor.dart",
-                      "prefix": null,
-                      "value": null
-                    },
-                    "identifierIsInstance": false
-                  },
-                  "value": null,
-                  "isAttribute": false,
-                  "isSelf": true,
-                  "isHost": false,
-                  "isSkipSelf": false,
-                  "isOptional": true,
-                  "isValue": false
-                }
-              ]
-            },
-            "identifierIsInstance": false
-          },
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        }
-      ]
-    },
     "NgControlName": {
       "class": "Directive",
       "isComponent": false,
@@ -331,26 +217,6 @@
               "identifier": {
                 "class": "Identifier",
                 "name": "NG_VALIDATORS",
-                "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
-                "prefix": null,
-                "value": null
-              },
-              "identifierIsInstance": false
-            },
-            "value": null,
-            "isAttribute": false,
-            "isSelf": true,
-            "isHost": false,
-            "isSkipSelf": false,
-            "isOptional": true,
-            "isValue": false
-          },
-          {
-            "token": {
-              "value": null,
-              "identifier": {
-                "class": "Identifier",
-                "name": "NG_ASYNC_VALIDATORS",
                 "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
                 "prefix": null,
                 "value": null
@@ -474,7 +340,91 @@
                     "value": null,
                     "identifier": {
                       "class": "Identifier",
-                      "name": "NG_ASYNC_VALIDATORS",
+                      "name": "NG_VALUE_ACCESSOR",
+                      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/control_value_accessor.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": true,
+                  "isHost": false,
+                  "isSkipSelf": false,
+                  "isOptional": true,
+                  "isValue": false
+                }
+              ]
+            },
+            "identifierIsInstance": false
+          },
+          "useValue": null,
+          "useFactory": null,
+          "multi": false,
+          "deps": null
+        }
+      ],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
+    },
+    "controlNameBinding": {
+      "class": "Identifier",
+      "name": "controlNameBinding",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control_name.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "NgControl",
+              "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control.dart",
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": null,
+          "useExisting": {
+            "value": null,
+            "identifier": {
+              "class": "Type",
+              "name": "NgControlName",
+              "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control_name.dart",
+              "prefix": null,
+              "isHost": false,
+              "value": null,
+              "diDeps": [
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "ControlContainer",
+                      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/control_container.dart",
+                      "prefix": null,
+                      "value": null
+                    },
+                    "identifierIsInstance": false
+                  },
+                  "value": null,
+                  "isAttribute": false,
+                  "isSelf": false,
+                  "isHost": false,
+                  "isSkipSelf": true,
+                  "isOptional": false,
+                  "isValue": false
+                },
+                {
+                  "token": {
+                    "value": null,
+                    "identifier": {
+                      "class": "Identifier",
+                      "name": "NG_VALIDATORS",
                       "moduleUrl": "asset:angular2/lib/src/common/forms/validators.dart",
                       "prefix": null,
                       "value": null
@@ -515,14 +465,10 @@
           },
           "useValue": null,
           "useFactory": null,
-          "useProperty": null,
           "multi": false,
           "deps": null
         }
-      ],
-      "viewProviders": [],
-      "queries": [],
-      "viewQueries": []
+      ]
     }
   },
   "alias": {}

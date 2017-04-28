@@ -54,13 +54,6 @@
     "6": "compile_data_creator.dart"
   },
   "type": {
-    "createCompileData": {
-      "class": "Identifier",
-      "name": "createCompileData",
-      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/compile_data_creator.dart",
-      "prefix": null,
-      "value": null
-    },
     "CompileDataResults": {
       "class": "Identifier",
       "name": "CompileDataResults",
@@ -71,6 +64,13 @@
     "_CompileDataCreator": {
       "class": "Identifier",
       "name": "_CompileDataCreator",
+      "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/compile_data_creator.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createCompileData": {
+      "class": "Identifier",
+      "name": "createCompileData",
       "moduleUrl": "asset:angular2/lib/src/transform/template_compiler/compile_data_creator.dart",
       "prefix": null,
       "value": null

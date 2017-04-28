@@ -1,0 +1,91 @@
+{
+  "ngDeps": {
+    "1": "",
+    "4": [
+      {
+        "1": "package:angular_test/src/frontend/fixture.dart",
+        "2": [
+          "componentOfFixture",
+          "injectFromFixture"
+        ]
+      },
+      {
+        "1": "package:angular_test/src/frontend/bed.dart",
+        "2": [
+          "createDynamicFixture",
+          "createDynamicTestBed"
+        ]
+      }
+    ],
+    "6": "compatibility.dart",
+    "7": [
+      {
+        "1": "package:angular_test/src/frontend/fixture.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular_test/src/frontend/bed.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "type": {
+    "NgTestBed": {
+      "class": "Identifier",
+      "name": "NgTestBed",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    },
+    "NgTestFixture": {
+      "class": "Identifier",
+      "name": "NgTestFixture",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/fixture.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_concat": {
+      "class": "Identifier",
+      "name": "_concat",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    },
+    "componentOfFixture": {
+      "class": "Identifier",
+      "name": "componentOfFixture",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/fixture.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createDynamicFixture": {
+      "class": "Identifier",
+      "name": "createDynamicFixture",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createDynamicTestBed": {
+      "class": "Identifier",
+      "name": "createDynamicTestBed",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    },
+    "disposeAnyRunningTest": {
+      "class": "Identifier",
+      "name": "disposeAnyRunningTest",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/bed.dart",
+      "prefix": null,
+      "value": null
+    },
+    "injectFromFixture": {
+      "class": "Identifier",
+      "name": "injectFromFixture",
+      "moduleUrl": "asset:angular_test/lib/src/frontend/fixture.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

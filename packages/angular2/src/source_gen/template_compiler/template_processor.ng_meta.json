@@ -15,6 +15,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/compiler/offline_compiler.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/source_gen/common/logging.dart",
         "5": false
       },
@@ -23,23 +27,19 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/source_gen/template_compiler/find_components.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/source_gen/template_compiler/ng_deps_visitor.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/source_gen/template_compiler/template_compiler_outputs.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/transform/common/options.dart",
-        "5": false
-      },
-      {
         "1": "package:build/build.dart",
+        "5": false
+      },
+      {
+        "1": "find_components.dart",
+        "5": false
+      },
+      {
+        "1": "ng_deps_visitor.dart",
+        "5": false
+      },
+      {
+        "1": "template_compiler_outputs.dart",
         "5": false
       }
     ],
@@ -50,27 +50,27 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/source_gen/common/logging.template.dart",
+        "1": "package:angular2/src/compiler/offline_compiler.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/source_gen/common/ng_compiler.template.dart",
+        "1": "package:angular2/src/source_gen/common/logging.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/source_gen/template_compiler/find_components.template.dart",
+        "1": "package:angular2/src/source_gen/common/ng_compiler.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/source_gen/template_compiler/ng_deps_visitor.template.dart",
+        "1": "find_components.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/source_gen/template_compiler/template_compiler_outputs.template.dart",
+        "1": "ng_deps_visitor.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/common/options.template.dart",
+        "1": "template_compiler_outputs.template.dart",
         "4": "i6"
       }
     ]

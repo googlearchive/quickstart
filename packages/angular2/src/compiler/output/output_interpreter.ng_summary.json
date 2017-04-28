@@ -7,6 +7,14 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/common/directives/ng_for.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/common/directives/ng_if.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/compiler/identifiers.dart",
         "5": false
       },
@@ -15,10 +23,6 @@
         "2": [
           "QueryList"
         ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/view_container.dart",
         "5": false
       },
       {
@@ -35,6 +39,10 @@
       },
       {
         "1": "package:angular2/src/core/linker/template_ref.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/view_container.dart",
         "5": false
       },
       {
@@ -85,42 +93,19 @@
         "1": "output_ast.dart",
         "4": "o",
         "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/app_view_utils.dart",
+        "4": "appviewutils",
+        "5": false
       }
     ],
     "6": "output_interpreter.dart"
   },
   "type": {
-    "interpretStatements": {
-      "class": "Identifier",
-      "name": "interpretStatements",
-      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_executeFunctionStatements": {
-      "class": "Identifier",
-      "name": "_executeFunctionStatements",
-      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_ExecutionContext": {
-      "class": "Identifier",
-      "name": "_ExecutionContext",
-      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
-      "prefix": null,
-      "value": null
-    },
     "ReturnValue": {
       "class": "Identifier",
       "name": "ReturnValue",
-      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
-      "prefix": null,
-      "value": null
-    },
-    "_DynamicClass": {
-      "class": "Identifier",
-      "name": "_DynamicClass",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
       "prefix": null,
       "value": null
@@ -132,6 +117,20 @@
       "prefix": null,
       "value": null
     },
+    "_DynamicClass": {
+      "class": "Identifier",
+      "name": "_DynamicClass",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_ExecutionContext": {
+      "class": "Identifier",
+      "name": "_ExecutionContext",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
     "_declareFn": {
       "class": "Identifier",
       "name": "_declareFn",
@@ -139,9 +138,23 @@
       "prefix": null,
       "value": null
     },
+    "_executeFunctionStatements": {
+      "class": "Identifier",
+      "name": "_executeFunctionStatements",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
     "_initializeInterpreter": {
       "class": "Identifier",
       "name": "_initializeInterpreter",
+      "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
+      "prefix": null,
+      "value": null
+    },
+    "interpretStatements": {
+      "class": "Identifier",
+      "name": "interpretStatements",
       "moduleUrl": "asset:angular2/lib/src/compiler/output/output_interpreter.dart",
       "prefix": null,
       "value": null

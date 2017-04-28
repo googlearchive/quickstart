@@ -14,15 +14,15 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.dart",
+        "1": "asset_reader.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/logging.dart",
+        "1": "logging.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/transform/common/url_resolver.dart",
+        "1": "url_resolver.dart",
         "5": false
       }
     ],
@@ -33,15 +33,15 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/asset_reader.template.dart",
+        "1": "asset_reader.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/logging.template.dart",
+        "1": "logging.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/url_resolver.template.dart",
+        "1": "url_resolver.template.dart",
         "4": "i3"
       }
     ]

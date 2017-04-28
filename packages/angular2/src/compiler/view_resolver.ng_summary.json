@@ -37,13 +37,6 @@
           "BaseException"
         ],
         "5": false
-      },
-      {
-        "1": "package:angular2/src/facade/lang.dart",
-        "2": [
-          "stringify"
-        ],
-        "5": false
       }
     ],
     "5": [

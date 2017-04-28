@@ -3,11 +3,16 @@
     "1": "",
     "3": [
       {
+        "1": "dart:convert",
+        "5": false
+      },
+      {
         "1": "dart:html",
         "5": false
       },
       {
-        "1": "dart:convert",
+        "1": "dart:js_util",
+        "4": "js_util",
         "5": false
       },
       {
@@ -26,15 +31,18 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/render/api.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/linker/view_container.dart",
+        "1": "package:angular2/src/core/di/injector.dart",
+        "2": [
+          "THROW_IF_NOT_FOUND"
+        ],
         "5": false
       },
       {
         "1": "package:angular2/src/core/linker/app_view.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/linker/component_factory.dart",
         "5": false
       },
       {
@@ -46,27 +54,28 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/core/linker/view_container.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/linker/view_type.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/core/profile/profile.dart",
-        "2": [
-          "wtfCreateScope",
-          "wtfLeave",
-          "WtfScopeFn"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/render/api.dart",
-        "2": [
-          "RenderComponentType"
-        ],
         "5": false
       },
       {
-        "1": "package:angular2/src/debug/debug_context.dart",
+        "1": "package:js/js.dart",
+        "4": "js",
+        "5": false
+      },
+      {
+        "1": "package:meta/meta.dart",
+        "5": false
+      },
+      {
+        "1": "debug_context.dart",
         "2": [
           "StaticNodeDebugInfo",
           "DebugContext"
@@ -74,28 +83,15 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/debug/debug_node.dart",
+        "1": "debug_node.dart",
         "2": [
           "DebugElement",
           "DebugNode",
           "getDebugNode",
           "indexDebugNode",
+          "inspectNativeElement",
           "DebugEventListener",
           "removeDebugNodeFromIndex"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/debug/debug_node.dart",
-        "2": [
-          "inspectNativeElement"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
-        "2": [
-          "DOM"
         ],
         "5": false
       }
@@ -105,7 +101,7 @@
         "1": "package:angular2/src/core/linker/app_view.dart"
       },
       {
-        "1": "package:angular2/src/debug/debug_context.dart",
+        "1": "debug_context.dart",
         "2": [
           "StaticNodeDebugInfo",
           "DebugContext"
@@ -115,9 +111,9 @@
     "6": "debug_app_view.dart"
   },
   "type": {
-    "_templateCommentText": {
+    "DebugAppView": {
       "class": "Identifier",
-      "name": "_templateCommentText",
+      "name": "DebugAppView",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_app_view.dart",
       "prefix": null,
       "value": null
@@ -129,16 +125,44 @@
       "prefix": null,
       "value": null
     },
-    "DebugAppView": {
+    "_appendDebugNestedViewRenderNodes": {
       "class": "Identifier",
-      "name": "DebugAppView",
+      "name": "_appendDebugNestedViewRenderNodes",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_app_view.dart",
       "prefix": null,
       "value": null
     },
-    "_appendDebugNestedViewRenderNodes": {
+    "_setGlobalVar": {
       "class": "Identifier",
-      "name": "_appendDebugNestedViewRenderNodes",
+      "name": "_setGlobalVar",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_app_view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_templateCommentText": {
+      "class": "Identifier",
+      "name": "_templateCommentText",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_app_view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createAndAppendDbg": {
+      "class": "Identifier",
+      "name": "createAndAppendDbg",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_app_view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createAndAppendToShadowRootDbg": {
+      "class": "Identifier",
+      "name": "createAndAppendToShadowRootDbg",
+      "moduleUrl": "asset:angular2/lib/src/debug/debug_app_view.dart",
+      "prefix": null,
+      "value": null
+    },
+    "dbgElm": {
+      "class": "Identifier",
+      "name": "dbgElm",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_app_view.dart",
       "prefix": null,
       "value": null
