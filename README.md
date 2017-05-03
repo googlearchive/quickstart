@@ -1,7 +1,7 @@
-## QuickStart
+## Starter App
 
 Welcome to the example application used in AngularDart's
-[QuickStart](https://webdev.dartlang.org/angular/quickstart) page.
+[Starter App](https://webdev.dartlang.org/angular/tutorial/toh-pt0.html) page.
 
 You can run a [hosted copy](http://angular-examples.github.io/quickstart) of this sample. Or run your own copy:
 
@@ -23,4 +23,4 @@ If you find a problem with this sample's code, please open an
 
 [docs repo]: //github.com/dart-lang/site-webdev/tree/master/examples/ng/doc/quickstart
 [download]: //github.com/angular-examples/quickstart/archive/master.zip
-[issue]: //github.com/dart-lang/site-webdev/issues/new?labels=example&title=%5BAngular%5D%5Bexample%5D%20quickstart%3A%20
+[issue]: //github.com/dart-lang/site-webdev/issues/new?labels=example&title=%5BAngular%5D%5Bexample%5D%20tutorial/quickstart%3A%20
