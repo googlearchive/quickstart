@@ -156,6 +156,12 @@
         ]
       },
       {
+        "1": "source_module.dart",
+        "2": [
+          "SourceModule"
+        ]
+      },
+      {
         "1": "template_ast.dart"
       },
       {
@@ -165,12 +171,6 @@
         "1": "view_resolver.dart",
         "2": [
           "ViewResolver"
-        ]
-      },
-      {
-        "1": "source_module.dart",
-        "2": [
-          "SourceModule"
         ]
       },
       {
@@ -260,11 +260,11 @@
         "4": "i19"
       },
       {
-        "1": "template_ast.template.dart",
+        "1": "source_module.template.dart",
         "4": "i20"
       },
       {
-        "1": "source_module.template.dart",
+        "1": "template_ast.template.dart",
         "4": "i21"
       },
       {
@@ -1861,6 +1861,13 @@
         }
       ]
     },
+    "ProfileType": {
+      "class": "Identifier",
+      "name": "ProfileType",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "prefix": null,
+      "value": null
+    },
     "PropertyBindingType": {
       "class": "Identifier",
       "name": "PropertyBindingType",
@@ -2093,6 +2100,13 @@
       "class": "Identifier",
       "name": "_templateModuleUrl",
       "moduleUrl": "asset:angular2/lib/src/compiler/offline_compiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "codegenModeToProfileType": {
+      "class": "Identifier",
+      "name": "codegenModeToProfileType",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
       "prefix": null,
       "value": null
     },

@@ -3666,7 +3666,7 @@
       "inputTypes": {},
       "outputs": {},
       "hostListeners": {
-        "click": "onClick($event.button, $event.ctrlKey, $event.metaKey)"
+        "click": "onClick($event)"
       },
       "hostProperties": {
         "class.router-link-active": "isRouteActive",

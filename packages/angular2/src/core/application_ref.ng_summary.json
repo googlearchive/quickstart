@@ -48,6 +48,10 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
+        "5": false
+      },
+      {
         "1": "application_tokens.dart",
         "2": [
           "PLATFORM_INITIALIZER",
@@ -77,10 +81,6 @@
       },
       {
         "1": "linker/component_resolver.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
         "5": false
       },
       {

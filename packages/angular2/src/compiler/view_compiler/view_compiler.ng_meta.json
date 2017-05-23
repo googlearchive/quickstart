@@ -36,6 +36,10 @@
         "5": false
       },
       {
+        "1": "../expression_parser/parser.dart",
+        "5": false
+      },
+      {
         "1": "../identifiers.dart",
         "5": false
       },
@@ -83,10 +87,6 @@
       {
         "1": "view_builder.dart",
         "5": false
-      },
-      {
-        "1": "../expression_parser/parser.dart",
-        "5": false
       }
     ],
     "5": [
@@ -129,39 +129,39 @@
         "4": "i3"
       },
       {
-        "1": "../identifiers.template.dart",
+        "1": "../expression_parser/parser.template.dart",
         "4": "i4"
       },
       {
-        "1": "../output/output_ast.template.dart",
+        "1": "../identifiers.template.dart",
         "4": "i5"
       },
       {
-        "1": "../style_compiler.template.dart",
+        "1": "../output/output_ast.template.dart",
         "4": "i6"
       },
       {
-        "1": "../template_ast.template.dart",
+        "1": "../style_compiler.template.dart",
         "4": "i7"
       },
       {
-        "1": "compile_element.template.dart",
+        "1": "../template_ast.template.dart",
         "4": "i8"
       },
       {
-        "1": "compile_view.template.dart",
+        "1": "compile_element.template.dart",
         "4": "i9"
       },
       {
-        "1": "view_binder.template.dart",
+        "1": "compile_view.template.dart",
         "4": "i10"
       },
       {
-        "1": "view_builder.template.dart",
+        "1": "view_binder.template.dart",
         "4": "i11"
       },
       {
-        "1": "../expression_parser/parser.template.dart",
+        "1": "view_builder.template.dart",
         "4": "i12"
       }
     ]

@@ -1,0 +1,84 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "../../debug/profile_keys.dart",
+        "5": false
+      },
+      {
+        "1": "../identifiers.dart",
+        "5": false
+      },
+      {
+        "1": "../output/output_ast.dart",
+        "4": "o",
+        "5": false
+      },
+      {
+        "1": "compile_view.dart",
+        "5": false
+      }
+    ],
+    "6": "perf_profiler.dart"
+  },
+  "type": {
+    "_genProfileMarkEnd": {
+      "class": "Identifier",
+      "name": "_genProfileMarkEnd",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/perf_profiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_genProfileMarkStart": {
+      "class": "Identifier",
+      "name": "_genProfileMarkStart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/perf_profiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_viewToTypeName": {
+      "class": "Identifier",
+      "name": "_viewToTypeName",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/perf_profiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "genProfileBuildEnd": {
+      "class": "Identifier",
+      "name": "genProfileBuildEnd",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/perf_profiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "genProfileBuildStart": {
+      "class": "Identifier",
+      "name": "genProfileBuildStart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/perf_profiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "genProfileCdEnd": {
+      "class": "Identifier",
+      "name": "genProfileCdEnd",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/perf_profiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "genProfileCdStart": {
+      "class": "Identifier",
+      "name": "genProfileCdStart",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/perf_profiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "genProfileSetup": {
+      "class": "Identifier",
+      "name": "genProfileSetup",
+      "moduleUrl": "asset:angular2/lib/src/compiler/view_compiler/perf_profiler.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -1,0 +1,34 @@
+{
+  "ngDeps": {
+    "1": "angular2.source_gen",
+    "4": [
+      {
+        "1": "src/source_gen/source_gen.dart"
+      }
+    ],
+    "6": "source_gen.dart",
+    "7": [
+      {
+        "1": "src/source_gen/source_gen.template.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "type": {
+    "GeneratorOptions": {
+      "class": "Identifier",
+      "name": "GeneratorOptions",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/template_compiler/generator_options.dart",
+      "prefix": null,
+      "value": null
+    },
+    "createSourceGenTemplateCompiler": {
+      "class": "Identifier",
+      "name": "createSourceGenTemplateCompiler",
+      "moduleUrl": "asset:angular2/lib/src/source_gen/source_gen.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

@@ -141,6 +141,13 @@
       "prefix": null,
       "value": null
     },
+    "USE_ANALYZER": {
+      "class": "Identifier",
+      "name": "USE_ANALYZER",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/options.dart",
+      "prefix": null,
+      "value": null
+    },
     "USE_LEGACY_STYLE_ENCAPSULATION": {
       "class": "Identifier",
       "name": "USE_LEGACY_STYLE_ENCAPSULATION",

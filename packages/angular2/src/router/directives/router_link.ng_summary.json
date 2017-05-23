@@ -3,6 +3,13 @@
     "1": "",
     "3": [
       {
+        "1": "dart:html",
+        "2": [
+          "MouseEvent"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/core.dart",
         "2": [
           "Directive"
@@ -112,7 +119,7 @@
       "inputTypes": {},
       "outputs": {},
       "hostListeners": {
-        "click": "onClick($event.button, $event.ctrlKey, $event.metaKey)"
+        "click": "onClick($event)"
       },
       "hostProperties": {
         "class.router-link-active": "isRouteActive",

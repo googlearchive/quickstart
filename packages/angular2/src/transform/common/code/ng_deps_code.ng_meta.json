@@ -35,6 +35,10 @@
         "5": false
       },
       {
+        "1": "../url_resolver.dart",
+        "5": false
+      },
+      {
         "1": "annotation_code.dart",
         "5": false
       },
@@ -48,10 +52,6 @@
       },
       {
         "1": "reflection_info_code.dart",
-        "5": false
-      },
-      {
-        "1": "../url_resolver.dart",
         "5": false
       }
     ],
@@ -74,23 +74,23 @@
         "4": "i3"
       },
       {
-        "1": "annotation_code.template.dart",
+        "1": "../url_resolver.template.dart",
         "4": "i4"
       },
       {
-        "1": "import_export_code.template.dart",
+        "1": "annotation_code.template.dart",
         "4": "i5"
       },
       {
-        "1": "parameter_code.template.dart",
+        "1": "import_export_code.template.dart",
         "4": "i6"
       },
       {
-        "1": "reflection_info_code.template.dart",
+        "1": "parameter_code.template.dart",
         "4": "i7"
       },
       {
-        "1": "../url_resolver.template.dart",
+        "1": "reflection_info_code.template.dart",
         "4": "i8"
       }
     ]

@@ -18,16 +18,12 @@
         "5": false
       },
       {
-        "1": "source_module.dart",
-        "5": false
-      },
-      {
         "1": "compile_metadata.dart",
         "2": [
           "CompileDirectiveMetadata",
           "CompilePipeMetadata",
-          "createHostComponentMeta",
-          "CompileTypeMetadata"
+          "CompileTypeMetadata",
+          "createHostComponentMeta"
         ],
         "5": false
       },
@@ -59,6 +55,10 @@
       {
         "1": "output/output_ast.dart",
         "4": "o",
+        "5": false
+      },
+      {
+        "1": "source_module.dart",
         "5": false
       },
       {
@@ -96,31 +96,31 @@
         "4": "i0"
       },
       {
-        "1": "source_module.template.dart",
+        "1": "compile_metadata.template.dart",
         "4": "i1"
       },
       {
-        "1": "compile_metadata.template.dart",
+        "1": "compiler_utils.template.dart",
         "4": "i2"
       },
       {
-        "1": "compiler_utils.template.dart",
+        "1": "directive_normalizer.template.dart",
         "4": "i3"
       },
       {
-        "1": "directive_normalizer.template.dart",
+        "1": "identifiers.template.dart",
         "4": "i4"
       },
       {
-        "1": "identifiers.template.dart",
+        "1": "output/abstract_emitter.template.dart",
         "4": "i5"
       },
       {
-        "1": "output/abstract_emitter.template.dart",
+        "1": "output/output_ast.template.dart",
         "4": "i6"
       },
       {
-        "1": "output/output_ast.template.dart",
+        "1": "source_module.template.dart",
         "4": "i7"
       },
       {

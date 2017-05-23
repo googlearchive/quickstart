@@ -1651,6 +1651,13 @@
         }
       ]
     },
+    "ProfileType": {
+      "class": "Identifier",
+      "name": "ProfileType",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
+      "prefix": null,
+      "value": null
+    },
     "PropertyBindingType": {
       "class": "Identifier",
       "name": "PropertyBindingType",
@@ -1883,6 +1890,13 @@
       "class": "Identifier",
       "name": "_templateModuleUrl",
       "moduleUrl": "asset:angular2/lib/src/compiler/offline_compiler.dart",
+      "prefix": null,
+      "value": null
+    },
+    "codegenModeToProfileType": {
+      "class": "Identifier",
+      "name": "codegenModeToProfileType",
+      "moduleUrl": "asset:angular2/lib/src/compiler/config.dart",
       "prefix": null,
       "value": null
     },

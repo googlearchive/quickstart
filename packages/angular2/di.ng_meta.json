@@ -9,10 +9,10 @@
         ]
       },
       {
-        "1": "src/core/di.dart"
+        "1": "src/core/change_detection/pipe_transform.dart"
       },
       {
-        "1": "src/core/change_detection/pipe_transform.dart"
+        "1": "src/core/di.dart"
       },
       {
         "1": "src/core/metadata.dart",
@@ -51,11 +51,11 @@
         "4": "i0"
       },
       {
-        "1": "src/core/di.template.dart",
+        "1": "src/core/change_detection/pipe_transform.template.dart",
         "4": "i1"
       },
       {
-        "1": "src/core/change_detection/pipe_transform.template.dart",
+        "1": "src/core/di.template.dart",
         "4": "i2"
       },
       {

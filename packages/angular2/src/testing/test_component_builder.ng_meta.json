@@ -61,14 +61,14 @@
         "5": false
       },
       {
+        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
+        "5": false
+      },
+      {
         "1": "fake_async.dart",
         "2": [
           "tick"
         ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/platform/dom/shared_styles_host.dart",
         "5": false
       }
     ],
@@ -120,11 +120,11 @@
         "4": "i6"
       },
       {
-        "1": "fake_async.template.dart",
+        "1": "package:angular2/src/platform/dom/shared_styles_host.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/platform/dom/shared_styles_host.template.dart",
+        "1": "fake_async.template.dart",
         "4": "i8"
       }
     ]

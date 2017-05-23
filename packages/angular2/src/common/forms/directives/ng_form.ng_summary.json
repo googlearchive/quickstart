@@ -7,6 +7,13 @@
         "5": false
       },
       {
+        "1": "dart:html",
+        "2": [
+          "Event"
+        ],
+        "5": false
+      },
+      {
         "1": "package:angular2/core.dart",
         "2": [
           "Directive",
@@ -150,7 +157,7 @@
         "ngBeforeSubmit": "ngBeforeSubmit"
       },
       "hostListeners": {
-        "submit": "onSubmit()"
+        "submit": "onSubmit($event)"
       },
       "hostProperties": {},
       "hostAttributes": {},

@@ -18,16 +18,12 @@
         "5": false
       },
       {
-        "1": "source_module.dart",
-        "5": false
-      },
-      {
         "1": "compile_metadata.dart",
         "2": [
           "CompileDirectiveMetadata",
           "CompilePipeMetadata",
-          "createHostComponentMeta",
-          "CompileTypeMetadata"
+          "CompileTypeMetadata",
+          "createHostComponentMeta"
         ],
         "5": false
       },
@@ -59,6 +55,10 @@
       {
         "1": "output/output_ast.dart",
         "4": "o",
+        "5": false
+      },
+      {
+        "1": "source_module.dart",
         "5": false
       },
       {

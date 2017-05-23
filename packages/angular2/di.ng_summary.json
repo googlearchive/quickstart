@@ -9,10 +9,10 @@
         ]
       },
       {
-        "1": "src/core/di.dart"
+        "1": "src/core/change_detection/pipe_transform.dart"
       },
       {
-        "1": "src/core/change_detection/pipe_transform.dart"
+        "1": "src/core/di.dart"
       },
       {
         "1": "src/core/metadata.dart",

@@ -90,13 +90,6 @@
       "prefix": null,
       "value": null
     },
-    "DebugEventListener": {
-      "class": "Identifier",
-      "name": "DebugEventListener",
-      "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
-      "prefix": null,
-      "value": null
-    },
     "DebugNode": {
       "class": "Identifier",
       "name": "DebugNode",

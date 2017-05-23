@@ -3,6 +3,10 @@
     "1": "angular2.transform.codegen.dart",
     "3": [
       {
+        "1": "package:angular2/source_gen.dart",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/transform/asset_consumer/transformer.dart",
         "5": false
       },
@@ -48,6 +52,10 @@
         "5": false
       },
       {
+        "1": "package:build_barback/build_barback.dart",
+        "5": false
+      },
+      {
         "1": "package:dart_style/dart_style.dart",
         "5": false
       }
@@ -60,44 +68,48 @@
     "6": "codegen.dart",
     "7": [
       {
-        "1": "package:angular2/src/transform/asset_consumer/transformer.template.dart",
+        "1": "package:angular2/source_gen.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/transform/common/eager_transformer_wrapper.template.dart",
+        "1": "package:angular2/src/transform/asset_consumer/transformer.template.dart",
         "4": "i1"
       },
       {
-        "1": "package:angular2/src/transform/common/formatter.template.dart",
+        "1": "package:angular2/src/transform/common/eager_transformer_wrapper.template.dart",
         "4": "i2"
       },
       {
-        "1": "package:angular2/src/transform/common/options.template.dart",
+        "1": "package:angular2/src/transform/common/formatter.template.dart",
         "4": "i3"
       },
       {
-        "1": "package:angular2/src/transform/common/options_reader.template.dart",
+        "1": "package:angular2/src/transform/common/options.template.dart",
         "4": "i4"
       },
       {
-        "1": "package:angular2/src/transform/directive_metadata_linker/transformer.template.dart",
+        "1": "package:angular2/src/transform/common/options_reader.template.dart",
         "4": "i5"
       },
       {
-        "1": "package:angular2/src/transform/directive_processor/transformer.template.dart",
+        "1": "package:angular2/src/transform/directive_metadata_linker/transformer.template.dart",
         "4": "i6"
       },
       {
-        "1": "package:angular2/src/transform/inliner_for_test/transformer.template.dart",
+        "1": "package:angular2/src/transform/directive_processor/transformer.template.dart",
         "4": "i7"
       },
       {
-        "1": "package:angular2/src/transform/stylesheet_compiler/transformer.template.dart",
+        "1": "package:angular2/src/transform/inliner_for_test/transformer.template.dart",
         "4": "i8"
       },
       {
-        "1": "package:angular2/src/transform/template_compiler/transformer.template.dart",
+        "1": "package:angular2/src/transform/stylesheet_compiler/transformer.template.dart",
         "4": "i9"
+      },
+      {
+        "1": "package:angular2/src/transform/template_compiler/transformer.template.dart",
+        "4": "i10"
       }
     ]
   },
@@ -224,6 +236,13 @@
     "TransformerOptions": {
       "class": "Identifier",
       "name": "TransformerOptions",
+      "moduleUrl": "asset:angular2/lib/src/transform/common/options.dart",
+      "prefix": null,
+      "value": null
+    },
+    "USE_ANALYZER": {
+      "class": "Identifier",
+      "name": "USE_ANALYZER",
       "moduleUrl": "asset:angular2/lib/src/transform/common/options.dart",
       "prefix": null,
       "value": null

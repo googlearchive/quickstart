@@ -156,6 +156,12 @@
         ]
       },
       {
+        "1": "source_module.dart",
+        "2": [
+          "SourceModule"
+        ]
+      },
+      {
         "1": "template_ast.dart"
       },
       {
@@ -165,12 +171,6 @@
         "1": "view_resolver.dart",
         "2": [
           "ViewResolver"
-        ]
-      },
-      {
-        "1": "source_module.dart",
-        "2": [
-          "SourceModule"
         ]
       },
       {

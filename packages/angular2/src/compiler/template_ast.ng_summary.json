@@ -3,6 +3,14 @@
     "1": "",
     "3": [
       {
+        "1": "package:angular2/src/compiler/view_compiler/parse_utils.dart",
+        "2": [
+          "handlerTypeFromExpression",
+          "HandlerType"
+        ],
+        "5": false
+      },
+      {
         "1": "package:source_span/source_span.dart",
         "5": false
       },
@@ -23,14 +31,6 @@
         "1": "expression_parser/ast.dart",
         "2": [
           "AST"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/compiler/view_compiler/parse_utils.dart",
-        "2": [
-          "handlerTypeFromExpression",
-          "HandlerType"
         ],
         "5": false
       }

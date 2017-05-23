@@ -36,6 +36,10 @@
         "5": false
       },
       {
+        "1": "../expression_parser/parser.dart",
+        "5": false
+      },
+      {
         "1": "../identifiers.dart",
         "5": false
       },
@@ -82,10 +86,6 @@
       },
       {
         "1": "view_builder.dart",
-        "5": false
-      },
-      {
-        "1": "../expression_parser/parser.dart",
         "5": false
       }
     ],

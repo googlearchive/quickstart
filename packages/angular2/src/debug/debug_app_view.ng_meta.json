@@ -66,6 +66,10 @@
         "5": false
       },
       {
+        "1": "package:func/func.dart",
+        "5": false
+      },
+      {
         "1": "package:js/js.dart",
         "4": "js",
         "5": false
@@ -90,7 +94,6 @@
           "getDebugNode",
           "indexDebugNode",
           "inspectNativeElement",
-          "DebugEventListener",
           "removeDebugNodeFromIndex"
         ],
         "5": false

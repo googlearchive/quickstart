@@ -42,6 +42,7 @@
         "2": [
           "bindRenderOutputs",
           "collectEventListeners",
+          "CompileEventListener",
           "bindDirectiveOutputs"
         ],
         "5": false

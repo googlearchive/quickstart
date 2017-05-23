@@ -54,6 +54,10 @@
         "5": false
       },
       {
+        "1": "package:func/func.dart",
+        "5": false
+      },
+      {
         "1": "package:meta/meta.dart",
         "5": false
       },

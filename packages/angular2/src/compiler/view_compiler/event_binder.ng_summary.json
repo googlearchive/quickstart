@@ -10,6 +10,13 @@
         "5": false
       },
       {
+        "1": "../identifiers.dart",
+        "2": [
+          "Identifiers"
+        ],
+        "5": false
+      },
+      {
         "1": "../output/output_ast.dart",
         "4": "o",
         "5": false

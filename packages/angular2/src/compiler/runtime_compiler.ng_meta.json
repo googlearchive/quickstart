@@ -7,6 +7,10 @@
         "5": false
       },
       {
+        "1": "dart:html",
+        "5": false
+      },
+      {
         "1": "package:angular2/src/core/di.dart",
         "2": [
           "Injectable"

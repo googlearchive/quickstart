@@ -35,6 +35,10 @@
         "5": false
       },
       {
+        "1": "../url_resolver.dart",
+        "5": false
+      },
+      {
         "1": "annotation_code.dart",
         "5": false
       },
@@ -48,10 +52,6 @@
       },
       {
         "1": "reflection_info_code.dart",
-        "5": false
-      },
-      {
-        "1": "../url_resolver.dart",
         "5": false
       }
     ],

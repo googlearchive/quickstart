@@ -47,6 +47,8 @@
         "1": "forms/directives/control_value_accessor.dart",
         "2": [
           "ControlValueAccessor",
+          "TouchFunction",
+          "ChangeFunction",
           "NG_VALUE_ACCESSOR"
         ]
       },

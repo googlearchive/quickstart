@@ -14,13 +14,6 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/zone/ng_zone.dart",
-        "2": [
-          "NgZone"
-        ],
-        "5": false
-      },
-      {
         "1": "event_manager.dart",
         "2": [
           "EventManagerPlugin"

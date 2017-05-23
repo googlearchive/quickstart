@@ -49,6 +49,17 @@
         "5": false
       },
       {
+        "1": "../config.dart",
+        "5": false
+      },
+      {
+        "1": "../expression_parser/parser.dart",
+        "2": [
+          "Parser"
+        ],
+        "5": false
+      },
+      {
         "1": "../identifiers.dart",
         "2": [
           "Identifiers",
@@ -98,13 +109,6 @@
         "5": false
       },
       {
-        "1": "../expression_parser/parser.dart",
-        "2": [
-          "Parser"
-        ],
-        "5": false
-      },
-      {
         "1": "compile_element.dart",
         "2": [
           "CompileElement",
@@ -118,9 +122,6 @@
       },
       {
         "1": "compile_view.dart",
-        "2": [
-          "CompileView"
-        ],
         "5": false
       },
       {
@@ -139,10 +140,6 @@
         "5": false
       },
       {
-        "1": "expression_converter.dart",
-        "5": false
-      },
-      {
         "1": "event_binder.dart",
         "2": [
           "convertStmtIntoExpression",
@@ -151,7 +148,15 @@
         "5": false
       },
       {
+        "1": "expression_converter.dart",
+        "5": false
+      },
+      {
         "1": "parse_utils.dart",
+        "5": false
+      },
+      {
+        "1": "perf_profiler.dart",
         "5": false
       },
       {
