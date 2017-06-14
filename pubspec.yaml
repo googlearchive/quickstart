@@ -1,9 +1,9 @@
-name: angular_quickstart
-description: QuickStart
+name: angular_app
+description: A web app that uses AngularDart
 version: 0.0.1
 
 environment:
-  sdk: '>=1.23.0 <2.0.0'
+  sdk: '>=1.24.0 <2.0.0'
 
 dependencies:
   angular2: ^3.1.0
@@ -22,3 +22,7 @@ transformers:
 - test/pub_serve:
     $include: test/**_test.dart
 - dart_to_js_script_rewriter
+
+web:
+  compiler:
+    debug: dartdevc
