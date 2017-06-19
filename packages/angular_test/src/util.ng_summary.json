@@ -1,0 +1,13 @@
+{
+  "ngDeps": null,
+  "type": {
+    "standardIoToLines": {
+      "class": "Identifier",
+      "name": "standardIoToLines",
+      "moduleUrl": "asset:angular_test/lib/src/util.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

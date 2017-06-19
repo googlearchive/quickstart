@@ -50,6 +50,13 @@
       "prefix": null,
       "value": null
     },
+    "initLoggingForTest": {
+      "class": "Identifier",
+      "name": "initLoggingForTest",
+      "moduleUrl": "asset:angular_test/lib/src/bin/logging.dart",
+      "prefix": null,
+      "value": null
+    },
     "log": {
       "class": "Identifier",
       "name": "log",
