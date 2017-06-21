@@ -1,7 +1,7 @@
-## Starter App
+## Setup for Development
 
 Welcome to the example application used in AngularDart's
-[Starter App](https://webdev.dartlang.org/angular/tutorial/toh-pt0.html) page.
+[Setup for Development](https://webdev.dartlang.org/angular/guide/setup) page.
 
 You can run a [hosted copy](https://webdev.dartlang.org/examples/ng/doc/quickstart) of this sample. Or run your own copy:
 
@@ -23,4 +23,4 @@ If you find a problem with this sample's code, please open an
 
 [docs repo]: //github.com/dart-lang/site-webdev/tree/master/examples/ng/doc/quickstart
 [download]: //github.com/angular-examples/quickstart/archive/master.zip
-[issue]: //github.com/dart-lang/site-webdev/issues/new?labels=example&title=%5BAngular%5D%5Bexample%5D%20tutorial/quickstart%3A%20
+[issue]: //github.com/dart-lang/site-webdev/issues/new?labels=example&title=%5BAngular%5D%5Bexample%5D%20guide/quickstart%3A%20
