@@ -1,0 +1,1 @@
+{"p":["http","lib/src/multipart_request.dart"],"s":[["http","lib/src/multipart_request.dart"]],"d":[["http","lib/src/multipart_file.dart"],["http","lib/src/boundary_characters.dart"],["http","lib/src/byte_stream.dart"],["http","lib/src/base_client.dart"],["http","lib/src/utils.dart"]]}

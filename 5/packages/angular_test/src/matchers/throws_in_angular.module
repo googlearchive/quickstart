@@ -1,0 +1,1 @@
+{"p":["angular_test","lib/src/matchers/throws_in_angular.dart"],"s":[["angular_test","lib/src/matchers/throws_in_angular.dart"]],"d":[["matcher","lib/matcher.dart"],["test","lib/src/backend/declarer.dart"],["angular","lib/src/facade/exception_handler.dart"]]}
