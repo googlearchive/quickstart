@@ -15,7 +15,6 @@ import 'number_pipe.dart' show DecimalPipe, PercentPipe, CurrencyPipe;
 import 'replace_pipe.dart' show ReplacePipe;
 import 'slice_pipe.dart' show SlicePipe;
 import 'uppercase_pipe.dart' show UpperCasePipe;
-// Required for initReflector().
 import 'async_pipe.template.dart' as _ref0;
 import 'date_pipe.template.dart' as _ref1;
 import 'json_pipe.template.dart' as _ref2;
@@ -31,6 +30,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

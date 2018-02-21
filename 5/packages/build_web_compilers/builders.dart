@@ -5,9 +5,6 @@
 import 'package:build/build.dart';
 import 'package:build_web_compilers/build_web_compilers.dart';
 
-Builder moduleBuilder(_) => const ModuleBuilder();
-Builder unlinkedSummaryBuilder(_) => const UnlinkedSummaryBuilder();
-Builder linkedSummaryBuilder(_) => const LinkedSummaryBuilder();
 Builder devCompilerBuilder(_) => const DevCompilerBuilder();
 Builder webEntrypointBuilder(BuilderOptions options) =>
     new WebEntrypointBuilder.fromOptions(options);

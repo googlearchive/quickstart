@@ -8,11 +8,10 @@ import 'dart:io';
 import 'package:build/build.dart';
 import 'package:path/path.dart' as p;
 import 'package:scratch_space/scratch_space.dart';
-
-import 'kernel_builder.dart';
+import 'package:build_modules/build_modules.dart';
 
 final defaultAnalysisOptionsId =
-    new AssetId('build_web_compilers', 'lib/src/analysis_options.default.yaml');
+    new AssetId('build_modules', 'lib/src/analysis_options.default.yaml');
 
 String defaultAnalysisOptionsArg(ScratchSpace scratchSpace) =>
     '--options=${scratchSpace.fileFor(defaultAnalysisOptionsId).path}';
@@ -30,4 +29,17 @@ Future<File> createPackagesFile(
       .map((pkg) => '$pkg:$multiRootScheme:///packages/$pkg')
       .join('\r\n'));
   return packagesFile;
+}
+
+/// Validates that [config] only has the top level keys [supportedOptions].
+///
+/// Throws an [ArgumentError] if not.
+void validateOptions(Map<String, dynamic> config, List<String> supportedOptions,
+    String builderKey) {
+  var unsupportedOptions =
+      config.keys.where((o) => !supportedOptions.contains(o));
+  if (unsupportedOptions.isNotEmpty) {
+    throw new ArgumentError.value(unsupportedOptions.join(', '), builderKey,
+        'only $supportedOptions are supported options, but got');
+  }
 }

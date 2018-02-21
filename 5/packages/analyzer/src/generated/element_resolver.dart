@@ -2,8 +2,6 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-library analyzer.src.generated.element_resolver;
-
 import 'dart:collection';
 
 import 'package:analyzer/dart/ast/ast.dart';
@@ -28,7 +26,6 @@ import 'package:analyzer/src/dart/element/type.dart';
 import 'package:analyzer/src/error/codes.dart';
 import 'package:analyzer/src/generated/engine.dart';
 import 'package:analyzer/src/generated/resolver.dart';
-import 'package:analyzer/src/generated/testing/token_factory.dart';
 import 'package:analyzer/src/task/strong/checker.dart';
 
 /**
@@ -169,15 +166,26 @@ class ElementResolver extends SimpleAstVisitor<Object> {
   Object visitAssignmentExpression(AssignmentExpression node) {
     Token operator = node.operator;
     TokenType operatorType = operator.type;
+    Expression leftHandSide = node.leftHandSide;
+    DartType staticType = _getStaticType(leftHandSide, read: true);
+
+    // For any compound assignments to a void variable, report bad void usage.
+    // Example: `y += voidFn()`, not allowed.
+    if (operatorType != TokenType.EQ &&
+        staticType != null &&
+        staticType.isVoid) {
+      _recordUndefinedToken(
+          null, StaticWarningCode.USE_OF_VOID_RESULT, operator, []);
+      return null;
+    }
+
     if (operatorType != TokenType.AMPERSAND_AMPERSAND_EQ &&
         operatorType != TokenType.BAR_BAR_EQ &&
         operatorType != TokenType.EQ &&
         operatorType != TokenType.QUESTION_QUESTION_EQ) {
       operatorType = _operatorFromCompoundAssignment(operatorType);
-      Expression leftHandSide = node.leftHandSide;
       if (leftHandSide != null) {
         String methodName = operatorType.lexeme;
-        DartType staticType = _getStaticType(leftHandSide, read: true);
         MethodElement staticMethod =
             _lookUpMethod(leftHandSide, staticType, methodName);
         node.staticElement = staticMethod;
@@ -891,6 +899,9 @@ class ElementResolver extends SimpleAstVisitor<Object> {
           StaticTypeWarningCode.UNDEFINED_SUPER_METHOD,
           methodName,
           [methodName.name, targetTypeName]);
+    } else if (identical(errorCode, StaticWarningCode.USE_OF_VOID_RESULT)) {
+      _resolver.errorReporter.reportErrorForNode(
+          StaticWarningCode.USE_OF_VOID_RESULT, target ?? methodName, []);
     }
     return null;
   }
@@ -1307,9 +1318,7 @@ class ElementResolver extends SimpleAstVisitor<Object> {
       FunctionType getterType = element.type;
       if (getterType != null) {
         DartType returnType = getterType.returnType;
-        if (!_isExecutableType(returnType)) {
-          return StaticTypeWarningCode.INVOCATION_OF_NON_FUNCTION;
-        }
+        return _getErrorCodeForExecuting(returnType);
       }
     } else if (element is ExecutableElement) {
       return null;
@@ -1331,15 +1340,11 @@ class ElementResolver extends SimpleAstVisitor<Object> {
         FunctionType getterType = getter.type;
         if (getterType != null) {
           DartType returnType = getterType.returnType;
-          if (!_isExecutableType(returnType)) {
-            return StaticTypeWarningCode.INVOCATION_OF_NON_FUNCTION;
-          }
+          return _getErrorCodeForExecuting(returnType);
         }
       } else if (element is VariableElement) {
         DartType variableType = element.type;
-        if (!_isExecutableType(variableType)) {
-          return StaticTypeWarningCode.INVOCATION_OF_NON_FUNCTION;
-        }
+        return _getErrorCodeForExecuting(variableType);
       } else {
         if (target == null) {
           ClassElement enclosingClass = _resolver.enclosingClass;
@@ -1368,6 +1373,8 @@ class ElementResolver extends SimpleAstVisitor<Object> {
               return null;
             }
             return StaticTypeWarningCode.UNDEFINED_FUNCTION;
+          } else if (targetType.isVoid) {
+            return StaticWarningCode.USE_OF_VOID_RESULT;
           } else if (!targetType.isDynamic && target is! NullLiteral) {
             // Proxy-conditional warning, based on state of
             // targetType.getElement()
@@ -1406,25 +1413,29 @@ class ElementResolver extends SimpleAstVisitor<Object> {
       Token leftBracket = expression.leftBracket;
       Token rightBracket = expression.rightBracket;
       ErrorCode errorCode;
+      DartType type =
+          shouldReportMissingMember_static ? staticType : propagatedType;
+      var errorArguments = [methodName, type.displayName];
       if (shouldReportMissingMember_static) {
         if (target is SuperExpression) {
           errorCode = StaticTypeWarningCode.UNDEFINED_SUPER_OPERATOR;
+        } else if (staticType != null && staticType.isVoid) {
+          errorCode = StaticWarningCode.USE_OF_VOID_RESULT;
+          errorArguments = [];
         } else {
           errorCode = StaticTypeWarningCode.UNDEFINED_OPERATOR;
         }
       } else {
         errorCode = HintCode.UNDEFINED_OPERATOR;
       }
-      DartType type =
-          shouldReportMissingMember_static ? staticType : propagatedType;
       if (leftBracket == null || rightBracket == null) {
-        _recordUndefinedNode(type.element, errorCode, expression,
-            [methodName, type.displayName]);
+        _recordUndefinedNode(
+            type.element, errorCode, expression, errorArguments);
       } else {
         int offset = leftBracket.offset;
         int length = rightBracket.offset - offset + 1;
-        _recordUndefinedOffset(type.element, errorCode, offset, length,
-            [methodName, type.displayName]);
+        _recordUndefinedOffset(
+            type.element, errorCode, offset, length, errorArguments);
       }
       return true;
     }
@@ -1645,13 +1656,32 @@ class ElementResolver extends SimpleAstVisitor<Object> {
     // Before any ASTs are created, look up ConstructorElement to see if we
     // should construct an [InstanceCreationExpression] to replace this
     // [MethodInvocation].
+    InterfaceType classType = classElement.type;
+    if (node.typeArguments != null) {
+      int parameterCount = classType.typeParameters.length;
+      int argumentCount = node.typeArguments.arguments.length;
+      if (parameterCount == argumentCount) {
+        // TODO(brianwilkerson) More gracefully handle the case where the counts
+        // are different.
+        List<DartType> typeArguments = node.typeArguments.arguments
+            .map((TypeAnnotation type) => type.type)
+            .toList();
+        classType = classType.instantiate(typeArguments);
+      }
+    } else {
+      int parameterCount = classType.typeParameters.length;
+      if (parameterCount > 0) {
+        List<DartType> typeArguments =
+            new List<DartType>.filled(parameterCount, _dynamicType);
+        classType = classType.instantiate(typeArguments);
+      }
+    }
     ConstructorElement constructorElt;
     if (isNamedConstructorCase) {
-      constructorElt = classElement.type
-          .lookUpConstructor(node.methodName.name, _definingLibrary);
-    } else {
       constructorElt =
-          classElement.type.lookUpConstructor(null, _definingLibrary);
+          classType.lookUpConstructor(node.methodName.name, _definingLibrary);
+    } else {
+      constructorElt = classType.lookUpConstructor(null, _definingLibrary);
     }
     // If the constructor was not looked up, return `null` so resulting
     // resolution, such as error messages, will proceed as a [MethodInvocation].
@@ -1665,13 +1695,13 @@ class ElementResolver extends SimpleAstVisitor<Object> {
     if (isNamedConstructorCase) {
       // A.named()
       typeName = _astFactory.typeName(targetSimpleId, node.typeArguments);
-      typeName.type = classElement.type;
+      typeName.type = classType;
       constructorName =
           _astFactory.constructorName(typeName, node.operator, node.methodName);
     } else {
       // A()
       typeName = _astFactory.typeName(node.methodName, node.typeArguments);
-      typeName.type = classElement.type;
+      typeName.type = classType;
       constructorName = _astFactory.constructorName(typeName, null, null);
     }
     InstanceCreationExpression instanceCreationExpression = _astFactory
@@ -1682,15 +1712,14 @@ class ElementResolver extends SimpleAstVisitor<Object> {
     }
     constructorName.staticElement = constructorElt;
     instanceCreationExpression.staticElement = constructorElt;
-    instanceCreationExpression.staticType = classElement.type;
+    instanceCreationExpression.staticType = classType;
 
     // Finally, do the node replacement, true is returned iff the replacement
     // was successful, only return the new node if it was successful.
     if (NodeReplacer.replace(node, instanceCreationExpression)) {
       return instanceCreationExpression;
-    } else {
-      return null;
     }
+    return null;
   }
 
   /**
@@ -1722,13 +1751,32 @@ class ElementResolver extends SimpleAstVisitor<Object> {
     if (classElement == null) {
       return null;
     }
+    InterfaceType classType = classElement.type;
+    if (node.typeArguments != null) {
+      int parameterCount = classType.typeParameters.length;
+      int argumentCount = node.typeArguments.arguments.length;
+      if (parameterCount == argumentCount) {
+        // TODO(brianwilkerson) More gracefully handle the case where the counts
+        // are different.
+        List<DartType> typeArguments = node.typeArguments.arguments
+            .map((TypeAnnotation type) => type.type)
+            .toList();
+        classType = classType.instantiate(typeArguments);
+      }
+    } else {
+      int parameterCount = classType.typeParameters.length;
+      if (parameterCount > 0) {
+        List<DartType> typeArguments =
+            new List<DartType>.filled(parameterCount, _dynamicType);
+        classType = classType.instantiate(typeArguments);
+      }
+    }
     ConstructorElement constructorElt;
     if (isNamedConstructorCase) {
-      constructorElt = classElement.type
-          .lookUpConstructor(node.methodName.name, _definingLibrary);
-    } else {
       constructorElt =
-          classElement.type.lookUpConstructor(null, _definingLibrary);
+          classType.lookUpConstructor(node.methodName.name, _definingLibrary);
+    } else {
+      constructorElt = classType.lookUpConstructor(null, _definingLibrary);
     }
     // If the constructor was not looked up, return `null` so resulting
     // resolution, such as error messages, will proceed as a [MethodInvocation].
@@ -1743,18 +1791,16 @@ class ElementResolver extends SimpleAstVisitor<Object> {
       // p.A.n()
       // libraryPrefixId is a PrefixedIdentifier in this case
       typeName = _astFactory.typeName(libraryPrefixId, node.typeArguments);
-      typeName.type = classElement.type;
+      typeName.type = classType;
       constructorName =
           _astFactory.constructorName(typeName, node.operator, node.methodName);
     } else {
       // p.A()
       // libraryPrefixId is a SimpleIdentifier in this case
       PrefixedIdentifier prefixedIdentifier = _astFactory.prefixedIdentifier(
-          libraryPrefixId,
-          TokenFactory.tokenFromType(TokenType.PERIOD),
-          node.methodName);
+          libraryPrefixId, node.operator, node.methodName);
       typeName = _astFactory.typeName(prefixedIdentifier, node.typeArguments);
-      typeName.type = classElement.type;
+      typeName.type = classType;
       constructorName = _astFactory.constructorName(typeName, null, null);
     }
     InstanceCreationExpression instanceCreationExpression = _astFactory
@@ -1765,15 +1811,14 @@ class ElementResolver extends SimpleAstVisitor<Object> {
     }
     constructorName.staticElement = constructorElt;
     instanceCreationExpression.staticElement = constructorElt;
-    instanceCreationExpression.staticType = classElement.type;
+    instanceCreationExpression.staticType = classType;
 
     // Finally, do the node replacement, true is returned iff the replacement
     // was successful, only return the new node if it was successful.
     if (NodeReplacer.replace(node, instanceCreationExpression)) {
       return instanceCreationExpression;
-    } else {
-      return null;
     }
+    return null;
   }
 
   /**
@@ -1839,6 +1884,21 @@ class ElementResolver extends SimpleAstVisitor<Object> {
       }
     }
     return false;
+  }
+
+  /**
+   * Return an error if the [type], which is presumably being invoked, is not a
+   * function. The errors for non functions may be broken up by type; currently,
+   * it returns a special value for when the type is `void`.
+   */
+  ErrorCode _getErrorCodeForExecuting(DartType type) {
+    if (_isExecutableType(type)) {
+      return null;
+    }
+
+    return type.isVoid
+        ? StaticWarningCode.USE_OF_VOID_RESULT
+        : StaticTypeWarningCode.INVOCATION_OF_NON_FUNCTION;
   }
 
   /**
@@ -2605,6 +2665,7 @@ class ElementResolver extends SimpleAstVisitor<Object> {
           staticType.isVoid ? null : staticOrPropagatedEnclosingElt;
       if (propertyName.inSetterContext()) {
         ErrorCode errorCode;
+        var arguments = [propertyName.name, displayType.displayName];
         if (shouldReportMissingMember_static) {
           if (target is SuperExpression) {
             if (isStaticProperty && !staticType.isVoid) {
@@ -2613,7 +2674,10 @@ class ElementResolver extends SimpleAstVisitor<Object> {
               errorCode = StaticTypeWarningCode.UNDEFINED_SUPER_SETTER;
             }
           } else {
-            if (isStaticProperty && !staticType.isVoid) {
+            if (staticType.isVoid) {
+              errorCode = StaticWarningCode.USE_OF_VOID_RESULT;
+              arguments = [];
+            } else if (isStaticProperty) {
               errorCode = StaticWarningCode.UNDEFINED_SETTER;
             } else {
               errorCode = StaticTypeWarningCode.UNDEFINED_SETTER;
@@ -2622,10 +2686,11 @@ class ElementResolver extends SimpleAstVisitor<Object> {
         } else {
           errorCode = HintCode.UNDEFINED_SETTER;
         }
-        _recordUndefinedNode(declaringElement, errorCode, propertyName,
-            [propertyName.name, displayType.displayName]);
+        _recordUndefinedNode(
+            declaringElement, errorCode, propertyName, arguments);
       } else if (propertyName.inGetterContext()) {
         ErrorCode errorCode;
+        var arguments = [propertyName.name, displayType.displayName];
         if (shouldReportMissingMember_static) {
           if (target is SuperExpression) {
             if (isStaticProperty && !staticType.isVoid) {
@@ -2634,7 +2699,10 @@ class ElementResolver extends SimpleAstVisitor<Object> {
               errorCode = StaticTypeWarningCode.UNDEFINED_SUPER_GETTER;
             }
           } else {
-            if (isStaticProperty && !staticType.isVoid) {
+            if (staticType.isVoid) {
+              errorCode = StaticWarningCode.USE_OF_VOID_RESULT;
+              arguments = [];
+            } else if (isStaticProperty) {
               errorCode = StaticWarningCode.UNDEFINED_GETTER;
             } else {
               errorCode = StaticTypeWarningCode.UNDEFINED_GETTER;
@@ -2643,8 +2711,8 @@ class ElementResolver extends SimpleAstVisitor<Object> {
         } else {
           errorCode = HintCode.UNDEFINED_GETTER;
         }
-        _recordUndefinedNode(declaringElement, errorCode, propertyName,
-            [propertyName.name, displayType.displayName]);
+        _recordUndefinedNode(
+            declaringElement, errorCode, propertyName, arguments);
       } else {
         _recordUndefinedNode(
             declaringElement,

@@ -9,7 +9,6 @@ import 'json_pipe.dart';
 export 'json_pipe.dart';
 import 'dart:convert';
 import 'package:angular/di.dart' show PipeTransform, Pipe;
-// Required for initReflector().
 import 'package:angular/di.template.dart' as _ref0;
 
 var _visited = false;
@@ -18,5 +17,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

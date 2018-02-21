@@ -343,7 +343,9 @@ class Int64 implements IntX {
     if (n < 0) {
       throw new ArgumentError.value(n);
     }
-    n &= 63;
+    if (n >= 64) {
+      return ZERO;
+    }
 
     int res0, res1, res2;
     if (n < _BITS) {
@@ -367,7 +369,9 @@ class Int64 implements IntX {
     if (n < 0) {
       throw new ArgumentError.value(n);
     }
-    n &= 63;
+    if (n >= 64) {
+      return isNegative ? const Int64._bits(_MASK, _MASK, _MASK2) : ZERO;
+    }
 
     int res0, res1, res2;
 
@@ -410,7 +414,9 @@ class Int64 implements IntX {
     if (n < 0) {
       throw new ArgumentError.value(n);
     }
-    n &= 63;
+    if (n >= 64) {
+      return ZERO;
+    }
 
     int res0, res1, res2;
     int a2 = _MASK2 & _h; // Ensure a2 is positive.

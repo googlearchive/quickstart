@@ -8,7 +8,6 @@
 import 'dom_sanitization_service.dart';
 export 'dom_sanitization_service.dart';
 import '../core/security.dart';
-// Required for initReflector().
 import '../core/security.template.dart' as _ref0;
 import '../core/security.template.dart' as _ref1;
 
@@ -18,6 +17,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
 }

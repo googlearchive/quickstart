@@ -19,7 +19,6 @@ import 'src/di/injector/injector.dart';
 import 'src/di/reflector.dart' as reflector;
 import 'src/platform/bootstrap.dart';
 import 'src/platform/dom/shared_styles_host.dart';
-// Required for initReflector().
 import 'src/bootstrap/modules.template.dart' as _ref0;
 import 'src/bootstrap/modules.template.dart' as _ref1;
 import 'src/core/application_ref.template.dart' as _ref2;
@@ -38,6 +37,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

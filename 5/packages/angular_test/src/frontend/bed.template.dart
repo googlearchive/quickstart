@@ -15,7 +15,6 @@ import '../bootstrap.dart';
 import '../errors.dart';
 import 'fixture.dart';
 import 'stabilizer.dart';
-// Required for initReflector().
 import '../bootstrap.template.dart' as _ref0;
 import '../errors.template.dart' as _ref1;
 import 'fixture.template.dart' as _ref2;
@@ -28,6 +27,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

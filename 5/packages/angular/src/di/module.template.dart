@@ -9,7 +9,6 @@ import 'module.dart';
 export 'module.dart';
 import 'package:meta/meta.dart';
 import 'providers.dart';
-// Required for initReflector().
 import 'providers.template.dart' as _ref0;
 
 var _visited = false;
@@ -18,5 +17,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

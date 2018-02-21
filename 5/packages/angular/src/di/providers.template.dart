@@ -9,7 +9,6 @@ import 'providers.dart';
 export 'providers.dart';
 import 'package:meta/meta.dart';
 import '../core/di/opaque_token.dart';
-// Required for initReflector().
 import '../core/di/opaque_token.template.dart' as _ref0;
 
 var _visited = false;
@@ -18,5 +17,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

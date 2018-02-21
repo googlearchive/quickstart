@@ -8,7 +8,6 @@
 import 'hammer_common.dart';
 export 'hammer_common.dart';
 import "event_manager.dart" show EventManagerPlugin;
-// Required for initReflector().
 import 'event_manager.template.dart' as _ref0;
 
 var _visited = false;
@@ -17,5 +16,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

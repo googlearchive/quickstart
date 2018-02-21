@@ -9,7 +9,6 @@ import 'browser_common.dart';
 export 'browser_common.dart';
 import '../core/testability/testability.dart';
 import 'browser/testability.dart';
-// Required for initReflector().
 import '../core/testability/testability.template.dart' as _ref0;
 import 'browser/testability.template.dart' as _ref1;
 
@@ -19,6 +18,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
 }

@@ -9,7 +9,6 @@ import 'exceptions.dart';
 export 'exceptions.dart';
 import 'dart:html';
 import 'package:angular/core.dart';
-// Required for initReflector().
 import 'package:angular/src/di/reflector.dart' as _ngRef;
 import 'package:angular/core.template.dart' as _ref0;
 
@@ -19,9 +18,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
+  _ngRef.registerFactory(BrowserExceptionHandler, () => new BrowserExceptionHandler());
   _ref0.initReflector();
-  _ngRef.registerFactory(
-    BrowserExceptionHandler,
-    () => new BrowserExceptionHandler(),
-  );
 }

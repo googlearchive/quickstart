@@ -11,7 +11,6 @@ import "package:angular/src/core/application_ref.dart" show ApplicationRef;
 import "package:angular/src/core/di.dart" show Injector;
 import "package:angular/src/core/render/api.dart" show RenderDebugInfo;
 import "package:angular/src/core/zone/ng_zone.dart" show NgZone;
-// Required for initReflector().
 import 'by.template.dart' as _ref0;
 import 'package:angular/src/core/application_ref.template.dart' as _ref1;
 import 'package:angular/src/core/di.template.dart' as _ref2;
@@ -24,6 +23,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

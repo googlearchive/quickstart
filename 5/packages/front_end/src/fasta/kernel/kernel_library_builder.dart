@@ -78,6 +78,7 @@ import 'kernel_builder.dart'
         Scope,
         TypeBuilder,
         TypeVariableBuilder,
+        UnresolvedType,
         VoidTypeBuilder,
         compareProcedures,
         toKernelCombinators;
@@ -595,9 +596,12 @@ class KernelLibraryBuilder
     endNestedDeclaration("#method").resolveTypes(typeVariables, this);
     String procedureName;
     ProcedureBuilder procedure;
-    String constructorName =
-        isTopLevel ? null : computeAndValidateConstructorName(name, charOffset);
     MetadataCollector metadataCollector = loader.target.metadataCollector;
+    String constructorName = isTopLevel ||
+            kind == ProcedureKind.Getter ||
+            kind == ProcedureKind.Setter
+        ? null
+        : computeAndValidateConstructorName(name, charOffset);
     if (constructorName != null) {
       procedureName = constructorName;
       procedure = new KernelConstructorBuilder(
@@ -675,7 +679,9 @@ class KernelLibraryBuilder
         staticMask | modifiers,
         returnType,
         procedureName,
-        <TypeVariableBuilder>[],
+        copyTypeVariables(
+            currentDeclaration.typeVariables ?? <TypeVariableBuilder>[],
+            factoryDeclaration),
         formals,
         ProcedureKind.Factory,
         this,
@@ -690,7 +696,15 @@ class KernelLibraryBuilder
         procedure.target, documentationComment);
     metadataCollector?.setConstructorNameOffset(procedure.target, name);
 
-    currentDeclaration.addFactoryDeclaration(procedure, factoryDeclaration);
+    DeclarationBuilder<TypeBuilder> savedDeclaration = currentDeclaration;
+    currentDeclaration = factoryDeclaration;
+    for (TypeVariableBuilder tv in procedure.typeVariables) {
+      KernelNamedTypeBuilder t = procedure.returnType;
+      t.arguments.add(addNamedType(tv.name, null, procedure.charOffset));
+    }
+    currentDeclaration = savedDeclaration;
+
+    factoryDeclaration.resolveTypes(procedure.typeVariables, this);
     addBuilder(procedureName, procedure, charOffset);
     if (nativeMethodName != null) {
       addNativeMethod(procedure);
@@ -1007,23 +1021,17 @@ class KernelLibraryBuilder
   }
 
   List<TypeVariableBuilder> copyTypeVariables(
-      List<TypeVariableBuilder> original) {
+      List<TypeVariableBuilder> original, DeclarationBuilder declaration) {
+    List<TypeBuilder> newTypes = <TypeBuilder>[];
     List<TypeVariableBuilder> copy = <TypeVariableBuilder>[];
     for (KernelTypeVariableBuilder variable in original) {
-      var newVariable = new KernelTypeVariableBuilder(
-          variable.name, this, variable.charOffset);
+      var newVariable = new KernelTypeVariableBuilder(variable.name, this,
+          variable.charOffset, variable.bound?.clone(newTypes));
       copy.add(newVariable);
       boundlessTypeVariables.add(newVariable);
     }
-    Map<TypeVariableBuilder, TypeBuilder> substitution =
-        <TypeVariableBuilder, TypeBuilder>{};
-    int i = 0;
-    for (KernelTypeVariableBuilder variable in original) {
-      substitution[variable] = copy[i++].asTypeBuilder();
-    }
-    i = 0;
-    for (KernelTypeVariableBuilder variable in original) {
-      copy[i++].bound = variable.bound?.subst(substitution);
+    for (TypeBuilder newType in newTypes) {
+      declaration.addType(new UnresolvedType(newType, -1, null));
     }
     return copy;
   }

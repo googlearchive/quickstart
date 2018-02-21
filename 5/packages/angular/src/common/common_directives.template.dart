@@ -8,7 +8,6 @@
 import 'common_directives.dart';
 export 'common_directives.dart';
 import 'directives.dart' show CORE_DIRECTIVES;
-// Required for initReflector().
 import 'directives.template.dart' as _ref0;
 
 var _visited = false;
@@ -17,5 +16,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

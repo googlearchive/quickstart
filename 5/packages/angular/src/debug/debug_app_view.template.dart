@@ -24,7 +24,6 @@ import 'package:angular/src/core/linker/view_type.dart';
 import 'package:angular/src/core/render/api.dart';
 import 'debug_context.dart' show StaticNodeDebugInfo, DebugContext;
 import 'debug_node.dart' show DebugElement, DebugNode, getDebugNode, indexDebugNode, inspectNativeElement, removeDebugNodeFromIndex;
-// Required for initReflector().
 import 'debug_context.template.dart' as _ref0;
 import 'debug_context.template.dart' as _ref1;
 import 'debug_node.template.dart' as _ref2;
@@ -45,6 +44,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

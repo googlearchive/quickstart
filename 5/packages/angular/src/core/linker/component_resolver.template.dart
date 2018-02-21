@@ -11,7 +11,6 @@ import 'dart:async';
 import 'package:angular/src/core/di.dart' show Injectable;
 import 'package:angular/src/di/reflector.dart' as reflector;
 import 'component_factory.dart' show ComponentFactory;
-// Required for initReflector().
 import 'package:angular/src/di/reflector.dart' as _ngRef;
 import 'component_factory.template.dart' as _ref0;
 import 'package:angular/src/core/di.template.dart' as _ref1;
@@ -23,11 +22,9 @@ void initReflector() {
     return;
   }
   _visited = true;
+
+  _ngRef.registerFactory(ComponentResolver, () => new ComponentResolver());
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();
-  _ngRef.registerFactory(
-    ComponentResolver,
-    () => new ComponentResolver(),
-  );
 }

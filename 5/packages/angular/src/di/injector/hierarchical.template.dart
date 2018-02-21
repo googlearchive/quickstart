@@ -10,7 +10,6 @@ export 'hierarchical.dart';
 import 'package:meta/meta.dart';
 import 'empty.dart';
 import 'injector.dart';
-// Required for initReflector().
 import 'empty.template.dart' as _ref0;
 import 'injector.template.dart' as _ref1;
 
@@ -20,6 +19,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
 }

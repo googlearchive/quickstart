@@ -7,7 +7,6 @@
 // ignore_for_file: cancel_subscriptions,constant_identifier_names,duplicate_import,non_constant_identifier_names,library_prefixes,UNUSED_IMPORT,UNUSED_SHOWN_NAME
 import 'linker.dart';
 export 'linker.dart';
-// Required for initReflector().
 import 'linker/component_factory.template.dart' as _ref0;
 import 'linker/component_loader.template.dart' as _ref1;
 import 'linker/component_resolver.template.dart' as _ref2;
@@ -25,6 +24,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

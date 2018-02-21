@@ -13,7 +13,6 @@ import 'dom_sanitization_service.dart';
 import 'html_sanitizer.dart';
 import 'style_sanitizer.dart';
 import 'url_sanitizer.dart';
-// Required for initReflector().
 import 'package:angular/src/di/reflector.dart' as _ngRef;
 import '../core/di.template.dart' as _ref0;
 import '../core/security.template.dart' as _ref1;
@@ -28,14 +27,12 @@ void initReflector() {
     return;
   }
   _visited = true;
+
+  _ngRef.registerFactory(DomSanitizationServiceImpl, () => new DomSanitizationServiceImpl());
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();
   _ref3.initReflector();
   _ref4.initReflector();
   _ref5.initReflector();
-  _ngRef.registerFactory(
-    DomSanitizationServiceImpl,
-    () => new DomSanitizationServiceImpl(),
-  );
 }

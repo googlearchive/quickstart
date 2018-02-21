@@ -13,7 +13,6 @@ import 'ng_if.dart' show NgIf;
 import 'ng_style.dart' show NgStyle;
 import 'ng_switch.dart' show NgSwitch, NgSwitchWhen, NgSwitchDefault;
 import 'ng_template_outlet.dart' show NgTemplateOutlet;
-// Required for initReflector().
 import 'ng_class.template.dart' as _ref0;
 import 'ng_for.template.dart' as _ref1;
 import 'ng_if.template.dart' as _ref2;
@@ -27,6 +26,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

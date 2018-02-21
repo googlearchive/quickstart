@@ -8,7 +8,6 @@
 import 'default_keyvalue_differ.dart';
 export 'default_keyvalue_differ.dart';
 import 'package:angular/src/facade/exceptions.dart' show BaseException;
-// Required for initReflector().
 import 'package:angular/src/facade/exceptions.template.dart' as _ref0;
 
 var _visited = false;
@@ -17,5 +16,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

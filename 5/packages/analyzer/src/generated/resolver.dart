@@ -166,7 +166,6 @@ class BestPracticesVerifier extends RecursiveAstVisitor<Object> {
   Object visitAssignmentExpression(AssignmentExpression node) {
     TokenType operatorType = node.operator.type;
     if (operatorType == TokenType.EQ) {
-      _checkForUseOfVoidResult(node.rightHandSide);
       _checkForInvalidAssignment(node.leftHandSide, node.rightHandSide);
     } else {
       _checkForDeprecatedMemberUse(node.bestElement, node);
@@ -370,7 +369,6 @@ class BestPracticesVerifier extends RecursiveAstVisitor<Object> {
 
   @override
   Object visitVariableDeclaration(VariableDeclaration node) {
-    _checkForUseOfVoidResult(node.initializer);
     _checkForInvalidAssignment(node.name, node.initializer);
     return super.visitVariableDeclaration(node);
   }
@@ -1075,6 +1073,7 @@ class BestPracticesVerifier extends RecursiveAstVisitor<Object> {
           DartType futureArgument = returnTypeType.typeArguments[0];
           if (futureArgument.isDynamic ||
               futureArgument.isDartCoreNull ||
+              futureArgument.isVoid ||
               futureArgument.isObject) {
             return;
           }
@@ -1241,25 +1240,6 @@ class BestPracticesVerifier extends RecursiveAstVisitor<Object> {
     return false;
   }
 
-  /**
-   * Check for situations where the result of a method or function is used, when
-   * it returns 'void'.
-   *
-   * See [HintCode.USE_OF_VOID_RESULT].
-   */
-  void _checkForUseOfVoidResult(Expression expression) {
-    // TODO(jwren) Many other situations of use could be covered. We currently
-    // cover the cases var x = m() and x = m(), but we could also cover cases
-    // such as m().x, m()[k], a + m(), f(m()), return m().
-    if (expression is MethodInvocation) {
-      if (identical(expression.staticType, VoidTypeImpl.instance)) {
-        SimpleIdentifier methodName = expression.methodName;
-        _errorReporter.reportErrorForNode(
-            HintCode.USE_OF_VOID_RESULT, methodName, [methodName.name]);
-      }
-    }
-  }
-
   void _checkRequiredParameter(FormalParameterList node) {
     final requiredParameters =
         node.parameters.where((p) => p.element?.isRequired == true);
@@ -1355,7 +1335,7 @@ class BuildLibraryElementUtils {
       return;
     }
     // Collect getters and setters.
-    HashMap<String, PropertyAccessorElement> getters =
+    Map<String, PropertyAccessorElement> getters =
         new HashMap<String, PropertyAccessorElement>();
     List<PropertyAccessorElement> setters = <PropertyAccessorElement>[];
     _collectAccessors(getters, setters, library.definingCompilationUnit);
@@ -1538,7 +1518,7 @@ class ConstantVerifier extends RecursiveAstVisitor<Object> {
   @override
   Object visitListLiteral(ListLiteral node) {
     super.visitListLiteral(node);
-    if (node.constKeyword != null) {
+    if (node.isConst) {
       DartObjectImpl result;
       for (Expression element in node.elements) {
         result =
@@ -1557,7 +1537,7 @@ class ConstantVerifier extends RecursiveAstVisitor<Object> {
   @override
   Object visitMapLiteral(MapLiteral node) {
     super.visitMapLiteral(node);
-    bool isConst = node.constKeyword != null;
+    bool isConst = node.isConst;
     bool reportEqualKeys = true;
     HashSet<DartObject> keys = new HashSet<DartObject>();
     List<Expression> invalidKeys = new List<Expression>();
@@ -3027,7 +3007,7 @@ class EnumMemberBuilder extends RecursiveAstVisitor<Object> {
       //
       // Create a value for the constant.
       //
-      HashMap<String, DartObjectImpl> fieldMap =
+      Map<String, DartObjectImpl> fieldMap =
           new HashMap<String, DartObjectImpl>();
       fieldMap[indexFieldName] = new DartObjectImpl(intType, new IntState(i));
       DartObjectImpl value =
@@ -5196,8 +5176,7 @@ class ResolverVisitor extends ScopedVisitor {
       // Analyzer ignores annotations on "part of" directives.
       assert(parent is PartOfDirective);
     } else {
-      elementAnnotationImpl.annotationAst =
-          new ConstantAstCloner().cloneNode(node);
+      elementAnnotationImpl.annotationAst = _createCloner().cloneNode(node);
     }
     return null;
   }
@@ -5550,7 +5529,7 @@ class ResolverVisitor extends ScopedVisitor {
     }
     ConstructorElementImpl constructor = node.element;
     constructor.constantInitializers =
-        new ConstantAstCloner().cloneNodeList(node.initializers);
+        _createCloner().cloneNodeList(node.initializers);
     return null;
   }
 
@@ -5617,7 +5596,7 @@ class ResolverVisitor extends ScopedVisitor {
     // during constant evaluation.
     if (!_hasSerializedConstantInitializer(element)) {
       (element as ConstVariableElement).constantInitializer =
-          new ConstantAstCloner().cloneNode(node.defaultValue);
+          _createCloner().cloneNode(node.defaultValue);
     }
     return null;
   }
@@ -6256,7 +6235,7 @@ class ResolverVisitor extends ScopedVisitor {
     // evaluate the const constructor).
     if (element is ConstVariableElement) {
       (element as ConstVariableElement).constantInitializer =
-          new ConstantAstCloner().cloneNode(node.initializer);
+          _createCloner().cloneNode(node.initializer);
     }
     return null;
   }
@@ -6404,6 +6383,15 @@ class ResolverVisitor extends ScopedVisitor {
       return _createFutureOr(futureTypeParam);
     }
     return declaredType;
+  }
+
+  /**
+   * Return a newly created cloner that can be used to clone constant
+   * expressions.
+   */
+  ConstantAstCloner _createCloner() {
+    return new ConstantAstCloner(
+        definingLibrary.context.analysisOptions.previewDart2);
   }
 
   /**
@@ -6928,7 +6916,7 @@ class ResolverVisitor extends ScopedVisitor {
     int requiredParameterCount = 0;
     int unnamedParameterCount = 0;
     List<ParameterElement> unnamedParameters = new List<ParameterElement>();
-    HashMap<String, ParameterElement> namedParameters = null;
+    Map<String, ParameterElement> namedParameters = null;
     int length = parameters.length;
     for (int i = 0; i < length; i++) {
       ParameterElement parameter = parameters[i];
@@ -7736,7 +7724,7 @@ class SubtypeManager {
    * A map between [ClassElement]s and a set of [ClassElement]s that are subtypes of the
    * key.
    */
-  HashMap<ClassElement, HashSet<ClassElement>> _subtypeMap =
+  Map<ClassElement, HashSet<ClassElement>> _subtypeMap =
       new HashMap<ClassElement, HashSet<ClassElement>>();
 
   /**
@@ -8881,7 +8869,7 @@ class TypePromotionManager_TypePromoteScope {
   /**
    * A table mapping elements to the promoted type of that element.
    */
-  HashMap<Element, DartType> _promotedTypes = new HashMap<Element, DartType>();
+  Map<Element, DartType> _promotedTypes = new HashMap<Element, DartType>();
 
   /**
    * Initialize a newly created scope to be an empty child of the given scope.

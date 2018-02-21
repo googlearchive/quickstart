@@ -11,7 +11,6 @@ import 'dart:html';
 import 'package:js/js.dart';
 import 'package:js/js_util.dart' as js_util;
 import 'package:angular/src/core/testability/testability.dart';
-// Required for initReflector().
 import 'package:angular/src/core/testability/testability.template.dart' as _ref0;
 
 var _visited = false;
@@ -20,5 +19,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

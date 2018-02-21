@@ -16,7 +16,6 @@ import 'package:angular/src/core/security.dart' show SafeValue;
 import 'package:angular/src/core/security.dart';
 import 'package:angular/src/platform/dom/events/event_manager.dart' show EventManager;
 import 'exceptions.dart' show ExpressionChangedAfterItHasBeenCheckedException;
-// Required for initReflector().
 import 'package:angular/src/di/reflector.dart' as _ngRef;
 import 'exceptions.template.dart' as _ref0;
 import 'package:angular/di.template.dart' as _ref1;
@@ -27,6 +26,8 @@ import 'package:angular/src/core/render/api.template.dart' as _ref5;
 import 'package:angular/src/core/security.template.dart' as _ref6;
 import 'package:angular/src/core/security.template.dart' as _ref7;
 import 'package:angular/src/platform/dom/events/event_manager.template.dart' as _ref8;
+import 'package:angular/src/core/security.dart' as _i1;
+import 'package:angular/src/platform/dom/events/event_manager.dart' as _i2;
 
 var _visited = false;
 void initReflector() {
@@ -34,6 +35,13 @@ void initReflector() {
     return;
   }
   _visited = true;
+
+  _ngRef.registerFactory(AppViewUtils, (String p0, _i1.SanitizationService p1, _i2.EventManager p2) => new AppViewUtils(p0, p1, p2));
+  _ngRef.registerDependencies(AppViewUtils, const [
+    const [const _ngRef.Inject(const _ngRef.OpaqueToken<dynamic>('APP_ID'))],
+    const [_i1.SanitizationService],
+    const [_i2.EventManager]
+  ]);
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();
@@ -43,22 +51,4 @@ void initReflector() {
   _ref6.initReflector();
   _ref7.initReflector();
   _ref8.initReflector();
-  _ngRef.registerFactory(
-    AppViewUtils,
-    (String p0, SanitizationService p1, EventManager p2) => new AppViewUtils(p0, p1, p2),
-  );
-  _ngRef.registerDependencies(
-    AppViewUtils,
-    const [
-      const [
-        const _ngRef.Inject(const _ngRef.OpaqueToken<dynamic>(r'APP_ID')),
-      ],
-      const [
-        SanitizationService,
-      ],
-      const [
-        EventManager,
-      ],
-    ],
-  );
 }

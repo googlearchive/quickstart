@@ -4,6 +4,7 @@
 library kernel.class_hierarchy;
 
 import 'ast.dart';
+import 'dart:collection' show IterableBase;
 import 'dart:math';
 import 'dart:typed_data';
 import 'src/heap.dart';
@@ -25,6 +26,7 @@ abstract class ClassHierarchy {
     }
     onAmbiguousSupertypes ??= (Class cls, Supertype a, Supertype b) {
       if (!cls.isSyntheticMixinImplementation) {
+        // See https://github.com/dart-lang/sdk/issues/32091
         throw "$cls can't implement both $a and $b";
       }
     };
@@ -338,9 +340,13 @@ class ClosedWorldClassHierarchy implements ClassHierarchy {
 
   final Map<Class, _ClassInfo> _infoFor = <Class, _ClassInfo>{};
 
+  /// All classes ordered by [_ClassInfo.topDownIndex].
+  final List<Class> _classesByTopDownIndex;
+
   ClosedWorldClassHierarchy._internal(
       this._program, int numberOfClasses, this._onAmbiguousSupertypes)
-      : classes = new List<Class>(numberOfClasses);
+      : classes = new List<Class>(numberOfClasses),
+        _classesByTopDownIndex = new List<Class>(numberOfClasses);
 
   @override
   int getClassIndex(Class class_) => _infoFor[class_].topologicalIndex;
@@ -558,9 +564,8 @@ class ClosedWorldClassHierarchy implements ClassHierarchy {
     Name name = interfaceTarget.name;
     Member target = null;
     ClassSet subtypes = getSubtypesOf(interfaceTarget.enclosingClass);
-    // TODO(alexmarkov): Implement more efficient way to iterate subtypes.
-    for (Class c in classes) {
-      if (subtypes.contains(c) && !c.isAbstract) {
+    for (Class c in subtypes) {
+      if (!c.isAbstract) {
         Member candidate = getDispatchTarget(c, name, setter: setter);
         if ((candidate != null) && !candidate.isAbstract) {
           if (target == null) {
@@ -941,27 +946,13 @@ class ClosedWorldClassHierarchy implements ClassHierarchy {
     _ClassInfo superInfo = _infoFor[supertype.classNode];
     if (supertype.typeArguments.isEmpty) {
       if (superInfo.genericSuperTypes == null) return;
-      // Since the immediate super type is not generic, all entries in its
-      // super type map are also valid entries for this class.
-      if (subInfo.genericSuperTypes == null &&
-          superInfo.ownsGenericSuperTypeMap) {
-        // Instead of copying the map, take ownership of the map object.
-        // This may result in more entries being added to the map later. Those
-        // are not valid for the super type, but it works out because all
-        // lookups in the map are guarded by a subtype check, so the super type
-        // will not be bothered by the extra entries.
-        subInfo.genericSuperTypes = superInfo.genericSuperTypes;
-        superInfo.ownsGenericSuperTypeMap = false;
-      } else {
-        // Copy over the super type entries.
-        subInfo.genericSuperTypes ??= <Class, List<Supertype>>{};
-        superInfo.genericSuperTypes
-            ?.forEach((Class key, List<Supertype> types) {
-          for (Supertype type in types) {
-            subInfo.recordGenericSuperType(key, type, _onAmbiguousSupertypes);
-          }
-        });
-      }
+      // Copy over the super type entries.
+      subInfo.genericSuperTypes ??= <Class, List<Supertype>>{};
+      superInfo.genericSuperTypes?.forEach((Class key, List<Supertype> types) {
+        for (Supertype type in types) {
+          subInfo.recordGenericSuperType(key, type, _onAmbiguousSupertypes);
+        }
+      });
     } else {
       // Copy over all transitive generic super types, and substitute the
       // free variables with those provided in [supertype].
@@ -989,6 +980,7 @@ class ClosedWorldClassHierarchy implements ClassHierarchy {
     bool isMixedIn = info.directMixers.isNotEmpty;
     int index = _topDownSortIndex++;
     info.topDownIndex = index;
+    _classesByTopDownIndex[index] = info.classNode;
     var subclassSetBuilder = new _IntervalListBuilder()..addSingleton(index);
     var submixtureSetBuilder =
         isMixedIn ? (new _IntervalListBuilder()..addSingleton(index)) : null;
@@ -1061,10 +1053,7 @@ class ClosedWorldClassHierarchy implements ClassHierarchy {
   int getSuperTypeHashTableSize() {
     int sum = 0;
     for (Class class_ in classes) {
-      _ClassInfo info = _infoFor[class_];
-      if (info.ownsGenericSuperTypeMap) {
-        sum += _infoFor[class_].genericSuperTypes?.length ?? 0;
-      }
+      sum += _infoFor[class_].genericSuperTypes?.length ?? 0;
     }
     return sum;
   }
@@ -1199,28 +1188,7 @@ class _ClassInfo {
   ///
   /// E.g. `List` maps to `List<String>` for a class that directly of indirectly
   /// implements `List<String>`.
-  ///
-  /// However, the map may contain additional entries for classes that are not
-  /// supertypes of this class, so that a single map object can be shared
-  /// between different classes.  Lookups into the map should therefore be
-  /// guarded by a subtype check.
-  ///
-  /// For example:
-  ///
-  ///     class Q<T>
-  ///     class A<T>
-  ///
-  ///     class B extends A<String>
-  ///     class C extends B implements Q<int>
-  ///
-  /// In this case, a single map object `{A: A<String>, Q: Q<int>}` may be
-  /// shared by the classes `B` and `C`.
   Map<Class, List<Supertype>> genericSuperTypes;
-
-  /// If true, this is the current "owner" of [genericSuperTypes], meaning
-  /// we may add additional entries to the map or transfer ownership to another
-  /// class.
-  bool ownsGenericSuperTypeMap = true;
 
   /// Instance fields, getters, methods, and operators declared in this class
   /// or its mixed-in class, sorted according to [_compareMembers].
@@ -1256,7 +1224,7 @@ class _ClassInfo {
 }
 
 /// An immutable set of classes, internally represented as an interval list.
-class ClassSet {
+class ClassSet extends IterableBase<Class> {
   final ClosedWorldClassHierarchy _hierarchy;
   final Uint32List _intervalList;
 
@@ -1269,9 +1237,10 @@ class ClassSet {
     return list.length == 2 && list[0] + 1 == list[1];
   }
 
-  bool contains(Class class_) {
+  @override
+  bool contains(Object class_) {
     return _intervalListContains(
-        _intervalList, _hierarchy._infoFor[class_].topDownIndex);
+        _intervalList, _hierarchy._infoFor[class_ as Class].topDownIndex);
   }
 
   ClassSet union(ClassSet other) {
@@ -1282,6 +1251,51 @@ class ClassSet {
     builder.addIntervalList(other._intervalList);
     return new ClassSet(_hierarchy, builder.buildIntervalList());
   }
+
+  @override
+  Iterator<Class> get iterator =>
+      new _ClassSetIterator(_hierarchy, _intervalList);
+}
+
+/// Iterator for [ClassSet].
+class _ClassSetIterator implements Iterator<Class> {
+  final ClosedWorldClassHierarchy _hierarchy;
+  final Uint32List _intervalList;
+  int _intervalIndex;
+  int _classIndex;
+  int _classIndexLimit;
+
+  // Interval list is a list of pairs (start, end).
+  static const int _intervalIndexStep = 2;
+
+  _ClassSetIterator(this._hierarchy, this._intervalList)
+      : _intervalIndex = -_intervalIndexStep,
+        _classIndex = -1,
+        _classIndexLimit = -1;
+
+  @override
+  bool moveNext() {
+    if (_classIndex + 1 < _classIndexLimit) {
+      _classIndex++;
+      return true;
+    }
+
+    if (_intervalIndex + _intervalIndexStep < _intervalList.length) {
+      _intervalIndex += _intervalIndexStep;
+      _classIndex = _intervalList[_intervalIndex];
+      _classIndexLimit = _intervalList[_intervalIndex + 1];
+      assert(_classIndex < _classIndexLimit);
+      return true;
+    }
+
+    _classIndex = _classIndexLimit = -1;
+    return false;
+  }
+
+  @override
+  Class get current => (_classIndex >= 0)
+      ? _hierarchy._classesByTopDownIndex[_classIndex]
+      : null;
 }
 
 /// Heap for use in computing least upper bounds.

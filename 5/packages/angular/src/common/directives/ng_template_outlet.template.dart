@@ -9,7 +9,6 @@ import 'ng_template_outlet.dart';
 export 'ng_template_outlet.dart';
 import 'package:angular/core.dart' show Directive, DoCheck, Input, Visibility;
 import 'package:angular/src/core/linker.dart' show EmbeddedViewRef, TemplateRef, ViewContainerRef;
-// Required for initReflector().
 import 'package:angular/core.template.dart' as _ref0;
 import 'package:angular/src/core/linker.template.dart' as _ref1;
 
@@ -19,6 +18,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
 }

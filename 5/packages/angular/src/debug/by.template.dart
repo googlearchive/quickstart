@@ -9,7 +9,6 @@ import 'by.dart';
 export 'by.dart';
 import 'dart:html';
 import "debug_node.dart";
-// Required for initReflector().
 import 'debug_node.template.dart' as _ref0;
 
 var _visited = false;
@@ -18,5 +17,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

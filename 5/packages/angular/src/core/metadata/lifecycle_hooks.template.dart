@@ -8,7 +8,6 @@
 import 'lifecycle_hooks.dart';
 export 'lifecycle_hooks.dart';
 import 'package:angular/src/core/change_detection/change_detection_util.dart' show SimpleChange;
-// Required for initReflector().
 import 'package:angular/src/core/change_detection/change_detection_util.template.dart' as _ref0;
 
 var _visited = false;
@@ -17,5 +16,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

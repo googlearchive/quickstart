@@ -15,7 +15,6 @@ import 'package:angular/src/core/application_ref.dart';
 import 'package:angular/src/core/change_detection/constants.dart';
 import 'package:angular/src/core/linker/app_view_utils.dart';
 import 'package:angular/src/core/linker/view_ref.dart';
-// Required for initReflector().
 import 'package:angular/angular.template.dart' as _ref0;
 import 'package:angular/experimental.template.dart' as _ref1;
 import 'package:angular/src/core/application_ref.template.dart' as _ref2;
@@ -29,6 +28,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

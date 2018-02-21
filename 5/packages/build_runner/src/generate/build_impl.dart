@@ -29,6 +29,7 @@ import '../package_graph/apply_builders.dart';
 import '../package_graph/build_config_overrides.dart';
 import '../package_graph/package_graph.dart';
 import '../package_graph/target_graph.dart';
+import '../performance_tracking/performance_tracking_resolvers.dart';
 import '../util/constants.dart';
 import 'build_definition.dart';
 import 'build_result.dart';
@@ -59,6 +60,7 @@ Future<BuildResult> build(
   bool enableLowResourcesMode,
   Map<String, BuildConfig> overrideBuildConfig,
   String outputDir,
+  bool trackPerformance,
   bool verbose,
   Map<String, Map<String, dynamic>> builderConfigOverrides,
 }) async {
@@ -74,6 +76,7 @@ Future<BuildResult> build(
       writer: writer,
       onLog: onLog);
   var options = new BuildOptions(environment,
+      configKey: configKey,
       deleteFilesByDefault: deleteFilesByDefault,
       failOnSevere: failOnSevere,
       packageGraph: packageGraph,
@@ -82,6 +85,7 @@ Future<BuildResult> build(
       skipBuildScriptCheck: skipBuildScriptCheck,
       enableLowResourcesMode: enableLowResourcesMode,
       outputDir: outputDir,
+      trackPerformance: trackPerformance,
       verbose: verbose);
   var terminator = new Terminator(terminateEventStream);
 
@@ -119,7 +123,9 @@ class BuildImpl {
   final ResourceManager _resourceManager;
   final RunnerAssetWriter _writer;
   final String _outputDir;
+  final bool _trackPerformance;
   final bool _verbose;
+  final BuildEnvironment _environment;
 
   BuildImpl._(
       BuildDefinition buildDefinition, BuildOptions options, this._buildActions)
@@ -133,7 +139,12 @@ class BuildImpl {
         _onDelete = buildDefinition.onDelete,
         _outputDir = options.outputDir,
         _verbose = options.verbose,
-        _failOnSevere = options.failOnSevere;
+        _failOnSevere = options.failOnSevere,
+        _environment = buildDefinition.environment,
+        _trackPerformance = options.trackPerformance;
+
+  Future<BuildResult> run(Map<AssetId, ChangeType> updates) =>
+      new _SingleBuild(this).run(updates);
 
   static Future<BuildImpl> create(BuildDefinition buildDefinition,
       BuildOptions options, List<BuildAction> buildActions,
@@ -143,31 +154,69 @@ class BuildImpl {
     build._firstBuild = await build.run({});
     return build;
   }
+}
+
+/// Performs a single build and manages state that only lives for a single
+/// build.
+class _SingleBuild {
+  final AssetGraph _assetGraph;
+  final List<BuildAction> _buildActions;
+  final BuildEnvironment _environment;
+  final bool _failOnSevere;
+  final _lazyPhases = <String, Future<Iterable<AssetId>>>{};
+  final OnDelete _onDelete;
+  final String _outputDir;
+  final PackageGraph _packageGraph;
+  final BuildPerformanceTracker _performanceTracker;
+  final AssetReader _reader;
+  final Resolvers _resolvers;
+  final ResourceManager _resourceManager;
+  final bool _verbose;
+  final RunnerAssetWriter _writer;
+
+  int numActionsCompleted = 0;
+  int numActionsStarted = 0;
+
+  _SingleBuild(BuildImpl buildImpl)
+      : _assetGraph = buildImpl._assetGraph,
+        _buildActions = buildImpl._buildActions,
+        _environment = buildImpl._environment,
+        _failOnSevere = buildImpl._failOnSevere,
+        _onDelete = buildImpl._onDelete,
+        _outputDir = buildImpl._outputDir,
+        _packageGraph = buildImpl._packageGraph,
+        _performanceTracker = buildImpl._trackPerformance
+            ? new BuildPerformanceTracker()
+            : new BuildPerformanceTracker.noOp(),
+        _reader = buildImpl._reader,
+        _resolvers = buildImpl._resolvers,
+        _resourceManager = buildImpl._resourceManager,
+        _verbose = buildImpl._verbose,
+        _writer = buildImpl._writer;
 
   Future<BuildResult> run(Map<AssetId, ChangeType> updates) async {
     var watch = new Stopwatch()..start();
-    _lazyPhases.clear();
     if (updates.isNotEmpty) {
       await _updateAssetGraph(updates);
     }
     var result = await _safeBuild(_resourceManager);
+    await _resourceManager.disposeAll();
     if (_failOnSevere &&
         _assetGraph.failedActions.isNotEmpty &&
         result.status == BuildStatus.success) {
       int numFailing = _assetGraph.failedActions.values
           .fold(0, (total, ids) => total + ids.length);
-      result = new BuildResult(
-        BuildStatus.failure,
-        result.outputs,
-        exception: 'There were $numFailing actions with SEVERE logs and '
-            '--fail-on-severe was passed.',
-        performance: result.performance,
-      );
+      result = _convertToFailure(
+          result,
+          'There were $numFailing actions with SEVERE logs and '
+          '--fail-on-severe was passed.');
     }
-    await _resourceManager.disposeAll();
-    if (_outputDir != null) {
-      await createMergedOutputDir(
-          _outputDir, _assetGraph, _packageGraph, _reader);
+    if (_outputDir != null && result.status == BuildStatus.success) {
+      if (!await createMergedOutputDir(
+          _outputDir, _assetGraph, _packageGraph, _reader, _environment)) {
+        result = _convertToFailure(
+            result, 'Failed to create merged output directory.');
+      }
     }
     if (result.status == BuildStatus.success) {
       _logger.info('Succeeded after ${humanReadable(watch.elapsed)} with '
@@ -183,6 +232,14 @@ class BuildImpl {
     return result;
   }
 
+  BuildResult _convertToFailure(BuildResult previous, String errorMessge) =>
+      new BuildResult(
+        BuildStatus.failure,
+        previous.outputs,
+        exception: errorMessge,
+        performance: previous.performance,
+      );
+
   Future<Null> _updateAssetGraph(Map<AssetId, ChangeType> updates) async {
     await logTimedAsync(_logger, 'Updating asset graph', () async {
       var invalidated = await _assetGraph.updateAndInvalidate(
@@ -197,7 +254,11 @@ class BuildImpl {
   /// capturing.
   Future<BuildResult> _safeBuild(ResourceManager resourceManager) {
     var done = new Completer<BuildResult>();
-    var heartbeat = new HeartbeatLogger()..start();
+
+    var heartbeat = new HeartbeatLogger(
+        transformLog: (original) => '$original, ${_buildProgress()}',
+        waitDuration: new Duration(seconds: 1))
+      ..start();
     done.future.then((_) {
       heartbeat.stop();
     });
@@ -225,15 +286,19 @@ class BuildImpl {
     return done.future;
   }
 
+  /// Returns a message describing the progress of the current build.
+  String _buildProgress() =>
+      '$numActionsCompleted/$numActionsStarted actions completed.';
+
   /// Runs the actions in [_buildActions] and returns a [Future<BuildResult>]
   /// which completes once all [BuildAction]s are done.
   Future<BuildResult> _runPhases(ResourceManager resourceManager) async {
-    var performanceTracker = new BuildPerformanceTracker()..start();
+    _performanceTracker.start();
     final outputs = <AssetId>[];
     for (var phase = 0; phase < _buildActions.length; phase++) {
       var action = _buildActions[phase];
       if (action.isOptional) continue;
-      await performanceTracker.trackAction(action, () async {
+      await _performanceTracker.trackBuildPhase(action, () async {
         var primaryInputs =
             await _matchingPrimaryInputs(action, phase, resourceManager);
         outputs.addAll(await _runBuilder(phase, action.hideOutput,
@@ -245,7 +310,7 @@ class BuildImpl {
         (Future<Iterable<AssetId>> lazyOuts) async =>
             outputs.addAll(await lazyOuts));
     return new BuildResult(BuildStatus.success, outputs,
-        performance: performanceTracker..stop());
+        performance: _performanceTracker..stop());
   }
 
   /// Gets a list of all inputs matching the [action], as well as
@@ -297,8 +362,6 @@ class BuildImpl {
         <AssetId>[], (combined, next) => combined..addAll(next));
   }
 
-  final _lazyPhases = <String, Future<Iterable<AssetId>>>{};
-
   /// Lazily runs [phaseNumber] with [input] and [resourceManager].
   Future<Iterable<AssetId>> _runLazyPhaseForInput(int phaseNumber,
       bool outputsHidden, AssetId input, ResourceManager resourceManager) {
@@ -324,6 +387,8 @@ class BuildImpl {
 
   Future<Iterable<AssetId>> _runForInput(int phaseNumber, bool outputsHidden,
       Builder builder, AssetId input, ResourceManager resourceManager) async {
+    var tracker = _performanceTracker.startBuilderAction(input, builder);
+
     var builderOutputs = expectedOutputs(builder, input);
 
     // Add `builderOutputs` to the primary outputs of the input.
@@ -347,7 +412,9 @@ class BuildImpl {
         (phase, input) => _runLazyPhaseForInput(
             phase, outputsHidden, input, resourceManager));
 
-    if (!await _buildShouldRun(builderOutputs, wrappedReader)) {
+    if (!await tracker.track(
+        () => _buildShouldRun(builderOutputs, wrappedReader), 'Setup')) {
+      tracker.stop();
       return <AssetId>[];
     }
 
@@ -359,8 +426,13 @@ class BuildImpl {
 
     var wrappedWriter = new AssetWriterSpy(_writer);
     var logger = new ErrorRecordingLogger(new Logger('$builder on $input'));
-    await runBuilder(builder, [input], wrappedReader, wrappedWriter, _resolvers,
-        logger: logger, resourceManager: resourceManager);
+    numActionsStarted++;
+    await tracker.track(
+        () => runBuilder(builder, [input], wrappedReader, wrappedWriter,
+            new PerformanceTrackingResolvers(_resolvers, tracker),
+            logger: logger, resourceManager: resourceManager),
+        'Build');
+    numActionsCompleted++;
     if (logger.errorWasSeen) {
       _assetGraph.markActionFailed(phaseNumber, input);
     } else {
@@ -369,8 +441,11 @@ class BuildImpl {
 
     // Reset the state for all the `builderOutputs` nodes based on what was
     // read and written.
-    await _setOutputsState(builderOutputs, wrappedReader, wrappedWriter);
+    await tracker.track(
+        () => _setOutputsState(builderOutputs, wrappedReader, wrappedWriter),
+        'Finalize');
 
+    tracker.stop();
     return wrappedWriter.assetsWritten;
   }
 
@@ -420,7 +495,7 @@ class BuildImpl {
   Future<Null> _cleanUpStaleOutputs(Iterable<AssetId> outputs) async {
     await Future.wait(outputs.map((output) {
       var node = _assetGraph.get(output) as GeneratedAssetNode;
-      if (node.wasOutput) return _writer.delete(output);
+      if (node.wasOutput) return _delete(output);
       return new Future.value(null);
     }));
   }

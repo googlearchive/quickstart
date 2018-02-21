@@ -1686,6 +1686,21 @@ class CompileTimeErrorCode extends ErrorCode {
           "This mixin application is invalid because all of the constructors "
           "in the base class '{0}' have optional parameters.");
 
+  static const CompileTimeErrorCode
+      MIXIN_INFERENCE_INCONSISTENT_MATCHING_CLASSES =
+      const CompileTimeErrorCode(
+          'MIXIN_INFERENCE_INCONSISTENT_MATCHING_CLASSES',
+          "Type parameters could not be inferred for the mixin '{0}' because "
+          "the base class implements the mixin's supertype constraint "
+          "'{1}' in multiple conflicting ways");
+
+  static const CompileTimeErrorCode MIXIN_INFERENCE_NO_MATCHING_CLASS =
+      const CompileTimeErrorCode(
+          'MIXIN_INFERENCE_NO_MATCHING_CLASS',
+          "Type parameters could not be inferred for the mixin '{0}' because "
+          "the base class does not implement the mixin's supertype "
+          "constraint '{1}'");
+
   /**
    * 9 Mixins: It is a compile-time error if a mixin is derived from a class
    * whose superclass is not Object.
@@ -2820,13 +2835,13 @@ class StaticTypeWarningCode extends ErrorCode {
           "Try changing the condition.");
 
   /**
-   * 13.15 Assert: It is a static type warning if the type of <i>e</i> may not
-   * be assigned to either bool or () &rarr; bool
+   * 17.17 Assert: It is a static type warning if the type of <i>e</i> may not
+   * be assigned to bool.
    */
   static const StaticTypeWarningCode NON_BOOL_EXPRESSION =
       const StaticTypeWarningCode(
           'NON_BOOL_EXPRESSION',
-          "Assertions must be on either a 'bool' or '() -> bool'.",
+          "The expression in an assert must be of type 'bool'.",
           "Try changing the expression.");
 
   /**
@@ -4746,6 +4761,20 @@ class StaticWarningCode extends ErrorCode {
           "defining the setter in a superclass of '{1}'.");
 
   /**
+   * It is a static warning to assign void to any non-void type in dart.
+   * compile-time error). Report that error specially for a better user
+   * experience.
+   *
+   * Parameters: none
+   */
+  static const StaticWarningCode USE_OF_VOID_RESULT = const StaticWarningCode(
+      'USE_OF_VOID_RESULT',
+      "The expression here has a type of 'void', and therefore cannot be used.",
+      'Check if you are using the correct API; there may be a function or'
+      " call that returns void you didn't expect. Also check type parameters"
+      ' and variables which, in rare cases, may be void as well.');
+
+  /**
    * A flag indicating whether this warning is an error when running with strong
    * mode enabled.
    */
@@ -5055,12 +5084,6 @@ class StrongModeCode extends ErrorCode {
       "The type of '{0}' can't be inferred because it refers to an instance "
       "method, '{1}', which has an implicit type.",
       "Add an explicit type for either '{0}' or '{1}'.");
-
-  static const StrongModeCode TOP_LEVEL_TYPE_ARGUMENTS = const StrongModeCode(
-      ErrorType.HINT,
-      'TOP_LEVEL_TYPE_ARGUMENTS',
-      "The type of '{0}' can't be inferred because type arguments were not given for '{1}'.",
-      "Try adding type arguments for '{1}', or add an explicit type for '{0}'.");
 
   static const StrongModeCode TOP_LEVEL_UNSUPPORTED = const StrongModeCode(
       ErrorType.HINT,

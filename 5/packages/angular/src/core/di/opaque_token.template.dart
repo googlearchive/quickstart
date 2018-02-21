@@ -8,7 +8,6 @@
 import 'opaque_token.dart';
 export 'opaque_token.dart';
 import 'package:meta/meta.dart';
-// No initReflector() linking required.
 
-// No initReflector() needed.
+// No initReflector() linking required.
 void initReflector() {}

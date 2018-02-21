@@ -12,7 +12,6 @@ import '../../di/injector/injector.dart';
 import '../di/decorators.dart';
 import 'component_factory.dart';
 import 'view_container_ref.dart';
-// Required for initReflector().
 import 'package:angular/src/di/reflector.dart' as _ngRef;
 import '../../di/injector/injector.template.dart' as _ref0;
 import '../di/decorators.template.dart' as _ref1;
@@ -25,12 +24,10 @@ void initReflector() {
     return;
   }
   _visited = true;
+
+  _ngRef.registerFactory(ComponentLoader, () => new ComponentLoader());
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();
   _ref3.initReflector();
-  _ngRef.registerFactory(
-    ComponentLoader,
-    () => new ComponentLoader(),
-  );
 }

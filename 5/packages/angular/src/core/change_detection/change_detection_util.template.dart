@@ -9,7 +9,6 @@ import 'change_detection_util.dart';
 export 'change_detection_util.dart';
 import 'package:collection/collection.dart';
 import 'package:angular/src/facade/lang.dart' show isPrimitive;
-// Required for initReflector().
 import 'package:angular/src/facade/lang.template.dart' as _ref0;
 
 var _visited = false;
@@ -18,5 +17,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

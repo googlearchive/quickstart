@@ -9,7 +9,6 @@ import 'style_sanitizer.dart';
 export 'style_sanitizer.dart';
 import 'package:logging/logging.dart';
 import 'url_sanitizer.dart';
-// Required for initReflector().
 import 'url_sanitizer.template.dart' as _ref0;
 
 var _visited = false;
@@ -18,5 +17,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

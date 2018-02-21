@@ -10,7 +10,6 @@ export 'throws_in_angular.dart';
 import 'package:matcher/matcher.dart';
 import 'package:test/test.dart';
 import 'package:angular/src/facade/exceptions.dart';
-// Required for initReflector().
 import 'package:angular/src/facade/exceptions.template.dart' as _ref0;
 
 var _visited = false;
@@ -19,5 +18,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

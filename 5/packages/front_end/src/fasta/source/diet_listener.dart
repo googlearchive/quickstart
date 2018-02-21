@@ -482,7 +482,7 @@ class DietListener extends StackListener {
       // redirecting factory bodies.
       return;
     }
-    buildFunctionBody(bodyToken, lookupBuilder(beginToken, null, name),
+    buildFunctionBody(bodyToken, lookupConstructor(beginToken, name),
         MemberKind.Factory, metadata);
   }
 
@@ -511,19 +511,25 @@ class DietListener extends StackListener {
   }
 
   @override
-  void endMethod(Token getOrSet, Token beginToken, Token endToken) {
+  void endMethod(
+      Token getOrSet, Token beginToken, Token beginParam, Token endToken) {
     debugEvent("Method");
-    Token bodyToken = pop();
+    // TODO(danrubel): Consider removing the beginParam parameter
+    // and using bodyToken, but pushing a NullValue on the stack
+    // in handleNoFormalParameters rather than the supplied token.
+    pop(); // bodyToken
     Object name = pop();
     Token metadata = pop();
     checkEmpty(beginToken.charOffset);
-    if (bodyToken == null) {
-      // TODO(ahe): Don't skip this. We need to compile metadata.
-      return;
+    ProcedureBuilder builder;
+    if (name is QualifiedName ||
+        (getOrSet == null && name == currentClass.name)) {
+      builder = lookupConstructor(beginToken, name);
+    } else {
+      builder = lookupBuilder(beginToken, getOrSet, name);
     }
-    ProcedureBuilder builder = lookupBuilder(beginToken, getOrSet, name);
     buildFunctionBody(
-        bodyToken,
+        beginParam,
         builder,
         builder.isStatic ? MemberKind.StaticMethod : MemberKind.NonStaticMethod,
         metadata);
@@ -723,30 +729,17 @@ class DietListener extends StackListener {
     Token token = startToken;
     Parser parser = new Parser(listener);
     if (isTopLevel) {
-      // There's a slight asymmetry between [parseTopLevelMember] and
-      // [parseMember] because the former doesn't call `parseMetadataStar`.
-      token = parser
-          .parseMetadataStar(parser.syntheticPreviousToken(metadata ?? token));
-      token = parser.parseTopLevelMember(token).next;
+      token = parser.parseTopLevelMember(metadata ?? token);
     } else {
-      token = parser.parseMember(metadata ?? token).next;
+      token = parser.parseClassMember(metadata ?? token).next;
     }
     listenerFinishFields(listener, startToken, metadata, isTopLevel);
     listener.checkEmpty(token.charOffset);
   }
 
-  Builder lookupBuilder(Token token, Token getOrSet, Object nameOrQualified) {
+  Builder lookupBuilder(Token token, Token getOrSet, String name) {
     // TODO(ahe): Can I move this to Scope or ScopeBuilder?
     Builder builder;
-    String name;
-    String suffix;
-    if (nameOrQualified is QualifiedName) {
-      name = nameOrQualified.prefix;
-      suffix = nameOrQualified.suffix;
-      assert(currentClass != null);
-    } else {
-      name = nameOrQualified;
-    }
     if (currentClass != null) {
       if (uri != currentClass.fileUri) {
         unexpected("$uri", "${currentClass.fileUri}", currentClass.charOffset,
@@ -756,40 +749,46 @@ class DietListener extends StackListener {
       if (getOrSet != null && optional("set", getOrSet)) {
         builder = currentClass.scope.setters[name];
       } else {
-        if (name == currentClass.name) {
-          suffix ??= "";
-        }
-        if (suffix != null) {
-          builder = currentClass.constructors.local[suffix];
-        } else {
-          builder = currentClass.constructors.local[name];
-          if (builder == null) {
-            builder = currentClass.scope.local[name];
-          }
-        }
+        builder = currentClass.scope.local[name];
       }
     } else if (getOrSet != null && optional("set", getOrSet)) {
       builder = library.scope.setters[name];
     } else {
       builder = library.scopeBuilder[name];
     }
+    checkBuilder(token, builder, name);
+    return builder;
+  }
+
+  Builder lookupConstructor(Token token, Object nameOrQualified) {
+    assert(currentClass != null);
+    Builder builder;
+    String name;
+    String suffix;
+    if (nameOrQualified is QualifiedName) {
+      name = nameOrQualified.prefix;
+      suffix = nameOrQualified.suffix;
+    } else {
+      name = nameOrQualified;
+      suffix = name == currentClass.name ? "" : name;
+    }
+    builder = currentClass.constructors.local[suffix];
+    checkBuilder(token, builder, nameOrQualified);
+    return builder;
+  }
+
+  void checkBuilder(Token token, Builder builder, Object name) {
     if (builder == null) {
-      return internalProblem(
-          templateInternalProblemNotFound.withArguments(name),
-          token.charOffset,
-          uri);
+      internalProblem(templateInternalProblemNotFound.withArguments("$name"),
+          token.charOffset, uri);
     }
     if (builder.next != null) {
-      String errorName = suffix == null ? name : "$name.$suffix";
-      return deprecated_inputError(
-          uri, token.charOffset, "Duplicated name: $errorName");
+      deprecated_inputError(uri, token.charOffset, "Duplicated name: $name");
     }
-
     if (uri != builder.fileUri) {
       unexpected(
           "$uri", "${builder.fileUri}", builder.charOffset, builder.fileUri);
     }
-    return builder;
   }
 
   @override

@@ -8,7 +8,6 @@
 import 'application_tokens.dart';
 export 'application_tokens.dart';
 import 'di.dart' show OpaqueToken;
-// Required for initReflector().
 import 'di.template.dart' as _ref0;
 
 var _visited = false;
@@ -17,5 +16,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

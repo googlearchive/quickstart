@@ -14,7 +14,6 @@ import '../change_detection/change_detection.dart' show ChangeDetectorRef;
 import 'app_view.dart';
 import 'app_view_utils.dart' show OnDestroyCallback;
 import 'view_ref.dart' show ViewRef;
-// Required for initReflector().
 import '../change_detection/change_detection.template.dart' as _ref0;
 import 'app_view.template.dart' as _ref1;
 import 'app_view_utils.template.dart' as _ref2;
@@ -28,6 +27,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

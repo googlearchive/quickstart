@@ -9,7 +9,15 @@ import 'query_list.dart';
 export 'query_list.dart';
 import 'dart:async';
 import 'dart:collection';
-// No initReflector() linking required.
+import '../metadata.dart' show ContentChildren, ViewChildren;
+import '../metadata.template.dart' as _ref0;
 
-// No initReflector() needed.
-void initReflector() {}
+var _visited = false;
+void initReflector() {
+  if (_visited) {
+    return;
+  }
+  _visited = true;
+
+  _ref0.initReflector();
+}

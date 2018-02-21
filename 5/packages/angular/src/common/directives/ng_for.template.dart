@@ -10,7 +10,6 @@ export 'ng_for.dart';
 import 'package:angular/core.dart' show DoCheck, Directive, Input, Visibility;
 import '../../core/change_detection/differs/default_iterable_differ.dart' show DefaultIterableDiffer, CollectionChangeRecord, TrackByFn;
 import '../../core/linker.dart' show ViewContainerRef, ViewRef, TemplateRef, EmbeddedViewRef;
-// Required for initReflector().
 import '../../core/change_detection/differs/default_iterable_differ.template.dart' as _ref0;
 import '../../core/linker.template.dart' as _ref1;
 import 'package:angular/core.template.dart' as _ref2;
@@ -21,6 +20,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

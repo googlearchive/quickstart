@@ -239,7 +239,9 @@ class Int32 implements IntX {
     if (n < 0) {
       throw new ArgumentError(n);
     }
-    n &= 31;
+    if (n >= 32) {
+      return ZERO;
+    }
     return new Int32(_i << n);
   }
 
@@ -247,7 +249,9 @@ class Int32 implements IntX {
     if (n < 0) {
       throw new ArgumentError(n);
     }
-    n &= 31;
+    if (n >= 32) {
+      return isNegative ? const Int32._internal(-1) : ZERO;
+    }
     int value;
     if (_i >= 0) {
       value = _i >> n;
@@ -261,7 +265,9 @@ class Int32 implements IntX {
     if (n < 0) {
       throw new ArgumentError(n);
     }
-    n &= 31;
+    if (n >= 32) {
+      return ZERO;
+    }
     int value;
     if (_i >= 0) {
       value = _i >> n;

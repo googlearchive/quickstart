@@ -10,7 +10,6 @@ export 'date_pipe.dart';
 import 'package:intl/intl.dart';
 import 'package:angular/core.dart';
 import 'invalid_pipe_argument_exception.dart';
-// Required for initReflector().
 import 'invalid_pipe_argument_exception.template.dart' as _ref0;
 import 'package:angular/core.template.dart' as _ref1;
 
@@ -20,6 +19,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
 }

@@ -12,7 +12,6 @@ import 'package:angular/src/core/change_detection/constants.dart' show ChangeDet
 import '../change_detection/change_detector_ref.dart' show ChangeDetectorRef;
 import 'app_view.dart' show AppView;
 import 'app_view_utils.dart';
-// Required for initReflector().
 import '../change_detection/change_detector_ref.template.dart' as _ref0;
 import 'app_view.template.dart' as _ref1;
 import 'app_view_utils.template.dart' as _ref2;
@@ -24,6 +23,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

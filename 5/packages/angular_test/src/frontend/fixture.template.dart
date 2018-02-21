@@ -16,7 +16,6 @@ import 'package:angular/src/debug/debug_app_view.dart';
 import 'package:angular/src/debug/debug_node.dart';
 import 'bed.dart';
 import 'stabilizer.dart';
-// Required for initReflector().
 import 'bed.template.dart' as _ref0;
 import 'package:angular/angular.template.dart' as _ref1;
 import 'package:angular/src/core/linker/view_ref.template.dart' as _ref2;
@@ -30,6 +29,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

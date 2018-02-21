@@ -16,7 +16,6 @@ import 'package:angular/src/core/linker.dart' show ComponentRef;
 import 'package:angular/src/core/testability/testability.dart';
 import 'package:angular/src/di/injector/runtime.dart';
 import 'package:angular/src/platform/browser_common.dart';
-// Required for initReflector().
 import 'browser/tools/tools.template.dart' as _ref0;
 import 'package:angular/core.template.dart' as _ref1;
 import 'package:angular/src/bootstrap/modules.template.dart' as _ref2;
@@ -32,6 +31,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();

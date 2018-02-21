@@ -23,8 +23,11 @@ const _hostname = 'hostname';
 const _output = 'output';
 const _config = 'config';
 const _verbose = 'verbose';
+const _trackPerformance = 'track-performance';
 
 final _pubBinary = Platform.isWindows ? 'pub.bat' : 'pub';
+
+final _defaultWebDirs = const ['web', 'test', 'example', 'benchmark'];
 
 /// Unified command runner for all build_runner commands.
 class BuildCommandRunner extends CommandRunner<int> {
@@ -66,6 +69,9 @@ class _SharedOptions {
   /// created.
   final String outputDir;
 
+  /// Enables performance tracking and the `/$perf` page.
+  final bool trackPerformance;
+
   final bool verbose;
 
   // Global config overrides by builder.
@@ -82,6 +88,7 @@ class _SharedOptions {
     @required this.enableLowResourcesMode,
     @required this.configKey,
     @required this.outputDir,
+    @required this.trackPerformance,
     @required this.verbose,
     @required this.builderConfigOverrides,
   });
@@ -95,6 +102,7 @@ class _SharedOptions {
       enableLowResourcesMode: argResults[_lowResourcesMode] as bool,
       configKey: argResults[_config] as String,
       outputDir: argResults[_output] as String,
+      trackPerformance: argResults[_trackPerformance] as bool,
       verbose: argResults[_verbose] as bool,
       builderConfigOverrides:
           _parseBuilderConfigOverrides(argResults[_define], rootPackage),
@@ -116,6 +124,7 @@ class _ServeOptions extends _SharedOptions {
     @required bool enableLowResourcesMode,
     @required String configKey,
     @required String outputDir,
+    @required bool trackPerformance,
     @required bool verbose,
     @required Map<String, Map<String, dynamic>> builderConfigOverrides,
   })
@@ -126,6 +135,7 @@ class _ServeOptions extends _SharedOptions {
           enableLowResourcesMode: enableLowResourcesMode,
           configKey: configKey,
           outputDir: outputDir,
+          trackPerformance: trackPerformance,
           verbose: verbose,
           builderConfigOverrides: builderConfigOverrides,
         );
@@ -133,17 +143,19 @@ class _ServeOptions extends _SharedOptions {
   factory _ServeOptions.fromParsedArgs(
       ArgResults argResults, String rootPackage) {
     var serveTargets = <_ServeTarget>[];
+    int nextDefaultPort = 8080;
     for (var arg in argResults.rest) {
       var parts = arg.split(':');
       var path = parts.first;
-      var port = parts.length == 2 ? int.parse(parts[1]) : 8080;
+      var port = parts.length == 2 ? int.parse(parts[1]) : nextDefaultPort++;
       serveTargets.add(new _ServeTarget(path, port));
     }
     if (serveTargets.isEmpty) {
-      serveTargets.addAll([
-        new _ServeTarget('web', 8080),
-        new _ServeTarget('test', 8081),
-      ]);
+      for (var dir in _defaultWebDirs) {
+        if (new Directory(dir).existsSync()) {
+          serveTargets.add(new _ServeTarget(dir, nextDefaultPort++));
+        }
+      }
     }
     return new _ServeOptions._(
       hostName: argResults[_hostname] as String,
@@ -154,6 +166,7 @@ class _ServeOptions extends _SharedOptions {
       enableLowResourcesMode: argResults[_lowResourcesMode] as bool,
       configKey: argResults[_config] as String,
       outputDir: argResults[_output] as String,
+      trackPerformance: argResults[_trackPerformance] as bool,
       verbose: argResults[_verbose] as bool,
       builderConfigOverrides:
           _parseBuilderConfigOverrides(argResults[_define], rootPackage),
@@ -209,6 +222,10 @@ abstract class BuildRunnerCommand extends Command<int> {
           help: 'Whether to consider the build a failure on an error logged.',
           negatable: true,
           defaultsTo: false)
+      ..addFlag(_trackPerformance,
+          help: r'Enables performance tracking and the /$perf page.',
+          negatable: true,
+          defaultsTo: false)
       ..addOption(_output,
           help: 'A directory to write the result of a build to.', abbr: 'o')
       ..addFlag('verbose',
@@ -218,6 +235,7 @@ abstract class BuildRunnerCommand extends Command<int> {
           help: 'Enables verbose logging.')
       ..addOption(_define,
           allowMultiple: true,
+          splitCommas: false,
           help: 'Sets the global `options` config for a builder by key.');
   }
 
@@ -281,6 +299,7 @@ class _WatchCommand extends BuildRunnerCommand {
         assumeTty: options.assumeTty,
         outputDir: options.outputDir,
         packageGraph: packageGraph,
+        trackPerformance: options.trackPerformance,
         verbose: options.verbose,
         builderConfigOverrides: options.builderConfigOverrides);
     await handler.currentBuild;
@@ -296,6 +315,9 @@ class _ServeCommand extends _WatchCommand {
       ..addOption(_hostname,
           help: 'Specify the hostname to serve on', defaultsTo: 'localhost');
   }
+
+  @override
+  String get invocation => '${super.invocation} [<directory>[:<port>]]...';
 
   @override
   String get name => 'serve';
@@ -320,6 +342,7 @@ class _ServeCommand extends _WatchCommand {
         assumeTty: options.assumeTty,
         outputDir: options.outputDir,
         packageGraph: packageGraph,
+        trackPerformance: options.trackPerformance,
         verbose: options.verbose,
         builderConfigOverrides: options.builderConfigOverrides);
     var servers = await Future.wait(options.serveTargets.map((target) =>
@@ -372,6 +395,7 @@ class _TestCommand extends BuildRunnerCommand {
           assumeTty: options.assumeTty,
           outputDir: outputDir,
           packageGraph: packageGraph,
+          trackPerformance: options.trackPerformance,
           verbose: options.verbose,
           builderConfigOverrides: options.builderConfigOverrides);
 
@@ -386,9 +410,12 @@ class _TestCommand extends BuildRunnerCommand {
         exitCode = testExitCode;
       }
       return testExitCode;
+    } on BuildTestDependencyError catch (e) {
+      stdout.writeln(e);
+      return ExitCode.config.code;
     } finally {
       // Clean up the output dir if one wasn't explicitly asked for.
-      if (options.outputDir == null && outputDir != null) {
+      if (options?.outputDir == null && outputDir != null) {
         await new Directory(outputDir).delete(recursive: true);
       }
     }
@@ -413,17 +440,7 @@ class _TestCommand extends BuildRunnerCommand {
 
 void _ensureBuildTestDependency(PackageGraph packageGraph) {
   if (packageGraph.allPackages['build_test'] == null) {
-    throw new StateError('''
-Missing dev dependecy on package:build_test, which is required to run tests.
-
-Please update your dev_dependencies section of your pubspec.yaml:
-
-  dev_dependencies:
-    build_runner: any
-    build_test: any
-    # If you need to run web tests, you will also need this dependency.
-    build_web_compilers: any
-''');
+    throw new BuildTestDependencyError();
   }
 }
 
@@ -466,4 +483,18 @@ Map<String, Map<String, dynamic>> _parseBuilderConfigOverrides(
     config[option] = value;
   }
   return builderConfigOverrides;
+}
+
+class BuildTestDependencyError extends StateError {
+  BuildTestDependencyError() : super('''
+Missing dev dependecy on package:build_test, which is required to run tests.
+
+Please update your dev_dependencies section of your pubspec.yaml:
+
+  dev_dependencies:
+    build_runner: any
+    build_test: any
+    # If you need to run web tests, you will also need this dependency.
+    build_web_compilers: any
+''');
 }

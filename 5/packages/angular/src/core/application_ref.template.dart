@@ -25,7 +25,6 @@ import 'linker/view_ref.dart';
 import 'render/api.dart' show sharedStylesHost;
 import 'testability/testability.dart' show TestabilityRegistry, Testability;
 import 'zone/ng_zone.dart' show NgZone, NgZoneError;
-// Required for initReflector().
 import 'package:angular/src/di/reflector.dart' as _ngRef;
 import '../facade/exceptions.template.dart' as _ref0;
 import '../facade/lang.template.dart' as _ref1;
@@ -42,6 +41,9 @@ import 'linker/view_ref.template.dart' as _ref11;
 import 'render/api.template.dart' as _ref12;
 import 'testability/testability.template.dart' as _ref13;
 import 'zone/ng_zone.template.dart' as _ref14;
+import 'package:angular/src/core/application_ref.dart' as _i1;
+import 'package:angular/src/core/zone/ng_zone.dart' as _i2;
+import 'package:angular/src/di/injector/injector.dart' as _i3;
 
 var _visited = false;
 void initReflector() {
@@ -49,6 +51,14 @@ void initReflector() {
     return;
   }
   _visited = true;
+
+  _ngRef.registerFactory(PlatformRefImpl, () => new PlatformRefImpl());
+  _ngRef.registerFactory(ApplicationRefImpl, (_i1.PlatformRefImpl p0, _i2.NgZone p1, _i3.Injector p2) => new ApplicationRefImpl(p0, p1, p2));
+  _ngRef.registerDependencies(ApplicationRefImpl, const [
+    const [_i1.PlatformRefImpl],
+    const [_i2.NgZone],
+    const [_i3.Injector]
+  ]);
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();
@@ -64,27 +74,4 @@ void initReflector() {
   _ref12.initReflector();
   _ref13.initReflector();
   _ref14.initReflector();
-  _ngRef.registerFactory(
-    PlatformRefImpl,
-    () => new PlatformRefImpl(),
-  );
-
-  _ngRef.registerFactory(
-    ApplicationRefImpl,
-    (PlatformRefImpl p0, NgZone p1, Injector p2) => new ApplicationRefImpl(p0, p1, p2),
-  );
-  _ngRef.registerDependencies(
-    ApplicationRefImpl,
-    const [
-      const [
-        PlatformRefImpl,
-      ],
-      const [
-        NgZone,
-      ],
-      const [
-        Injector,
-      ],
-    ],
-  );
 }

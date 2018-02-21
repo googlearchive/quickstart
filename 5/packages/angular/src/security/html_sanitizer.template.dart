@@ -8,7 +8,6 @@
 import 'html_sanitizer.dart';
 export 'html_sanitizer.dart';
 import 'dart:html';
-// No initReflector() linking required.
 
-// No initReflector() needed.
+// No initReflector() linking required.
 void initReflector() {}

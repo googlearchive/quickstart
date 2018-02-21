@@ -10,7 +10,6 @@ export 'util.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-// No initReflector() linking required.
 
-// No initReflector() needed.
+// No initReflector() linking required.
 void initReflector() {}

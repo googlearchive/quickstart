@@ -9,9 +9,7 @@ import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/file_system/physical_file_system.dart';
 import 'package:analyzer/src/dart/sdk/sdk.dart';
-import 'package:analyzer/src/generated/engine.dart' show AnalysisOptions;
 import 'package:analyzer/src/generated/engine.dart';
-import 'package:analyzer/src/generated/source.dart' show DartUriResolver;
 import 'package:analyzer/src/generated/source.dart';
 import 'package:build/build.dart';
 import 'package:cli_util/cli_util.dart' as cli_util;
@@ -40,11 +38,8 @@ class AnalyzerResolver implements ReleasableResolver {
   /// Completer for wrapping up the current phase.
   Completer _currentPhaseComplete;
 
-  AnalyzerResolver(DartUriResolver dartUriResolver, {AnalysisOptions options}) {
-    options ??= new AnalysisOptionsImpl()
-      ..preserveComments = false
-      ..analyzeFunctionBodies = true;
-    _context.analysisOptions = options;
+  AnalyzerResolver(DartUriResolver dartUriResolver) {
+    _context.analysisOptions = new AnalysisOptionsImpl()..strongMode = true;
     _context.sourceFactory =
         new SourceFactory([dartUriResolver, new _AssetUriResolver(this)]);
   }
@@ -68,16 +63,14 @@ class AnalyzerResolver implements ReleasableResolver {
   }
 
   Future<ReleasableResolver> _resolve(BuildStep buildStep,
-      [List<AssetId> entryPoints, bool resolveAllLibraries]) {
+      [List<AssetId> entryPoints]) {
     // Can only have one resolve in progress at a time, so chain the current
     // resolution to be after the last one.
     var phaseComplete = new Completer();
     var future = _lastPhaseComplete.whenComplete(() {
       _currentPhaseComplete = phaseComplete;
       return _performResolve(
-          buildStep,
-          entryPoints == null ? [buildStep.inputId] : entryPoints,
-          resolveAllLibraries);
+          buildStep, entryPoints == null ? [buildStep.inputId] : entryPoints);
     }).then((_) => this);
     // Advance the lastPhaseComplete to be done when this phase is all done.
     _lastPhaseComplete = phaseComplete.future;
@@ -98,9 +91,7 @@ class AnalyzerResolver implements ReleasableResolver {
     _currentBuildStep = null;
   }
 
-  Future _performResolve(BuildStep buildStep, List<AssetId> entryPoints,
-      bool resolveAllLibraries) {
-    resolveAllLibraries ??= true;
+  Future _performResolve(BuildStep buildStep, List<AssetId> entryPoints) {
     if (_currentBuildStep != null) {
       throw new StateError('Cannot be accessed by concurrent transforms');
     }
@@ -118,7 +109,7 @@ class AnalyzerResolver implements ReleasableResolver {
       visiting.add(buildStep.readAsString(assetId).then((contents) {
         var source = sources[assetId];
         if (source == null) {
-          source = new AssetBasedSource(assetId, this);
+          source = new AssetBasedSource(assetId);
           sources[assetId] = source;
         }
         source.updateDependencies(contents);
@@ -156,22 +147,6 @@ class AnalyzerResolver implements ReleasableResolver {
         if (kind != SourceKind.LIBRARY) return null;
         return _context.computeLibraryElement(source);
       }).toList();
-
-      if (resolveAllLibraries) {
-        // Force resolve all other available libraries. As of analyzer > 0.27.1
-        // this is necessary to get resolved constants.
-        var newLibraries = new Set<LibraryElement>();
-        await for (var library in libraries) {
-          if (library.source.uri.scheme == 'dart' ||
-              _entryLibraries.contains(library)) {
-            newLibraries.add(library);
-          } else {
-            newLibraries.add(_context
-                .computeLibraryElement(library.definingCompilationUnit.source));
-          }
-        }
-        _libraries = newLibraries;
-      }
     });
   }
 
@@ -204,9 +179,6 @@ class AssetBasedSource extends Source {
   /// Asset ID where this source can be found.
   final AssetId assetId;
 
-  /// The resolver this is being used in.
-  final AnalyzerResolver _resolver;
-
   /// Cache of dependent asset IDs, to avoid re-parsing the AST.
   Iterable<AssetId> _dependentAssets;
 
@@ -216,7 +188,7 @@ class AssetBasedSource extends Source {
   /// The file contents.
   String _contents;
 
-  AssetBasedSource(this.assetId, this._resolver);
+  AssetBasedSource(this.assetId);
 
   /// Update the dependencies of this source. This parses [contents] but avoids
   /// any analyzer resolution.
@@ -292,30 +264,6 @@ class AssetBasedSource extends Source {
 
   @override
   bool get isInSystemLibrary => false;
-
-  Source resolveRelative(Uri relativeUri) {
-    var id = _resolve(assetId, relativeUri.toString());
-    if (id == null) return null;
-
-    // The entire AST should have been parsed and loaded at this point.
-    var source = _resolver.sources[id];
-    if (source == null) {
-      log.severe('Could not load asset $id');
-    }
-    return source;
-  }
-
-  Uri resolveRelativeUri(Uri relativeUri) {
-    var id = _resolve(assetId, relativeUri.toString());
-    if (id == null) return uri.resolveUri(relativeUri);
-
-    // The entire AST should have been parsed and loaded at this point.
-    var source = _resolver.sources[id];
-    if (source == null) {
-      log.severe('Could not load asset $id');
-    }
-    return source.uri;
-  }
 }
 
 /// Implementation of Analyzer's UriResolver for Barback based assets.
@@ -341,7 +289,7 @@ class _AssetUriResolver implements UriResolver {
     // Analyzer expects that sources which are referenced but do not exist yet
     // still exist, so just make an empty source.
     if (source == null) {
-      source = new AssetBasedSource(assetId, _resolver);
+      source = new AssetBasedSource(assetId);
       _resolver.sources[assetId] = source;
     }
     return source;
@@ -391,18 +339,16 @@ class FutureGroup<E> {
   final Completer<List<E>> _completer = new Completer<List<E>>();
   final List<E> results = [];
 
-  /** Gets the task that failed, if any. */
+  /// The task that failed, if any.
   Future get failedTask => _failedTask;
 
-  /**
-   * Wait for [task] to complete.
-   *
-   * If this group has already been marked as completed, a [StateError] will be
-   * thrown.
-   *
-   * If this group has a [failedTask], new tasks will be ignored, because the
-   * error has already been signaled.
-   */
+  /// Wait for [task] to complete.
+  ///
+  /// If this group has already been marked as completed, a [StateError] will
+  /// be thrown.
+  ///
+  /// If this group has a [failedTask], new tasks will be ignored, because the
+  /// error has already been signaled.
   void add(Future<E> task) {
     if (_failedTask != null) return;
     if (_pending == _FINISHED) throw new StateError("Future already completed");
@@ -425,13 +371,11 @@ class FutureGroup<E> {
     });
   }
 
-  /**
-   * A Future that completes with a List of the values from all the added
-   * tasks, when they have all completed.
-   *
-   * If any task fails, this Future will receive the error. Only the first
-   * error will be sent to the Future.
-   */
+  /// A Future that completes with a List of the values from all the added
+  /// tasks, when they have all completed.
+  ///
+  /// If any task fails, this Future will receive the error. Only the first
+  /// error will be sent to the Future.
   Future<List<E>> get future => _completer.future;
 }
 
@@ -466,13 +410,12 @@ class AnalyzerResolvers implements Resolvers {
     var sdk = new FolderBasedDartSdk(
         resourceProvider, resourceProvider.getFolder(cli_util.getSdkPath()));
     var uriResolver = new DartUriResolver(sdk);
-    return new AnalyzerResolvers._(new AnalyzerResolver(uriResolver,
-        options: new AnalysisOptionsImpl()..strongMode = true));
+    return new AnalyzerResolvers._(new AnalyzerResolver(uriResolver));
   }
 
   @override
   Future<ReleasableResolver> get(BuildStep buildStep) =>
-      _resolver._resolve(buildStep, [buildStep.inputId], false);
+      _resolver._resolve(buildStep, [buildStep.inputId]);
 }
 
 bool _analysisEngineInitialized = false;

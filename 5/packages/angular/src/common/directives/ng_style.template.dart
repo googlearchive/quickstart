@@ -10,7 +10,6 @@ export 'ng_style.dart';
 import 'dart:html';
 import 'package:angular/core.dart' show DoCheck, Directive, Input, Visibility;
 import '../../core/change_detection/differs/default_keyvalue_differ.dart' show DefaultKeyValueDiffer, KeyValueChangeRecord;
-// Required for initReflector().
 import '../../core/change_detection/differs/default_keyvalue_differ.template.dart' as _ref0;
 import 'package:angular/core.template.dart' as _ref1;
 
@@ -20,6 +19,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
 }

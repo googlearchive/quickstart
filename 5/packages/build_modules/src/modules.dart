@@ -9,7 +9,6 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'dev_compiler_builder.dart';
 import 'kernel_builder.dart';
 import 'module_builder.dart';
 import 'summary_builder.dart';
@@ -24,10 +23,11 @@ part 'modules.g.dart';
 @JsonSerializable()
 class Module extends Object with _$ModuleSerializerMixin {
   /// The JS file for this module.
-  AssetId get jsId => primarySource.changeExtension(jsModuleExtension);
+  AssetId jsId(String jsModuleExtension) =>
+      primarySource.changeExtension(jsModuleExtension);
 
   // The sourcemap for the JS file for this module.
-  AssetId get jsSourceMapId =>
+  AssetId jsSourceMapId(String jsSourceMapExtension) =>
       primarySource.changeExtension(jsSourceMapExtension);
 
   // The kernel summary for this module.
@@ -162,13 +162,10 @@ Iterable<LibraryElement> _cycleDependencies(
 /// [library].
 ///
 /// There may be duplicates.
-Iterable<LibraryElement> _libraryDependencies(LibraryElement library) =>
-    [library.importedLibraries, library.exportedLibraries]
-        .expand((l) => l)
-        // TODO: `isInSdk` returns false for some dart: libraries, can remove
-        // the `dart` scheme check once
-        // https://github.com/dart-lang/sdk/issues/31045 is fixed.
-        .where((l) => !l.isInSdk && l.source.uri.scheme != 'dart');
+Iterable<LibraryElement> _libraryDependencies(LibraryElement library) => [
+      library.importedLibraries,
+      library.exportedLibraries
+    ].expand((l) => l).where((l) => !l.source.isInSystemLibrary);
 
 /// All sources for a library cycle, including part files.
 Iterable<Uri> _cycleSources(Iterable<LibraryElement> libraries) =>

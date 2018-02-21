@@ -11,7 +11,6 @@ import 'dart:html';
 import 'dart:js_util' as js_util;
 import 'package:angular/src/core/application_ref.dart';
 import 'package:angular/src/core/linker/app_view.dart';
-// Required for initReflector().
 import 'package:angular/src/core/application_ref.template.dart' as _ref0;
 import 'package:angular/src/core/linker/app_view.template.dart' as _ref1;
 
@@ -21,6 +20,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
 }

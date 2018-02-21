@@ -10,7 +10,6 @@ export 'tools.dart';
 import 'dart:js';
 import 'package:angular/src/core/linker/component_factory.dart' show ComponentRef;
 import 'common_tools.dart' show AngularTools;
-// Required for initReflector().
 import 'common_tools.template.dart' as _ref0;
 import 'package:angular/src/core/linker/component_factory.template.dart' as _ref1;
 
@@ -20,6 +19,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
 }

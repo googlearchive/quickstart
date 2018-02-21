@@ -596,7 +596,7 @@ class BodyBuilder extends ScopeListener<JumpTarget> implements BuilderHelper {
 
   DartType _computeReturnTypeContext(MemberBuilder member) {
     if (member is KernelProcedureBuilder) {
-      return member.target.function.returnType;
+      return member.procedure.function.returnType;
     } else {
       assert(member is KernelConstructorBuilder);
       return null;
@@ -1125,9 +1125,16 @@ class BodyBuilder extends ScopeListener<JumpTarget> implements BuilderHelper {
       cls = cls.superclass;
       if (cls == null) return null;
     }
-    return isSuper
+    Member target = isSuper
         ? hierarchy.getDispatchTarget(cls, name, setter: isSetter)
         : hierarchy.getInterfaceMember(cls, name, setter: isSetter);
+    if (isSuper &&
+        target == null &&
+        library.loader.target.backendTarget.enableSuperMixins &&
+        classBuilder.isAbstract) {
+      target = hierarchy.getInterfaceMember(cls, name, setter: isSetter);
+    }
+    return target;
   }
 
   @override

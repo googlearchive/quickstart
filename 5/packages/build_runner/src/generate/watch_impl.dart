@@ -56,6 +56,7 @@ Future<ServeHandler> watch(
   bool enableLowResourcesMode,
   Map<String, BuildConfig> overrideBuildConfig,
   String outputDir,
+  bool trackPerformance,
   bool verbose,
   Map<String, Map<String, dynamic>> builderConfigOverrides,
 }) async {
@@ -72,6 +73,7 @@ Future<ServeHandler> watch(
       directoryWatcherFactory: directoryWatcherFactory,
       onLog: onLog);
   var options = new BuildOptions(environment,
+      configKey: configKey,
       deleteFilesByDefault: deleteFilesByDefault,
       failOnSevere: failOnSevere,
       packageGraph: packageGraph,
@@ -81,6 +83,7 @@ Future<ServeHandler> watch(
       skipBuildScriptCheck: skipBuildScriptCheck,
       enableLowResourcesMode: enableLowResourcesMode,
       outputDir: outputDir,
+      trackPerformance: trackPerformance,
       verbose: verbose);
   var terminator = new Terminator(terminateEventStream);
 
@@ -117,6 +120,7 @@ typedef Future<BuildResult> _BuildAction(List<List<AssetChange>> changes);
 class WatchImpl implements BuildState {
   AssetGraph _assetGraph;
   BuildDefinition _buildDefinition;
+  final String _configKey; // may be null
   final Iterable<Glob> _rootPackageFilesWhitelist;
 
   /// Delay to wait for more file watcher events.
@@ -146,7 +150,8 @@ class WatchImpl implements BuildState {
       List<BuildAction> buildActions,
       Future until,
       this._rootPackageFilesWhitelist)
-      : _directoryWatcherFactory = environment.directoryWatcherFactory,
+      : _configKey = options.configKey,
+        _directoryWatcherFactory = environment.directoryWatcherFactory,
         _debounceDelay = options.debounceDelay,
         packageGraph = options.packageGraph {
     buildResults =
@@ -209,17 +214,28 @@ class WatchImpl implements BuildState {
           return firstBuildCompleter.future.then((_) => change);
         })
         .asyncMap<AssetChange>((change) {
-          // Kill future builds if the root packages file changes.
+          var id = change.id;
           assert(originalRootPackagesDigest != null);
-          if (change.id != rootPackagesId) return change;
-          return environment.reader.readAsBytes(rootPackagesId).then((bytes) {
-            if (md5.convert(bytes) != originalRootPackagesDigest) {
-              _terminateCompleter.complete();
-              _logger.severe('Terminating builds due to package graph update, '
-                  'please restart the build.');
-            }
-            return change;
-          });
+          if (id == rootPackagesId) {
+            // Kill future builds if the root packages file changes.
+            return environment.reader.readAsBytes(rootPackagesId).then((bytes) {
+              if (md5.convert(bytes) != originalRootPackagesDigest) {
+                _terminateCompleter.complete();
+                _logger
+                    .severe('Terminating builds due to package graph update, '
+                        'please restart the build.');
+              }
+              return change;
+            });
+          } else if (_isBuildYaml(id) ||
+              _isConfiguredBuildYaml(id) ||
+              _isPackageBuildYamlOverride(id)) {
+            // Kill future builds if the build.yaml files change.
+            _terminateCompleter.complete();
+            _logger.severe(
+                'Terminating builds due to ${id.package}:${id.path} update.');
+          }
+          return change;
         })
         .where(_shouldProcess)
         .transform(debounceBuffer(_debounceDelay))
@@ -270,6 +286,15 @@ class WatchImpl implements BuildState {
   _BuildAction _recordCurrentBuild(_BuildAction build) => (changes) =>
       currentBuild = build(changes)..then((_) => currentBuild = null);
 
+  bool _isBuildYaml(AssetId id) => id.path == 'build.yaml';
+  bool _isConfiguredBuildYaml(AssetId id) =>
+      id.package == packageGraph.root.name &&
+      id.path == 'build.$_configKey.yaml';
+  bool _isPackageBuildYamlOverride(AssetId id) =>
+      id.package == packageGraph.root.name &&
+      id.path.contains(_packageBuildYamlRegexp);
+  final _packageBuildYamlRegexp = new RegExp(r'^[a-z0-9_]+\.build\.yaml$');
+
   /// Checks if we should skip a watch event for this [change].
   bool _shouldProcess(AssetChange change) {
     assert(_assetGraph != null);
@@ -277,7 +302,7 @@ class WatchImpl implements BuildState {
     var node = _assetGraph.get(change.id);
     if (node != null) {
       if (!node.isInteresting) return false;
-      if (_isEditOnGeneratedFile(node, change.type)) return false;
+      if (_isAddOrEditOnGeneratedFile(node, change.type)) return false;
     } else {
       if (change.type == ChangeType.REMOVE) return false;
       if (!_isWhitelistedPath(change.id)) return false;
@@ -288,7 +313,7 @@ class WatchImpl implements BuildState {
 
   bool _isCacheFile(AssetChange change) => change.id.path.startsWith(cacheDir);
 
-  bool _isEditOnGeneratedFile(AssetNode node, ChangeType changeType) =>
+  bool _isAddOrEditOnGeneratedFile(AssetNode node, ChangeType changeType) =>
       node.isGenerated && changeType != ChangeType.REMOVE;
 
   bool _isExpectedDelete(AssetChange change) =>

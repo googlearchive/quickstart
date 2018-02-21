@@ -9,7 +9,6 @@ import 'exception_handler.dart';
 export 'exception_handler.dart';
 import 'package:logging/logging.dart';
 import 'exceptions.dart' show WrappedException;
-// Required for initReflector().
 import 'exceptions.template.dart' as _ref0;
 
 var _visited = false;
@@ -18,5 +17,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

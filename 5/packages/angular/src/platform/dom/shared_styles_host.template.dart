@@ -9,7 +9,6 @@ import 'shared_styles_host.dart';
 export 'shared_styles_host.dart';
 import 'dart:html';
 import 'package:angular/src/core/render/api.dart';
-// Required for initReflector().
 import 'package:angular/src/core/render/api.template.dart' as _ref0;
 
 var _visited = false;
@@ -18,5 +17,6 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
 }

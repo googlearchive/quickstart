@@ -10,7 +10,6 @@ export 'key_events.dart';
 import "dart:html";
 import "package:angular/src/core/di.dart" show Injectable;
 import "event_manager.dart" show EventManagerPlugin;
-// Required for initReflector().
 import 'package:angular/src/di/reflector.dart' as _ngRef;
 import 'event_manager.template.dart' as _ref0;
 import 'package:angular/src/core/di.template.dart' as _ref1;
@@ -21,10 +20,8 @@ void initReflector() {
     return;
   }
   _visited = true;
+
+  _ngRef.registerFactory(KeyEventsPlugin, () => new KeyEventsPlugin());
   _ref0.initReflector();
   _ref1.initReflector();
-  _ngRef.registerFactory(
-    KeyEventsPlugin,
-    () => new KeyEventsPlugin(),
-  );
 }

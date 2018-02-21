@@ -9,7 +9,6 @@ import 'ng_zone.dart';
 export 'ng_zone.dart';
 import 'dart:async';
 import 'package:stack_trace/stack_trace.dart';
-// No initReflector() linking required.
 
-// No initReflector() needed.
+// No initReflector() linking required.
 void initReflector() {}

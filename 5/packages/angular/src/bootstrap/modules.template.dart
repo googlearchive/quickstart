@@ -30,7 +30,6 @@ import 'package:angular/src/security/dom_sanitization_service.dart';
 import 'package:angular/src/security/dom_sanitization_service_impl.dart';
 import 'package:meta/meta.dart';
 import 'modules.template.dart' as ng;
-// Required for initReflector().
 import 'modules.template.dart' as _ref0;
 import 'package:angular/src/core/application_ref.template.dart' as _ref1;
 import 'package:angular/src/core/application_tokens.template.dart' as _ref2;
@@ -51,7 +50,6 @@ import 'package:angular/src/platform/dom/events/hammer_gestures.template.dart' a
 import 'package:angular/src/platform/dom/events/key_events.template.dart' as _ref17;
 import 'package:angular/src/security/dom_sanitization_service.template.dart' as _ref18;
 import 'package:angular/src/security/dom_sanitization_service_impl.template.dart' as _ref19;
-
 // *** EXPERIMENTAL ** Injector Generator [START]
 import 'package:angular/src/di/injector/injector.dart' as _i1;
 import 'package:angular/src/platform/browser/exceptions.dart' as _i2;
@@ -151,6 +149,7 @@ void initReflector() {
     return;
   }
   _visited = true;
+
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();
