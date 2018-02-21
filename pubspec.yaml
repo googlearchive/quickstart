@@ -10,10 +10,8 @@ dependencies:
 
 dev_dependencies:
   angular_test: ^2.0.0-alpha
-  build_runner: ^0.7.8
+  build_runner: ^0.7.10+1
   build_test: ^0.10.0
-  build_web_compilers: ^0.2.1
+  build_web_compilers: ^0.3.0
   test: ^0.12.30
 
-dependency_overrides:
-  analyzer: ^0.31.0-alpha.1
