@@ -1,6 +1,6 @@
 import 'package:angular/src/core/change_detection/change_detection.dart'
     show ChangeDetectionStrategy;
-import 'package:angular_compiler/angular_compiler.dart';
+import 'package:angular_compiler/cli.dart';
 
 import 'package:source_span/source_span.dart';
 
@@ -18,14 +18,12 @@ import 'compile_element.dart' show CompileElement;
 import 'compile_view.dart' show CompileView;
 import 'view_binder.dart' show bindView, bindViewHostProperties;
 import 'view_builder.dart';
-import 'view_compiler_utils.dart'
-    show outlinerDeprecated, ViewCompileDependency;
+import 'view_compiler_utils.dart' show outlinerDeprecated;
 
 class ViewCompileResult {
   List<o.Statement> statements;
   String viewFactoryVar;
-  List<ViewCompileDependency> dependencies;
-  ViewCompileResult(this.statements, this.viewFactoryVar, this.dependencies);
+  ViewCompileResult(this.statements, this.viewFactoryVar);
 }
 
 /// Compiles a single component to a set of CompileView(s) and generates top
@@ -50,17 +48,15 @@ class ViewCompiler {
       List<CompilePipeMetadata> pipes,
       Map<String, String> deferredModules) {
     var statements = <o.Statement>[];
-    var dependencies = <ViewCompileDependency>[];
     var view = new CompileView(component, _genConfig, pipes, styles, 0,
         new CompileElement.root(), [], deferredModules);
-    buildView(view, template, stylesCompileResult, dependencies);
+    buildView(view, template, stylesCompileResult);
     // Need to separate binding from creation to be able to refer to
     // variables that have been declared after usage.
     bindView(view, template);
     bindHostProperties(view);
     finishView(view, statements);
-    return new ViewCompileResult(
-        statements, view.viewFactory.name, dependencies);
+    return new ViewCompileResult(statements, view.viewFactory.name);
   }
 
   void bindHostProperties(CompileView view) {
@@ -76,13 +72,10 @@ class ViewCompiler {
   }
 
   /// Builds the view and returns number of nested views generated.
-  int buildView(
-      CompileView view,
-      List<TemplateAst> template,
-      StylesCompileResult stylesCompileResult,
-      List<ViewCompileDependency> targetDependencies) {
-    var builderVisitor = new ViewBuilderVisitor(
-        view, parser, targetDependencies, stylesCompileResult);
+  int buildView(CompileView view, List<TemplateAst> template,
+      StylesCompileResult stylesCompileResult) {
+    var builderVisitor =
+        new ViewBuilderVisitor(view, parser, stylesCompileResult);
     templateVisitAll(builderVisitor, template,
         view.declarationElement.parent ?? view.declarationElement);
     return builderVisitor.nestedViewCount;
@@ -97,7 +90,9 @@ class ViewCompiler {
     var nodes = view.nodes;
     for (int i = 0; i < nodeCount; i++) {
       var node = nodes[i];
-      if (node is CompileElement && node.embeddedView != null) {
+      if (node is CompileElement &&
+          node.embeddedView != null &&
+          !node.embeddedView.isInlined) {
         finishView(node.embeddedView, targetStatements);
       }
     }
@@ -133,9 +128,10 @@ class ViewCompiler {
   ///     const StaticNodeDebugInfo(const [
   ///       import1.AcxDarkTheme,
   ///       import2.MaterialButtonComponent,
-  ///       import3.ButtonDirective
-  ///     ]
-  ///     ,import2.MaterialButtonComponent,const <String, dynamic>{}),
+  ///       import3.ButtonDirective,
+  ///       import2.MaterialButtonComponent,
+  ///     ],
+  ///     const <String, dynamic>{}),
   /// const StaticNodeDebugInfo(const [],null,const <String, dynamic>{}),
   o.Expression createStaticNodeDebugInfos(
       CompileView view, List<o.Statement> targetStatements) {

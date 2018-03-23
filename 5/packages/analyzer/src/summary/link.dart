@@ -276,16 +276,12 @@ UnlinkedParamBuilder _serializeSyntheticParam(
     TypeParameterizedElementMixin typeParameterContext) {
   UnlinkedParamBuilder b = new UnlinkedParamBuilder();
   b.name = parameter.name;
-  switch (parameter.parameterKind) {
-    case ParameterKind.REQUIRED:
-      b.kind = UnlinkedParamKind.required;
-      break;
-    case ParameterKind.POSITIONAL:
-      b.kind = UnlinkedParamKind.positional;
-      break;
-    case ParameterKind.NAMED:
-      b.kind = UnlinkedParamKind.named;
-      break;
+  if (parameter.isNotOptional) {
+    b.kind = UnlinkedParamKind.required;
+  } else if (parameter.isOptionalPositional) {
+    b.kind = UnlinkedParamKind.positional;
+  } else if (parameter.isNamed) {
+    b.kind = UnlinkedParamKind.named;
   }
   DartType type = parameter.type;
   if (!parameter.hasImplicitType) {
@@ -671,12 +667,15 @@ class ClassElementForLink_Class extends ClassElementForLink
         var mixin = _computeInterfaceType(entity);
         var mixinElement = mixin.element;
         var slot = entity.refinedSlot;
-        if (slot != 0 && mixinElement.typeParameters.isNotEmpty) {
+        if (slot != 0 &&
+            mixinElement.typeParameters.isNotEmpty &&
+            library._linker.strongMode) {
           CompilationUnitElementForLink enclosingElement =
               this.enclosingElement;
           if (enclosingElement is CompilationUnitElementInBuildUnit) {
-            var mixinSupertypeConstraint = mixinElement.supertype;
-            if (mixinSupertypeConstraint.element.typeParameters.isNotEmpty) {
+            var mixinSupertypeConstraints = context.typeSystem
+                .gatherMixinSupertypeConstraints(mixinElement);
+            if (mixinSupertypeConstraints.isNotEmpty) {
               if (supertypesForMixinInference == null) {
                 supertypesForMixinInference = <InterfaceType>[];
                 ClassElementImpl.collectAllSupertypes(
@@ -686,33 +685,23 @@ class ClassElementForLink_Class extends ClassElementForLink
                       supertypesForMixinInference, previousMixin, type);
                 }
               }
-              var matchingInterfaceType = _findInterfaceTypeForElement(
-                  mixinSupertypeConstraint.element,
-                  supertypesForMixinInference);
-              // TODO(paulberry): If matchingInterfaceType is null, that's an
-              // error.  Also, if there are multiple matching interface types
-              // that use different type parameters, that's also an error.  But
-              // we can't report errors from the linker, so we just use the
-              // first matching interface type (if there is one) and hope for
-              // the best.  The error detection logic will have to be
-              // implemented in the ErrorVerifier.
-              if (matchingInterfaceType != null) {
-                // TODO(paulberry): now we should pattern match
-                // matchingInterfaceType against mixinSupertypeConstraint to
-                // find the correct set of type parameters to apply to the
-                // mixin.  But as a quick hack, we assume that the mixin just
-                // passes its type parameters through to the supertype
-                // constraint (that is, each type in
-                // mixinSupertypeConstraint.typeParameters should be a
-                // TypeParameterType pointing to the corresponding element of
-                // mixinElement.typeParameters).  To avoid a complete disaster
-                // if this assumption is wrong, we only do the inference if the
-                // number of type arguments applied to mixinSupertypeConstraint
-                // matches the number of type parameters accepted by the mixin.
-                if (mixinSupertypeConstraint.typeArguments.length ==
-                    mixinElement.typeParameters.length) {
-                  mixin = mixinElement.type
-                      .instantiate(matchingInterfaceType.typeArguments);
+              var matchingInterfaceTypes = _findInterfaceTypesForConstraints(
+                  mixinSupertypeConstraints, supertypesForMixinInference);
+              // Note: if matchingInterfaceType is null, that's an error.  Also,
+              // if there are multiple matching interface types that use
+              // different type parameters, that's also an error.  But we can't
+              // report errors from the linker, so we just use the
+              // first matching interface type (if there is one).  The error
+              // detection logic is implemented in the ErrorVerifier.
+              if (matchingInterfaceTypes != null) {
+                // Try to pattern match matchingInterfaceTypes against
+                // mixinSupertypeConstraints to find the correct set of type
+                // parameters to apply to the mixin.
+                var inferredMixin = context.typeSystem
+                    .matchSupertypeConstraints(mixinElement,
+                        mixinSupertypeConstraints, matchingInterfaceTypes);
+                if (inferredMixin != null) {
+                  mixin = inferredMixin;
                   enclosingElement._storeLinkedType(slot, mixin, this);
                 }
               }
@@ -837,6 +826,21 @@ class ClassElementForLink_Class extends ClassElementForLink
       if (interfaceType.element == element) return interfaceType;
     }
     return null;
+  }
+
+  List<InterfaceType> _findInterfaceTypesForConstraints(
+      List<InterfaceType> constraints, List<InterfaceType> interfaceTypes) {
+    var result = <InterfaceType>[];
+    for (var constraint in constraints) {
+      var interfaceType =
+          _findInterfaceTypeForElement(constraint.element, interfaceTypes);
+      if (interfaceType == null) {
+        // No matching interface type found, so inference fails.
+        return null;
+      }
+      result.add(interfaceType);
+    }
+    return result;
   }
 }
 
@@ -2506,15 +2510,39 @@ class ExprTypeComputer {
     List<DartType> positionalArgTypes = _popList(numPositional);
 
     EntityRef ref = _getNextRef();
+
+    var typeArguments = new List<DartType>(ref.typeArguments.length);
+    for (int i = 0; i < ref.typeArguments.length; i++) {
+      typeArguments[i] = unit.resolveTypeRef(function, ref.typeArguments[i]);
+    }
+
+    _doInvokeConstructorImpl(ref, typeArguments, numNamed, numPositional,
+        namedArgNames, namedArgTypeList, positionalArgTypes);
+  }
+
+  /**
+   * Implements constructor invocation inference, and accepts the reference,
+   * type arguments, and types of arguments. It is used for explicit instance
+   * creation, and also for implicit creation, that looks like
+   * [UnlinkedExprOperation.invokeMethodRef].
+   */
+  void _doInvokeConstructorImpl(
+      EntityRef ref,
+      List<DartType> typeArguments,
+      int numNamed,
+      int numPositional,
+      List<String> namedArgNames,
+      List<DartType> namedArgTypeList,
+      List<DartType> positionalArgTypes) {
     ReferenceableElementForLink refElement = unit.resolveRef(ref.reference);
     ConstructorElementForLink constructorElement = refElement.asConstructor;
 
     if (constructorElement != null) {
       stack.add(() {
-        if (ref.typeArguments.isNotEmpty) {
+        if (typeArguments.isNotEmpty) {
           return constructorElement.enclosingClass.buildType((int i) {
-            if (i < ref.typeArguments.length) {
-              return unit.resolveTypeRef(function, ref.typeArguments[i]);
+            if (i < typeArguments.length) {
+              return typeArguments[i];
             } else {
               return null;
             }
@@ -2590,9 +2618,19 @@ class ExprTypeComputer {
     List<String> namedArgNames = _getNextStrings(numNamed);
     List<DartType> namedArgTypeList = _popList(numNamed);
     List<DartType> positionalArgTypes = _popList(numPositional);
+
     EntityRef ref = _getNextRef();
     ReferenceableElementForLink element = unit.resolveRef(ref.reference);
+
     List<DartType> typeArguments = _getTypeArguments();
+
+    // Check for implicit instance creation.
+    if (element.asClass != null || element.asConstructor != null) {
+      _doInvokeConstructorImpl(ref, typeArguments, numNamed, numPositional,
+          namedArgNames, namedArgTypeList, positionalArgTypes);
+      return;
+    }
+
     stack.add(() {
       DartType rawType = element.asStaticType;
       if (rawType is FunctionType) {
@@ -2756,7 +2794,7 @@ class ExprTypeComputer {
         int positionalIndex = 0;
         int numRequiredParameters = 0;
         for (ParameterElement parameter in rawMethodType.parameters) {
-          if (parameter.parameterKind == ParameterKind.REQUIRED) {
+          if (parameter.isNotOptional) {
             numRequiredParameters++;
             if (numRequiredParameters > numPositionalArguments) {
               return null;
@@ -2764,13 +2802,13 @@ class ExprTypeComputer {
             parameters.add(parameter);
             argumentTypes.add(positionalArgTypes[positionalIndex]);
             positionalIndex++;
-          } else if (parameter.parameterKind == ParameterKind.POSITIONAL) {
+          } else if (parameter.isOptionalPositional) {
             if (positionalIndex < numPositionalArguments) {
               parameters.add(parameter);
               argumentTypes.add(positionalArgTypes[positionalIndex]);
               positionalIndex++;
             }
-          } else if (parameter.parameterKind == ParameterKind.NAMED) {
+          } else if (parameter.isNamed) {
             DartType namedArgumentType = namedArgTypes[parameter.name];
             if (namedArgumentType != null) {
               parameters.add(parameter);
@@ -3228,6 +3266,9 @@ class FunctionElementForLink_Initializer extends Object
   noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 
   @override
+  String toString() => _variable.toString();
+
+  @override
   void _setInferenceError(TopLevelInferenceErrorBuilder error) {
     assert(!_hasTypeBeenInferred);
     _inferenceError = error;
@@ -3353,6 +3394,9 @@ class FunctionElementForLink_Local_NonSynthetic extends ExecutableElementForLink
 
   @override
   noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+
+  @override
+  String toString() => enclosingElement.toString();
 
   @override
   void _setInferenceError(TopLevelInferenceErrorBuilder error) {}
@@ -3628,7 +3672,15 @@ class GenericTypeAliasElementForLink extends Object
   String get name => _unlinkedTypedef.name;
 
   @override
+  DartType get returnType => enclosingElement.resolveTypeRef(
+      this, _unlinkedTypedef.returnType.syntheticReturnType);
+
+  @override
   TypeParameterizedElementMixin get typeParameterContext => this;
+
+  @override
+  List<UnlinkedParam> get unlinkedParameters =>
+      _unlinkedTypedef.returnType.syntheticParams;
 
   @override
   List<UnlinkedTypeParam> get unlinkedTypeParams =>
@@ -4497,6 +4549,25 @@ class ParameterElementForLink implements ParameterElementImpl {
 
   @override
   bool get isExplicitlyCovariant => _unlinkedParam.isExplicitlyCovariant;
+
+  @override
+  bool get isNamed => parameterKind == ParameterKind.NAMED;
+
+  @override
+  bool get isNotOptional => parameterKind == ParameterKind.REQUIRED;
+
+  @override
+  bool get isOptional =>
+      parameterKind == ParameterKind.NAMED ||
+      parameterKind == ParameterKind.POSITIONAL;
+
+  @override
+  bool get isOptionalPositional => parameterKind == ParameterKind.POSITIONAL;
+
+  @override
+  bool get isPositional =>
+      parameterKind == ParameterKind.POSITIONAL ||
+      parameterKind == ParameterKind.REQUIRED;
 
   @override
   String get name => _unlinkedParam.name;

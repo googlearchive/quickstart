@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:angular/src/core/di.dart' show Injector;
 import 'package:angular/src/di/reflector.dart' show runtimeTypeProvider;
+import 'package:angular/src/runtime.dart';
 
 import '../change_detection/change_detection.dart' show ChangeDetectorRef;
 import 'app_view.dart';
@@ -12,7 +13,7 @@ import 'view_ref.dart' show ViewRef;
 ///
 /// [ComponentRef] provides access to the Component Instance as well other
 /// objects related to this Component Instance and allows you to destroy the
-/// Component Instance via the [#destroy] method.
+/// Component Instance via the [ComponentRef.destroy] method.
 class ComponentRef<C> {
   final AppView _parentView;
   final int _nodeIndex;
@@ -58,6 +59,27 @@ class ComponentRef<C> {
   }
 }
 
+/// Backing implementation behind a `class` [T] annotated with `@Component`.
+///
+/// For example, if this lives in `example.dart`:
+/// ```dart
+/// @Component(
+///   selector: 'example',
+///   template: '...',
+/// )
+/// class Example {}
+/// ```
+///
+/// ... then `ExampleNgFactory` is generated in `example.template.dart`, and
+/// can be accessed by importing this generated file. For example:
+/// ```dart
+/// import 'example.template.dart' as ng;
+///
+/// getComponentFactory() {
+///   final ComponentFactory<ng.Example> comp = ng.ExampleNgFactory;
+///   // Can now use 'comp' as a ComponentFactory<Example>.
+/// }
+/// ```
 class ComponentFactory<T> {
   final String selector;
 
@@ -85,7 +107,9 @@ class ComponentFactory<T> {
   ]) {
     // Note: Host views don't need a declarationViewContainer!
     final AppView<dynamic> hostView = _viewFactory(null, null);
-    return hostView.createHostView(injector, projectableNodes ?? const []);
+    return unsafeCast<ComponentRef<T>>(
+      hostView.createHostView(injector, projectableNodes ?? const []),
+    );
   }
 }
 

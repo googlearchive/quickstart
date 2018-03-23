@@ -16,6 +16,8 @@ import 'util/relativize.dart' as util show relativizeUri;
 
 part 'fasta_codes_generated.dart';
 
+const int noLength = 1;
+
 class Code<T> {
   final String name;
 
@@ -44,8 +46,12 @@ class Message {
 
   const Message(this.code, {this.message, this.tip, this.arguments});
 
-  LocatedMessage withLocation(Uri uri, int charOffset) {
-    return new LocatedMessage(uri, charOffset, this);
+  LocatedMessage withLocation(Uri uri, int charOffset, int length) {
+    return new LocatedMessage(uri, charOffset, length, this);
+  }
+
+  LocatedMessage withoutLocation() {
+    return new LocatedMessage(null, -1, noLength, this);
   }
 }
 
@@ -69,8 +75,13 @@ class MessageCode extends Code<Null> implements Message {
 
   Code get code => this;
 
-  LocatedMessage withLocation(Uri uri, int charOffset) {
-    return new LocatedMessage(uri, charOffset, this);
+  @override
+  LocatedMessage withLocation(Uri uri, int charOffset, int length) {
+    return new LocatedMessage(uri, charOffset, length, this);
+  }
+
+  LocatedMessage withoutLocation() {
+    return new LocatedMessage(null, -1, noLength, this);
   }
 }
 
@@ -89,9 +100,12 @@ class LocatedMessage implements Comparable<LocatedMessage> {
 
   final int charOffset;
 
+  final int length;
+
   final Message messageObject;
 
-  const LocatedMessage(this.uri, this.charOffset, this.messageObject);
+  const LocatedMessage(
+      this.uri, this.charOffset, this.length, this.messageObject);
 
   Code get code => messageObject.code;
 

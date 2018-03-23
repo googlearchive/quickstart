@@ -1,7 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
 // **************************************************************************
-// Generator: TemplateGenerator
+// Generator: Instance of 'Compiler'
 // **************************************************************************
 
 // ignore_for_file: cancel_subscriptions,constant_identifier_names,duplicate_import,non_constant_identifier_names,library_prefixes,UNUSED_IMPORT,UNUSED_SHOWN_NAME
@@ -9,7 +7,6 @@ import 'fixture.dart';
 export 'fixture.dart';
 import 'dart:async';
 import 'dart:html';
-import 'package:pageloader/objects.dart';
 import 'package:angular/angular.dart';
 import 'package:angular/src/core/linker/view_ref.dart';
 import 'package:angular/src/debug/debug_app_view.dart';

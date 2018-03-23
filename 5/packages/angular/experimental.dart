@@ -8,8 +8,11 @@
 @experimental
 library angular.experimental;
 
+import 'dart:async';
 import 'dart:html';
 
+import 'package:angular/angular.dart';
+import 'package:angular/src/runtime.dart';
 import 'package:meta/meta.dart';
 
 import 'src/bootstrap/modules.dart';
@@ -30,9 +33,11 @@ export 'src/bootstrap/modules.dart' show bootstrapLegacyModule;
 // This injector is cached and re-used across every bootstrap(...) call.
 Injector _platformInjector() {
   final platformRef = new PlatformRefImpl();
+  final throwingComponentLoader = new _ThrowingSlowComponentLoader();
   return new Injector.map({
     PlatformRef: platformRef,
     PlatformRefImpl: platformRef,
+    SlowComponentLoader: throwingComponentLoader
   });
 }
 
@@ -49,7 +54,7 @@ Injector _platformInjector() {
 @experimental
 ComponentRef<T> bootstrapFactory<T>(
   ComponentFactory<T> factory, [
-  Injector createAppInjector(Injector parent),
+  InjectorFactory createAppInjector,
 ]) {
   final appInjector = createAppInjector == null
       ? minimalApp(_platformInjector())
@@ -69,13 +74,14 @@ ComponentRef<T> bootstrapFactory<T>(
 ComponentFactory<T> typeToFactory<T>(Object typeOrFactory) =>
     typeOrFactory is ComponentFactory<T>
         ? typeOrFactory
-        : reflector.getComponent(typeOrFactory);
+        : unsafeCast<ComponentFactory<T>>(
+            reflector.getComponent(unsafeCast<Type>(typeOrFactory)));
 
 /// Creates a root application injector by invoking [createAppInjector].
 ///
 /// ```dart
 /// main() {
-///   var injector = rootInjector((parent) {
+///   var injector = rootLegacyInjector((parent) {
 ///     return new Injector.map({ /* ... */ }, parent);
 ///   });
 /// }
@@ -88,6 +94,14 @@ Injector rootInjector(Injector createAppInjector(Injector parent)) {
   return createAppInjector(browserStaticPlatform().injector);
 }
 
+/// Create a root minimal application (no runtime providers) injector.
+///
+/// Unlike [rootInjector], this method does not rely on `initReflector`.
+///
+/// **WARNING**: This API is not considered part of the stable API.
+@experimental
+Injector rootMinimalInjector() => minimalApp(_platformInjector());
+
 /// Initializes the global application state from an application [injector].
 ///
 /// May be used in places that do not go through `bootstrap` to create an
@@ -97,7 +111,7 @@ Injector rootInjector(Injector createAppInjector(Injector parent)) {
 /// **WARNING**: This API is not considered part of the stable API.
 @experimental
 void initAngular(Injector injector) {
-  appViewUtils = injector.get(AppViewUtils);
+  appViewUtils = unsafeCast<AppViewUtils>(injector.get(AppViewUtils));
 }
 
 /// Returns `true` when AngularDart has modified the DOM.
@@ -117,3 +131,27 @@ bool isDomRenderDirty() => app_view.domRootRendererIsDirty;
 void resetDomRenderDirty() {
   app_view.domRootRendererIsDirty = false;
 }
+
+/// Implementation of [SlowComponentLoader] that throws an UnimplementedError
+/// when used.
+///
+/// This is to allow a migration path for common components that may need to
+/// inject [SlowComponentLoader] for the legacy `bootstrapStatic` method, but
+/// won't actually use it in apps that called `bootstrapFactory`.
+class _ThrowingSlowComponentLoader implements SlowComponentLoader {
+  @override
+  Future<ComponentRef<T>> load<T>(Type type, Injector injector) {
+    throw new UnimplementedError(_slowComponentLoaderWarning);
+  }
+
+  @override
+  Future<ComponentRef<T>> loadNextToLocation<T>(
+      Type type, ViewContainerRef location,
+      [Injector injector]) {
+    throw new UnimplementedError(_slowComponentLoaderWarning);
+  }
+}
+
+const _slowComponentLoaderWarning = 'You are using bootstrapFactory, which no '
+    'longer supports loading a component with SlowComponentLoader. Please '
+    'migrate this code to use ComponentLoader instead.';

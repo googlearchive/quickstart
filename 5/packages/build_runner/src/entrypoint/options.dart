@@ -8,7 +8,9 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:args/command_runner.dart';
 import 'package:build_config/build_config.dart';
+import 'package:http_multi_server/http_multi_server.dart';
 import 'package:io/io.dart';
+import 'package:logging/logging.dart';
 import 'package:meta/meta.dart';
 import 'package:shelf/shelf_io.dart';
 
@@ -17,6 +19,7 @@ import 'package:build_runner/build_runner.dart';
 const _assumeTty = 'assume-tty';
 const _define = 'define';
 const _deleteFilesByDefault = 'delete-conflicting-outputs';
+const _logRequests = 'log-requests';
 const _lowResourcesMode = 'low-resources-mode';
 const _failOnSevere = 'fail-on-severe';
 const _hostname = 'hostname';
@@ -113,10 +116,12 @@ class _SharedOptions {
 /// Options specific to the [_ServeCommand].
 class _ServeOptions extends _SharedOptions {
   final String hostName;
+  final bool logRequests;
   final List<_ServeTarget> serveTargets;
 
   _ServeOptions._({
     @required this.hostName,
+    @required this.logRequests,
     @required this.serveTargets,
     @required bool assumeTty,
     @required bool deleteFilesByDefault,
@@ -127,8 +132,7 @@ class _ServeOptions extends _SharedOptions {
     @required bool trackPerformance,
     @required bool verbose,
     @required Map<String, Map<String, dynamic>> builderConfigOverrides,
-  })
-      : super._(
+  }) : super._(
           assumeTty: assumeTty,
           deleteFilesByDefault: deleteFilesByDefault,
           failOnSevere: failOnSevere,
@@ -159,6 +163,7 @@ class _ServeOptions extends _SharedOptions {
     }
     return new _ServeOptions._(
       hostName: argResults[_hostname] as String,
+      logRequests: argResults[_logRequests] as bool,
       serveTargets: serveTargets,
       assumeTty: argResults[_assumeTty] as bool,
       deleteFilesByDefault: argResults[_deleteFilesByDefault] as bool,
@@ -233,8 +238,7 @@ abstract class BuildRunnerCommand extends Command<int> {
           defaultsTo: false,
           negatable: false,
           help: 'Enables verbose logging.')
-      ..addOption(_define,
-          allowMultiple: true,
+      ..addMultiOption(_define,
           splitCommas: false,
           help: 'Sets the global `options` config for a builder by key.');
   }
@@ -313,7 +317,11 @@ class _ServeCommand extends _WatchCommand {
   _ServeCommand() {
     argParser
       ..addOption(_hostname,
-          help: 'Specify the hostname to serve on', defaultsTo: 'localhost');
+          help: 'Specify the hostname to serve on', defaultsTo: 'localhost')
+      ..addFlag(_logRequests,
+          defaultsTo: false,
+          negatable: false,
+          help: 'Enables logging for each request to the server.');
   }
 
   @override
@@ -334,6 +342,7 @@ class _ServeCommand extends _WatchCommand {
   @override
   Future<int> run() async {
     var options = _readOptions();
+    var logger = new Logger('Serve');
     var handler = await watch(builderApplications,
         deleteFilesByDefault: options.deleteFilesByDefault,
         enableLowResourcesMode: options.enableLowResourcesMode,
@@ -345,16 +354,45 @@ class _ServeCommand extends _WatchCommand {
         trackPerformance: options.trackPerformance,
         verbose: options.verbose,
         builderConfigOverrides: options.builderConfigOverrides);
-    var servers = await Future.wait(options.serveTargets.map((target) =>
-        serve(handler.handlerFor(target.dir), options.hostName, target.port)));
+    _ensureBuildWebCompilersDependency(packageGraph, logger);
+    var servers = await Future.wait(options.serveTargets
+        .map((target) => _startServer(options, target, handler)));
     await handler.currentBuild;
-    for (var target in options.serveTargets) {
-      stdout.writeln('Serving `${target.dir}` on port ${target.port}');
+    // Warn if in serve mode with no servers.
+    if (options.serveTargets.isEmpty) {
+      logger.warning(
+          'Found no known web directories to serve, but running in `serve` '
+          'mode. You may expliclity provide a directory to serve with trailing '
+          'args in <dir>[:<port>] format.');
+    } else {
+      for (var target in options.serveTargets) {
+        stdout.writeln('Serving `${target.dir}` on port ${target.port}');
+      }
     }
     await handler.buildResults.drain();
     await Future.wait(servers.map((server) => server.close()));
 
     return ExitCode.success.code;
+  }
+}
+
+Future<HttpServer> _startServer(
+    _ServeOptions options, _ServeTarget target, ServeHandler handler) async {
+  var server = await _bindServer(options, target);
+  serveRequests(
+      server, handler.handlerFor(target.dir, logRequests: options.logRequests));
+  return server;
+}
+
+Future<HttpServer> _bindServer(_ServeOptions options, _ServeTarget target) {
+  switch (options.hostName) {
+    case 'any':
+      // Listens on both IPv6 and IPv4
+      return HttpServer.bind(InternetAddress.ANY_IP_V6, target.port);
+    case 'localhost':
+      return HttpMultiServer.loopback(target.port);
+    default:
+      return HttpServer.bind(options.hostName, target.port);
   }
 }
 
@@ -439,8 +477,22 @@ class _TestCommand extends BuildRunnerCommand {
 }
 
 void _ensureBuildTestDependency(PackageGraph packageGraph) {
-  if (packageGraph.allPackages['build_test'] == null) {
+  if (!packageGraph.allPackages.containsKey('build_test')) {
     throw new BuildTestDependencyError();
+  }
+}
+
+void _ensureBuildWebCompilersDependency(PackageGraph packageGraph, Logger log) {
+  if (!packageGraph.allPackages.containsKey('build_web_compilers')) {
+    log.warning('''
+    Missing dev dependency on package:build_web_compilers, which is required to serve Dart compiled to JavaScript.
+
+    Please update your dev_dependencies section of your pubspec.yaml:
+
+    dev_dependencies:
+      build_runner: any
+      build_test: any
+      build_web_compilers: any''');
   }
 }
 
@@ -469,7 +521,7 @@ Map<String, Map<String, dynamic>> _parseBuilderConfigOverrides(
     // Attempt to parse the value as JSON, and if that fails then treat it as
     // a normal string.
     try {
-      value = JSON.decode(parts[2]);
+      value = json.decode(parts[2]);
     } on FormatException catch (_) {
       value = parts[2];
     }
@@ -487,7 +539,7 @@ Map<String, Map<String, dynamic>> _parseBuilderConfigOverrides(
 
 class BuildTestDependencyError extends StateError {
   BuildTestDependencyError() : super('''
-Missing dev dependecy on package:build_test, which is required to run tests.
+Missing dev dependency on package:build_test, which is required to run tests.
 
 Please update your dev_dependencies section of your pubspec.yaml:
 

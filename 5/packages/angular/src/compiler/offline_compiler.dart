@@ -4,22 +4,18 @@ import 'dart:convert';
 import 'package:angular/src/facade/exceptions.dart' show BaseException;
 
 import 'compile_metadata.dart'
-    show
-        CompileDirectiveMetadata,
-        CompilePipeMetadata,
-        CompileTypeMetadata,
-        createHostComponentMeta;
-import 'compiler_utils.dart' show MODULE_SUFFIX;
+    show CompileDirectiveMetadata, CompilePipeMetadata, createHostComponentMeta;
+import 'compiler_utils.dart' show stylesModuleUrl, templateModuleUrl;
 import 'directive_normalizer.dart' show DirectiveNormalizer;
 import 'identifiers.dart';
 import 'output/abstract_emitter.dart' show OutputEmitter;
 import 'output/output_ast.dart' as o;
 import 'source_module.dart';
-import 'style_compiler.dart' show StyleCompiler, StylesCompileResult;
+import 'style_compiler.dart' show StyleCompiler;
 import 'template_ast.dart';
 import 'template_parser.dart' show TemplateParser;
 import 'view_compiler/directive_compiler.dart';
-import 'view_compiler/view_compiler.dart' show ViewCompiler, ViewCompileResult;
+import 'view_compiler/view_compiler.dart' show ViewCompiler;
 
 /// List of components and directives in source module.
 class AngularArtifacts {
@@ -84,9 +80,9 @@ class OfflineCompiler {
     }
     String moduleUrl;
     if (components.isNotEmpty) {
-      moduleUrl = _templateModuleUrl(components[0].component.type);
+      moduleUrl = templateModuleUrl(components[0].component.type);
     } else if (artifacts.directives.isNotEmpty) {
-      moduleUrl = _templateModuleUrl(artifacts.directives.first.type);
+      moduleUrl = templateModuleUrl(artifacts.directives.first.type);
     } else {
       throw new BaseException('No components nor injectorModules given');
     }
@@ -158,16 +154,10 @@ class OfflineCompiler {
     var shimStyles =
         _styleCompiler.compileStylesheet(stylesheetUrl, cssText, true);
     return [
-      _createSourceModule(
-          _stylesModuleUrl(stylesheetUrl, false),
-          _resolveStyleStatements(plainStyles),
-          [plainStyles.stylesVar],
-          _deferredModules),
-      _createSourceModule(
-          _stylesModuleUrl(stylesheetUrl, true),
-          _resolveStyleStatements(shimStyles),
-          [shimStyles.stylesVar],
-          _deferredModules)
+      _createSourceModule(stylesModuleUrl(stylesheetUrl, false),
+          plainStyles.statements, [plainStyles.stylesVar], _deferredModules),
+      _createSourceModule(stylesModuleUrl(stylesheetUrl, true),
+          shimStyles.statements, [shimStyles.stylesVar], _deferredModules)
     ];
   }
 
@@ -182,8 +172,8 @@ class OfflineCompiler {
         compMeta.template.template, directives, pipes, compMeta.type.name);
     var viewResult = _viewCompiler.compileComponent(compMeta, parsedTemplate,
         styleResult, o.variable(styleResult.stylesVar), pipes, deferredModules);
-    targetStatements.addAll(_resolveStyleStatements(styleResult));
-    targetStatements.addAll(_resolveViewStatements(viewResult));
+    targetStatements.addAll(styleResult.statements);
+    targetStatements.addAll(viewResult.statements);
     return viewResult.viewFactoryVar;
   }
 
@@ -196,34 +186,6 @@ class OfflineCompiler {
         moduleUrl, statements, exportedVars, deferredModules);
     return new SourceModule(moduleUrl, sourceCode, deferredModules);
   }
-}
-
-List<o.Statement> _resolveViewStatements(ViewCompileResult compileResult) {
-  for (var dep in compileResult.dependencies) {
-    dep.factoryPlaceholder.moduleUrl = _templateModuleUrl(dep.comp.type);
-  }
-  return compileResult.statements;
-}
-
-List<o.Statement> _resolveStyleStatements(StylesCompileResult compileResult) {
-  for (var dep in compileResult.dependencies) {
-    dep.valuePlaceholder.moduleUrl =
-        _stylesModuleUrl(dep.sourceUrl, dep.isShimmed);
-  }
-  return compileResult.statements;
-}
-
-String _templateModuleUrl(CompileTypeMetadata type) {
-  var moduleUrl = type.moduleUrl;
-  var urlWithoutSuffix =
-      moduleUrl.substring(0, moduleUrl.length - MODULE_SUFFIX.length);
-  return '$urlWithoutSuffix.template$MODULE_SUFFIX';
-}
-
-String _stylesModuleUrl(String stylesheetUrl, bool shim) {
-  return shim
-      ? '$stylesheetUrl.shim$MODULE_SUFFIX'
-      : '$stylesheetUrl$MODULE_SUFFIX';
 }
 
 void _assertComponent(CompileDirectiveMetadata meta) {

@@ -4,8 +4,8 @@ import "../output/output_ast.dart" as o;
 import "../template_ast.dart" show TemplateAst;
 
 class _DebugState {
-  num nodeIndex;
-  TemplateAst sourceAst;
+  final int nodeIndex;
+  final TemplateAst sourceAst;
   _DebugState(this.nodeIndex, this.sourceAst);
 }
 
@@ -60,12 +60,12 @@ class CompileMethod {
     }
   }
 
-  o.Expression resetDebugInfoExpr(num nodeIndex, TemplateAst templateAst) {
+  o.Expression resetDebugInfoExpr(int nodeIndex, TemplateAst templateAst) {
     var res = _updateDebugContext(new _DebugState(nodeIndex, templateAst));
     return res ?? o.NULL_EXPR;
   }
 
-  void resetDebugInfo(num nodeIndex, TemplateAst templateAst) {
+  void resetDebugInfo(int nodeIndex, TemplateAst templateAst) {
     _newState = new _DebugState(nodeIndex, templateAst);
   }
 

@@ -52,8 +52,6 @@ class ReflectableEmitter {
   Reference get _Self => _ngRef('Self');
   Reference get _Host => _ngRef('Host');
   Reference get _Inject => _ngRef('Inject');
-  Reference get _MultiToken => _ngRef('MultiToken');
-  Reference get _OpaqueToken => _ngRef('OpaqueToken');
 
   ReflectableEmitter(
     this._output,
@@ -62,8 +60,7 @@ class ReflectableEmitter {
     this.reflectorSource: '$_package/src/di/reflector.dart',
     List<String> deferredModules,
     this.deferredModuleSource,
-  })
-      : _allocator = allocator ?? Allocator.none,
+  })  : _allocator = allocator ?? Allocator.none,
         deferredModules = deferredModules ?? const [];
 
   /// Whether we have one or more URLs that need `initReflector` called on them.
@@ -161,7 +158,7 @@ class ReflectableEmitter {
     // Prepare to write code.
     _importBuffer = new StringBuffer();
     _initReflectorBuffer = new StringBuffer();
-    _dartEmitter = new _SplitDartEmitter(_importBuffer, _allocator);
+    _dartEmitter = new SplitDartEmitter(_importBuffer, _allocator);
     _libraryBuilder = new LibraryBuilder();
 
     // Reference _ngRef if we do any registration.
@@ -318,11 +315,10 @@ class ReflectableEmitter {
       return _Inject.constInstance([refer(token.literal)]);
     }
     if (token is OpaqueTokenElement) {
-      final classType = token.isMultiToken ? _MultiToken : _OpaqueToken;
+      final classType = linkToReference(token.classUrl, _library);
       final tokenInstance = classType.constInstance(
-        [literalString(token.identifier)],
+        token.identifier.isNotEmpty ? [literalString(token.identifier)] : [],
         {},
-        [linkToReference(token.typeUrl, _library)],
       );
       return _Inject.constInstance([tokenInstance]);
     }
@@ -373,14 +369,13 @@ class ReflectableEmitter {
 // on the existing "Output AST" format (string-based).
 //
 // Once/if all code is using code_builder, this can be safely removed.
-class _SplitDartEmitter extends DartEmitter {
+class SplitDartEmitter extends DartEmitter {
   final StringSink _writeImports;
 
-  _SplitDartEmitter(
+  SplitDartEmitter(
     this._writeImports, [
     Allocator allocator = Allocator.none,
-  ])
-      : super(allocator);
+  ]) : super(allocator);
 
   @override
   visitDirective(Directive spec, [_]) {

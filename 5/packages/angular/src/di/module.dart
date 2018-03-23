@@ -18,18 +18,18 @@ import 'providers.dart';
 /// ```dart
 /// // Before.
 /// const carModule = const [
-///   const Provider(Car, useClass: AmericanCar),
+///   const ClassProvider(Car, useClass: AmericanCar),
 /// ];
 ///
 /// const autoShopModule = const [
 ///   carModule,
-///   const Provider(Oil, useClass: GenericOil),
+///   const ClassProvider(Oil, useClass: GenericOil),
 /// ];
 ///
 /// // After.
 /// const carModule = const Module(
 ///   provide: const [
-///     const Provider(Car, useClass: AmericanCar),
+///     const ClassProvider(Car, useClass: AmericanCar),
 ///   ],
 /// );
 ///
@@ -38,7 +38,7 @@ import 'providers.dart';
 ///     carModule,
 ///   ],
 ///   provide: const [
-///     const Provider(Oil, useClass: GenericOil),
+///     const ClassProvider(Oil, useClass: GenericOil),
 ///   ],
 /// );
 /// ```
@@ -47,6 +47,7 @@ class Module {
   final List<Module> include;
   final List<Provider<Object>> provide;
 
+  @literal
   const factory Module({
     List<Module> include,
     List<Provider<Object>> provide,
@@ -61,9 +62,8 @@ class Module {
 /// Compatibility layer for expressing a [Module] as a `List<...>`.
 ///
 /// **DO NOT USE**: This function may break or change at any time.
-@visibleForTesting
 List<Provider<Object>> internalModuleToList(Module module) {
-  final result = <dynamic>[];
+  final result = <Provider<Object>>[];
   final includes = module.include;
   for (var i = 0, l = includes.length; i < l; i++) {
     result.addAll(internalModuleToList(includes[i]));

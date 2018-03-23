@@ -24,7 +24,7 @@ abstract class TemplateAst {
 /// A segment of text within the template.
 class TextAst implements TemplateAst {
   final String value;
-  final num ngContentIndex;
+  final int ngContentIndex;
   final SourceSpan sourceSpan;
 
   TextAst(this.value, this.ngContentIndex, this.sourceSpan);
@@ -36,7 +36,7 @@ class TextAst implements TemplateAst {
 /// A bound expression within the text of a template.
 class BoundTextAst implements TemplateAst {
   final AST value;
-  final num ngContentIndex;
+  final int ngContentIndex;
   final SourceSpan sourceSpan;
 
   BoundTextAst(this.value, this.ngContentIndex, this.sourceSpan);
@@ -140,7 +140,7 @@ class ElementAst implements TemplateAst {
   final List<ProviderAst> providers;
   final ElementProviderUsage elementProviderUsage;
   final List<TemplateAst> children;
-  final num ngContentIndex;
+  final int ngContentIndex;
   final SourceSpan sourceSpan;
 
   ElementAst(
@@ -174,7 +174,7 @@ class EmbeddedTemplateAst implements TemplateAst {
   final List<TemplateAst> children;
   final ElementProviderUsage elementProviderUsage;
   final bool hasDeferredComponent;
-  final num ngContentIndex;
+  final int ngContentIndex;
   final SourceSpan sourceSpan;
 
   EmbeddedTemplateAst(
@@ -233,7 +233,7 @@ class ProviderAst implements TemplateAst {
   final bool multiProvider;
 
   /// May be non-null if [multiProvider] is `true`.
-  final CompileTypeMetadata multiProviderType;
+  final CompileTypeMetadata typeArgument;
 
   /// Whether provider should be eagerly created at build time.
   ///
@@ -256,9 +256,11 @@ class ProviderAst implements TemplateAst {
   /// dependencies.
   final bool visibleForInjection;
 
-  /// Whether the provider is implemented as an alias to a directive
-  /// with no visibility.
-  final bool implementedByDirectiveWithNoVisibility;
+  /// Whether the provider is an alias for a directive with local visibility.
+  ///
+  /// This is non-final as it could be changed by another provider overriding
+  /// the original [providers].
+  bool implementedByDirectiveWithNoVisibility;
 
   final List<CompileProviderMetadata> providers;
   final ProviderAstType providerType;
@@ -272,7 +274,7 @@ class ProviderAst implements TemplateAst {
     this.sourceSpan, {
     this.eager,
     this.dynamicallyReachable: true,
-    this.multiProviderType,
+    this.typeArgument,
     this.visibleForInjection: true,
     this.implementedByDirectiveWithNoVisibility: false,
   });
@@ -312,8 +314,8 @@ enum ProviderAstType {
 /// Position where content is to be projected (instance of <ng-content> in
 /// a template).
 class NgContentAst implements TemplateAst {
-  final num index;
-  final num ngContentIndex;
+  final int index;
+  final int ngContentIndex;
   final SourceSpan sourceSpan;
 
   NgContentAst(this.index, this.ngContentIndex, this.sourceSpan);

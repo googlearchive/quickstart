@@ -2,8 +2,6 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-library analyzer.src.task.dart;
-
 import 'dart:collection';
 
 import 'package:analyzer/dart/ast/ast.dart';
@@ -54,44 +52,43 @@ import 'package:analyzer/task/model.dart';
 /**
  * The [ResultCachingPolicy] for ASTs.
  */
-const ResultCachingPolicy<CompilationUnit> AST_CACHING_POLICY =
+const ResultCachingPolicy AST_CACHING_POLICY =
     const SimpleResultCachingPolicy(1024 * 64, 32);
 
 /**
  * The [ResultCachingPolicy] for lists of [ConstantEvaluationTarget]s.
  */
-const ResultCachingPolicy<List<ConstantEvaluationTarget>>
-    CONSTANT_EVALUATION_TARGET_LIST_POLICY =
+const ResultCachingPolicy CONSTANT_EVALUATION_TARGET_LIST_POLICY =
     const SimpleResultCachingPolicy(-1, -1);
 
 /**
  * The [ResultCachingPolicy] for [ConstantEvaluationTarget]s.
  */
-const ResultCachingPolicy<ConstantEvaluationTarget>
-    CONSTANT_EVALUATION_TARGET_POLICY = const SimpleResultCachingPolicy(-1, -1);
+const ResultCachingPolicy CONSTANT_EVALUATION_TARGET_POLICY =
+    const SimpleResultCachingPolicy(-1, -1);
 
 /**
  * The [ResultCachingPolicy] for [Element]s.
  */
-const ResultCachingPolicy<Element> ELEMENT_CACHING_POLICY =
+const ResultCachingPolicy ELEMENT_CACHING_POLICY =
     const SimpleResultCachingPolicy(-1, -1);
 
 /**
  * The [ResultCachingPolicy] for [TOKEN_STREAM].
  */
-const ResultCachingPolicy<Token> TOKEN_STREAM_CACHING_POLICY =
+const ResultCachingPolicy TOKEN_STREAM_CACHING_POLICY =
     const SimpleResultCachingPolicy(1, 1);
 
 /**
  * The [ResultCachingPolicy] for [UsedImportedElements]s.
  */
-const ResultCachingPolicy<UsedImportedElements> USED_IMPORTED_ELEMENTS_POLICY =
+const ResultCachingPolicy USED_IMPORTED_ELEMENTS_POLICY =
     const SimpleResultCachingPolicy(-1, -1);
 
 /**
  * The [ResultCachingPolicy] for [UsedLocalElements]s.
  */
-const ResultCachingPolicy<UsedLocalElements> USED_LOCAL_ELEMENTS_POLICY =
+const ResultCachingPolicy USED_LOCAL_ELEMENTS_POLICY =
     const SimpleResultCachingPolicy(-1, -1);
 
 /**
@@ -1078,7 +1075,7 @@ class BuildCompilationUnitElementTask extends SourceBasedAnalysisTask {
     ConstantFinder constantFinder = new ConstantFinder();
     unit.accept(constantFinder);
     List<ConstantEvaluationTarget> constants =
-        constantFinder.constantsToCompute.toList();
+        constantFinder.constantsToCompute;
     //
     // Record outputs.
     //
@@ -2263,9 +2260,9 @@ class ComputeLibraryCycleTask extends SourceBasedAnalysisTask {
           component.expand((l) => l.units).map(unitToLSU).toList();
       outputs[LIBRARY_CYCLE_DEPENDENCIES] = deps.map(unitToLSU).toList();
     } else {
-      outputs[LIBRARY_CYCLE] = [];
-      outputs[LIBRARY_CYCLE_UNITS] = [];
-      outputs[LIBRARY_CYCLE_DEPENDENCIES] = [];
+      outputs[LIBRARY_CYCLE] = <LibraryElement>[];
+      outputs[LIBRARY_CYCLE_UNITS] = <LibrarySpecificUnit>[];
+      outputs[LIBRARY_CYCLE_DEPENDENCIES] = <LibrarySpecificUnit>[];
     }
   }
 
@@ -2531,18 +2528,20 @@ class DartErrorsTask extends SourceBasedAnalysisTask {
     inputs[IGNORE_INFO_INPUT] = IGNORE_INFO.of(source);
     EnginePlugin enginePlugin = AnalysisEngine.instance.enginePlugin;
     // for Source
-    List<ResultDescriptor> errorsForSource = enginePlugin.dartErrorsForSource;
+    List<ListResultDescriptor<AnalysisError>> errorsForSource =
+        enginePlugin.dartErrorsForSource;
     int sourceLength = errorsForSource.length;
     for (int i = 0; i < sourceLength; i++) {
-      ResultDescriptor result = errorsForSource[i];
+      ListResultDescriptor<AnalysisError> result = errorsForSource[i];
       String inputName = result.name + '_input';
       inputs[inputName] = result.of(source);
     }
     // for LibrarySpecificUnit
-    List<ResultDescriptor> errorsForUnit = enginePlugin.dartErrorsForUnit;
+    List<ListResultDescriptor<AnalysisError>> errorsForUnit =
+        enginePlugin.dartErrorsForUnit;
     int unitLength = errorsForUnit.length;
     for (int i = 0; i < unitLength; i++) {
-      ResultDescriptor result = errorsForUnit[i];
+      ListResultDescriptor<AnalysisError> result = errorsForUnit[i];
       String inputName = result.name + '_input';
       inputs[inputName] =
           CONTAINING_LIBRARIES.of(source).toMap((Source library) {
@@ -5135,6 +5134,13 @@ class ResolveUnitTypeNamesTask extends SourceBasedAnalysisTask {
         library, unitElement.source, typeProvider, errorListener);
     unit.accept(visitor);
     //
+    // Re-write the AST to handle the optional new and const feature.
+    //
+    if (library.context.analysisOptions.previewDart2) {
+      unit.accept(new AstRewriteVisitor(library, unit.element.source,
+          typeProvider, AnalysisErrorListener.NULL_LISTENER));
+    }
+    //
     // Record outputs.
     //
     outputs[RESOLVE_TYPE_NAMES_ERRORS] =
@@ -5584,7 +5590,8 @@ class VerifyUnitTask extends SourceBasedAnalysisTask {
         libraryElement,
         typeProvider,
         new InheritanceManager(libraryElement),
-        context.analysisOptions.enableSuperMixins);
+        context.analysisOptions.enableSuperMixins,
+        disableConflictingGenericsCheck: true);
     unit.accept(errorVerifier);
     //
     // Convert the pending errors into actual errors.

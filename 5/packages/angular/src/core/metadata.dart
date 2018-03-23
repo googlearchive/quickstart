@@ -221,6 +221,10 @@ class Directive {
   final String exportAs;
 
   /// Whether this directive will be provided for injection.
+  ///
+  /// By default this is [Visibility.local], which prevents injecting the
+  /// directive class by default, but provides a code-size and runtime
+  /// performance benefit. See [Visibility] for details.
   final Visibility visibility;
 
   const Directive({
@@ -229,7 +233,7 @@ class Directive {
         this.host,
     this.providers,
     this.exportAs,
-    this.visibility,
+    this.visibility: Visibility.local,
   });
 }
 
@@ -338,7 +342,7 @@ class Component extends Directive {
         Map<String, String> host,
     String exportAs,
     List providers,
-    Visibility visibility,
+    Visibility visibility: Visibility.local,
     this.viewProviders,
     this.exports,
     this.changeDetection: ChangeDetectionStrategy.Default,
@@ -350,8 +354,7 @@ class Component extends Directive {
     this.directives,
     this.pipes,
     this.encapsulation,
-  })
-      : super(
+  }) : super(
           selector: selector,
           host: host,
           exportAs: exportAs,
@@ -554,8 +557,7 @@ class ContentChildren extends _Query {
     Object selector, {
     bool descendants: true,
     Object read,
-  })
-      : super(
+  }) : super(
           selector,
           descendants: descendants,
           read: read,
@@ -584,8 +586,7 @@ class ContentChild extends _Query {
   const ContentChild(
     Object selector, {
     Object read,
-  })
-      : super(
+  }) : super(
           selector,
           descendants: true,
           first: true,
@@ -634,8 +635,7 @@ abstract class _ViewQuery extends _Query {
     bool descendants: false,
     bool first: false,
     Object read,
-  })
-      : super(
+  }) : super(
           selector,
           descendants: descendants,
           first: first,
@@ -729,8 +729,7 @@ class ViewChildren extends _ViewQuery {
   const ViewChildren(
     Object selector, {
     Object read,
-  })
-      : super(
+  }) : super(
           selector,
           descendants: true,
           read: read,
@@ -813,8 +812,7 @@ class ViewChild extends _ViewQuery {
   const ViewChild(
     Object selector, {
     Object read,
-  })
-      : super(
+  }) : super(
           selector,
           descendants: true,
           first: true,
@@ -929,6 +927,8 @@ class Output {
 ///
 /// ### Example
 ///
+/// With class bindings:
+///
 /// The following example creates a directive that sets the `valid` and
 /// `invalid` classes on the DOM element that has ngModel directive on it.
 ///
@@ -954,6 +954,27 @@ class Output {
 ///   var prop;
 ///  }
 /// ```
+///
+/// With attribute bindings:
+///
+/// The following example creates a checkbox component which reflects its state
+/// as attributes on the host element.  When the checkbox is disabled, it sets
+/// the tabindex to -1 to move it out of tab order. When the checkbox is checked
+/// the host element will add a "checked" boolean attribute.
+///
+/// ```dart
+/// @Component(selector: 'ng-checkbox', template: '...')
+/// class NgCheckboxComponent {
+///    bool disabled;
+///    bool isChecked;
+///
+///   @HostBinding('attr.tabindex')
+///   String get tabIndex => disabled ? '-1' : '1';
+///
+///   @HostBinding('attr.checked')
+///   String get checked => isChecked ? '' : null;
+/// }
+///```
 class HostBinding {
   final String hostPropertyName;
   const HostBinding([this.hostPropertyName]);

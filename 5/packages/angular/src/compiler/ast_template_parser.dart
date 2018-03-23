@@ -1,7 +1,8 @@
-import 'package:source_span/source_span.dart';
+import 'package:angular_compiler/cli.dart';
 import 'package:angular/src/facade/exceptions.dart';
 import 'package:angular_ast/angular_ast.dart' as ast;
 import 'package:angular_ast/src/expression/micro.dart';
+import 'package:source_span/source_span.dart';
 
 import 'chars.dart';
 import 'compile_metadata.dart';
@@ -20,15 +21,26 @@ import 'template_parser.dart';
 import 'template_parser/recursive_template_visitor.dart';
 import 'template_preparser.dart';
 
+// TODO: Remove the following lines (for --no-implicit-casts).
+// ignore_for_file: argument_type_not_assignable
+// ignore_for_file: invalid_assignment
+// ignore_for_file: list_element_type_not_assignable
+// ignore_for_file: non_bool_operand
+// ignore_for_file: return_of_invalid_type
+
+const _templateElement = 'template';
+
 /// A [TemplateParser] which uses the `angular_ast` package to parse angular
 /// templates.
 class AstTemplateParser implements TemplateParser {
+  final CompilerFlags flags;
+
   @override
   final ElementSchemaRegistry schemaRegistry;
 
   final Parser parser;
 
-  AstTemplateParser(this.schemaRegistry, this.parser);
+  AstTemplateParser(this.schemaRegistry, this.parser, this.flags);
 
   /// Parses the template into a structured tree of [ng.TemplateAst] nodes.
   ///
@@ -128,6 +140,9 @@ class AstTemplateParser implements TemplateParser {
   List<ast.TemplateAst> _filterElements(
       List<ast.TemplateAst> parsedAst, bool preserveWhitespace) {
     var filteredElements = new _ElementFilter().visitAll(parsedAst);
+    if (flags.useNewPreserveWhitespace) {
+      return new ast.MinimizeWhitespaceVisitor().visitAll(filteredElements);
+    }
     return new _PreserveWhitespaceVisitor()
         .visitAll(filteredElements, preserveWhitespace);
   }
@@ -569,13 +584,13 @@ class _ParseContext {
     var boundDirectives = _toAst(
         _matchTemplateDirectives(templateContext.directives, template),
         template.sourceSpan,
-        TEMPLATE_ELEMENT,
+        _templateElement,
         _location(template),
         templateContext);
     var firstComponent = _firstComponent(boundDirectives);
     return new _ParseContext._(
         templateContext,
-        TEMPLATE_ELEMENT,
+        _templateElement,
         boundDirectives,
         true,
         _createSelector(firstComponent),
@@ -780,7 +795,7 @@ CssSelector _elementSelector(ast.ElementAst astNode) => _selector(
     astNode.name, astNode.attributes, astNode.properties, astNode.events);
 
 CssSelector _templateSelector(ast.EmbeddedTemplateAst astNode) => _selector(
-    TEMPLATE_ELEMENT, astNode.attributes, astNode.properties, astNode.events);
+    _templateElement, astNode.attributes, astNode.properties, astNode.events);
 
 CssSelector _selector(String elementName, List<ast.AttributeAst> attributes,
     List<ast.PropertyAst> properties, List<ast.EventAst> events) {
@@ -1105,6 +1120,10 @@ class _TemplateValidator extends ast.RecursiveTemplateAstVisitor<Null> {
       _reportError(astNode,
           '":" is not allowed in event names: ${_getEventName(astNode)}');
     }
+    if (astNode.value == null || astNode.value.isEmpty) {
+      _reportError(astNode,
+          'events must have a bound expresssion: ${_getEventName(astNode)}');
+    }
     return super.visitEvent(astNode);
   }
 
@@ -1176,54 +1195,94 @@ class _TemplateValidator extends ast.RecursiveTemplateAstVisitor<Null> {
   }
 }
 
-/// Visitor that verifies all pipes in the template are valid.
+/// Visitor that verifies all pipe invocations in the template are valid.
 ///
-/// First, we visit all [AST] values to extract the pipe names declared in the
-/// template, and then we verify that those names are actually defined by a
-/// [CompilePipeMetadata] entry.
+/// First, we visit all [AST] values to extract the pipe invocations in the
+/// template. Then we verify that each pipe is defined by a
+/// [CompilePipeMetadata] entry, and invoked with the correct number of
+/// arguments.
 class _PipeValidator extends RecursiveTemplateVisitor<Null> {
-  final List<String> _pipeNames;
+  final Map<String, CompilePipeMetadata> _pipesByName;
   final _AstExceptionHandler _exceptionHandler;
 
-  _PipeValidator(List<CompilePipeMetadata> pipes, this._exceptionHandler)
-      : _pipeNames = pipes.map((pipe) => pipe.name).toList();
+  factory _PipeValidator(
+    List<CompilePipeMetadata> pipes,
+    _AstExceptionHandler exceptionHandler,
+  ) {
+    final pipesByName = <String, CompilePipeMetadata>{};
+    for (var pipe in pipes) {
+      pipesByName[pipe.name] = pipe;
+    }
+    return new _PipeValidator._(pipesByName, exceptionHandler);
+  }
 
-  void _validatePipeNames(AST ast, SourceSpan sourceSpan) {
+  _PipeValidator._(this._pipesByName, this._exceptionHandler);
+
+  void _validatePipes(AST ast, SourceSpan sourceSpan) {
     if (ast == null) return;
-    var collector = new PipeCollector();
+    var collector = new _PipeCollector();
     ast.visit(collector);
-    for (String pipeName in collector.pipes) {
-      if (!_pipeNames.contains(pipeName)) {
+    for (var pipeName in collector.pipeInvocations.keys) {
+      final pipe = _pipesByName[pipeName];
+      if (pipe == null) {
         _exceptionHandler.handleParseError(new TemplateParseError(
             "The pipe '$pipeName' could not be found.",
             sourceSpan,
             ParseErrorLevel.FATAL));
+      } else {
+        for (var numArgs in collector.pipeInvocations[pipeName]) {
+          // Don't include the required parameter to the left of the pipe name.
+          final numParams = pipe.transformType.paramTypes.length - 1;
+          if (numArgs > numParams) {
+            _exceptionHandler.handleParseError(new TemplateParseError(
+                "The pipe '$pipeName' was invoked with too many arguments: "
+                '$numParams expected, but $numArgs found.',
+                sourceSpan,
+                ParseErrorLevel.FATAL));
+          }
+        }
       }
     }
   }
 
   @override
   ng.TemplateAst visitBoundText(ng.BoundTextAst ast, _) {
-    _validatePipeNames(ast.value, ast.sourceSpan);
+    _validatePipes(ast.value, ast.sourceSpan);
     return super.visitBoundText(ast, null);
   }
 
   @override
   ng.TemplateAst visitDirectiveProperty(ng.BoundDirectivePropertyAst ast, _) {
-    _validatePipeNames(ast.value, ast.sourceSpan);
+    _validatePipes(ast.value, ast.sourceSpan);
     return super.visitDirectiveProperty(ast, null);
   }
 
   @override
   ng.TemplateAst visitElementProperty(ng.BoundElementPropertyAst ast, _) {
-    _validatePipeNames(ast.value, ast.sourceSpan);
+    _validatePipes(ast.value, ast.sourceSpan);
     return super.visitElementProperty(ast, null);
   }
 
   @override
   ng.TemplateAst visitEvent(ng.BoundEventAst ast, _) {
-    _validatePipeNames(ast.handler, ast.sourceSpan);
+    _validatePipes(ast.handler, ast.sourceSpan);
     return super.visitEvent(ast, null);
+  }
+}
+
+class _PipeCollector extends RecursiveAstVisitor {
+  /// Records the number of arguments of each pipe invocation by name.
+  ///
+  /// Note this is the number of arguments specified to the right-hand side of
+  /// the pipe binding. This does not include the required argument to the left-
+  /// hand side of the '|'.
+  final Map<String, List<int>> pipeInvocations = {};
+
+  Null visitPipe(BindingPipe ast, dynamic context) {
+    (pipeInvocations[ast.name] ??= []).add(ast.args.length);
+    ast.exp.visit(this);
+    visitAll(ast.args, context);
+    return null;
   }
 }
 

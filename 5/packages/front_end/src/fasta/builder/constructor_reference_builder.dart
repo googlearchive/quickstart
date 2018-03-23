@@ -4,6 +4,8 @@
 
 library fasta.constructor_reference_builder;
 
+import '../messages.dart' show noLength, templateConstructorNotFound;
+
 import 'builder.dart'
     show
         Builder,
@@ -13,8 +15,6 @@ import 'builder.dart'
         QualifiedName,
         Scope,
         TypeBuilder;
-
-import '../messages.dart' show templateConstructorNotFound;
 
 class ConstructorReferenceBuilder extends Builder {
   final Object name;
@@ -62,6 +62,7 @@ class ConstructorReferenceBuilder extends Builder {
       accessingLibrary.addProblem(
           templateConstructorNotFound.withArguments(fullNameForErrors),
           charOffset,
+          noLength,
           fileUri);
     }
   }

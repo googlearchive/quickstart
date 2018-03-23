@@ -9,36 +9,13 @@ import 'package:graphs/graphs.dart';
 /// [BuilderDefinition.requiredInputs] will come after any builder which
 /// produces a desired output.
 ///
-/// Builders will be put in the following order:
-/// - Builders which write to the source tree and don't have required inputs.
-/// - Builders which write to the source tree and have required inputs (these
-/// inputs can only be also on disk)
-/// - Builders which write to the build cache and don't have requried inputs.
-/// - Builders which write to the build cache and have required inputs
+/// Builders will be ordered such that their `required_inputs` and `runs_before`
+/// constraints are met, but the rest of the ordering is arbitrary.
 Iterable<BuilderDefinition> findBuilderOrder(
     Iterable<BuilderDefinition> builders) {
-  final result = <BuilderDefinition>[];
-
-  result.addAll(builders
-      .where((b) => b.buildTo == BuildTo.source && b.requiredInputs.isEmpty));
-
-  final requiredInSource = builders
-      .where((b) => b.buildTo == BuildTo.source && b.requiredInputs.isNotEmpty);
-  result.addAll(_findOrder(requiredInSource));
-
-  result.addAll(builders
-      .where(((b) => b.buildTo == BuildTo.cache && b.requiredInputs.isEmpty)));
-
-  final requiredInCache = builders
-      .where((b) => b.buildTo == BuildTo.cache && b.requiredInputs.isNotEmpty);
-  result.addAll(_findOrder(requiredInCache));
-
-  return result;
-}
-
-List<BuilderDefinition> _findOrder(Iterable<BuilderDefinition> builders) {
   Iterable<BuilderDefinition> dependencies(BuilderDefinition parent) =>
-      builders.where((child) => _hasInputDependency(parent, child));
+      builders.where((child) =>
+          _hasInputDependency(parent, child) || _mustRunBefore(parent, child));
   var components = stronglyConnectedComponents<String, BuilderDefinition>(
       builders, (b) => b.key, dependencies);
   return components.map((component) {
@@ -56,3 +33,7 @@ bool _hasInputDependency(BuilderDefinition parent, BuilderDefinition child) {
   return parent.requiredInputs
       .any((input) => childOutputs.any((output) => output.endsWith(input)));
 }
+
+/// Whether [child] specifies that it wants to run before [parent].
+bool _mustRunBefore(BuilderDefinition parent, BuilderDefinition child) =>
+    child.runsBefore.contains(parent.key);

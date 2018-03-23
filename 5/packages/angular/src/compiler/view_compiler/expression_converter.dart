@@ -1,9 +1,16 @@
-import "package:angular/src/facade/exceptions.dart" show BaseException;
+import 'package:angular/src/facade/exceptions.dart' show BaseException;
 
 import '../chars.dart';
 import '../expression_parser/ast.dart' as compiler_ast;
 import '../identifiers.dart' show Identifiers;
 import '../output/output_ast.dart' as o;
+
+// TODO: Remove the following lines (for --no-implicit-casts).
+// ignore_for_file: argument_type_not_assignable
+// ignore_for_file: invalid_assignment
+// ignore_for_file: list_element_type_not_assignable
+// ignore_for_file: non_bool_operand
+// ignore_for_file: return_of_invalid_type
 
 var IMPLICIT_RECEIVER = o.variable("#implicit");
 
@@ -17,24 +24,39 @@ abstract class NameResolver {
   /// Returns variable declarations for all locals used in this scope.
   List<o.Statement> getLocalDeclarations();
 
-  o.Expression createLiteralList(List<o.Expression> values);
+  /// Creates a closure that returns a list of [type] when [values] change.
+  o.Expression createLiteralList(
+    List<o.Expression> values, {
+    o.OutputType type,
+  });
+
+  /// Creates a closure that returns a map of [type] when [values] change.
   o.Expression createLiteralMap(
-      List<List<dynamic /* String | o . Expression */ >> values);
+    List<List<dynamic /* String | o.Expression */ >> values, {
+    o.OutputType type,
+  });
+
   int createUniqueBindIndex();
 
   /// Creates a name resolver with shared state for use in a new method scope.
   NameResolver scope();
 }
 
+/// Converts a bound [AST] expression to an [Expression].
+///
+/// If non-null, [boundType] is the type of the input to which [expression] is
+/// bound. This is used to support empty expressions for boolean inputs, and to
+/// type annotate collection literal bindings.
 o.Expression convertCdExpressionToIr(
-    NameResolver nameResolver,
-    o.Expression implicitReceiver,
-    compiler_ast.AST expression,
-    bool preserveWhitespace,
-    bool emptyIsTrue) {
+  NameResolver nameResolver,
+  o.Expression implicitReceiver,
+  compiler_ast.AST expression,
+  bool preserveWhitespace,
+  o.OutputType boundType,
+) {
   assert(nameResolver != null);
   var visitor = new _AstToIrVisitor(
-      nameResolver, implicitReceiver, preserveWhitespace, emptyIsTrue);
+      nameResolver, implicitReceiver, preserveWhitespace, boundType);
   return expression.visit(visitor, _Mode.Expression);
 }
 
@@ -45,7 +67,7 @@ List<o.Statement> convertCdStatementToIr(
     bool preserveWhitespace) {
   assert(nameResolver != null);
   var visitor = new _AstToIrVisitor(
-      nameResolver, implicitReceiver, preserveWhitespace, false);
+      nameResolver, implicitReceiver, preserveWhitespace, null);
   var statements = <o.Statement>[];
   flattenStatements(stmt.visit(visitor, _Mode.Statement), statements);
   return statements;
@@ -65,7 +87,7 @@ void ensureExpressionMode(_Mode mode, compiler_ast.AST ast) {
   }
 }
 
-dynamic /* o . Expression | o . Statement */ convertToStatementIfNeeded(
+dynamic /* o.Expression | o.Statement */ convertToStatementIfNeeded(
     _Mode mode, o.Expression expr) {
   if (identical(mode, _Mode.Statement)) {
     return expr.toStmt();
@@ -74,24 +96,35 @@ dynamic /* o . Expression | o . Statement */ convertToStatementIfNeeded(
   }
 }
 
-class _AstToIrVisitor implements compiler_ast.AstVisitor {
+class _AstToIrVisitor implements compiler_ast.AstVisitor<dynamic, _Mode> {
   final NameResolver _nameResolver;
   final o.Expression _implicitReceiver;
-  final bool preserveWhitespace;
-  final bool emptyIsTrue;
+  final bool _preserveWhitespace;
+
+  /// The type to which this expression is bound.
+  ///
+  /// This is used to support empty expressions for booleans bindings, and type
+  /// pure proxy fields for collection literals.
+  final o.OutputType _boundType;
+
+  /// Whether the current AST is the root of the expression.
+  ///
+  /// This is used to indicate whether [_boundType] can be used to type pure
+  /// proxy fields for collection literals.
+  bool _visitingRoot;
 
   _AstToIrVisitor(
     this._nameResolver,
     this._implicitReceiver,
-    this.preserveWhitespace,
-    this.emptyIsTrue,
-  ) {
+    this._preserveWhitespace,
+    this._boundType,
+  ) : _visitingRoot = true {
     assert(_nameResolver != null);
   }
 
-  dynamic visitBinary(compiler_ast.Binary ast, dynamic context) {
-    _Mode mode = context;
-    var op;
+  dynamic visitBinary(compiler_ast.Binary ast, _Mode mode) {
+    _visitingRoot = false;
+    o.BinaryOperator op;
     switch (ast.operation) {
       case "+":
         op = o.BinaryOperator.Plus;
@@ -147,14 +180,14 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
             ast.right.visit(this, _Mode.Expression)));
   }
 
-  dynamic visitChain(compiler_ast.Chain ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitChain(compiler_ast.Chain ast, _Mode mode) {
+    _visitingRoot = false;
     ensureStatementMode(mode, ast);
-    return visitAll(ast.expressions as List<compiler_ast.AST>, mode);
+    return visitAll(ast.expressions, mode);
   }
 
-  dynamic visitConditional(compiler_ast.Conditional ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitConditional(compiler_ast.Conditional ast, _Mode mode) {
+    _visitingRoot = false;
     o.Expression value = ast.condition.visit(this, _Mode.Expression);
     return convertToStatementIfNeeded(
         mode,
@@ -162,41 +195,39 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
             ast.falseExp.visit(this, _Mode.Expression)));
   }
 
-  dynamic visitEmptyExpr(compiler_ast.EmptyExpr ast, dynamic context) {
-    _Mode mode = context;
-    o.LiteralExpr value = emptyIsTrue
+  dynamic visitEmptyExpr(compiler_ast.EmptyExpr ast, _Mode mode) {
+    final value = _isBoolType(_boundType)
         ? new o.LiteralExpr(true, o.BOOL_TYPE)
         : new o.LiteralExpr('', o.STRING_TYPE);
     return convertToStatementIfNeeded(mode, value);
   }
 
-  dynamic visitPipe(compiler_ast.BindingPipe ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitPipe(compiler_ast.BindingPipe ast, _Mode mode) {
+    _visitingRoot = false;
     var input = ast.exp.visit(this, _Mode.Expression);
-    var args = visitAll(ast.args as List<compiler_ast.AST>, _Mode.Expression)
-        as List<o.Expression>;
+    var args = visitAll(ast.args, _Mode.Expression) as List<o.Expression>;
     var value = _nameResolver.callPipe(ast.name, input, args);
     return convertToStatementIfNeeded(mode, value);
   }
 
-  dynamic visitFunctionCall(compiler_ast.FunctionCall ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitFunctionCall(compiler_ast.FunctionCall ast, _Mode mode) {
+    _visitingRoot = false;
     return convertToStatementIfNeeded(
         mode,
-        ast.target.visit(this, _Mode.Expression).callFn(
-            visitAll(ast.args as List<compiler_ast.AST>, _Mode.Expression)));
+        ast.target
+            .visit(this, _Mode.Expression)
+            .callFn(visitAll(ast.args, _Mode.Expression)));
   }
 
-  dynamic visitIfNull(compiler_ast.IfNull ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitIfNull(compiler_ast.IfNull ast, _Mode mode) {
+    _visitingRoot = false;
     o.Expression value = ast.condition.visit(this, _Mode.Expression);
     return convertToStatementIfNeeded(
         mode, value.ifNull(ast.nullExp.visit(this, _Mode.Expression)));
   }
 
-  dynamic visitImplicitReceiver(
-      compiler_ast.ImplicitReceiver ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitImplicitReceiver(compiler_ast.ImplicitReceiver ast, _Mode mode) {
+    _visitingRoot = false;
     ensureExpressionMode(mode, ast);
     return IMPLICIT_RECEIVER;
   }
@@ -204,7 +235,7 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
   /// Trim text in preserve whitespace mode if it contains \n preceding
   /// interpolation.
   String compressWhitespacePreceding(String value) {
-    if (preserveWhitespace ||
+    if (_preserveWhitespace ||
         value.contains('\u00A0') ||
         value.contains(ngSpace) ||
         !value.contains('\n')) return replaceNgSpace(value);
@@ -214,15 +245,15 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
   /// Trim text in preserve whitespace mode if it contains \n following
   /// interpolation.
   String compressWhitespaceFollowing(String value) {
-    if (preserveWhitespace ||
+    if (_preserveWhitespace ||
         value.contains('\u00A0') ||
         value.contains(ngSpace) ||
         !value.contains('\n')) return replaceNgSpace(value);
     return replaceNgSpace(value.replaceAll('\n', '').trimRight());
   }
 
-  dynamic visitInterpolation(compiler_ast.Interpolation ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitInterpolation(compiler_ast.Interpolation ast, _Mode mode) {
+    _visitingRoot = false;
     ensureExpressionMode(mode, ast);
 
     /// Handle most common case where prefix and postfix are empty.
@@ -259,8 +290,8 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
     }
   }
 
-  dynamic visitKeyedRead(compiler_ast.KeyedRead ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitKeyedRead(compiler_ast.KeyedRead ast, _Mode mode) {
+    _visitingRoot = false;
     return convertToStatementIfNeeded(
         mode,
         ast.obj
@@ -268,43 +299,46 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
             .key(ast.key.visit(this, _Mode.Expression)));
   }
 
-  dynamic visitKeyedWrite(compiler_ast.KeyedWrite ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitKeyedWrite(compiler_ast.KeyedWrite ast, _Mode mode) {
+    _visitingRoot = false;
     o.Expression obj = ast.obj.visit(this, _Mode.Expression);
     o.Expression key = ast.key.visit(this, _Mode.Expression);
     o.Expression value = ast.value.visit(this, _Mode.Expression);
     return convertToStatementIfNeeded(mode, obj.key(key).set(value));
   }
 
-  dynamic visitLiteralArray(compiler_ast.LiteralArray ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitLiteralArray(compiler_ast.LiteralArray ast, _Mode mode) {
+    final isRootExpression = _visitingRoot;
+    _visitingRoot = false;
     return convertToStatementIfNeeded(
-        mode,
-        _nameResolver.createLiteralList(
-            visitAll(ast.expressions as List<compiler_ast.AST>, mode)
-                as List<o.Expression>));
+      mode,
+      _nameResolver.createLiteralList(
+          visitAll(ast.expressions, mode) as List<o.Expression>,
+          type: isRootExpression ? _boundType : null),
+    );
   }
 
-  dynamic visitLiteralMap(compiler_ast.LiteralMap ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitLiteralMap(compiler_ast.LiteralMap ast, _Mode mode) {
+    final isRootExpression = _visitingRoot;
+    _visitingRoot = false;
     var parts = <List>[];
     for (var i = 0; i < ast.keys.length; i++) {
       parts.add([ast.keys[i], ast.values[i].visit(this, _Mode.Expression)]);
     }
     return convertToStatementIfNeeded(
-        mode, _nameResolver.createLiteralMap(parts));
+        mode,
+        _nameResolver.createLiteralMap(parts,
+            type: isRootExpression ? _boundType : null));
   }
 
-  dynamic visitLiteralPrimitive(
-      compiler_ast.LiteralPrimitive ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitLiteralPrimitive(compiler_ast.LiteralPrimitive ast, _Mode mode) {
+    _visitingRoot = false;
     return convertToStatementIfNeeded(mode, o.literal(ast.value));
   }
 
-  dynamic visitMethodCall(compiler_ast.MethodCall ast, dynamic context) {
-    _Mode mode = context;
-    var args = visitAll(ast.args as List<compiler_ast.AST>, _Mode.Expression)
-        as List<o.Expression>;
+  dynamic visitMethodCall(compiler_ast.MethodCall ast, _Mode mode) {
+    _visitingRoot = false;
+    var args = visitAll(ast.args, _Mode.Expression) as List<o.Expression>;
     var result;
     var receiver = ast.receiver.visit(this, _Mode.Expression);
     if (identical(receiver, IMPLICIT_RECEIVER)) {
@@ -320,14 +354,14 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
     return convertToStatementIfNeeded(mode, result);
   }
 
-  dynamic visitPrefixNot(compiler_ast.PrefixNot ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitPrefixNot(compiler_ast.PrefixNot ast, _Mode mode) {
+    _visitingRoot = false;
     return convertToStatementIfNeeded(
         mode, o.not(ast.expression.visit(this, _Mode.Expression)));
   }
 
-  dynamic visitPropertyRead(compiler_ast.PropertyRead ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitPropertyRead(compiler_ast.PropertyRead ast, _Mode mode) {
+    _visitingRoot = false;
     var result;
     var receiver = ast.receiver.visit(this, _Mode.Expression);
     if (identical(receiver, IMPLICIT_RECEIVER)) {
@@ -340,8 +374,8 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
     return convertToStatementIfNeeded(mode, result);
   }
 
-  dynamic visitPropertyWrite(compiler_ast.PropertyWrite ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitPropertyWrite(compiler_ast.PropertyWrite ast, _Mode mode) {
+    _visitingRoot = false;
     o.Expression receiver = ast.receiver.visit(this, _Mode.Expression);
     if (identical(receiver, IMPLICIT_RECEIVER)) {
       var varExpr = _nameResolver.getLocal(ast.name);
@@ -354,19 +388,17 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
         receiver.prop(ast.name).set(ast.value.visit(this, _Mode.Expression)));
   }
 
-  dynamic visitSafePropertyRead(
-      compiler_ast.SafePropertyRead ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitSafePropertyRead(compiler_ast.SafePropertyRead ast, _Mode mode) {
+    _visitingRoot = false;
     var receiver = ast.receiver.visit(this, _Mode.Expression);
     return convertToStatementIfNeeded(mode,
         receiver.isBlank().conditional(o.NULL_EXPR, receiver.prop(ast.name)));
   }
 
-  dynamic visitSafeMethodCall(
-      compiler_ast.SafeMethodCall ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitSafeMethodCall(compiler_ast.SafeMethodCall ast, _Mode mode) {
+    _visitingRoot = false;
     var receiver = ast.receiver.visit(this, _Mode.Expression);
-    var args = visitAll(ast.args as List<compiler_ast.AST>, _Mode.Expression);
+    var args = visitAll(ast.args, _Mode.Expression);
     return convertToStatementIfNeeded(
         mode,
         receiver
@@ -374,14 +406,13 @@ class _AstToIrVisitor implements compiler_ast.AstVisitor {
             .conditional(o.NULL_EXPR, receiver.callMethod(ast.name, args)));
   }
 
-  dynamic visitStaticRead(compiler_ast.StaticRead ast, dynamic context) {
-    _Mode mode = context;
+  dynamic visitStaticRead(compiler_ast.StaticRead ast, _Mode mode) {
+    _visitingRoot = false;
     return convertToStatementIfNeeded(
         mode, o.importExpr(ast.id.identifier, isConst: true));
   }
 
-  dynamic visitAll(List<compiler_ast.AST> asts, dynamic context) {
-    _Mode mode = context;
+  dynamic visitAll(List<compiler_ast.AST> asts, _Mode mode) {
     return asts.map((ast) => ast.visit(this, mode)).toList();
   }
 }
@@ -394,4 +425,13 @@ void flattenStatements(dynamic arg, List<o.Statement> output) {
   } else {
     output.add(arg);
   }
+}
+
+bool _isBoolType(o.OutputType type) {
+  if (type == o.BOOL_TYPE) return true;
+  if (type is o.ExternalType) {
+    String name = type.value.name;
+    return 'bool' == name.trim();
+  }
+  return false;
 }

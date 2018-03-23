@@ -1,6 +1,9 @@
+import 'package:angular/src/runtime.dart';
+
 import '../../core/di/decorators.dart';
 import '../../core/di/opaque_token.dart';
-import '../../facade/lang.dart' show assertionsEnabled;
+import '../errors.dart' as errors;
+import '../module.dart';
 import '../providers.dart';
 import '../reflector.dart' as reflector;
 
@@ -10,14 +13,23 @@ import 'injector.dart';
 
 /// An injector that resolves [Provider] instances with runtime information.
 abstract class ReflectiveInjector implements HierarchicalInjector {
-  /// Create a new [RuntimeInjector] by resolving [providersOrLists] at runtime.
+  /// Creates a new [Injector] that resolves `Provider` instances at runtime.
+  ///
+  /// This is an **expensive** operation without any sort of caching or
+  /// optimizations that manually walks the nested [providersOrLists], and uses
+  /// a form of runtime reflection to figure out how to map the providers to
+  /// runnable code.
+  ///
+  /// Using this function can **disable all tree-shaking** for any `@Injectable`
+  /// annotated function or class in your _entire_ transitive application, and
+  /// is provided for legacy compatibility only.
   static ReflectiveInjector resolveAndCreate(
     List<Object> providersOrLists, [
     HierarchicalInjector parent = const EmptyInjector(),
   ]) {
     // Return the default implementation.
     final flatProviders = _flattenProviders(providersOrLists);
-    if (assertionsEnabled()) {
+    if (isDevMode) {
       _assertProviders(flatProviders.providers.values);
       _assertProviders(flatProviders.multiProviders);
     }
@@ -50,8 +62,7 @@ class _RuntimeInjector extends HierarchicalInjector
     this._providers,
     this._multiProviders,
     HierarchicalInjector parent,
-  )
-      : super(parent) {
+  ) : super(parent) {
     assert(parent != null, 'A parent injector is always required.');
     // Injectors as a contract must return themselves if `Injector` is a token.
     _instances[Injector] = this;
@@ -89,7 +100,10 @@ class _RuntimeInjector extends HierarchicalInjector
   dynamic resolveAndInstantiate(dynamic providerOrType) {
     final provider = providerOrType is Provider
         ? providerOrType
-        : new Provider(providerOrType, useClass: providerOrType);
+        : new Provider(
+            providerOrType,
+            useClass: unsafeCast<Type>(providerOrType),
+          );
     return buildAtRuntime(provider, this);
   }
 
@@ -109,7 +123,14 @@ class _RuntimeInjector extends HierarchicalInjector
     final resolved = new List(deps.length);
     for (var i = 0, l = resolved.length; i < l; i++) {
       final dep = deps[i];
-      final result = dep is List ? _resolveMeta(dep) : inject(dep);
+      Object result;
+      if (dep is List) {
+        result = _resolveMeta(dep);
+      } else {
+        errors.debugInjectorEnter(dep);
+        result = inject(dep);
+        errors.debugInjectorLeave(dep);
+      }
       // We don't check to see if this failed otherwise, because this is an
       // edge case where we just delegate to Function.apply to invoke a factory.
       if (identical(result, throwIfNotFound)) {
@@ -154,6 +175,7 @@ class _RuntimeInjector extends HierarchicalInjector
     }
     // TODO(matanl): Assert that there is no invalid combination.
     Object result;
+    errors.debugInjectorEnter(token);
     final orElse = isOptional ? null : throwIfNotFound;
     if (isSkipSelf) {
       result = injectFromAncestryOptional(token, orElse);
@@ -167,6 +189,7 @@ class _RuntimeInjector extends HierarchicalInjector
     if (identical(result, throwIfNotFound)) {
       throwsNotFound(this, token);
     }
+    errors.debugInjectorLeave(token);
     return result;
   }
 
@@ -211,7 +234,7 @@ void _assertProviders(Iterable<Provider<Object>> providers) {
     } else if (provider.useFactory == noValueProvided &&
         provider.useExisting == null &&
         provider.token is Type) {
-      reflector.getFactory(provider.token);
+      reflector.getFactory(unsafeCast<Type>(provider.token));
     }
   }
 }
@@ -234,9 +257,15 @@ _FlatProviders _flattenProviders(
       if (_isMultiProvider(item)) {
         multiProviders.add(item);
       }
+      // Even if `item` is a multi provider, we still add it to the map of
+      // regular providers to indicate that a multi provider for that token
+      // exists.
       allProviders[item.token] = item;
     } else if (item is Type) {
       allProviders[item] = new Provider(item, useClass: item);
+    } else if (item is Module) {
+      final providers = internalModuleToList(item);
+      _flattenProviders(providers, allProviders, multiProviders);
     } else {
       assert(false, 'Unsupported: $item');
     }

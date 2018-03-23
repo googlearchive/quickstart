@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:analyzer/dart/ast/ast.dart' as ast;
 import 'package:analyzer/dart/element/element.dart';
+import 'package:angular_compiler/cli.dart';
 import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:source_gen/source_gen.dart';
@@ -94,8 +95,7 @@ class ReflectableReader {
     this.recordDirectivesAsInjectables: true,
     this.recordPipesAsInjectables: true,
     this.recordRouterAnnotationsForComponents: true,
-  })
-      : hasInput = _nullHasInput,
+  })  : hasInput = _nullHasInput,
         isLibrary = _nullIsLibrary;
 
   static FutureOr<bool> _nullHasInput(_) => false;
@@ -131,6 +131,10 @@ class ReflectableReader {
   ReflectableClass _resolveClass(ClassElement element) {
     DependencyInvocation<ConstructorElement> factory;
     if (_shouldRecordFactory(element)) {
+      if (element.isPrivate) {
+        // TODO(matanl): Make this a better error message.
+        throw new BuildError('Cannot access private class ${element.name}');
+      }
       factory = dependencyReader.parseDependencies(element);
     }
     final isComponent = $Component.firstAnnotationOfExact(element) != null;

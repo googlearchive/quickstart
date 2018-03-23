@@ -24,13 +24,15 @@ import 'compile_method.dart' show CompileMethod;
 import 'compile_view.dart' show CompileView;
 import 'constants.dart' show DetectChangesVars;
 import 'expression_converter.dart' show convertCdExpressionToIr;
+import 'ir/view_storage.dart';
 import 'view_builder.dart' show buildUpdaterFunctionName;
 import 'view_compiler_utils.dart'
     show
+        createFlatArray,
         createSetAttributeParams,
+        outlinerDeprecated,
         unwrapDirective,
-        unwrapDirectiveInstance,
-        outlinerDeprecated;
+        unwrapDirectiveInstance;
 import 'view_name_resolver.dart';
 
 o.ReadClassMemberExpr createBindFieldExpr(num exprIndex) =>
@@ -57,6 +59,7 @@ o.ReadVarExpr createCurrValueExpr(num exprIndex) =>
 void bind(
     CompileDirectiveMetadata viewDirective,
     ViewNameResolver nameResolver,
+    ViewStorage storage,
     o.ReadVarExpr currValExpr,
     o.ReadClassMemberExpr fieldExpr,
     ast.AST parsedExpression,
@@ -66,15 +69,17 @@ void bind(
     CompileMethod literalMethod,
     bool genDebugInfo,
     {o.OutputType fieldType,
-    bool isHostComponent: false}) {
+    bool isHostComponent: false,
+    o.Expression fieldExprInitializer}) {
   parsedExpression =
       rewriteInterpolate(parsedExpression, viewDirective.analyzedClass);
   var checkExpression = convertCdExpressionToIr(
-      nameResolver,
-      context,
-      parsedExpression,
-      viewDirective.template.preserveWhitespace,
-      _isBoolType(fieldType));
+    nameResolver,
+    context,
+    parsedExpression,
+    viewDirective.template.preserveWhitespace,
+    fieldType,
+  );
   if (isImmutable(parsedExpression, viewDirective.analyzedClass)) {
     // If the expression is a literal, it will never change, so we can run it
     // once on the first change detection.
@@ -89,9 +94,10 @@ void bind(
     return;
   }
   bool isPrimitive = isPrimitiveFieldType(fieldType);
-  nameResolver.addField(new o.ClassField(fieldExpr.name,
+  ViewStorageItem previousValueField = storage.allocate(fieldExpr.name,
       modifiers: const [o.StmtModifier.Private],
-      outputType: isPrimitive ? fieldType : null));
+      initializer: fieldExprInitializer,
+      outputType: isPrimitive ? fieldType : null);
   method.addStmt(currValExpr
       .set(checkExpression)
       .toDeclStmt(null, [o.StmtModifier.Final]));
@@ -107,7 +113,7 @@ void bind(
       condition,
       new List.from(actions)
         ..addAll([
-          new o.WriteClassMemberExpr(fieldExpr.name, currValExpr).toStmt()
+          storage.buildWriteExpr(previousValueField, currValExpr).toStmt()
         ])));
 }
 
@@ -147,7 +153,10 @@ void _bindLiteral(
 
 void bindRenderText(
     BoundTextAst boundText, CompileNode compileNode, CompileView view) {
-  view.addBinding(compileNode, boundText);
+  if (isImmutable(boundText.value, view.component.analyzedClass)) {
+    // We already set the value to the text node at creation
+    return;
+  }
   int bindingIndex = view.nameResolver.createUniqueBindIndex();
   // Expression for current value of expression when value is re-read.
   var currValExpr = createCurrValueExpr(bindingIndex);
@@ -159,6 +168,7 @@ void bindRenderText(
   bind(
       view.component,
       view.nameResolver,
+      view.storage,
       currValExpr,
       valueField,
       boundText.value,
@@ -200,6 +210,7 @@ void bindAndWriteToRenderer(
     o.Expression renderNode,
     bool isHtmlElement,
     ViewNameResolver nameResolver,
+    ViewStorage storage,
     CompileMethod targetMethod,
     bool genDebugInfo,
     {bool updatingHostAttribute: false,
@@ -238,7 +249,7 @@ void bindAndWriteToRenderer(
         }
         break;
       case PropertyBindingType.Attribute:
-        var attrNs;
+        String attrNs;
         String attrName = boundProp.name;
         if (attrName.startsWith('@') && attrName.contains(':')) {
           var nameParts = attrName.substring(1).split(':');
@@ -291,6 +302,7 @@ void bindAndWriteToRenderer(
     bind(
         directiveMeta,
         nameResolver,
+        storage,
         currValExpr,
         fieldExpr,
         boundProp.value,
@@ -355,6 +367,7 @@ void bindRenderInputs(
       renderNode.toReadExpr(),
       compileElement.isHtmlElement,
       view.nameResolver,
+      view.storage,
       view.detectChangesRenderPropertiesMethod,
       view.genDebugInfo);
 }
@@ -439,7 +452,6 @@ void bindDirectiveInputs(DirectiveAst directiveAst,
   // directiveAst contains the target directive we are updating.
   // input is a BoundPropertyAst that contains binding metadata.
   for (var input in directiveAst.inputs) {
-    view.addBinding(compileElement, input);
     var bindingIndex = view.nameResolver.createUniqueBindIndex();
     dynamicInputsMethod.resetDebugInfo(compileElement.nodeIndex, input);
     var fieldExpr = createBindFieldExpr(bindingIndex);
@@ -455,7 +467,7 @@ void bindDirectiveInputs(DirectiveAst directiveAst,
           DetectChangesVars.cachedCtx,
           input.value,
           view.component.template.preserveWhitespace,
-          true);
+          o.BOOL_TYPE);
       dynamicInputsMethod.addStmt(directiveInstance
           .prop(input.directiveName)
           .set(checkExpression)
@@ -469,7 +481,7 @@ void bindDirectiveInputs(DirectiveAst directiveAst,
           DetectChangesVars.cachedCtx,
           input.value,
           view.component.template.preserveWhitespace,
-          _isBoolType(fieldType));
+          fieldType);
       if (isImmutable(input.value, view.component.analyzedClass)) {
         constantInputsMethod.addStmt(directiveInstance
             .prop(input.directiveName)
@@ -522,7 +534,9 @@ void bindDirectiveInputs(DirectiveAst directiveAst,
     CompileTypeMetadata inputTypeMeta = directive.inputTypes != null
         ? directive.inputTypes[input.directiveName]
         : null;
-    var inputType = inputTypeMeta != null ? o.importType(inputTypeMeta) : null;
+    var inputType = inputTypeMeta != null
+        ? o.importType(inputTypeMeta, inputTypeMeta.genericTypes)
+        : null;
     if (isStatefulComp) {
       bindToUpdateMethod(view, currValExpr, fieldExpr, input.value,
           DetectChangesVars.cachedCtx, statements, dynamicInputsMethod,
@@ -531,6 +545,7 @@ void bindDirectiveInputs(DirectiveAst directiveAst,
       bind(
           view.component,
           view.nameResolver,
+          view.storage,
           currValExpr,
           fieldExpr,
           input.value,
@@ -567,21 +582,17 @@ void bindToUpdateMethod(
     List<o.Statement> actions,
     CompileMethod method,
     {o.OutputType fieldType}) {
-  var checkExpression = convertCdExpressionToIr(
-      view.nameResolver,
-      context,
-      parsedExpression,
-      view.component.template.preserveWhitespace,
-      _isBoolType(fieldType));
+  var checkExpression = convertCdExpressionToIr(view.nameResolver, context,
+      parsedExpression, view.component.template.preserveWhitespace, fieldType);
   if (checkExpression == null) {
     // e.g. an empty expression was given
     return;
   }
   // Add class field to store previous value.
   bool isPrimitive = isPrimitiveFieldType(fieldType);
-  view.nameResolver.addField(new o.ClassField(fieldExpr.name,
+  ViewStorageItem previousValueField = view.storage.allocate(fieldExpr.name,
       outputType: isPrimitive ? fieldType : null,
-      modifiers: const [o.StmtModifier.Private]));
+      modifiers: const [o.StmtModifier.Private]);
   // Generate: final currVal_0 = ctx.expression.
   method.addStmt(currValExpr
       .set(checkExpression)
@@ -592,7 +603,7 @@ void bindToUpdateMethod(
   if (actions.length == 1) {
     method.addStmt(actions.first);
     method.addStmt(
-        new o.WriteClassMemberExpr(fieldExpr.name, currValExpr).toStmt());
+        view.storage.buildWriteExpr(previousValueField, currValExpr).toStmt());
   } else {
     // Otherwise use traditional checkBinding call.
     o.Expression condition;
@@ -610,6 +621,86 @@ void bindToUpdateMethod(
           ..addAll([
             new o.WriteClassMemberExpr(fieldExpr.name, currValExpr).toStmt()
           ])));
+  }
+}
+
+void bindInlinedNgIf(DirectiveAst directiveAst, CompileElement compileElement) {
+  assert(directiveAst.directive.identifier.name == 'NgIf',
+      'Inlining a template that is not an NgIf');
+  var view = compileElement.view;
+  var detectChangesInInputsMethod = view.detectChangesInInputsMethod;
+  var dynamicInputsMethod = new CompileMethod(view.genDebugInfo);
+  var constantInputsMethod = new CompileMethod(view.genDebugInfo);
+  dynamicInputsMethod.resetDebugInfo(
+      compileElement.nodeIndex, compileElement.sourceAst);
+
+  var input = directiveAst.inputs.single;
+  var bindingIndex = view.nameResolver.createUniqueBindIndex();
+  dynamicInputsMethod.resetDebugInfo(compileElement.nodeIndex, input);
+  var fieldExpr = createBindFieldExpr(bindingIndex);
+  var currValExpr = createCurrValueExpr(bindingIndex);
+
+  var embeddedView = compileElement.embeddedView;
+
+  var buildStmts = <o.Statement>[];
+  embeddedView.writeBuildStatements(buildStmts);
+  var rootNodes = createFlatArray(embeddedView.rootNodesOrViewContainers);
+  var anchor = compileElement.renderNode.toReadExpr();
+  var isRoot = compileElement.view != compileElement.parent.view;
+  var buildArgs = [anchor, rootNodes];
+  var destroyArgs = [rootNodes];
+  if (isRoot) {
+    buildArgs.add(o.literal(true));
+    destroyArgs.add(o.literal(true));
+  }
+  buildStmts
+      .add(new o.InvokeMemberMethodExpr('addInlinedNodes', buildArgs).toStmt());
+
+  var destroyStmts = <o.Statement>[
+    new o.InvokeMemberMethodExpr('removeInlinedNodes', destroyArgs).toStmt(),
+  ];
+
+  List<o.Statement> statements;
+  ast.AST condition;
+
+  if (isImmutable(input.value, view.component.analyzedClass)) {
+    // If the input is immutable, we don't need to handle the case where the
+    // condition is false since in that case we simply do nothing.
+    statements = <o.Statement>[
+      new o.IfStmt(currValExpr, buildStmts),
+    ];
+    condition = input.value;
+  } else {
+    statements = <o.Statement>[
+      new o.IfStmt(currValExpr, buildStmts, destroyStmts)
+    ];
+    // This hack is to allow legacy NgIf behavior on null inputs
+    condition =
+        new ast.Binary('==', input.value, new ast.LiteralPrimitive(true));
+  }
+
+  bind(
+      view.component,
+      view.nameResolver,
+      view.storage,
+      currValExpr,
+      fieldExpr,
+      condition,
+      DetectChangesVars.cachedCtx,
+      statements,
+      dynamicInputsMethod,
+      constantInputsMethod,
+      view.genDebugInfo,
+      fieldType: o.BOOL_TYPE,
+      isHostComponent: false,
+      fieldExprInitializer: o.literal(false));
+
+  if (constantInputsMethod.isNotEmpty) {
+    detectChangesInInputsMethod.addStmt(new o.IfStmt(
+        DetectChangesVars.firstCheck, constantInputsMethod.finish()));
+  }
+  if (dynamicInputsMethod.isNotEmpty) {
+    detectChangesInInputsMethod.addStmts(dynamicInputsMethod.finish());
   }
 }
 
@@ -643,15 +734,6 @@ bool isPrimitiveTypeName(String typeName) {
     case 'bool':
     case 'String':
       return true;
-  }
-  return false;
-}
-
-bool _isBoolType(o.OutputType type) {
-  if (type == o.BOOL_TYPE) return true;
-  if (type is o.ExternalType) {
-    String name = type.value.name;
-    return 'bool' == name.trim();
   }
   return false;
 }

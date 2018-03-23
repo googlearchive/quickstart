@@ -1299,9 +1299,32 @@ class _ReferenceInfo {
       return type;
     } else if (element is GenericTypeAliasElementHandle) {
       GenericTypeAliasElementImpl actualElement = element.actualElement;
-      List<DartType> argumentTypes =
-          new List.generate(numTypeArguments, getTypeArgument);
-      return actualElement.typeAfterSubstitution(argumentTypes);
+      List<DartType> typeArguments;
+      if (numTypeArguments == numTypeParameters) {
+        typeArguments = _buildTypeArguments(numTypeArguments, getTypeArgument);
+      } else if (libraryResynthesizer.summaryResynthesizer.strongMode &&
+          instantiateToBoundsAllowed) {
+        if (!_isBeingInstantiatedToBounds) {
+          _isBeingInstantiatedToBounds = true;
+          _isRecursiveWhileInstantiateToBounds = false;
+          try {
+            typeArguments = libraryResynthesizer
+                .summaryResynthesizer.context.typeSystem
+                .instantiateTypeFormalsToBounds(element.typeParameters);
+            if (_isRecursiveWhileInstantiateToBounds) {
+              typeArguments = _dynamicTypeArguments;
+            }
+          } finally {
+            _isBeingInstantiatedToBounds = false;
+          }
+        } else {
+          _isRecursiveWhileInstantiateToBounds = true;
+          typeArguments = _dynamicTypeArguments;
+        }
+      } else {
+        typeArguments = _dynamicTypeArguments;
+      }
+      return actualElement.typeAfterSubstitution(typeArguments);
     } else if (element is FunctionTypedElement) {
       if (element is FunctionTypeAliasElementHandle) {
         List<DartType> typeArguments;
@@ -1348,7 +1371,11 @@ class _ReferenceInfo {
         } else {
           // For a type that refers to a generic executable, the type arguments are
           // not supposed to include the arguments to the executable itself.
-          numTypeArguments = enclosing?.numTypeParameters ?? 0;
+          if (element is MethodElementHandle && !element.isStatic) {
+            numTypeArguments = enclosing?.numTypeParameters ?? 0;
+          } else {
+            numTypeArguments = 0;
+          }
           computer = () => this.element as FunctionTypedElement;
         }
         // TODO(paulberry): Is it a bug that we have to pass `false` for

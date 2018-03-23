@@ -31,21 +31,9 @@ enum TypeContinuation {
   /// should parse the following as a type unless it is followed by `=`.
   Typedef,
 
-  /// Indicates that what follows is either a local declaration or an
-  /// expression.
-  ExpressionStatementOrDeclaration,
-
-  /// Indicates that the keyword `const` has just been seen, and what follows
-  /// may be a local variable declaration or an expression.
-  ExpressionStatementOrConstDeclaration,
-
   /// Indicates that the parser is parsing an expression and has just seen an
   /// identifier.
   SendOrFunctionLiteral,
-
-  /// Indicates that the parser has just parsed `for '('` and is looking to
-  /// parse a variable declaration or expression.
-  VariablesDeclarationOrExpression,
 
   /// Indicates that an optional type followed by a normal formal parameter is
   /// expected.

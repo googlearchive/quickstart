@@ -9,7 +9,6 @@ import 'package:analyzer/dart/ast/visitor.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/src/dart/element/member.dart';
-import 'package:analyzer/src/generated/utilities_dart.dart';
 import 'package:analyzer/src/summary/format.dart';
 import 'package:analyzer/src/summary/idl.dart';
 
@@ -442,7 +441,7 @@ class _IndexContributor extends GeneralizingAstVisitor {
             element.enclosingElement is ExecutableElement ||
         elementKind == ElementKind.PARAMETER &&
             element is ParameterElement &&
-            element.parameterKind != ParameterKind.NAMED ||
+            !element.isOptional ||
         false) {
       return;
     }
@@ -556,6 +555,16 @@ class _IndexContributor extends GeneralizingAstVisitor {
           element, IndexRelationKind.IS_REFERENCED_BY, offset, 0, true);
     }
     node.type.accept(this);
+  }
+
+  @override
+  visitExpression(Expression node) {
+    ParameterElement parameterElement = node.staticParameterElement;
+    if (parameterElement != null && parameterElement.isOptionalPositional) {
+      recordRelationOffset(parameterElement, IndexRelationKind.IS_REFERENCED_BY,
+          node.offset, 0, true);
+    }
+    super.visitExpression(node);
   }
 
   @override

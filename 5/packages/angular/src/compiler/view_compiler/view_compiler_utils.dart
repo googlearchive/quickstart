@@ -13,6 +13,13 @@ import '../template_ast.dart' show AttrAst, TemplateAst;
 import 'compile_view.dart' show CompileView;
 import 'constants.dart';
 
+// TODO: Remove the following lines (for --no-implicit-casts).
+// ignore_for_file: argument_type_not_assignable
+// ignore_for_file: invalid_assignment
+// ignore_for_file: list_element_type_not_assignable
+// ignore_for_file: non_bool_operand
+// ignore_for_file: return_of_invalid_type
+
 /// Creating outlines for faster builds is preventing auto input change
 /// detection for now. The following flag should be removed to reenable in the
 /// future.
@@ -20,13 +27,6 @@ const bool outlinerDeprecated = false;
 
 /// Variable name used to read viewData.parentIndex in build functions.
 const String cachedParentIndexVarName = 'parentIdx';
-
-/// Component dependency and associated identifier.
-class ViewCompileDependency {
-  CompileDirectiveMetadata comp;
-  CompileIdentifierMetadata factoryPlaceholder;
-  ViewCompileDependency(this.comp, this.factoryPlaceholder);
-}
 
 // Creates method parameters list for AppView set attribute calls.
 List<o.Expression> createSetAttributeParams(o.Expression renderNode,
@@ -62,7 +62,7 @@ o.Expression getPropertyInView(
 
     if (readMemberExpr != null) {
       // Note: Don't cast for members of the AppView base class...
-      if (definedView.nameResolver.fields
+      if (definedView.storage.fields
               .any((field) => field.name == readMemberExpr.name) ||
           definedView.getters
               .any((field) => field.name == readMemberExpr.name)) {
@@ -130,12 +130,14 @@ o.Expression createDebugInfoTokenExpression(CompileTokenMetadata token) {
   }
 }
 
-o.Expression createFlatArray(List<o.Expression> expressions) {
+o.Expression createFlatArray(List<o.Expression> expressions,
+    {bool constForEmpty: true}) {
   // Simplify: No items.
   if (expressions.isEmpty) {
     return o.literalArr(
       const [],
-      new o.ArrayType(null, const [o.TypeModifier.Const]),
+      new o.ArrayType(
+          null, constForEmpty ? const [o.TypeModifier.Const] : const []),
     );
   }
   // Check for [].addAll([x,y,z]) case and optimize.

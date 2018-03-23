@@ -4,11 +4,13 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/dart/element/visitor.dart';
 import 'package:analyzer/src/dart/element/element.dart';
+import 'package:angular_compiler/cli.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:angular/src/compiler/analyzed_class.dart';
 import 'package:angular/src/compiler/compile_metadata.dart';
 import 'package:angular/src/compiler/offline_compiler.dart';
+import 'package:angular/src/compiler/output/convert.dart';
 import 'package:angular/src/core/change_detection/constants.dart';
 import 'package:angular/src/core/metadata.dart';
 import 'package:angular/src/core/metadata/lifecycle_hooks.dart';
@@ -22,28 +24,36 @@ import 'compile_metadata.dart';
 import 'dart_object_utils.dart';
 import 'pipe_visitor.dart';
 
+// TODO: Remove the following lines (for --no-implicit-casts).
+// ignore_for_file: argument_type_not_assignable
+// ignore_for_file: invalid_assignment
+
 const String _directivesProperty = 'directives';
 const String _visibilityProperty = 'visibility';
 const _statefulDirectiveFields = const [
   'exportAs',
   'host',
-  _visibilityProperty,
 ];
 
-AngularArtifacts findComponentsAndDirectives(Element element) {
-  var componentVisitor = new NormalizedComponentVisitor();
-  element.accept(componentVisitor);
+AngularArtifacts findComponentsAndDirectives(LibraryReader library) {
+  var componentVisitor = new NormalizedComponentVisitor(library);
+  library.element.accept(componentVisitor);
   return new AngularArtifacts(
-      componentVisitor.components, componentVisitor.directives);
+    componentVisitor.components,
+    componentVisitor.directives,
+  );
 }
 
 class NormalizedComponentVisitor extends RecursiveElementVisitor<Null> {
   final List<NormalizedComponentWithViewDirectives> components = [];
   final List<CompileDirectiveMetadata> directives = [];
+  final LibraryReader _library;
+
+  NormalizedComponentVisitor(this._library);
 
   @override
   Null visitClassElement(ClassElement element) {
-    final directive = element.accept(new ComponentVisitor());
+    final directive = element.accept(new ComponentVisitor(_library));
     if (directive != null) {
       if (directive.isComponent) {
         var pipes = _visitPipes(element);
@@ -58,7 +68,7 @@ class NormalizedComponentVisitor extends RecursiveElementVisitor<Null> {
 
   @override
   Null visitFunctionElement(FunctionElement element) {
-    final directive = element.accept(new ComponentVisitor());
+    final directive = element.accept(new ComponentVisitor(_library));
     if (directive != null) {
       directives.add(directive);
     }
@@ -69,7 +79,7 @@ class NormalizedComponentVisitor extends RecursiveElementVisitor<Null> {
         element,
         'pipes',
         safeMatcher(isPipe, log),
-        () => new PipeVisitor(log),
+        () => new PipeVisitor(log, _library),
       );
 
   List<CompileDirectiveMetadata> _visitDirectives(ClassElement element) =>
@@ -77,7 +87,7 @@ class NormalizedComponentVisitor extends RecursiveElementVisitor<Null> {
         element,
         _directivesProperty,
         safeMatcher(isDirective, log),
-        () => new ComponentVisitor(),
+        () => new ComponentVisitor(_library),
       );
 
   List<T> _visitTypes<T>(
@@ -172,6 +182,8 @@ class ComponentVisitor
   final _queries = <CompileQueryMetadata>[];
   final _viewQueries = <CompileQueryMetadata>[];
 
+  final LibraryReader _library;
+
   /// Whether the component being visited re-implements 'noSuchMethod'.
   bool _implementsNoSuchMethod = false;
 
@@ -179,6 +191,8 @@ class ComponentVisitor
   ///
   /// This is used to look up resolved type information.
   ClassElement _directiveClassElement;
+
+  ComponentVisitor(this._library);
 
   @override
   CompileDirectiveMetadata visitClassElement(ClassElement element) {
@@ -217,8 +231,17 @@ class ComponentVisitor
         invalid = true;
       }
     }
+    final visibility = coerceEnum(
+      annotationValue,
+      _visibilityProperty,
+      Visibility.values,
+    );
+    if (visibility != Visibility.local) {
+      log.severe('Functional directives must be visibility: Visibility.local');
+      invalid = true;
+    }
     if (invalid) return null;
-    final type = element.accept(new CompileTypeMetadataVisitor(log));
+    final type = element.accept(new CompileTypeMetadataVisitor(log, _library));
     final selector = coerceString(annotationValue, 'selector');
     return new CompileDirectiveMetadata(
       type: type,
@@ -231,7 +254,6 @@ class ComponentVisitor
       hostProperties: const {},
       hostAttributes: const {},
       providers: _extractProviders(annotationValue, 'providers'),
-      visibility: Visibility.local,
     );
   }
 
@@ -277,7 +299,7 @@ class ComponentVisitor
   }) {
     for (ElementAnnotation annotation in element.metadata) {
       if (safeMatcherType(Input, log)(annotation)) {
-        if (isSetter) {
+        if (isSetter && element.isPublic) {
           final isField = element is FieldElement;
           // Resolves specified generic type parameters.
           final setter = _directiveClassElement.type
@@ -295,59 +317,64 @@ class ComponentVisitor
               _inputTypes[element.displayName] =
                   new CompileTypeMetadata(name: typeName);
             } else {
+              // Convert any generic type parameters from the input's type to
+              // our internal output AST.
+              final typeArguments = resolvedType is ParameterizedType
+                  ? resolvedType.typeArguments.map(fromDartType).toList()
+                  : const [];
               _inputTypes[element.displayName] = new CompileTypeMetadata(
-                  moduleUrl: moduleUrl(element), name: typeName);
+                  moduleUrl: moduleUrl(element),
+                  name: typeName,
+                  genericTypes: typeArguments);
             }
           }
         } else {
-          log.severe('@Input can only be used on a setter or non-final '
+          log.severe('@Input can only be used on a public setter or non-final '
               'field, but was found on $element.');
         }
       } else if (safeMatcherType(Output, log)(annotation)) {
-        if (isGetter) {
+        if (isGetter && element.isPublic) {
           _addPropertyBindingTo(_outputs, annotation, element);
         } else {
-          log.severe('@Output can only be used on a getter or a field, but '
-              'was found on $element.');
+          log.severe('@Output can only be used on a public getter or field, '
+              'but was found on $element.');
         }
       } else if (safeMatcherType(HostBinding, log)(annotation)) {
-        if (isGetter) {
+        if (isGetter && element.isPublic) {
           _addHostBinding(annotation, element);
         } else {
-          log.severe('@HostBinding can only be used on a getter or a field, '
-              'but was found on $element.');
+          log.severe('@HostBinding can only be used on a public getter or '
+              'field, but was found on $element.');
         }
       } else if (safeMatcherTypes(const [
         ContentChildren,
         ContentChild,
       ], log)(annotation)) {
-        if (isSetter) {
+        if (isSetter && element.isPublic) {
           _queries.add(_getQuery(
-            annotation.computeConstantValue(),
+            annotation,
             // Avoid emitting the '=' part of the setter.
             element.displayName,
             _fieldOrPropertyType(element),
           ));
         } else {
-          log.severe(''
-              'ContentChild or ContentChildren annotation '
-              'can only be used on a setter, but was found on $element.');
+          log.severe('@ContentChild or @ContentChildren can only be used on a '
+              'public setter or non-final field, but was found on $element.');
         }
       } else if (safeMatcherTypes(const [
         ViewChildren,
         ViewChild,
       ], log)(annotation)) {
-        if (isSetter) {
+        if (isSetter && element.isPublic) {
           _viewQueries.add(_getQuery(
-            annotation.computeConstantValue(),
+            annotation,
             // Avoid emitting the '=' part of the setter.
             element.displayName,
             _fieldOrPropertyType(element),
           ));
         } else {
-          log.severe(''
-              'ViewChild or ViewChildren annotation '
-              'can only be used on a setter, but was found on $element.');
+          log.severe('@ViewChild or @ViewChildren can only be used on a public '
+              'setter or non-final field, but was found on $element.');
         }
       }
     }
@@ -363,8 +390,17 @@ class ComponentVisitor
     return null;
   }
 
-  List<CompileTokenMetadata> _getSelectors(DartObject value) {
+  List<CompileTokenMetadata> _getSelectors(
+    ElementAnnotation annotation,
+    DartObject value,
+  ) {
     var selector = getField(value, 'selector');
+    if (isNull(selector)) {
+      BuildError.throwForAnnotation(
+        annotation,
+        'Missing selector argument for "@${value.type.name}"',
+      );
+    }
     var selectorString = selector?.toStringValue();
     if (selectorString != null) {
       return selectorString
@@ -383,30 +419,30 @@ class ComponentVisitor
     ];
   }
 
-  static final _coreList = new TypeChecker.fromUrl('dart:core#List');
+  static final _coreIterable = new TypeChecker.fromUrl('dart:core#Iterable');
   static final _htmlElement = new TypeChecker.fromUrl('dart:html#Element');
 
   CompileQueryMetadata _getQuery(
-    annotationOrObject,
+    ElementAnnotation annotation,
     String propertyName,
     DartType propertyType,
   ) {
-    DartObject value;
-    if (annotationOrObject is ElementAnnotation) {
-      value = annotationOrObject.computeConstantValue();
-    } else {
-      value = annotationOrObject;
-    }
+    final value = annotation.computeConstantValue();
     final readType = getField(value, 'read')?.toTypeValue();
     return new CompileQueryMetadata(
-      selectors: _getSelectors(value),
+      selectors: _getSelectors(annotation, value),
       descendants: coerceBool(value, 'descendants', defaultTo: false),
       first: coerceBool(value, 'first', defaultTo: false),
       propertyName: propertyName,
       isElementType: propertyType?.element != null &&
-          _htmlElement.isAssignableFromType(propertyType),
-      isListType: propertyType?.element != null &&
-          _coreList.isExactlyType(propertyType),
+              _htmlElement.isAssignableFromType(propertyType) ||
+          // A bit imprecise, but this will cover 'Iterable' and 'List'.
+          _coreIterable.isAssignableFromType(propertyType) &&
+              propertyType is ParameterizedType &&
+              _htmlElement
+                  .isAssignableFromType(propertyType.typeArguments.first),
+      isQueryListType: propertyType?.element != null &&
+          $QueryList.isExactlyType(propertyType),
       read: readType != null
           ? new CompileTokenMetadata(
               identifier: new CompileIdentifierMetadata(
@@ -519,7 +555,7 @@ class ComponentVisitor
     // Some directives won't have templates but the template parser is going to
     // assume they have at least defaults.
     CompileTypeMetadata componentType =
-        element.accept(new CompileTypeMetadataVisitor(log));
+        element.accept(new CompileTypeMetadataVisitor(log, _library));
     final template = isComp
         ? _createTemplateMetadata(annotationValue, componentType)
         : new CompileTemplateMetadata();
@@ -553,7 +589,7 @@ class ComponentVisitor
         annotationValue,
         _visibilityProperty,
         Visibility.values,
-        defaultTo: Visibility.all,
+        defaultTo: Visibility.local,
       ),
     );
   }
@@ -563,12 +599,11 @@ class ComponentVisitor
     var template = component;
     String templateContent = coerceString(template, 'template');
     String templateUrl = coerceString(template, 'templateUrl');
-    if (templateContent != null &&
-        templateContent.isNotEmpty &&
-        templateUrl != null &&
-        templateUrl.isNotEmpty) {
-      throw new Exception('${componentType.name} @Component should either '
-          'provide template or templateUrl, not both.');
+    if (templateContent != null && templateUrl != null) {
+      // TODO: https://github.com/dart-lang/angular/issues/851.
+      log.severe(''
+          'Component "${componentType.name}" in\n  ${componentType.moduleUrl}:\n'
+          '  Cannot supply both "template" and "templateUrl"');
     }
     return new CompileTemplateMetadata(
       encapsulation: _encapsulation(template),
@@ -607,7 +642,7 @@ class ComponentVisitor
   List<CompileProviderMetadata> _extractProviders(
           DartObject component, String providerField) =>
       visitAll(coerceList(component, providerField),
-          new CompileTypeMetadataVisitor(log).createProviderMetadata);
+          new CompileTypeMetadataVisitor(log, _library).createProviderMetadata);
 
   List<CompileIdentifierMetadata> _extractExports(
       ElementAnnotationImpl annotation, ClassElement element) {
@@ -615,7 +650,9 @@ class ComponentVisitor
 
     // There is an implicit "export" for the directive class itself
     exports.add(new CompileIdentifierMetadata(
-        name: element.name, moduleUrl: moduleUrl(element.library)));
+        name: element.name,
+        moduleUrl: moduleUrl(element.library),
+        analyzedClass: new AnalyzedClass(element)));
 
     var arguments = annotation.annotationAst.arguments.arguments;
     NamedExpression exportsArg = arguments.firstWhere(
@@ -634,6 +671,7 @@ class ComponentVisitor
     for (Identifier id in staticNames) {
       String name;
       String prefix;
+      AnalyzedClass analyzedClass;
       if (id is PrefixedIdentifier) {
         // We only allow prefixed identifiers to have library prefixes.
         if (id.prefix.staticElement is! PrefixElement) {
@@ -646,10 +684,17 @@ class ComponentVisitor
       } else {
         name = id.name;
       }
+
+      if (id.staticElement is ClassElement) {
+        analyzedClass = new AnalyzedClass(id.staticElement);
+      }
+
+      // TODO(het): Also store the `DartType` since we know it statically.
       exports.add(new CompileIdentifierMetadata(
         name: name,
         prefix: prefix,
         moduleUrl: moduleUrl(id.staticElement.library),
+        analyzedClass: analyzedClass,
       ));
     }
     return exports;

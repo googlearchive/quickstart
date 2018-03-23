@@ -2,15 +2,17 @@ import 'dart:async';
 import 'dart:html';
 import 'dart:js_util' as js_util;
 
-import 'package:meta/meta.dart';
 import 'package:angular/src/core/app_view_consts.dart';
 import 'package:angular/src/core/change_detection/change_detection.dart'
     show ChangeDetectorRef, ChangeDetectionStrategy, ChangeDetectorState;
+import 'package:angular/src/di/errors.dart' as di_errors;
 import 'package:angular/src/di/injector/element.dart';
 import 'package:angular/src/di/injector/injector.dart'
     show throwIfNotFound, Injector;
 import 'package:angular/src/core/render/api.dart';
 import 'package:angular/src/platform/dom/shared_styles_host.dart';
+import 'package:angular/src/runtime.dart';
+import 'package:meta/meta.dart';
 
 import 'app_view_utils.dart';
 import 'component_factory.dart';
@@ -21,6 +23,13 @@ import 'view_ref.dart' show ViewRefImpl;
 import 'view_type.dart' show ViewType;
 
 export 'package:angular/src/core/change_detection/component_state.dart';
+
+// TODO: Remove the following lines (for --no-implicit-casts).
+// ignore_for_file: argument_type_not_assignable
+// ignore_for_file: invalid_assignment
+// ignore_for_file: list_element_type_not_assignable
+// ignore_for_file: non_bool_operand
+// ignore_for_file: return_of_invalid_type
 
 /// **INTERNAL ONLY**: Will be made private once the reflective compiler is out.
 ///
@@ -79,6 +88,12 @@ class AppViewData<T> {
   /// **INTERNAL ONLY**: Not part of the supported public API.
   List rootNodesOrViewContainers;
 
+  /// Tracks nodes created as a result of an inlined NgIf being set to 'true'.
+  ///
+  /// We must track them so we can remove them from the DOM if the view is
+  /// destroyed.
+  List<Node> inlinedNodes;
+
   /// Index of this view within the [parentView].
   final int parentIndex;
 
@@ -118,6 +133,14 @@ class AppViewData<T> {
     }
   }
 
+  void addInlinedNodes(List<Node> nodes) {
+    if (inlinedNodes == null) {
+      inlinedNodes = nodes;
+    } else {
+      inlinedNodes.addAll(nodes);
+    }
+  }
+
   void updateSkipChangeDetectionFlag() {
     _skipChangeDetection =
         identical(_cdMode, ChangeDetectionStrategy.Detached) ||
@@ -143,7 +166,7 @@ class AppViewData<T> {
   }
 }
 
-/// Base class for a generated templates for a given [Component] type [T].
+/// Base class for a generated template for a given [Component] type [T].
 abstract class AppView<T> {
   AppViewData<T> viewData;
 
@@ -275,6 +298,23 @@ abstract class AppView<T> {
     return; // ignore: dead_code
   }
 
+  void addInlinedNodes(Node anchor, List<Node> inlinedNodes,
+      [bool isRoot = false]) {
+    moveNodesAfterSibling(anchor, inlinedNodes);
+    if (isRoot) {
+      viewData.rootNodesOrViewContainers.addAll(inlinedNodes);
+    } else {
+      viewData.addInlinedNodes(inlinedNodes);
+    }
+  }
+
+  void removeInlinedNodes(List<Node> inlinedNodes, [bool isRoot = false]) {
+    detachAll(inlinedNodes);
+    var nodeList =
+        isRoot ? viewData.rootNodesOrViewContainers : viewData.inlinedNodes;
+    nodeList.removeWhere((n) => inlinedNodes.contains(n));
+  }
+
   dynamic createElement(
       dynamic parent, String name, RenderDebugInfo debugInfo) {
     var nsAndName = splitNamespace(name);
@@ -296,6 +336,7 @@ abstract class AppView<T> {
   }
 
   dynamic injectorGet(token, int nodeIndex, [notFoundValue = throwIfNotFound]) {
+    di_errors.debugInjectorEnter(token);
     var result = _UndefinedInjectorResult;
     AppView view = this;
     while (identical(result, _UndefinedInjectorResult)) {
@@ -312,6 +353,7 @@ abstract class AppView<T> {
       nodeIndex = view.viewData.parentIndex;
       view = view.parentView;
     }
+    di_errors.debugInjectorLeave(token);
     return result;
   }
 
@@ -329,13 +371,8 @@ abstract class AppView<T> {
     destroy();
   }
 
-  void detachViewNodes(List<dynamic> viewRootNodes) {
-    int len = viewRootNodes.length;
-    for (var i = 0; i < len; i++) {
-      var node = viewRootNodes[i];
-      node.remove();
-      domRootRendererIsDirty = true;
-    }
+  void detachViewNodes(List<Node> viewRootNodes) {
+    detachAll(viewRootNodes);
   }
 
   void destroy() {
@@ -354,6 +391,8 @@ abstract class AppView<T> {
   void destroyInternal() {}
 
   ChangeDetectorRef get changeDetectorRef => viewData.ref;
+
+  List<Node> get inlinedNodes => viewData.inlinedNodes;
 
   List<Node> get flatRootNodes =>
       _flattenNestedViews(viewData.rootNodesOrViewContainers);
@@ -384,12 +423,9 @@ abstract class AppView<T> {
     }
 
     // Sanity check in dev-mode that a destroyed view is not checked again.
-    assert((() {
-      if (viewData.destroyed) {
-        throw new ViewDestroyedException('detectChanges');
-      }
-      return true;
-    })());
+    if (isDevMode && viewData.destroyed) {
+      throw new ViewDestroyedException('detectChanges');
+    }
 
     if (lastGuardedView != null) {
       // Run change detection in "slow-mode" to catch thrown exceptions.
@@ -763,8 +799,11 @@ SpanElement createSpanAndAppend(Document doc, Element parent) {
   return null; // ignore: dead_code
 }
 
-/// Helper function called by AppView.build to reduce code size.
-Element createAndAppendToShadowRoot(
-    Document doc, String tagName, ShadowRoot parent) {
-  return parent.append(doc.createElement(tagName));
+void detachAll(List<Node> viewRootNodes) {
+  int len = viewRootNodes.length;
+  for (var i = 0; i < len; i++) {
+    Node node = viewRootNodes[i];
+    node.remove();
+    domRootRendererIsDirty = true;
+  }
 }

@@ -46,6 +46,13 @@ import 'lexer.dart'
         $RPAREN,
         $SLASH;
 
+// TODO: Remove the following lines (for --no-implicit-casts).
+// ignore_for_file: argument_type_not_assignable
+// ignore_for_file: invalid_assignment
+// ignore_for_file: list_element_type_not_assignable
+// ignore_for_file: non_bool_operand
+// ignore_for_file: return_of_invalid_type
+
 final _implicitReceiver = new ImplicitReceiver();
 final INTERPOLATION_REGEXP = new RegExp(r'{{([\s\S]*?)}}');
 
@@ -74,6 +81,13 @@ class Parser {
 
   ASTWithSource parseAction(
       String input, dynamic location, List<CompileIdentifierMetadata> exports) {
+    if (input == null) {
+      throw new ParseException(
+        'Blank expressions are not allowed in event bindings.',
+        input,
+        location,
+      );
+    }
     this._checkNoInterpolation(input, location);
     var tokens = _lexer.tokenize(this._stripComments(input));
     var ast =
@@ -179,6 +193,9 @@ class Parser {
   }
 
   void _checkNoInterpolation(String input, dynamic location) {
+    if (input == null) {
+      throw new ParseException('Expected non-null value', input, location);
+    }
     var parts = jsSplit(input, INTERPOLATION_REGEXP);
     if (parts.length > 1) {
       throw new ParseException(

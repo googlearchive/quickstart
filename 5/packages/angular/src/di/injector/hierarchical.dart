@@ -1,5 +1,7 @@
+import 'package:angular/src/runtime.dart';
 import 'package:meta/meta.dart';
 
+import '../errors.dart' as errors;
 import 'empty.dart';
 import 'injector.dart';
 
@@ -8,23 +10,30 @@ import 'injector.dart';
 /// Hierarchical injection is a popular pattern in AngularDart given that the
 /// component tree naturally forms a tree structure of components (and
 /// implicitly, injectors).
+///
+/// **NOTE**: This is not a user-visible class.
 abstract class HierarchicalInjector extends Injector {
   @protected
   final HierarchicalInjector parent;
 
   @visibleForTesting
-  const HierarchicalInjector([this.parent = const EmptyInjector()]);
+  const HierarchicalInjector([HierarchicalInjector parent])
+      // Cannot use unsafeCast here, because it would make this non-const.
+      // ignore: const_field_initializer_not_assignable, field_initializer_not_assignable
+      : parent = parent ?? const Injector.empty();
 
   /// **INTERNAL ONLY**: Used to implement [EmptyInjector] efficiently.
   const HierarchicalInjector.maybeEmpty([this.parent]);
 
   @override
   T inject<T>(Object token) {
+    errors.debugInjectorEnter(token);
     final result = injectOptional(token);
     if (identical(result, throwIfNotFound)) {
       return throwsNotFound(this, token);
     }
-    return result;
+    errors.debugInjectorLeave(token);
+    return unsafeCast<T>(result);
   }
 
   @override
@@ -32,10 +41,12 @@ abstract class HierarchicalInjector extends Injector {
     Object token, [
     Object orElse = throwIfNotFound,
   ]) {
+    errors.debugInjectorEnter(token);
     var result = injectFromSelfOptional(token, orElse);
     if (identical(result, orElse)) {
       result = injectFromAncestryOptional(token, orElse);
     }
+    errors.debugInjectorLeave(token);
     return result;
   }
 
@@ -52,7 +63,7 @@ abstract class HierarchicalInjector extends Injector {
     if (identical(result, throwIfNotFound)) {
       return throwsNotFound(this, token);
     }
-    return result;
+    return unsafeCast<T>(result);
   }
 
   /// Injects and returns an object representing [token] from this injector.
@@ -79,7 +90,7 @@ abstract class HierarchicalInjector extends Injector {
     if (identical(result, throwIfNotFound)) {
       return throwsNotFound(this, token);
     }
-    return result;
+    return unsafeCast<T>(result);
   }
 
   /// Injects and returns an object representing [token] from the parent.
@@ -107,7 +118,7 @@ abstract class HierarchicalInjector extends Injector {
     if (identical(result, throwIfNotFound)) {
       return throwsNotFound(this, token);
     }
-    return result;
+    return unsafeCast<T>(result);
   }
 
   /// Injects and returns an object representing [token] from ancestors.

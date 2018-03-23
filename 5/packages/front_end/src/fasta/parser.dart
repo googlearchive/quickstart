@@ -30,7 +30,8 @@ export 'parser/parser_error.dart' show ParserError;
 
 export 'parser/top_level_parser.dart' show TopLevelParser;
 
-export 'parser/util.dart' show closeBraceTokenFor, optional;
+export 'parser/util.dart'
+    show lengthForToken, lengthOfSpan, offsetForToken, optional;
 
 List<ParserError> parse(Token tokens) {
   Listener listener = new Listener();

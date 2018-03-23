@@ -1,7 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
 // **************************************************************************
-// Generator: TemplateGenerator
+// Generator: Instance of 'Compiler'
 // **************************************************************************
 
 // ignore_for_file: cancel_subscriptions,constant_identifier_names,duplicate_import,non_constant_identifier_names,library_prefixes,UNUSED_IMPORT,UNUSED_SHOWN_NAME
@@ -28,6 +26,7 @@ import 'package:angular/src/core/security.template.dart' as _ref7;
 import 'package:angular/src/platform/dom/events/event_manager.template.dart' as _ref8;
 import 'package:angular/src/core/security.dart' as _i1;
 import 'package:angular/src/platform/dom/events/event_manager.dart' as _i2;
+import 'package:angular/src/core/di/opaque_token.dart' as _i3;
 
 var _visited = false;
 void initReflector() {
@@ -38,7 +37,7 @@ void initReflector() {
 
   _ngRef.registerFactory(AppViewUtils, (String p0, _i1.SanitizationService p1, _i2.EventManager p2) => new AppViewUtils(p0, p1, p2));
   _ngRef.registerDependencies(AppViewUtils, const [
-    const [const _ngRef.Inject(const _ngRef.OpaqueToken<dynamic>('APP_ID'))],
+    const [const _ngRef.Inject(const _i3.OpaqueToken<String>('APP_ID'))],
     const [_i1.SanitizationService],
     const [_i2.EventManager]
   ]);

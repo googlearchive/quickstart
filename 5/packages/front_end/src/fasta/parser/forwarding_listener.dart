@@ -8,6 +8,7 @@ import '../scanner.dart';
 
 class ForwardingListener implements Listener {
   Listener listener;
+  bool forwardErrors = true;
 
   ForwardingListener([this.listener]);
 
@@ -65,8 +66,8 @@ class ForwardingListener implements Listener {
   }
 
   @override
-  void beginClassDeclaration(Token beginToken, Token name) {
-    listener?.beginClassDeclaration(beginToken, name);
+  void beginClassDeclaration(Token begin, Token abstractToken, Token name) {
+    listener?.beginClassDeclaration(begin, abstractToken, name);
   }
 
   @override
@@ -140,8 +141,9 @@ class ForwardingListener implements Listener {
   }
 
   @override
-  void beginFactoryMethod(Token lastConsumed) {
-    listener?.beginFactoryMethod(lastConsumed);
+  void beginFactoryMethod(
+      Token lastConsumed, Token externalToken, Token constToken) {
+    listener?.beginFactoryMethod(lastConsumed, externalToken, constToken);
   }
 
   @override
@@ -280,8 +282,10 @@ class ForwardingListener implements Listener {
   }
 
   @override
-  void beginMethod() {
-    listener?.beginMethod();
+  void beginMethod(Token externalToken, Token staticToken, Token covariantToken,
+      Token varFinalOrConst, Token name) {
+    listener?.beginMethod(
+        externalToken, staticToken, covariantToken, varFinalOrConst, name);
   }
 
   @override
@@ -295,8 +299,9 @@ class ForwardingListener implements Listener {
   }
 
   @override
-  void beginNamedMixinApplication(Token beginToken, Token name) {
-    listener?.beginNamedMixinApplication(beginToken, name);
+  void beginNamedMixinApplication(
+      Token begin, Token abstractToken, Token name) {
+    listener?.beginNamedMixinApplication(begin, abstractToken, name);
   }
 
   @override
@@ -365,8 +370,8 @@ class ForwardingListener implements Listener {
   }
 
   @override
-  void beginTopLevelMethod(Token lastConsumed) {
-    listener?.beginTopLevelMethod(lastConsumed);
+  void beginTopLevelMethod(Token lastConsumed, Token externalToken) {
+    listener?.beginTopLevelMethod(lastConsumed, externalToken);
   }
 
   @override
@@ -400,8 +405,8 @@ class ForwardingListener implements Listener {
   }
 
   @override
-  void beginVariablesDeclaration(Token token) {
-    listener?.beginVariablesDeclaration(token);
+  void beginVariablesDeclaration(Token token, Token varFinalOrConst) {
+    listener?.beginVariablesDeclaration(token, varFinalOrConst);
   }
 
   @override
@@ -560,8 +565,10 @@ class ForwardingListener implements Listener {
   }
 
   @override
-  void endFields(int count, Token beginToken, Token endToken) {
-    listener?.endFields(count, beginToken, endToken);
+  void endFields(Token staticToken, Token covariantToken, Token varFinalOrConst,
+      int count, Token beginToken, Token endToken) {
+    listener?.endFields(staticToken, covariantToken, varFinalOrConst, count,
+        beginToken, endToken);
   }
 
   @override
@@ -806,8 +813,10 @@ class ForwardingListener implements Listener {
   }
 
   @override
-  void endTopLevelFields(int count, Token beginToken, Token endToken) {
-    listener?.endTopLevelFields(count, beginToken, endToken);
+  void endTopLevelFields(Token staticToken, Token covariantToken,
+      Token varFinalOrConst, int count, Token beginToken, Token endToken) {
+    listener?.endTopLevelFields(staticToken, covariantToken, varFinalOrConst,
+        count, beginToken, endToken);
   }
 
   @override
@@ -1028,6 +1037,10 @@ class ForwardingListener implements Listener {
     listener?.handleInvalidTypeReference(token);
   }
 
+  void handleInvalidTopLevelBlock(Token token) {
+    listener?.handleInvalidTopLevelBlock(token);
+  }
+
   @override
   void handleInvalidTopLevelDeclaration(Token endToken) {
     listener?.handleInvalidTopLevelDeclaration(endToken);
@@ -1203,7 +1216,9 @@ class ForwardingListener implements Listener {
   @override
   void handleRecoverableError(
       Message message, Token startToken, Token endToken) {
-    listener?.handleRecoverableError(message, startToken, endToken);
+    if (forwardErrors) {
+      listener?.handleRecoverableError(message, startToken, endToken);
+    }
   }
 
   @override

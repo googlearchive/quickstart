@@ -87,11 +87,11 @@ Future<ServeHandler> watch(
       verbose: verbose);
   var terminator = new Terminator(terminateEventStream);
 
-  final buildActions =
-      await createBuildActions(targetGraph, builders, builderConfigOverrides);
+  final buildPhases =
+      await createBuildPhases(targetGraph, builders, builderConfigOverrides);
 
   var watch =
-      runWatch(environment, options, buildActions, terminator.shouldTerminate);
+      runWatch(environment, options, buildPhases, terminator.shouldTerminate);
 
   // ignore: unawaited_futures
   watch.buildResults.drain().then((_) async {
@@ -111,14 +111,16 @@ Future<ServeHandler> watch(
 /// The [BuildState.buildResults] stream will end after the final build has been
 /// run.
 WatchImpl runWatch(BuildEnvironment environment, BuildOptions options,
-        List<BuildAction> buildActions, Future until) =>
-    new WatchImpl(environment, options, buildActions, until,
+        List<BuildPhase> buildPhases, Future until) =>
+    new WatchImpl(environment, options, buildPhases, until,
         options.rootPackageFilesWhitelist.map((g) => new Glob(g)));
 
 typedef Future<BuildResult> _BuildAction(List<List<AssetChange>> changes);
 
 class WatchImpl implements BuildState {
   AssetGraph _assetGraph;
+  AssetGraph get assetGraph => _assetGraph;
+
   BuildDefinition _buildDefinition;
   final String _configKey; // may be null
   final Iterable<Glob> _rootPackageFilesWhitelist;
@@ -147,7 +149,7 @@ class WatchImpl implements BuildState {
   WatchImpl(
       BuildEnvironment environment,
       BuildOptions options,
-      List<BuildAction> buildActions,
+      List<BuildPhase> buildPhases,
       Future until,
       this._rootPackageFilesWhitelist)
       : _configKey = options.configKey,
@@ -155,7 +157,7 @@ class WatchImpl implements BuildState {
         _debounceDelay = options.debounceDelay,
         packageGraph = options.packageGraph {
     buildResults =
-        _run(environment, options, buildActions, until).asBroadcastStream();
+        _run(environment, options, buildPhases, until).asBroadcastStream();
   }
 
   @override
@@ -167,7 +169,7 @@ class WatchImpl implements BuildState {
   ///
   /// File watchers are scheduled synchronously.
   Stream<BuildResult> _run(BuildEnvironment environment, BuildOptions options,
-      List<BuildAction> buildActions, Future until) {
+      List<BuildPhase> buildPhases, Future until) {
     var firstBuildCompleter = new Completer<BuildResult>();
     currentBuild = firstBuildCompleter.future;
     var controller = new StreamController<BuildResult>();
@@ -260,17 +262,17 @@ class WatchImpl implements BuildState {
       originalRootPackagesDigest =
           md5.convert(await environment.reader.readAsBytes(rootPackagesId));
       _buildDefinition = await BuildDefinition.prepareWorkspace(
-          environment, options, buildActions,
+          environment, options, buildPhases,
           onDelete: _expectedDeletes.add);
       _readerCompleter.complete(new SingleStepReader(
           _buildDefinition.reader,
           _buildDefinition.assetGraph,
-          buildActions.length,
+          buildPhases.length,
           true,
           packageGraph.root.name,
           null));
       _assetGraph = _buildDefinition.assetGraph;
-      build = await BuildImpl.create(_buildDefinition, options, buildActions,
+      build = await BuildImpl.create(_buildDefinition, options, buildPhases,
           onDelete: _expectedDeletes.add);
 
       // It is possible this is already closed if the user kills the process

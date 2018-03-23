@@ -1,7 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
 // **************************************************************************
-// Generator: TemplateGenerator
+// Generator: Instance of 'Compiler'
 // **************************************************************************
 
 // ignore_for_file: cancel_subscriptions,constant_identifier_names,duplicate_import,non_constant_identifier_names,library_prefixes,UNUSED_IMPORT,UNUSED_SHOWN_NAME
@@ -10,6 +8,7 @@ export 'component_factory.dart';
 import 'dart:html';
 import 'package:angular/src/core/di.dart' show Injector;
 import 'package:angular/src/di/reflector.dart' show runtimeTypeProvider;
+import 'package:angular/src/runtime.dart';
 import '../change_detection/change_detection.dart' show ChangeDetectorRef;
 import 'app_view.dart';
 import 'app_view_utils.dart' show OnDestroyCallback;
@@ -19,7 +18,8 @@ import 'app_view.template.dart' as _ref1;
 import 'app_view_utils.template.dart' as _ref2;
 import 'package:angular/src/core/di.template.dart' as _ref3;
 import 'package:angular/src/di/reflector.template.dart' as _ref4;
-import 'view_ref.template.dart' as _ref5;
+import 'package:angular/src/runtime.template.dart' as _ref5;
+import 'view_ref.template.dart' as _ref6;
 
 var _visited = false;
 void initReflector() {
@@ -34,4 +34,5 @@ void initReflector() {
   _ref3.initReflector();
   _ref4.initReflector();
   _ref5.initReflector();
+  _ref6.initReflector();
 }

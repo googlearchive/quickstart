@@ -2,11 +2,12 @@ import 'dart:async';
 
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/constant/value.dart';
+import 'package:angular_compiler/cli.dart';
 import 'package:build/build.dart';
+import 'package:meta/meta.dart';
 import 'package:path/path.dart' as p;
 
 import 'analyzer.dart';
-import 'flags.dart';
 
 const _htmlImport = "import 'dart:html';";
 const _angularImport = "import 'package:angular/angular.dart';";
@@ -40,9 +41,8 @@ class TemplateOutliner implements Builder {
 
   TemplateOutliner(
     this._compilerFlags, {
-    String extension: '.outline.template.dart',
-  })
-      : _extension = extension,
+    @required String extension,
+  })  : _extension = extension,
         buildExtensions = {
           '.dart': [extension],
         };
@@ -62,7 +62,7 @@ class TemplateOutliner implements Builder {
     final injectors = <String>[];
     var units = [library.definingCompilationUnit]..addAll(library.parts);
     var types = units.expand((unit) => unit.types);
-    var methods = units.expand((unit) => unit.functions);
+    var fields = units.expand((unit) => unit.topLevelVariables);
     for (final clazz in types) {
       final component = $Component.firstAnnotationOfExact(
         clazz,
@@ -80,12 +80,12 @@ class TemplateOutliner implements Builder {
         }
       }
     }
-    for (final method in methods) {
-      if ($_GenerateInjector.hasAnnotationOfExact(
-        method,
+    for (final field in fields) {
+      if ($GenerateInjector.hasAnnotationOfExact(
+        field,
         throwOnUnresolved: false,
       )) {
-        injectors.add('${method.name}\$Injector');
+        injectors.add('${field.name}\$Injector');
       }
     }
     final output = new StringBuffer('$_analyzerIgnores\n');

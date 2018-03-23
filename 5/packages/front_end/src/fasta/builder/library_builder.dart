@@ -78,18 +78,19 @@ abstract class LibraryBuilder<T extends TypeBuilder, R>
   /// arguments passed to this method.
   ///
   /// If [fileUri] is null, it defaults to `this.fileUri`.
-  void addCompileTimeError(Message message, int charOffset, Uri fileUri,
+  void addCompileTimeError(
+      Message message, int charOffset, int length, Uri fileUri,
       {bool wasHandled: false, LocatedMessage context}) {
     fileUri ??= this.fileUri;
-    loader.addCompileTimeError(message, charOffset, fileUri,
+    loader.addCompileTimeError(message, charOffset, length, fileUri,
         wasHandled: wasHandled, context: context);
   }
 
   /// Add a problem with a severity determined by the severity of the message.
-  void addProblem(Message message, int charOffset, Uri fileUri,
+  void addProblem(Message message, int charOffset, int length, Uri fileUri,
       {LocatedMessage context}) {
     fileUri ??= this.fileUri;
-    loader.addProblem(message, charOffset, fileUri, context: context);
+    loader.addProblem(message, charOffset, length, fileUri, context: context);
   }
 
   /// Returns true if the export scope was modified.
@@ -175,7 +176,8 @@ abstract class LibraryBuilder<T extends TypeBuilder, R>
   /// where they were omitted by the programmer and not provided by the type
   /// inference.  The method returns the number of distinct type variables
   /// that were instantiated in this library.
-  int instantiateToBound(TypeBuilder dynamicType, ClassBuilder objectClass) {
+  int instantiateToBound(TypeBuilder dynamicType, TypeBuilder bottomType,
+      ClassBuilder objectClass) {
     return 0;
   }
 

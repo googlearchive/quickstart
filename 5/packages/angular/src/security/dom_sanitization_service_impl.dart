@@ -5,6 +5,10 @@ import 'html_sanitizer.dart';
 import 'style_sanitizer.dart';
 import 'url_sanitizer.dart';
 
+// TODO: Remove the following lines (for --no-implicit-casts).
+// ignore_for_file: argument_type_not_assignable
+// ignore_for_file: invalid_assignment
+
 @Injectable()
 class DomSanitizationServiceImpl implements DomSanitizationService {
   @override
@@ -12,6 +16,7 @@ class DomSanitizationServiceImpl implements DomSanitizationService {
     if (value == null) return null;
     switch (ctx) {
       case TemplateSecurityContext.none:
+        // ignore: return_of_invalid_type
         return value;
       case TemplateSecurityContext.html:
         if (value is SafeHtmlImpl) {
@@ -132,4 +137,51 @@ class DomSanitizationServiceImpl implements DomSanitizationService {
   @override
   SafeResourceUrl bypassSecurityTrustResourceUrl(String value) =>
       new SafeResourceUrlImpl(value ?? '');
+}
+
+abstract class SafeValueImpl implements SafeValue {
+  /// Named this way to allow security teams to
+  /// to search for BypassSecurityTrust across code base.
+  final String changingThisWillBypassSecurityTrust;
+  SafeValueImpl(this.changingThisWillBypassSecurityTrust);
+
+  String getTypeName();
+  String toString() => changingThisWillBypassSecurityTrust;
+}
+
+class SafeHtmlImpl extends SafeValueImpl implements SafeHtml {
+  SafeHtmlImpl(String value) : super(value);
+  @override
+  String getTypeName() {
+    return 'HTML';
+  }
+}
+
+class SafeStyleImpl extends SafeValueImpl implements SafeStyle {
+  SafeStyleImpl(String value) : super(value);
+  @override
+  String getTypeName() {
+    return 'Style';
+  }
+}
+
+class SafeScriptImpl extends SafeValueImpl implements SafeScript {
+  SafeScriptImpl(String value) : super(value);
+  String getTypeName() {
+    return 'Script';
+  }
+}
+
+class SafeUrlImpl extends SafeValueImpl implements SafeUrl {
+  SafeUrlImpl(String value) : super(value);
+  String getTypeName() {
+    return 'URL';
+  }
+}
+
+class SafeResourceUrlImpl extends SafeValueImpl implements SafeResourceUrl {
+  SafeResourceUrlImpl(String value) : super(value);
+  String getTypeName() {
+    return 'ResourceURL';
+  }
 }

@@ -86,7 +86,6 @@ class SwitchView {
 ///
 @Directive(
   selector: '[ngSwitch]',
-  // TODO(b/71710685): Change to `Visibility.local` to reduce code size.
   visibility: Visibility.all,
 )
 class NgSwitch {
@@ -183,7 +182,6 @@ class NgSwitch {
 ///
 @Directive(
   selector: '[ngSwitchWhen],[ngSwitchCase]',
-  visibility: Visibility.local,
 )
 class NgSwitchWhen {
   /// Used as a marker for an uninitialized value.
@@ -215,7 +213,9 @@ class NgSwitchWhen {
 ///
 /// See [NgSwitch] for more details and example.
 ///
-@Directive(selector: '[ngSwitchDefault]', visibility: Visibility.local)
+@Directive(
+  selector: '[ngSwitchDefault]',
+)
 class NgSwitchDefault {
   NgSwitchDefault(ViewContainerRef viewContainer, TemplateRef templateRef,
       @Host() NgSwitch switchDirective) {

@@ -7,7 +7,6 @@ import 'dart:io';
 
 import 'package:io/ansi.dart';
 import 'package:logging/logging.dart';
-import 'package:stack_trace/stack_trace.dart';
 
 void stdIOLogListener(LogRecord record, {bool verbose}) {
   verbose ??= false;
@@ -28,7 +27,7 @@ void stdIOLogListener(LogRecord record, {bool verbose}) {
         headerMessage.split('\n').takeWhile((line) => line.isEmpty).length;
     headerMessage = headerMessage.substring(blankLineCount);
   }
-  var header = '$eraseLine$level ${record.loggerName}: $headerMessage';
+  var header = '$eraseLine$level ${_loggerName(record, verbose)}$headerMessage';
   var lines = blankLineCount > 0
       ? (new List<Object>.generate(blankLineCount, (_) => '')..add(header))
       : <Object>[header];
@@ -37,12 +36,8 @@ void stdIOLogListener(LogRecord record, {bool verbose}) {
     lines.add(record.error);
   }
 
-  if (record.stackTrace != null) {
-    if (record.stackTrace is Trace) {
-      lines.add((record.stackTrace as Trace).terse);
-    } else {
-      lines.add(record.stackTrace);
-    }
+  if (record.stackTrace != null && verbose) {
+    lines.add(record.stackTrace);
   }
 
   var message = new StringBuffer(lines.join('\n'));
@@ -61,4 +56,25 @@ void stdIOLogListener(LogRecord record, {bool verbose}) {
   } else {
     stdout.write(message);
   }
+}
+
+/// Filter out the Logger names known to come from `build_runner` and splits the
+/// header for levels >= WARNING.
+String _loggerName(LogRecord record, bool verbose) {
+  var knownNames = const [
+    'Build',
+    'BuildDefinition',
+    'BuildScriptUpdates',
+    'CreateOutputDir',
+    'Entrypoint',
+    'ApplyBuilders',
+    'Heartbeat',
+    'Serve',
+    'Watch',
+    'build_runner',
+  ];
+  var maybeSplit = record.level >= Level.WARNING ? '\n' : '';
+  return verbose || !knownNames.contains(record.loggerName)
+      ? '${record.loggerName}:$maybeSplit'
+      : '';
 }

@@ -1,7 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
 // **************************************************************************
-// Generator: TemplateGenerator
+// Generator: Instance of 'Compiler'
 // **************************************************************************
 
 // ignore_for_file: cancel_subscriptions,constant_identifier_names,duplicate_import,non_constant_identifier_names,library_prefixes,UNUSED_IMPORT,UNUSED_SHOWN_NAME
@@ -9,9 +7,9 @@ import 'application_ref.dart';
 export 'application_ref.dart';
 import 'dart:async';
 import 'dart:html';
+import 'package:angular/src/runtime.dart';
 import 'package:meta/meta.dart';
 import '../facade/exceptions.dart' show BaseException, ExceptionHandler;
-import '../facade/lang.dart' show assertionsEnabled;
 import '../platform/dom/shared_styles_host.dart';
 import 'application_tokens.dart' show PLATFORM_INITIALIZER, APP_INITIALIZER;
 import 'change_detection/change_detector_ref.dart';
@@ -27,17 +25,17 @@ import 'testability/testability.dart' show TestabilityRegistry, Testability;
 import 'zone/ng_zone.dart' show NgZone, NgZoneError;
 import 'package:angular/src/di/reflector.dart' as _ngRef;
 import '../facade/exceptions.template.dart' as _ref0;
-import '../facade/lang.template.dart' as _ref1;
-import '../platform/dom/shared_styles_host.template.dart' as _ref2;
-import 'application_tokens.template.dart' as _ref3;
-import 'change_detection/change_detector_ref.template.dart' as _ref4;
-import 'change_detection/constants.template.dart' as _ref5;
-import 'di.template.dart' as _ref6;
-import 'linker/app_view.template.dart' as _ref7;
-import 'linker/app_view_utils.template.dart' as _ref8;
-import 'linker/component_factory.template.dart' as _ref9;
-import 'linker/component_resolver.template.dart' as _ref10;
-import 'linker/view_ref.template.dart' as _ref11;
+import '../platform/dom/shared_styles_host.template.dart' as _ref1;
+import 'application_tokens.template.dart' as _ref2;
+import 'change_detection/change_detector_ref.template.dart' as _ref3;
+import 'change_detection/constants.template.dart' as _ref4;
+import 'di.template.dart' as _ref5;
+import 'linker/app_view.template.dart' as _ref6;
+import 'linker/app_view_utils.template.dart' as _ref7;
+import 'linker/component_factory.template.dart' as _ref8;
+import 'linker/component_resolver.template.dart' as _ref9;
+import 'linker/view_ref.template.dart' as _ref10;
+import 'package:angular/src/runtime.template.dart' as _ref11;
 import 'render/api.template.dart' as _ref12;
 import 'testability/testability.template.dart' as _ref13;
 import 'zone/ng_zone.template.dart' as _ref14;

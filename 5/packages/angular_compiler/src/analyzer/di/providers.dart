@@ -47,7 +47,9 @@ class ProviderReader {
 
   ProviderElement _parseProvider(DartObject o) {
     final reader = new ConstantReader(o);
-    final token = _tokenReader.parseTokenObject(o.getField('token'));
+    final token = _tokenReader.parseTokenObject(
+      reader.read('token').objectValue,
+    );
     final useClass = reader.read('useClass');
     if (!useClass.isNull) {
       return _parseUseClass(token, o, useClass.typeValue.element);
@@ -203,8 +205,7 @@ class UseClassProviderElement extends ProviderElement {
     this.useClass, {
     @required this.dependencies,
     bool multi: false,
-  })
-      : super._(e, providerType, multi);
+  }) : super._(e, providerType, multi);
 
   @override
   bool operator ==(Object o) =>
@@ -236,8 +237,7 @@ class UseExistingProviderElement extends ProviderElement {
     TypeLink providerType,
     this.redirect, {
     bool multi: false,
-  })
-      : super._(e, providerType, multi);
+  }) : super._(e, providerType, multi);
 
   @override
   bool operator ==(Object o) =>
@@ -270,8 +270,7 @@ class UseFactoryProviderElement extends ProviderElement {
     this.useFactory, {
     @required this.dependencies,
     bool multi: false,
-  })
-      : super._(e, providerType, multi);
+  }) : super._(e, providerType, multi);
 
   @override
   bool operator ==(Object o) =>
@@ -305,6 +304,5 @@ class UseValueProviderElement extends ProviderElement {
     TypeLink providerType,
     this.useValue, {
     bool multi: false,
-  })
-      : super._(e, providerType, multi);
+  }) : super._(e, providerType, multi);
 }

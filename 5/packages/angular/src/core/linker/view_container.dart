@@ -1,5 +1,6 @@
 import 'package:angular/src/di/injector/injector.dart' show Injector;
 import 'package:angular/src/facade/exceptions.dart' show BaseException;
+import 'package:angular/src/runtime.dart';
 
 import 'app_view.dart';
 import 'component_factory.dart' show ComponentFactory, ComponentRef;
@@ -10,9 +11,10 @@ import 'view_container_ref.dart';
 import 'view_ref.dart' show EmbeddedViewRef, ViewRef, ViewRefImpl;
 import 'view_type.dart';
 
-/// A ViewContainer is created for elements that contain
-/// a nested component or a `<template>` element to provide an insertion point
-/// that is needed for attaching children post initialization.
+/// A container providing an insertion point for attaching children.
+///
+/// This is created for components containing a nested component or a
+/// `<template>` element so they can be attached after initialization.
 class ViewContainer extends ComponentLoader implements ViewContainerRef {
   final int index;
   final int parentIndex;
@@ -30,7 +32,7 @@ class ViewContainer extends ComponentLoader implements ViewContainerRef {
   /// Returns the [ViewRef] for the View located in this container at the
   /// specified index.
   @override
-  EmbeddedViewRef get(num index) {
+  EmbeddedViewRef get(int index) {
     return nestedViews[index].viewData.ref;
   }
 
@@ -162,7 +164,7 @@ class ViewContainer extends ComponentLoader implements ViewContainerRef {
     }
     final result = <T>[];
     for (var i = 0, l = nestedViews.length; i < l; i++) {
-      result.addAll(callback(nestedViews[i]));
+      result.addAll(callback(unsafeCast<U>(nestedViews[i])));
     }
     return result;
   }
@@ -224,6 +226,9 @@ class ViewContainer extends ComponentLoader implements ViewContainerRef {
       throw new BaseException("Component views can't be moved!");
     }
     view.detachViewNodes(view.flatRootNodes);
+    if (view.inlinedNodes != null) {
+      view.detachViewNodes(view.inlinedNodes);
+    }
     view.removeFromContentChildren(this);
     return view;
   }

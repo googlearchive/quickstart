@@ -22,20 +22,27 @@ import 'package:angular_compiler/angular_compiler.dart';
 
 import 'dart_object_utils.dart' as dart_objects;
 
+// TODO: Remove the following lines (for --no-implicit-casts).
+// ignore_for_file: argument_type_not_assignable
+// ignore_for_file: invalid_assignment
+
 class CompileTypeMetadataVisitor
     extends SimpleElementVisitor<CompileTypeMetadata> {
   final Logger _logger;
+  final LibraryReader _library;
 
-  CompileTypeMetadataVisitor(this._logger);
+  CompileTypeMetadataVisitor(this._logger, this._library);
 
   @override
   CompileTypeMetadata visitClassElement(ClassElement element) {
-    if (!annotation_matcher.isInjectable(element)) return null;
     if (element.isPrivate) {
-      _logger.severe('Injectables must be public: $element');
+      _logger.severe('Provided classes must be public: $element');
       return null;
     }
-    return _getCompileTypeMetadata(element);
+    return _getCompileTypeMetadata(
+      element,
+      enforceClassCanBeCreated: true,
+    );
   }
 
   @override
@@ -49,33 +56,34 @@ class CompileTypeMetadataVisitor
   ///
   /// Otherwise, use the first encountered.
   ConstructorElement unnamedConstructor(ClassElement element) {
-    var constructors = element.constructors;
+    ConstructorElement constructor;
+    final constructors = element.constructors;
     if (constructors.isEmpty) {
-      _logger.severe('Invalid @Injectable() annotation: '
-          'No constructors found for class ${element.name}.');
+      _logger.severe('No constructors found for class ${element.name}.');
       return null;
     }
 
-    var constructor = constructors.firstWhere(
+    constructor = constructors.firstWhere(
         (constructor) => strings.isEmpty(constructor.name),
         orElse: () => constructors.first);
 
     if (constructor.isPrivate) {
-      _logger.severe('Invalid @Injectable() annotation: '
-          'Cannot use private constructor on class ${element.name}');
+      _logger.severe('Cannot use private constructor on class ${element.name}');
       return null;
     }
     if (element.isAbstract && !constructor.isFactory) {
-      _logger.warning('Invalid @Injectable() annotation: '
+      _logger.warning(
           'Found a constructor for abstract class ${element.name} but it is '
           'not a "factory", and cannot be invoked');
       return null;
     }
     if (element.constructors.length > 1 &&
         strings.isNotEmpty(constructor.name)) {
-      _logger.warning(
-          'Found ${element.constructors.length} constructors for class '
-          '${element.name}; using constructor ${constructor.name}.');
+      // No use in being a warning, as it's not something they need to fix
+      // until we add a way to be able to "pick" the constructor to use.
+      _logger
+          .fine('Found ${element.constructors.length} constructors for class '
+              '${element.name}; using constructor ${constructor.name}.');
     }
     return constructor;
   }
@@ -92,8 +100,7 @@ class CompileTypeMetadataVisitor
       }
       var metadata = visitClassElement(element as ClassElement);
       if (metadata == null) {
-        _logger.warning(
-            'Skipping non-injectable element $provider in provider list.');
+        // Was skipped.
         return null;
       }
       return new CompileProviderMetadata(
@@ -101,28 +108,55 @@ class CompileTypeMetadataVisitor
         useClass: metadata,
       );
     }
-    CompileTypeMetadata multiType;
+    CompileTypeMetadata providerTypeArgument;
     final typeArguments = provider.type?.typeArguments;
     if (typeArguments != null && typeArguments.isNotEmpty) {
       final genericType = typeArguments.first;
       if (!genericType.isDynamic) {
-        multiType = _getCompileTypeMetadata(genericType.element);
+        providerTypeArgument = _getCompileTypeMetadata(
+          genericType.element,
+          genericTypes: genericType is ParameterizedType
+              ? genericType.typeArguments
+              : const [],
+        );
       }
     }
     final token = dart_objects.getField(provider, 'token');
+
+    // Workaround for analyzer bug.
+    // https://github.com/dart-lang/angular/issues/917
+    if (providerTypeArgument == null &&
+        token?.type != null &&
+        $OpaqueToken.isAssignableFromType(token.type) &&
+        // Only apply "auto inference" to "new-type" Providers like
+        // Value, Class, Existing, FactoryProvider.
+        !$Provider.isExactlyType(provider.type) &&
+        token.type.typeArguments.isNotEmpty) {
+      // If we see a Provider<dynamic> (no generic type), but the token is a
+      // typed OpaqueToken<T>, pretend that the Provider was actually inferred
+      // as Provider<T>:
+      // (Again, see https://github.com/dart-lang/angular/issues/917)
+      final opaqueTokenGeneric = token.type.typeArguments.first;
+      providerTypeArgument = _getCompileTypeMetadata(
+        opaqueTokenGeneric.element,
+        genericTypes: opaqueTokenGeneric is ParameterizedType
+            ? opaqueTokenGeneric.typeArguments
+            : const [],
+      );
+    }
     return new CompileProviderMetadata(
       token: _token(token),
       useClass: _getUseClass(provider, token),
       useExisting: _getUseExisting(provider),
       useFactory: _getUseFactory(provider),
       useValue: _getUseValue(provider),
-      multi: $MultiToken.isExactlyType(token.type) ||
+      multi: $MultiToken.isAssignableFromType(token?.type) ||
           dart_objects.coerceBool(
             provider,
             'multi',
             defaultTo: false,
           ),
-      multiType: multiType,
+      typeArgument: providerTypeArgument,
     );
   }
 
@@ -131,7 +165,10 @@ class CompileTypeMetadataVisitor
     if (!dart_objects.isNull(maybeUseClass)) {
       var type = maybeUseClass.toTypeValue();
       if (type is InterfaceType) {
-        return _getCompileTypeMetadata(type.element);
+        return _getCompileTypeMetadata(
+          type.element,
+          enforceClassCanBeCreated: true,
+        );
       } else {
         _logger.severe(
             'Provider.useClass can only be used with a class, but found '
@@ -140,7 +177,10 @@ class CompileTypeMetadataVisitor
     } else if (_hasNoUseValue(provider) && _notAnythingElse(provider)) {
       final typeValue = token.toTypeValue();
       if (typeValue != null && !typeValue.isDartCoreNull) {
-        return _getCompileTypeMetadata(typeValue.element);
+        return _getCompileTypeMetadata(
+          typeValue.element,
+          enforceClassCanBeCreated: true,
+        );
       }
     }
     return null;
@@ -175,12 +215,27 @@ class CompileTypeMetadataVisitor
     return null;
   }
 
-  CompileTypeMetadata _getCompileTypeMetadata(ClassElement element) =>
+  /// If [enforceClassCanBeCreated] is `true` will emit a warning (later an
+  /// error) that there is invalid configuration. We don't need this for every
+  /// piece of metadata.
+  ///
+  /// See https://github.com/dart-lang/angular/issues/906 for details.
+  CompileTypeMetadata _getCompileTypeMetadata(
+    ClassElement element, {
+    bool enforceClassCanBeCreated: false,
+    List<DartType> genericTypes: const [],
+  }) =>
       new CompileTypeMetadata(
-          moduleUrl: moduleUrl(element),
-          name: element.name,
-          diDeps: _getCompileDiDependencyMetadata(
-              unnamedConstructor(element)?.parameters ?? [], element));
+        moduleUrl: moduleUrl(element),
+        name: element.name,
+        diDeps: _getCompileDiDependencyMetadata(
+          enforceClassCanBeCreated
+              ? unnamedConstructor(element)?.parameters ?? []
+              : [],
+          element,
+        ),
+        genericTypes: genericTypes.map(fromDartType).toList(),
+      );
 
   CompileTypeMetadata _getFunctionCompileTypeMetadata(
           FunctionElement element) =>
@@ -220,8 +275,7 @@ class CompileTypeMetadataVisitor
     List<CompileDiDependencyMetadata> deps = [];
     for (final param in parameters) {
       if (param.parameterKind == ParameterKind.NAMED) {
-        _logger.warning('For dependency ${element.name}, we are skipping '
-            'named parameter $param');
+        // No use being a warning, since this is not prohibited; just skip.
         continue;
       }
       deps.add(_createCompileDiDependencyMetadata(param));
@@ -252,12 +306,15 @@ class CompileTypeMetadataVisitor
     }
   }
 
-  CompileTokenMetadata _getToken(ParameterElement p) =>
+  CompileTokenMetadata _getToken(
+          ParameterElement p) =>
       _hasAnnotation(p, Attribute)
           ? _tokenForAttribute(p)
           : _hasAnnotation(p, Inject)
               ? _tokenForInject(p)
-              : _tokenForType(p.type);
+              : $OpaqueToken.hasAnnotationOf(p)
+                  ? _tokenForOpaqueToken(p)
+                  : _tokenForType(p.type);
 
   CompileTokenMetadata _tokenForAttribute(ParameterElement p) =>
       new CompileTokenMetadata(
@@ -269,6 +326,11 @@ class CompileTypeMetadataVisitor
     final injectToken = annotation.computeConstantValue();
     final token = dart_objects.getField(injectToken, 'token');
     return _token(token, annotation);
+  }
+
+  CompileTokenMetadata _tokenForOpaqueToken(ParameterElement p) {
+    final annotation = $OpaqueToken.firstAnnotationOf(p);
+    return _token(annotation);
   }
 
   CompileTokenMetadata _annotationToToken(ElementAnnotationImpl annotation) {
@@ -337,30 +399,20 @@ class CompileTypeMetadataVisitor
   }
 
   CompileTokenMetadata _canonicalOpaqueToken(DartObject object) {
-    // We could make this static, but it actually shouldn't be used elsewhere.
-    const moduleUrl = ''
-        'asset:angular'
-        '/lib/src/core/di/opaque_token.dart';
-
-    // The actual string name/identifier of the token.
-    final description = dart_objects.coerceString(object, '_desc');
-
-    // Generic type T of {Opaque|Multi}Token<T>, if any.
-    final genericType = typeArgumentOf(object);
-
-    // Whether this is a MultiToken or OpaqueToken.
-    final isMultiToken = $MultiToken.isExactlyType(object.type);
+    // Re-use code from angular_compiler :)
+    const reader = const TokenReader();
+    final token = reader.parseTokenObject(object) as OpaqueTokenElement;
 
     // Create an identifier referencing {Opaque|Multi}Token<T>.
+    final typeArgument =
+        token.typeUrl == null ? null : fromTypeLink(token.typeUrl, _library);
     final tokenId = new CompileIdentifierMetadata(
-      name: isMultiToken ? 'MultiToken' : 'OpaqueToken',
-      moduleUrl: moduleUrl,
-      genericTypes: genericType.isDynamic
-          ? const <CompileIdentifierMetadata>[]
-          : [fromDartType(genericType)],
+      name: token.classUrl.symbol,
+      moduleUrl: linkToReference(token.classUrl, _library).url,
+      genericTypes: typeArgument != null ? [typeArgument] : const [],
     );
     return new CompileTokenMetadata(
-      value: description,
+      value: token.identifier.isNotEmpty ? token.identifier : null,
       identifier: tokenId,
       identifierIsInstance: true,
     );

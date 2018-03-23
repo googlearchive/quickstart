@@ -2,37 +2,74 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'dart:async';
-
-import 'package:front_end/src/api_prototype/compilation_message.dart';
-import 'package:front_end/src/api_prototype/byte_store.dart';
-import 'package:front_end/src/api_prototype/compiler_options.dart';
-import 'package:front_end/src/api_prototype/file_system.dart';
-import 'package:front_end/src/base/performance_logger.dart';
-import 'package:front_end/src/fasta/fasta_codes.dart';
-import 'package:front_end/src/fasta/problems.dart' show unimplemented;
-import 'package:front_end/src/fasta/severity.dart';
-import 'package:front_end/src/fasta/ticker.dart';
-import 'package:front_end/src/fasta/uri_translator.dart';
-import 'package:front_end/src/fasta/uri_translator_impl.dart';
-import 'package:kernel/kernel.dart' show CanonicalName, Location, Program;
-import 'package:kernel/target/targets.dart';
-import 'package:kernel/target/vm.dart';
-import 'package:package_config/packages.dart' show Packages;
-import 'package:package_config/src/packages_impl.dart'
-    show NonFilePackagesDirectoryPackages, MapPackages;
-import 'package:package_config/packages_file.dart' as package_config;
-import 'package:source_span/source_span.dart' show SourceSpan, SourceLocation;
-import 'package:front_end/src/fasta/command_line_reporting.dart'
-    as command_line_reporting;
+import 'dart:async' show Future;
 
 import 'package:kernel/binary/ast_from_binary.dart' show BinaryBuilder;
 
-import '../fasta/messages.dart' show getLocation;
+import 'package:kernel/kernel.dart' show CanonicalName, Component, Location;
+
+import 'package:kernel/target/targets.dart' show Target, TargetFlags;
+
+import 'package:kernel/target/vm.dart' show VmTarget;
+
+import 'package:package_config/packages.dart' show Packages;
+
+import 'package:package_config/packages_file.dart' as package_config;
+
+import 'package:package_config/src/packages_impl.dart'
+    show NonFilePackagesDirectoryPackages, MapPackages;
+
+import 'package:source_span/source_span.dart' show SourceSpan, SourceLocation;
+
+import '../api_prototype/byte_store.dart' show ByteStore;
+
+import '../api_prototype/compilation_message.dart' show CompilationMessage;
+
+import '../api_prototype/compiler_options.dart' show CompilerOptions;
+
+import '../api_prototype/file_system.dart'
+    show FileSystem, FileSystemEntity, FileSystemException;
+
+import '../base/performance_logger.dart' show PerformanceLog;
+
+import '../fasta/command_line_reporting.dart' as command_line_reporting;
 
 import '../fasta/deprecated_problems.dart' show deprecated_InputError;
 
-import 'libraries_specification.dart';
+import '../fasta/fasta_codes.dart'
+    show
+        LocatedMessage,
+        Message,
+        messageCantInferPackagesFromManyInputs,
+        messageCantInferPackagesFromPackageUri,
+        messageInternalProblemProvidedBothCompileSdkAndSdkSummary,
+        messageMissingInput,
+        noLength,
+        templateCannotReadPackagesFile,
+        templateCannotReadSdkSpecification,
+        templateInputFileNotFound,
+        templateInternalProblemUnsupported,
+        templateSdkRootNotFound,
+        templateSdkSpecificationNotFound,
+        templateSdkSummaryNotFound;
+
+import '../fasta/messages.dart' show getLocation;
+
+import '../fasta/problems.dart' show unimplemented;
+
+import '../fasta/severity.dart' show Severity;
+
+import '../fasta/ticker.dart' show Ticker;
+
+import '../fasta/uri_translator.dart' show UriTranslator;
+
+import '../fasta/uri_translator_impl.dart' show UriTranslatorImpl;
+
+import 'libraries_specification.dart'
+    show
+        LibrariesSpecification,
+        LibrariesSpecificationException,
+        TargetLibrariesSpecification;
 
 /// All options needed for the front end implementation.
 ///
@@ -61,23 +98,23 @@ class ProcessedOptions {
 
   /// The SDK summary, or `null` if it has not been read yet.
   ///
-  /// A summary, also referred to as "outline" internally, is a [Program] where
+  /// A summary, also referred to as "outline" internally, is a [Component] where
   /// all method bodies are left out. In essence, it contains just API
   /// signatures and constants. When strong-mode is enabled, the summary already
   /// includes inferred types.
-  Program _sdkSummaryProgram;
+  Component _sdkSummaryComponent;
 
   /// The summary for each uri in `options.inputSummaries`.
   ///
-  /// A summary, also referred to as "outline" internally, is a [Program] where
+  /// A summary, also referred to as "outline" internally, is a [Component] where
   /// all method bodies are left out. In essence, it contains just API
   /// signatures and constants. When strong-mode is enabled, the summary already
   /// includes inferred types.
-  List<Program> _inputSummariesPrograms;
+  List<Component> _inputSummariesComponents;
 
-  /// Other programs that are meant to be linked and compiled with the input
+  /// Other components that are meant to be linked and compiled with the input
   /// sources.
-  List<Program> _linkedDependencies;
+  List<Component> _linkedDependencies;
 
   /// The location of the SDK, or `null` if the location hasn't been determined
   /// yet.
@@ -195,32 +232,9 @@ class ProcessedOptions {
     if (_reportMessages) command_line_reporting.report(message, severity);
   }
 
+  // TODO(askesc): Remove this and direct callers directly to report.
   void reportWithoutLocation(Message message, Severity severity) {
-    if (_raw.onProblem != null) {
-      _raw.onProblem(
-          message.withLocation(null, -1),
-          severity,
-          command_line_reporting.formatWithoutLocation(message, severity),
-          -1,
-          -1);
-      if (command_line_reporting.shouldThrowOn(severity)) {
-        if (verbose) print(StackTrace.current);
-        throw new deprecated_InputError(
-            null,
-            -1,
-            "Compilation aborted due to fatal "
-            "${command_line_reporting.severityName(severity)}.");
-      }
-      return;
-    }
-    if (_raw.onError != null) {
-      _raw.onError(
-          new _CompilationMessage(message.withLocation(null, -1), severity));
-    }
-
-    if (_reportMessages) {
-      command_line_reporting.reportWithoutLocation(message, severity);
-    }
+    report(message.withoutLocation(), severity);
   }
 
   /// Runs various validations checks on the input options. For instance,
@@ -268,6 +282,14 @@ class ProcessedOptions {
           Severity.internalProblem);
       return false;
     }
+
+    for (Uri source in _raw.linkedDependencies) {
+      if (!await fileSystem.entityForUri(source).exists()) {
+        reportWithoutLocation(
+            templateInputFileNotFound.withArguments(source), Severity.error);
+        return false;
+      }
+    }
     return true;
   }
 
@@ -292,62 +314,63 @@ class ProcessedOptions {
   Target get target => _target ??=
       _raw.target ?? new VmTarget(new TargetFlags(strongMode: strongMode));
 
-  /// Get an outline program that summarizes the SDK, if any.
+  /// Get an outline component that summarizes the SDK, if any.
   // TODO(sigmund): move, this doesn't feel like an "option".
-  Future<Program> loadSdkSummary(CanonicalName nameRoot) async {
-    if (_sdkSummaryProgram == null) {
+  Future<Component> loadSdkSummary(CanonicalName nameRoot) async {
+    if (_sdkSummaryComponent == null) {
       if (sdkSummary == null) return null;
       var bytes = await loadSdkSummaryBytes();
-      _sdkSummaryProgram = loadProgram(bytes, nameRoot);
+      _sdkSummaryComponent = loadComponent(bytes, nameRoot);
     }
-    return _sdkSummaryProgram;
+    return _sdkSummaryComponent;
   }
 
-  void set sdkSummaryComponent(Program platform) {
-    if (_sdkSummaryProgram != null) {
+  void set sdkSummaryComponent(Component platform) {
+    if (_sdkSummaryComponent != null) {
       throw new StateError("sdkSummary already loaded.");
     }
-    _sdkSummaryProgram = platform;
+    _sdkSummaryComponent = platform;
   }
 
   /// Get the summary programs for each of the underlying `inputSummaries`
   /// provided via [CompilerOptions].
   // TODO(sigmund): move, this doesn't feel like an "option".
-  Future<List<Program>> loadInputSummaries(CanonicalName nameRoot) async {
-    if (_inputSummariesPrograms == null) {
+  Future<List<Component>> loadInputSummaries(CanonicalName nameRoot) async {
+    if (_inputSummariesComponents == null) {
       var uris = _raw.inputSummaries;
-      if (uris == null || uris.isEmpty) return const <Program>[];
+      if (uris == null || uris.isEmpty) return const <Component>[];
       // TODO(sigmund): throttle # of concurrent opreations.
       var allBytes = await Future
           .wait(uris.map((uri) => fileSystem.entityForUri(uri).readAsBytes()));
-      _inputSummariesPrograms =
-          allBytes.map((bytes) => loadProgram(bytes, nameRoot)).toList();
+      _inputSummariesComponents =
+          allBytes.map((bytes) => loadComponent(bytes, nameRoot)).toList();
     }
-    return _inputSummariesPrograms;
+    return _inputSummariesComponents;
   }
 
-  /// Load each of the [CompilerOptions.linkedDependencies] programs.
+  /// Load each of the [CompilerOptions.linkedDependencies] components.
   // TODO(sigmund): move, this doesn't feel like an "option".
-  Future<List<Program>> loadLinkDependencies(CanonicalName nameRoot) async {
+  Future<List<Component>> loadLinkDependencies(CanonicalName nameRoot) async {
     if (_linkedDependencies == null) {
       var uris = _raw.linkedDependencies;
-      if (uris == null || uris.isEmpty) return const <Program>[];
+      if (uris == null || uris.isEmpty) return const <Component>[];
       // TODO(sigmund): throttle # of concurrent opreations.
       var allBytes = await Future
           .wait(uris.map((uri) => fileSystem.entityForUri(uri).readAsBytes()));
       _linkedDependencies =
-          allBytes.map((bytes) => loadProgram(bytes, nameRoot)).toList();
+          allBytes.map((bytes) => loadComponent(bytes, nameRoot)).toList();
     }
     return _linkedDependencies;
   }
 
   /// Helper to load a .dill file from [uri] using the existing [nameRoot].
-  Program loadProgram(List<int> bytes, CanonicalName nameRoot) {
-    Program program = new Program(nameRoot: nameRoot);
+  Component loadComponent(List<int> bytes, CanonicalName nameRoot) {
+    Component component = new Component(nameRoot: nameRoot);
     // TODO(ahe): Pass file name to BinaryBuilder.
     // TODO(ahe): Control lazy loading via an option.
-    new BinaryBuilder(bytes, null, false).readProgram(program);
-    return program;
+    new BinaryBuilder(bytes, filename: null, disableLazyReading: false)
+        .readComponent(component);
+    return component;
   }
 
   /// Get the [UriTranslator] which resolves "package:" and "dart:" URIs.
@@ -421,7 +444,9 @@ class ProcessedOptions {
     if (input.scheme == 'dart') return _packages = Packages.noPackages;
 
     if (input.scheme == 'packages') {
-      report(messageCantInferPackagesFromPackageUri.withLocation(input, -1),
+      report(
+          messageCantInferPackagesFromPackageUri.withLocation(
+              input, -1, noLength),
           Severity.error);
       return _packages = Packages.noPackages;
     }
@@ -439,7 +464,7 @@ class ProcessedOptions {
       report(
           templateCannotReadPackagesFile
               .withArguments("$e")
-              .withLocation(file, -1),
+              .withLocation(file, -1, noLength),
           Severity.error);
       return Packages.noPackages;
     }
@@ -533,7 +558,7 @@ class ProcessedOptions {
       // Infer based on the sdkRoot, but only when `compileSdk` is false,
       // otherwise the default intent was to compile the sdk from sources and
       // not to load an sdk summary file.
-      _sdkSummary = root?.resolve("vm_outline.dill");
+      _sdkSummary = root?.resolve("vm_platform.dill");
     }
 
     if (_raw.librariesSpecificationUri != null) {

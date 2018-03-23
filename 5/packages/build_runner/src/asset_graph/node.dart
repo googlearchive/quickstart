@@ -9,6 +9,8 @@ import 'package:crypto/crypto.dart';
 import 'package:glob/glob.dart';
 import 'package:meta/meta.dart';
 
+import '../generate/phase.dart';
+
 /// A node in the asset graph which may be an input to other assets.
 abstract class AssetNode {
   final AssetId id;
@@ -20,6 +22,10 @@ abstract class AssetNode {
   /// The [AssetId]s of all generated assets which are output by a [Builder]
   /// which reads this asset.
   final Set<AssetId> outputs = new Set<AssetId>();
+
+  /// The [AssetId]s of all [PostProcessAnchorNode] assets for which this node
+  /// is the primary input.
+  final Set<AssetId> anchorOutputs = new Set<AssetId>();
 
   /// The [Digest] for this node in its last known state.
   ///
@@ -94,6 +100,17 @@ class SourceAssetNode extends AssetNode {
   String toString() => 'SourceAssetNode: $id';
 }
 
+/// States for generated asset nodes.
+enum GeneratedNodeState {
+  // This node does not need an update, and no checks need to be performed.
+  upToDate,
+  // This node may need an update, the inputs hash should be checked for
+  // changes.
+  mayNeedUpdate,
+  // This node definitely needs an update, the inputs hash check can be skipped.
+  definitelyNeedsUpdate,
+}
+
 /// A generated node in the asset graph.
 class GeneratedAssetNode extends AssetNode {
   @override
@@ -105,8 +122,7 @@ class GeneratedAssetNode extends AssetNode {
   /// The primary input which generated this node.
   final AssetId primaryInput;
 
-  /// Whether or not this asset needs to be updated.
-  bool needsUpdate;
+  GeneratedNodeState state;
 
   /// Whether the asset was actually output.
   bool wasOutput;
@@ -143,13 +159,12 @@ class GeneratedAssetNode extends AssetNode {
     Iterable<AssetId> inputs,
     this.previousInputsDigest,
     @required this.isHidden,
-    @required this.needsUpdate,
+    @required this.state,
     @required this.phaseNumber,
     @required this.wasOutput,
     @required this.primaryInput,
     @required this.builderOptionsId,
-  })
-      : this.globs = globs ?? new Set<Glob>(),
+  })  : this.globs = globs ?? new Set<Glob>(),
         this.inputs = inputs != null
             ? new SplayTreeSet.from(inputs)
             : new SplayTreeSet<AssetId>(),
@@ -204,4 +219,30 @@ class PlaceHolderAssetNode extends AssetNode with SyntheticAssetNode {
 
   @override
   String toString() => 'PlaceHolderAssetNode: $id';
+}
+
+/// A [SyntheticAssetNode] which is created for each [primaryInput] to a
+/// [PostBuildAction].
+///
+/// The [outputs] of this node are the individual outputs created for the
+/// [primaryInput] during the [PostBuildAction] at index [actionNumber].
+class PostProcessAnchorNode extends AssetNode with SyntheticAssetNode {
+  final int actionNumber;
+  final AssetId builderOptionsId;
+  final AssetId primaryInput;
+  Digest previousInputsDigest;
+
+  PostProcessAnchorNode(
+      AssetId id, this.primaryInput, this.actionNumber, this.builderOptionsId,
+      {this.previousInputsDigest})
+      : super._forMixins(id);
+
+  factory PostProcessAnchorNode.forInputAndAction(
+      AssetId primaryInput, int actionNumber, AssetId builderOptionsId) {
+    return new PostProcessAnchorNode(
+        primaryInput.addExtension('.post_anchor.$actionNumber'),
+        primaryInput,
+        actionNumber,
+        builderOptionsId);
+  }
 }
