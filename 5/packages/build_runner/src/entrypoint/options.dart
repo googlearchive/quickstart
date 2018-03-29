@@ -46,6 +46,14 @@ class BuildCommandRunner extends CommandRunner<int> {
     addCommand(new _ServeCommand());
     addCommand(new _TestCommand());
   }
+
+  // CommandRunner._usageWithoutDescription is private – this is a reasonable
+  // facsimile.
+  /// Returns [usage] with [description] removed from the beginning.
+  String get usageWithoutDescription => LineSplitter
+      .split(usage)
+      .skipWhile((line) => line == description || line.isEmpty)
+      .join('\n');
 }
 
 /// Base options that are shared among all commands.
@@ -147,7 +155,7 @@ class _ServeOptions extends _SharedOptions {
   factory _ServeOptions.fromParsedArgs(
       ArgResults argResults, String rootPackage) {
     var serveTargets = <_ServeTarget>[];
-    int nextDefaultPort = 8080;
+    var nextDefaultPort = 8080;
     for (var arg in argResults.rest) {
       var parts = arg.split(':');
       var path = parts.first;

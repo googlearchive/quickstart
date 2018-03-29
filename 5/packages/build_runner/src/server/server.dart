@@ -98,7 +98,7 @@ class ServeHandler implements BuildState {
     if (request.url.path != _performancePath) {
       return new shelf.Response.notFound('');
     }
-    bool hideSkipped = false;
+    var hideSkipped = false;
     if (request.url.queryParameters['hideSkipped']?.toLowerCase() == 'true') {
       hideSkipped = true;
     }
@@ -214,7 +214,7 @@ String _renderPerformance(BuildPerformance performance, bool hideSkipped) {
         ? '/$_performancePath'
         : '/$_performancePath?hideSkipped=true';
     var showSkippedText =
-        hideSkipped ? "Show Skipped Actions" : "Hide Skipped Actions";
+        hideSkipped ? 'Show Skipped Actions' : 'Hide Skipped Actions';
     var showSkippedLink = '<a href="$showSkippedHref">$showSkippedText</a>';
     return '''
   <html>
@@ -239,13 +239,58 @@ String _renderPerformance(BuildPerformance performance, bool hideSkipped) {
           var options = {
             colors: ['#cbb69d', '#603913', '#c69c6e']
           };
-          chart.draw(dataTable, options);
+          var statusText = document.getElementById('status');
+          var timeoutId;
+          var updateFunc = function () {
+              if (timeoutId) {
+                  // don't schedule more than one at a time
+                  return;
+              }
+              statusText.innerText = 'Drawing table...';
+              console.time('draw-time');
+
+              timeoutId = setTimeout(function () {
+                  chart.draw(dataTable, options);
+                  console.timeEnd('draw-time');
+                  statusText.innerText = '';
+                  timeoutId = null;
+              });
+          };
+
+          updateFunc();
+
+          window.addEventListener('resize', updateFunc);
         }
       </script>
+      <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+    
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      #timeline {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+      }
+      .controls-header p {
+        display: inline-block;
+        margin: 0.5em;
+      }
+      </style>
     </head>
     <body>
-      <p>$showSkippedLink</p>
-      <div id="timeline" style="height: 100%"></div>
+      <div class="controls-header">
+        <p>$showSkippedLink</p>
+        <p id="status"></p>
+      </div>
+      <div id="timeline"></div>
     </body>
   </html>
   ''';

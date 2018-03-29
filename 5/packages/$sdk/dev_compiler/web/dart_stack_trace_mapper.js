@@ -2074,7 +2074,7 @@ $2:function(a,b){var z,y
 z=this.b.$2(a,b)
 y=J.ad(z)
 this.c.n(0,y.gb0(z),y.gI(z))},
-$S:function(a,b){var z=this.a
+$S:function(){var z=this.a
 return{func:1,args:[H.w(z,0),H.w(z,1)]}}},
 hS:{"^":"hO;a,b,c,$ti",
 gh:function(a){return this.a},
