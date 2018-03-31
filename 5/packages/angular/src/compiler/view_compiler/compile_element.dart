@@ -1,4 +1,6 @@
-import 'package:logging/logging.dart';
+import 'package:angular/src/core/linker/view_type.dart';
+import 'package:angular_compiler/cli.dart';
+
 import '../compile_metadata.dart'
     show
         CompileTokenMap,
@@ -13,6 +15,7 @@ import '../template_ast.dart'
     show TemplateAst, ProviderAst, ProviderAstType, ReferenceAst, ElementAst;
 import 'compile_query.dart' show CompileQuery, addQueryToTokenMap;
 import 'compile_view.dart' show CompileView, NodeReference;
+import 'ir/provider_source.dart';
 import 'ir/providers_node.dart';
 import 'view_compiler_utils.dart'
     show
@@ -56,6 +59,7 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
   final bool hasEmbeddedView;
   final bool hasTemplateRefQuery;
   final bool isInlined;
+  final bool isDeferredComponent;
 
   /// Reference to optional view container created for this element.
   o.ReadClassMemberExpr appViewContainer;
@@ -66,12 +70,11 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
 
   var _queryCount = 0;
   final _queries = new CompileTokenMap<List<CompileQuery>>();
-  final Logger _logger;
   ProvidersNode _providers;
 
   List<List<o.Expression>> contentNodesByNgContentIndex;
   CompileView embeddedView;
-  List<o.Expression> directiveInstances;
+  List<ProviderSource> directiveInstances;
   Map<String, CompileTokenMetadata> referenceTokens;
   // If compile element is a template and has #ref resolving to TemplateRef
   // this is set so we create a class field member for the template reference.
@@ -89,12 +92,13 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
       this.hasViewContainer,
       this.hasEmbeddedView,
       List<ReferenceAst> references,
-      this._logger,
       {this.isHtmlElement: false,
       this.hasTemplateRefQuery: false,
-      this.isInlined: false})
+      this.isInlined: false,
+      this.isDeferredComponent: false})
       : super(parent, view, nodeIndex, renderNode, sourceAst) {
-    _providers = new ProvidersNode(this, parent?._providers, _directives);
+    _providers = new ProvidersNode(this, parent?._providers,
+        view == null || view.viewType == ViewType.HOST);
     if (references.isNotEmpty) {
       referenceTokens = <String, CompileTokenMetadata>{};
       int referenceCount = references.length;
@@ -124,7 +128,7 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
 
   CompileElement.root()
       : this(null, null, null, new NodeReference.appViewRoot(), null, null, [],
-            [], false, false, [], null);
+            [], false, false, []);
 
   set componentView(o.Expression componentViewExpr) {
     _compViewExpr = componentViewExpr;
@@ -179,7 +183,7 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
     }
   }
 
-  void beforeChildren(bool componentIsDeferred) {
+  void beforeChildren() {
     if (hasViewContainer &&
         !_providers.containsLocalProvider(Identifiers.ViewContainerRefToken)) {
       _providers.add(Identifiers.ViewContainerRefToken, appViewContainer);
@@ -208,13 +212,11 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
     if (appViewContainer != null) {
       _providers.add(Identifiers.ComponentLoaderToken, appViewContainer);
     }
-    _providers.addDirectiveProviders(
-        _resolvedProvidersArray, componentIsDeferred);
+    _providers.addDirectiveProviders(_resolvedProvidersArray, _directives);
 
-    directiveInstances = <o.Expression>[];
+    directiveInstances = <ProviderSource>[];
     for (var directive in _directives) {
-      var directiveInstance =
-          _providers.buildReadExpr(identifierToken(directive.type));
+      var directiveInstance = _providers.get(identifierToken(directive.type));
       directiveInstances.add(directiveInstance);
       for (var queryMeta in directive.queries) {
         _addQuery(queryMeta, directiveInstance);
@@ -232,7 +234,7 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
     if (referenceTokens != null) {
       referenceTokens.forEach((String varName, token) {
         var varValue = token != null
-            ? _providers.buildReadExpr(token)
+            ? _providers.get(token).build()
             : renderNode.toReadExpr();
         view.nameResolver.addLocal(varName, varValue);
         var varToken = new CompileTokenMetadata(value: varName);
@@ -246,8 +248,11 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
     for (_QueryWithRead queryWithRead in queriesWithReads) {
       o.Expression value;
       if (queryWithRead.read.identifier != null) {
-        // query for an identifier
-        value = _providers.buildReadExpr(queryWithRead.read);
+        // query for an identifier.
+        //
+        // TODO: add test for coverage, only target using this is
+        // acx2/components/charts/bar_chart/examples:examples
+        value = _providers.get(queryWithRead.read)?.build();
       } else {
         // query for a reference
         var token = (referenceTokens != null)
@@ -257,7 +262,7 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
         //
         // HOWEVER, if specifically typed as Element or HtmlElement, use that.
         value = token != null
-            ? _providers.buildReadExpr(token)
+            ? _providers.get(token)?.build()
             : queryWithRead.query.metadata.isElementType
                 ? renderNode.toReadExpr()
                 : elementRef;
@@ -274,8 +279,9 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
     for (ProviderAst resolvedProvider in _resolvedProvidersArray) {
       if (resolvedProvider.providerType ==
           ProviderAstType.FunctionalDirective) {
-        o.Expression invokeExpression =
-            _providers.createFunctionalDirectiveExpression(resolvedProvider);
+        o.Expression invokeExpression = _providers
+            .createFunctionalDirectiveSource(resolvedProvider)
+            .build();
         // Add functional directive invocation.
         view.callFunctionalDirective(invokeExpression);
         continue;
@@ -287,7 +293,7 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
       // Note: afterChildren is called after recursing into children.
       // This is good so that an injector match in an element that is closer to
       // a requesting element matches first.
-      var providerExpr = _providers.buildReadExpr(resolvedProvider.token);
+      var providerExpr = _providers.get(resolvedProvider.token).build();
       var aliases = _providers.getAliases(resolvedProvider.token);
 
       // Note: view providers are only visible on the injector of that element.
@@ -316,8 +322,7 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
     CompileDirectiveMetadata deferredMeta = deferredElement.component;
     if (deferredMeta == null) {
       ElementAst elemAst = deferredElement.sourceAst;
-      _logger.severe('Cannot defer Unknown component type <${elemAst.name}>');
-      return;
+      throwFailure('Cannot defer Unknown component type <${elemAst.name}>');
     }
     String deferredModuleUrl = deferredMeta.identifier.moduleUrl;
     String prefix = embeddedView.deferredModules[deferredModuleUrl];
@@ -348,8 +353,7 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
             emitPrefix: true,
             value: nestedComponentId.value);
 
-    var templateRefExpr =
-        _providers.buildReadExpr(Identifiers.TemplateRefToken);
+    var templateRefExpr = _providers.get(Identifiers.TemplateRefToken).build();
 
     final args = [
       o.importDeferred(prefixedId),
@@ -374,20 +378,21 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
   }
 
   o.Expression getComponent() => component != null
-      ? _providers.buildReadExpr(identifierToken(component.type))
+      ? _providers.get(identifierToken(component.type)).build()
       : null;
 
   // NodeProvidersHost implementation.
   @override
-  o.Expression createProviderInstance(
+  ProviderSource createProviderInstance(
       ProviderAst resolvedProvider,
       CompileDirectiveMetadata directiveMetadata,
-      List<o.Expression> providerValueExpressions,
-      bool componentIsDeferred,
+      List<ProviderSource> providerSources,
       int uniqueId) {
     // Create a new field property for this provider.
     var propName = '_${resolvedProvider.token.name}_${nodeIndex}_$uniqueId';
-    return view.createProvider(
+    List<o.Expression> providerValueExpressions =
+        providerSources.map((ProviderSource s) => s.build()).toList();
+    o.Expression providerExpr = view.createProvider(
         propName,
         directiveMetadata,
         resolvedProvider,
@@ -397,22 +402,26 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
         this,
         forceDynamic:
             (resolvedProvider.providerType == ProviderAstType.Component) &&
-                componentIsDeferred);
+                isDeferredComponent);
+    return new LiteralValueSource(resolvedProvider.token, providerExpr);
   }
 
   @override
-  o.Expression buildInjectFromParentExpr(ProvidersNode source,
-      o.Expression value, CompileTokenMetadata token, bool optional) {
+  ProviderSource createDynamicInjectionSource(ProvidersNode providersNode,
+      ProviderSource source, CompileTokenMetadata token, bool optional) {
     // If request was made on a service resolving to a private directive,
     // use requested dependency to call injectorGet instead of directive
     // that redirects using useExisting type provider.
+    var value = source?.build();
     value ??= injectFromViewParentInjector(view, token, optional);
     CompileElement currElement = this;
     while (currElement != null) {
-      if (currElement._providers == source) break;
+      if (currElement._providers == providersNode) break;
       currElement = currElement.parent;
     }
-    return getPropertyInView(value, view, currElement.view);
+    var viewRelativeExpression =
+        getPropertyInView(value, view, currElement.view);
+    return new LiteralValueSource(token, viewRelativeExpression);
   }
 
   List<o.Expression> getProviderTokens() {
@@ -446,13 +455,13 @@ class CompileElement extends CompileNode implements ProvidersNodeHost {
 
   CompileQuery _addQuery(
     CompileQueryMetadata metadata,
-    o.Expression directiveInstance,
+    ProviderSource directiveInstance,
   ) {
     final query = new CompileQuery(
       metadata: metadata,
       storage: view.storage,
       queryRoot: view,
-      boundField: directiveInstance,
+      boundDirective: directiveInstance,
       nodeIndex: nodeIndex,
       queryIndex: _queryCount,
     );

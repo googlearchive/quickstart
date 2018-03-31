@@ -6,7 +6,7 @@ import 'package:angular_compiler/angular_compiler.dart';
 import 'package:angular_compiler/cli.dart';
 
 import 'compile_metadata.dart';
-import 'directive_normalizer.dart';
+import 'expression_parser/visitor.dart';
 import 'style_url_resolver.dart' show extractStyleUrls, isStyleUrlResolvable;
 
 /// Loads the content of `templateUrl` and `styleUrls` to normalize directives.
@@ -15,12 +15,17 @@ import 'style_url_resolver.dart' show extractStyleUrls, isStyleUrlResolvable;
 /// content and styles are available to the compilation step as simple strings.
 ///
 /// The normalizer also resolves inline style and stylesheets in the template.
-class AstDirectiveNormalizer implements DirectiveNormalizer {
+class AstDirectiveNormalizer {
   final NgAssetReader _reader;
-
   const AstDirectiveNormalizer(this._reader);
 
-  @override
+  void _parseExpressionsWithLegacyParser(
+    ast.TemplateAst astNode,
+    List<CompileIdentifierMetadata> exports,
+  ) {
+    astNode.accept(new LegacyExpressionVisitor(exports: exports));
+  }
+
   Future<CompileDirectiveMetadata> normalizeDirective(
     CompileDirectiveMetadata directive,
   ) {
@@ -28,7 +33,11 @@ class AstDirectiveNormalizer implements DirectiveNormalizer {
     if (!directive.isComponent) {
       return new Future.value(directive);
     }
-    return normalizeTemplate(directive.type, directive.template).then((result) {
+    return _normalizeTemplate(
+      directive.type,
+      directive.template,
+      exports: directive.exports,
+    ).then((result) {
       return new CompileDirectiveMetadata(
         type: directive.type,
         metadataType: directive.metadataType,
@@ -54,20 +63,21 @@ class AstDirectiveNormalizer implements DirectiveNormalizer {
     });
   }
 
-  @override
-  Future<CompileTemplateMetadata> normalizeTemplate(
+  Future<CompileTemplateMetadata> _normalizeTemplate(
     CompileTypeMetadata directiveType,
-    CompileTemplateMetadata template,
-  ) async {
+    CompileTemplateMetadata template, {
+    List<CompileIdentifierMetadata> exports,
+  }) async {
     template ??= new CompileTemplateMetadata(template: '');
     if (template.template != null) {
       await _validateTemplateUrlNotMeant(template.template, directiveType);
-      return normalizeLoadedTemplate(
+      return _normalizeLoadedTemplate(
         directiveType,
         template,
         template.template,
         directiveType.moduleUrl,
         template.preserveWhitespace,
+        exports: exports,
       );
     }
     if (template.templateUrl != null) {
@@ -76,12 +86,13 @@ class AstDirectiveNormalizer implements DirectiveNormalizer {
         template.templateUrl,
       );
       return _reader.readText(sourceAbsoluteUrl).then((templateContent) {
-        return normalizeLoadedTemplate(
+        return _normalizeLoadedTemplate(
           directiveType,
           template,
           templateContent,
           sourceAbsoluteUrl,
           template.preserveWhitespace,
+          exports: exports,
         );
       });
     }
@@ -112,18 +123,27 @@ class AstDirectiveNormalizer implements DirectiveNormalizer {
     });
   }
 
-  @override
-  CompileTemplateMetadata normalizeLoadedTemplate(
+  CompileTemplateMetadata _normalizeLoadedTemplate(
     CompileTypeMetadata directiveType,
     CompileTemplateMetadata templateMeta,
     String template,
     String templateAbsUrl,
-    bool preserveWhitespace,
-  ) {
+    bool preserveWhitespace, {
+    List<CompileIdentifierMetadata> exports: const [],
+  }) {
     // Parse the template, and visit to find <style>/<link> and <ng-content>.
     final visitor = new _TemplateNormalizerVisitor();
-    final parsedNodes = ast.parse(template, sourceUrl: templateAbsUrl);
-    parsedNodes.forEach((a) => a.accept(visitor));
+    final parsedNodes = ast.parse(
+      template,
+      // TODO: Use the full-file path when possible.
+      // Otherwise, the analyzer crashes today seeing an 'asset:...' URL.
+      sourceUrl: Uri.parse(templateAbsUrl).replace(scheme: 'file').toFilePath(),
+    );
+
+    for (final node in parsedNodes) {
+      node.accept(visitor);
+      _parseExpressionsWithLegacyParser(node, exports);
+    }
 
     final allInlineStyles = templateMeta.styles + visitor.inlineStyles;
     final allExternalStyles = <String>[];
@@ -144,10 +164,8 @@ class AstDirectiveNormalizer implements DirectiveNormalizer {
     // Try to resolve <style> import statements.
     for (final inlineStyle in allInlineStyles) {
       final import = extractStyleUrls(templateAbsUrl, inlineStyle);
-      for (final url in import.styleUrls) {
-        allExternalStyles.add(url);
-        allResolvedStyles.add(import.style);
-      }
+      allExternalStyles.addAll(import.styleUrls);
+      allResolvedStyles.add(import.style);
     }
 
     // Optimization: Turn off encapsulation when there are no styles to apply.

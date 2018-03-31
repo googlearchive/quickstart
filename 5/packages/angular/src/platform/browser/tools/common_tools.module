@@ -1,1 +1,1 @@
-{"p":["angular","lib/src/platform/browser/tools/common_tools.dart"],"s":[["angular","lib/src/platform/browser/tools/common_tools.dart"]],"d":[["angular","lib/src/core/linker/app_view.dart"],["angular","lib/src/core/application_ref.dart"]]}
+{"p":["angular","lib/src/platform/browser/tools/common_tools.dart"],"s":[["angular","lib/src/platform/browser/tools/common_tools.dart"]],"d":[["angular","lib/src/core/change_detection/host.dart"],["angular","lib/src/core/application_ref.dart"]]}

@@ -1,1 +1,1 @@
-{"p":["angular","lib/src/core/linker/component_resolver.dart"],"s":[["angular","lib/src/core/linker/component_resolver.dart"]],"d":[["angular","lib/src/core/di.dart"],["angular","lib/src/core/linker/app_view.dart"],["angular","lib/src/di/reflector.dart"]]}
+{"p":["angular","lib/src/core/linker/component_resolver.dart"],"s":[["angular","lib/src/core/linker/component_resolver.dart"]],"d":[["angular","lib/src/core/change_detection/host.dart"],["meta","lib/meta.dart"],["angular","lib/src/runtime.dart"],["angular","lib/src/di/reflector.dart"]]}

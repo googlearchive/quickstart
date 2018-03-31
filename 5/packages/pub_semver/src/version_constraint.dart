@@ -3,10 +3,10 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'patterns.dart';
+import 'utils.dart';
 import 'version.dart';
 import 'version_range.dart';
 import 'version_union.dart';
-import 'utils.dart';
 
 /// A [VersionConstraint] is a predicate that can determine whether a given
 /// version is valid or not.
@@ -81,10 +81,14 @@ abstract class VersionConstraint {
       }
 
       switch (op) {
-        case '<=': return new VersionRange(max: version, includeMax: true);
-        case '<': return new VersionRange(max: version, includeMax: false);
-        case '>=': return new VersionRange(min: version, includeMin: true);
-        case '>': return new VersionRange(min: version, includeMin: false);
+        case '<=':
+          return new VersionRange(max: version, includeMax: true);
+        case '<':
+          return new VersionRange(max: version, includeMax: false);
+        case '>=':
+          return new VersionRange(min: version, includeMin: true);
+        case '>':
+          return new VersionRange(min: version, includeMin: false);
       }
       throw "Unreachable.";
     }
@@ -172,8 +176,7 @@ abstract class VersionConstraint {
   ///
   /// It allows any versions that any of those constraints allows. If
   /// [constraints] is empty, this returns a constraint that allows no versions.
-  factory VersionConstraint.unionOf(
-          Iterable<VersionConstraint> constraints) {
+  factory VersionConstraint.unionOf(Iterable<VersionConstraint> constraints) {
     var flattened = constraints.expand((constraint) {
       if (constraint.isEmpty) return [];
       if (constraint is VersionUnion) return constraint.ranges;
@@ -257,9 +260,12 @@ class _EmptyVersion implements VersionConstraint {
 }
 
 class _CompatibleWithVersionRange extends VersionRange {
-  _CompatibleWithVersionRange(Version version) : super(
-      min: version, includeMin: true,
-      max: version.nextBreaking, includeMax: false);
+  _CompatibleWithVersionRange(Version version)
+      : super(
+            min: version,
+            includeMin: true,
+            max: version.nextBreaking,
+            includeMax: false);
 
   String toString() => '^$min';
 }

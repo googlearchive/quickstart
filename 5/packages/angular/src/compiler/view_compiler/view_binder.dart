@@ -32,6 +32,7 @@ import "event_binder.dart"
         collectEventListeners,
         CompileEventListener,
         bindDirectiveOutputs;
+import 'ir/provider_source.dart';
 import "lifecycle_binder.dart"
     show
         bindDirectiveAfterContentLifecycleCallbacks,
@@ -111,7 +112,11 @@ class ViewBinderVisitor implements TemplateAstVisitor<void, dynamic> {
     var index = -1;
     for (var directiveAst in ast.directives) {
       index++;
-      var directiveInstance = compileElement.directiveInstances[index];
+      ProviderSource s = compileElement.directiveInstances[index];
+      // Skip functional directives.
+      if (s == null) continue;
+      var directiveInstance = s.build();
+      if (directiveInstance == null) continue;
       bindDirectiveInputs(directiveAst, directiveInstance, compileElement,
           isHostComponent: compileElement.view.viewType == ViewType.HOST);
       bindDirectiveDetectChangesLifecycleCallbacks(
@@ -125,7 +130,11 @@ class ViewBinderVisitor implements TemplateAstVisitor<void, dynamic> {
     index = -1;
     for (var directiveAst in ast.directives) {
       index++;
-      var directiveInstance = compileElement.directiveInstances[index];
+      ProviderSource s = compileElement.directiveInstances[index];
+      // Skip functional directives.
+      if (s == null) continue;
+      var directiveInstance = s.build();
+      if (directiveInstance == null) continue;
       bindDirectiveAfterContentLifecycleCallbacks(
           directiveAst.directive, directiveInstance, compileElement);
       bindDirectiveAfterViewLifecycleCallbacks(
@@ -148,7 +157,11 @@ class ViewBinderVisitor implements TemplateAstVisitor<void, dynamic> {
     var index = -1;
     for (var directiveAst in ast.directives) {
       index++;
-      var directiveInstance = compileElement.directiveInstances[index];
+      ProviderSource s = compileElement.directiveInstances[index];
+      // Skip functional directives.
+      if (s == null) continue;
+      var directiveInstance = s.build();
+      if (directiveInstance == null) continue;
       bindDirectiveInputs(directiveAst, directiveInstance, compileElement);
       bindDirectiveDetectChangesLifecycleCallbacks(
           directiveAst, directiveInstance, compileElement);

@@ -12,7 +12,6 @@ import '../expression_parser/parser.dart' show Parser;
 import '../html_events.dart';
 import '../identifiers.dart' show Identifiers, identifierToken;
 import '../is_pure_html.dart';
-import '../logging.dart';
 import '../output/output_ast.dart' as o;
 import '../provider_parser.dart' show ngIfTokenMetadata, ngForTokenMetadata;
 import '../style_compiler.dart' show StylesCompileResult;
@@ -144,8 +143,7 @@ class ViewBuilderVisitor implements TemplateAstVisitor<void, CompileElement> {
     CompileDirectiveMetadata component = componentFromDirectives(directives);
 
     if (component != null) {
-      bool isDeferred = false;
-      isDeferred = nodeIndex == 0 &&
+      bool isDeferred = nodeIndex == 0 &&
           (view.declarationElement.sourceAst is EmbeddedTemplateAst) &&
           (view.declarationElement.sourceAst as EmbeddedTemplateAst)
               .hasDeferredComponent;
@@ -187,9 +185,9 @@ class ViewBuilderVisitor implements TemplateAstVisitor<void, CompileElement> {
         ast.hasViewContainer,
         false,
         ast.references,
-        logger,
         isHtmlElement: detectHtmlElementFromTagName(ast.name),
-        hasTemplateRefQuery: parent.hasTemplateRefQuery);
+        hasTemplateRefQuery: parent.hasTemplateRefQuery,
+        isDeferredComponent: isDeferred);
 
     view.nodes.add(compileElement);
 
@@ -200,7 +198,7 @@ class ViewBuilderVisitor implements TemplateAstVisitor<void, CompileElement> {
 
     // beforeChildren() -> _prepareProviderInstances will create the actual
     // directive and component instances.
-    compileElement.beforeChildren(isDeferred);
+    compileElement.beforeChildren();
     _addRootNodeAndProject(compileElement, ast.ngContentIndex, parent);
     bool oldVisitingProjectedContent = visitingProjectedContent;
     visitingProjectedContent = true;
@@ -261,14 +259,13 @@ class ViewBuilderVisitor implements TemplateAstVisitor<void, CompileElement> {
         ast.hasViewContainer,
         false,
         ast.references,
-        logger,
         isHtmlElement: detectHtmlElementFromTagName(tagName),
         hasTemplateRefQuery: parent.hasTemplateRefQuery);
 
     view.nodes.add(compileElement);
     // beforeChildren() -> _prepareProviderInstances will create the actual
     // directive and component instances.
-    compileElement.beforeChildren(false);
+    compileElement.beforeChildren();
     _addRootNodeAndProject(compileElement, ast.ngContentIndex, parent);
     templateVisitAll(this, ast.children, compileElement);
     compileElement.afterChildren(view.nodes.length - nodeIndex - 1);
@@ -276,12 +273,12 @@ class ViewBuilderVisitor implements TemplateAstVisitor<void, CompileElement> {
 
   void visitEmbeddedTemplate(EmbeddedTemplateAst ast, CompileElement parent) {
     var nodeIndex = view.nodes.length;
-    var isSimpleNgIf = !visitingProjectedContent && _isSimpleNgIf(ast);
-    if (isSimpleNgIf) {
+    var isPureHtml = !visitingProjectedContent && _isPureHtml(ast);
+    if (isPureHtml) {
       view.hasInlinedView = true;
     }
     NodeReference nodeReference =
-        view.createViewContainerAnchor(parent, nodeIndex, ast, isSimpleNgIf);
+        view.createViewContainerAnchor(parent, nodeIndex, ast, isPureHtml);
     var directives =
         ast.directives.map((directiveAst) => directiveAst.directive).toList();
     var compileElement = new CompileElement(
@@ -296,9 +293,8 @@ class ViewBuilderVisitor implements TemplateAstVisitor<void, CompileElement> {
         ast.hasViewContainer,
         true,
         ast.references,
-        logger,
         hasTemplateRefQuery: parent.hasTemplateRefQuery,
-        isInlined: isSimpleNgIf);
+        isInlined: isPureHtml);
     view.nodes.add(compileElement);
     nestedViewCount++;
     var embeddedView = new CompileView(
@@ -310,12 +306,12 @@ class ViewBuilderVisitor implements TemplateAstVisitor<void, CompileElement> {
         compileElement,
         ast.variables,
         view.deferredModules,
-        isInlined: isSimpleNgIf);
+        isInlined: isPureHtml);
 
     // Create a visitor for embedded view and visit all nodes.
     var embeddedViewVisitor = new ViewBuilderVisitor(
         embeddedView, parser, stylesCompileResult,
-        isInlinedView: isSimpleNgIf);
+        isInlinedView: isPureHtml);
     templateVisitAll(
         embeddedViewVisitor,
         ast.children,
@@ -323,11 +319,11 @@ class ViewBuilderVisitor implements TemplateAstVisitor<void, CompileElement> {
             embeddedView.declarationElement);
     nestedViewCount += embeddedViewVisitor.nestedViewCount;
 
-    if (!isSimpleNgIf) {
-      compileElement.beforeChildren(false);
+    if (!isPureHtml) {
+      compileElement.beforeChildren();
     }
     _addRootNodeAndProject(compileElement, ast.ngContentIndex, parent);
-    if (!isSimpleNgIf) {
+    if (!isPureHtml) {
       compileElement.afterChildren(0);
     }
     if (ast.hasDeferredComponent) {
@@ -470,7 +466,7 @@ o.ClassMethod _createViewClassConstructor(
     // No namespace just call [document.createElement].
     String tagName = _tagNameFromComponentSelector(view.component.selector);
     if (tagName.isEmpty) {
-      logger.severe('Component selector is missing tag name in '
+      throwFailure('Component selector is missing tag name in '
           '${view.component.identifier.name} '
           'selector:${view.component.selector}');
     }
@@ -730,7 +726,7 @@ List<o.Statement> generateBuildMethod(CompileView view, Parser parser) {
   o.Expression resultExpr;
   if (identical(view.viewType, ViewType.HOST)) {
     if (view.nodes.isEmpty) {
-      logger.severe('Template parser has crashed for ${view.className}');
+      throwFailure('Template parser has crashed for ${view.className}');
     }
     var hostElement = view.nodes[0] as CompileElement;
     resultExpr = o.importExpr(Identifiers.ComponentRef).instantiate(
@@ -775,12 +771,12 @@ void _writeComponentHostEventListeners(
     var handlerAst = parser.parseAction(handlerSource, '', component.exports);
     HandlerType handlerType = handlerTypeFromExpression(handlerAst);
     o.Expression handlerExpr;
-    var numArgs;
+    int numArgs;
     if (handlerType == HandlerType.notSimple) {
       var context = new o.ReadClassMemberExpr('ctx');
-      var actionExpr = convertStmtIntoExpression(
-          convertCdStatementToIr(view.nameResolver, context, handlerAst, false)
-              .last);
+      var actionStmts = convertCdStatementToIr(
+          view.nameResolver, context, handlerAst, component);
+      var actionExpr = convertStmtIntoExpression(actionStmts.last);
       List<o.Statement> stmts = <o.Statement>[
         new o.ReturnStatement(actionExpr)
       ];
@@ -795,9 +791,9 @@ void _writeComponentHostEventListeners(
       numArgs = 1;
     } else {
       var context = DetectChangesVars.cachedCtx;
-      var actionExpr = convertStmtIntoExpression(
-          convertCdStatementToIr(view.nameResolver, context, handlerAst, false)
-              .last);
+      var actionStmts = convertCdStatementToIr(
+          view.nameResolver, context, handlerAst, component);
+      var actionExpr = convertStmtIntoExpression(actionStmts.last);
       assert(actionExpr is o.InvokeMethodExpr);
       var callExpr = actionExpr as o.InvokeMethodExpr;
       handlerExpr = new o.ReadPropExpr(callExpr.receiver, callExpr.name);
@@ -909,14 +905,14 @@ void writeInputUpdater(
       .add(o.fn(arguments, statements, o.BOOL_TYPE).toDeclStmt(name));
 }
 
-final _isPureHtml = new IsPureHtmlVisitor();
+final _pureHtmlVisitor = new IsPureHtmlVisitor();
 
-bool _isSimpleNgIf(EmbeddedTemplateAst ast) {
+bool _isPureHtml(EmbeddedTemplateAst ast) {
   if (ast.directives.length != 1) return false;
   var isNgIf = ast.directives.single.directive.identifier.name == 'NgIf';
   if (!isNgIf) return false;
 
-  return ast.children.every((t) => t.visit(_isPureHtml, null));
+  return ast.children.every((t) => t.visit(_pureHtmlVisitor, null));
 }
 
 /// Constructs name of global function that can be used to update an input

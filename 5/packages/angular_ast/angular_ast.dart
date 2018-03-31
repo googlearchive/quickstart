@@ -45,16 +45,12 @@ export 'src/ast.dart'
 export 'src/exception_handler/exception_handler.dart'
     show ExceptionHandler, RecoveringExceptionHandler, ThrowingExceptionHandler;
 export 'src/exception_handler/exception_handler.dart';
-export 'src/expression/ng_dart_ast.dart';
-export 'src/expression/parser.dart';
-export 'src/expression/visitor.dart';
 export 'src/lexer.dart' show NgLexer;
 export 'src/parser.dart' show NgParser;
 export 'src/recovery_protocol/recovery_protocol.dart';
 export 'src/token/tokens.dart' show NgToken, NgTokenType, NgAttributeValueToken;
 export 'src/visitor.dart'
     show
-        ExpressionParserVisitor,
         HumanizingTemplateAstVisitor,
         IdentityTemplateAstVisitor,
         MinimizeWhitespaceVisitor,
