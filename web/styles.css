@@ -40,7 +40,9 @@ button:disabled {
   color: #aaa;
   cursor: auto;
 }
-
+label {
+  padding-right: 0.5em;
+}
 /* Navigation link styles */
 nav a {
   padding: 5px 10px;
