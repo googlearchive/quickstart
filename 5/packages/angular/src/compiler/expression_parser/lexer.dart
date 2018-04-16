@@ -1,11 +1,4 @@
-import '../../facade/exceptions.dart' show BaseException;
-
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: list_element_type_not_assignable
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
+import 'package:angular_compiler/cli.dart';
 
 enum TokenType { Character, Identifier, Keyword, String, Operator, Number }
 
@@ -23,7 +16,7 @@ class Lexer {
 }
 
 class Token {
-  final num index;
+  final int index;
   final TokenType type;
   final num numValue;
   final String strValue;
@@ -78,22 +71,22 @@ class Token {
   }
 }
 
-Token newCharacterToken(num index, num code) =>
+Token newCharacterToken(int index, int code) =>
     new Token(index, TokenType.Character, code, new String.fromCharCode(code));
 
-Token newIdentifierToken(num index, String text) =>
+Token newIdentifierToken(int index, String text) =>
     new Token(index, TokenType.Identifier, 0, text);
 
-Token newKeywordToken(num index, String text) =>
+Token newKeywordToken(int index, String text) =>
     new Token(index, TokenType.Keyword, 0, text);
 
-Token newOperatorToken(num index, String text) =>
+Token newOperatorToken(int index, String text) =>
     new Token(index, TokenType.Operator, 0, text);
 
-Token newStringToken(num index, String text) =>
+Token newStringToken(int index, String text) =>
     new Token(index, TokenType.String, 0, text);
 
-Token newNumberToken(num index, num n) =>
+Token newNumberToken(int index, num n) =>
     new Token(index, TokenType.Number, n, '');
 
 final Token EOF = new Token(-1, TokenType.Character, 0, '');
@@ -149,8 +142,7 @@ const int $BAR = 124;
 const int $RBRACE = 125;
 const int $NBSP = 160;
 
-class ScannerError extends BaseException {
-  @override
+class ScannerError extends Error {
   final String message;
 
   ScannerError(this.message);
@@ -197,7 +189,7 @@ class _Scanner {
     // Handle identifiers and numbers.
     if (isIdentifierStart(peek)) return scanIdentifier();
     if (isDigit(peek)) return scanNumber(index);
-    num start = index;
+    int start = index;
     switch (peek) {
       case $PERIOD:
         advance();
@@ -247,19 +239,19 @@ class _Scanner {
     return null;
   }
 
-  Token scanCharacter(num start, num code) {
+  Token scanCharacter(int start, int code) {
     advance();
     return newCharacterToken(start, code);
   }
 
-  Token scanOperator(num start, String str) {
+  Token scanOperator(int start, String str) {
     advance();
     return newOperatorToken(start, str);
   }
 
   /// Tokenize a 2/3 char long operator
-  Token scanComplexOperator(num start, String one, num twoCode, String two,
-      [num threeCode, String three]) {
+  Token scanComplexOperator(int start, String one, int twoCode, String two,
+      [int threeCode, String three]) {
     advance();
     String str = one;
     if (peek == twoCode) {
@@ -274,7 +266,7 @@ class _Scanner {
   }
 
   Token scanIdentifier() {
-    num startIndex = index;
+    int startIndex = index;
     advance();
     while (isIdentifierPart(peek)) advance();
     String str = input.substring(startIndex, index);
@@ -337,7 +329,7 @@ class _Scanner {
 
   void error(String message, int offset) {
     int position = this.index + offset;
-    throw new ScannerError(
+    throw new BuildError(
         'Lexer Error: $message at column $position in expression [$input]');
   }
 
@@ -427,7 +419,7 @@ bool isExponentSign(num code) => code == $MINUS || code == $PLUS;
 bool isQuote(int code) =>
     identical(code, $SQ) || identical(code, $DQ) || identical(code, $BT);
 
-num unescape(int code) {
+int unescape(int code) {
   switch (code) {
     case $n:
       return $LF;

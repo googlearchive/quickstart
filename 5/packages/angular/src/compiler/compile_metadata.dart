@@ -1,19 +1,20 @@
-import 'package:quiver/collection.dart';
+import 'package:collection/collection.dart';
 
 import '../core/change_detection/change_detection.dart'
     show ChangeDetectionStrategy;
 import '../core/metadata/lifecycle_hooks.dart' show LifecycleHooks;
 import '../core/metadata/view.dart';
 import '../core/metadata/visibility.dart';
-import '../facade/exceptions.dart' show BaseException;
 import 'analyzed_class.dart';
 import 'compiler_utils.dart';
 import 'output/output_ast.dart' as o;
 import 'selector.dart' show CssSelector;
 
+final _listsEqual = const ListEquality<Object>().equals;
+
 // group 1: 'property' from '[property]'
 // group 2: 'event' from '(event)'
-var HOST_REG_EXP = new RegExp(r'^(?:(?:\[([^\]]+)\])|(?:\(([^\)]+)\)))$');
+final _hostRegExp = new RegExp(r'^(?:(?:\[([^\]]+)\])|(?:\(([^\)]+)\)))$');
 
 abstract class CompileMetadataWithIdentifier<T> {
   CompileIdentifierMetadata<T> get identifier;
@@ -110,7 +111,7 @@ class CompileProviderMetadata {
         useValue == _other.useValue &&
         useExisting == _other.useExisting &&
         useFactory == _other.useFactory &&
-        listsEqual(deps, _other.deps) &&
+        _listsEqual(deps, _other.deps) &&
         multi == _other.multi;
   }
 
@@ -238,7 +239,7 @@ class CompileTokenMap<V> {
   void add(CompileTokenMetadata token, V value) {
     var existing = get(token);
     if (existing != null) {
-      throw new BaseException(
+      throw new StateError(
           'Add failed. Token already exists. Token: ${token.name}');
     }
     _tokens.add(token);
@@ -317,7 +318,7 @@ class CompileTypeMetadata
         moduleUrl == _other.moduleUrl &&
         isHost == _other.isHost &&
         value == _other.value &&
-        listsEqual(diDeps, _other.diDeps);
+        _listsEqual(diDeps, _other.diDeps);
   }
 
   @override
@@ -351,9 +352,6 @@ class CompileQueryMetadata {
   /// Whether this is typed `dart:html`'s `Element` (or a sub-type).
   final bool isElementType;
 
-  /// Whether this is typed specifically `QueryList`.
-  final bool isQueryListType;
-
   /// Optional type to read for given match.
   ///
   /// When we match an element in the template, it typically returns the
@@ -367,7 +365,6 @@ class CompileQueryMetadata {
     this.first: false,
     this.propertyName,
     this.isElementType: false,
-    this.isQueryListType: false,
     this.read,
   });
 }
@@ -438,7 +435,7 @@ class CompileDirectiveMetadata implements CompileMetadataWithType {
     assert(outProperties != null);
 
     host?.forEach((key, value) {
-      final matches = HOST_REG_EXP.firstMatch(key);
+      final matches = _hostRegExp.firstMatch(key);
       if (matches == null) {
         outAttributes[key] = value;
       } else if (matches[1] != null) {

@@ -7,11 +7,9 @@ import 'event_manager.dart';
 export 'event_manager.dart';
 import 'package:angular/src/core/di.dart' show Injectable, Inject, OpaqueToken;
 import 'package:angular/src/core/zone/ng_zone.dart' show NgZone;
-import 'package:angular/src/facade/exceptions.dart' show BaseException;
 import 'package:angular/src/di/reflector.dart' as _ngRef;
 import 'package:angular/src/core/di.template.dart' as _ref0;
 import 'package:angular/src/core/zone/ng_zone.template.dart' as _ref1;
-import 'package:angular/src/facade/exceptions.template.dart' as _ref2;
 import 'package:angular/src/platform/dom/events/event_manager.dart' as _i1;
 import 'package:angular/src/core/zone/ng_zone.dart' as _i2;
 import 'package:angular/src/core/di/opaque_token.dart' as _i3;
@@ -30,5 +28,4 @@ void initReflector() {
   ]);
   _ref0.initReflector();
   _ref1.initReflector();
-  _ref2.initReflector();
 }

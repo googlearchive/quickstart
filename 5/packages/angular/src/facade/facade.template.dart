@@ -6,7 +6,6 @@
 import 'facade.dart';
 export 'facade.dart';
 import 'exception_handler.template.dart' as _ref0;
-import 'exceptions.template.dart' as _ref1;
 
 var _visited = false;
 void initReflector() {
@@ -16,5 +15,4 @@ void initReflector() {
   _visited = true;
 
   _ref0.initReflector();
-  _ref1.initReflector();
 }

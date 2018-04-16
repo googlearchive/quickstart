@@ -1,5 +1,6 @@
+import 'dart:html';
+
 import 'package:angular/src/di/injector/injector.dart' show Injector;
-import 'package:angular/src/facade/exceptions.dart' show BaseException;
 import 'package:angular/src/runtime.dart';
 
 import 'app_view.dart';
@@ -19,7 +20,7 @@ class ViewContainer extends ComponentLoader implements ViewContainerRef {
   final int index;
   final int parentIndex;
   final AppView parentView;
-  final dynamic nativeElement;
+  final Node nativeElement;
   List<AppView> nestedViews;
   ElementRef _elementRef;
   Injector _parentInjector;
@@ -56,16 +57,18 @@ class ViewContainer extends ComponentLoader implements ViewContainerRef {
   Injector get injector => parentView.injector(index);
 
   void detectChangesInNestedViews() {
-    if (nestedViews == null) return;
-    for (var i = 0, len = nestedViews.length; i < len; i++) {
-      nestedViews[i].detectChanges();
+    var _nestedViews = nestedViews;
+    if (_nestedViews == null) return;
+    for (var i = 0, len = _nestedViews.length; i < len; i++) {
+      _nestedViews[i].detectChanges();
     }
   }
 
   void destroyNestedViews() {
-    if (nestedViews == null) return;
-    for (var i = 0, len = nestedViews.length; i < len; i++) {
-      nestedViews[i].destroy();
+    var _nestedViews = nestedViews;
+    if (_nestedViews == null) return;
+    for (var i = 0, len = _nestedViews.length; i < len; i++) {
+      _nestedViews[i].destroy();
     }
   }
 
@@ -170,13 +173,13 @@ class ViewContainer extends ComponentLoader implements ViewContainerRef {
   }
 
   void moveView(AppView view, int currentIndex) {
-    int previousIndex = nestedViews.indexOf(view);
+    List<AppView> views = nestedViews;
 
-    if (view.viewData.type == ViewType.COMPONENT) {
+    int previousIndex = views.indexOf(view);
+
+    if (view.viewData.type == ViewType.component) {
       throw new Exception("Component views can't be moved!");
     }
-
-    List<AppView> views = nestedViews;
 
     if (views == null) {
       views = <AppView>[];
@@ -185,7 +188,7 @@ class ViewContainer extends ComponentLoader implements ViewContainerRef {
 
     views.removeAt(previousIndex);
     views.insert(currentIndex, view);
-    dynamic refRenderNode;
+    Node refRenderNode;
 
     if (currentIndex > 0) {
       AppView prevView = views[currentIndex - 1];
@@ -202,18 +205,19 @@ class ViewContainer extends ComponentLoader implements ViewContainerRef {
   }
 
   void attachView(AppView view, int viewIndex) {
-    if (identical(view.viewData.type, ViewType.COMPONENT)) {
-      throw new BaseException("Component views can't be moved!");
+    if (identical(view.viewData.type, ViewType.component)) {
+      throw new StateError("Component views can't be moved!");
     }
-    nestedViews ??= <AppView>[];
-    nestedViews.insert(viewIndex, view);
-    var refRenderNode;
+    var _nestedViews = nestedViews ?? <AppView>[];
+    _nestedViews.insert(viewIndex, view);
+    Node refRenderNode;
     if (viewIndex > 0) {
-      var prevView = nestedViews[viewIndex - 1];
+      var prevView = _nestedViews[viewIndex - 1];
       refRenderNode = prevView.lastRootNode;
     } else {
       refRenderNode = nativeElement;
     }
+    nestedViews = _nestedViews;
     if (refRenderNode != null) {
       view.attachViewAfter(refRenderNode, view.flatRootNodes);
     }
@@ -222,8 +226,8 @@ class ViewContainer extends ComponentLoader implements ViewContainerRef {
 
   AppView detachView(int viewIndex) {
     var view = nestedViews.removeAt(viewIndex);
-    if (view.viewData.type == ViewType.COMPONENT) {
-      throw new BaseException("Component views can't be moved!");
+    if (view.viewData.type == ViewType.component) {
+      throw new StateError("Component views can't be moved!");
     }
     view.detachViewNodes(view.flatRootNodes);
     if (view.inlinedNodes != null) {

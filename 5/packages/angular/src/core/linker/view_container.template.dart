@@ -5,8 +5,8 @@
 // ignore_for_file: cancel_subscriptions,constant_identifier_names,duplicate_import,non_constant_identifier_names,library_prefixes,UNUSED_IMPORT,UNUSED_SHOWN_NAME
 import 'view_container.dart';
 export 'view_container.dart';
+import 'dart:html';
 import 'package:angular/src/di/injector/injector.dart' show Injector;
-import 'package:angular/src/facade/exceptions.dart' show BaseException;
 import 'package:angular/src/runtime.dart';
 import 'app_view.dart';
 import 'component_factory.dart' show ComponentFactory, ComponentRef;
@@ -21,12 +21,11 @@ import 'component_factory.template.dart' as _ref1;
 import 'component_loader.template.dart' as _ref2;
 import 'element_ref.template.dart' as _ref3;
 import 'package:angular/src/di/injector/injector.template.dart' as _ref4;
-import 'package:angular/src/facade/exceptions.template.dart' as _ref5;
-import 'package:angular/src/runtime.template.dart' as _ref6;
-import 'template_ref.template.dart' as _ref7;
-import 'view_container_ref.template.dart' as _ref8;
-import 'view_ref.template.dart' as _ref9;
-import 'view_type.template.dart' as _ref10;
+import 'package:angular/src/runtime.template.dart' as _ref5;
+import 'template_ref.template.dart' as _ref6;
+import 'view_container_ref.template.dart' as _ref7;
+import 'view_ref.template.dart' as _ref8;
+import 'view_type.template.dart' as _ref9;
 
 var _visited = false;
 void initReflector() {
@@ -45,5 +44,4 @@ void initReflector() {
   _ref7.initReflector();
   _ref8.initReflector();
   _ref9.initReflector();
-  _ref10.initReflector();
 }

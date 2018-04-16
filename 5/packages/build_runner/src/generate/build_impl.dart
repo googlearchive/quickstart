@@ -1,7 +1,9 @@
 // Copyright (c) 2016, the Dart project authors.  Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
+
 import 'dart:async';
+import 'dart:collection';
 import 'dart:io';
 
 import 'package:build/build.dart';
@@ -58,10 +60,11 @@ Future<BuildResult> build(
   bool skipBuildScriptCheck,
   bool enableLowResourcesMode,
   Map<String, BuildConfig> overrideBuildConfig,
-  String outputDir,
+  Map<String, String> outputMap,
   bool trackPerformance,
   bool verbose,
   Map<String, Map<String, dynamic>> builderConfigOverrides,
+  bool isReleaseBuild,
 }) async {
   builderConfigOverrides ??= const {};
   packageGraph ??= new PackageGraph.forThisPackage();
@@ -83,13 +86,13 @@ Future<BuildResult> build(
       logLevel: logLevel,
       skipBuildScriptCheck: skipBuildScriptCheck,
       enableLowResourcesMode: enableLowResourcesMode,
-      outputDir: outputDir,
+      outputMap: outputMap,
       trackPerformance: trackPerformance,
       verbose: verbose);
   var terminator = new Terminator(terminateEventStream);
 
-  final buildPhases =
-      await createBuildPhases(targetGraph, builders, builderConfigOverrides);
+  final buildPhases = await createBuildPhases(
+      targetGraph, builders, builderConfigOverrides, isReleaseBuild ?? false);
 
   var result = await singleBuild(environment, options, buildPhases);
 
@@ -121,7 +124,7 @@ class BuildImpl {
   final _resolvers = new AnalyzerResolvers();
   final ResourceManager _resourceManager;
   final RunnerAssetWriter _writer;
-  final String _outputDir;
+  final Map<String, String> _outputMap;
   final bool _trackPerformance;
   final bool _verbose;
   final BuildEnvironment _environment;
@@ -136,7 +139,7 @@ class BuildImpl {
         _assetGraph = buildDefinition.assetGraph,
         _resourceManager = buildDefinition.resourceManager,
         _onDelete = buildDefinition.onDelete,
-        _outputDir = options.outputDir,
+        _outputMap = options.outputMap,
         _verbose = options.verbose,
         _failOnSevere = options.failOnSevere,
         _environment = buildDefinition.environment,
@@ -164,7 +167,7 @@ class _SingleBuild {
   final bool _failOnSevere;
   final _lazyPhases = <String, Future<Iterable<AssetId>>>{};
   final OnDelete _onDelete;
-  final String _outputDir;
+  final Map<String, String> _outputMap;
   final PackageGraph _packageGraph;
   final BuildPerformanceTracker _performanceTracker;
   final AssetReader _reader;
@@ -182,7 +185,7 @@ class _SingleBuild {
         _environment = buildImpl._environment,
         _failOnSevere = buildImpl._failOnSevere,
         _onDelete = buildImpl._onDelete,
-        _outputDir = buildImpl._outputDir,
+        _outputMap = buildImpl._outputMap,
         _packageGraph = buildImpl._packageGraph,
         _performanceTracker = buildImpl._trackPerformance
             ? new BuildPerformanceTracker()
@@ -200,11 +203,11 @@ class _SingleBuild {
     }
     var result = await _safeBuild();
     await _resourceManager.disposeAll();
-    if (_outputDir != null && result.status == BuildStatus.success) {
-      if (!await createMergedOutputDir(_outputDir, _assetGraph, _packageGraph,
-          _reader, _environment, _buildPhases)) {
+    if (_outputMap != null && result.status == BuildStatus.success) {
+      if (!await createMergedOutputDirectories(_outputMap, _assetGraph,
+          _packageGraph, _reader, _environment, _buildPhases)) {
         result = _convertToFailure(
-            result, 'Failed to create merged output directory.');
+            result, 'Failed to create merged output directories.');
       }
     }
     if (result.status == BuildStatus.success) {
@@ -301,7 +304,7 @@ class _SingleBuild {
         _lazyPhases.values,
         (Future<Iterable<AssetId>> lazyOuts) async =>
             outputs.addAll(await lazyOuts));
-    final status = _assetGraph.failedActions.isEmpty
+    final status = _assetGraph.failedOutputs.isEmpty
         ? BuildStatus.success
         : BuildStatus.failure;
     return new BuildResult(status, outputs,
@@ -324,6 +327,7 @@ class _SingleBuild {
           await _runLazyPhaseForInput(input.phaseNumber, input.primaryInput);
         }
         if (!input.wasOutput) return;
+        if (input.isFailure) return;
       }
       ids.add(input.id);
     }));
@@ -356,7 +360,7 @@ class _SingleBuild {
           await _runLazyPhaseForInput(
               inputNode.phaseNumber, inputNode.primaryInput);
         }
-        if (!inputNode.wasOutput) return <AssetId>[];
+        if (!inputNode.wasOutput || inputNode.isFailure) return <AssetId>[];
       }
 
       // We can never lazily build `PostProcessBuildAction`s.
@@ -413,16 +417,12 @@ class _SingleBuild {
             .catchError((_) => errorThrown = true),
         'Build');
     numActionsCompleted++;
-    if ((logger.errorWasSeen && _failOnSevere) || errorThrown) {
-      _assetGraph.markActionFailed(phaseNumber, input);
-    } else {
-      _assetGraph.markActionSucceeded(phaseNumber, input);
-    }
 
     // Reset the state for all the `builderOutputs` nodes based on what was
     // read and written.
     await tracker.track(
-        () => _setOutputsState(builderOutputs, wrappedReader, wrappedWriter),
+        () => _setOutputsState(builderOutputs, wrappedReader, wrappedWriter,
+            (logger.errorWasSeen && _failOnSevere) || errorThrown),
         'Finalize');
 
     tracker.stop();
@@ -447,6 +447,7 @@ class _SingleBuild {
           return true;
         } else if (inputNode is GeneratedAssetNode) {
           return inputNode.wasOutput &&
+              !inputNode.isFailure &&
               inputNode.state == GeneratedNodeState.upToDate;
         }
       }
@@ -496,18 +497,13 @@ class _SingleBuild {
         .catchError((_) => errorThrown = true);
     numActionsCompleted++;
 
-    if ((logger.errorWasSeen && _failOnSevere) || errorThrown) {
-      _assetGraph.markActionFailed(phaseNum, input);
-    } else {
-      _assetGraph.markActionSucceeded(phaseNum, input);
-    }
-
     var assetsWritten = wrappedWriter.assetsWritten.toSet();
 
     // Reset the state for all the output nodes based on what was read and
     // written.
     inputNode.primaryOutputs.addAll(assetsWritten);
-    await _setOutputsState(assetsWritten, wrappedReader, wrappedWriter);
+    await _setOutputsState(assetsWritten, wrappedReader, wrappedWriter,
+        (logger.errorWasSeen && _failOnSevere) || errorThrown);
 
     return assetsWritten;
   }
@@ -611,12 +607,13 @@ class _SingleBuild {
   ///
   /// - Setting `needsUpdate` to `false` for each output
   /// - Setting `wasOutput` based on `writer.assetsWritten`.
+  /// - Setting `isFailed` based on action success.
   /// - Setting `globs` on each output based on `reader.globsRan`
   /// - Adding `outputs` as outputs to all `reader.assetsRead`.
   /// - Setting the `lastKnownDigest` on each output based on the new contents.
   /// - Setting the `previousInputsDigest` on each output based on the inputs.
   Future<Null> _setOutputsState(Iterable<AssetId> outputs,
-      SingleStepReader reader, AssetWriterSpy writer) async {
+      SingleStepReader reader, AssetWriterSpy writer, bool isFailure) async {
     // All inputs are the same, so we only compute this once, but lazily.
     Digest inputsDigest;
     var globsRan = reader.globsRan.toSet();
@@ -640,9 +637,26 @@ class _SingleBuild {
       node
         ..state = GeneratedNodeState.upToDate
         ..wasOutput = wasOutput
+        ..isFailure = isFailure
         ..lastKnownDigest = digest
         ..globs = globsRan
         ..previousInputsDigest = inputsDigest;
+
+      if (isFailure) {
+        var needsMarkAsFailure = new Queue.of(node.primaryOutputs);
+        while (needsMarkAsFailure.isNotEmpty) {
+          var output = needsMarkAsFailure.removeLast();
+          var outputNode = _assetGraph.get(output) as GeneratedAssetNode;
+          outputNode
+            ..state = GeneratedNodeState.upToDate
+            ..wasOutput = false
+            ..isFailure = true
+            ..lastKnownDigest = null
+            ..globs = new Set()
+            ..previousInputsDigest = null;
+          needsMarkAsFailure.addAll(outputNode.primaryOutputs);
+        }
+      }
     }
   }
 

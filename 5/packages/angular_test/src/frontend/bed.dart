@@ -49,10 +49,12 @@ Future<NgTestFixture<T>> createDynamicFixture<T>(
 /// This is for compatibility reasons only and should not be used otherwise.
 NgTestBed<T> createDynamicTestBed<T>({
   Element host,
+  InjectorFactory rootInjector,
   bool watchAngularLifecycle: true,
 }) {
   return new NgTestBed<T>._allowDynamicType(
     host: host,
+    rootInjector: rootInjector,
     watchAngularLifecycle: watchAngularLifecycle,
   );
 }
@@ -133,7 +135,7 @@ class NgTestBed<T> {
   /// main() {
   ///   final ngTestBed = NgTestBed.forComponent(
   ///     SomeComponentNgFactory,
-  ///     rootInjector: (parent) => new Injector.map({
+  ///     rootInjector: ([parent]) => new Injector.map({
   ///       Service: new Service(),
   ///     }, parent),
   ///   );
@@ -171,6 +173,7 @@ class NgTestBed<T> {
   /// by setting [watchAngularLifecycle] to `false`.
   factory NgTestBed({
     Element host,
+    InjectorFactory rootInjector,
     bool watchAngularLifecycle: true,
   }) {
     if (T == dynamic) {
@@ -178,6 +181,7 @@ class NgTestBed<T> {
     }
     return new NgTestBed<T>._allowDynamicType(
       host: host,
+      rootInjector: rootInjector,
       watchAngularLifecycle: watchAngularLifecycle,
     );
   }
@@ -185,12 +189,15 @@ class NgTestBed<T> {
   // Used for compatibility only.
   factory NgTestBed._allowDynamicType({
     Element host,
+    InjectorFactory rootInjector,
     bool watchAngularLifecycle: true,
   }) {
     return new NgTestBed<T>._(
       host: host,
-      providers: const [],
+      // For uses of NgTestBed w/o `.forComponent`, we enable legacy APIs.
+      providers: const [SlowComponentLoader],
       stabilizers: watchAngularLifecycle ? _lifecycleStabilizers : const [],
+      rootInjector: rootInjector,
     );
   }
 
@@ -277,16 +284,17 @@ class NgTestBed<T> {
     _checkForActiveTest();
     return new Future<NgTestFixture<T>>.sync(() {
       _checkForActiveTest();
+      var rootInjector = _rootInjector;
+      if (_providers.isNotEmpty) {
+        rootInjector = ([parent]) {
+          return ReflectiveInjector.resolveAndCreate(_providers, parent);
+        };
+      }
       return bootstrapForTest<T>(
-        _componentFactory ?? typeToFactory(T),
+        _componentFactory ?? typeToFactory(type),
         _host ?? _defaultHost(),
-        _rootInjector,
+        rootInjector,
         beforeChangeDetection: beforeChangeDetection,
-        // Internal: In non-static mode, force use of the legacy injector.
-        // TODO: Make this explicit instead of relying on non-empty list.
-        addProviders: _providers.isEmpty
-            ? _usesComponentFactory ? _providers : [[]]
-            : _providers,
       ).then((componentRef) async {
         _checkForActiveTest();
         final allStabilizers = new NgTestStabilizer.all(

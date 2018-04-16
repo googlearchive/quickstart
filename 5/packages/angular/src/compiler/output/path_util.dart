@@ -1,14 +1,5 @@
 import 'dart:math' as math;
 
-import 'package:angular/src/facade/exceptions.dart' show BaseException;
-
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: list_element_type_not_assignable
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
-
 /// Matches asset:<package-name>/<realm>/<path-to-module>
 var _ASSET_URL_RE = new RegExp(r'asset:([^\/]+)\/([^\/]+)\/(.+)');
 var _PATH_SEP = "/";
@@ -31,8 +22,7 @@ String getImportModulePath(String moduleUrlStr, String importedUrlStr) {
     return "$absolutePathPrefix${importedUrl.packageName}"
         "/${importedUrl.modulePath}";
   }
-  throw new BaseException(
-      "Can't import url $importedUrlStr from $moduleUrlStr");
+  throw new StateError("Can't import url $importedUrlStr from $moduleUrlStr");
 }
 
 class _AssetUrl {
@@ -46,7 +36,7 @@ class _AssetUrl {
       return new _AssetUrl(match[1], match[2], match[3]);
     }
     if (allowNonMatching) return null;
-    throw new BaseException("Url $url is not a valid asset: url");
+    throw new StateError("Url $url is not a valid asset: url");
   }
 
   _AssetUrl(this.packageName, this.firstLevelDir, this.modulePath);
@@ -67,7 +57,7 @@ String getRelativePath(String modulePath, String importedPath) {
   return resultParts.join(_PATH_SEP);
 }
 
-num getLongestPathSegmentPrefix(List<String> arr1, List<String> arr2) {
+int getLongestPathSegmentPrefix(List<String> arr1, List<String> arr2) {
   var prefixSize = 0;
   var minLen = math.min(arr1.length, arr2.length);
   while (prefixSize < minLen && arr1[prefixSize] == arr2[prefixSize]) {

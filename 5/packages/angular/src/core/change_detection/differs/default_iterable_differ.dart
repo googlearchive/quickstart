@@ -1,11 +1,4 @@
-import 'package:angular/src/facade/exceptions.dart' show BaseException;
-
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: list_element_type_not_assignable
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
+import 'package:angular/src/runtime.dart';
 
 typedef void DefaultIterableCallback(
   CollectionChangeRecord item,
@@ -116,7 +109,7 @@ class DefaultIterableDiffer {
           : nextRemove;
 
       int adjPreviousIndex =
-          _getPreviousIndex(record, addRemoveOffset, moveOffsets);
+          _getPreviousIndex(unsafeCast(record), addRemoveOffset, moveOffsets);
 
       int currentIndex = record.currentIndex;
 
@@ -175,7 +168,7 @@ class DefaultIterableDiffer {
       }
 
       if (adjPreviousIndex != currentIndex) {
-        fn(record, adjPreviousIndex, currentIndex);
+        fn(unsafeCast(record), adjPreviousIndex, currentIndex);
       }
     }
   }
@@ -207,7 +200,7 @@ class DefaultIterableDiffer {
   DefaultIterableDiffer diff(Iterable collection) {
     if (collection != null) {
       if (collection is! Iterable) {
-        throw new BaseException("Error trying to diff '$collection'");
+        throw new StateError("Error trying to diff '$collection'");
       }
     } else {
       collection = const [];
@@ -608,48 +601,52 @@ class DefaultIterableDiffer {
   }
 
   String toString() {
-    var list = [];
-    for (var record = this._itHead;
-        !identical(record, null);
-        record = record._next) {
-      list.add(record);
+    if (isDevMode) {
+      var list = [];
+      for (var record = this._itHead;
+          !identical(record, null);
+          record = record._next) {
+        list.add(record);
+      }
+      var previous = [];
+      for (var record = this._previousItHead;
+          !identical(record, null);
+          record = record._nextPrevious) {
+        previous.add(record);
+      }
+      var additions = [];
+      this.forEachAddedItem((record) => additions.add(record));
+      var moves = [];
+      for (var record = this._movesHead;
+          !identical(record, null);
+          record = record._nextMoved) {
+        moves.add(record);
+      }
+      var removals = [];
+      this.forEachRemovedItem((record) => removals.add(record));
+      var identityChanges = [];
+      this.forEachIdentityChange((record) => identityChanges.add(record));
+      return "collection: " +
+          list.join(", ") +
+          "\n" +
+          "previous: " +
+          previous.join(", ") +
+          "\n" +
+          "additions: " +
+          additions.join(", ") +
+          "\n" +
+          "moves: " +
+          moves.join(", ") +
+          "\n" +
+          "removals: " +
+          removals.join(", ") +
+          "\n" +
+          "identityChanges: " +
+          identityChanges.join(", ") +
+          "\n";
+    } else {
+      return super.toString();
     }
-    var previous = [];
-    for (var record = this._previousItHead;
-        !identical(record, null);
-        record = record._nextPrevious) {
-      previous.add(record);
-    }
-    var additions = [];
-    this.forEachAddedItem((record) => additions.add(record));
-    var moves = [];
-    for (var record = this._movesHead;
-        !identical(record, null);
-        record = record._nextMoved) {
-      moves.add(record);
-    }
-    var removals = [];
-    this.forEachRemovedItem((record) => removals.add(record));
-    var identityChanges = [];
-    this.forEachIdentityChange((record) => identityChanges.add(record));
-    return "collection: " +
-        list.join(", ") +
-        "\n" +
-        "previous: " +
-        previous.join(", ") +
-        "\n" +
-        "additions: " +
-        additions.join(", ") +
-        "\n" +
-        "moves: " +
-        moves.join(", ") +
-        "\n" +
-        "removals: " +
-        removals.join(", ") +
-        "\n" +
-        "identityChanges: " +
-        identityChanges.join(", ") +
-        "\n";
   }
 }
 
@@ -747,11 +744,10 @@ class _DuplicateItemRecordList {
 }
 
 class _DuplicateMap {
-  Map _map;
-  _DuplicateMap()
-      : _map = new Map<dynamic, _DuplicateItemRecordList>.identity();
-  _DuplicateMap.withHashcode()
-      : _map = new Map<dynamic, _DuplicateItemRecordList>();
+  final Map<dynamic, _DuplicateItemRecordList> _map;
+  _DuplicateMap() : _map = new Map.identity();
+  _DuplicateMap.withHashcode() : _map = new Map();
+
   void put(CollectionChangeRecord record) {
     // todo(vicb) handle corner cases
     var key = record.trackById;

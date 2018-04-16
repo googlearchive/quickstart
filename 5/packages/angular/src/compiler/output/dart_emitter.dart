@@ -1,22 +1,13 @@
-import "package:angular/src/facade/exceptions.dart" show BaseException;
-
 import "../compile_metadata.dart" show CompileIdentifierMetadata;
 import "abstract_emitter.dart"
     show
         OutputEmitter,
         EmitterVisitorContext,
         AbstractEmitterVisitor,
-        CATCH_ERROR_VAR,
-        CATCH_STACK_VAR;
+        catchErrorVar,
+        catchStackVar;
 import "output_ast.dart" as o;
 import "path_util.dart" show getImportModulePath;
-
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: list_element_type_not_assignable
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
 
 var _debugModuleUrl = "asset://debug/lib";
 var _METADATA_MAP_VAR = '_METADATA';
@@ -36,7 +27,7 @@ String debugOutputAstAsDart(
     } else if (ast is o.OutputType) {
       ast.visitType(converter, ctx);
     } else {
-      throw new BaseException("Don't know how to print debug info for $ast");
+      throw new StateError("Don't know how to print debug info for $ast");
     }
   }
   return ctx.toSource();
@@ -306,7 +297,7 @@ class _DartEmitterVisitor extends AbstractEmitterVisitor
 
   @override
   String getBuiltinMethodName(o.BuiltinMethod method) {
-    var name;
+    String name;
     switch (method) {
       case o.BuiltinMethod.ConcatArray:
         name = ".addAll";
@@ -315,7 +306,7 @@ class _DartEmitterVisitor extends AbstractEmitterVisitor
         name = "listen";
         break;
       default:
-        throw new BaseException('Unknown builtin method: $method');
+        throw new StateError('Unknown builtin method: $method');
     }
     return name;
   }
@@ -367,7 +358,7 @@ class _DartEmitterVisitor extends AbstractEmitterVisitor
     ctx.incIndent();
     this.visitAllStatements(stmt.bodyStmts, ctx);
     ctx.decIndent();
-    ctx.println('} catch (${CATCH_ERROR_VAR.name}, ${CATCH_STACK_VAR.name}) {');
+    ctx.println('} catch (${catchErrorVar.name}, ${catchStackVar.name}) {');
     ctx.incIndent();
     this.visitAllStatements(stmt.catchStmts, ctx);
     ctx.decIndent();
@@ -401,9 +392,10 @@ class _DartEmitterVisitor extends AbstractEmitterVisitor
 
   @override
   dynamic visitLiteralVargsExpr(o.LiteralVargsExpr ast, dynamic context) {
+    EmitterVisitorContext ctx = context;
     this.visitAllExpressions(
       ast.entries,
-      context,
+      ctx,
       ',',
       newLine: ast.entries.isNotEmpty,
       keepOnSameLine: true,
@@ -463,7 +455,7 @@ class _DartEmitterVisitor extends AbstractEmitterVisitor
   @override
   dynamic visitBuiltinType(o.BuiltinType type, dynamic context) {
     EmitterVisitorContext ctx = context;
-    var typeStr;
+    String typeStr;
     switch (type.name) {
       case o.BuiltinTypeName.Bool:
         typeStr = "bool";
@@ -487,7 +479,7 @@ class _DartEmitterVisitor extends AbstractEmitterVisitor
         typeStr = "String";
         break;
       default:
-        throw new BaseException('Unsupported builtin type ${type.name}');
+        throw new StateError('Unsupported builtin type ${type.name}');
     }
     ctx.print(typeStr);
     return null;
@@ -549,7 +541,7 @@ class _DartEmitterVisitor extends AbstractEmitterVisitor
         param.type.visitType(this, ctx);
         ctx.print(" ");
       }
-      ctx.print(param.name);
+      ctx.print(param.name as String);
     }, params, ctx, ",");
   }
 

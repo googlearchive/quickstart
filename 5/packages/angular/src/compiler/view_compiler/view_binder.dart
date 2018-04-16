@@ -49,13 +49,6 @@ import "property_binder.dart"
         bindRenderInputs,
         bindRenderText;
 
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: list_element_type_not_assignable
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
-
 /// Visits view nodes to generate code for bindings.
 ///
 /// Called by ViewCompiler for each top level CompileView and the
@@ -70,7 +63,7 @@ void bindView(CompileView view, List<TemplateAst> parsedTemplate) {
 
 class ViewBinderVisitor implements TemplateAstVisitor<void, dynamic> {
   final CompileView view;
-  num _nodeIndex = 0;
+  int _nodeIndex = 0;
   ViewBinderVisitor(this.view);
 
   void visitBoundText(BoundTextAst ast, dynamic context) {
@@ -118,7 +111,7 @@ class ViewBinderVisitor implements TemplateAstVisitor<void, dynamic> {
       var directiveInstance = s.build();
       if (directiveInstance == null) continue;
       bindDirectiveInputs(directiveAst, directiveInstance, compileElement,
-          isHostComponent: compileElement.view.viewType == ViewType.HOST);
+          isHostComponent: compileElement.view.viewType == ViewType.host);
       bindDirectiveDetectChangesLifecycleCallbacks(
           directiveAst, directiveInstance, compileElement);
       bindDirectiveHostProps(directiveAst, directiveInstance, compileElement);
@@ -207,7 +200,7 @@ class ViewBinderVisitor implements TemplateAstVisitor<void, dynamic> {
 
 void bindViewHostProperties(CompileView view, Parser parser,
     ElementSchemaRegistry schemaRegistry, ErrorCallback errorCallback) {
-  if (view.viewIndex != 0 || view.viewType != ViewType.COMPONENT) return;
+  if (view.viewIndex != 0 || view.viewType != ViewType.component) return;
   var hostProps = view.component.hostProperties;
   if (hostProps == null) return;
 

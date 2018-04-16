@@ -48,17 +48,16 @@ import 'package:angular/src/di/injector/injector.dart' as _i1;
 import 'package:angular/src/di/injector/hierarchical.dart' as _i2;
 import 'package:angular/src/platform/browser/exceptions.dart' as _i3;
 import 'package:angular/src/security/dom_sanitization_service_impl.dart' as _i4;
-import 'package:angular/src/core/application_ref.dart' as _i5;
-import 'package:angular/src/core/linker/app_view_utils.dart' as _i6;
-import 'package:angular/src/core/linker/component_loader.dart' as _i7;
+import 'package:angular/src/core/linker/component_loader.dart' as _i5;
+import 'package:angular/src/bootstrap/modules.dart' as _i6;
+import 'package:angular/src/core/testability/testability.dart' as _i7;
 import 'package:angular/src/platform/dom/events/event_manager.dart' as _i8;
 import 'package:angular/src/security/dom_sanitization_service.dart' as _i9;
 import 'package:angular/src/core/zone/ng_zone.dart' as _i10;
-import 'package:angular/src/bootstrap/modules.dart' as _i11;
-import 'package:angular/src/core/di/opaque_token.dart' as _i12;
+import 'package:angular/src/core/di/opaque_token.dart' as _i11;
+import 'package:angular/src/facade/exception_handler.dart' as _i12;
 import 'package:angular/src/core/security.dart' as _i13;
-import 'package:angular/src/facade/exception_handler.dart' as _i14;
-import 'package:angular/src/core/testability/testability.dart' as _i15;
+import 'package:angular/src/core/linker/dynamic_component_loader.dart' as _i14;
 
 _i1.Injector minimalApp$Injector([_i1.Injector parent]) => new _Injector$minimalApp._(parent);
 
@@ -69,35 +68,34 @@ class _Injector$minimalApp extends _i2.HierarchicalInjector {
 
   _i4.DomSanitizationServiceImpl _field2;
 
-  _i5.ApplicationRefImpl _field3;
+  dynamic _field3;
 
   dynamic _field4;
 
-  dynamic _field5;
+  _i5.ComponentLoader _field5;
 
-  _i6.AppViewUtils _field6;
+  _i6.ThrowingSlowComponentLoader _field6;
 
-  _i7.ComponentLoader _field7;
+  _i7.Testability _field7;
 
-  _i8.EventManager _field9;
+  _i8.EventManager _field8;
 
-  dynamic _field10;
+  dynamic _field9;
 
   _i3.BrowserExceptionHandler _getBrowserExceptionHandler$0() => _field0 ??= new _i3.BrowserExceptionHandler();
   dynamic _getExisting$1() => inject(_i9.DomSanitizationService);
   _i4.DomSanitizationServiceImpl _getDomSanitizationServiceImpl$2() => _field2 ??= new _i4.DomSanitizationServiceImpl();
-  _i5.ApplicationRefImpl _getApplicationRefImpl$3() => _field3 ??= new _i5.ApplicationRefImpl(inject(_i5.PlatformRefImpl), inject(_i10.NgZone), inject(_i1.Injector));
-  dynamic _getdynamic$4() => _field4 ??= _i11.createNgZone();
-  dynamic _getdynamic$5() => _field5 ??= _i11.createRandomAppId();
-  _i6.AppViewUtils _getAppViewUtils$6() => _field6 ??= new _i6.AppViewUtils(inject(const _i12.OpaqueToken<String>('APP_ID')), inject(_i13.SanitizationService), inject(_i8.EventManager));
-  _i7.ComponentLoader _getComponentLoader$7() => _field7 ??= new _i7.ComponentLoader();
-  dynamic _getdynamic$8() => null;
-  _i8.EventManager _getEventManager$9() => _field9 ??= new _i8.EventManager(inject(const _i12.OpaqueToken<dynamic>('EventManagerPlugins')), inject(_i10.NgZone));
-  dynamic _getdynamic$10() => _field10 ??= _i11.createEventPlugins();
-  _i1.Injector _getInjector$11() => this;
+  dynamic _getdynamic$3() => _field3 ??= _i6.createNgZone();
+  dynamic _getdynamic$4() => _field4 ??= _i6.createRandomAppId();
+  _i5.ComponentLoader _getComponentLoader$5() => _field5 ??= new _i5.ComponentLoader();
+  _i6.ThrowingSlowComponentLoader _getThrowingSlowComponentLoader$6() => _field6 ??= new _i6.ThrowingSlowComponentLoader();
+  _i7.Testability _getTestability$7() => _field7 ??= new _i7.Testability(inject(_i10.NgZone));
+  _i8.EventManager _getEventManager$8() => _field8 ??= new _i8.EventManager(inject(const _i11.OpaqueToken<dynamic>('EventManagerPlugins')), inject(_i10.NgZone));
+  dynamic _getdynamic$9() => _field9 ??= _i6.createEventPlugins();
+  _i1.Injector _getInjector$10() => this;
   @override
   Object injectFromSelfOptional(Object token, [Object orElse = _i1.throwIfNotFound]) {
-    if (identical(token, _i14.ExceptionHandler)) {
+    if (identical(token, _i12.ExceptionHandler)) {
       return _getBrowserExceptionHandler$0();
     }
     if (identical(token, _i13.SanitizationService)) {
@@ -106,32 +104,29 @@ class _Injector$minimalApp extends _i2.HierarchicalInjector {
     if (identical(token, _i9.DomSanitizationService)) {
       return _getDomSanitizationServiceImpl$2();
     }
-    if (identical(token, _i5.ApplicationRef)) {
-      return _getApplicationRefImpl$3();
-    }
     if (identical(token, _i10.NgZone)) {
+      return _getdynamic$3();
+    }
+    if (identical(token, const _i11.OpaqueToken<String>('APP_ID'))) {
       return _getdynamic$4();
     }
-    if (identical(token, const _i12.OpaqueToken<String>('APP_ID'))) {
-      return _getdynamic$5();
+    if (identical(token, _i5.ComponentLoader)) {
+      return _getComponentLoader$5();
     }
-    if (identical(token, _i6.AppViewUtils)) {
-      return _getAppViewUtils$6();
+    if (identical(token, _i14.SlowComponentLoader)) {
+      return _getThrowingSlowComponentLoader$6();
     }
-    if (identical(token, _i7.ComponentLoader)) {
-      return _getComponentLoader$7();
-    }
-    if (identical(token, _i15.Testability)) {
-      return _getdynamic$8();
+    if (identical(token, _i7.Testability)) {
+      return _getTestability$7();
     }
     if (identical(token, _i8.EventManager)) {
-      return _getEventManager$9();
+      return _getEventManager$8();
     }
-    if (identical(token, const _i12.OpaqueToken<dynamic>('EventManagerPlugins'))) {
-      return _getdynamic$10();
+    if (identical(token, const _i11.OpaqueToken<dynamic>('EventManagerPlugins'))) {
+      return _getdynamic$9();
     }
     if (identical(token, _i1.Injector)) {
-      return _getInjector$11();
+      return _getInjector$10();
     }
     return orElse;
   }

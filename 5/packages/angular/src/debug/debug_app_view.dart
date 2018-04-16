@@ -3,20 +3,16 @@ import 'dart:convert';
 import 'dart:html';
 import 'dart:js_util' as js_util;
 
+import 'package:angular/src/runtime.dart';
 import 'package:js/js.dart' as js;
 import 'package:meta/meta.dart';
-import 'package:angular/src/core/change_detection/change_detection.dart'
-    show ChangeDetectorState;
 import 'package:angular/src/di/injector/injector.dart'
     show throwIfNotFound, Injector;
 import 'package:angular/src/core/linker/app_view.dart';
 import 'package:angular/src/core/linker/component_factory.dart';
-import 'package:angular/src/core/linker/exceptions.dart'
-    show ExpressionChangedAfterItHasBeenCheckedException, ViewWrappedException;
 import 'package:angular/src/core/linker/template_ref.dart';
 import 'package:angular/src/core/linker/view_container.dart';
 import 'package:angular/src/core/linker/view_type.dart';
-import 'package:angular/src/core/render/api.dart';
 
 import 'debug_context.dart' show StaticNodeDebugInfo, DebugContext;
 import 'debug_node.dart'
@@ -34,18 +30,11 @@ export 'debug_context.dart' show StaticNodeDebugInfo, DebugContext;
 
 // ignore_for_file: DEAD_CODE
 
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
-
 // RegExp to match anchor comment when logging bindings for debugging.
 final RegExp _templateBindingsExp = new RegExp(r'^template bindings=(.*)$');
 final RegExp _matchNewLine = new RegExp(r'\n');
 const _templateCommentText = 'template bindings={}';
 const INSPECT_GLOBAL_NAME = "ng.probe";
-DebugContext _currentDebugContext;
 
 class DebugAppView<T> extends AppView<T> {
   static bool _ngProbeInitialized = false;
@@ -78,8 +67,7 @@ class DebugAppView<T> extends AppView<T> {
     _resetDebug();
     try {
       return super.create(context, projectableNodes);
-    } catch (e, s) {
-      _rethrowWithContext(e, s);
+    } catch (e) {
       rethrow;
     }
   }
@@ -93,8 +81,7 @@ class DebugAppView<T> extends AppView<T> {
     _resetDebug();
     try {
       return super.createHostView(hostInjector, projectableNodes);
-    } catch (e, s) {
-      this._rethrowWithContext(e, s);
+    } catch (e) {
       rethrow;
     }
   }
@@ -105,8 +92,7 @@ class DebugAppView<T> extends AppView<T> {
     _resetDebug();
     try {
       return super.injectorGet(token, nodeIndex, notFoundResult);
-    } catch (e, s) {
-      _rethrowWithContext(e, s, stopChangeDetection: false);
+    } catch (e) {
       rethrow;
     }
   }
@@ -124,7 +110,7 @@ class DebugAppView<T> extends AppView<T> {
   void init0Dbg(dynamic e, [List allNodesForDebug = const []]) {
     viewData.rootNodesOrViewContainers = <dynamic>[e];
     allNodes = allNodesForDebug;
-    if (viewData.type == ViewType.COMPONENT) {
+    if (viewData.type == ViewType.component) {
       dirtyParentQueriesInternal();
     }
     // Workaround since package expect/@NoInline not available outside sdk.
@@ -145,8 +131,7 @@ class DebugAppView<T> extends AppView<T> {
         if (debugNode == null) continue;
         removeDebugNodeFromIndex(debugNode);
       }
-    } catch (e, s) {
-      _rethrowWithContext(e, s);
+    } catch (e) {
       rethrow;
     }
   }
@@ -157,9 +142,7 @@ class DebugAppView<T> extends AppView<T> {
     super.detectChanges();
   }
 
-  void _resetDebug() {
-    _currentDebugContext = null;
-  }
+  void _resetDebug() {}
 
   @override
   Future<Null> loadDeferred(
@@ -183,7 +166,7 @@ class DebugAppView<T> extends AppView<T> {
   /// Used only in debug mode to serialize property changes to dom nodes as
   /// attributes.
   void setBindingDebugInfo(
-      dynamic renderElement, String propertyName, String propertyValue) {
+      Element renderElement, String propertyName, String propertyValue) {
     if (renderElement is Comment) {
       var existingBindings = _templateBindingsExp
           .firstMatch(renderElement.text.replaceAll(_matchNewLine, ''));
@@ -199,34 +182,33 @@ class DebugAppView<T> extends AppView<T> {
 
   /// Sets up current debug context to node so that failures can be associated
   /// with template source location and DebugElement.
-  DebugContext dbg(int nodeIndex, int rowNum, int colNum) =>
-      _currentDebugContext = new DebugContext(this, nodeIndex, rowNum, colNum);
+  DebugContext dbg(int nodeIndex, int rowNum, int colNum) => null;
 
   /// Creates DebugElement for root element of a component.
-  void dbgIdx(element, int nodeIndex) {
+  void dbgIdx(Node element, int nodeIndex) {
     var debugInfo = new DebugContext<T>(this, nodeIndex, 0, 0);
     if (element is Text) return;
-    var debugEl;
+    DebugNode debugNode;
     if (element is Comment) {
-      debugEl =
+      debugNode =
           new DebugNode(element, getDebugNode(element.parentNode), debugInfo);
     } else {
-      debugEl = new DebugElement(
+      final debugEl = new DebugElement(
           element,
           element.parentNode == null ? null : getDebugNode(element.parentNode),
           debugInfo);
 
-      debugEl.name = element is Text ? 'text' : element.tagName.toLowerCase();
-      _currentDebugContext = debugInfo;
+      debugEl.name = unsafeCast<Element>(element).tagName.toLowerCase();
+      debugNode = debugEl;
     }
-    indexDebugNode(debugEl);
+    indexDebugNode(debugNode);
   }
 
   /// Projects projectableNodes at specified index. We don't use helper
   /// functions to flatten the tree since it allocates list that are not
   /// required in most cases.
   @override
-  void project(Node parentElement, int index) {
+  void project(Element parentElement, int index) {
     DebugElement debugParent = getDebugNode(parentElement);
     if (debugParent == null || debugParent is! DebugElement) {
       super.project(parentElement, index);
@@ -263,7 +245,7 @@ class DebugAppView<T> extends AppView<T> {
                   debugParent, parentElement, node);
             }
           } else {
-            parentElement.append(node);
+            parentElement.append(unsafeCast(node));
             debugParent.addChild(getDebugNode(node));
           }
         }
@@ -277,7 +259,7 @@ class DebugAppView<T> extends AppView<T> {
   }
 
   @override
-  void detachViewNodes(List<dynamic> viewRootNodes) {
+  void detachViewNodes(List<Node> viewRootNodes) {
     for (var node in viewRootNodes) {
       var debugNode = getDebugNode(node);
       if (debugNode != null && debugNode.parent != null) {
@@ -288,18 +270,7 @@ class DebugAppView<T> extends AppView<T> {
   }
 
   @override
-  dynamic createElement(
-      dynamic parentElement, String name, RenderDebugInfo debugInfo) {
-    var nativeEl = super.createElement(parentElement, name, debugInfo);
-    var debugEl =
-        new DebugElement(nativeEl, getDebugNode(parentElement), debugInfo);
-    debugEl.name = name;
-    indexDebugNode(debugEl);
-    return nativeEl;
-  }
-
-  @override
-  void attachViewAfter(dynamic node, List<Node> viewRootNodes) {
+  void attachViewAfter(Node node, List<Node> viewRootNodes) {
     var debugNode = getDebugNode(node);
     if (debugNode != null) {
       var debugParent = debugNode?.parent;
@@ -316,25 +287,12 @@ class DebugAppView<T> extends AppView<T> {
     }
     super.attachViewAfter(node, viewRootNodes);
   }
-
-  void _rethrowWithContext(dynamic e, dynamic stack,
-      {bool stopChangeDetection: true}) {
-    if (!(e is ViewWrappedException)) {
-      if (stopChangeDetection &&
-          !(e is ExpressionChangedAfterItHasBeenCheckedException)) {
-        cdState = ChangeDetectorState.Errored;
-      }
-      if (_currentDebugContext != null) {
-        throw new ViewWrappedException(e, stack, _currentDebugContext);
-      }
-    }
-  }
 }
 
 /// Recursively appends app element and nested view nodes to target element.
 void _appendDebugNestedViewRenderNodes(
     DebugElement debugParent, Node targetElement, ViewContainer appElement) {
-  targetElement.append(appElement.nativeElement as Node);
+  targetElement.append(appElement.nativeElement);
   var nestedViews = appElement.nestedViews;
   if (nestedViews == null || nestedViews.isEmpty) return;
   int nestedViewCount = nestedViews.length;
@@ -372,28 +330,28 @@ void _setGlobalVar(String path, value) {
 }
 
 /// Registers dom node in global debug index.
-void dbgElm(DebugAppView view, element, int nodeIndex, int rowNum, int colNum) {
+void dbgElm(
+    DebugAppView view, Node element, int nodeIndex, int rowNum, int colNum) {
   var debugInfo = new DebugContext(view, nodeIndex, rowNum, colNum);
   if (element is Text) return;
-  var debugEl;
+  DebugNode debugNode;
   if (element is Comment) {
-    debugEl =
+    debugNode =
         new DebugNode(element, getDebugNode(element.parentNode), debugInfo);
   } else {
-    debugEl = new DebugElement(
+    final debugEl = new DebugElement(
         element,
         element.parentNode == null ? null : getDebugNode(element.parentNode),
         debugInfo);
 
-    debugEl.name = element is Text ? 'text' : element.tagName.toLowerCase();
-
-    _currentDebugContext = debugInfo;
+    debugEl.name = unsafeCast<Element>(element).tagName.toLowerCase();
+    debugNode = debugEl;
   }
-  indexDebugNode(debugEl);
+  indexDebugNode(debugNode);
 }
 
 /// Helper function called by DebugAppView.build to reduce code size.
-Element createAndAppendDbg(AppView view, Document doc, String tagName,
+Element createAndAppendDbg(DebugAppView view, Document doc, String tagName,
     Element parent, int nodeIndex, int line, int column) {
   var elm = doc.createElement(tagName);
   parent.append(elm);
@@ -406,9 +364,9 @@ Element createAndAppendDbg(AppView view, Document doc, String tagName,
 }
 
 /// Helper function called by DebugAppView.build to reduce code size.
-DivElement createDivAndAppendDbg(AppView view, Document doc, Element parent,
-    int nodeIndex, int line, int column) {
-  var elm = doc.createElement('div');
+DivElement createDivAndAppendDbg(DebugAppView view, Document doc,
+    Element parent, int nodeIndex, int line, int column) {
+  var elm = new DivElement();
   parent.append(elm);
   dbgElm(view, elm, nodeIndex, line, column);
   return elm;
@@ -419,9 +377,9 @@ DivElement createDivAndAppendDbg(AppView view, Document doc, Element parent,
 }
 
 /// Helper function called by DebugAppView.build to reduce code size.
-SpanElement createSpanAndAppendDbg(AppView view, Document doc, Element parent,
-    int nodeIndex, int line, int column) {
-  var elm = doc.createElement('span');
+SpanElement createSpanAndAppendDbg(DebugAppView view, Document doc,
+    Element parent, int nodeIndex, int line, int column) {
+  var elm = new SpanElement();
   parent.append(elm);
   dbgElm(view, elm, nodeIndex, line, column);
   return elm;

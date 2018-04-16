@@ -55,7 +55,7 @@ class PerActionResolver implements ReleasableResolver {
   @override
   Future<LibraryElement> findLibraryByName(String libraryName) async =>
       await libraries.firstWhere((l) => l.name == libraryName,
-          defaultValue: () => null);
+          orElse: () => null);
 
   @override
   Future<bool> isLibrary(AssetId assetId) => _delegate.isLibrary(assetId);
@@ -240,8 +240,8 @@ class AssetBasedSource extends Source {
   bool exists() => _contents != null;
 
   @override
-  bool operator ==(Object other) =>
-      other is AssetBasedSource && assetId == other.assetId;
+  bool operator ==(Object object) =>
+      object is AssetBasedSource && assetId == object.assetId;
 
   @override
   int get hashCode => assetId.hashCode;
@@ -252,7 +252,7 @@ class AssetBasedSource extends Source {
 
   @override
   String get encoding =>
-      "${uriKind.encoding}${assetId.package}/${assetId.path}";
+      '${uriKind.encoding}${assetId.package}/${assetId.path}';
 
   @override
   String get fullName => assetId.toString();
@@ -358,7 +358,7 @@ class FutureGroup<E> {
   /// error has already been signaled.
   void add(Future<E> task) {
     if (_failedTask != null) return;
-    if (_pending == _FINISHED) throw new StateError("Future already completed");
+    if (_pending == _FINISHED) throw new StateError('Future already completed');
 
     _pending++;
     var i = results.length;

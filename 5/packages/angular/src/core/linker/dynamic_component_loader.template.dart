@@ -6,6 +6,7 @@
 import 'dynamic_component_loader.dart';
 export 'dynamic_component_loader.dart';
 import 'dart:async';
+import 'package:angular/src/runtime.dart';
 import '../di.dart';
 import 'component_factory.dart' show ComponentRef;
 import 'component_loader.dart' show ComponentLoader;
@@ -16,7 +17,8 @@ import '../di.template.dart' as _ref0;
 import 'component_factory.template.dart' as _ref1;
 import 'component_loader.template.dart' as _ref2;
 import 'component_resolver.template.dart' as _ref3;
-import 'view_container_ref.template.dart' as _ref4;
+import 'package:angular/src/runtime.template.dart' as _ref4;
+import 'view_container_ref.template.dart' as _ref5;
 import 'package:angular/src/core/linker/component_loader.dart' as _i1;
 
 var _visited = false;
@@ -35,4 +37,5 @@ void initReflector() {
   _ref2.initReflector();
   _ref3.initReflector();
   _ref4.initReflector();
+  _ref5.initReflector();
 }

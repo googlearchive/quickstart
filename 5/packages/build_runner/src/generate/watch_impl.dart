@@ -5,6 +5,7 @@ import 'dart:async';
 
 import 'package:build/build.dart';
 import 'package:build_config/build_config.dart';
+import 'package:build_runner/src/asset/finalized_reader.dart';
 import 'package:build_runner/src/watcher/asset_change.dart';
 import 'package:build_runner/src/watcher/graph_watcher.dart';
 import 'package:build_runner/src/watcher/node_watcher.dart';
@@ -55,10 +56,11 @@ Future<ServeHandler> watch(
   bool skipBuildScriptCheck,
   bool enableLowResourcesMode,
   Map<String, BuildConfig> overrideBuildConfig,
-  String outputDir,
+  Map<String, String> outputMap,
   bool trackPerformance,
   bool verbose,
   Map<String, Map<String, dynamic>> builderConfigOverrides,
+  bool isReleaseBuild,
 }) async {
   builderConfigOverrides ??= const {};
   packageGraph ??= new PackageGraph.forThisPackage();
@@ -82,13 +84,13 @@ Future<ServeHandler> watch(
       debounceDelay: debounceDelay,
       skipBuildScriptCheck: skipBuildScriptCheck,
       enableLowResourcesMode: enableLowResourcesMode,
-      outputDir: outputDir,
+      outputMap: outputMap,
       trackPerformance: trackPerformance,
       verbose: verbose);
   var terminator = new Terminator(terminateEventStream);
 
-  final buildPhases =
-      await createBuildPhases(targetGraph, builders, builderConfigOverrides);
+  final buildPhases = await createBuildPhases(
+      targetGraph, builders, builderConfigOverrides, isReleaseBuild ?? false);
 
   var watch =
       runWatch(environment, options, buildPhases, terminator.shouldTerminate);
@@ -143,8 +145,8 @@ class WatchImpl implements BuildState {
   /// Pending expected delete events from the build.
   final Set<AssetId> _expectedDeletes = new Set<AssetId>();
 
-  final _readerCompleter = new Completer<AssetReader>();
-  Future<AssetReader> get reader => _readerCompleter.future;
+  final _readerCompleter = new Completer<FinalizedReader>();
+  Future<FinalizedReader> get reader => _readerCompleter.future;
 
   WatchImpl(
       BuildEnvironment environment,
@@ -181,7 +183,8 @@ class WatchImpl implements BuildState {
 
     Future<BuildResult> doBuild(List<List<AssetChange>> changes) async {
       assert(build != null);
-      _logger.info('\nStarting Build');
+      _logger.info('${'-'*72}\n');
+      _logger.info('Starting Build\n');
       var mergedChanges = _collectChanges(changes);
 
       _expectedDeletes.clear();
@@ -264,13 +267,16 @@ class WatchImpl implements BuildState {
       _buildDefinition = await BuildDefinition.prepareWorkspace(
           environment, options, buildPhases,
           onDelete: _expectedDeletes.add);
-      _readerCompleter.complete(new SingleStepReader(
+      var singleStepReader = new SingleStepReader(
           _buildDefinition.reader,
           _buildDefinition.assetGraph,
           buildPhases.length,
           true,
           packageGraph.root.name,
-          null));
+          null);
+      var finalizedReader =
+          new FinalizedReader(singleStepReader, _buildDefinition.assetGraph);
+      _readerCompleter.complete(finalizedReader);
       _assetGraph = _buildDefinition.assetGraph;
       build = await BuildImpl.create(_buildDefinition, options, buildPhases,
           onDelete: _expectedDeletes.add);

@@ -90,43 +90,11 @@ class VersionRange implements Comparable<VersionRange>, VersionConstraint {
     if (max != null) {
       if (other > max) return false;
       if (!includeMax && other == max) return false;
-
-      // Disallow pre-release versions that have the same major, minor, and
-      // patch version as the max, but only if neither the max nor the min is a
-      // pre-release of that version. This ensures that "^1.2.3" doesn't include
-      // "2.0.0-pre", while also allowing both ">=2.0.0-pre.2 <2.0.0" and
-      // ">=1.2.3 <2.0.0-pre.7" to match "2.0.0-pre.5".
-      //
-      // It's worth noting that this is different than [NPM's semantics][]. NPM
-      // disallows **all** pre-release versions unless their major, minor, and
-      // patch numbers match those of a prerelease min or max. This ensures that
-      // no prerelease versions will ever be selected if the user doesn't
-      // explicitly allow them.
-      //
-      // [NPM's semantics]: https://www.npmjs.org/doc/misc/semver.html#prerelease-tags
-      //
-      // Instead, we ensure that release versions will always be preferred over
-      // prerelease versions by ordering the release versions first in
-      // [Version.prioritize]. This means that constraints like "any" or
-      // ">1.2.3" can still match prerelease versions if they're the only things
-      // available.
-      var maxIsReleaseOfOther = !includeMax &&
-          !max.isPreRelease &&
-          other.isPreRelease &&
-          _equalsWithoutPreRelease(other, max);
-      var minIsPreReleaseOfOther = min != null &&
-          min.isPreRelease &&
-          _equalsWithoutPreRelease(other, min);
-      if (maxIsReleaseOfOther && !minIsPreReleaseOfOther) return false;
+      if (disallowedByPreRelease(this, other)) return false;
     }
 
     return true;
   }
-
-  bool _equalsWithoutPreRelease(Version version1, Version version2) =>
-      version1.major == version2.major &&
-      version1.minor == version2.minor &&
-      version1.patch == version2.patch;
 
   bool allowsAll(VersionConstraint other) {
     if (other.isEmpty) return true;
@@ -137,19 +105,7 @@ class VersionRange implements Comparable<VersionRange>, VersionConstraint {
     }
 
     if (other is VersionRange) {
-      if (min != null) {
-        if (other.min == null) return false;
-        if (min > other.min) return false;
-        if (min == other.min && !includeMin && other.includeMin) return false;
-      }
-
-      if (max != null) {
-        if (other.max == null) return false;
-        if (max < other.max) return false;
-        if (max == other.max && !includeMax && other.includeMax) return false;
-      }
-
-      return true;
+      return !allowsLower(other, this) && !allowsHigher(other, this);
     }
 
     throw new ArgumentError('Unknown VersionConstraint type $other.');
@@ -181,29 +137,26 @@ class VersionRange implements Comparable<VersionRange>, VersionConstraint {
 
     if (other is VersionRange) {
       // Intersect the two ranges.
-      var intersectMin = min;
-      var intersectIncludeMin = includeMin;
-      var intersectMax = max;
-      var intersectIncludeMax = includeMax;
-
-      if (other.min == null) {
-        // Do nothing.
-      } else if (intersectMin == null || intersectMin < other.min) {
+      Version intersectMin;
+      bool intersectIncludeMin;
+      if (allowsLower(this, other)) {
+        if (strictlyLower(this, other)) return VersionConstraint.empty;
         intersectMin = other.min;
         intersectIncludeMin = other.includeMin;
-      } else if (intersectMin == other.min && !other.includeMin) {
-        // The edges are the same, but one is exclusive, make it exclusive.
-        intersectIncludeMin = false;
+      } else {
+        if (strictlyLower(other, this)) return VersionConstraint.empty;
+        intersectMin = this.min;
+        intersectIncludeMin = this.includeMin;
       }
 
-      if (other.max == null) {
-        // Do nothing.
-      } else if (intersectMax == null || intersectMax > other.max) {
+      Version intersectMax;
+      bool intersectIncludeMax;
+      if (allowsHigher(this, other)) {
         intersectMax = other.max;
         intersectIncludeMax = other.includeMax;
-      } else if (intersectMax == other.max && !other.includeMax) {
-        // The edges are the same, but one is exclusive, make it exclusive.
-        intersectIncludeMax = false;
+      } else {
+        intersectMax = this.max;
+        intersectIncludeMax = this.includeMax;
       }
 
       if (intersectMin == null && intersectMax == null) {
@@ -213,18 +166,10 @@ class VersionRange implements Comparable<VersionRange>, VersionConstraint {
 
       // If the range is just a single version.
       if (intersectMin == intersectMax) {
-        // If both ends are inclusive, allow that version.
-        if (intersectIncludeMin && intersectIncludeMax) return intersectMin;
-
-        // Otherwise, no versions.
-        return VersionConstraint.empty;
-      }
-
-      if (intersectMin != null &&
-          intersectMax != null &&
-          intersectMin > intersectMax) {
-        // Non-overlapping ranges, so empty.
-        return VersionConstraint.empty;
+        // Because we already verified that the lower range isn't strictly
+        // lower, there must be some overlap.
+        assert(intersectIncludeMin && intersectIncludeMax);
+        return intersectMin;
       }
 
       // If we got here, there is an actual range.
@@ -270,29 +215,24 @@ class VersionRange implements Comparable<VersionRange>, VersionConstraint {
         return new VersionConstraint.unionOf([this, other]);
       }
 
-      var unionMin = min;
-      var unionIncludeMin = includeMin;
-      var unionMax = max;
-      var unionIncludeMax = includeMax;
-
-      if (unionMin == null) {
-        // Do nothing.
-      } else if (other.min == null || other.min < min) {
+      Version unionMin;
+      bool unionIncludeMin;
+      if (allowsLower(this, other)) {
+        unionMin = this.min;
+        unionIncludeMin = this.includeMin;
+      } else {
         unionMin = other.min;
         unionIncludeMin = other.includeMin;
-      } else if (min == other.min && other.includeMin) {
-        // If the edges are the same but one is inclusive, make it inclusive.
-        unionIncludeMin = true;
       }
 
-      if (unionMax == null) {
-        // Do nothing.
-      } else if (other.max == null || other.max > max) {
+      Version unionMax;
+      bool unionIncludeMax;
+      if (allowsHigher(this, other)) {
+        unionMax = this.max;
+        unionIncludeMax = this.includeMax;
+      } else {
         unionMax = other.max;
         unionIncludeMax = other.includeMax;
-      } else if (max == other.max && other.includeMax) {
-        // If the edges are the same but one is inclusive, make it inclusive.
-        unionIncludeMax = true;
       }
 
       return new VersionRange(

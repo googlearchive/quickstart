@@ -1,5 +1,4 @@
 import 'package:angular/src/core/linker/view_type.dart';
-import 'package:angular/src/facade/exceptions.dart' show BaseException;
 import 'package:angular/src/core/app_view_consts.dart' show namespaceUris;
 
 import '../compile_metadata.dart'
@@ -12,13 +11,6 @@ import '../output/output_ast.dart' as o;
 import '../template_ast.dart' show AttrAst, TemplateAst;
 import 'compile_view.dart' show CompileView;
 import 'constants.dart';
-
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: list_element_type_not_assignable
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
 
 /// Creating outlines for faster builds is preventing auto input change
 /// detection for now. The following flag should be removed to reenable in the
@@ -54,7 +46,7 @@ o.Expression getPropertyInView(
           : viewProp.prop('parentView');
     }
     if (!identical(currView, definedView)) {
-      throw new BaseException('Internal error: Could not calculate a property '
+      throw new StateError('Internal error: Could not calculate a property '
           'in a parent view: $property');
     }
 
@@ -77,7 +69,7 @@ o.Expression getPropertyInView(
 
 o.Expression injectFromViewParentInjector(
     CompileView view, CompileTokenMetadata token, bool optional) {
-  o.Expression viewExpr = (view.viewType == ViewType.HOST)
+  o.Expression viewExpr = (view.viewType == ViewType.host)
       ? o.THIS_EXPR
       : new o.ReadClassMemberExpr('parentView');
   var args = [
@@ -253,7 +245,7 @@ String mergeAttributeValue(
 
 o.Statement createSetAttributeStatement(String astNodeName,
     o.Expression renderNode, String attrName, String attrValue) {
-  var attrNs;
+  String attrNs;
   if (attrName.startsWith('@') && attrName.contains(':')) {
     var nameParts = attrName.substring(1).split(':');
     attrNs = namespaceUris[nameParts[0]];

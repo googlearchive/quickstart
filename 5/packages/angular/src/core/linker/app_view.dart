@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:html';
 import 'dart:js_util' as js_util;
 
-import 'package:angular/src/core/app_view_consts.dart';
 import 'package:angular/src/core/change_detection/change_detection.dart'
     show ChangeDetectorRef, ChangeDetectionStrategy, ChangeDetectorState;
 import 'package:angular/src/core/change_detection/host.dart';
@@ -11,13 +10,11 @@ import 'package:angular/src/di/injector/element.dart';
 import 'package:angular/src/di/injector/injector.dart'
     show throwIfNotFound, Injector;
 import 'package:angular/src/core/render/api.dart';
-import 'package:angular/src/platform/dom/shared_styles_host.dart';
 import 'package:angular/src/runtime.dart';
 import 'package:meta/meta.dart';
 
 import 'app_view_utils.dart';
 import 'component_factory.dart';
-import 'exceptions.dart' show ViewDestroyedException;
 import 'template_ref.dart';
 import 'view_container.dart';
 import 'view_ref.dart' show ViewRefImpl;
@@ -25,18 +22,15 @@ import 'view_type.dart' show ViewType;
 
 export 'package:angular/src/core/change_detection/component_state.dart';
 
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: list_element_type_not_assignable
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
+/// A comment to clone as an anchor for the view container of a `<template>`.
+final _viewContainerAnchor = new Comment();
 
-/// **INTERNAL ONLY**: Will be made private once the reflective compiler is out.
+/// Creates a comment to anchor the view container of a `<template>`.
 ///
-/// Template anchor `<!-- template bindings={}` for cloning.
-@visibleForTesting
-final ngAnchor = new Comment('template bindings={}');
+/// The comment is necessary to anchor the location of the view container since
+/// the `<template>` itself isn't rendered.
+Comment createViewContainerAnchor() =>
+    unsafeCast(_viewContainerAnchor.clone(false));
 
 /// Set to `true` when Angular modified the DOM.
 ///
@@ -254,7 +248,7 @@ abstract class AppView<T> {
   /// Specialized init when component has a single root node.
   void init0(dynamic e) {
     viewData.rootNodesOrViewContainers = <dynamic>[e];
-    if (viewData.type == ViewType.COMPONENT) {
+    if (viewData.type == ViewType.component) {
       dirtyParentQueriesInternal();
     }
     // Workaround since package expect/@NoInline not available outside sdk.
@@ -277,7 +271,7 @@ abstract class AppView<T> {
   void init(List rootNodesOrViewContainers, List subscriptions) {
     viewData.rootNodesOrViewContainers = rootNodesOrViewContainers;
     viewData.subscriptions = subscriptions;
-    if (viewData.type == ViewType.COMPONENT) {
+    if (viewData.type == ViewType.component) {
       dirtyParentQueriesInternal();
     }
     // Workaround since package expect/@NoInline not available outside sdk.
@@ -300,25 +294,15 @@ abstract class AppView<T> {
     detachAll(inlinedNodes);
     var nodeList =
         isRoot ? viewData.rootNodesOrViewContainers : viewData.inlinedNodes;
-    nodeList.removeWhere((n) => inlinedNodes.contains(n));
-  }
-
-  dynamic createElement(
-      dynamic parent, String name, RenderDebugInfo debugInfo) {
-    var nsAndName = splitNamespace(name);
-    var el = nsAndName[0] != null
-        ? document.createElementNS(namespaceUris[nsAndName[0]], nsAndName[1])
-        : document.createElement(nsAndName[1]);
-    String contentAttr = componentType.contentAttr;
-    if (contentAttr != null) {
-      el.attributes[contentAttr] = '';
+    for (int i = nodeList.length - 1; i >= 0; i--) {
+      var node = nodeList[i];
+      if (inlinedNodes.contains(node)) {
+        nodeList.remove(node);
+      }
     }
-    parent?.append(el);
-    domRootRendererIsDirty = true;
-    return el;
   }
 
-  void attachViewAfter(dynamic node, List<Node> viewRootNodes) {
+  void attachViewAfter(Node node, List<Node> viewRootNodes) {
     moveNodesAfterSibling(node, viewRootNodes);
     domRootRendererIsDirty = true;
   }
@@ -412,7 +396,7 @@ abstract class AppView<T> {
 
     // Sanity check in dev-mode that a destroyed view is not checked again.
     if (isDevMode && viewData.destroyed) {
-      throw new ViewDestroyedException('detectChanges');
+      throw new StateError('detectChanges');
     }
 
     if (ChangeDetectionHost.checkForCrashes) {
@@ -487,14 +471,10 @@ abstract class AppView<T> {
       if (cdMode == ChangeDetectionStrategy.Checked) {
         view.cdMode = ChangeDetectionStrategy.CheckOnce;
       }
-      view = view.viewData.type == ViewType.COMPONENT
+      view = view.viewData.type == ViewType.component
           ? view.parentView
           : view.viewData._viewContainerElement?.parentView;
     }
-  }
-
-  static void initializeSharedStyleHost(document) {
-    sharedStylesHost ??= new DomSharedStylesHost(document);
   }
 
   /// Initializes styling to enable css shim for host element.
@@ -585,7 +565,7 @@ abstract class AppView<T> {
   /// Projects projectableNodes at specified index. We don't use helper
   /// functions to flatten the tree since it allocates list that are not
   /// required in most cases.
-  void project(Node parentElement, int index) {
+  void project(Element parentElement, int index) {
     if (parentElement == null) return;
     // Optimization for projectables that doesn't include ViewContainer(s).
     // If the projectable is ViewContainer we fall back to building up a list.
@@ -598,7 +578,7 @@ abstract class AppView<T> {
       var projectable = projectables[i];
       if (projectable is ViewContainer) {
         if (projectable.nestedViews == null) {
-          parentElement.append(projectable.nativeElement as Node);
+          parentElement.append(projectable.nativeElement);
         } else {
           _appendNestedViewRenderNodes(parentElement, projectable);
         }
@@ -672,20 +652,21 @@ abstract class AppView<T> {
 Node _findLastRenderNode(dynamic node) {
   Node lastNode;
   if (node is ViewContainer) {
-    ViewContainer appEl = node;
+    final ViewContainer appEl = node;
     lastNode = appEl.nativeElement;
-    if (appEl.nestedViews != null) {
+    var nestedViews = appEl.nestedViews;
+    if (nestedViews != null) {
       // Note: Views might have no root nodes at all!
-      for (var i = appEl.nestedViews.length - 1; i >= 0; i--) {
-        var nestedView = appEl.nestedViews[i];
-        if (nestedView.viewData.rootNodesOrViewContainers.isNotEmpty) {
+      for (var i = nestedViews.length - 1; i >= 0; i--) {
+        var nestedViewData = appEl.nestedViews[i].viewData;
+        if (nestedViewData.rootNodesOrViewContainers.isNotEmpty) {
           lastNode = _findLastRenderNode(
-              nestedView.viewData.rootNodesOrViewContainers.last);
+              nestedViewData.rootNodesOrViewContainers.last);
         }
       }
     }
   } else {
-    lastNode = node;
+    lastNode = unsafeCast(node);
   }
   return lastNode;
 }
@@ -693,8 +674,7 @@ Node _findLastRenderNode(dynamic node) {
 /// Recursively appends app element and nested view nodes to target element.
 void _appendNestedViewRenderNodes(
     Element targetElement, ViewContainer appElement) {
-  // TODO: strongly type nativeElement.
-  targetElement.append(appElement.nativeElement as Node);
+  targetElement.append(appElement.nativeElement);
   var nestedViews = appElement.nestedViews;
   // Components inside ngcontent may also have ngcontent to project,
   // recursively walk nestedViews.
@@ -725,17 +705,17 @@ List<Node> _flattenNestedViewRenderNodes(List nodes, List<Node> renderNodes) {
   for (var i = 0; i < nodeCount; i++) {
     var node = nodes[i];
     if (node is ViewContainer) {
-      ViewContainer appEl = node;
+      final ViewContainer appEl = node;
       renderNodes.add(appEl.nativeElement);
-      if (appEl.nestedViews != null) {
-        for (var k = 0; k < appEl.nestedViews.length; k++) {
+      final nestedViews = appEl.nestedViews;
+      if (nestedViews != null) {
+        for (var k = 0, len = nestedViews.length; k < len; k++) {
           _flattenNestedViewRenderNodes(
-              appEl.nestedViews[k].viewData.rootNodesOrViewContainers,
-              renderNodes);
+              nestedViews[k].viewData.rootNodesOrViewContainers, renderNodes);
         }
       }
     } else {
-      renderNodes.add(node);
+      renderNodes.add(unsafeCast(node));
     }
   }
   return renderNodes;
@@ -760,6 +740,8 @@ void moveNodesAfterSibling(Node sibling, List<Node> nodes) {
 
 /// Helper function called by AppView.build to reduce code size.
 Element createAndAppend(Document doc, String tagName, Element parent) {
+  // Allow implicit cast here to avoid messing with inlining heuristics.
+  // ignore: return_of_invalid_type
   return parent.append(doc.createElement(tagName));
   // Workaround since package expect/@NoInline not available outside sdk.
   return null; // ignore: dead_code
@@ -769,6 +751,8 @@ Element createAndAppend(Document doc, String tagName, Element parent) {
 
 /// Helper function called by AppView.build to reduce code size.
 DivElement createDivAndAppend(Document doc, Element parent) {
+  // Allow implicit cast here to avoid messing with inlining heuristics.
+  // ignore: return_of_invalid_type
   return parent.append(doc.createElement('div'));
   // Workaround since package expect/@NoInline not available outside sdk.
   return null; // ignore: dead_code
@@ -778,6 +762,8 @@ DivElement createDivAndAppend(Document doc, Element parent) {
 
 /// Helper function called by AppView.build to reduce code size.
 SpanElement createSpanAndAppend(Document doc, Element parent) {
+  // Allow implicit cast here to avoid messing with inlining heuristics.
+  // ignore: return_of_invalid_type
   return parent.append(doc.createElement('span'));
   // Workaround since package expect/@NoInline not available outside sdk.
   return null; // ignore: dead_code

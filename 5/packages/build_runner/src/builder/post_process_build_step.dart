@@ -57,6 +57,12 @@ class PostProcessBuildStep {
     return done;
   }
 
+  /// Marks an asset for deletion in the post process step.
+  void deletePrimaryInput() {
+    var node = _assetGraph.get(inputId);
+    node.isDeleted = true;
+  }
+
   /// Waits for work to finish and cleans up resources.
   ///
   /// This method should be called after a build has completed. After the
@@ -72,6 +78,7 @@ class PostProcessBuildStep {
         isHidden: true,
         phaseNumber: _phaseNum,
         wasOutput: true,
+        isFailure: false,
         state: GeneratedNodeState.upToDate);
     _assetGraph.add(node);
     _anchorNode.outputs.add(id);

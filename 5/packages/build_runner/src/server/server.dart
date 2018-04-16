@@ -11,15 +11,15 @@ import 'package:mime/mime.dart';
 import 'package:path/path.dart' as p;
 import 'package:shelf/shelf.dart' as shelf;
 
-import '../asset_graph/graph.dart';
+import '../asset/finalized_reader.dart';
 import '../generate/build_result.dart';
 import '../generate/performance_tracker.dart';
 import '../generate/watch_impl.dart';
 import '../logging/human_readable_duration.dart';
+import 'asset_graph_handler.dart';
+import 'path_to_asset_id.dart';
 
 const _performancePath = r'$perf';
-const _assetGraphVisualizationPath = r'$graph';
-const _assetGraphPath = r'$graph/assets.json';
 
 final _logger = new Logger('Serve');
 
@@ -27,18 +27,23 @@ Future<ServeHandler> createServeHandler(WatchImpl watch) async {
   var rootPackage = watch.packageGraph.root.name;
   var reader = await watch.reader;
   var assetHandler = new AssetHandler(reader, rootPackage);
-  return new ServeHandler._(watch, assetHandler, watch.assetGraph, reader);
+  var assetGraphHandler =
+      new AssetGraphHandler(reader, rootPackage, watch.assetGraph);
+  return new ServeHandler._(
+      watch, assetHandler, assetGraphHandler, reader, rootPackage);
 }
 
 class ServeHandler implements BuildState {
   final BuildState _state;
-  final AssetHandler _assetHandler;
   BuildResult _lastBuildResult;
-  final AssetGraph _assetGraph;
   final AssetReader _reader;
+  final String _rootPackage;
 
-  ServeHandler._(
-      this._state, this._assetHandler, this._assetGraph, this._reader) {
+  final AssetHandler _assetHandler;
+  final AssetGraphHandler _assetGraphHandler;
+
+  ServeHandler._(this._state, this._assetHandler, this._assetGraphHandler,
+      this._reader, this._rootPackage) {
     _state.buildResults.listen((result) {
       _lastBuildResult = result;
     });
@@ -57,10 +62,15 @@ class ServeHandler implements BuildState {
     }
     var cascade = new shelf.Cascade()
         .add(_blockOnCurrentBuild)
-        .add(_assetGraphVisualizationHandler)
-        .add(_assetGraphHandler)
-        .add(_performanceHandler)
-        .add((shelf.Request request) => _handle(request, rootDir));
+        .add((shelf.Request request) {
+      if (request.url.path == _performancePath) {
+        return _performanceHandler(request);
+      }
+      if (request.url.path.startsWith(r'$graph')) {
+        return _assetGraphHandler.handle(request, rootDir);
+      }
+      return _assetHandler.handle(request, rootDir);
+    });
     var handler = logRequests
         ? const shelf.Pipeline()
             .addMiddleware(_logRequests)
@@ -74,30 +84,7 @@ class ServeHandler implements BuildState {
     return new shelf.Response.notFound('');
   }
 
-  FutureOr<shelf.Response> _assetGraphVisualizationHandler(
-      shelf.Request request) async {
-    if (request.url.path != _assetGraphVisualizationPath) {
-      return new shelf.Response.notFound('');
-    }
-
-    return new shelf.Response.ok(
-        await _reader.readAsString(
-            new AssetId('build_runner', 'lib/src/server/graph_viz.html')),
-        headers: {HttpHeaders.CONTENT_TYPE: 'text/html'});
-  }
-
-  FutureOr<shelf.Response> _assetGraphHandler(shelf.Request request) async {
-    if (request.url.path != _assetGraphPath)
-      return new shelf.Response.notFound('');
-    var jsonContent = utf8.decode(_assetGraph.serialize());
-    return new shelf.Response.ok(jsonContent,
-        headers: {HttpHeaders.CONTENT_TYPE: 'application/json'});
-  }
-
-  FutureOr<shelf.Response> _performanceHandler(shelf.Request request) async {
-    if (request.url.path != _performancePath) {
-      return new shelf.Response.notFound('');
-    }
+  shelf.Response _performanceHandler(shelf.Request request) {
     var hideSkipped = false;
     if (request.url.queryParameters['hideSkipped']?.toLowerCase() == 'true') {
       hideSkipped = true;
@@ -106,31 +93,10 @@ class ServeHandler implements BuildState {
         _renderPerformance(_lastBuildResult.performance, hideSkipped),
         headers: {HttpHeaders.CONTENT_TYPE: 'text/html'});
   }
-
-  FutureOr<shelf.Response> _handle(
-      shelf.Request request, String rootDir) async {
-    if (_lastBuildResult.status == BuildStatus.failure) {
-      return new shelf.Response(HttpStatus.INTERNAL_SERVER_ERROR,
-          body: _htmlErrorPage(_lastBuildResult),
-          headers: {HttpHeaders.CONTENT_TYPE: 'text/html'});
-    }
-    return _assetHandler.handle(request, rootDir);
-  }
-
-  static String _htmlErrorPage(BuildResult result) => '<h1>Build failed!</h1>'
-      '<p><strong>Error:</strong></p>'
-      '<p><strong style="color: red">'
-      '${_htmlify(result.exception)}'
-      '</strong></p>'
-      '<p><strong>Stack Trace:</strong></p>'
-      '<p>${_htmlify(result.stackTrace)}</p>';
-
-  static String _htmlify(content) =>
-      content.toString().replaceAll('\n', '<br/>').replaceAll(' ', '&nbsp;');
 }
 
 class AssetHandler {
-  final AssetReader _reader;
+  final FinalizedReader _reader;
   final String _rootPackage;
 
   final _typeResolver = new MimeTypeResolver();
@@ -138,25 +104,28 @@ class AssetHandler {
   AssetHandler(this._reader, this._rootPackage);
 
   Future<shelf.Response> handle(shelf.Request request, String rootDir) {
-    var pathSegments = <String>[rootDir];
-    pathSegments.addAll(request.url.pathSegments);
-
-    if (request.url.path.endsWith('/') || request.url.path.isEmpty) {
-      pathSegments = new List.from(pathSegments)..add('index.html');
-    }
-    return _handle(request.headers, pathSegments);
+    var pathSegments =
+        (request.url.path.endsWith('/') || request.url.path.isEmpty)
+            ? request.url.pathSegments.followedBy(const ['index.html']).toList()
+            : request.url.pathSegments;
+    return _handle(
+        request.headers, pathToAssetId(_rootPackage, rootDir, pathSegments));
   }
 
   Future<shelf.Response> _handle(
-      Map<String, String> requestHeaders, List<String> pathSegments) async {
-    var packagesIndex = pathSegments.indexOf('packages');
-    var assetId = packagesIndex >= 0
-        ? new AssetId(pathSegments[packagesIndex + 1],
-            p.join('lib', p.joinAll(pathSegments.sublist(packagesIndex + 2))))
-        : new AssetId(_rootPackage, p.joinAll(pathSegments));
+      Map<String, String> requestHeaders, AssetId assetId) async {
     try {
       if (!await _reader.canRead(assetId)) {
-        return new shelf.Response.notFound('Not Found');
+        var reason = await _reader.unreadableReason(assetId);
+        switch (reason) {
+          case UnreadableReason.failed:
+            return new shelf.Response.internalServerError(
+                body: 'Build failed for $assetId');
+          case UnreadableReason.notOutput:
+            return new shelf.Response.notFound('$assetId was not output');
+          default:
+            return new shelf.Response.notFound('Not Found');
+        }
       }
     } on ArgumentError catch (_) {
       return new shelf.Response.notFound('Not Found');
@@ -268,12 +237,12 @@ String _renderPerformance(BuildPerformance performance, bool hideSkipped) {
         height: 100%;
         margin: 0;
       }
-    
+
       body {
         display: flex;
         flex-direction: column;
       }
-    
+
       #timeline {
         display: flex;
         flex-direction: row;

@@ -1,5 +1,4 @@
 import 'package:angular_compiler/cli.dart';
-import 'package:angular/src/facade/exceptions.dart';
 import 'package:angular_ast/angular_ast.dart' as ast;
 import 'package:angular_ast/src/expression/micro.dart';
 import 'package:source_span/source_span.dart';
@@ -20,22 +19,16 @@ import 'template_optimize.dart';
 import 'template_parser.dart';
 import 'template_parser/recursive_template_visitor.dart';
 
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: list_element_type_not_assignable
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
-
-const NG_CONTENT_SELECT_ATTR = 'select';
-const NG_CONTENT_ELEMENT = 'ng-content';
-const LINK_ELEMENT = 'link';
-const LINK_STYLE_REL_ATTR = 'rel';
-const LINK_STYLE_HREF_ATTR = 'href';
-const LINK_STYLE_REL_VALUE = 'stylesheet';
-const STYLE_ELEMENT = 'style';
-const SCRIPT_ELEMENT = 'script';
+const ngContentSelectAttr = 'select';
+const ngContentElement = 'ng-content';
+const linkElement = 'link';
+const linkStyleRelAttr = 'rel';
+const linkStyleHrefAttr = 'href';
+const linkStyleRelValue = 'stylesheet';
+const styleElement = 'style';
+const scriptElement = 'script';
 const _templateElement = 'template';
+final CssSelector _textCssSelector = CssSelector.parse('*')[0];
 
 /// A [TemplateParser] which uses the `angular_ast` package to parse angular
 /// templates.
@@ -103,7 +96,7 @@ class AstTemplateParser implements TemplateParser {
           exceptionHandler: exceptionHandler);
 
   List<ast.TemplateAst> _processRawTemplateNodes(
-      Iterable<ast.TemplateAst> parsedAst,
+      List<ast.TemplateAst> parsedAst,
       {String template,
       String name,
       _AstExceptionHandler exceptionHandler,
@@ -146,9 +139,11 @@ class AstTemplateParser implements TemplateParser {
 
   List<ast.TemplateAst> _filterElements(
       List<ast.TemplateAst> parsedAst, bool preserveWhitespace) {
-    var filteredElements = new _ElementFilter().visitAll(parsedAst);
+    var filteredElements = new _ElementFilter()
+        .visitAll<ast.StandaloneTemplateAst>(
+            parsedAst.cast<ast.StandaloneTemplateAst>());
     if (flags.useNewPreserveWhitespace) {
-      return new ast.MinimizeWhitespaceVisitor().visitAll(filteredElements);
+      return new ast.MinimizeWhitespaceVisitor().visitAllRoot(filteredElements);
     }
     return new _PreserveWhitespaceVisitor()
         .visitAll(filteredElements, preserveWhitespace);
@@ -251,7 +246,7 @@ class _AstExceptionHandler extends ast.RecoveringExceptionHandler {
             .span(exception.offset, exception.offset + exception.length)
             .message(exception.errorCode.message))
         .join('\n');
-    throw new BaseException('Template parse errors:\n$errorString');
+    throw new StateError('Template parse errors:\n$errorString');
   }
 }
 
@@ -295,7 +290,8 @@ class _BindDirectivesVisitor
       List<ast.PropertyAst> properties,
       List<ast.AttributeAst> attributes,
       _ParseContext elementContext) {
-    var visitedProperties = _visitAll(properties, elementContext);
+    var visitedProperties =
+        _visitAll<ng.BoundElementPropertyAst>(properties, elementContext);
     for (var attribute in attributes) {
       if (attribute.mustaches?.isNotEmpty ?? false) {
         var boundElementPropertyAst =
@@ -362,7 +358,8 @@ class _BindDirectivesVisitor
     if (_isInlineTemplate(astNode)) {
       return _findNgContentIndexForElement(
           astNode.childNodes
-              .firstWhere((childNode) => childNode is ast.ElementAst),
+                  .firstWhere((childNode) => childNode is ast.ElementAst)
+              as ast.ElementAst,
           context);
     }
     return context.findNgContentIndex(_templateSelector(astNode));
@@ -372,7 +369,7 @@ class _BindDirectivesVisitor
     if (astNode is! ast.SyntheticTemplateAst) return false;
     final syntheticNode = astNode as ast.SyntheticTemplateAst;
     if (syntheticNode.origin is ast.EmbeddedTemplateAst) {
-      return _isInlineTemplate(syntheticNode.origin);
+      return _isInlineTemplate(syntheticNode.origin as ast.EmbeddedTemplateAst);
     }
     if (syntheticNode.origin is ast.StarAst ||
         syntheticNode.origin is ast.AttributeAst) return true;
@@ -394,8 +391,8 @@ class _BindDirectivesVisitor
   CssSelector _embeddedContentSelector(ast.EmbeddedContentAst astNode) =>
       astNode.ngProjectAs != null
           ? CssSelector.parse(astNode.ngProjectAs)[0]
-          : createElementCssSelector(NG_CONTENT_ELEMENT, [
-              [NG_CONTENT_SELECT_ATTR, astNode.selector]
+          : createElementCssSelector(ngContentElement, [
+              [ngContentSelectAttr, astNode.selector]
             ]);
 
   @override
@@ -464,7 +461,7 @@ class _BindDirectivesVisitor
   @override
   ng.TemplateAst visitText(ast.TextAst astNode, [_ParseContext context]) =>
       new ng.TextAst(astNode.value,
-          context.findNgContentIndex(TEXT_CSS_SELECTOR), astNode.sourceSpan);
+          context.findNgContentIndex(_textCssSelector), astNode.sourceSpan);
 
   @override
   ng.TemplateAst visitInterpolation(ast.InterpolationAst astNode,
@@ -475,7 +472,7 @@ class _BindDirectivesVisitor
           _location(astNode),
           context.templateContext.exports);
       return new ng.BoundTextAst(element,
-          context.findNgContentIndex(TEXT_CSS_SELECTOR), astNode.sourceSpan);
+          context.findNgContentIndex(_textCssSelector), astNode.sourceSpan);
     } on ParseException catch (e) {
       context.templateContext.reportError(e.message, astNode.sourceSpan);
       return null;
@@ -661,9 +658,9 @@ class _ParseContext {
 
   int findNgContentIndex(CssSelector selector) {
     if (_ngContentIndexMatcher == null) return _wildcardNgContentIndex;
-    var ngContentIndices = [];
+    var ngContentIndices = <int>[];
     _ngContentIndexMatcher.match(selector, (selector, ngContentIndex) {
-      ngContentIndices.add(ngContentIndex);
+      ngContentIndices.add(ngContentIndex as int);
     });
     ngContentIndices.sort();
     return ngContentIndices.isNotEmpty
@@ -726,7 +723,7 @@ class _ParseContext {
       String elementName,
       String location,
       _TemplateContext templateContext) {
-    var result = [];
+    var result = <ng.BoundElementPropertyAst>[];
     for (var propName in directive.hostProperties.keys) {
       try {
         var expression = directive.hostProperties[propName];
@@ -753,7 +750,7 @@ class _ParseContext {
       String elementName,
       String location,
       _TemplateContext templateContext) {
-    var result = [];
+    var result = <ng.BoundEventAst>[];
     for (var eventName in directive.hostListeners.keys) {
       try {
         var expression = directive.hostListeners[eventName];
@@ -806,7 +803,7 @@ CssSelector _templateSelector(ast.EmbeddedTemplateAst astNode) => _selector(
 
 CssSelector _selector(String elementName, List<ast.AttributeAst> attributes,
     List<ast.PropertyAst> properties, List<ast.EventAst> events) {
-  final matchableAttributes = [];
+  final matchableAttributes = <List<String>>[];
   for (var attr in attributes) {
     matchableAttributes.add([attr.name, attr.value]);
   }
@@ -838,11 +835,11 @@ String _getEventName(ast.EventAst event) =>
 /// Visitor which filters elements that are not supported in angular templates.
 class _ElementFilter extends ast.RecursiveTemplateAstVisitor<Null> {
   @override
-  ast.TemplateAst visitElement(ast.ElementAst astNode, [_]) {
+  ast.ElementAst visitElement(ast.ElementAst astNode, [_]) {
     if (_filterElement(astNode)) {
       return null;
     }
-    return super.visitElement(astNode);
+    return super.visitElement(astNode) as ast.ElementAst;
   }
 
   static bool _filterElement(ast.ElementAst astNode) =>
@@ -851,20 +848,20 @@ class _ElementFilter extends ast.RecursiveTemplateAstVisitor<Null> {
       _filterStyleSheets(astNode);
 
   static bool _filterStyles(ast.ElementAst astNode) =>
-      astNode.name.toLowerCase() == STYLE_ELEMENT;
+      astNode.name.toLowerCase() == styleElement;
 
   static bool _filterScripts(ast.ElementAst astNode) =>
-      astNode.name.toLowerCase() == SCRIPT_ELEMENT;
+      astNode.name.toLowerCase() == scriptElement;
 
   static bool _filterStyleSheets(ast.ElementAst astNode) {
-    if (astNode.name != LINK_ELEMENT) return false;
+    if (astNode.name != linkElement) return false;
     var href = _findHref(astNode.attributes);
     return isStyleUrlResolvable(href?.value);
   }
 
   static ast.AttributeAst _findHref(List<ast.AttributeAst> attributes) {
     for (var attr in attributes) {
-      if (attr.name.toLowerCase() == LINK_STYLE_HREF_ATTR) return attr;
+      if (attr.name.toLowerCase() == linkStyleHrefAttr) return attr;
     }
     return null;
   }
@@ -945,7 +942,7 @@ class _InlineTemplateDesugar extends ast.RecursiveTemplateAstVisitor<Null> {
 
   @override
   ast.TemplateAst visitElement(ast.ElementAst astNode, [_]) {
-    astNode = super.visitElement(astNode);
+    astNode = super.visitElement(astNode) as ast.ElementAst;
     var templateAttribute = _findTemplateAttribute(astNode);
     if (templateAttribute == null) {
       return astNode;
@@ -1018,8 +1015,8 @@ class _InlineTemplateDesugar extends ast.RecursiveTemplateAstVisitor<Null> {
   int _expressionOffset(ast.AttributeAst templateAttribute) {
     if (templateAttribute == null) return null;
     if (templateAttribute is ast.SyntheticTemplateAst) {
-      return _expressionOffset(
-          (templateAttribute as ast.SyntheticTemplateAst).origin);
+      return _expressionOffset((templateAttribute as ast.SyntheticTemplateAst)
+          .origin as ast.AttributeAst);
     }
     return (templateAttribute as ast.ParsedAttributeAst)
         .valueToken
@@ -1055,7 +1052,7 @@ class _NamespaceVisitor extends ast.RecursiveTemplateAstVisitor<String> {
 
   @override
   visitAttribute(ast.AttributeAst astNode, [String parentPrefix]) {
-    astNode = super.visitAttribute(astNode, parentPrefix);
+    astNode = super.visitAttribute(astNode, parentPrefix) as ast.AttributeAst;
     if (_getNsPrefix(astNode.name) == null) return astNode;
     var names = astNode.name.split(':');
     return new ast.AttributeAst.from(astNode,
@@ -1302,7 +1299,7 @@ class _PreserveWhitespaceVisitor extends ast.IdentityTemplateAstVisitor<bool> {
       final visited = node is ast.TextAst
           ? _stripWhitespace(i, node, astNodes, preserveWhitespace)
           : node.accept(this, preserveWhitespace);
-      if (visited != null) result.add(visited);
+      if (visited != null) result.add(visited as T);
     }
     return result;
   }
@@ -1374,7 +1371,7 @@ class _SortInputsVisitor extends RecursiveTemplateVisitor<Null> {
   @override
   ng.DirectiveAst visitDirective(ng.DirectiveAst ast, _) {
     ast.inputs.sort(_orderingOf(ast.directive.inputs));
-    return super.visitDirective(ast, null);
+    return super.visitDirective(ast, null) as ng.DirectiveAst;
   }
 
   Comparator<ng.BoundDirectivePropertyAst> _orderingOf(

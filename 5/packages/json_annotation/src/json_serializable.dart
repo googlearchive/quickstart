@@ -4,6 +4,7 @@
 
 import 'dart:collection';
 
+/// An annotation used to specify a class to generate code for.
 class JsonSerializable {
   // TODO(kevmoo): document these fields
   final bool createFactory;
@@ -65,26 +66,51 @@ class JsonKey {
   /// enclosing class.
   final bool includeIfNull;
 
+  /// `true` if the generator should ignore this field completely.
+  ///
+  /// If `null` (the default) or `false`, the field will be considered for
+  /// serialization.
+  final bool ignore;
+
   /// Creates a new [JsonKey].
   ///
   /// Only required when the default behavior is not desired.
-  const JsonKey({this.name, this.nullable, this.includeIfNull});
+  const JsonKey({this.name, this.nullable, this.includeIfNull, this.ignore});
 }
 
-// TODO(kevmoo): Add documentation
+/// Helper classes used in generated code when
+/// `JsonSerializableGenerator.useWrappers` is `true`.
+///
+/// Should not be used directly.
 abstract class $JsonMapWrapper extends UnmodifiableMapBase<String, dynamic> {}
 
+/// Helper function used in generated code when
+/// `JsonSerializableGenerator.useWrappers` is `true`.
+///
+/// Should not be used directly.
 Map<String, dynamic> $wrapMap<K, V>(
         Map<K, V> source, dynamic converter(V key)) =>
     new _MappingMap(source, converter);
 
+/// Helper function used in generated code when
+/// `JsonSerializableGenerator.useWrappers` is `true`.
+///
+/// Should not be used directly.
 Map<String, dynamic> $wrapMapHandleNull<K, V>(
         Map<K, V> source, dynamic converter(V key)) =>
     source == null ? null : new _MappingMap(source, converter);
 
+/// Helper function used in generated code when
+/// `JsonSerializableGenerator.useWrappers` is `true`.
+///
+/// Should not be used directly.
 List<dynamic> $wrapList<T>(List<T> source, dynamic converter(T key)) =>
     new _MappingList(source, converter);
 
+/// Helper function used in generated code when
+/// `JsonSerializableGenerator.useWrappers` is `true`.
+///
+/// Should not be used directly.
 List<dynamic> $wrapListHandleNull<T>(
         List<T> source, dynamic converter(T key)) =>
     source == null ? null : new _MappingList(source, converter);

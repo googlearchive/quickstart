@@ -24,7 +24,7 @@ class ViewAppComponent0 extends AppView<import1.AppComponent> {
   import2.Text _text_2;
   var _expr_0;
   static RenderComponentType _renderType;
-  ViewAppComponent0(AppView<dynamic> parentView, int parentIndex) : super(import4.ViewType.COMPONENT, {}, parentView, parentIndex, ChangeDetectionStrategy.CheckAlways) {
+  ViewAppComponent0(AppView<dynamic> parentView, int parentIndex) : super(import4.ViewType.component, {}, parentView, parentIndex, ChangeDetectionStrategy.CheckAlways) {
     rootEl = import2.document.createElement('my-app');
     _renderType ??= import6.appViewUtils.createRenderType('', ViewEncapsulation.None, styles$AppComponent);
     setupComponentType(_renderType);
@@ -63,7 +63,7 @@ const List<dynamic> styles$AppComponentHost = const [];
 class _ViewAppComponentHost0 extends AppView<dynamic> {
   ViewAppComponent0 _compView_0;
   import1.AppComponent _AppComponent_0_5;
-  _ViewAppComponentHost0(AppView<dynamic> parentView, int parentIndex) : super(import4.ViewType.HOST, {}, parentView, parentIndex, ChangeDetectionStrategy.CheckAlways);
+  _ViewAppComponentHost0(AppView<dynamic> parentView, int parentIndex) : super(import4.ViewType.host, {}, parentView, parentIndex, ChangeDetectionStrategy.CheckAlways);
   @override
   ComponentRef build() {
     _compView_0 = new ViewAppComponent0(this, 0);

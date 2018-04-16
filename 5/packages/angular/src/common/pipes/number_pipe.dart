@@ -1,14 +1,9 @@
 import 'package:intl/intl.dart';
 import 'package:angular/di.dart' show PipeTransform, Pipe;
-import 'package:angular/src/facade/exceptions.dart' show BaseException;
 
 import 'invalid_pipe_argument_exception.dart';
 
 final RegExp _re = new RegExp("^(\\d+)?\\.((\\d+)(\\-(\\d+))?)?\$");
-
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
 
 /// Internal base class for numeric pipes.
 class _NumberPipe {
@@ -22,7 +17,7 @@ class _NumberPipe {
     if (digits != null) {
       var parts = _re.firstMatch(digits);
       if (parts == null) {
-        throw new BaseException(
+        throw new FormatException(
           '$digits is not a valid digit info for number pipes',
         );
       }
@@ -73,7 +68,7 @@ class _NumberPipe {
 /// details see your native internationalization library.
 @Pipe('number')
 class DecimalPipe extends _NumberPipe implements PipeTransform {
-  String transform(dynamic value, [String digits]) {
+  String transform(num value, [String digits]) {
     return _NumberPipe._format(value, _NumberFormatStyle.Decimal, digits);
   }
 
@@ -92,7 +87,7 @@ class DecimalPipe extends _NumberPipe implements PipeTransform {
 /// For more information about `digitInfo` see [DecimalPipe]
 @Pipe('percent')
 class PercentPipe extends _NumberPipe implements PipeTransform {
-  String transform(dynamic value, [String digits]) {
+  String transform(num value, [String digits]) {
     return _NumberPipe._format(value, _NumberFormatStyle.Percent, digits);
   }
 
@@ -116,7 +111,7 @@ class PercentPipe extends _NumberPipe implements PipeTransform {
 @Pipe('currency')
 class CurrencyPipe extends _NumberPipe implements PipeTransform {
   String transform(
-    dynamic value, [
+    num value, [
     String currencyCode = 'USD',
     bool symbolDisplay = false,
     String digits,

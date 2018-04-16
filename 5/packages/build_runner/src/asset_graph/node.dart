@@ -42,6 +42,11 @@ abstract class AssetNode {
   /// at this moment in time.
   bool get isReadable => true;
 
+  /// Whether the node is deleted.
+  ///
+  /// Deleted nodes are ignored in the final merge step and watch handlers.
+  bool isDeleted = false;
+
   /// Whether or not this node can be used as a primary input.
   ///
   /// Some nodes are valid primary inputs but are not readable (see
@@ -145,6 +150,9 @@ class GeneratedAssetNode extends AssetNode {
   /// the previous run, indicating that the previous output is still valid.
   Digest previousInputsDigest;
 
+  /// Whether the action which did or would produce this node failed.
+  bool isFailure;
+
   /// The [AssetId] of the node representing the [BuilderOptions] used to create
   /// this node.
   final AssetId builderOptionsId;
@@ -162,6 +170,7 @@ class GeneratedAssetNode extends AssetNode {
     @required this.state,
     @required this.phaseNumber,
     @required this.wasOutput,
+    @required this.isFailure,
     @required this.primaryInput,
     @required this.builderOptionsId,
   })  : this.globs = globs ?? new Set<Glob>(),

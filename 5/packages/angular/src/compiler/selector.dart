@@ -1,17 +1,9 @@
-import 'package:angular/src/facade/exceptions.dart' show BaseException;
 import 'package:tuple/tuple.dart';
 
 import 'attribute_matcher.dart';
 import 'html_tags.dart' show getHtmlTagDefinition;
 
-// TODO: Remove the following lines (for --no-implicit-casts).
-// ignore_for_file: argument_type_not_assignable
-// ignore_for_file: invalid_assignment
-// ignore_for_file: list_element_type_not_assignable
-// ignore_for_file: non_bool_operand
-// ignore_for_file: return_of_invalid_type
-
-final _SELECTOR_REGEXP = new RegExp(r'(:not\()|' + // ":not("
+final _selectorRegExp = new RegExp(r'(:not\()|' + // ":not("
         r'([-\w]+)|' + // "tag-name"
         r'(?:\.([-\w]+))|' + // ".class"
         // <attr-matcher> := [ '~' | '|' | '^' | '$' | '*' ]? '='
@@ -42,14 +34,14 @@ class CssSelector {
       res.add(cssSel);
     };
     var cssSelector = new CssSelector();
-    var matcher = _SELECTOR_REGEXP.allMatches(selector);
+    var matcher = _selectorRegExp.allMatches(selector);
     var current = cssSelector;
     var inNot = false;
     for (var match in matcher) {
       if (match == null) break;
       if (match[1] != null) {
         if (inNot) {
-          throw new BaseException("Nesting :not is not allowed in a selector");
+          throw new StateError("Nesting :not is not allowed in a selector");
         }
         inNot = true;
         current = new CssSelector();
@@ -70,8 +62,7 @@ class CssSelector {
       }
       if (match[9] != null) {
         if (inNot) {
-          throw new BaseException(
-              "Multiple selectors in :not are not supported");
+          throw new StateError("Multiple selectors in :not are not supported");
         }
         _addResult(results, cssSelector);
         cssSelector = current = new CssSelector();
@@ -189,7 +180,7 @@ class SelectorMatcher {
   final _listContexts = <SelectorListContext>[];
 
   void addSelectables(List<CssSelector> cssSelectors, [dynamic callbackCtxt]) {
-    var listContext;
+    SelectorListContext listContext;
     if (cssSelectors.length > 1) {
       listContext = new SelectorListContext(cssSelectors);
       this._listContexts.add(listContext);
@@ -321,10 +312,9 @@ class SelectorMatcher {
     if (selectables == null) {
       return false;
     }
-    var selectable;
     var result = false;
     for (var index = 0; index < selectables.length; index++) {
-      selectable = selectables[index];
+      var selectable = selectables[index];
       result = selectable.finalize(cssSelector, matchedCallback) || result;
     }
     return result;

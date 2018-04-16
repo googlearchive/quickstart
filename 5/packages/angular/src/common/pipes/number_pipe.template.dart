@@ -7,11 +7,9 @@ import 'number_pipe.dart';
 export 'number_pipe.dart';
 import 'package:intl/intl.dart';
 import 'package:angular/di.dart' show PipeTransform, Pipe;
-import 'package:angular/src/facade/exceptions.dart' show BaseException;
 import 'invalid_pipe_argument_exception.dart';
 import 'invalid_pipe_argument_exception.template.dart' as _ref0;
 import 'package:angular/di.template.dart' as _ref1;
-import 'package:angular/src/facade/exceptions.template.dart' as _ref2;
 
 var _visited = false;
 void initReflector() {
@@ -22,5 +20,4 @@ void initReflector() {
 
   _ref0.initReflector();
   _ref1.initReflector();
-  _ref2.initReflector();
 }
