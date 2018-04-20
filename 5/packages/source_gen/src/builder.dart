@@ -13,12 +13,10 @@ import 'generator.dart';
 import 'library.dart';
 import 'utils.dart';
 
-typedef String _OutputFormatter(String code);
-
 /// A [Builder] wrapping on one or more [Generator]s.
 class _Builder extends Builder {
   /// Function that determines how the generated code is formatted.
-  final _OutputFormatter formatOutput;
+  final String Function(String) formatOutput;
 
   /// The generators run for each targeted library.
   final List<Generator> _generators;
@@ -74,7 +72,6 @@ class _Builder extends Builder {
 
   Future _generateForLibrary(
       LibraryElement library, BuildStep buildStep) async {
-    log.fine('Running $_generators for ${buildStep.inputId}');
     var generatedOutputs =
         await _generate(library, _generators, buildStep).toList();
 
@@ -94,10 +91,7 @@ class _Builder extends Builder {
 
     if (!_isStandalone) {
       var asset = buildStep.inputId;
-      var name = nameOfPartial(
-        library,
-        asset,
-      );
+      var name = nameOfPartial(library, asset);
       if (name == null) {
         var suggest = suggestLibraryName(asset);
         throw new InvalidGenerationSourceError(
@@ -187,11 +181,12 @@ class LibraryBuilder extends _Builder {
   /// outputs through the [BuildStep] they should be indicated in
   /// [additionalOutputExtensions].
   ///
-  /// If `null`, the content of [defaultFileHeader] is used.
-  /// If [header] is an empty `String` no header is added.
-  ///
   /// [formatOutput] is called to format the generated code. Defaults to
   /// [DartFormatter.format].
+  ///
+  /// [header] is used to specify the content at the top of each generated file.
+  /// If `null`, the content of [defaultFileHeader] is used.
+  /// If [header] is an empty `String` no header is added.
   LibraryBuilder(Generator generator,
       {String formatOutput(String code),
       String generatedExtension: '.g.dart',
@@ -208,16 +203,21 @@ class LibraryBuilder extends _Builder {
 Stream<GeneratedOutput> _generate(LibraryElement library,
     List<Generator> generators, BuildStep buildStep) async* {
   var libraryReader = new LibraryReader(library);
-  for (var gen in generators) {
+  for (var i = 0; i < generators.length; i++) {
+    var gen = generators[i];
     try {
-      log.finer('Running $gen for ${buildStep.inputId}');
+      var msg = 'Running $gen';
+      if (generators.length > 1) {
+        msg = '$msg - ${i+1} of ${generators.length}';
+      }
+      log.fine(msg);
       var createdUnit = await gen.generate(libraryReader, buildStep);
 
       if (createdUnit != null && createdUnit.isNotEmpty) {
         yield new GeneratedOutput(gen, createdUnit);
       }
     } catch (e, stack) {
-      log.severe('Error running $gen for ${buildStep.inputId}.', e, stack);
+      log.severe('Error running $gen', e, stack);
       yield new GeneratedOutput.fromError(gen, e, stack);
     }
   }
