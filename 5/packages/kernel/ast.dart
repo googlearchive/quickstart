@@ -64,7 +64,7 @@
 ///
 library kernel.ast;
 
-import 'dart:convert' show utf8;
+import 'dart:convert' show UTF8;
 
 import 'visitor.dart';
 export 'visitor.dart';
@@ -153,7 +153,7 @@ abstract class TreeNode extends Node {
     parent = null;
   }
 
-  Component get enclosingComponent => parent?.enclosingComponent;
+  Program get enclosingProgram => parent?.enclosingProgram;
 
   /// Returns the best known source location of the given AST node, or `null` if
   /// the node is orphaned.
@@ -188,7 +188,7 @@ abstract class NamedNode extends TreeNode {
 }
 
 abstract class FileUriNode extends TreeNode {
-  /// The URI of the source file this node was loaded from.
+  /// The uri of the source file this node was loaded from.
   Uri get fileUri;
 }
 
@@ -275,7 +275,7 @@ class Library extends NamedNode implements Comparable<Library>, FileUriNode {
   /// If the URI has the `app` scheme, it is relative to the application root.
   Uri importUri;
 
-  /// The URI of the source file this library was loaded from.
+  /// The uri of the source file this library was loaded from.
   Uri fileUri;
 
   /// If true, the library is part of another build unit and its contents
@@ -436,7 +436,7 @@ class Library extends NamedNode implements Comparable<Library>, FileUriNode {
   String toString() => debugLibraryName(this);
 
   Location _getLocationInEnclosingFile(int offset) {
-    return _getLocationInComponent(enclosingComponent, fileUri, offset);
+    return _getLocationInProgram(enclosingProgram, fileUri, offset);
   }
 }
 
@@ -575,7 +575,7 @@ class Combinator extends TreeNode {
 
 /// Declaration of a type alias.
 class Typedef extends NamedNode implements FileUriNode {
-  /// The URI of the source file that contains the declaration of this typedef.
+  /// The uri of the source file that contains the declaration of this typedef.
   Uri fileUri;
   List<Expression> annotations = const <Expression>[];
   String name;
@@ -717,7 +717,7 @@ class Class extends NamedNode implements FileUriNode {
   /// All X&Y classes are marked as synthetic.
   bool isSyntheticMixinImplementation;
 
-  /// The URI of the source file this class was loaded from.
+  /// The uri of the source file this class was loaded from.
   Uri fileUri;
 
   final List<TypeParameter> typeParameters;
@@ -929,7 +929,7 @@ class Class extends NamedNode implements FileUriNode {
   }
 
   Location _getLocationInEnclosingFile(int offset) {
-    return _getLocationInComponent(enclosingComponent, fileUri, offset);
+    return _getLocationInProgram(enclosingProgram, fileUri, offset);
   }
 }
 
@@ -938,7 +938,7 @@ class Class extends NamedNode implements FileUriNode {
 // ------------------------------------------------------------------------
 
 @coq
-abstract class Member extends NamedNode implements FileUriNode {
+abstract class Member extends NamedNode {
   /// End offset in the source file it comes from. Valid values are from 0 and
   /// up, or -1 ([TreeNode.noOffset]) if the file end offset is not available
   /// (this is the default if none is specifically set).
@@ -952,9 +952,6 @@ abstract class Member extends NamedNode implements FileUriNode {
   List<Expression> annotations = const <Expression>[];
 
   Name name;
-
-  /// The URI of the source file this member was loaded from.
-  Uri fileUri;
 
   /// Flags summarizing the kinds of AST nodes contained in this member, for
   /// speeding up transformations that only affect certain types of nodes.
@@ -973,7 +970,7 @@ abstract class Member extends NamedNode implements FileUriNode {
   // TODO(asgerf): It might be worthwhile to put this on classes as well.
   int transformerFlags = 0;
 
-  Member(this.name, this.fileUri, Reference reference) : super(reference);
+  Member(this.name, Reference reference) : super(reference);
 
   Class get enclosingClass => parent is Class ? parent : null;
   Library get enclosingLibrary => parent is Class ? parent.parent : parent;
@@ -1037,11 +1034,14 @@ abstract class Member extends NamedNode implements FileUriNode {
 ///
 /// The implied getter and setter for the field are not represented explicitly,
 /// but can be made explicit if needed.
-class Field extends Member {
+class Field extends Member implements FileUriNode {
   DartType type; // Not null. Defaults to DynamicType.
   int flags = 0;
   int flags2 = 0;
   Expression initializer; // May be null.
+
+  /// The uri of the source file this field was loaded from.
+  Uri fileUri;
 
   Field(Name name,
       {this.type: const DynamicType(),
@@ -1053,9 +1053,9 @@ class Field extends Member {
       bool hasImplicitGetter,
       bool hasImplicitSetter,
       int transformerFlags: 0,
-      Uri fileUri,
+      this.fileUri,
       Reference reference})
-      : super(name, fileUri, reference) {
+      : super(name, reference) {
     assert(type != null);
     initializer?.parent = this;
     this.isCovariant = isCovariant;
@@ -1172,7 +1172,7 @@ class Field extends Member {
   void set isGenericContravariant(bool value) {
     flags2 = value
         ? (flags2 | Flag2GenericContravariant)
-        : (flags2 & ~Flag2GenericContravariant);
+        : (flags & ~Flag2GenericContravariant);
   }
 
   /// True if the field is neither final nor const.
@@ -1210,7 +1210,7 @@ class Field extends Member {
   DartType get setterType => isMutable ? type : const BottomType();
 
   Location _getLocationInEnclosingFile(int offset) {
-    return _getLocationInComponent(enclosingComponent, fileUri, offset);
+    return _getLocationInProgram(enclosingProgram, fileUri, offset);
   }
 }
 
@@ -1222,10 +1222,13 @@ class Field extends Member {
 /// invocation should be matched with the type parameters declared in the class.
 ///
 /// For unnamed constructors, the name is an empty string (in a [Name]).
-class Constructor extends Member {
+class Constructor extends Member implements FileUriNode {
   int flags = 0;
   FunctionNode function;
   List<Initializer> initializers;
+
+  /// The uri of the source file this field was loaded from.
+  Uri fileUri;
 
   Constructor(this.function,
       {Name name,
@@ -1234,10 +1237,10 @@ class Constructor extends Member {
       bool isSynthetic: false,
       List<Initializer> initializers,
       int transformerFlags: 0,
-      Uri fileUri,
+      this.fileUri,
       Reference reference})
       : this.initializers = initializers ?? <Initializer>[],
-        super(name, fileUri, reference) {
+        super(name, reference) {
     function?.parent = this;
     setParents(this.initializers, this);
     this.isConst = isConst;
@@ -1298,7 +1301,7 @@ class Constructor extends Member {
   DartType get setterType => const BottomType();
 
   Location _getLocationInEnclosingFile(int offset) {
-    return _getLocationInComponent(enclosingComponent, fileUri, offset);
+    return _getLocationInProgram(enclosingProgram, fileUri, offset);
   }
 }
 
@@ -1323,8 +1326,11 @@ class Constructor extends Member {
 ///
 /// Redirecting factory constructors can be unnamed.  In this case, the name is
 /// an empty string (in a [Name]).
-class RedirectingFactoryConstructor extends Member {
+class RedirectingFactoryConstructor extends Member implements FileUriNode {
   int flags = 0;
+
+  /// The uri of the source file this field was loaded from.
+  Uri fileUri;
 
   /// [RedirectingFactoryConstructor]s may redirect to constructors or factories
   /// of instantiated generic types, that is, generic types with supplied type
@@ -1361,7 +1367,7 @@ class RedirectingFactoryConstructor extends Member {
       List<VariableDeclaration> positionalParameters,
       List<VariableDeclaration> namedParameters,
       int requiredParameterCount,
-      Uri fileUri,
+      this.fileUri,
       Reference reference})
       : this.typeArguments = typeArguments ?? <DartType>[],
         this.typeParameters = typeParameters ?? <TypeParameter>[],
@@ -1370,7 +1376,7 @@ class RedirectingFactoryConstructor extends Member {
         this.namedParameters = namedParameters ?? <VariableDeclaration>[],
         this.requiredParameterCount =
             requiredParameterCount ?? positionalParameters?.length ?? 0,
-        super(name, fileUri, reference) {
+        super(name, reference) {
     setParents(this.typeParameters, this);
     setParents(this.positionalParameters, this);
     setParents(this.namedParameters, this);
@@ -1428,7 +1434,7 @@ class RedirectingFactoryConstructor extends Member {
   DartType get setterType => const BottomType();
 
   Location _getLocationInEnclosingFile(int offset) {
-    return _getLocationInComponent(enclosingComponent, fileUri, offset);
+    return _getLocationInProgram(enclosingProgram, fileUri, offset);
   }
 }
 
@@ -1448,7 +1454,7 @@ class RedirectingFactoryConstructor extends Member {
 /// For operators, this is the token for the operator, e.g. `+` or `==`,
 /// except for the unary minus operator, whose name is `unary-`.
 @coq
-class Procedure extends Member {
+class Procedure extends Member implements FileUriNode {
   ProcedureKind kind;
   int flags = 0;
   // function is null if and only if abstract, external.
@@ -1476,6 +1482,9 @@ class Procedure extends Member {
   void setTransformerFlagsWithoutLazyLoading(int newValue) {
     super.transformerFlags = newValue;
   }
+
+  /// The uri of the source file this procedure was loaded from.
+  Uri fileUri;
 
   Reference forwardingStubSuperTargetReference;
   Reference forwardingStubInterfaceTargetReference;
@@ -1515,11 +1524,11 @@ class Procedure extends Member {
       bool isForwardingStub: false,
       bool isForwardingSemiStub: false,
       int transformerFlags: 0,
-      Uri fileUri,
+      this.fileUri,
       Reference reference,
       this.forwardingStubSuperTargetReference,
       this.forwardingStubInterfaceTargetReference})
-      : super(name, fileUri, reference) {
+      : super(name, reference) {
     function?.parent = this;
     this.isAbstract = isAbstract;
     this.isStatic = isStatic;
@@ -1537,9 +1546,6 @@ class Procedure extends Member {
   static const int FlagForwardingStub = 1 << 4;
   static const int FlagGenericContravariant = 1 << 5;
   static const int FlagForwardingSemiStub = 1 << 6;
-  // TODO(29841): Remove this flag after the issue is resolved.
-  static const int FlagRedirectingFactoryConstructor = 1 << 7;
-  static const int FlagNoSuchMethodForwarder = 1 << 8;
 
   bool get isStatic => flags & FlagStatic != 0;
   bool get isAbstract => flags & FlagAbstract != 0;
@@ -1571,18 +1577,10 @@ class Procedure extends Member {
   /// stub, it was present in the original source as an abstract method.
   bool get isForwardingSemiStub => flags & FlagForwardingSemiStub != 0;
 
-  // Indicates if this [Procedure] represents a redirecting factory constructor
-  // and doesn't have a runnable body.
-  bool get isRedirectingFactoryConstructor {
-    return flags & FlagRedirectingFactoryConstructor != 0;
-  }
-
   /// If set, this flag indicates that this function was not present in the
   /// source, and it exists solely for the purpose of type checking arguments
   /// and forwarding to [forwardingStubSuperTarget].
   bool get isSyntheticForwarder => isForwardingStub && !isForwardingSemiStub;
-
-  bool get isNoSuchMethodForwarder => flags & FlagNoSuchMethodForwarder != 0;
 
   void set isStatic(bool value) {
     flags = value ? (flags | FlagStatic) : (flags & ~FlagStatic);
@@ -1615,19 +1613,6 @@ class Procedure extends Member {
     flags = value
         ? (flags | FlagForwardingSemiStub)
         : (flags & ~FlagForwardingSemiStub);
-  }
-
-  void set isRedirectingFactoryConstructor(bool value) {
-    flags = value
-        ? (flags | FlagRedirectingFactoryConstructor)
-        : (flags & ~FlagRedirectingFactoryConstructor);
-  }
-
-  void set isNoSuchMethodForwarder(bool value) {
-    assert(isAbstract);
-    flags = value
-        ? (flags | FlagNoSuchMethodForwarder)
-        : (flags & ~FlagNoSuchMethodForwarder);
   }
 
   bool get isInstanceMember => !isStatic;
@@ -1681,7 +1666,7 @@ class Procedure extends Member {
   }
 
   Location _getLocationInEnclosingFile(int offset) {
-    return _getLocationInComponent(enclosingComponent, fileUri, offset);
+    return _getLocationInProgram(enclosingProgram, fileUri, offset);
   }
 }
 
@@ -3824,12 +3809,9 @@ class Block extends Statement {
   final List<Statement> statements;
 
   Block(this.statements) {
-    // Ensure statements is mutable.
-    assert((statements
-          ..add(null)
-          ..removeLast()) !=
-        null);
     setParents(statements, this);
+    statements.add(null);
+    statements.removeLast();
   }
 
   accept(StatementVisitor v) => v.visitBlock(this);
@@ -3841,40 +3823,6 @@ class Block extends Statement {
 
   transformChildren(Transformer v) {
     transformList(statements, v, this);
-  }
-
-  void addStatement(Statement node) {
-    statements.add(node);
-    node.parent = this;
-  }
-}
-
-/// A block that is only executed when asserts are enabled.
-///
-/// Sometimes arbitrary statements must be guarded by whether asserts are
-/// enabled.  For example, when a subexpression of an assert in async code is
-/// linearized and named, it can produce such a block of statements.
-class AssertBlock extends Statement {
-  final List<Statement> statements;
-
-  AssertBlock(this.statements) {
-    // Ensure statements is mutable.
-    assert((statements
-          ..add(null)
-          ..removeLast()) !=
-        null);
-    setParents(statements, this);
-  }
-
-  accept(StatementVisitor v) => v.visitAssertBlock(this);
-  accept1(StatementVisitor1 v, arg) => v.visitAssertBlock(this, arg);
-
-  transformChildren(Transformer v) {
-    transformList(statements, v, this);
-  }
-
-  visitChildren(Visitor v) {
-    visitList(statements, v);
   }
 
   void addStatement(Statement node) {
@@ -4933,7 +4881,7 @@ class InterfaceType extends DartType {
 ///
 /// * Access to Vectors is untyped.
 ///
-/// * Vectors can be used by various transformations of Kernel components.
+/// * Vectors can be used by various transformations of Kernel programs.
 /// Currently they are used by Closure Conversion to represent closure contexts.
 class VectorType extends DartType {
   const VectorType();
@@ -5593,17 +5541,17 @@ class TypeLiteralConstant extends Constant {
 }
 
 // ------------------------------------------------------------------------
-//                                COMPONENT
+//                                PROGRAM
 // ------------------------------------------------------------------------
 
-/// A way to bundle up libraries in a component.
-class Component extends TreeNode {
+/// A way to bundle up all the libraries in a program.
+class Program extends TreeNode {
   final CanonicalName root;
 
   final List<Library> libraries;
 
-  /// Map from a source file URI to a line-starts table and source code.
-  /// Given a source file URI and a offset in that file one can translate
+  /// Map from a source file uri to a line-starts table and source code.
+  /// Given a source file uri and a offset in that file one can translate
   /// it to a line:column position in that file.
   final Map<Uri, Source> uriToSource;
 
@@ -5615,7 +5563,7 @@ class Component extends TreeNode {
   /// Reference to the main method in one of the libraries.
   Reference mainMethodName;
 
-  Component(
+  Program(
       {CanonicalName nameRoot,
       List<Library> libraries,
       Map<Uri, Source> uriToSource})
@@ -5624,7 +5572,7 @@ class Component extends TreeNode {
         uriToSource = uriToSource ?? <Uri, Source>{} {
     if (libraries != null) {
       for (int i = 0; i < libraries.length; ++i) {
-        // The libraries are owned by this component, and so are their canonical
+        // The libraries are owned by this program, and so are their canonical
         // names if they exist.
         Library library = libraries[i];
         library.parent = this;
@@ -5653,7 +5601,7 @@ class Component extends TreeNode {
     mainMethodName = getMemberReference(main);
   }
 
-  accept(TreeVisitor v) => v.visitComponent(this);
+  accept(TreeVisitor v) => v.visitProgram(this);
 
   visitChildren(Visitor v) {
     visitList(libraries, v);
@@ -5664,7 +5612,7 @@ class Component extends TreeNode {
     transformList(libraries, v, this);
   }
 
-  Component get enclosingComponent => this;
+  Program get enclosingProgram => this;
 
   /// Translates an offset to line and column numbers in the given file.
   Location getLocation(Uri file, int offset) {
@@ -5852,7 +5800,7 @@ class Source {
     RangeError.checkValueInInterval(line, 1, lineStarts.length, 'line');
     if (source == null) return null;
 
-    cachedText ??= utf8.decode(source, allowMalformed: true);
+    cachedText ??= UTF8.decode(source, allowMalformed: true);
     // -1 as line numbers start at 1.
     int index = line - 1;
     if (index + 1 == lineStarts.length) {
@@ -5987,9 +5935,9 @@ CanonicalName getCanonicalNameOfTypedef(Typedef typedef_) {
 /// static analysis and runtime behavior of the library are unaffected.
 const informative = null;
 
-Location _getLocationInComponent(Component component, Uri fileUri, int offset) {
-  if (component != null) {
-    return component.getLocation(fileUri, offset);
+Location _getLocationInProgram(Program program, Uri fileUri, int offset) {
+  if (program != null) {
+    return program.getLocation(fileUri, offset);
   } else {
     return new Location(fileUri, TreeNode.noOffset, TreeNode.noOffset);
   }

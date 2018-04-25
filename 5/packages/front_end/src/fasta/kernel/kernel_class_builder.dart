@@ -4,12 +4,12 @@
 
 library fasta.kernel_class_builder;
 
+import 'package:front_end/src/fasta/fasta_codes.dart';
 import 'package:kernel/ast.dart'
     show
         Class,
         Constructor,
         DartType,
-        DynamicType,
         Expression,
         Field,
         FunctionNode,
@@ -27,9 +27,7 @@ import 'package:kernel/ast.dart'
 
 import 'package:kernel/class_hierarchy.dart' show ClassHierarchy;
 
-import 'package:kernel/clone.dart' show CloneWithoutBody;
-
-import 'package:kernel/type_algebra.dart' show Substitution, getSubstitutionMap;
+import 'package:kernel/type_algebra.dart' show Substitution;
 
 import 'package:kernel/type_environment.dart' show TypeEnvironment;
 
@@ -37,12 +35,10 @@ import '../dill/dill_member_builder.dart' show DillMemberBuilder;
 
 import '../fasta_codes.dart'
     show
-        Message,
         messagePatchClassOrigin,
         messagePatchClassTypeVariablesMismatch,
         messagePatchDeclarationMismatch,
         messagePatchDeclarationOrigin,
-        noLength,
         templateOverriddenMethodCause,
         templateOverrideFewerNamedArguments,
         templateOverrideFewerPositionalArguments,
@@ -53,11 +49,7 @@ import '../fasta_codes.dart'
         templateOverrideTypeVariablesMismatch,
         templateRedirectionTargetNotFound;
 
-import '../names.dart' show noSuchMethodName;
-
 import '../problems.dart' show unexpected, unhandled, unimplemented;
-
-import '../type_inference/type_schema.dart' show UnknownType;
 
 import 'kernel_builder.dart'
     show
@@ -66,7 +58,6 @@ import 'kernel_builder.dart'
         ConstructorReferenceBuilder,
         KernelLibraryBuilder,
         KernelProcedureBuilder,
-        KernelRedirectingFactoryBuilder,
         KernelTypeBuilder,
         KernelTypeVariableBuilder,
         LibraryBuilder,
@@ -144,24 +135,10 @@ abstract class KernelClassBuilder
   Supertype buildSupertype(
       LibraryBuilder library, List<KernelTypeBuilder> arguments) {
     Class cls = isPatch ? origin.target : this.cls;
-    arguments ??= calculatedBounds;
     if (arguments != null) {
       return new Supertype(cls, buildTypeArguments(library, arguments));
     } else {
       return cls.asRawSupertype;
-    }
-  }
-
-  Supertype buildMixedInType(
-      LibraryBuilder library, List<KernelTypeBuilder> arguments) {
-    Class cls = isPatch ? origin.target : this.cls;
-    if (arguments != null) {
-      return new Supertype(cls, buildTypeArguments(library, arguments));
-    } else {
-      return new Supertype(
-          cls,
-          new List<DartType>.filled(
-              cls.typeParameters.length, const UnknownType()));
     }
   }
 
@@ -178,7 +155,7 @@ abstract class KernelClassBuilder
           unexpected(
               "$fileUri", "${builder.parent.fileUri}", charOffset, fileUri);
         }
-        if (builder is KernelRedirectingFactoryBuilder) {
+        if (builder is KernelProcedureBuilder && builder.isFactory) {
           // Compute the immediate redirection target, not the effective.
           ConstructorReferenceBuilder redirectionTarget =
               builder.redirectionTarget;
@@ -186,36 +163,16 @@ abstract class KernelClassBuilder
             Builder targetBuilder = redirectionTarget.target;
             addRedirectingConstructor(builder, library);
             if (targetBuilder is ProcedureBuilder) {
-              List<DartType> typeArguments = builder.typeArguments;
-              if (typeArguments == null) {
-                // TODO(32049) If type arguments aren't specified, they should
-                // be inferred.  Currently, the inference is not performed.
-                // The code below is a workaround.
-                typeArguments = new List.filled(
-                    targetBuilder.target.enclosingClass.typeParameters.length,
-                    const DynamicType());
-              }
-              builder.setRedirectingFactoryBody(
-                  targetBuilder.target, typeArguments);
+              builder.setRedirectingFactoryBody(targetBuilder.target);
             } else if (targetBuilder is DillMemberBuilder) {
-              List<DartType> typeArguments = builder.typeArguments;
-              if (typeArguments == null) {
-                // TODO(32049) If type arguments aren't specified, they should
-                // be inferred.  Currently, the inference is not performed.
-                // The code below is a workaround.
-                typeArguments = new List.filled(
-                    targetBuilder.target.enclosingClass.typeParameters.length,
-                    const DynamicType());
-              }
-              builder.setRedirectingFactoryBody(
-                  targetBuilder.member, typeArguments);
+              builder.setRedirectingFactoryBody(targetBuilder.member);
             } else {
               var message = templateRedirectionTargetNotFound
                   .withArguments(redirectionTarget.fullNameForErrors);
               if (builder.isConst) {
-                addCompileTimeError(message, builder.charOffset, noLength);
+                addCompileTimeError(message, builder.charOffset);
               } else {
-                addProblem(message, builder.charOffset, noLength);
+                addProblem(message, builder.charOffset);
               }
               // CoreTypes aren't computed yet, and this is the outline
               // phase. So we can't and shouldn't create a method body.
@@ -288,72 +245,6 @@ abstract class KernelClassBuilder
     });
   }
 
-  // TODO(dmitryas): Find a better place for this routine.
-  static bool hasUserDefinedNoSuchMethod(
-      Class klass, ClassHierarchy hierarchy) {
-    Member noSuchMethod = hierarchy.getDispatchTarget(klass, noSuchMethodName);
-    // `Object` doesn't have a superclass reference.
-    return noSuchMethod != null &&
-        noSuchMethod.enclosingClass.superclass != null;
-  }
-
-  void addNoSuchMethodForwarderForProcedure(
-      Procedure procedure, ClassHierarchy hierarchy) {
-    CloneWithoutBody cloner = new CloneWithoutBody(
-        typeSubstitution: getSubstitutionMap(
-            hierarchy.getClassAsInstanceOf(cls, procedure.enclosingClass)));
-    Procedure cloned = cloner.clone(procedure);
-    cloned.isAbstract = true;
-    cloned.isNoSuchMethodForwarder = true;
-
-    String name = cloned.name.name;
-    cls.procedures.add(cloned);
-    cloned.parent = cls;
-    DillMemberBuilder memberBuilder = new DillMemberBuilder(cloned, this);
-    memberBuilder.next = scopeBuilder[name];
-    scopeBuilder.addMember(name, memberBuilder);
-  }
-
-  void addNoSuchMethodForwarders(ClassHierarchy hierarchy) {
-    if (!hasUserDefinedNoSuchMethod(cls, hierarchy)) {
-      return;
-    }
-
-    Set<Name> existingForwardersNames = new Set<Name>();
-    if (cls.superclass != null &&
-        hasUserDefinedNoSuchMethod(cls.superclass, hierarchy)) {
-      List<Member> concrete = hierarchy.getDispatchTargets(cls.superclass);
-      for (Member member in hierarchy.getInterfaceMembers(cls.superclass)) {
-        if (ClassHierarchy.findMemberByName(concrete, member.name) == null) {
-          existingForwardersNames.add(member.name);
-        }
-      }
-    }
-    if (cls.mixedInClass != null &&
-        hasUserDefinedNoSuchMethod(cls.mixedInClass, hierarchy)) {
-      List<Member> concrete = hierarchy.getDispatchTargets(cls.mixedInClass);
-      for (Member member in hierarchy.getInterfaceMembers(cls.mixedInClass)) {
-        if (ClassHierarchy.findMemberByName(concrete, member.name) == null) {
-          existingForwardersNames.add(member.name);
-        }
-      }
-    }
-
-    List<Member> concrete = hierarchy.getDispatchTargets(cls);
-    List<Member> declared = hierarchy.getDeclaredMembers(cls);
-    for (Member member in hierarchy.getInterfaceMembers(cls)) {
-      if (ClassHierarchy.findMemberByName(concrete, member.name) == null &&
-          !existingForwardersNames.contains(member.name)) {
-        if (ClassHierarchy.findMemberByName(declared, member.name) != null) {
-          Procedure procedure = member;
-          procedure.isNoSuchMethodForwarder = true;
-        } else {
-          addNoSuchMethodForwarderForProcedure(member, hierarchy);
-        }
-      }
-    }
-  }
-
   Uri _getMemberUri(Member member) {
     if (member is Field) return member.fileUri;
     if (member is Procedure) return member.fileUri;
@@ -381,11 +272,10 @@ abstract class KernelClassBuilder
               "${interfaceMember.enclosingClass.name}::"
               "${interfaceMember.name.name}"),
           declaredMember.fileOffset,
-          noLength,
           context: templateOverriddenMethodCause
               .withArguments(interfaceMember.name.name)
-              .withLocation(_getMemberUri(interfaceMember),
-                  interfaceMember.fileOffset, noLength));
+              .withLocation(
+                  _getMemberUri(interfaceMember), interfaceMember.fileOffset));
     } else if (library.loader.target.backendTarget.strongMode &&
         declaredFunction?.typeParameters != null) {
       var substitution = <TypeParameter, DartType>{};
@@ -444,11 +334,11 @@ abstract class KernelClassBuilder
             interfaceType);
         fileOffset = declaredParameter.fileOffset;
       }
-      library.addCompileTimeError(message, fileOffset, noLength, fileUri,
+      library.addCompileTimeError(message, fileOffset, fileUri,
           context: templateOverriddenMethodCause
               .withArguments(interfaceMember.name.name)
-              .withLocation(_getMemberUri(interfaceMember),
-                  interfaceMember.fileOffset, noLength));
+              .withLocation(
+                  _getMemberUri(interfaceMember), interfaceMember.fileOffset));
       return true;
     }
     return false;
@@ -495,11 +385,10 @@ abstract class KernelClassBuilder
               "${interfaceMember.enclosingClass.name}::"
               "${interfaceMember.name.name}"),
           declaredMember.fileOffset,
-          noLength,
           context: templateOverriddenMethodCause
               .withArguments(interfaceMember.name.name)
-              .withLocation(interfaceMember.fileUri, interfaceMember.fileOffset,
-                  noLength));
+              .withLocation(
+                  interfaceMember.fileUri, interfaceMember.fileOffset));
     }
     if (interfaceFunction.requiredParameterCount <
         declaredFunction.requiredParameterCount) {
@@ -509,11 +398,10 @@ abstract class KernelClassBuilder
               "${interfaceMember.enclosingClass.name}::"
               "${interfaceMember.name.name}"),
           declaredMember.fileOffset,
-          noLength,
           context: templateOverriddenMethodCause
               .withArguments(interfaceMember.name.name)
-              .withLocation(interfaceMember.fileUri, interfaceMember.fileOffset,
-                  noLength));
+              .withLocation(
+                  interfaceMember.fileUri, interfaceMember.fileOffset));
     }
     for (int i = 0;
         i < declaredFunction.positionalParameters.length &&
@@ -542,26 +430,15 @@ abstract class KernelClassBuilder
               "${interfaceMember.enclosingClass.name}::"
               "${interfaceMember.name.name}"),
           declaredMember.fileOffset,
-          noLength,
           context: templateOverriddenMethodCause
               .withArguments(interfaceMember.name.name)
-              .withLocation(interfaceMember.fileUri, interfaceMember.fileOffset,
-                  noLength));
+              .withLocation(
+                  interfaceMember.fileUri, interfaceMember.fileOffset));
     }
-    int compareNamedParameters(VariableDeclaration p0, VariableDeclaration p1) {
-      return p0.name.compareTo(p1.name);
-    }
-
-    List<VariableDeclaration> sortedFromDeclared =
-        new List.from(declaredFunction.namedParameters)
-          ..sort(compareNamedParameters);
-    List<VariableDeclaration> sortedFromInterface =
-        new List.from(interfaceFunction.namedParameters)
-          ..sort(compareNamedParameters);
     Iterator<VariableDeclaration> declaredNamedParameters =
-        sortedFromDeclared.iterator;
+        declaredFunction.namedParameters.iterator;
     Iterator<VariableDeclaration> interfaceNamedParameters =
-        sortedFromInterface.iterator;
+        interfaceFunction.namedParameters.iterator;
     outer:
     while (declaredNamedParameters.moveNext() &&
         interfaceNamedParameters.moveNext()) {
@@ -575,11 +452,10 @@ abstract class KernelClassBuilder
                   "${interfaceMember.enclosingClass.name}::"
                   "${interfaceMember.name.name}"),
               declaredMember.fileOffset,
-              noLength,
               context: templateOverriddenMethodCause
                   .withArguments(interfaceMember.name.name)
-                  .withLocation(interfaceMember.fileUri,
-                      interfaceMember.fileOffset, noLength));
+                  .withLocation(
+                      interfaceMember.fileUri, interfaceMember.fileOffset));
           break outer;
         }
       }
@@ -675,9 +551,8 @@ abstract class KernelClassBuilder
       int patchLength = patch.typeVariables?.length ?? 0;
       if (originLength != patchLength) {
         patch.addCompileTimeError(
-            messagePatchClassTypeVariablesMismatch, patch.charOffset, noLength,
-            context: messagePatchClassOrigin.withLocation(
-                fileUri, charOffset, noLength));
+            messagePatchClassTypeVariablesMismatch, patch.charOffset,
+            context: messagePatchClassOrigin.withLocation(fileUri, charOffset));
       } else if (typeVariables != null) {
         int count = 0;
         for (KernelTypeVariableBuilder t in patch.typeVariables) {
@@ -685,10 +560,10 @@ abstract class KernelClassBuilder
         }
       }
     } else {
-      library.addCompileTimeError(messagePatchDeclarationMismatch,
-          patch.charOffset, noLength, patch.fileUri,
-          context: messagePatchDeclarationOrigin.withLocation(
-              fileUri, charOffset, noLength));
+      library.addCompileTimeError(
+          messagePatchDeclarationMismatch, patch.charOffset, patch.fileUri,
+          context:
+              messagePatchDeclarationOrigin.withLocation(fileUri, charOffset));
     }
   }
 

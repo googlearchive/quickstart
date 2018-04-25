@@ -2,27 +2,27 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'dart:async' show Future;
+import 'dart:async';
+import 'dart:io';
 
-import 'dart:io' show BytesBuilder, File, IOSink;
+import 'package:front_end/src/scanner/token.dart' show Token;
+import 'package:kernel/ast.dart';
+import 'package:kernel/binary/ast_to_binary.dart';
+import 'package:kernel/binary/limited_ast_to_binary.dart';
+import 'package:kernel/text/ast_to_text.dart';
 
-import 'package:kernel/ast.dart' show Library, Component;
+/// A null-aware alternative to `token.offset`.  If [token] is `null`, returns
+/// `TreeNode.noOffset`.
+int offsetForToken(Token token) =>
+    token == null ? TreeNode.noOffset : token.offset;
 
-import 'package:kernel/binary/ast_to_binary.dart' show BinaryPrinter;
-
-import 'package:kernel/binary/limited_ast_to_binary.dart'
-    show LimitedBinaryPrinter;
-
-import 'package:kernel/text/ast_to_text.dart' show Printer;
-
-/// Print the given [component].  Do nothing if it is `null`.  If the
+/// Print the given [program].  Do nothing if it is `null`.  If the
 /// [libraryFilter] is provided, then only libraries that satisfy it are
 /// printed.
-void printComponentText(Component component,
-    {bool libraryFilter(Library library)}) {
-  if (component == null) return;
+void printProgramText(Program program, {bool libraryFilter(Library library)}) {
+  if (program == null) return;
   StringBuffer sb = new StringBuffer();
-  for (Library library in component.libraries) {
+  for (Library library in program.libraries) {
     if (libraryFilter != null && !libraryFilter(library)) continue;
     Printer printer = new Printer(sb);
     printer.writeLibraryFile(library);
@@ -30,8 +30,8 @@ void printComponentText(Component component,
   print(sb);
 }
 
-/// Write [component] to file only including libraries that match [filter].
-Future<Null> writeComponentToFile(Component component, Uri uri,
+/// Write [program] to file only including libraries that match [filter].
+Future<Null> writeProgramToFile(Program program, Uri uri,
     {bool filter(Library library)}) async {
   File output = new File.fromUri(uri);
   IOSink sink = output.openWrite();
@@ -39,22 +39,22 @@ Future<Null> writeComponentToFile(Component component, Uri uri,
     BinaryPrinter printer = filter == null
         ? new BinaryPrinter(sink)
         : new LimitedBinaryPrinter(sink, filter ?? (_) => true, false);
-    printer.writeComponentFile(component);
-    component.unbindCanonicalNames();
+    printer.writeProgramFile(program);
+    program.unbindCanonicalNames();
   } finally {
     await sink.close();
   }
 }
 
-/// Serialize the libraries in [component] that match [filter].
-List<int> serializeComponent(Component component,
+/// Serialize the libraries in [program] that match [filter].
+List<int> serializeProgram(Program program,
     {bool filter(Library library), bool excludeUriToSource: false}) {
   ByteSink byteSink = new ByteSink();
   BinaryPrinter printer = filter == null && !excludeUriToSource
       ? new BinaryPrinter(byteSink)
       : new LimitedBinaryPrinter(
           byteSink, filter ?? (_) => true, excludeUriToSource);
-  printer.writeComponentFile(component);
+  printer.writeProgramFile(program);
   return byteSink.builder.takeBytes();
 }
 

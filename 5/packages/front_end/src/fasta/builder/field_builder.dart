@@ -27,5 +27,5 @@ abstract class FieldBuilder<T> extends MemberBuilder {
 
   bool get isField => true;
 
-  bool get hasTypeInferredFromInitializer;
+  bool get hasImplicitType;
 }

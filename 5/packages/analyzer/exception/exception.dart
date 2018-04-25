@@ -27,7 +27,7 @@ class AnalysisException implements Exception {
 
   String toString() {
     StringBuffer buffer = new StringBuffer();
-    buffer.write('$runtimeType: ');
+    buffer.write("AnalysisException: ");
     buffer.writeln(message);
     if (cause != null) {
       buffer.write('Caused by ');

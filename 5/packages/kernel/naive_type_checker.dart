@@ -17,16 +17,9 @@ abstract class FailureListener {
 class StrongModeTypeChecker extends type_checker.TypeChecker {
   final FailureListener failures;
 
-  StrongModeTypeChecker(FailureListener failures, Component component,
+  StrongModeTypeChecker(FailureListener failures, Program program,
       {bool ignoreSdk: false})
-      : this._(
-            failures,
-            new CoreTypes(component),
-            new ClassHierarchy(component,
-                onAmbiguousSupertypes: (Class cls, Supertype s0, Supertype s1) {
-              failures.reportFailure(
-                  cls, "$cls can't implement both $s1 and $s1");
-            }),
+      : this._(failures, new CoreTypes(program), new ClassHierarchy(program),
             ignoreSdk);
 
   StrongModeTypeChecker._(this.failures, CoreTypes coreTypes,

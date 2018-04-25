@@ -56,6 +56,6 @@ Future<List<int>> compile(InitializedCompilerState compilerState,
   processedOpts.inputs.addAll(inputs);
 
   var result = await generateKernel(processedOpts,
-      buildSummary: true, buildComponent: false, truncateSummary: true);
+      buildSummary: true, buildProgram: false, truncateSummary: true);
   return result?.summary;
 }

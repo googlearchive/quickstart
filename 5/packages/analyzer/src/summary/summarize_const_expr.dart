@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library serialization.summarize_const_expr;
+
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/token.dart';
 import 'package:analyzer/dart/element/type.dart' show DartType;
@@ -11,7 +13,7 @@ import 'package:analyzer/src/summary/idl.dart';
 /**
  * Serialize the given constructor initializer [node].
  */
-UnlinkedConstructorInitializerBuilder serializeConstructorInitializer(
+UnlinkedConstructorInitializer serializeConstructorInitializer(
     ConstructorInitializer node,
     UnlinkedExprBuilder serializeConstExpr(Expression expr)) {
   if (node is ConstructorFieldInitializer) {
@@ -173,13 +175,6 @@ abstract class AbstractConstExprSerializer {
   List<int> serializeFunctionExpression(FunctionExpression functionExpression);
 
   /**
-   * Return [EntityRefBuilder] that corresponds to the [type], which is defined
-   * using generic function type syntax. These may appear as the type arguments
-   * of a const list, etc.
-   */
-  EntityRefBuilder serializeGenericFunctionType(GenericFunctionType type);
-
-  /**
    * Return [EntityRefBuilder] that corresponds to the given [identifier].
    */
   EntityRefBuilder serializeIdentifier(Identifier identifier);
@@ -190,12 +185,28 @@ abstract class AbstractConstExprSerializer {
    */
   EntityRefBuilder serializeIdentifierSequence(Expression expr);
 
-  void serializeInstanceCreation(EntityRefBuilder constructor,
-      ArgumentList argumentList, bool typeArgumentsProvided) {
-    _serializeArguments(argumentList, typeArgumentsProvided);
+  void serializeInstanceCreation(
+      EntityRefBuilder constructor, ArgumentList argumentList) {
+    _serializeArguments(argumentList);
     references.add(constructor);
     operations.add(UnlinkedExprOperation.invokeConstructor);
   }
+
+  /**
+   * Return [EntityRefBuilder] that corresponds to the [type] with the given
+   * [name] and [arguments].  It is expected that [type] corresponds to the
+   * given [name] and [arguments].  The parameter [type] might be `null` if the
+   * type is not resolved.
+   */
+  EntityRefBuilder serializeTypeName(
+      DartType type, Identifier name, TypeArgumentList arguments);
+
+  /**
+   * Return [EntityRefBuilder] that corresponds to the [type], which is defined
+   * using generic function type syntax. These may appear as the type arguments
+   * of a const list, etc.
+   */
+  EntityRefBuilder serializeGenericFunctionType(GenericFunctionType type);
 
   /**
    * Return [EntityRefBuilder] that corresponds to the given [type].
@@ -210,15 +221,6 @@ abstract class AbstractConstExprSerializer {
     throw new ArgumentError(
         'Cannot serialize an instance of ${type.runtimeType}');
   }
-
-  /**
-   * Return [EntityRefBuilder] that corresponds to the [type] with the given
-   * [name] and [arguments].  It is expected that [type] corresponds to the
-   * given [name] and [arguments].  The parameter [type] might be `null` if the
-   * type is not resolved.
-   */
-  EntityRefBuilder serializeTypeName(
-      DartType type, Identifier name, TypeArgumentList arguments);
 
   /**
    * Return the [UnlinkedExprBuilder] that corresponds to the state of this
@@ -366,8 +368,7 @@ abstract class AbstractConstExprSerializer {
       serializeInstanceCreation(
           serializeConstructorRef(typeName.type, typeName.name,
               typeName.typeArguments, expr.constructorName.name),
-          expr.argumentList,
-          typeName.typeArguments != null);
+          expr.argumentList);
     } else if (expr is ListLiteral) {
       _serializeListLiteral(expr);
     } else if (expr is MapLiteral) {
@@ -440,9 +441,8 @@ abstract class AbstractConstExprSerializer {
     }
   }
 
-  void _serializeArguments(
-      ArgumentList argumentList, bool typeArgumentsProvided) {
-    if (forConst || !typeArgumentsProvided) {
+  void _serializeArguments(ArgumentList argumentList) {
+    if (forConst) {
       List<Expression> arguments = argumentList.arguments;
       // Serialize the arguments.
       List<String> argumentNames = <String>[];
@@ -601,7 +601,7 @@ abstract class AbstractConstExprSerializer {
     ArgumentList argumentList = invocation.argumentList;
     if (_isIdentifierSequence(methodName)) {
       EntityRefBuilder ref = serializeIdentifierSequence(methodName);
-      _serializeArguments(argumentList, invocation.typeArguments != null);
+      _serializeArguments(argumentList);
       references.add(ref);
       _serializeTypeArguments(invocation.typeArguments);
       operations.add(UnlinkedExprOperation.invokeMethodRef);
@@ -609,7 +609,7 @@ abstract class AbstractConstExprSerializer {
       if (!invocation.isCascaded) {
         _serialize(target);
       }
-      _serializeArguments(argumentList, invocation.typeArguments != null);
+      _serializeArguments(argumentList);
       strings.add(methodName.name);
       _serializeTypeArguments(invocation.typeArguments);
       operations.add(UnlinkedExprOperation.invokeMethod);

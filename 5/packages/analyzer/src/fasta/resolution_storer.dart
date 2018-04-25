@@ -4,6 +4,7 @@
 
 import 'package:analyzer/src/fasta/resolution_applier.dart';
 import 'package:front_end/src/fasta/kernel/kernel_shadow_ast.dart';
+import 'package:front_end/src/fasta/type_inference/type_inference_listener.dart';
 import 'package:kernel/ast.dart';
 import 'package:kernel/type_algebra.dart';
 
@@ -191,7 +192,7 @@ class NullType implements DartType {
 
 /// Type inference listener that records inferred types for later use by
 /// [ResolutionApplier].
-class ResolutionStorer {
+class ResolutionStorer extends TypeInferenceListener {
   /// The offset that is used when the actual offset is not know.
   /// The consumer of information should not validate this offset.
   static const UNKNOWN_OFFSET = -2;
@@ -208,11 +209,13 @@ class ResolutionStorer {
 
   ResolutionStorer(this._declarations, this._references, this._types);
 
+  @override
   void asExpressionExit(AsExpression expression, DartType inferredType) {
     _recordType(expression.type, expression.fileOffset);
     _recordType(inferredType, expression.fileOffset);
   }
 
+  @override
   void cascadeExpressionExit(Let expression, DartType inferredType) {
     // Overridden so that the type of the expression will not be recorded. We
     // don't need to record the type because the type is always the same as the
@@ -220,6 +223,7 @@ class ResolutionStorer {
     // correctly apply the type even if we recorded it.
   }
 
+  @override
   void catchStatementEnter(Catch node) {
     _recordType(node.guard, node.fileOffset);
 
@@ -236,6 +240,7 @@ class ResolutionStorer {
     }
   }
 
+  @override
   void constructorInvocationEnter(InvocationExpression expression,
       String prefixName, DartType typeContext) {
     _recordImportPrefix(prefixName);
@@ -243,6 +248,7 @@ class ResolutionStorer {
     _deferType(expression.fileOffset);
   }
 
+  @override
   void constructorInvocationExit(
       InvocationExpression expression, DartType inferredType) {
     _replaceType(inferredType);
@@ -255,6 +261,7 @@ class ResolutionStorer {
     }
   }
 
+  @override
   void fieldInitializerEnter(FieldInitializer initializer) {
     _recordReference(initializer.field, initializer.fileOffset);
   }
@@ -264,6 +271,7 @@ class ResolutionStorer {
     assert(_deferredTypeSlots.isEmpty);
   }
 
+  @override
   void forInStatementEnter(ForInStatement statement,
       VariableDeclaration variable, Expression write) {
     if (variable != null) {
@@ -287,6 +295,7 @@ class ResolutionStorer {
     }
   }
 
+  @override
   void forInStatementExit(
       ForInStatement statement, VariableDeclaration variable) {
     if (variable != null) {
@@ -296,35 +305,47 @@ class ResolutionStorer {
 
   void functionDeclarationEnter(FunctionDeclaration statement) {
     _recordDeclaration(statement.variable, statement.fileOffset);
+    super.functionDeclarationEnter(statement);
   }
 
+  @override
   void functionExpressionEnter(
       FunctionExpression expression, DartType typeContext) {
     _recordDeclaration(expression, expression.fileOffset);
+    super.functionExpressionEnter(expression, typeContext);
   }
 
+  @override
   void functionExpressionExit(
       FunctionExpression expression, DartType inferredType) {
     // We don't need to record the inferred type.
     // It is already set in the function declaration.
   }
 
+  @override
   void genericExpressionEnter(
-      String expressionType, Expression expression, DartType typeContext) {}
+      String expressionType, Expression expression, DartType typeContext) {
+    super.genericExpressionEnter(expressionType, expression, typeContext);
+  }
 
+  @override
   void genericExpressionExit(
       String expressionType, Expression expression, DartType inferredType) {
     _recordType(inferredType, expression.fileOffset);
+    super.genericExpressionExit(expressionType, expression, inferredType);
   }
 
+  @override
   void ifNullBeforeRhs(Expression expression) {
     _deferType(expression.fileOffset);
   }
 
+  @override
   void ifNullExit(Expression expression, DartType inferredType) {
     _replaceType(inferredType);
   }
 
+  @override
   void indexAssignAfterReceiver(Expression write, DartType typeContext) {
     _deferReference(write.fileOffset);
     _recordType(const IndexAssignNullFunctionType(), write.fileOffset);
@@ -333,6 +354,7 @@ class ResolutionStorer {
     _deferType(write.fileOffset);
   }
 
+  @override
   void indexAssignExit(Expression expression, Expression write,
       Member writeMember, Procedure combiner, DartType inferredType) {
     _replaceReference(writeMember);
@@ -342,6 +364,7 @@ class ResolutionStorer {
     _recordType(inferredType, write.fileOffset);
   }
 
+  @override
   void isExpressionExit(IsExpression expression, DartType inferredType) {
     _recordType(expression.type, expression.fileOffset);
     _recordType(inferredType, expression.fileOffset);
@@ -353,15 +376,18 @@ class ResolutionStorer {
     _recordType(inferredType, expression.fileOffset);
   }
 
+  @override
   void logicalExpressionBeforeRhs(LogicalExpression expression) {
     _deferType(expression.fileOffset);
   }
 
+  @override
   void logicalExpressionExit(
       LogicalExpression expression, DartType inferredType) {
     _replaceType(inferredType);
   }
 
+  @override
   void methodInvocationBeforeArgs(Expression expression, bool isImplicitCall) {
     if (!isImplicitCall) {
       // When the invocation target is `VariableGet`, we record the target
@@ -373,8 +399,10 @@ class ResolutionStorer {
     _deferType(expression.fileOffset); // invoke type
     _deferType(expression.fileOffset); // type arguments
     _deferType(expression.fileOffset); // result type
+    super.methodInvocationBeforeArgs(expression, isImplicitCall);
   }
 
+  @override
   void methodInvocationExit(
       Expression expression,
       Arguments arguments,
@@ -399,8 +427,10 @@ class ResolutionStorer {
       _replaceReference(interfaceMember);
       _replaceType(const NullType()); // callee type
     }
+    super.genericExpressionExit("methodInvocation", expression, inferredType);
   }
 
+  @override
   void methodInvocationExitCall(
       Expression expression,
       Arguments arguments,
@@ -423,14 +453,18 @@ class ResolutionStorer {
       _replaceReference(const NullNode('explicit-call'));
       _replaceType(const NullType()); // callee type
     }
+    super.genericExpressionExit("methodInvocation", expression, inferredType);
   }
 
+  @override
   void propertyAssignEnter(
       Expression expression, Expression write, DartType typeContext) {
     _deferReference(write.fileOffset);
     _deferType(write.fileOffset);
+    super.propertyAssignEnter(expression, write, typeContext);
   }
 
+  @override
   void propertyAssignExit(
       Expression expression,
       Expression write,
@@ -446,20 +480,25 @@ class ResolutionStorer {
     _recordType(inferredType, write.fileOffset);
   }
 
+  @override
   void propertyGetExit(
       Expression expression, Member member, DartType inferredType) {
     _recordReference(new MemberGetterNode(member), expression.fileOffset);
+    super.propertyGetExit(expression, member, inferredType);
   }
 
+  @override
   void propertyGetExitCall(Expression expression, DartType inferredType) {
     _recordReference(const NullNode('explicit-call'), expression.fileOffset);
     _recordType(const NullType(), expression.fileOffset);
   }
 
+  @override
   void redirectingInitializerEnter(RedirectingInitializer initializer) {
     _recordReference(initializer.target, initializer.fileOffset);
   }
 
+  @override
   void staticAssignEnter(
       Expression expression,
       String prefixName,
@@ -477,8 +516,11 @@ class ResolutionStorer {
 
     _deferReference(write.fileOffset);
     _deferType(write.fileOffset);
+    super.staticAssignEnter(
+        expression, prefixName, targetOffset, targetClass, write, typeContext);
   }
 
+  @override
   void staticAssignExit(
       Expression expression,
       Expression write,
@@ -493,6 +535,7 @@ class ResolutionStorer {
     _recordType(inferredType, write.fileOffset);
   }
 
+  @override
   void staticGetEnter(StaticGet expression, String prefixName, int targetOffset,
       Class targetClass, DartType typeContext) {
     // if there was an import prefix, record it.
@@ -502,13 +545,18 @@ class ResolutionStorer {
       _recordReference(targetClass, targetOffset);
       _recordType(targetClass.rawType, targetOffset);
     }
+    super.staticGetEnter(
+        expression, prefixName, targetOffset, targetClass, typeContext);
   }
 
+  @override
   void staticGetExit(StaticGet expression, DartType inferredType) {
     _recordReference(
         new MemberGetterNode(expression.target), expression.fileOffset);
+    super.staticGetExit(expression, inferredType);
   }
 
+  @override
   void staticInvocationEnter(StaticInvocation expression, String prefixName,
       int targetOffset, Class targetClass, DartType typeContext) {
     // if there was an import prefix, record it.
@@ -537,8 +585,11 @@ class ResolutionStorer {
     _deferType(expression.arguments.fileOffset); // invoke type
     _deferType(expression.arguments.fileOffset); // type arguments
     _deferType(expression.arguments.fileOffset); // result type
+    super.staticInvocationEnter(
+        expression, prefixName, targetOffset, targetClass, typeContext);
   }
 
+  @override
   void staticInvocationExit(
       StaticInvocation expression,
       FunctionType calleeType,
@@ -552,32 +603,40 @@ class ResolutionStorer {
         : substitution.substituteType(calleeType.withoutTypeParameters);
     _replaceType(invokeType);
     _replaceType(const NullType()); // callee type
+    super.genericExpressionExit("staticInvocation", expression, inferredType);
   }
 
+  @override
   void stringConcatenationExit(
       StringConcatenation expression, DartType inferredType) {
     // We don't need the type - we already know that it is String.
     // Moreover, the file offset for StringConcatenation is `-1`.
   }
 
+  @override
   void thisExpressionExit(ThisExpression expression, DartType inferredType) {}
 
   void typeLiteralEnter(@override TypeLiteral expression, String prefixName,
       DartType typeContext) {
     // if there was an import prefix, record it.
     _recordImportPrefix(prefixName);
+    super.typeLiteralEnter(expression, prefixName, typeContext);
   }
 
   void typeLiteralExit(TypeLiteral expression, DartType inferredType) {
     _recordReference(expression.type, expression.fileOffset);
+    super.typeLiteralExit(expression, inferredType);
   }
 
+  @override
   void variableAssignEnter(
       Expression expression, DartType typeContext, Expression write) {
     _deferReference(write.fileOffset);
     _deferType(write.fileOffset);
+    super.variableAssignEnter(expression, typeContext, write);
   }
 
+  @override
   void variableAssignExit(Expression expression, DartType writeContext,
       Expression write, Procedure combiner, DartType inferredType) {
     _replaceReference(write is VariableSet
@@ -589,16 +648,21 @@ class ResolutionStorer {
     _recordType(inferredType, write.fileOffset);
   }
 
+  @override
   void variableDeclarationEnter(VariableDeclaration statement) {
     _recordDeclaration(statement, statement.fileOffset);
     _deferType(statement.fileOffset);
+    super.variableDeclarationEnter(statement);
   }
 
+  @override
   void variableDeclarationExit(
       VariableDeclaration statement, DartType inferredType) {
     _replaceType(statement.type);
+    super.variableDeclarationExit(statement, inferredType);
   }
 
+  @override
   void variableGetExit(VariableGet expression, DartType inferredType) {
     /// Return `true` if the given [variable] declaration occurs in a let
     /// expression that is, or is part of, a cascade expression.

@@ -11,7 +11,7 @@ import 'package:analyzer/task/model.dart';
 /**
  * The default [ResultCachingPolicy], results are never flushed.
  */
-const ResultCachingPolicy DEFAULT_CACHING_POLICY =
+const ResultCachingPolicy<Object> DEFAULT_CACHING_POLICY =
     const SimpleResultCachingPolicy(-1, -1);
 
 /**
@@ -25,7 +25,7 @@ class ListResultDescriptorImpl<E> extends ResultDescriptorImpl<List<E>>
    * values associated with this result will remain in the cache.
    */
   ListResultDescriptorImpl(String name, List<E> defaultValue,
-      {ResultCachingPolicy cachingPolicy: DEFAULT_CACHING_POLICY})
+      {ResultCachingPolicy<List<E>> cachingPolicy: DEFAULT_CACHING_POLICY})
       : super(name, defaultValue, cachingPolicy: cachingPolicy);
 
   @override
@@ -59,7 +59,7 @@ class ResultDescriptorImpl<V> implements ResultDescriptor<V> {
   /**
    * The caching policy for results described by this descriptor.
    */
-  final ResultCachingPolicy cachingPolicy;
+  final ResultCachingPolicy<V> cachingPolicy;
 
   /**
    * Initialize a newly created analysis result to have the given [name] and
@@ -86,7 +86,7 @@ class ResultDescriptorImpl<V> implements ResultDescriptor<V> {
  * A simple [ResultCachingPolicy] implementation that consider all the objects
  * to be of the size `1`.
  */
-class SimpleResultCachingPolicy implements ResultCachingPolicy {
+class SimpleResultCachingPolicy<T> implements ResultCachingPolicy<T> {
   @override
   final int maxActiveSize;
 
@@ -96,7 +96,7 @@ class SimpleResultCachingPolicy implements ResultCachingPolicy {
   const SimpleResultCachingPolicy(this.maxActiveSize, this.maxIdleSize);
 
   @override
-  int measure(Object object) => 1;
+  int measure(T object) => 1;
 }
 
 /**

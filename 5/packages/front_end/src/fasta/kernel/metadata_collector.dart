@@ -7,7 +7,7 @@ import 'package:kernel/kernel.dart';
 /// The collector to add target specific metadata to.
 abstract class MetadataCollector {
   /// Metadata is remembered in this repository, so that when it is added
-  /// to a component, metadata is serialized with the component.
+  /// to a program, metadata is serialized with the program.
   MetadataRepository get repository;
 
   void setConstructorNameOffset(Member node, Object name);

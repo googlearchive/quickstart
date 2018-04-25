@@ -6,32 +6,27 @@
 library front_end.kernel_generator;
 
 import 'dart:async' show Future;
+import 'dart:async';
 
-import 'package:kernel/kernel.dart' show Component;
+import 'package:kernel/kernel.dart' show Program;
 
-import '../base/processed_options.dart' show ProcessedOptions;
-
-import '../fasta/compiler_context.dart' show CompilerContext;
-
-import '../fasta/fasta_codes.dart' show messageMissingMain, noLength;
-
-import '../fasta/severity.dart' show Severity;
-
-import '../kernel_generator_impl.dart'
-    show generateKernel, generateKernelInternal;
-
-import 'compiler_options.dart' show CompilerOptions;
+import 'compiler_options.dart';
+import '../base/processed_options.dart';
+import '../fasta/fasta_codes.dart';
+import '../fasta/compiler_context.dart';
+import '../fasta/severity.dart';
+import '../kernel_generator_impl.dart';
 
 /// Generates a kernel representation of the program whose main library is in
 /// the given [source].
 ///
-/// Intended for whole-program (non-modular) compilation.
+/// Intended for whole program (non-modular) compilation.
 ///
 /// Given the Uri of a file containing a program's `main` method, this function
 /// follows `import`, `export`, and `part` declarations to discover the whole
 /// program, and converts the result to Dart Kernel format.
 ///
-/// If `compileSdk` in [options] is true, the generated component will include
+/// If `compileSdk` in [options] is true, the generated program will include
 /// code for the SDK.
 ///
 /// If summaries are provided in [options], the compiler will use them instead
@@ -42,19 +37,18 @@ import 'compiler_options.dart' show CompilerOptions;
 /// The input [source] is expected to be a script with a main method, otherwise
 /// an error is reported.
 // TODO(sigmund): rename to kernelForScript?
-Future<Component> kernelForProgram(Uri source, CompilerOptions options) async {
+Future<Program> kernelForProgram(Uri source, CompilerOptions options) async {
   var pOptions = new ProcessedOptions(options, false, [source]);
   return await CompilerContext.runWithOptions(pOptions, (context) async {
-    var component = (await generateKernelInternal())?.component;
-    if (component == null) return null;
+    var program = (await generateKernelInternal())?.program;
+    if (program == null) return null;
 
-    if (component.mainMethod == null) {
-      context.options.report(
-          messageMissingMain.withLocation(source, -1, noLength),
-          Severity.error);
+    if (program.mainMethod == null) {
+      context.options
+          .report(messageMissingMain.withLocation(source, -1), Severity.error);
       return null;
     }
-    return component;
+    return program;
   });
 }
 
@@ -84,11 +78,11 @@ Future<Component> kernelForProgram(Uri source, CompilerOptions options) async {
 /// are also listed in the build unit sources, otherwise an error results.  (It
 /// is not permitted to refer to a part file declared in another build unit).
 ///
-/// The return value is a [Component] object with no main method set. The
-/// [Component] includes external libraries for those libraries loaded through
+/// The return value is a [Program] object with no main method set. The
+/// [Program] includes external libraries for those libraries loaded through
 /// summaries.
-Future<Component> kernelForComponent(
+Future<Program> kernelForBuildUnit(
     List<Uri> sources, CompilerOptions options) async {
   return (await generateKernel(new ProcessedOptions(options, true, sources)))
-      ?.component;
+      ?.program;
 }

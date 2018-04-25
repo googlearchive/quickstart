@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library analyzer.task.model;
+
 import 'dart:collection';
 import 'dart:developer';
 
@@ -178,10 +180,6 @@ abstract class AnalysisTask {
     if (inputs == null || !inputs.containsKey(name)) {
       throw new AnalysisException("Could not $description: missing $name");
     }
-    if (inputs[name] is! E) {
-      throw new AnalysisException(
-          "Could not $description: $name is a ${inputs[name].runtimeType} rather than a $E");
-    }
     return inputs[name] as E;
   }
 
@@ -352,7 +350,8 @@ abstract class ListResultDescriptor<E> implements ResultDescriptor<List<E>> {
    * values associated with this result will remain in the cache.
    */
   factory ListResultDescriptor(String name, List<E> defaultValue,
-      {ResultCachingPolicy cachingPolicy}) = ListResultDescriptorImpl<E>;
+          {ResultCachingPolicy<List<E>> cachingPolicy}) =
+      ListResultDescriptorImpl<E>;
 
   @override
   ListTaskInput<E> of(AnalysisTarget target, {bool flushOnAccess: false});
@@ -435,7 +434,7 @@ class ModificationTimeMismatchError {
  *
  * Clients may implement this class when implementing plugins.
  */
-abstract class ResultCachingPolicy {
+abstract class ResultCachingPolicy<T> {
   /**
    * Return the maximum total size of results that can be kept in the cache
    * while analysis is in progress.
@@ -451,7 +450,7 @@ abstract class ResultCachingPolicy {
   /**
    * Return the size of the given [object].
    */
-  int measure(Object object);
+  int measure(T object);
 }
 
 /**
@@ -476,12 +475,12 @@ abstract class ResultDescriptor<V> {
    * never evicted from the cache, and removed only when they are invalidated.
    */
   factory ResultDescriptor(String name, V defaultValue,
-      {ResultCachingPolicy cachingPolicy}) = ResultDescriptorImpl<V>;
+      {ResultCachingPolicy<V> cachingPolicy}) = ResultDescriptorImpl<V>;
 
   /**
    * Return the caching policy for results described by this descriptor.
    */
-  ResultCachingPolicy get cachingPolicy;
+  ResultCachingPolicy<V> get cachingPolicy;
 
   /**
    * Return the default value for results described by this descriptor.

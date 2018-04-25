@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 library kernel.ast_from_binary;
 
+// ignore: UNDEFINED_HIDDEN_NAME
 import 'dart:core' hide MapEntry;
 import 'dart:convert';
 import 'dart:typed_data';
@@ -22,7 +23,7 @@ class ParseError {
   String toString() => '$filename:$byteIndex: $message at $path';
 }
 
-class _ComponentIndex {
+class _ProgramIndex {
   int binaryOffsetForSourceTable;
   int binaryOffsetForStringTable;
   int binaryOffsetForCanonicalNames;
@@ -30,7 +31,7 @@ class _ComponentIndex {
   int mainMethodReference;
   List<int> libraryOffsets;
   int libraryCount;
-  int componentFileSizeInBytes;
+  int programFileSizeInBytes;
 }
 
 class BinaryBuilder {
@@ -48,7 +49,7 @@ class BinaryBuilder {
   List<CanonicalName> _linkTable;
   int _transformerFlags = 0;
   Library _currentLibrary;
-  int _componentStartOffset = 0;
+  int _programStartOffset = 0;
 
   // If something goes wrong, this list should indicate what library,
   // class, and member was being built.
@@ -61,15 +62,12 @@ class BinaryBuilder {
   /// will not be resolved correctly.
   bool _disableLazyReading = false;
 
-  BinaryBuilder(this._bytes, {this.filename, disableLazyReading = false})
-      : _disableLazyReading = disableLazyReading;
+  BinaryBuilder(this._bytes, [this.filename, this._disableLazyReading = false]);
 
   fail(String message) {
     throw new ParseError(message,
         byteIndex: _byteOffset, filename: filename, path: debugPath.join('::'));
   }
-
-  int get byteOffset => _byteOffset;
 
   int readByte() => _bytes[_byteOffset++];
 
@@ -128,15 +126,15 @@ class BinaryBuilder {
   /// Read metadataMappings section from the binary. Return [true] if
   /// any metadata mapping contains metadata with node references.
   /// In this case we need to disable lazy loading of the binary.
-  bool _readMetadataSection(Component component) {
+  bool _readMetadataSection(Program program) {
     // Default reader ignores metadata section entirely.
     return false;
   }
 
-  /// Process any pending metadata associations. Called once the Component
+  /// Process any pending metadata associations. Called once the Program
   /// is fully deserialized and metadata containing references to nodes can
   /// be safely parsed.
-  void _processPendingMetadataAssociations(Component component) {
+  void _processPendingMetadataAssociations(Program program) {
     // Default reader ignores metadata section entirely.
   }
 
@@ -342,14 +340,14 @@ class BinaryBuilder {
     }
   }
 
-  List<int> _indexComponents() {
+  List<int> _indexPrograms() {
     int savedByteOffset = _byteOffset;
     _byteOffset = _bytes.length - 4;
     List<int> index = <int>[];
     while (_byteOffset > 0) {
       int size = readUint32();
       int start = _byteOffset - size;
-      if (start < 0) throw "Invalid component file: Indicated size is invalid.";
+      if (start < 0) throw "Invalid program file: Indicated size is invalid.";
       index.add(size);
       _byteOffset = start - 4;
     }
@@ -357,65 +355,65 @@ class BinaryBuilder {
     return new List.from(index.reversed);
   }
 
-  /// Deserializes a kernel component and stores it in [component].
+  /// Deserializes a kernel program and stores it in [program].
   ///
-  /// When linking with a non-empty component, canonical names must have been
+  /// When linking with a non-empty program, canonical names must have been
   /// computed ahead of time.
   ///
   /// The input bytes may contain multiple files concatenated.
-  void readComponent(Component component) {
-    List<int> componentFileSizes = _indexComponents();
-    if (componentFileSizes.length > 1) {
+  void readProgram(Program program) {
+    List<int> programFileSizes = _indexPrograms();
+    if (programFileSizes.length > 1) {
       _disableLazyReading = true;
     }
-    int componentFileIndex = 0;
+    int programFileIndex = 0;
     while (_byteOffset < _bytes.length) {
-      _readOneComponent(component, componentFileSizes[componentFileIndex]);
-      ++componentFileIndex;
+      _readOneProgram(program, programFileSizes[programFileIndex]);
+      ++programFileIndex;
     }
   }
 
-  /// Reads a single component file from the input and loads it into [component],
-  /// overwriting and reusing any existing data in the component.
+  /// Reads a single program file from the input and loads it into [program],
+  /// overwriting and reusing any existing data in the program.
   ///
-  /// When linking with a non-empty component, canonical names must have been
+  /// When linking with a non-empty program, canonical names must have been
   /// computed ahead of time.
   ///
   /// This should *only* be used when there is a reason to not allow
   /// concatenated files.
-  void readSingleFileComponent(Component component) {
-    List<int> componentFileSizes = _indexComponents();
-    if (componentFileSizes.isEmpty) throw "Invalid component data.";
-    _readOneComponent(component, componentFileSizes[0]);
+  void readSingleFileProgram(Program program) {
+    List<int> programFileSizes = _indexPrograms();
+    if (programFileSizes.isEmpty) throw "Invalid program data.";
+    _readOneProgram(program, programFileSizes[0]);
     if (_byteOffset < _bytes.length) {
       if (_byteOffset + 3 < _bytes.length) {
         int magic = readUint32();
-        if (magic == Tag.ComponentFile) {
-          throw 'Concatenated component file given when a single component '
+        if (magic == Tag.ProgramFile) {
+          throw 'Concatenated program file given when a single program '
               'was expected.';
         }
       }
-      throw 'Unrecognized bytes following component data';
+      throw 'Unrecognized bytes following program data';
     }
   }
 
-  _ComponentIndex _readComponentIndex(int componentFileSize) {
+  _ProgramIndex _readProgramIndex(int programFileSize) {
     int savedByteIndex = _byteOffset;
 
-    _ComponentIndex result = new _ComponentIndex();
+    _ProgramIndex result = new _ProgramIndex();
 
     // There are two fields: file size and library count.
-    _byteOffset = _componentStartOffset + componentFileSize - (2) * 4;
+    _byteOffset = _programStartOffset + programFileSize - (2) * 4;
     result.libraryCount = readUint32();
     // Library offsets are used for start and end offsets, so there is one extra
     // element that this the end offset of the last library
     result.libraryOffsets = new List<int>(result.libraryCount + 1);
-    result.componentFileSizeInBytes = readUint32();
-    if (result.componentFileSizeInBytes != componentFileSize) {
-      throw 'Malformed binary: This component file\'s component index indicates that'
-          ' the filesize should be $componentFileSize but other component indexes'
+    result.programFileSizeInBytes = readUint32();
+    if (result.programFileSizeInBytes != programFileSize) {
+      throw 'Malformed binary: This program files program index indicates that'
+          ' the filesize should be $programFileSize but other program indexes'
           ' has indicated that the size should be '
-          '${result.componentFileSizeInBytes}.';
+          '${result.programFileSizeInBytes}.';
     }
 
     // Skip to the start of the index.
@@ -424,14 +422,14 @@ class BinaryBuilder {
     // source table offset. That's 6 fields + number of libraries.
     _byteOffset -= (result.libraryCount + 8) * 4;
 
-    // Now read the component index.
-    result.binaryOffsetForSourceTable = _componentStartOffset + readUint32();
-    result.binaryOffsetForCanonicalNames = _componentStartOffset + readUint32();
-    result.binaryOffsetForStringTable = _componentStartOffset + readUint32();
-    result.binaryOffsetForConstantTable = _componentStartOffset + readUint32();
+    // Now read the program index.
+    result.binaryOffsetForSourceTable = _programStartOffset + readUint32();
+    result.binaryOffsetForCanonicalNames = _programStartOffset + readUint32();
+    result.binaryOffsetForStringTable = _programStartOffset + readUint32();
+    result.binaryOffsetForConstantTable = _programStartOffset + readUint32();
     result.mainMethodReference = readUint32();
     for (int i = 0; i < result.libraryCount + 1; ++i) {
-      result.libraryOffsets[i] = _componentStartOffset + readUint32();
+      result.libraryOffsets[i] = _programStartOffset + readUint32();
     }
 
     _byteOffset = savedByteIndex;
@@ -439,11 +437,11 @@ class BinaryBuilder {
     return result;
   }
 
-  void _readOneComponent(Component component, int componentFileSize) {
-    _componentStartOffset = _byteOffset;
+  void _readOneProgram(Program program, int programFileSize) {
+    _programStartOffset = _byteOffset;
 
     final int magic = readUint32();
-    if (magic != Tag.ComponentFile) {
+    if (magic != Tag.ProgramFile) {
       throw fail('This is not a binary dart file. '
           'Magic number was: ${magic.toRadixString(16)}');
     }
@@ -454,22 +452,21 @@ class BinaryBuilder {
           '(found ${formatVersion}, expected ${Tag.BinaryFormatVersion})');
     }
 
-    // Read component index from the end of this ComponentFiles serialized data.
-    _ComponentIndex index = _readComponentIndex(componentFileSize);
+    // Read program index from the end of this ProgramFiles serialized data.
+    _ProgramIndex index = _readProgramIndex(programFileSize);
 
     _byteOffset = index.binaryOffsetForStringTable;
     readStringTable(_stringTable);
 
     _byteOffset = index.binaryOffsetForCanonicalNames;
-    readLinkTable(component.root);
+    readLinkTable(program.root);
 
     _byteOffset = index.binaryOffsetForStringTable;
-    _disableLazyReading =
-        _readMetadataSection(component) || _disableLazyReading;
+    _disableLazyReading = _readMetadataSection(program) || _disableLazyReading;
 
     _byteOffset = index.binaryOffsetForSourceTable;
     Map<Uri, Source> uriToSource = readUriToSource();
-    component.uriToSource.addAll(uriToSource);
+    program.uriToSource.addAll(uriToSource);
 
     _byteOffset = index.binaryOffsetForConstantTable;
     readConstantTable();
@@ -477,16 +474,16 @@ class BinaryBuilder {
     int numberOfLibraries = index.libraryCount;
     for (int i = 0; i < numberOfLibraries; ++i) {
       _byteOffset = index.libraryOffsets[i];
-      readLibrary(component, index.libraryOffsets[i + 1]);
+      readLibrary(program, index.libraryOffsets[i + 1]);
     }
 
     var mainMethod =
         getMemberReferenceFromInt(index.mainMethodReference, allowNull: true);
-    component.mainMethodName ??= mainMethod;
+    program.mainMethodName ??= mainMethod;
 
-    _processPendingMetadataAssociations(component);
+    _processPendingMetadataAssociations(program);
 
-    _byteOffset = _componentStartOffset + componentFileSize;
+    _byteOffset = _programStartOffset + programFileSize;
   }
 
   Map<Uri, Source> readUriToSource() {
@@ -575,7 +572,7 @@ class BinaryBuilder {
     }
   }
 
-  Library readLibrary(Component component, int endOffset) {
+  Library readLibrary(Program program, int endOffset) {
     // Read index.
     int savedByteOffset = _byteOffset;
 
@@ -589,7 +586,7 @@ class BinaryBuilder {
     _byteOffset = endOffset - (procedureCount + 3) * 4;
     int classCount = readUint32();
     for (int i = 0; i < procedureCount + 1; i++) {
-      procedureOffsets[i] = _componentStartOffset + readUint32();
+      procedureOffsets[i] = _programStartOffset + readUint32();
     }
     List<int> classOffsets = new List<int>(classCount + 1);
 
@@ -598,7 +595,7 @@ class BinaryBuilder {
     // (i.e. procedure count + class count + 4 fields).
     _byteOffset = endOffset - (procedureCount + classCount + 4) * 4;
     for (int i = 0; i < classCount + 1; i++) {
-      classOffsets[i] = _componentStartOffset + readUint32();
+      classOffsets[i] = _programStartOffset + readUint32();
     }
     _byteOffset = savedByteOffset;
 
@@ -612,7 +609,7 @@ class BinaryBuilder {
     if (library == null) {
       library =
           new Library(Uri.parse(canonicalName.name), reference: reference);
-      component.libraries.add(library..parent = component);
+      program.libraries.add(library..parent = program);
     }
     _currentLibrary = library;
     String name = readStringOrNullIfEmpty();
@@ -715,8 +712,8 @@ class BinaryBuilder {
   }
 
   LibraryPart readLibraryPart(Library library) {
-    var fileUri = readUriReference();
     var annotations = readExpressionList();
+    var fileUri = readUriReference();
     return new LibraryPart(annotations, fileUri)..parent = library;
   }
 
@@ -728,9 +725,9 @@ class BinaryBuilder {
     if (node == null) {
       node = new Typedef(null, null, reference: reference);
     }
-    Uri fileUri = readUriReference();
     int fileOffset = readOffset();
     String name = readStringReference();
+    Uri fileUri = readUriReference();
     node.annotations = readAnnotationList(node);
     readAndPushTypeParameterList(node.typeParameters, node);
     var type = readDartType();
@@ -758,7 +755,7 @@ class BinaryBuilder {
     // offsets (i.e. procedure count + 2 fields).
     _byteOffset = endOffset - (procedureCount + 2) * 4;
     for (int i = 0; i < procedureCount + 1; i++) {
-      procedureOffsets[i] = _componentStartOffset + readUint32();
+      procedureOffsets[i] = _programStartOffset + readUint32();
     }
     _byteOffset = savedByteOffset;
 
@@ -769,8 +766,6 @@ class BinaryBuilder {
     if (node == null) {
       node = new Class(reference: reference)..level = ClassLevel.Temporary;
     }
-
-    var fileUri = readUriReference();
     node.fileOffset = readOffset();
     node.fileEndOffset = readOffset();
     int flags = readByte();
@@ -783,6 +778,7 @@ class BinaryBuilder {
       node.level = level;
     }
     var name = readStringOrNullIfEmpty();
+    var fileUri = readUriReference();
     var annotations = readAnnotationList(node);
     assert(() {
       debugPath.add(node.name ?? 'normal-class');
@@ -842,12 +838,12 @@ class BinaryBuilder {
     if (node == null) {
       node = new Field(null, reference: reference);
     }
-    var fileUri = readUriReference();
     int fileOffset = readOffset();
     int fileEndOffset = readOffset();
     int flags = readByte();
     int flags2 = readByte();
     var name = readName();
+    var fileUri = readUriReference();
     var annotations = readAnnotationList(node);
     assert(() {
       debugPath.add(node.name?.name ?? 'field');
@@ -883,11 +879,11 @@ class BinaryBuilder {
     if (node == null) {
       node = new Constructor(null, reference: reference);
     }
-    var fileUri = readUriReference();
     var fileOffset = readOffset();
     var fileEndOffset = readOffset();
     var flags = readByte();
     var name = readName();
+    var fileUri = readUriReference();
     var annotations = readAnnotationList(node);
     assert(() {
       debugPath.add(node.name?.name ?? 'constructor');
@@ -927,13 +923,13 @@ class BinaryBuilder {
     if (node == null) {
       node = new Procedure(null, null, null, reference: reference);
     }
-    var fileUri = readUriReference();
     var fileOffset = readOffset();
     var fileEndOffset = readOffset();
     int kindIndex = readByte();
     var kind = ProcedureKind.values[kindIndex];
     var flags = readByte();
     var name = readName();
+    var fileUri = readUriReference();
     var annotations = readAnnotationList(node);
     assert(() {
       debugPath.add(node.name?.name ?? 'procedure');
@@ -984,11 +980,11 @@ class BinaryBuilder {
     if (node == null) {
       node = new RedirectingFactoryConstructor(null, reference: reference);
     }
-    var fileUri = readUriReference();
     var fileOffset = readOffset();
     var fileEndOffset = readOffset();
     var flags = readByte();
     var name = readName();
+    var fileUri = readUriReference();
     var annotations = readAnnotationList(node);
     debugPath.add(node.name?.name ?? 'redirecting-factory-constructor');
     var targetReference = readMemberReference();
@@ -1108,18 +1104,16 @@ class BinaryBuilder {
   void _setLazyLoadFunction(FunctionNode result, int oldLabelStackBase,
       int variableStackHeight, int typeParameterStackHeight) {
     final int savedByteOffset = _byteOffset;
-    final int componentStartOffset = _componentStartOffset;
+    final int programStartOffset = _programStartOffset;
     final List<TypeParameter> typeParameters = typeParameterStack.toList();
     final List<VariableDeclaration> variables = variableStack.toList();
-    final Library currentLibrary = _currentLibrary;
     result.lazyBuilder = () {
       _byteOffset = savedByteOffset;
-      _currentLibrary = currentLibrary;
       typeParameterStack.clear();
       typeParameterStack.addAll(typeParameters);
       variableStack.clear();
       variableStack.addAll(variables);
-      _componentStartOffset = componentStartOffset;
+      _programStartOffset = programStartOffset;
 
       result.body = readStatementOption();
       result.body?.parent = result;
@@ -1469,8 +1463,6 @@ class BinaryBuilder {
         return new ExpressionStatement(readExpression());
       case Tag.Block:
         return readBlock();
-      case Tag.AssertBlock:
-        return readAssertBlock();
       case Tag.EmptyStatement:
         return new EmptyStatement();
       case Tag.AssertStatement:
@@ -1613,13 +1605,6 @@ class BinaryBuilder {
     var body = readStatementList();
     variableStack.length = stackHeight;
     return new Block(body);
-  }
-
-  AssertBlock readAssertBlock() {
-    int stackHeight = variableStack.length;
-    var body = readStatementList();
-    variableStack.length = stackHeight;
-    return new AssertBlock(body);
   }
 
   Supertype readSupertype() {
@@ -1827,11 +1812,10 @@ class BinaryBuilderWithMetadata extends BinaryBuilder implements BinarySource {
   /// Note: each metadata subsection has its own mapping.
   List<Node> _referencedNodes;
 
-  BinaryBuilderWithMetadata(bytes, [filename])
-      : super(bytes, filename: filename);
+  BinaryBuilderWithMetadata(bytes, [filename]) : super(bytes, filename);
 
   @override
-  bool _readMetadataSection(Component component) {
+  bool _readMetadataSection(Program program) {
     bool containsNodeReferences = false;
 
     // At the beginning of this function _byteOffset points right past
@@ -1857,7 +1841,7 @@ class BinaryBuilderWithMetadata extends BinaryBuilder implements BinarySource {
       // UInt32 tag (fixed size StringReference)
       final tag = _stringTable[readUint32()];
 
-      final repository = component.metadata[tag];
+      final repository = program.metadata[tag];
       if (repository != null) {
         // Read nodeReferences (if any).
         Map<int, int> offsetToReferenceId;
@@ -1895,12 +1879,12 @@ class BinaryBuilderWithMetadata extends BinaryBuilder implements BinarySource {
   }
 
   @override
-  void _processPendingMetadataAssociations(Component component) {
+  void _processPendingMetadataAssociations(Program program) {
     if (_subsections == null) {
       return;
     }
 
-    _associateMetadata(component, _componentStartOffset);
+    _associateMetadata(program, _programStartOffset);
 
     for (var subsection in _subsections) {
       if (subsection.pending == null) {
@@ -1970,9 +1954,9 @@ class BinaryBuilderWithMetadata extends BinaryBuilder implements BinarySource {
   }
 
   @override
-  Library readLibrary(Component component, int endOffset) {
+  Library readLibrary(Program program, int endOffset) {
     final nodeOffset = _byteOffset;
-    final result = super.readLibrary(component, endOffset);
+    final result = super.readLibrary(program, endOffset);
     return _associateMetadata(result, nodeOffset);
   }
 

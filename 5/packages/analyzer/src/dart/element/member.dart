@@ -391,64 +391,40 @@ abstract class Member implements Element {
   String get documentationComment => _baseElement.documentationComment;
 
   @override
-  bool get hasAlwaysThrows => _baseElement.hasAlwaysThrows;
-
-  @override
-  bool get hasDeprecated => _baseElement.hasDeprecated;
-
-  @override
-  bool get hasFactory => _baseElement.hasFactory;
-
-  @override
-  bool get hasJS => _baseElement.hasJS;
-
-  @override
-  bool get hasOverride => _baseElement.hasOverride;
-
-  @override
-  bool get hasProtected => _baseElement.hasProtected;
-
-  @override
-  bool get hasRequired => _baseElement.hasRequired;
-
-  @override
-  bool get hasVisibleForTesting => _baseElement.hasVisibleForTesting;
-
-  @override
   int get id => _baseElement.id;
 
   @override
-  bool get isAlwaysThrows => _baseElement.hasAlwaysThrows;
+  bool get isAlwaysThrows => _baseElement.isAlwaysThrows;
 
   @override
-  bool get isDeprecated => _baseElement.hasDeprecated;
+  bool get isDeprecated => _baseElement.isDeprecated;
 
   @override
-  bool get isFactory => _baseElement.hasFactory;
+  bool get isFactory => _baseElement.isFactory;
 
   @override
-  bool get isJS => _baseElement.hasJS;
+  bool get isJS => _baseElement.isJS;
 
   @override
-  bool get isOverride => _baseElement.hasOverride;
+  bool get isOverride => _baseElement.isOverride;
 
   @override
   bool get isPrivate => _baseElement.isPrivate;
 
   @override
-  bool get isProtected => _baseElement.hasProtected;
+  bool get isProtected => _baseElement.isProtected;
 
   @override
   bool get isPublic => _baseElement.isPublic;
 
   @override
-  bool get isRequired => _baseElement.hasRequired;
+  bool get isRequired => _baseElement.isRequired;
 
   @override
   bool get isSynthetic => _baseElement.isSynthetic;
 
   @override
-  bool get isVisibleForTesting => _baseElement.hasVisibleForTesting;
+  bool get isVisibleForTesting => _baseElement.isVisibleForTesting;
 
   @override
   ElementKind get kind => _baseElement.kind;
@@ -602,7 +578,6 @@ class MethodMember extends ExecutableMember implements MethodElement {
         buffer.write(", ");
       }
       ParameterElement parameter = parameters[i];
-      // ignore: deprecated_member_use
       ParameterKind parameterKind = parameter.parameterKind;
       if (parameterKind != kind) {
         if (closing != null) {
@@ -686,7 +661,6 @@ class ParameterMember extends VariableMember
   @override
   bool get isInitializingFormal => baseElement.isInitializingFormal;
 
-  @deprecated
   @override
   ParameterKind get parameterKind => baseElement.parameterKind;
 
@@ -733,13 +707,13 @@ class ParameterMember extends VariableMember
     String left = "";
     String right = "";
     while (true) {
-      if (baseElement.isNamed) {
+      if (baseElement.parameterKind == ParameterKind.NAMED) {
         left = "{";
         right = "}";
-      } else if (baseElement.isOptionalPositional) {
+      } else if (baseElement.parameterKind == ParameterKind.POSITIONAL) {
         left = "[";
         right = "]";
-      }
+      } else if (baseElement.parameterKind == ParameterKind.REQUIRED) {}
       break;
     }
     return '$left$type ${baseElement.displayName}$right';

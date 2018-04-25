@@ -21,7 +21,7 @@ import 'transformation/transformer.dart'
 
 import '../../core_types.dart' show CoreTypes;
 
-RuntimeLibrary findRuntimeTypeLibrary(Component p) {
+RuntimeLibrary findRuntimeTypeLibrary(Program p) {
   Library findLibraryEndingWith(String postfix) {
     Iterable<Library> candidates = p.libraries.where((Library l) {
       return l.importUri.toString().endsWith(postfix);
@@ -40,37 +40,37 @@ RuntimeLibrary findRuntimeTypeLibrary(Component p) {
   return new RuntimeLibrary(types, declarations, interceptors);
 }
 
-Component transformComponentUsingLibraries(
-    CoreTypes coreTypes, Component component, RuntimeLibrary runtimeLibrary,
+Program transformProgramUsingLibraries(
+    CoreTypes coreTypes, Program program, RuntimeLibrary runtimeLibrary,
     [Library libraryToTransform]) {
   LibraryFilter filter = libraryToTransform != null
       ? (Library library) => library == libraryToTransform
       : (_) => true;
-  ProgramKnowledge knowledge = analyze(component, analyzeLibrary: filter);
-  Library mainLibrary = component.mainMethod.parent;
+  ProgramKnowledge knowledge = analyze(program, analyzeLibrary: filter);
+  Library mainLibrary = program.mainMethod.parent;
   RuntimeTypeSupportBuilder builder =
       new RuntimeTypeSupportBuilder(runtimeLibrary, coreTypes, mainLibrary);
   ReifyVisitor transformer =
       new ReifyVisitor(runtimeLibrary, builder, knowledge, libraryToTransform);
-  // Transform the main component.
-  component = component.accept(transformer);
+  // Transform the main program.
+  program = program.accept(transformer);
   if (!filter(runtimeLibrary.interceptorsLibrary)) {
     // We need to transform the interceptor function in any case to make sure
     // that the type literals in the interceptor function are rewritten.
     runtimeLibrary.interceptorFunction.accept(transformer);
   }
   builder.createDeclarations();
-  component = component.accept(new Erasure(transformer));
+  program = program.accept(new Erasure(transformer));
   // TODO(karlklose): skip checks in debug mode
-  verifyComponent(component);
-  return component;
+  verifyProgram(program);
+  return program;
 }
 
-Component transformComponent(CoreTypes coreTypes, Component component) {
-  RuntimeLibrary runtimeLibrary = findRuntimeTypeLibrary(component);
-  Library mainLibrary = component.mainMethod.enclosingLibrary;
-  return transformComponentUsingLibraries(
-      coreTypes, component, runtimeLibrary, mainLibrary);
+Program transformProgram(CoreTypes coreTypes, Program program) {
+  RuntimeLibrary runtimeLibrary = findRuntimeTypeLibrary(program);
+  Library mainLibrary = program.mainMethod.enclosingLibrary;
+  return transformProgramUsingLibraries(
+      coreTypes, program, runtimeLibrary, mainLibrary);
 }
 
 main(List<String> arguments) async {
@@ -80,13 +80,13 @@ main(List<String> arguments) async {
     output = Uri.base.resolve(arguments[1]);
   }
   Uri uri = Uri.base.resolve(path);
-  Component component = loadComponentFromBinary(uri.toFilePath());
-  CoreTypes coreTypes = new CoreTypes(component);
+  Program program = loadProgramFromBinary(uri.toFilePath());
+  CoreTypes coreTypes = new CoreTypes(program);
 
-  RuntimeLibrary runtimeLibrary = findRuntimeTypeLibrary(component);
-  Library mainLibrary = component.mainMethod.enclosingLibrary;
-  component = transformComponentUsingLibraries(
-      coreTypes, component, runtimeLibrary, mainLibrary);
+  RuntimeLibrary runtimeLibrary = findRuntimeTypeLibrary(program);
+  Library mainLibrary = program.mainMethod.enclosingLibrary;
+  program = transformProgramUsingLibraries(
+      coreTypes, program, runtimeLibrary, mainLibrary);
 
   if (output == null) {
     // Print result
@@ -97,13 +97,13 @@ main(List<String> arguments) async {
   } else {
     IOSink sink = new File.fromUri(output).openWrite();
     try {
-      new BinaryPrinter(sink).writeComponentFile(component);
+      new BinaryPrinter(sink).writeProgramFile(program);
     } finally {
       await sink.close();
     }
     try {
       // Check that we can read the binary file.
-      loadComponentFromBinary(output.toFilePath());
+      loadProgramFromBinary(output.toFilePath());
     } catch (e) {
       print("Error when attempting to read $output.");
       rethrow;

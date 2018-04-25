@@ -137,35 +137,9 @@ class MixinFullResolution {
     // Clone fields and methods from the mixin class.
     var substitution = getSubstitutionMap(class_.mixedInType);
     var cloner = new CloneVisitor(typeSubstitution: substitution);
-
-    // When we copy a field from the mixed in class, we remove any
-    // forwarding-stub getters/setters from the superclass, but copy their
-    // covariance-bits onto the new field.
-    var nonSetters = <Name, Procedure>{};
-    var setters = <Name, Procedure>{};
-    for (var procedure in class_.procedures) {
-      if (procedure.isSetter) {
-        setters[procedure.name] = procedure;
-      } else {
-        nonSetters[procedure.name] = procedure;
-      }
-    }
     for (var field in class_.mixin.fields) {
-      Field clone = cloner.clone(field);
-      Procedure setter = setters[field.name];
-      if (setter != null) {
-        setters.remove(field.name);
-        VariableDeclaration parameter =
-            setter.function.positionalParameters.first;
-        clone.isGenericCovariantImpl = parameter.isGenericCovariantImpl;
-        clone.isGenericCovariantInterface =
-            parameter.isGenericCovariantInterface;
-      }
-      nonSetters.remove(field.name);
-      class_.addMember(clone);
+      class_.addMember(cloner.clone(field));
     }
-    class_.procedures.clear();
-    class_.procedures..addAll(nonSetters.values)..addAll(setters.values);
 
     // Existing procedures in the class should only be forwarding stubs.
     // Replace them with methods from the mixin class if they have the same
@@ -178,9 +152,6 @@ class MixinFullResolution {
       // application.  They should not be copied.
       if (procedure.isForwardingStub) continue;
 
-      // Factory constructors are not cloned.
-      if (procedure.isFactory) continue;
-
       Procedure clone = cloner.clone(procedure);
       // Linear search for a forwarding stub with the same name.
       for (int i = 0; i < originalLength; ++i) {
@@ -189,15 +160,6 @@ class MixinFullResolution {
             originalProcedure.kind == clone.kind) {
           FunctionNode src = originalProcedure.function;
           FunctionNode dst = clone.function;
-
-          if (src.positionalParameters.length !=
-                  dst.positionalParameters.length ||
-              src.namedParameters.length != dst.namedParameters.length) {
-            // A compile time error has already occured, but don't crash below,
-            // and don't add several procedures with the same name to the class.
-            continue outer;
-          }
-
           assert(src.typeParameters.length == dst.typeParameters.length);
           for (int j = 0; j < src.typeParameters.length; ++j) {
             dst.typeParameters[j].flags = src.typeParameters[i].flags;
@@ -206,8 +168,6 @@ class MixinFullResolution {
             dst.positionalParameters[j].flags =
                 src.positionalParameters[j].flags;
           }
-          // TODO(kernel team): The named parameters are not sorted,
-          // this might not be correct.
           for (int j = 0; j < src.namedParameters.length; ++j) {
             dst.namedParameters[j].flags = src.namedParameters[j].flags;
           }

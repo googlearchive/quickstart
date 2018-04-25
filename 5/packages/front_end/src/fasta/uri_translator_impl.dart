@@ -37,43 +37,40 @@ class UriTranslatorImpl implements UriTranslator {
   // TODO(sigmund, ahe): consider expanding this API to include an error
   // callback, so we can provide an error location when one is available. For
   // example, if the error occurs in an `import`.
-  Uri translate(Uri uri, [bool reportMessage = true]) {
+  Uri translate(Uri uri) {
     if (uri.scheme == "dart") return _translateDartUri(uri);
-    if (uri.scheme == "package") {
-      return _translatePackageUri(uri, reportMessage);
-    }
+    if (uri.scheme == "package") return _translatePackageUri(uri);
     return null;
   }
-
-  @override
-  String environmentOverrideFor(String libraryName) =>
-      dartLibraries.environmentOverrideFor(libraryName);
 
   /// Return the file URI that corresponds to the given `dart` URI, or `null`
   /// if there is no corresponding Dart library registered.
   Uri _translateDartUri(Uri uri) {
     if (!uri.isScheme('dart')) return null;
-    return dartLibraries.libraryInfoFor(uri.path)?.uri;
+    String path = uri.path;
+
+    int index = path.indexOf('/');
+    if (index == -1) return dartLibraries.libraryInfoFor(path)?.uri;
+
+    String libraryName = path.substring(0, index);
+    String relativePath = path.substring(index + 1);
+    Uri libraryFileUri = dartLibraries.libraryInfoFor(libraryName).uri;
+    return libraryFileUri?.resolve(relativePath);
   }
 
   /// Return the file URI that corresponds to the given `package` URI, or
   /// `null` if the `package` [uri] format is invalid, or there is no
   /// corresponding package registered.
-  Uri _translatePackageUri(Uri uri, bool reportMessage) {
+  Uri _translatePackageUri(Uri uri) {
     try {
       // TODO(sigmund): once we remove the `parse` API, we can ensure that
       // packages will never be null and get rid of `?` below.
-      return packages?.resolve(uri,
-          notFound: reportMessage
-              ? _packageUriNotFound
-              : _packageUriNotFoundNoReport);
+      return packages?.resolve(uri, notFound: _packageUriNotFound);
     } on ArgumentError catch (e) {
       // TODO(sigmund): catch a more precise error when
       // https://github.com/dart-lang/package_config/issues/40 is fixed.
-      if (reportMessage) {
-        CompilerContext.current.reportWithoutLocation(
-            templateInvalidPackageUri.withArguments(uri, '$e'), Severity.error);
-      }
+      CompilerContext.current.reportWithoutLocation(
+          templateInvalidPackageUri.withArguments(uri, '$e'), Severity.error);
       return null;
     }
   }
@@ -85,10 +82,6 @@ class UriTranslatorImpl implements UriTranslator {
     // TODO(sigmund, ahe): ensure we only report an error once,
     // this null result will likely cause another error further down in the
     // compiler.
-    return null;
-  }
-
-  static Uri _packageUriNotFoundNoReport(Uri uri) {
     return null;
   }
 }

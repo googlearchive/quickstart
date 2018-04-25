@@ -6,13 +6,11 @@
 import 'ng_for.dart';
 export 'ng_for.dart';
 import 'package:angular/core.dart' show DoCheck, Directive, Input;
-import 'package:angular/src/runtime.dart';
 import '../../core/change_detection/differs/default_iterable_differ.dart' show DefaultIterableDiffer, CollectionChangeRecord, TrackByFn;
-import '../../core/linker.dart' show ViewContainerRef, ViewRef, TemplateRef, EmbeddedViewRef;
+import '../../core/linker.dart' show ViewContainerRef, TemplateRef, EmbeddedViewRef;
 import '../../core/change_detection/differs/default_iterable_differ.template.dart' as _ref0;
 import '../../core/linker.template.dart' as _ref1;
 import 'package:angular/core.template.dart' as _ref2;
-import 'package:angular/src/runtime.template.dart' as _ref3;
 
 var _visited = false;
 void initReflector() {
@@ -24,5 +22,4 @@ void initReflector() {
   _ref0.initReflector();
   _ref1.initReflector();
   _ref2.initReflector();
-  _ref3.initReflector();
 }

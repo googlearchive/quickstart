@@ -21,7 +21,7 @@ class AnalyzerMetadata {
   /// Return the [AnalyzerMetadata] for the [node], or `null` absent.
   static AnalyzerMetadata forNode(kernel.TreeNode node) {
     var repository =
-        node.enclosingComponent.metadata[AnalyzerMetadataRepository.TAG];
+        node.enclosingProgram.metadata[AnalyzerMetadataRepository.TAG];
     if (repository != null) {
       return repository.mapping[node];
     }
@@ -104,7 +104,7 @@ class AnalyzerMetadataRepository
     int flag = source.readByte();
     if (flag == 1) {
       List<int> bytes = source.readByteList();
-      return utf8.decode(bytes);
+      return UTF8.decode(bytes);
     } else {
       return null;
     }
@@ -119,7 +119,7 @@ class AnalyzerMetadataRepository
   void _writeOptionalString(kernel.BinarySink sink, String str) {
     if (str != null) {
       sink.writeByte(1);
-      List<int> bytes = utf8.encode(str);
+      List<int> bytes = UTF8.encode(str);
       sink.writeByteList(bytes);
     } else {
       sink.writeByte(0);

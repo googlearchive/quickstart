@@ -14,15 +14,10 @@ import '../combinator.dart' show Combinator;
 
 import '../fasta_codes.dart'
     show
-        LocatedMessage,
         Message,
-        messageConstConstructorWithBody,
-        messageConstMethod,
-        messageConstructorWithReturnType,
         messageExpectedBlockToSkip,
         messageInterpolationInUri,
         messageOperatorWithOptionalFormals,
-        messageStaticConstructor,
         messageTypedefNotFunction,
         templateDuplicatedParameterName,
         templateDuplicatedParameterNameCause,
@@ -31,20 +26,7 @@ import '../fasta_codes.dart'
         templateOperatorParameterMismatch1,
         templateOperatorParameterMismatch2;
 
-import '../modifier.dart'
-    show
-        Const,
-        Covariant,
-        External,
-        Final,
-        Modifier,
-        Static,
-        Var,
-        abstractMask,
-        constMask,
-        covariantMask,
-        externalMask,
-        staticMask;
+import '../modifier.dart' show abstractMask, externalMask, Modifier;
 
 import '../operator.dart'
     show
@@ -364,26 +346,23 @@ class OutlineBuilder extends UnhandledListener {
   }
 
   @override
-  void beginClassDeclaration(Token begin, Token abstractToken, Token name) {
+  void beginClassDeclaration(Token begin, Token name) {
     debugEvent("beginNamedMixinApplication");
     List<TypeVariableBuilder> typeVariables = pop();
     push(typeVariables ?? NullValue.TypeVariables);
     library.currentDeclaration
       ..name = name.lexeme
       ..typeVariables = typeVariables;
-    push(abstractToken != null ? abstractMask : 0);
   }
 
   @override
-  void beginNamedMixinApplication(
-      Token begin, Token abstractToken, Token name) {
+  void beginNamedMixinApplication(Token beginToken, Token name) {
     debugEvent("beginNamedMixinApplication");
     List<TypeVariableBuilder> typeVariables = pop();
     push(typeVariables ?? NullValue.TypeVariables);
     library.currentDeclaration
       ..name = name.lexeme
       ..typeVariables = typeVariables;
-    push(abstractToken != null ? abstractMask : 0);
   }
 
   @override
@@ -413,13 +392,13 @@ class OutlineBuilder extends UnhandledListener {
     List<TypeBuilder> interfaces = pop(NullValue.TypeBuilderList);
     int supertypeOffset = pop();
     TypeBuilder supertype = pop();
-    int modifiers = pop();
     List<TypeVariableBuilder> typeVariables = pop();
     int charOffset = pop();
     String name = pop();
     if (typeVariables != null && supertype is MixinApplicationBuilder) {
       supertype.typeVariables = typeVariables;
     }
+    int modifiers = Modifier.validate(pop());
     List<MetadataBuilder> metadata = pop();
 
     library.addClass(
@@ -445,9 +424,8 @@ class OutlineBuilder extends UnhandledListener {
   }
 
   @override
-  void beginTopLevelMethod(Token lastConsumed, Token externalToken) {
+  void beginTopLevelMethod(Token lastConsumed) {
     library.beginNestedDeclaration("#method", hasMembers: false);
-    push(externalToken != null ? externalMask : 0);
   }
 
   @override
@@ -468,16 +446,10 @@ class OutlineBuilder extends UnhandledListener {
         isAbstract = false;
       }
     }
-    int modifiers = pop();
-    if (isAbstract) {
-      modifiers |= abstractMask;
-    }
+    int modifiers = Modifier.validate(pop(), isAbstract: isAbstract);
     List<MetadataBuilder> metadata = pop();
     String documentationComment = getDocumentationComment(beginToken);
     checkEmpty(beginToken.charOffset);
-    library
-        .endNestedDeclaration("#method")
-        .resolveTypes(typeVariables, library);
     library.addProcedure(
         documentationComment,
         metadata,
@@ -535,35 +507,7 @@ class OutlineBuilder extends UnhandledListener {
   }
 
   @override
-  void beginMethod(Token externalToken, Token staticToken, Token covariantToken,
-      Token varFinalOrConst, Token name) {
-    List<Modifier> modifiers = <Modifier>[];
-    if (externalToken != null) {
-      modifiers.add(External);
-    }
-    if (staticToken != null) {
-      if (name?.lexeme == library.currentDeclaration.name) {
-        handleRecoverableError(
-            messageStaticConstructor, staticToken, staticToken);
-      } else {
-        modifiers.add(Static);
-      }
-    }
-    if (covariantToken != null) {
-      modifiers.add(Covariant);
-    }
-    if (varFinalOrConst != null) {
-      String lexeme = varFinalOrConst.lexeme;
-      if (identical('var', lexeme)) {
-        modifiers.add(Var);
-      } else if (identical('final', lexeme)) {
-        modifiers.add(Final);
-      } else {
-        modifiers.add(Const);
-      }
-    }
-    push(varFinalOrConst?.charOffset ?? -1);
-    push(modifiers);
+  void beginMethod() {
     library.beginNestedDeclaration("#method", hasMembers: false);
   }
 
@@ -643,62 +587,22 @@ class OutlineBuilder extends UnhandledListener {
     if ((modifiers & externalMask) != 0) {
       modifiers &= ~abstractMask;
     }
-    bool isConst = (modifiers & constMask) != 0;
-    int varFinalOrConstOffset = pop();
     List<MetadataBuilder> metadata = pop();
     String documentationComment = getDocumentationComment(beginToken);
-    library
-        .endNestedDeclaration("#method")
-        .resolveTypes(typeVariables, library);
-    String constructorName =
-        kind == ProcedureKind.Getter || kind == ProcedureKind.Setter
-            ? null
-            : library.computeAndValidateConstructorName(name, charOffset);
-    if (constructorName != null) {
-      if (isConst && bodyKind != MethodBody.Abstract) {
-        addCompileTimeError(
-            messageConstConstructorWithBody, varFinalOrConstOffset, 5);
-        modifiers &= ~constMask;
-      }
-      if (returnType != null) {
-        // TODO(danrubel): Report this error on the return type
-        handleRecoverableError(
-            messageConstructorWithReturnType, beginToken, beginToken);
-        returnType = null;
-      }
-      library.addConstructor(
-          documentationComment,
-          metadata,
-          modifiers,
-          returnType,
-          name,
-          constructorName,
-          typeVariables,
-          formals,
-          charOffset,
-          formalsOffset,
-          endToken.charOffset,
-          nativeMethodName);
-    } else {
-      if (isConst) {
-        addCompileTimeError(messageConstMethod, varFinalOrConstOffset, 5);
-        modifiers &= ~constMask;
-      }
-      library.addProcedure(
-          documentationComment,
-          metadata,
-          modifiers,
-          returnType,
-          name,
-          typeVariables,
-          formals,
-          kind,
-          charOffset,
-          formalsOffset,
-          endToken.charOffset,
-          nativeMethodName,
-          isTopLevel: false);
-    }
+    library.addProcedure(
+        documentationComment,
+        metadata,
+        modifiers,
+        returnType,
+        name,
+        typeVariables,
+        formals,
+        kind,
+        charOffset,
+        formalsOffset,
+        endToken.charOffset,
+        nativeMethodName,
+        isTopLevel: false);
     nativeMethodName = null;
   }
 
@@ -718,10 +622,10 @@ class OutlineBuilder extends UnhandledListener {
     String documentationComment = getDocumentationComment(beginToken);
     List<TypeBuilder> interfaces = popIfNotNull(implementsKeyword);
     TypeBuilder mixinApplication = pop();
-    int modifiers = pop();
     List<TypeVariableBuilder> typeVariables = pop();
     int charOffset = pop();
     String name = pop();
+    int modifiers = Modifier.validate(pop());
     List<MetadataBuilder> metadata = pop();
     library.addNamedMixinApplication(documentationComment, metadata, name,
         typeVariables, modifiers, mixinApplication, interfaces, charOffset);
@@ -824,10 +728,11 @@ class OutlineBuilder extends UnhandledListener {
     } else if (count > 1) {
       var last = pop();
       count--;
-      if (last is List<FormalParameterBuilder>) {
+      if (last is List) {
         formals = new List<FormalParameterBuilder>.filled(
             count + last.length, null,
             growable: true);
+        // ignore: ARGUMENT_TYPE_NOT_ASSIGNABLE
         formals.setRange(count, formals.length, last);
       } else {
         formals = new List<FormalParameterBuilder>.filled(count + 1, null,
@@ -843,11 +748,12 @@ class OutlineBuilder extends UnhandledListener {
           addCompileTimeError(
               templateDuplicatedParameterName.withArguments(formals[1].name),
               formals[1].charOffset,
-              formals[1].name.length,
-              context: templateDuplicatedParameterNameCause
-                  .withArguments(formals[1].name)
-                  .withLocation(
-                      uri, formals[0].charOffset, formals[0].name.length));
+              formals[1].name.length);
+          addCompileTimeError(
+              templateDuplicatedParameterNameCause
+                  .withArguments(formals[1].name),
+              formals[0].charOffset,
+              formals[0].name.length);
         }
       } else if (formals.length > 2) {
         Map<String, FormalParameterBuilder> seenNames =
@@ -976,14 +882,11 @@ class OutlineBuilder extends UnhandledListener {
   }
 
   @override
-  void endTopLevelFields(Token staticToken, Token covariantToken,
-      Token varFinalOrConst, int count, Token beginToken, Token endToken) {
+  void endTopLevelFields(int count, Token beginToken, Token endToken) {
     debugEvent("endTopLevelFields");
     List fieldsInfo = popList(count * 4);
     TypeBuilder type = pop();
-    int modifiers = (staticToken != null ? staticMask : 0) |
-        (covariantToken != null ? covariantMask : 0) |
-        Modifier.validateVarFinalOrConst(varFinalOrConst?.lexeme);
+    int modifiers = Modifier.validate(pop());
     List<MetadataBuilder> metadata = pop();
     String documentationComment = getDocumentationComment(beginToken);
     library.addFields(
@@ -992,14 +895,11 @@ class OutlineBuilder extends UnhandledListener {
   }
 
   @override
-  void endFields(Token staticToken, Token covariantToken, Token varFinalOrConst,
-      int count, Token beginToken, Token endToken) {
+  void endFields(int count, Token beginToken, Token endToken) {
     debugEvent("Fields");
     List fieldsInfo = popList(count * 4);
     TypeBuilder type = pop();
-    int modifiers = (staticToken != null ? staticMask : 0) |
-        (covariantToken != null ? covariantMask : 0) |
-        Modifier.validateVarFinalOrConst(varFinalOrConst?.lexeme);
+    int modifiers = Modifier.validate(pop());
     List<MetadataBuilder> metadata = pop();
     String documentationComment = getDocumentationComment(beginToken);
     library.addFields(
@@ -1046,11 +946,8 @@ class OutlineBuilder extends UnhandledListener {
   }
 
   @override
-  void beginFactoryMethod(
-      Token lastConsumed, Token externalToken, Token constToken) {
+  void beginFactoryMethod(Token lastConsumed) {
     library.beginNestedDeclaration("#factory_method", hasMembers: false);
-    push((externalToken != null ? externalMask : 0) |
-        (constToken != null ? constMask : 0));
   }
 
   @override
@@ -1065,7 +962,7 @@ class OutlineBuilder extends UnhandledListener {
     List<FormalParameterBuilder> formals = pop();
     int formalsOffset = pop();
     var name = pop();
-    int modifiers = pop();
+    int modifiers = Modifier.validate(pop());
     List<MetadataBuilder> metadata = pop();
     String documentationComment = getDocumentationComment(beginToken);
     library.addFactoryMethod(
@@ -1167,15 +1064,12 @@ class OutlineBuilder extends UnhandledListener {
   }
 
   @override
-  void addCompileTimeError(Message message, int charOffset, int length,
-      {LocatedMessage context}) {
-    library.addCompileTimeError(message, charOffset, length, uri,
-        context: context);
+  void addCompileTimeError(Message message, int charOffset, int length) {
+    library.addCompileTimeError(message, charOffset, uri);
   }
 
-  void addProblem(Message message, int charOffset, int length,
-      {LocatedMessage context}) {
-    library.addProblem(message, charOffset, length, uri, context: context);
+  void addProblem(Message message, int charOffset, int length) {
+    library.addProblem(message, charOffset, uri);
   }
 
   /// Return the documentation comment for the entity that starts at the

@@ -1064,9 +1064,7 @@ class ValidatingResolutionApplier extends ResolutionApplier {
       throw new StateError('No type information for $entity at $entityOffset');
     }
     int typeOffset = _typeOffsets[_typeIndex];
-    if (typeOffset != UNKNOWN_OFFSET &&
-        entity != null &&
-        entityOffset != typeOffset) {
+    if (typeOffset != UNKNOWN_OFFSET && entityOffset != typeOffset) {
       throw new StateError('Expected a type for $entity at $entityOffset; '
           'got one for kernel offset $typeOffset');
     }

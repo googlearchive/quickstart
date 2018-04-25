@@ -48,7 +48,11 @@ Future<Null> bootstrapDdc(BuildStep buildStep,
       var basename = p.basename(jsId.path);
       return basename.substring(0, basename.length - jsModuleExtension.length);
     } else {
-      return p.split(_ddcModuleName(jsId)).skip(1).join('__');
+      Iterable<String> scope = p.split(_ddcModuleName(jsId));
+      if (scope.first == 'packages') {
+        scope = scope.skip(1);
+      }
+      return scope.skip(1).join('__');
     }
   }();
   appModuleScope = appModuleScope.replaceAll('.', '\$46');
@@ -141,7 +145,8 @@ String _entryPointJs(String bootstrapModuleName) => '''
   $_currentDirectoryScript
   $_baseUrlScript
 
-  var mapperUri = baseUrl + "packages/\$sdk/dev_compiler/web/dart_stack_trace_mapper.js";
+  var mapperUri = baseUrl + "packages/build_web_compilers/src/" +
+      "dev_compiler_stack_trace/stack_trace_mapper.dart.js";
   var requireUri = baseUrl + "packages/\$sdk/dev_compiler/amd/require.js";
   var mainUri = _currentDirectory + "$bootstrapModuleName";
 
@@ -307,9 +312,17 @@ require.config({
 ''';
 
 final _baseUrlScript = '''
-// Attempt to detect --precompiled mode for tests, and set the base url
-// appropriately, otherwise set it to "/".
-var baseUrl = (function() {
+var baseUrl = (function () {
+  // Attempt to detect base url using <base href> html tag
+  // base href should start with "/"
+  if (typeof document !== 'undefined') {
+    var el = document.getElementsByTagName('base');
+    if (el && el[0] && el[0].href && el[0].href.startsWith('/')){
+    	return el[0].href;
+    }
+  }
+  // Attempt to detect --precompiled mode for tests, and set the base url
+  // appropriately, otherwise set it to '/'.
   var pathParts = location.pathname.split("/");
   if (pathParts[0] == "") {
     pathParts.shift();

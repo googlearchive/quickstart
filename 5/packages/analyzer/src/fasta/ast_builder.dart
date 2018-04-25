@@ -20,28 +20,21 @@ import 'package:front_end/src/fasta/parser.dart'
         optional,
         Parser;
 import 'package:front_end/src/fasta/scanner.dart' hide StringToken;
-import 'package:front_end/src/scanner/errors.dart' show translateErrorToken;
 import 'package:front_end/src/scanner/token.dart'
-    show StringToken, SyntheticBeginToken, SyntheticStringToken, SyntheticToken;
+    show
+        StringToken,
+        SyntheticBeginToken,
+        SyntheticStringToken,
+        SyntheticToken,
+        CommentToken;
 
 import 'package:front_end/src/fasta/problems.dart' show unhandled;
 import 'package:front_end/src/fasta/messages.dart'
     show
         Message,
         codeExpectedFunctionBody,
-        messageConstConstructorWithBody,
-        messageConstMethod,
-        messageConstructorWithReturnType,
         messageDirectiveAfterDeclaration,
-        messageExpectedStatement,
-        messageFieldInitializerOutsideConstructor,
-        messageIllegalAssignmentToNonAssignable,
-        messageInterpolationInUri,
-        messageMissingAssignableSelector,
-        messageNativeClauseShouldBeAnnotation,
-        messageStaticConstructor,
-        templateDuplicateLabelInSwitchStatement,
-        templateExpectedType;
+        messageNativeClauseShouldBeAnnotation;
 import 'package:front_end/src/fasta/kernel/kernel_builder.dart'
     show Builder, KernelLibraryBuilder, Scope;
 import 'package:front_end/src/fasta/quote.dart';
@@ -200,7 +193,7 @@ class AstBuilder extends ScopeListener {
       String value = unescapeString(token.lexeme);
       push(ast.simpleStringLiteral(token, value));
     } else {
-      List<Object> parts = popTypedList(1 + interpolationCount * 2);
+      List parts = popList(1 + interpolationCount * 2);
       Token first = parts.first;
       Token last = parts.last;
       Quote quote = analyzeQuote(first.lexeme);
@@ -245,7 +238,7 @@ class AstBuilder extends ScopeListener {
   void handleStringJuxtaposition(int literalCount) {
     debugEvent("StringJuxtaposition");
 
-    push(ast.adjacentStrings(popTypedList(literalCount)));
+    push(ast.adjacentStrings(popList(literalCount)));
   }
 
   void endArguments(int count, Token leftParenthesis, Token rightParenthesis) {
@@ -253,7 +246,7 @@ class AstBuilder extends ScopeListener {
     assert(optional(')', rightParenthesis));
     debugEvent("Arguments");
 
-    List<Expression> expressions = popTypedList(count);
+    List expressions = popList(count);
     ArgumentList arguments =
         ast.argumentList(leftParenthesis, expressions, rightParenthesis);
     push(ast.methodInvocation(null, null, null, null, arguments));
@@ -317,28 +310,8 @@ class AstBuilder extends ScopeListener {
   void endExpressionStatement(Token semicolon) {
     assert(optional(';', semicolon));
     debugEvent("ExpressionStatement");
-    Expression expression = pop();
-    if (expression is SuperExpression) {
-      // This error is also reported by the body builder.
-      handleRecoverableError(messageMissingAssignableSelector,
-          expression.beginToken, expression.endToken);
-    }
-    if (expression is SimpleIdentifier &&
-        expression.token?.keyword?.isBuiltInOrPseudo == false) {
-      // This error is also reported by the body builder.
-      handleRecoverableError(
-          messageExpectedStatement, expression.beginToken, expression.endToken);
-    }
-    if (expression is AssignmentExpression) {
-      if (!expression.leftHandSide.isAssignable) {
-        // This error is also reported by the body builder.
-        handleRecoverableError(
-            messageIllegalAssignmentToNonAssignable,
-            expression.leftHandSide.beginToken,
-            expression.leftHandSide.endToken);
-      }
-    }
-    push(ast.expressionStatement(expression, semicolon));
+
+    push(ast.expressionStatement(pop(), semicolon));
   }
 
   @override
@@ -377,7 +350,7 @@ class AstBuilder extends ScopeListener {
     assert(optional('}', rightBracket));
     debugEvent("BlockFunctionBody");
 
-    List<Statement> statements = popTypedList(count);
+    List statements = popList(count);
     if (leftBracket != null) {
       exitLocalScope();
     }
@@ -537,7 +510,7 @@ class AstBuilder extends ScopeListener {
     assert(optional(':', colon));
     debugEvent("Initializers");
 
-    List<Object> initializerObjects = popTypedList(count) ?? const [];
+    List<Object> initializerObjects = popList(count) ?? const [];
     if (!isFullAst) return;
 
     push(colon);
@@ -603,7 +576,7 @@ class AstBuilder extends ScopeListener {
     debugEvent("VariableInitializer");
 
     Expression initializer = pop();
-    SimpleIdentifier identifier = pop();
+    Identifier identifier = pop();
     // TODO(ahe): Don't push initializers, instead install them.
     push(ast.variableDeclaration(identifier, assignmentOperator, initializer));
   }
@@ -656,24 +629,13 @@ class AstBuilder extends ScopeListener {
     push(variable);
   }
 
-  @override
-  void beginVariablesDeclaration(Token token, Token varFinalOrConst) {
-    debugEvent("beginVariablesDeclaration");
-    if (varFinalOrConst != null) {
-      push(new _Modifiers()..finalConstOrVarKeyword = varFinalOrConst);
-    } else {
-      push(NullValue.Modifiers);
-    }
-  }
-
-  @override
   void endVariablesDeclaration(int count, Token semicolon) {
     assert(optionalOrNull(';', semicolon));
     debugEvent("VariablesDeclaration");
 
-    List<VariableDeclaration> variables = popTypedList(count);
-    _Modifiers modifiers = pop(NullValue.Modifiers);
+    List<VariableDeclaration> variables = popList(count);
     TypeAnnotation type = pop();
+    _Modifiers modifiers = pop();
     Token keyword = modifiers?.finalConstOrVarKeyword;
     List<Annotation> metadata = pop();
     Comment comment = _findComment(metadata,
@@ -698,15 +660,9 @@ class AstBuilder extends ScopeListener {
     assert(optional('}', rightBracket));
     debugEvent("Block");
 
-    List<Statement> statements = popTypedList(count) ?? <Statement>[];
+    List<Statement> statements = popList(count) ?? <Statement>[];
     exitLocalScope();
     push(ast.block(leftBracket, statements, rightBracket));
-  }
-
-  void handleInvalidTopLevelBlock(Token token) {
-    // TODO(danrubel): Consider improved recovery by adding this block
-    // as part of a synthetic top level function.
-    pop(); // block
   }
 
   void endForStatement(Token forKeyword, Token leftParen, Token leftSeparator,
@@ -717,7 +673,7 @@ class AstBuilder extends ScopeListener {
     debugEvent("ForStatement");
 
     Statement body = pop();
-    List<Expression> updates = popTypedList(updateExpressionCount);
+    List<Expression> updates = popList(updateExpressionCount);
     Statement conditionStatement = pop();
     Object initializerPart = pop();
     exitLocalScope();
@@ -761,7 +717,7 @@ class AstBuilder extends ScopeListener {
     assert(optional(']', rightBracket));
     debugEvent("LiteralList");
 
-    List<Expression> expressions = popTypedList(count);
+    List<Expression> expressions = popList(count);
     TypeArgumentList typeArguments = pop();
     push(ast.listLiteral(
         constKeyword, typeArguments, leftBracket, expressions, rightBracket));
@@ -814,7 +770,7 @@ class AstBuilder extends ScopeListener {
     assert(optional('}', rightBracket));
     debugEvent("LiteralMap");
 
-    List<MapLiteralEntry> entries = popTypedList(count) ?? <MapLiteralEntry>[];
+    List<MapLiteralEntry> entries = popList(count) ?? <MapLiteralEntry>[];
     TypeArgumentList typeArguments = pop();
     push(ast.mapLiteral(
         constKeyword, typeArguments, leftBracket, entries, rightBracket));
@@ -833,7 +789,7 @@ class AstBuilder extends ScopeListener {
     assert(optional('#', hashToken));
     debugEvent("LiteralSymbol");
 
-    List<Token> components = popTypedList(tokenCount);
+    List<Token> components = popList(tokenCount);
     push(ast.symbolLiteral(hashToken, components));
   }
 
@@ -893,17 +849,6 @@ class AstBuilder extends ScopeListener {
     debugEvent("AsOperator");
 
     TypeAnnotation type = pop();
-    if (type is TypeName) {
-      Identifier name = type.name;
-      if (name is SimpleIdentifier) {
-        if (name.name == 'void') {
-          Token token = name.beginToken;
-          // TODO(danrubel): This needs to be reported during fasta resolution.
-          handleRecoverableError(
-              templateExpectedType.withArguments(token), token, token);
-        }
-      }
-    }
     Expression expression = pop();
     push(ast.asExpression(expression, asOperator, type));
   }
@@ -936,17 +881,6 @@ class AstBuilder extends ScopeListener {
     debugEvent("IsOperator");
 
     TypeAnnotation type = pop();
-    if (type is TypeName) {
-      Identifier name = type.name;
-      if (name is SimpleIdentifier) {
-        if (name.name == 'void') {
-          Token token = name.beginToken;
-          // TODO(danrubel): This needs to be reported during fasta resolution.
-          handleRecoverableError(
-              templateExpectedType.withArguments(token), token, token);
-        }
-      }
-    }
     Expression expression = pop();
     push(ast.isExpression(expression, isOperator, not, type));
   }
@@ -1001,7 +935,7 @@ class AstBuilder extends ScopeListener {
     debugEvent("OptionalFormalParameters");
 
     push(new _OptionalFormalParameters(
-        popTypedList(count), leftDelimeter, rightDelimeter));
+        popList(count), leftDelimeter, rightDelimeter));
   }
 
   void handleValuedFormalParameter(Token equals, Token token) {
@@ -1098,7 +1032,7 @@ class AstBuilder extends ScopeListener {
     Comment comment = _findComment(metadata,
         thisKeyword ?? typeOrFunctionTypedParameter?.beginToken ?? nameToken);
 
-    NormalFormalParameter node;
+    FormalParameter node;
     if (typeOrFunctionTypedParameter is FunctionTypedFormalParameter) {
       // This is a temporary AST node that was constructed in
       // [endFunctionTypedFormalParameter]. We now deconstruct it and create
@@ -1148,17 +1082,16 @@ class AstBuilder extends ScopeListener {
     }
 
     ParameterKind analyzerKind = _toAnalyzerParameterKind(kind);
-    FormalParameter parameter = node;
     if (analyzerKind != ParameterKind.REQUIRED) {
-      parameter = ast.defaultFormalParameter(
+      node = ast.defaultFormalParameter(
           node, analyzerKind, defaultValue?.separator, defaultValue?.value);
     } else if (defaultValue != null) {
       // An error is reported if a required parameter has a default value.
       // Record it as named parameter for recovery.
-      parameter = ast.defaultFormalParameter(node, ParameterKind.NAMED,
+      node = ast.defaultFormalParameter(node, ParameterKind.NAMED,
           defaultValue.separator, defaultValue.value);
     }
-    push(parameter);
+    push(node);
   }
 
   @override
@@ -1184,7 +1117,7 @@ class AstBuilder extends ScopeListener {
     assert(optional(')', rightParen));
     debugEvent("FormalParameters");
 
-    List<Object> rawParameters = popTypedList(count) ?? const <Object>[];
+    List rawParameters = popList(count) ?? const <Object>[];
     List<FormalParameter> parameters = <FormalParameter>[];
     Token leftDelimiter;
     Token rightDelimiter;
@@ -1207,25 +1140,11 @@ class AstBuilder extends ScopeListener {
     assert(optional('}', rightBracket));
     debugEvent("SwitchBlock");
 
-    List<List<SwitchMember>> membersList = popTypedList(caseCount);
+    List<List<SwitchMember>> membersList = popList(caseCount);
     exitBreakTarget();
     exitLocalScope();
     List<SwitchMember> members =
         membersList?.expand((members) => members)?.toList() ?? <SwitchMember>[];
-
-    Set<String> labels = new Set<String>();
-    for (SwitchMember member in members) {
-      for (Label label in member.labels) {
-        if (!labels.add(label.label.name)) {
-          handleRecoverableError(
-              templateDuplicateLabelInSwitchStatement
-                  .withArguments(label.label.name),
-              label.beginToken,
-              label.beginToken);
-        }
-      }
-    }
-
     push(leftBracket);
     push(members);
     push(rightBracket);
@@ -1246,9 +1165,9 @@ class AstBuilder extends ScopeListener {
         : optional(':', colonAfterDefault));
     debugEvent("SwitchCase");
 
-    List<Statement> statements = popTypedList(statementCount);
-    List<SwitchMember> members = popTypedList(expressionCount) ?? [];
-    List<Label> labels = popTypedList(labelCount);
+    List<Statement> statements = popList(statementCount);
+    List<SwitchMember> members = popList(expressionCount) ?? [];
+    List<Label> labels = popList(labelCount);
     if (defaultKeyword != null) {
       members.add(ast.switchDefault(
           <Label>[], defaultKeyword, colonAfterDefault, <Statement>[]));
@@ -1334,7 +1253,7 @@ class AstBuilder extends ScopeListener {
     debugEvent("TryStatement");
 
     Block finallyBlock = popIfNotNull(finallyKeyword);
-    List<CatchClause> catchClauses = popTypedList(catchCount);
+    List<CatchClause> catchClauses = popList(catchCount);
     Block body = pop();
     push(ast.tryStatement(
         tryKeyword, body, catchClauses, finallyKeyword, finallyBlock));
@@ -1421,26 +1340,14 @@ class AstBuilder extends ScopeListener {
     assert(operator.type.isUnaryPrefixOperator);
     debugEvent("UnaryPrefixAssignmentExpression");
 
-    Expression expression = pop();
-    if (!expression.isAssignable) {
-      // This error is also reported by the body builder.
-      handleRecoverableError(messageMissingAssignableSelector,
-          expression.endToken, expression.endToken);
-    }
-    push(ast.prefixExpression(operator, expression));
+    push(ast.prefixExpression(operator, pop()));
   }
 
   void handleUnaryPostfixAssignmentExpression(Token operator) {
     assert(operator.type.isUnaryPostfixOperator);
     debugEvent("UnaryPostfixAssignmentExpression");
 
-    Expression expression = pop();
-    if (!expression.isAssignable) {
-      // This error is also reported by the body builder.
-      handleRecoverableError(
-          messageIllegalAssignmentToNonAssignable, operator, operator);
-    }
-    push(ast.postfixExpression(expression, operator));
+    push(ast.postfixExpression(pop(), operator));
   }
 
   void handleModifier(Token token) {
@@ -1456,12 +1363,8 @@ class AstBuilder extends ScopeListener {
     if (count == 0) {
       push(NullValue.Modifiers);
     } else {
-      push(new _Modifiers(popTypedList(count)));
+      push(new _Modifiers(popList(count)));
     }
-  }
-
-  void beginTopLevelMethod(Token lastConsumed, Token externalToken) {
-    push(new _Modifiers()..externalKeyword = externalToken);
   }
 
   void endTopLevelMethod(Token beginToken, Token getOrSet, Token endToken) {
@@ -1617,7 +1520,7 @@ class AstBuilder extends ScopeListener {
     assert(firstIdentifier.isIdentifier);
     debugEvent("DottedName");
 
-    List<SimpleIdentifier> components = popTypedList(count);
+    List<SimpleIdentifier> components = popList(count);
     push(ast.dottedName(components));
   }
 
@@ -1651,16 +1554,6 @@ class AstBuilder extends ScopeListener {
 
     StringLiteral libraryUri = pop();
     StringLiteral value = popIfNotNull(equalSign);
-    if (value is StringInterpolation) {
-      for (var child in value.childEntities) {
-        if (child is InterpolationExpression) {
-          // This error is reported in OutlineBuilder.endLiteralString
-          handleRecoverableError(
-              messageInterpolationInUri, child.beginToken, child.endToken);
-          break;
-        }
-      }
-    }
     DottedName name = pop();
     push(ast.configuration(ifKeyword, leftParen, name, equalSign, value,
         leftParen?.endGroup, libraryUri));
@@ -1670,14 +1563,14 @@ class AstBuilder extends ScopeListener {
   void endConditionalUris(int count) {
     debugEvent("ConditionalUris");
 
-    push(popTypedList<Configuration>(count) ?? NullValue.ConditionalUris);
+    push(popList(count) ?? NullValue.ConditionalUris);
   }
 
   @override
   void handleIdentifierList(int count) {
     debugEvent("IdentifierList");
 
-    push(popTypedList<SimpleIdentifier>(count) ?? NullValue.IdentifierList);
+    push(popList(count) ?? NullValue.IdentifierList);
   }
 
   @override
@@ -1699,15 +1592,9 @@ class AstBuilder extends ScopeListener {
   }
 
   @override
-  void endCombinators(int count) {
-    debugEvent("Combinators");
-    push(popTypedList<Combinator>(count) ?? NullValue.Combinators);
-  }
-
-  @override
   void endTypeList(int count) {
     debugEvent("TypeList");
-    push(popTypedList<TypeName>(count) ?? NullValue.TypeList);
+    push(popList(count) ?? NullValue.TypeList);
   }
 
   @override
@@ -1721,9 +1608,8 @@ class AstBuilder extends ScopeListener {
   }
 
   @override
-  void beginClassDeclaration(Token begin, Token abstractToken, Token name) {
+  void beginClassDeclaration(Token beginToken, Token name) {
     assert(classDeclaration == null);
-    push(new _Modifiers()..abstractKeyword = abstractToken);
   }
 
   @override
@@ -1755,7 +1641,7 @@ class AstBuilder extends ScopeListener {
     debugEvent("ClassImplements");
 
     if (implementsKeyword != null) {
-      List<TypeName> interfaces = popTypedList(interfacesCount);
+      List<TypeName> interfaces = popList(interfacesCount);
       push(ast.implementsClause(implementsKeyword, interfaces));
     } else {
       push(NullValue.IdentifierList);
@@ -1776,9 +1662,9 @@ class AstBuilder extends ScopeListener {
     ImplementsClause implementsClause = pop(NullValue.IdentifierList);
     WithClause withClause = pop(NullValue.WithClause);
     ExtendsClause extendsClause = pop(NullValue.ExtendsClause);
-    _Modifiers modifiers = pop();
     TypeParameterList typeParameters = pop();
     SimpleIdentifier name = pop();
+    _Modifiers modifiers = pop();
     Token abstractKeyword = modifiers?.abstractKeyword;
     List<Annotation> metadata = pop();
     Comment comment = _findComment(metadata, classKeyword);
@@ -1838,12 +1724,6 @@ class AstBuilder extends ScopeListener {
   }
 
   @override
-  void beginNamedMixinApplication(
-      Token begin, Token abstractToken, Token name) {
-    push(new _Modifiers()..abstractKeyword = abstractToken);
-  }
-
-  @override
   void endMixinApplication(Token withKeyword) {
     assert(optionalOrNull('with', withKeyword));
     debugEvent("MixinApplication");
@@ -1871,9 +1751,9 @@ class AstBuilder extends ScopeListener {
     var superclass = mixinApplication.supertype;
     var withClause = ast.withClause(
         mixinApplication.withKeyword, mixinApplication.mixinTypes);
-    _Modifiers modifiers = pop();
     TypeParameterList typeParameters = pop();
     SimpleIdentifier name = pop();
+    _Modifiers modifiers = pop();
     Token abstractKeyword = modifiers?.abstractKeyword;
     List<Annotation> metadata = pop();
     Comment comment = _findComment(metadata, beginToken);
@@ -1896,7 +1776,7 @@ class AstBuilder extends ScopeListener {
     debugEvent("LabeledStatement");
 
     Statement statement = pop();
-    List<Label> labels = popTypedList(labelCount);
+    List<Label> labels = popList(labelCount);
     push(ast.labeledStatement(labels, statement));
   }
 
@@ -1922,13 +1802,9 @@ class AstBuilder extends ScopeListener {
       return;
     }
     debugEvent("Error: ${message.message}");
-    if (message.code.analyzerCode == null && startToken is ErrorToken) {
-      translateErrorToken(startToken, errorReporter.reportScannerError);
-    } else {
-      int offset = startToken.offset;
-      int length = endToken.end - offset;
-      addCompileTimeError(message, offset, length);
-    }
+    int offset = startToken.offset;
+    int length = endToken.end - offset;
+    addCompileTimeError(message, offset, length);
   }
 
   @override
@@ -1977,7 +1853,7 @@ class AstBuilder extends ScopeListener {
     if (libraryNameOrUri is StringLiteral) {
       uri = libraryNameOrUri;
     } else {
-      name = ast.libraryIdentifier(libraryNameOrUri as List<SimpleIdentifier>);
+      name = ast.libraryIdentifier(libraryNameOrUri);
     }
     List<Annotation> metadata = pop();
     Comment comment = _findComment(metadata, partKeyword);
@@ -2005,14 +1881,6 @@ class AstBuilder extends ScopeListener {
 
     SimpleIdentifier name = pop();
     push(ast.variableDeclaration(name, null, null));
-  }
-
-  @override
-  void beginFactoryMethod(
-      Token lastConsumed, Token externalToken, Token constToken) {
-    push(new _Modifiers()
-      ..externalKeyword = externalToken
-      ..finalConstOrVarKeyword = constToken);
   }
 
   @override
@@ -2104,12 +1972,12 @@ class AstBuilder extends ScopeListener {
     FormalParameterList parameters = pop();
     SimpleIdentifier name = pop();
     TypeAnnotation returnType = pop();
+    pop(); // modifiers
     TypeParameterList typeParameters = pop();
-    List<Annotation> metadata = pop(NullValue.Metadata);
     FunctionExpression functionExpression =
         ast.functionExpression(typeParameters, parameters, body);
     push(ast.functionDeclarationStatement(ast.functionDeclaration(
-        null, metadata, null, returnType, null, name, functionExpression)));
+        null, null, null, returnType, null, name, functionExpression)));
   }
 
   @override
@@ -2117,17 +1985,13 @@ class AstBuilder extends ScopeListener {
     debugEvent("FunctionName");
   }
 
-  void endTopLevelFields(Token staticToken, Token covariantToken,
-      Token varFinalOrConst, int count, Token beginToken, Token semicolon) {
+  void endTopLevelFields(int count, Token beginToken, Token semicolon) {
     assert(optional(';', semicolon));
     debugEvent("TopLevelFields");
 
-    List<VariableDeclaration> variables = popTypedList(count);
+    List<VariableDeclaration> variables = popList(count);
     TypeAnnotation type = pop();
-    _Modifiers modifiers = new _Modifiers()
-      ..staticKeyword = staticToken
-      ..covariantKeyword = covariantToken
-      ..finalConstOrVarKeyword = varFinalOrConst;
+    _Modifiers modifiers = pop();
     Token keyword = modifiers?.finalConstOrVarKeyword;
     var variableList =
         ast.variableDeclarationList(null, null, keyword, type, variables);
@@ -2161,37 +2025,8 @@ class AstBuilder extends ScopeListener {
     assert(optional('>', endToken));
     debugEvent("TypeVariables");
 
-    List<TypeParameter> typeParameters = popTypedList(count);
+    List<TypeParameter> typeParameters = popList(count);
     push(ast.typeParameterList(beginToken, typeParameters, endToken));
-  }
-
-  @override
-  void beginMethod(Token externalToken, Token staticToken, Token covariantToken,
-      Token varFinalOrConst, Token name) {
-    _Modifiers modifiers = new _Modifiers();
-    if (externalToken != null) {
-      assert(externalToken.isModifier);
-      modifiers.externalKeyword = externalToken;
-    }
-    if (staticToken != null) {
-      assert(staticToken.isModifier);
-      if (name?.lexeme == classDeclaration.name.name) {
-        // This error is also reported in OutlineBuilder.beginMethod
-        handleRecoverableError(
-            messageStaticConstructor, staticToken, staticToken);
-      } else {
-        modifiers.staticKeyword = staticToken;
-      }
-    }
-    if (covariantToken != null) {
-      assert(covariantToken.isModifier);
-      modifiers.covariantKeyword = covariantToken;
-    }
-    if (varFinalOrConst != null) {
-      assert(varFinalOrConst.isModifier);
-      modifiers.finalConstOrVarKeyword = varFinalOrConst;
-    }
-    push(modifiers);
   }
 
   @override
@@ -2252,27 +2087,14 @@ class AstBuilder extends ScopeListener {
     }
 
     void constructor(
-        SimpleIdentifier prefixOrName, Token period, SimpleIdentifier name) {
-      if (modifiers?.constKeyword != null &&
-          body != null &&
-          (body.length > 1 || body.beginToken?.lexeme != ';')) {
-        // This error is also reported in BodyBuilder.finishFunction
-        Token bodyToken = body.beginToken ?? modifiers.constKeyword;
-        handleRecoverableError(
-            messageConstConstructorWithBody, bodyToken, bodyToken);
-      }
-      if (returnType != null) {
-        // This error is also reported in OutlineBuilder.endMethod
-        handleRecoverableError(messageConstructorWithReturnType,
-            returnType.beginToken, returnType.beginToken);
-      }
+        SimpleIdentifier returnType, Token period, SimpleIdentifier name) {
       classDeclaration.members.add(ast.constructorDeclaration(
           comment,
           metadata,
           modifiers?.externalKeyword,
           modifiers?.finalConstOrVarKeyword,
           null, // TODO(paulberry): factoryKeyword
-          ast.simpleIdentifier(prefixOrName.token),
+          ast.simpleIdentifier(returnType.token),
           period,
           name,
           parameters,
@@ -2283,22 +2105,6 @@ class AstBuilder extends ScopeListener {
     }
 
     void method(Token operatorKeyword, SimpleIdentifier name) {
-      if (modifiers?.constKeyword != null &&
-          body != null &&
-          (body.length > 1 || body.beginToken?.lexeme != ';')) {
-        // This error is also reported in OutlineBuilder.endMethod
-        handleRecoverableError(
-            messageConstMethod, modifiers.constKeyword, modifiers.constKeyword);
-      }
-      if (parameters?.parameters != null) {
-        parameters.parameters.forEach((FormalParameter param) {
-          if (param is FieldFormalParameter) {
-            // This error is reported in the BodyBuilder.endFormalParameter.
-            handleRecoverableError(messageFieldInitializerOutsideConstructor,
-                param.thisKeyword, param.thisKeyword);
-          }
-        });
-      }
       classDeclaration.members.add(ast.methodDeclaration(
           comment,
           metadata,
@@ -2381,15 +2187,8 @@ class AstBuilder extends ScopeListener {
         // this).
         type = null;
       }
-      declarations.add(ast.genericTypeAlias(
-          comment,
-          metadata,
-          typedefKeyword,
-          name,
-          templateParameters,
-          equals,
-          type as GenericFunctionType,
-          semicolon));
+      declarations.add(ast.genericTypeAlias(comment, metadata, typedefKeyword,
+          name, templateParameters, equals, type, semicolon));
     }
   }
 
@@ -2399,7 +2198,7 @@ class AstBuilder extends ScopeListener {
     assert(optional('{', leftBrace));
     debugEvent("Enum");
 
-    List<EnumConstantDeclaration> constants = popTypedList(count);
+    List<EnumConstantDeclaration> constants = popList(count);
     SimpleIdentifier name = pop();
     List<Annotation> metadata = pop();
     Comment comment = _findComment(metadata, enumKeyword);
@@ -2413,22 +2212,18 @@ class AstBuilder extends ScopeListener {
     assert(optional('>', rightBracket));
     debugEvent("TypeArguments");
 
-    List<TypeAnnotation> arguments = popTypedList(count);
+    List<TypeAnnotation> arguments = popList(count);
     push(ast.typeArgumentList(leftBracket, arguments, rightBracket));
   }
 
   @override
-  void endFields(Token staticToken, Token covariantToken, Token varFinalOrConst,
-      int count, Token beginToken, Token semicolon) {
+  void endFields(int count, Token beginToken, Token semicolon) {
     assert(optional(';', semicolon));
     debugEvent("Fields");
 
-    List<VariableDeclaration> variables = popTypedList(count);
+    List<VariableDeclaration> variables = popList(count);
     TypeAnnotation type = pop();
-    _Modifiers modifiers = new _Modifiers()
-      ..staticKeyword = staticToken
-      ..covariantKeyword = covariantToken
-      ..finalConstOrVarKeyword = varFinalOrConst;
+    _Modifiers modifiers = pop();
     var variableList = ast.variableDeclarationList(
         null, null, modifiers?.finalConstOrVarKeyword, type, variables);
     Token covariantKeyword = modifiers?.covariantKeyword;
@@ -2494,7 +2289,7 @@ class AstBuilder extends ScopeListener {
   void endMetadataStar(int count) {
     debugEvent("MetadataStar");
 
-    push(popTypedList<Annotation>(count) ?? NullValue.Metadata);
+    push(popList(count) ?? NullValue.Metadata);
   }
 
   ParameterKind _toAnalyzerParameterKind(FormalParameterKind type) {
@@ -2835,7 +2630,7 @@ class AstBuilder extends ScopeListener {
 
   /// Parse a documentation comment. Return the documentation comment that was
   /// parsed, or `null` if there was no comment.
-  Comment _parseDocumentationCommentOpt(Token commentToken) {
+  Comment _parseDocumentationCommentOpt(CommentToken commentToken) {
     List<Token> tokens = <Token>[];
     while (commentToken != null) {
       if (commentToken.lexeme.startsWith('/**') ||
@@ -2919,25 +2714,6 @@ class AstBuilder extends ScopeListener {
   bool optionalOrNull(String value, Token token) {
     return token == null || identical(value, token.stringValue);
   }
-
-  List<T> popTypedList<T>(int count, [List<T> list]) {
-    if (count == 0) return null;
-    assert(stack.arrayLength >= count);
-
-    final table = stack.array;
-    final length = stack.arrayLength;
-
-    final tailList = list ?? new List<T>.filled(count, null, growable: true);
-    final startIndex = length - count;
-    for (int i = 0; i < count; i++) {
-      final value = table[startIndex + i];
-      tailList[i] = value is NullValue ? null : value;
-      table[startIndex + i] = null;
-    }
-    stack.arrayLength -= count;
-
-    return tailList;
-  }
 }
 
 /// Data structure placed on the stack to represent a mixin application (a
@@ -3004,30 +2780,28 @@ class _Modifiers {
   Token staticKeyword;
   Token covariantKeyword;
 
-  _Modifiers([List<Token> modifierTokens]) {
+  _Modifiers(List<Token> modifierTokens) {
     // No need to check the order and uniqueness of the modifiers, or that
     // disallowed modifiers are not used; the parser should do that.
     // TODO(paulberry,ahe): implement the necessary logic in the parser.
-    if (modifierTokens != null) {
-      for (var token in modifierTokens) {
-        var s = token.lexeme;
-        if (identical('abstract', s)) {
-          abstractKeyword = token;
-        } else if (identical('const', s)) {
-          finalConstOrVarKeyword = token;
-        } else if (identical('external', s)) {
-          externalKeyword = token;
-        } else if (identical('final', s)) {
-          finalConstOrVarKeyword = token;
-        } else if (identical('static', s)) {
-          staticKeyword = token;
-        } else if (identical('var', s)) {
-          finalConstOrVarKeyword = token;
-        } else if (identical('covariant', s)) {
-          covariantKeyword = token;
-        } else {
-          unhandled("$s", "modifier", token.charOffset, null);
-        }
+    for (var token in modifierTokens) {
+      var s = token.lexeme;
+      if (identical('abstract', s)) {
+        abstractKeyword = token;
+      } else if (identical('const', s)) {
+        finalConstOrVarKeyword = token;
+      } else if (identical('external', s)) {
+        externalKeyword = token;
+      } else if (identical('final', s)) {
+        finalConstOrVarKeyword = token;
+      } else if (identical('static', s)) {
+        staticKeyword = token;
+      } else if (identical('var', s)) {
+        finalConstOrVarKeyword = token;
+      } else if (identical('covariant', s)) {
+        covariantKeyword = token;
+      } else {
+        unhandled("$s", "modifier", token.charOffset, null);
       }
     }
   }
@@ -3051,12 +2825,5 @@ class _Modifiers {
       }
     }
     return firstToken;
-  }
-
-  /// Return the `const` keyword or `null`.
-  Token get constKeyword {
-    return identical('const', finalConstOrVarKeyword?.lexeme)
-        ? finalConstOrVarKeyword
-        : null;
   }
 }

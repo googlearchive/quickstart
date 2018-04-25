@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library analyzer.source.error_processor;
+
 import 'package:analyzer/error/error.dart';
 import 'package:analyzer/src/error/codes.dart';
 import 'package:analyzer/src/generated/engine.dart';
@@ -26,7 +28,7 @@ class ErrorConfig {
   ///     new ErrorConfig({'missing_return' : 'error'});
   /// will create a processor config that turns `missing_return` hints into
   /// errors.
-  ErrorConfig(YamlNode codeMap) {
+  ErrorConfig(Object codeMap) {
     _processMap(codeMap);
   }
 
@@ -43,11 +45,18 @@ class ErrorConfig {
     }
   }
 
-  void _processMap(YamlNode codes) {
+  void _processMap(Object codes) {
     if (codes is YamlMap) {
+      // TODO(pq): stop traversing nodes and unify w/ standard map handling
       codes.nodes.forEach((k, v) {
         if (k is YamlScalar && v is YamlScalar) {
           _process(k.value, v.value);
+        }
+      });
+    } else if (codes is Map) {
+      codes.forEach((k, v) {
+        if (k is String) {
+          _process(k, v);
         }
       });
     }

@@ -16,7 +16,6 @@ import 'messages.dart'
     show
         LocatedMessage,
         Message,
-        noLength,
         SummaryTemplate,
         Template,
         messagePlatformPrivateLibraryAccess,
@@ -86,12 +85,6 @@ abstract class Loader<L> {
   LibraryBuilder read(Uri uri, int charOffset,
       {Uri fileUri, LibraryBuilder accessor, LibraryBuilder origin}) {
     LibraryBuilder builder = builders.putIfAbsent(uri, () {
-      if (fileUri != null &&
-          (fileUri.scheme == "dart" ||
-              fileUri.scheme == "package" ||
-              fileUri.scheme == "dart-ext")) {
-        fileUri = null;
-      }
       if (fileUri == null) {
         switch (uri.scheme) {
           case "package":
@@ -136,8 +129,8 @@ abstract class Loader<L> {
         !accessor.isPatch &&
         !target.backendTarget
             .allowPlatformPrivateLibraryAccess(accessor.uri, uri)) {
-      accessor.addCompileTimeError(messagePlatformPrivateLibraryAccess,
-          charOffset, noLength, accessor.fileUri);
+      accessor.addCompileTimeError(
+          messagePlatformPrivateLibraryAccess, charOffset, accessor.fileUri);
     }
     return builder;
   }
@@ -199,20 +192,19 @@ abstract class Loader<L> {
   ///
   /// If [wasHandled] is true, this error is added to [handledErrors],
   /// otherwise it is added to [unhandledErrors].
-  void addCompileTimeError(
-      Message message, int charOffset, int length, Uri fileUri,
+  void addCompileTimeError(Message message, int charOffset, Uri fileUri,
       {bool wasHandled: false, LocatedMessage context}) {
-    addMessage(message, charOffset, length, fileUri, Severity.error,
+    addMessage(message, charOffset, fileUri, Severity.error,
         wasHandled: wasHandled, context: context);
   }
 
   /// Register [message] as a problem with a severity determined by the
   /// intrinsic severity of the message.
-  void addProblem(Message message, int charOffset, int length, Uri fileUri,
+  void addProblem(Message message, int charOffset, Uri fileUri,
       {LocatedMessage context}) {
     Severity severity = message.code.severity;
     if (severity == null) {
-      addMessage(message, charOffset, length, fileUri, Severity.error,
+      addMessage(message, charOffset, fileUri, Severity.error,
           context: context);
       internalProblem(
           templateInternalProblemMissingSeverity
@@ -224,8 +216,7 @@ abstract class Loader<L> {
       severity =
           target.backendTarget.strongMode ? Severity.error : Severity.warning;
     }
-    addMessage(message, charOffset, length, fileUri, severity,
-        context: context);
+    addMessage(message, charOffset, fileUri, severity, context: context);
   }
 
   /// All messages reported by the compiler (errors, warnings, etc.) are routed
@@ -234,8 +225,8 @@ abstract class Loader<L> {
   /// Returns true if the message is new, that is, not previously
   /// reported. This is important as some parser errors may be reported up to
   /// three times by `OutlineBuilder`, `DietListener`, and `BodyBuilder`.
-  bool addMessage(Message message, int charOffset, int length, Uri fileUri,
-      Severity severity,
+  bool addMessage(
+      Message message, int charOffset, Uri fileUri, Severity severity,
       {bool wasHandled: false, LocatedMessage context}) {
     String trace = """
 message: ${message.message}
@@ -244,16 +235,14 @@ fileUri: $fileUri
 severity: $severity
 """;
     if (!seenMessages.add(trace)) return false;
-    target.context
-        .report(message.withLocation(fileUri, charOffset, length), severity);
+    target.context.report(message.withLocation(fileUri, charOffset), severity);
     if (context != null) {
-      target.context.report(context, Severity.context);
+      target.context.report(context, severity);
     }
-    recordMessage(severity, message, charOffset, length, fileUri,
-        context: context);
+    recordMessage(severity, message, charOffset, fileUri, context: context);
     if (severity == Severity.error) {
       (wasHandled ? handledErrors : unhandledErrors)
-          .add(message.withLocation(fileUri, charOffset, length));
+          .add(message.withLocation(fileUri, charOffset));
     }
     return true;
   }
@@ -270,8 +259,8 @@ severity: $severity
 
   Builder getNativeAnnotation() => target.getNativeAnnotation(this);
 
-  void recordMessage(Severity severity, Message message, int charOffset,
-      int length, Uri fileUri,
+  void recordMessage(
+      Severity severity, Message message, int charOffset, Uri fileUri,
       {LocatedMessage context}) {}
 }
 

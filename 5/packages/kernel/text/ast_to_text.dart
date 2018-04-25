@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 library kernel.ast_to_text;
 
+// ignore: UNDEFINED_HIDDEN_NAME
 import 'dart:core' hide MapEntry;
 
 import '../ast.dart';
@@ -131,10 +132,9 @@ String debugNodeToString(Node node) {
   return '$buffer';
 }
 
-String componentToString(Component node) {
+String programToString(Program node) {
   StringBuffer buffer = new StringBuffer();
-  new Printer(buffer, syntheticNames: new NameSystem())
-      .writeComponentFile(node);
+  new Printer(buffer, syntheticNames: new NameSystem()).writeProgramFile(node);
   return '$buffer';
 }
 
@@ -396,21 +396,21 @@ class Printer extends Visitor<Null> {
 
     endLine();
     var inner =
-        new Printer._inner(this, imports, library.enclosingComponent?.metadata);
+        new Printer._inner(this, imports, library.enclosingProgram?.metadata);
     library.typedefs.forEach(inner.writeNode);
     library.classes.forEach(inner.writeNode);
     library.fields.forEach(inner.writeNode);
     library.procedures.forEach(inner.writeNode);
   }
 
-  void writeComponentFile(Component component) {
-    ImportTable imports = new ComponentImportTable(component);
-    var inner = new Printer._inner(this, imports, component.metadata);
+  void writeProgramFile(Program program) {
+    ImportTable imports = new ProgramImportTable(program);
+    var inner = new Printer._inner(this, imports, program.metadata);
     writeWord('main');
     writeSpaced('=');
-    inner.writeMemberReferenceFromReference(component.mainMethodName);
+    inner.writeMemberReferenceFromReference(program.mainMethodName);
     endLine(';');
-    for (var library in component.libraries) {
+    for (var library in program.libraries) {
       if (library.isExternal) {
         if (!showExternal) {
           continue;
@@ -929,7 +929,6 @@ class Printer extends Visitor<Null> {
     writeModifier(node.isForwardingStub, 'forwarding-stub');
     writeModifier(node.isForwardingSemiStub, 'forwarding-semi-stub');
     writeModifier(node.isGenericContravariant, 'generic-contravariant');
-    writeModifier(node.isNoSuchMethodForwarder, 'no-such-method-forwarder');
     writeWord(procedureKindToString(node.kind));
     if ((node.enclosingClass == null &&
             node.enclosingLibrary.fileUri != node.fileUri) ||
@@ -1449,21 +1448,6 @@ class Printer extends Visitor<Null> {
     endLine('}');
   }
 
-  visitAssertBlock(AssertBlock node) {
-    writeIndentation();
-    writeSpaced('assert');
-    if (node.statements.isEmpty) {
-      endLine('{}');
-      return;
-    }
-    endLine('{');
-    ++indentation;
-    node.statements.forEach(writeNode);
-    --indentation;
-    writeIndentation();
-    endLine('}');
-  }
-
   visitEmptyStatement(EmptyStatement node) {
     writeIndentation();
     endLine(';');
@@ -1686,7 +1670,6 @@ class Printer extends Visitor<Null> {
   void writeVariableDeclaration(VariableDeclaration node,
       {bool useVarKeyword: false}) {
     if (showOffsets) writeWord("[${node.fileOffset}]");
-    if (showMetadata) writeMetadata(node);
     writeAnnotationList(node.annotations);
     writeModifier(node.isCovariant, 'covariant');
     writeModifier(node.isGenericCovariantImpl, 'generic-covariant-impl');

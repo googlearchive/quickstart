@@ -17,6 +17,7 @@ import 'package:analyzer/src/dart/ast/token.dart';
 import 'package:analyzer/src/generated/engine.dart' show AnalysisEngine;
 import 'package:analyzer/src/generated/java_core.dart';
 import 'package:analyzer/src/generated/utilities_collection.dart' show TokenMap;
+import 'package:analyzer/src/generated/utilities_dart.dart';
 import 'package:meta/meta.dart';
 
 /**
@@ -348,7 +349,6 @@ class AstCloner implements AstVisitor<AstNode> {
   @override
   DefaultFormalParameter visitDefaultFormalParameter(
           DefaultFormalParameter node) =>
-      // ignore: deprecated_member_use
       astFactory.defaultFormalParameter(cloneNode(node.parameter), node.kind,
           cloneToken(node.separator), cloneNode(node.defaultValue));
 
@@ -1393,7 +1393,6 @@ class AstComparator implements AstVisitor<bool> {
   bool visitDefaultFormalParameter(DefaultFormalParameter node) {
     DefaultFormalParameter other = _other as DefaultFormalParameter;
     return isEqualNodes(node.parameter, other.parameter) &&
-        // ignore: deprecated_member_use
         node.kind == other.kind &&
         isEqualTokens(node.separator, other.separator) &&
         isEqualNodes(node.defaultValue, other.defaultValue);
@@ -5720,7 +5719,6 @@ class ResolutionCopier implements AstVisitor<bool> {
     DefaultFormalParameter toNode = this._toNode as DefaultFormalParameter;
     return _and(
         _isEqualNodes(node.parameter, toNode.parameter),
-        // ignore: deprecated_member_use
         node.kind == toNode.kind,
         _isEqualTokens(node.separator, toNode.separator),
         _isEqualNodes(node.defaultValue, toNode.defaultValue));
@@ -7445,7 +7443,7 @@ class ToSourceVisitor implements AstVisitor<Object> {
         _writer.print(", ");
       }
       if (groupEnd == null && parameter is DefaultFormalParameter) {
-        if (parameter.isNamed) {
+        if (parameter.kind == ParameterKind.NAMED) {
           groupEnd = "}";
           _writer.print('{');
         } else {
@@ -8760,7 +8758,7 @@ class ToSourceVisitor2 implements AstVisitor<Object> {
         sink.write(", ");
       }
       if (groupEnd == null && parameter is DefaultFormalParameter) {
-        if (parameter.isNamed) {
+        if (parameter.kind == ParameterKind.NAMED) {
           groupEnd = "}";
           sink.write('{');
         } else {

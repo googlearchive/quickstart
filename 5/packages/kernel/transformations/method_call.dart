@@ -53,12 +53,11 @@ import '../visitor.dart';
 ///   var b = new B();
 ///   b.foo(499, named1: 88);
 /// }
-Component transformComponent(
-    CoreTypes coreTypes, ClassHierarchy hierarchy, Component component,
+Program transformProgram(
+    CoreTypes coreTypes, ClassHierarchy hierarchy, Program program,
     [debug = false]) {
-  new MethodCallTransformer(coreTypes, hierarchy, debug)
-      .visitComponent(component);
-  return component;
+  new MethodCallTransformer(coreTypes, hierarchy, debug).visitProgram(program);
+  return program;
 }
 
 class MethodCallTransformer extends Transformer {
@@ -116,7 +115,7 @@ class MethodCallTransformer extends Transformer {
   MethodCallTransformer(this.coreTypes, this.hierarchy, this._debug);
 
   @override
-  TreeNode visitComponent(Component node) {
+  TreeNode visitProgram(Program node) {
     // First move body of all procedures that takes optional positional or named
     // parameters and record which non-static procedure names have optional
     // positional arguments.
@@ -1257,9 +1256,9 @@ class MethodCallTransformer extends Transformer {
 
   // Below methods used to add debug prints etc
 
-  Library _getDartCoreLibrary(Component component) {
-    if (component == null) return null;
-    return component.libraries.firstWhere((lib) =>
+  Library _getDartCoreLibrary(Program program) {
+    if (program == null) return null;
+    return program.libraries.firstWhere((lib) =>
         lib.importUri.scheme == 'dart' && lib.importUri.path == 'core');
   }
 
@@ -1278,8 +1277,8 @@ class MethodCallTransformer extends Transformer {
   }
 
   Expression _getPrintExpression(String msg, TreeNode treeNode) {
-    TreeNode component = treeNode;
-    while (component is! Component) component = component.parent;
+    TreeNode program = treeNode;
+    while (program is! Program) program = program.parent;
     var finalMsg = msg;
     if (treeNode is Member) {
       finalMsg += " [ ${treeNode.name.name} ]";
@@ -1292,9 +1291,9 @@ class MethodCallTransformer extends Transformer {
     }
 
     var stacktrace = new StaticGet(_getProcedureInClassInLib(
-        _getDartCoreLibrary(component), 'StackTrace', 'current'));
+        _getDartCoreLibrary(program), 'StackTrace', 'current'));
     var printStackTrace = new StaticInvocation(
-        _getProcedureInLib(_getDartCoreLibrary(component), 'print'),
+        _getProcedureInLib(_getDartCoreLibrary(program), 'print'),
         new Arguments([
           new StringConcatenation([
             new StringLiteral(finalMsg),

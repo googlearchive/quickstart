@@ -2,16 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import '../../scanner/token.dart' show Token;
-
-import '../fasta_codes.dart'
-    show Message, Template, templateExpectedIdentifier, templateExpectedType;
-
-import '../scanner/token_constants.dart' show IDENTIFIER_TOKEN;
-
-import 'identifier_context_impl.dart';
-
-import 'parser.dart' show Parser;
+import 'package:front_end/src/fasta/fasta_codes.dart';
+import 'package:front_end/src/scanner/token.dart';
 
 /// Information about the parser state that is passed to the listener at the
 /// time an identifier is encountered. It is also used by the parser for error
@@ -23,42 +15,42 @@ import 'parser.dart' show Parser;
 class IdentifierContext {
   /// Identifier is being declared as the name of an import prefix (i.e. `Foo`
   /// in `import "..." as Foo;`)
-  static const importPrefixDeclaration = const IdentifierContext(
+  static const importPrefixDeclaration = const IdentifierContext._(
       'importPrefixDeclaration',
       inDeclaration: true,
       isBuiltInIdentifierAllowed: false);
 
   /// Identifier is the start of a dotted name in a conditional import or
   /// export.
-  static const dottedName = const IdentifierContext('dottedName');
+  static const dottedName = const IdentifierContext._('dottedName');
 
   /// Identifier is part of a dotted name in a conditional import or export, but
   /// it's not the first identifier of the dotted name.
   static const dottedNameContinuation =
-      const IdentifierContext('dottedNameContinuation', isContinuation: true);
+      const IdentifierContext._('dottedNameContinuation', isContinuation: true);
 
   /// Identifier is one of the shown/hidden names in an import/export
   /// combinator.
-  static const combinator = const IdentifierContext('combinator');
+  static const combinator = const IdentifierContext._('combinator');
 
   /// Identifier is the start of a name in an annotation that precedes a
   /// declaration (i.e. it appears directly after an `@`).
   static const metadataReference =
-      const IdentifierContext('metadataReference', isScopeReference: true);
+      const IdentifierContext._('metadataReference', isScopeReference: true);
 
   /// Identifier is part of a name in an annotation that precedes a declaration,
   /// but it's not the first identifier in the name.
   static const metadataContinuation =
-      const IdentifierContext('metadataContinuation', isContinuation: true);
+      const IdentifierContext._('metadataContinuation', isContinuation: true);
 
   /// Identifier is part of a name in an annotation that precedes a declaration,
   /// but it appears after type parameters (e.g. `foo` in `@X<Y>.foo()`).
-  static const metadataContinuationAfterTypeArguments = const IdentifierContext(
-      'metadataContinuationAfterTypeArguments',
-      isContinuation: true);
+  static const metadataContinuationAfterTypeArguments =
+      const IdentifierContext._('metadataContinuationAfterTypeArguments',
+          isContinuation: true);
 
   /// Identifier is the name being declared by a typedef declaration.
-  static const typedefDeclaration = const IdentifierContext(
+  static const typedefDeclaration = const IdentifierContext._(
       'typedefDeclaration',
       inDeclaration: true,
       isBuiltInIdentifierAllowed: false);
@@ -66,96 +58,99 @@ class IdentifierContext {
   /// Identifier is a field initializer in a formal parameter list (i.e. it
   /// appears directly after `this.`).
   static const fieldInitializer =
-      const IdentifierContext('fieldInitializer', isContinuation: true);
+      const IdentifierContext._('fieldInitializer', isContinuation: true);
 
   /// Identifier is a formal parameter being declared as part of a function,
   /// method, or typedef declaration.
-  static const formalParameterDeclaration = const IdentifierContext(
+  static const formalParameterDeclaration = const IdentifierContext._(
       'formalParameterDeclaration',
       inDeclaration: true);
 
   /// Identifier is the start of a library name (e.g. `foo` in the directive
   /// 'library foo;`).
-  static const libraryName = const LibraryIdentifierContext();
+  static const libraryName = const IdentifierContext._('libraryName',
+      inLibraryOrPartOfDeclaration: true);
 
   /// Identifier is part of a library name, but it's not the first identifier in
   /// the name.
-  static const libraryNameContinuation =
-      const LibraryIdentifierContext.continuation();
+  static const libraryNameContinuation = const IdentifierContext._(
+      'libraryNameContinuation',
+      inLibraryOrPartOfDeclaration: true,
+      isContinuation: true);
 
   /// Identifier is the start of a library name referenced by a `part of`
   /// directive (e.g. `foo` in the directive `part of foo;`).
   static const partName =
-      const IdentifierContext('partName', inLibraryOrPartOfDeclaration: true);
+      const IdentifierContext._('partName', inLibraryOrPartOfDeclaration: true);
 
   /// Identifier is part of a library name referenced by a `part of` directive,
   /// but it's not the first identifier in the name.
-  static const partNameContinuation = const IdentifierContext(
+  static const partNameContinuation = const IdentifierContext._(
       'partNameContinuation',
       inLibraryOrPartOfDeclaration: true,
       isContinuation: true);
 
   /// Identifier is the type name being declared by an enum declaration.
-  static const enumDeclaration = const IdentifierContext('enumDeclaration',
+  static const enumDeclaration = const IdentifierContext._('enumDeclaration',
       inDeclaration: true, isBuiltInIdentifierAllowed: false);
 
   /// Identifier is an enumerated value name being declared by an enum
   /// declaration.
   static const enumValueDeclaration =
-      const IdentifierContext('enumValueDeclaration', inDeclaration: true);
+      const IdentifierContext._('enumValueDeclaration', inDeclaration: true);
 
   /// Identifier is the name being declared by a class declaration or a named
   /// mixin application, for example, `Foo` in `class Foo = X with Y;`.
-  static const classOrNamedMixinDeclaration = const IdentifierContext(
+  static const classOrNamedMixinDeclaration = const IdentifierContext._(
       'classOrNamedMixinDeclaration',
       inDeclaration: true,
       isBuiltInIdentifierAllowed: false);
 
   /// Identifier is the name of a type variable being declared (e.g. `Foo` in
   /// `class C<Foo extends num> {}`).
-  static const typeVariableDeclaration = const IdentifierContext(
+  static const typeVariableDeclaration = const IdentifierContext._(
       'typeVariableDeclaration',
       inDeclaration: true,
       isBuiltInIdentifierAllowed: false);
 
   /// Identifier is the start of a reference to a type that starts with prefix.
-  static const prefixedTypeReference = const IdentifierContext(
+  static const prefixedTypeReference = const IdentifierContext._(
       'prefixedTypeReference',
       isScopeReference: true,
       isBuiltInIdentifierAllowed: true,
       recoveryTemplate: templateExpectedType);
 
   /// Identifier is the start of a reference to a type declared elsewhere.
-  static const typeReference = const IdentifierContext('typeReference',
+  static const typeReference = const IdentifierContext._('typeReference',
       isScopeReference: true,
       isBuiltInIdentifierAllowed: false,
       recoveryTemplate: templateExpectedType);
 
   /// Identifier is part of a reference to a type declared elsewhere, but it's
   /// not the first identifier of the reference.
-  static const typeReferenceContinuation = const IdentifierContext(
+  static const typeReferenceContinuation = const IdentifierContext._(
       'typeReferenceContinuation',
       isContinuation: true,
       isBuiltInIdentifierAllowed: false);
 
   /// Identifier is a name being declared by a top level variable declaration.
-  static const topLevelVariableDeclaration = const IdentifierContext(
+  static const topLevelVariableDeclaration = const IdentifierContext._(
       'topLevelVariableDeclaration',
       inDeclaration: true);
 
   /// Identifier is a name being declared by a field declaration.
   static const fieldDeclaration =
-      const IdentifierContext('fieldDeclaration', inDeclaration: true);
+      const IdentifierContext._('fieldDeclaration', inDeclaration: true);
 
   /// Identifier is the name being declared by a top level function declaration.
-  static const topLevelFunctionDeclaration = const IdentifierContext(
+  static const topLevelFunctionDeclaration = const IdentifierContext._(
       'topLevelFunctionDeclaration',
       inDeclaration: true);
 
   /// Identifier is the start of the name being declared by a method
   /// declaration.
   static const methodDeclaration =
-      const IdentifierContext('methodDeclaration', inDeclaration: true);
+      const IdentifierContext._('methodDeclaration', inDeclaration: true);
 
   /// Identifier is part of the name being declared by a method declaration,
   /// but it's not the first identifier of the name.
@@ -163,7 +158,7 @@ class IdentifierContext {
   /// In valid Dart, this can only happen if the identifier is the name of a
   /// named constructor which is being declared, e.g. `foo` in
   /// `class C { C.foo(); }`.
-  static const methodDeclarationContinuation = const IdentifierContext(
+  static const methodDeclarationContinuation = const IdentifierContext._(
       'methodDeclarationContinuation',
       inDeclaration: true,
       isContinuation: true);
@@ -173,7 +168,7 @@ class IdentifierContext {
   /// TODO(paulberry,ahe): Does this ever occur in valid Dart, or does it only
   /// occur as part of error recovery?  If it's only as part of error recovery,
   /// perhaps we should just re-use methodDeclaration.
-  static const operatorName = const IdentifierContext('operatorName');
+  static const operatorName = const IdentifierContext._('operatorName');
 
   /// Identifier is the name being declared by a local function declaration that
   /// uses a "get" or "set" keyword.
@@ -181,20 +176,22 @@ class IdentifierContext {
   /// TODO(paulberry,ahe): Does this ever occur in valid Dart, or does it only
   /// occur as part of error recovery?  If it's only as part of error recovery,
   /// perhaps we should just re-use localFunctionDeclaration.
-  static const localAccessorDeclaration =
-      const IdentifierContext('localAccessorDeclaration', inDeclaration: true);
+  static const localAccessorDeclaration = const IdentifierContext._(
+      'localAccessorDeclaration',
+      inDeclaration: true);
 
   /// Identifier is the start of the name being declared by a local function
   /// declaration.
-  static const localFunctionDeclaration =
-      const IdentifierContext('localFunctionDeclaration', inDeclaration: true);
+  static const localFunctionDeclaration = const IdentifierContext._(
+      'localFunctionDeclaration',
+      inDeclaration: true);
 
   /// Identifier is part of the name being declared by a local function
   /// declaration, but it's not the first identifier of the name.
   ///
   /// TODO(paulberry,ahe): Does this ever occur in valid Dart, or does it only
   /// occur as part of error recovery?
-  static const localFunctionDeclarationContinuation = const IdentifierContext(
+  static const localFunctionDeclarationContinuation = const IdentifierContext._(
       'localFunctionDeclarationContinuation',
       inDeclaration: true,
       isContinuation: true);
@@ -204,39 +201,39 @@ class IdentifierContext {
   /// TODO(paulberry,ahe): What is an example of valid Dart code where this
   /// would occur?
   static const functionExpressionName =
-      const IdentifierContext('functionExpressionName');
+      const IdentifierContext._('functionExpressionName');
 
   /// Identifier is the start of a reference to a constructor declared
   /// elsewhere.
   static const constructorReference =
-      const IdentifierContext('constructorReference', isScopeReference: true);
+      const IdentifierContext._('constructorReference', isScopeReference: true);
 
   /// Identifier is part of a reference to a constructor declared elsewhere, but
   /// it's not the first identifier of the reference.
-  static const constructorReferenceContinuation = const IdentifierContext(
+  static const constructorReferenceContinuation = const IdentifierContext._(
       'constructorReferenceContinuation',
       isContinuation: true);
 
   /// Identifier is part of a reference to a constructor declared elsewhere, but
   /// it appears after type parameters (e.g. `foo` in `X<Y>.foo`).
   static const constructorReferenceContinuationAfterTypeArguments =
-      const IdentifierContext(
+      const IdentifierContext._(
           'constructorReferenceContinuationAfterTypeArguments',
           isContinuation: true);
 
   /// Identifier is the declaration of a label (i.e. it is followed by `:` and
   /// then a statement).
   static const labelDeclaration =
-      const IdentifierContext('labelDeclaration', inDeclaration: true);
+      const IdentifierContext._('labelDeclaration', inDeclaration: true);
 
   /// Identifier is the start of a reference occurring in a literal symbol (e.g.
   /// `foo` in `#foo`).
   static const literalSymbol =
-      const IdentifierContext('literalSymbol', inSymbol: true);
+      const IdentifierContext._('literalSymbol', inSymbol: true);
 
   /// Identifier is part of a reference occurring in a literal symbol, but it's
   /// not the first identifier of the reference (e.g. `foo` in `#prefix.foo`).
-  static const literalSymbolContinuation = const IdentifierContext(
+  static const literalSymbolContinuation = const IdentifierContext._(
       'literalSymbolContinuation',
       inSymbol: true,
       isContinuation: true);
@@ -244,25 +241,26 @@ class IdentifierContext {
   /// Identifier appears in an expression, and it does not immediately follow a
   /// `.`.
   static const expression =
-      const IdentifierContext('expression', isScopeReference: true);
+      const IdentifierContext._('expression', isScopeReference: true);
 
   /// Identifier appears in an expression, and it immediately follows a `.`.
   static const expressionContinuation =
-      const IdentifierContext('expressionContinuation', isContinuation: true);
+      const IdentifierContext._('expressionContinuation', isContinuation: true);
 
   /// Identifier is a reference to a named argument of a function or method
   /// invocation (e.g. `foo` in `f(foo: 0);`.
-  static const namedArgumentReference = const IdentifierContext(
+  static const namedArgumentReference = const IdentifierContext._(
       'namedArgumentReference',
       allowedInConstantExpression: true);
 
   /// Identifier is a name being declared by a local variable declaration.
-  static const localVariableDeclaration =
-      const IdentifierContext('localVariableDeclaration', inDeclaration: true);
+  static const localVariableDeclaration = const IdentifierContext._(
+      'localVariableDeclaration',
+      inDeclaration: true);
 
   /// Identifier is a reference to a label (e.g. `foo` in `break foo;`).
   /// Labels have their own scope.
-  static const labelReference = const IdentifierContext('labelReference');
+  static const labelReference = const IdentifierContext._('labelReference');
 
   final String _name;
 
@@ -292,7 +290,7 @@ class IdentifierContext {
 
   final Template<_MessageWithArgument<Token>> recoveryTemplate;
 
-  const IdentifierContext(this._name,
+  const IdentifierContext._(this._name,
       {this.inDeclaration: false,
       this.inLibraryOrPartOfDeclaration: false,
       this.inSymbol: false,
@@ -309,16 +307,6 @@ class IdentifierContext {
                 (inDeclaration || isContinuation || inSymbol);
 
   String toString() => _name;
-
-  /// Ensure that the next token is an identifier (or keyword which should be
-  /// treated as an identifier) and return that identifier.
-  /// Report errors as necessary via [parser].
-  Token ensureIdentifier(Token token, Parser parser) {
-    assert(token.next.kind != IDENTIFIER_TOKEN);
-    // TODO(danrubel): Implement this method for each identifier context
-    // such that they return a non-null value.
-    return null;
-  }
 }
 
 // TODO(ahe): Remove when analyzer supports generalized function syntax.

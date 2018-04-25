@@ -5,7 +5,6 @@
 import 'package:analyzer/analyzer.dart';
 import 'package:analyzer/plugin/options.dart';
 import 'package:analyzer/src/lint/registry.dart';
-import 'package:analyzer/src/util/yaml.dart';
 import 'package:yaml/yaml.dart';
 
 /**
@@ -25,17 +24,18 @@ class LinterRuleOptionsValidator extends OptionsValidator {
   static const linter = 'linter';
   static const rulesKey = 'rules';
   @override
-  List<AnalysisError> validate(ErrorReporter reporter, YamlMap options) {
+  List<AnalysisError> validate(
+      ErrorReporter reporter, Map<String, YamlNode> options) {
     List<AnalysisError> errors = <AnalysisError>[];
-    var node = getValue(options, linter);
+    var node = options[linter];
     if (node is YamlMap) {
-      var rules = getValue(node, rulesKey);
+      var rules = node.nodes[rulesKey];
       validateRules(rules, reporter);
     }
     return errors;
   }
 
-  validateRules(YamlNode rules, ErrorReporter reporter) {
+  validateRules(dynamic rules, ErrorReporter reporter) {
     if (rules is YamlList) {
       Iterable<String> registeredLints =
           Registry.ruleRegistry.map((r) => r.name);

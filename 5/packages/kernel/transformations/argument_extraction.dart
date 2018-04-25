@@ -11,15 +11,15 @@ import '../ast.dart'
         Initializer,
         Library,
         LocalInitializer,
-        Component,
+        Program,
         VariableDeclaration,
         VariableGet;
 import '../core_types.dart' show CoreTypes;
 import '../visitor.dart' show Transformer;
 
-Component transformComponent(CoreTypes coreTypes, Component component) {
-  new ArgumentExtractionForTesting().visitComponent(component);
-  return component;
+Program transformProgram(CoreTypes coreTypes, Program program) {
+  new ArgumentExtractionForTesting().visitProgram(program);
+  return program;
 }
 
 void transformLibraries(CoreTypes coreTypes, List<Library> libraries) {

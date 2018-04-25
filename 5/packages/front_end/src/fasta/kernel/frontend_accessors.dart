@@ -11,8 +11,6 @@ import '../../scanner/token.dart' show Token;
 
 import '../names.dart' show equalsName, indexGetName, indexSetName;
 
-import '../parser.dart' show offsetForToken;
-
 import '../problems.dart' show unhandled;
 
 import 'fasta_accessors.dart' show BuilderHelper;
@@ -35,6 +33,8 @@ import 'kernel_shadow_ast.dart'
         ShadowVariableDeclaration,
         ShadowVariableGet;
 
+import 'utils.dart' show offsetForToken;
+
 /// An [Accessor] represents a subexpression for which we can't yet build a
 /// kernel [Expression] because we don't yet know the context in which it is
 /// used.
@@ -47,7 +47,7 @@ import 'kernel_shadow_ast.dart'
 /// generate an invocation of `operator[]` or `operator[]=`, so we generate an
 /// [Accessor] object.  Later, after `= b` is parsed, [buildAssignment] will be
 /// called.
-abstract class Accessor<Arguments> {
+abstract class Accessor {
   final BuilderHelper helper;
   final Token token;
 
@@ -198,7 +198,7 @@ abstract class Accessor<Arguments> {
       new ShadowIllegalAssignment(rhs);
 }
 
-abstract class VariableAccessor<Arguments> extends Accessor<Arguments> {
+abstract class VariableAccessor extends Accessor {
   VariableDeclaration variable;
   DartType promotedType;
 
@@ -228,7 +228,7 @@ abstract class VariableAccessor<Arguments> extends Accessor<Arguments> {
   }
 }
 
-class PropertyAccessor<Arguments> extends Accessor<Arguments> {
+class PropertyAccessor extends Accessor {
   VariableDeclaration _receiverVariable;
   Expression receiver;
   Name name;
@@ -289,7 +289,7 @@ class PropertyAccessor<Arguments> extends Accessor<Arguments> {
 
 /// Special case of [PropertyAccessor] to avoid creating an indirect access to
 /// 'this'.
-class ThisPropertyAccessor<Arguments> extends Accessor<Arguments> {
+class ThisPropertyAccessor extends Accessor {
   Name name;
   Member getter, setter;
 
@@ -319,7 +319,7 @@ class ThisPropertyAccessor<Arguments> extends Accessor<Arguments> {
   }
 }
 
-class NullAwarePropertyAccessor<Arguments> extends Accessor<Arguments> {
+class NullAwarePropertyAccessor extends Accessor {
   VariableDeclaration receiver;
   Expression receiverExpression;
   Name name;
@@ -367,7 +367,7 @@ class NullAwarePropertyAccessor<Arguments> extends Accessor<Arguments> {
   }
 }
 
-class SuperPropertyAccessor<Arguments> extends Accessor<Arguments> {
+class SuperPropertyAccessor extends Accessor {
   Name name;
   Member getter, setter;
 
@@ -399,7 +399,7 @@ class SuperPropertyAccessor<Arguments> extends Accessor<Arguments> {
   }
 }
 
-class IndexAccessor<Arguments> extends Accessor<Arguments> {
+class IndexAccessor extends Accessor {
   Expression receiver;
   Expression index;
   VariableDeclaration receiverVariable;
@@ -504,7 +504,7 @@ class IndexAccessor<Arguments> extends Accessor<Arguments> {
 
 /// Special case of [IndexAccessor] to avoid creating an indirect access to
 /// 'this'.
-class ThisIndexAccessor<Arguments> extends Accessor<Arguments> {
+class ThisIndexAccessor extends Accessor {
   Expression index;
   VariableDeclaration indexVariable;
   Procedure getter, setter;
@@ -578,7 +578,7 @@ class ThisIndexAccessor<Arguments> extends Accessor<Arguments> {
   }
 }
 
-class SuperIndexAccessor<Arguments> extends Accessor<Arguments> {
+class SuperIndexAccessor extends Accessor {
   Expression index;
   VariableDeclaration indexVariable;
   Member getter, setter;
@@ -668,19 +668,35 @@ class SuperIndexAccessor<Arguments> extends Accessor<Arguments> {
   }
 }
 
-class StaticAccessor<Arguments> extends Accessor<Arguments> {
+class StaticAccessor extends Accessor {
+  /// The name of the import prefix preceding the [targetClass], [readTarget],
+  /// or [writeTarget], or `null` if the reference is not prefixed.
+  String prefixName;
+
+  /// If [targetClass] is not `null`, the offset at which the explicit
+  /// reference to it is; otherwise `-1`.
+  int targetOffset;
+
+  /// The [Class] that was explicitly referenced to get the [readTarget] or
+  /// the [writeTarget], or `null` if the class is implicit, and targets were
+  /// get from the scope.
+  Class targetClass;
+
   Member readTarget;
   Member writeTarget;
 
-  StaticAccessor(
-      BuilderHelper helper, this.readTarget, this.writeTarget, Token token)
+  StaticAccessor(BuilderHelper helper, this.prefixName, this.targetOffset,
+      this.targetClass, this.readTarget, this.writeTarget, Token token)
       : super(helper, token);
 
   Expression _makeRead(ShadowComplexAssignment complexAssignment) {
     if (readTarget == null) {
       return makeInvalidRead();
     } else {
-      var read = helper.makeStaticGet(readTarget, token);
+      var read = helper.makeStaticGet(readTarget, token,
+          prefixName: prefixName,
+          targetOffset: targetOffset,
+          targetClass: targetClass);
       complexAssignment?.read = read;
       return read;
     }
@@ -700,7 +716,7 @@ class StaticAccessor<Arguments> extends Accessor<Arguments> {
   }
 }
 
-abstract class LoadLibraryAccessor<Arguments> extends Accessor<Arguments> {
+abstract class LoadLibraryAccessor extends Accessor {
   final LoadLibraryBuilder builder;
 
   LoadLibraryAccessor(BuilderHelper helper, Token token, this.builder)
@@ -720,7 +736,7 @@ abstract class LoadLibraryAccessor<Arguments> extends Accessor<Arguments> {
   }
 }
 
-abstract class DeferredAccessor<Arguments> extends Accessor<Arguments> {
+abstract class DeferredAccessor extends Accessor {
   final PrefixBuilder builder;
   final Accessor accessor;
 
@@ -747,7 +763,7 @@ abstract class DeferredAccessor<Arguments> extends Accessor<Arguments> {
   }
 }
 
-class ReadOnlyAccessor<Arguments> extends Accessor<Arguments> {
+class ReadOnlyAccessor extends Accessor {
   Expression expression;
   VariableDeclaration value;
 
@@ -773,7 +789,7 @@ class ReadOnlyAccessor<Arguments> extends Accessor<Arguments> {
       super._finish(makeLet(value, body), complexAssignment);
 }
 
-abstract class DelayedErrorAccessor<Arguments> extends Accessor<Arguments> {
+abstract class DelayedErrorAccessor extends Accessor {
   DelayedErrorAccessor(BuilderHelper helper, Token token)
       : super(helper, token);
 

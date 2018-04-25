@@ -94,7 +94,7 @@ class AnalysisDriver implements AnalysisDriverGeneric {
   /**
    * The version of data format, should be incremented on every format change.
    */
-  static const int DATA_VERSION = 53;
+  static const int DATA_VERSION = 49;
 
   /**
    * The number of exception contexts allowed to write. Once this field is
@@ -330,7 +330,7 @@ class AnalysisDriver implements AnalysisDriverGeneric {
    * TODO(brianwilkerson) Create a new session when the current session might
    * produce inconsistent results.
    */
-  AnalysisSessionImpl _currentSession;
+  AnalysisSession _currentSession;
 
   /**
    * Create a new instance of [AnalysisDriver].
@@ -1238,8 +1238,6 @@ class AnalysisDriver implements AnalysisDriverGeneric {
             }
           }
 
-          _currentSession.put(libraryElement: resolvedUnit?.element?.library);
-
           // Return the result, full or partial.
           _logger.writeln('Computed new analysis result.');
           AnalysisResult result = _getAnalysisResultFromBytes(
@@ -1903,7 +1901,7 @@ class AnalysisDriverScheduler {
     if (times == 0) {
       return new Future.value();
     }
-    return new Future.delayed(Duration.zero, () => _pumpEventQueue(times - 1));
+    return new Future.delayed(Duration.ZERO, () => _pumpEventQueue(times - 1));
   }
 }
 

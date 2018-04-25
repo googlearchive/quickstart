@@ -76,15 +76,6 @@ abstract class Target {
   /// promotion do not slow down compilation too much.
   bool get disableTypeInference => false;
 
-  /// A derived class may change this to `true` to enable forwarders to
-  /// user-defined `noSuchMethod` that are generated for each abstract member
-  /// if such `noSuchMethod` is present.
-  ///
-  /// The forwarders are abstract [Procedure]s with [isNoSuchMethodForwarder]
-  /// bit set.  The implementation of the behavior of such forwarders is up
-  /// for the target backend.
-  bool get enableNoSuchMethodForwarders => false;
-
   /// A derived class may change this to `true` to enable Flutter specific
   /// "super-mixins" semantics.
   ///
@@ -102,41 +93,41 @@ abstract class Target {
   bool get enableSuperMixins => false;
 
   /// Perform target-specific transformations on the outlines stored in
-  /// [Component] when generating summaries.
+  /// [Program] when generating summaries.
   ///
   /// This transformation is used to add metadata on outlines and to filter
   /// unnecessary information before generating program summaries. This
   /// transformation is not applied when compiling full kernel programs to
   /// prevent affecting the internal invariants of the compiler and accidentally
   /// slowing down compilation.
-  void performOutlineTransformations(Component component) {}
+  void performOutlineTransformations(Program program) {}
 
-  /// Perform target-specific modular transformations on the given component.
+  /// Perform target-specific modular transformations on the given program.
   ///
-  /// These transformations should not be whole-component transformations.  They
-  /// should expect that the component will contain external libraries.
-  void performModularTransformationsOnComponent(
-      CoreTypes coreTypes, ClassHierarchy hierarchy, Component component,
+  /// These transformations should not be whole-program transformations.  They
+  /// should expect that the program will contain external libraries.
+  void performModularTransformationsOnProgram(
+      CoreTypes coreTypes, ClassHierarchy hierarchy, Program program,
       {void logger(String msg)}) {
     performModularTransformationsOnLibraries(
-        coreTypes, hierarchy, component.libraries,
+        coreTypes, hierarchy, program.libraries,
         logger: logger);
   }
 
   /// Perform target-specific modular transformations on the given libraries.
   ///
   /// The intent of this method is to perform the transformations only on some
-  /// subset of the component libraries and avoid packing them into a temporary
-  /// [Component] instance to pass into [performModularTransformationsOnComponent].
+  /// subset of the program libraries and avoid packing them into a temporary
+  /// [Program] instance to pass into [performModularTransformationsOnProgram].
   ///
   /// Note that the following should be equivalent:
   ///
-  ///     target.performModularTransformationsOnComponent(coreTypes, component);
+  ///     target.performModularTransformationsOnProgram(coreTypes, program);
   ///
   /// and
   ///
   ///     target.performModularTransformationsOnLibraries(
-  ///         coreTypes, component.libraries);
+  ///         coreTypes, program.libraries);
   void performModularTransformationsOnLibraries(
       CoreTypes coreTypes, ClassHierarchy hierarchy, List<Library> libraries,
       {void logger(String msg)});
@@ -147,10 +138,10 @@ abstract class Target {
   /// correctness.  Everything should work if a simple and fast linker chooses
   /// not to apply these transformations.
   ///
-  /// Note that [performGlobalTransformations] doesn't have -OnComponent and
+  /// Note that [performGlobalTransformations] doesn't have -OnProgram and
   /// -OnLibraries alternatives, because the global knowledge required by the
-  /// transformations is assumed to be retrieved from a [Component] instance.
-  void performGlobalTransformations(CoreTypes coreTypes, Component component,
+  /// transformations is assumed to be retrieved from a [Program] instance.
+  void performGlobalTransformations(CoreTypes coreTypes, Program program,
       {void logger(String msg)});
 
   /// Whether a platform library may define a restricted type, such as `bool`,
@@ -232,7 +223,7 @@ class NoneTarget extends Target {
   void performModularTransformationsOnLibraries(
       CoreTypes coreTypes, ClassHierarchy hierarchy, List<Library> libraries,
       {void logger(String msg)}) {}
-  void performGlobalTransformations(CoreTypes coreTypes, Component component,
+  void performGlobalTransformations(CoreTypes coreTypes, Program program,
       {void logger(String msg)}) {}
 
   @override

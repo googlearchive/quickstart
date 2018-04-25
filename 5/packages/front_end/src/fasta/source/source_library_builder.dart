@@ -40,16 +40,14 @@ import '../export.dart' show Export;
 import '../fasta_codes.dart'
     show
         messageExpectedUri,
-        messageMemberWithSameNameAsClass,
         messagePartOfSelf,
-        noLength,
+        messageMemberWithSameNameAsClass,
         templateConflictsWithMember,
         templateConflictsWithSetter,
         templateCouldNotParseUri,
         templateDeferredPrefixDuplicated,
         templateDeferredPrefixDuplicatedCause,
         templateDuplicatedDefinition,
-        templateIllegalMethodName,
         templateMissingPartOf,
         templatePartOfLibraryNameMismatch,
         templatePartOfUriMismatch,
@@ -166,7 +164,7 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
 
   Uri resolve(Uri baseUri, String uri, int uriOffset, {isPart: false}) {
     if (uri == null) {
-      addCompileTimeError(messageExpectedUri, uriOffset, noLength, this.uri);
+      addCompileTimeError(messageExpectedUri, uriOffset, this.uri);
       return new Uri(scheme: MALFORMED_URI_SCHEME);
     }
     Uri parsedUri;
@@ -179,7 +177,6 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
       addCompileTimeError(
           templateCouldNotParseUri.withArguments(uri, e.message),
           uriOffset + 1 + (e.offset ?? -1),
-          1,
           this.uri);
       return new Uri(
           scheme: MALFORMED_URI_SCHEME, query: Uri.encodeQueryComponent(uri));
@@ -190,32 +187,6 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
     } else {
       return baseUri.resolveUri(parsedUri);
     }
-  }
-
-  String computeAndValidateConstructorName(Object name, int charOffset) {
-    String className = currentDeclaration.name;
-    String prefix;
-    String suffix;
-    if (name is QualifiedName) {
-      prefix = name.prefix;
-      suffix = name.suffix;
-    } else {
-      prefix = name;
-      suffix = null;
-    }
-    if (prefix == className) {
-      return suffix ?? "";
-    }
-    if (suffix == null) {
-      // A legal name for a regular method, but not for a constructor.
-      return null;
-    }
-    addCompileTimeError(
-        templateIllegalMethodName.withArguments("$name", "$className.$suffix"),
-        charOffset,
-        noLength,
-        fileUri);
-    return suffix;
   }
 
   void addExport(
@@ -244,21 +215,11 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
     const String prefix = "dart.library.";
     if (!dottedName.startsWith(prefix)) return "";
     dottedName = dottedName.substring(prefix.length);
-    String override =
-        loader.target.uriTranslator.environmentOverrideFor(dottedName);
-    if (override != null) return override;
 
+    LibraryBuilder coreLibrary =
+        loader.read(resolve(this.uri, "dart:core", -1), -1);
     LibraryBuilder imported =
-        loader.builders[new Uri(scheme: "dart", path: dottedName)];
-
-    if (imported == null) {
-      LibraryBuilder coreLibrary = loader.read(
-          resolve(
-              this.uri, new Uri(scheme: "dart", path: "core").toString(), -1),
-          -1);
-      imported = coreLibrary
-          .loader.builders[new Uri(scheme: 'dart', path: dottedName)];
-    }
+        coreLibrary.loader.builders[new Uri(scheme: 'dart', path: dottedName)];
     return imported != null ? "true" : "";
   }
 
@@ -308,7 +269,9 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
     Uri resolvedUri;
     Uri newFileUri;
     resolvedUri = resolve(this.uri, uri, charOffset, isPart: true);
-    newFileUri = resolve(fileUri, uri, charOffset);
+    if (this.uri.scheme != "package") {
+      newFileUri = resolve(fileUri, uri, charOffset);
+    }
     parts.add(loader.read(resolvedUri, charOffset,
         fileUri: newFileUri, accessor: this));
   }
@@ -370,26 +333,12 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
     }
   }
 
-  void addConstructor(
-      String documentationComment,
-      List<MetadataBuilder> metadata,
-      int modifiers,
-      T returnType,
-      final Object name,
-      String constructorName,
-      List<TypeVariableBuilder> typeVariables,
-      List<FormalParameterBuilder> formals,
-      int charOffset,
-      int charOpenParenOffset,
-      int charEndOffset,
-      String nativeMethodName);
-
   void addProcedure(
       String documentationComment,
       List<MetadataBuilder> metadata,
       int modifiers,
       T returnType,
-      String name,
+      Object name,
       List<TypeVariableBuilder> typeVariables,
       List<FormalParameterBuilder> formals,
       ProcedureKind kind,
@@ -462,7 +411,7 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
         !builder.isSetter &&
         name == currentDeclaration.name) {
       addCompileTimeError(
-          messageMemberWithSameNameAsClass, charOffset, noLength, fileUri);
+          messageMemberWithSameNameAsClass, charOffset, fileUri);
     }
     Map<String, Builder> members = isConstructor
         ? currentDeclaration.constructors
@@ -486,11 +435,11 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
         addCompileTimeError(
             templateDeferredPrefixDuplicated.withArguments(name),
             deferred.charOffset,
-            noLength,
-            fileUri,
-            context: templateDeferredPrefixDuplicatedCause
-                .withArguments(name)
-                .withLocation(fileUri, other.charOffset, noLength));
+            fileUri);
+        addCompileTimeError(
+            templateDeferredPrefixDuplicatedCause.withArguments(name),
+            other.charOffset,
+            fileUri);
       }
       return existing
         ..exportScope.merge(builder.exportScope,
@@ -499,7 +448,7 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
         });
     } else if (isDuplicatedDefinition(existing, builder)) {
       addCompileTimeError(templateDuplicatedDefinition.withArguments(name),
-          charOffset, noLength, fileUri);
+          charOffset, fileUri);
     }
     return members[name] = builder;
   }
@@ -546,11 +495,11 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
     scope.setters.forEach((String name, Builder setter) {
       Builder member = scopeBuilder[name];
       if (member == null || !member.isField || member.isFinal) return;
+      // TODO(ahe): charOffset is missing.
       addCompileTimeError(templateConflictsWithMember.withArguments(name),
-          setter.charOffset, noLength, fileUri);
-      // TODO(ahe): Context to previous message?
+          setter.charOffset, fileUri);
       addCompileTimeError(templateConflictsWithSetter.withArguments(name),
-          member.charOffset, noLength, fileUri);
+          member.charOffset, fileUri);
     });
 
     return null;
@@ -581,12 +530,12 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
     Set<Uri> seenParts = new Set<Uri>();
     for (SourceLibraryBuilder<T, R> part in parts.toList()) {
       if (part == this) {
-        addCompileTimeError(messagePartOfSelf, -1, noLength, fileUri);
+        addCompileTimeError(messagePartOfSelf, -1, fileUri);
       } else if (seenParts.add(part.fileUri)) {
         includePart(part);
       } else {
-        addCompileTimeError(templatePartTwice.withArguments(part.fileUri), -1,
-            noLength, fileUri);
+        addCompileTimeError(
+            templatePartTwice.withArguments(part.fileUri), -1, fileUri);
       }
     }
   }
@@ -599,7 +548,6 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
             templatePartOfUriMismatch.withArguments(
                 part.fileUri, uri, part.partOfUri),
             -1,
-            noLength,
             fileUri);
       }
     } else if (part.partOfName != null) {
@@ -610,7 +558,6 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
               templatePartOfLibraryNameMismatch.withArguments(
                   part.fileUri, name, part.partOfName),
               -1,
-              noLength,
               fileUri);
         }
       } else {
@@ -619,7 +566,6 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
             templatePartOfUseUri.withArguments(
                 part.fileUri, fileUri, part.partOfName),
             -1,
-            noLength,
             fileUri);
       }
     } else {
@@ -627,8 +573,8 @@ abstract class SourceLibraryBuilder<T extends TypeBuilder, R>
       // metadata annotations can be associated with it.
       assert(!part.isPart);
       if (uriIsValid(part.fileUri)) {
-        addCompileTimeError(templateMissingPartOf.withArguments(part.fileUri),
-            -1, noLength, fileUri);
+        addCompileTimeError(
+            templateMissingPartOf.withArguments(part.fileUri), -1, fileUri);
       }
     }
     part.forEach((String name, Builder builder) {

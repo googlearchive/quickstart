@@ -9,7 +9,6 @@ import 'compiler_context.dart' show CompilerContext;
 import 'messages.dart'
     show
         Message,
-        noLength,
         templateInternalProblemUnexpected,
         templateInternalProblemUnhandled,
         templateInternalProblemUnimplemented,
@@ -27,9 +26,8 @@ import 'severity.dart' show Severity;
 ///
 /// Before printing the message, the string `"Internal error: "` is prepended.
 dynamic internalProblem(Message message, int charOffset, Uri uri) {
-  throw CompilerContext.current.format(
-      message.withLocation(uri, charOffset, noLength),
-      Severity.internalProblem);
+  throw CompilerContext.current
+      .format(message.withLocation(uri, charOffset), Severity.internalProblem);
 }
 
 dynamic unimplemented(String what, int charOffset, Uri uri) {

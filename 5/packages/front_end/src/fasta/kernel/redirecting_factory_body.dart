@@ -6,33 +6,25 @@ library fasta.redirecting_factory_body;
 
 import 'package:kernel/ast.dart'
     show
-        DartType,
-        DynamicType,
         Expression,
         ExpressionStatement,
         FunctionNode,
         InvalidExpression,
         Let,
         Member,
-        NullLiteral,
         Procedure,
         StaticGet,
         StringLiteral,
-        TypeParameterType,
         VariableDeclaration;
-
-import 'package:kernel/type_algebra.dart' show Substitution;
 
 const String letName = "#redirecting_factory";
 
 class RedirectingFactoryBody extends ExpressionStatement {
-  RedirectingFactoryBody.internal(Expression value,
-      [List<DartType> typeArguments])
+  RedirectingFactoryBody.internal(Expression value)
       : super(new Let(new VariableDeclaration(letName, initializer: value),
-            encodeTypeArguments(typeArguments)));
+            new InvalidExpression(null)));
 
-  RedirectingFactoryBody(Member target, [List<DartType> typeArguments])
-      : this.internal(new StaticGet(target), typeArguments);
+  RedirectingFactoryBody(Member target) : this.internal(new StaticGet(target));
 
   RedirectingFactoryBody.unresolved(String name)
       : this.internal(new StringLiteral(name));
@@ -48,16 +40,6 @@ class RedirectingFactoryBody extends ExpressionStatement {
   }
 
   bool get isUnresolved => unresolvedName != null;
-
-  List<DartType> get typeArguments {
-    if (expression is Let) {
-      Let bodyExpression = expression;
-      if (bodyExpression.variable.name == letName) {
-        return decodeTypeArguments(bodyExpression.body);
-      }
-    }
-    return null;
-  }
 
   static getValue(Expression expression) {
     if (expression is Let) {
@@ -75,42 +57,9 @@ class RedirectingFactoryBody extends ExpressionStatement {
     // [kernel_class_builder.dart](kernel_class_builder.dart).
     FunctionNode function = factory.function;
     ExpressionStatement statement = function.body;
-    List<DartType> typeArguments;
-    if (statement.expression is Let) {
-      Let expression = statement.expression;
-      typeArguments = decodeTypeArguments(expression.body);
-    }
-    function.body = new RedirectingFactoryBody.internal(
-        getValue(statement.expression), typeArguments)
-      ..parent = function;
-  }
-
-  static Expression encodeTypeArguments(List<DartType> typeArguments) {
-    String varNamePrefix = "#typeArg";
-    Expression result = new InvalidExpression(null);
-    if (typeArguments == null) {
-      return result;
-    }
-    for (int i = typeArguments.length - 1; i >= 0; i--) {
-      result = new Let(
-          new VariableDeclaration("$varNamePrefix$i",
-              type: typeArguments[i], initializer: new NullLiteral()),
-          result);
-    }
-    return result;
-  }
-
-  static List<DartType> decodeTypeArguments(Expression encoded) {
-    if (encoded is InvalidExpression) {
-      return null;
-    }
-    List<DartType> result = <DartType>[];
-    while (encoded is Let) {
-      Let head = encoded;
-      result.add(head.variable.type);
-      encoded = head.body;
-    }
-    return result;
+    function.body =
+        new RedirectingFactoryBody.internal(getValue(statement.expression))
+          ..parent = function;
   }
 }
 
@@ -120,20 +69,7 @@ RedirectingFactoryBody getRedirectingFactoryBody(Member member) {
       : null;
 }
 
-class RedirectionTarget {
-  final Member target;
-  final List<DartType> typeArguments;
-
-  RedirectionTarget(this.target, this.typeArguments);
-}
-
-RedirectionTarget getRedirectionTarget(Procedure member, {bool strongMode}) {
-  List<DartType> typeArguments = <DartType>[]..length =
-      member.function.typeParameters.length;
-  for (int i = 0; i < typeArguments.length; i++) {
-    typeArguments[i] = new TypeParameterType(member.function.typeParameters[i]);
-  }
-
+Member getRedirectionTarget(Procedure member) {
   // We use the [tortoise and hare algorithm]
   // (https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare) to
   // handle cycles.
@@ -142,34 +78,8 @@ RedirectionTarget getRedirectionTarget(Procedure member, {bool strongMode}) {
   Member hare = tortoiseBody?.target;
   RedirectingFactoryBody hareBody = getRedirectingFactoryBody(hare);
   while (tortoise != hare) {
-    if (tortoiseBody?.isUnresolved ?? true)
-      return new RedirectionTarget(tortoise, typeArguments);
-    Member nextTortoise = tortoiseBody.target;
-    List<DartType> nextTypeArguments = tortoiseBody.typeArguments;
-    if (strongMode && nextTypeArguments == null) {
-      nextTypeArguments = <DartType>[];
-    }
-
-    if (strongMode || nextTypeArguments != null) {
-      Substitution sub = Substitution.fromPairs(
-          tortoise.function.typeParameters, typeArguments);
-      typeArguments = <DartType>[]..length = nextTypeArguments.length;
-      for (int i = 0; i < typeArguments.length; i++) {
-        typeArguments[i] = sub.substituteType(nextTypeArguments[i]);
-      }
-    } else {
-      // In Dart 1, we need to throw away the extra type arguments and use
-      // `dynamic` in place of the missing ones.
-      int typeArgumentCount = typeArguments.length;
-      int nextTypeArgumentCount =
-          nextTortoise.enclosingClass.typeParameters.length;
-      typeArguments.length = nextTypeArgumentCount;
-      for (int i = typeArgumentCount; i < nextTypeArgumentCount; i++) {
-        typeArguments[i] = const DynamicType();
-      }
-    }
-
-    tortoise = nextTortoise;
+    if (tortoiseBody?.isUnresolved ?? true) return tortoise;
+    tortoise = tortoiseBody.target;
     tortoiseBody = getRedirectingFactoryBody(tortoise);
     hare = getRedirectingFactoryBody(hareBody?.target)?.target;
     hareBody = getRedirectingFactoryBody(hare);

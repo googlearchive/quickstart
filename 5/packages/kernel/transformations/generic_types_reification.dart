@@ -4,11 +4,11 @@
 
 library kernel.transformation.generic_types_reification;
 
-import '../ast.dart' show Component;
+import '../ast.dart' show Program;
 import '../core_types.dart' show CoreTypes;
 import '../transformations/reify/reify_transformer.dart' as reify
-    show transformComponent;
+    show transformProgram;
 
-Component transformComponent(CoreTypes coreTypes, Component component) {
-  return reify.transformComponent(coreTypes, component);
+Program transformProgram(CoreTypes coreTypes, Program program) {
+  return reify.transformProgram(coreTypes, program);
 }

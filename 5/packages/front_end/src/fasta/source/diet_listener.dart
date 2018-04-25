@@ -16,8 +16,6 @@ import '../../scanner/token.dart' show Token;
 
 import '../builder/builder.dart';
 
-import '../constant_context.dart' show ConstantContext;
-
 import '../deprecated_problems.dart'
     show Crash, deprecated_InputError, deprecated_inputError;
 
@@ -26,11 +24,15 @@ import '../fasta_codes.dart'
 
 import '../kernel/body_builder.dart' show BodyBuilder;
 
-import '../parser.dart' show IdentifierContext, MemberKind, Parser, optional;
+import '../parser.dart'
+    show IdentifierContext, MemberKind, Parser, closeBraceTokenFor, optional;
 
 import '../problems.dart' show internalProblem, unexpected;
 
 import '../type_inference/type_inference_engine.dart' show TypeInferenceEngine;
+
+import '../type_inference/type_inference_listener.dart'
+    show TypeInferenceListener;
 
 import 'source_library_builder.dart' show SourceLibraryBuilder;
 
@@ -219,8 +221,7 @@ class DietListener extends StackListener {
   }
 
   @override
-  void endFields(Token staticToken, Token covariantToken, Token varFinalOrConst,
-      int count, Token beginToken, Token endToken) {
+  void endFields(int count, Token beginToken, Token endToken) {
     debugEvent("Fields");
     buildFields(count, beginToken, false);
   }
@@ -247,8 +248,7 @@ class DietListener extends StackListener {
   }
 
   @override
-  void endTopLevelFields(Token staticToken, Token covariantToken,
-      Token varFinalOrConst, int count, Token beginToken, Token endToken) {
+  void endTopLevelFields(int count, Token beginToken, Token endToken) {
     debugEvent("TopLevelFields");
     buildFields(count, beginToken, true);
   }
@@ -476,7 +476,8 @@ class DietListener extends StackListener {
     Object name = pop();
     Token metadata = pop();
     checkEmpty(beginToken.charOffset);
-    if (bodyToken == null || optional("=", bodyToken.endGroup.next)) {
+    if (bodyToken == null ||
+        optional("=", closeBraceTokenFor(bodyToken).next)) {
       // TODO(ahe): Don't skip this. We need to compile metadata and
       // redirecting factory bodies.
       return;
@@ -536,7 +537,8 @@ class DietListener extends StackListener {
 
   StackListener createListener(
       ModifierBuilder builder, Scope memberScope, bool isInstanceMember,
-      [Scope formalParameterScope]) {
+      [Scope formalParameterScope, TypeInferenceListener listener]) {
+    listener ??= new TypeInferenceListener();
     InterfaceType thisType;
     if (builder.isClassMember) {
       // Note: we set thisType regardless of whether we are building a static
@@ -546,13 +548,11 @@ class DietListener extends StackListener {
     }
     var typeInferrer = library.disableTypeInference
         ? typeInferenceEngine.createDisabledTypeInferrer()
-        : typeInferenceEngine.createLocalTypeInferrer(uri, thisType, library);
-    ConstantContext constantContext = builder.isConstructor && builder.isConst
-        ? ConstantContext.inferred
-        : ConstantContext.none;
+        : typeInferenceEngine.createLocalTypeInferrer(
+            uri, listener, thisType, library);
     return new BodyBuilder(library, builder, memberScope, formalParameterScope,
         hierarchy, coreTypes, currentClass, isInstanceMember, uri, typeInferrer)
-      ..constantContext = constantContext;
+      ..constantExpressionRequired = builder.isConstructor && builder.isConst;
   }
 
   void buildFunctionBody(
@@ -793,11 +793,11 @@ class DietListener extends StackListener {
 
   @override
   void addCompileTimeError(Message message, int charOffset, int length) {
-    library.addCompileTimeError(message, charOffset, length, uri);
+    library.addCompileTimeError(message, charOffset, uri);
   }
 
   void addProblem(Message message, int charOffset, int length) {
-    library.addProblem(message, charOffset, length, uri);
+    library.addProblem(message, charOffset, uri);
   }
 
   @override

@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library analyzer.src.plugin.engine_plugin;
+
 import 'package:analyzer/error/error.dart' show AnalysisError;
 import 'package:analyzer/plugin/task.dart';
 import 'package:analyzer/src/generated/engine.dart'
@@ -88,7 +90,7 @@ class EnginePlugin implements Plugin {
    * descriptors for Dart sources.
    */
   @ExtensionPointId('DART_ERRORS_FOR_SOURCE_EXTENSION_POINT_ID')
-  List<ListResultDescriptor<AnalysisError>> get dartErrorsForSource =>
+  List<ResultDescriptor> get dartErrorsForSource =>
       dartErrorsForSourceExtensionPoint.extensions;
 
   /**
@@ -96,7 +98,7 @@ class EnginePlugin implements Plugin {
    * descriptors for Dart library specific units.
    */
   @ExtensionPointId('DART_ERRORS_FOR_UNIT_EXTENSION_POINT_ID')
-  List<ListResultDescriptor<AnalysisError>> get dartErrorsForUnit =>
+  List<ResultDescriptor> get dartErrorsForUnit =>
       dartErrorsForUnitExtensionPoint.extensions;
 
   /**
@@ -104,8 +106,7 @@ class EnginePlugin implements Plugin {
    * descriptors for HTML sources.
    */
   @ExtensionPointId('HTML_ERRORS_EXTENSION_POINT_ID')
-  List<ListResultDescriptor<AnalysisError>> get htmlErrors =>
-      htmlErrorsExtensionPoint.extensions;
+  List<ResultDescriptor> get htmlErrors => htmlErrorsExtensionPoint.extensions;
 
   @override
   String get uniqueIdentifier => UNIQUE_IDENTIFIER;

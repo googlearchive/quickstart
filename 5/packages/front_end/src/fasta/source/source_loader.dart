@@ -8,6 +8,9 @@ import 'dart:async' show Future;
 
 import 'dart:typed_data' show Uint8List;
 
+import 'package:front_end/src/fasta/type_inference/interface_resolver.dart'
+    show InterfaceResolver;
+
 import 'package:kernel/ast.dart'
     show
         Arguments,
@@ -15,7 +18,7 @@ import 'package:kernel/ast.dart'
         Expression,
         Library,
         LibraryDependency,
-        Component,
+        Program,
         Supertype;
 
 import 'package:kernel/class_hierarchy.dart' show ClassHierarchy;
@@ -40,13 +43,14 @@ import '../builder/builder.dart'
 
 import '../deprecated_problems.dart' show deprecated_inputError;
 
+import '../problems.dart' show internalProblem;
+
 import '../export.dart' show Export;
 
 import '../fasta_codes.dart'
     show
         LocatedMessage,
         Message,
-        noLength,
         SummaryTemplate,
         Template,
         templateAmbiguousSupertypes,
@@ -70,20 +74,11 @@ import '../loader.dart' show Loader;
 
 import '../parser/class_member_parser.dart' show ClassMemberParser;
 
-import '../parser.dart' show lengthForToken, offsetForToken;
-
-import '../problems.dart' show internalProblem;
-
 import '../scanner.dart' show ErrorToken, ScannerResult, Token, scan;
 
 import '../severity.dart' show Severity;
 
-import '../type_inference/interface_resolver.dart' show InterfaceResolver;
-
 import '../type_inference/type_inference_engine.dart' show TypeInferenceEngine;
-
-import '../type_inference/type_inferrer.dart'
-    show LegacyModeMixinInferrer, StrongModeMixinInferrer;
 
 import 'diet_listener.dart' show DietListener;
 
@@ -162,8 +157,8 @@ class SourceLoader<L> extends Loader<L> {
     while (token is ErrorToken) {
       if (!suppressLexicalErrors) {
         ErrorToken error = token;
-        library.addCompileTimeError(error.assertionMessage,
-            offsetForToken(token), lengthForToken(token), uri);
+        library.addCompileTimeError(
+            error.assertionMessage, token.charOffset, uri);
       }
       token = token.next;
     }
@@ -358,13 +353,11 @@ class SourceLoader<L> extends Loader<L> {
     ticker.logMs("Resolved $count type-variable bounds");
   }
 
-  void instantiateToBound(TypeBuilder dynamicType, TypeBuilder bottomType,
-      ClassBuilder objectClass) {
+  void instantiateToBound(TypeBuilder dynamicType, ClassBuilder objectClass) {
     int count = 0;
     builders.forEach((Uri uri, LibraryBuilder library) {
       if (library.loader == this) {
-        count +=
-            library.instantiateToBound(dynamicType, bottomType, objectClass);
+        count += library.instantiateToBound(dynamicType, objectClass);
       }
     });
     ticker.logMs("Instantiated $count type variables to their bounds");
@@ -473,15 +466,15 @@ class SourceLoader<L> extends Loader<L> {
             .join("', '");
         messages[templateCyclicClassHierarchy
             .withArguments(cls.fullNameForErrors, involvedString)
-            .withLocation(cls.fileUri, cls.charOffset, noLength)] = cls;
+            .withLocation(cls.fileUri, cls.charOffset)] = cls;
       });
 
       // Report all classes involved in a cycle, sorted to ensure stability as
       // [cyclicCandidates] is sensitive to if the platform (or other modules)
       // are included in [classes].
       for (LocatedMessage message in messages.keys.toList()..sort()) {
-        messages[message].addCompileTimeError(
-            message.messageObject, message.charOffset, message.length);
+        messages[message]
+            .addCompileTimeError(message.messageObject, message.charOffset);
       }
     }
     ticker.logMs("Found cycles");
@@ -501,14 +494,12 @@ class SourceLoader<L> extends Loader<L> {
         if (supertype is EnumBuilder) {
           cls.addCompileTimeError(
               templateExtendingEnum.withArguments(supertype.name),
-              cls.charOffset,
-              noLength);
+              cls.charOffset);
         } else if (!cls.library.mayImplementRestrictedTypes &&
             blackListedClasses.contains(supertype)) {
           cls.addCompileTimeError(
               templateExtendingRestricted.withArguments(supertype.name),
-              cls.charOffset,
-              noLength);
+              cls.charOffset);
         }
       }
       TypeBuilder mixedInType = cls.mixedInType;
@@ -523,12 +514,11 @@ class SourceLoader<L> extends Loader<L> {
                 cls.addCompileTimeError(
                     templateIllegalMixinDueToConstructors
                         .withArguments(builder.fullNameForErrors),
-                    cls.charOffset,
-                    noLength,
-                    context: templateIllegalMixinDueToConstructorsCause
-                        .withArguments(builder.fullNameForErrors)
-                        .withLocation(constructory.fileUri,
-                            constructory.charOffset, noLength));
+                    cls.charOffset);
+                builder.addCompileTimeError(
+                    templateIllegalMixinDueToConstructorsCause
+                        .withArguments(builder.fullNameForErrors),
+                    constructory.charOffset);
               }
             }
           }
@@ -536,15 +526,14 @@ class SourceLoader<L> extends Loader<L> {
         if (!isClassBuilder) {
           cls.addCompileTimeError(
               templateIllegalMixin.withArguments(mixedInType.fullNameForErrors),
-              cls.charOffset,
-              noLength);
+              cls.charOffset);
         }
       }
     }
     ticker.logMs("Checked restricted supertypes");
   }
 
-  void buildComponent() {
+  void buildProgram() {
     builders.forEach((Uri uri, LibraryBuilder library) {
       if (library.loader == this) {
         SourceLibraryBuilder sourceLibrary = library;
@@ -554,16 +543,14 @@ class SourceLoader<L> extends Loader<L> {
         }
       }
     });
-    ticker.logMs("Built component");
+    ticker.logMs("Built program");
   }
 
-  Component computeFullComponent() {
+  Program computeFullProgram() {
     Set<Library> libraries = new Set<Library>();
     List<Library> workList = <Library>[];
     builders.forEach((Uri uri, LibraryBuilder library) {
-      if (!library.isPart &&
-          !library.isPatch &&
-          (library.loader == this || library.fileUri.scheme == "dart")) {
+      if (!library.isPart && !library.isPatch) {
         if (libraries.add(library.target)) {
           workList.add(library.target);
         }
@@ -577,20 +564,17 @@ class SourceLoader<L> extends Loader<L> {
         }
       }
     }
-    return new Component()..libraries.addAll(libraries);
+    return new Program()..libraries.addAll(libraries);
   }
 
   void computeHierarchy() {
     List<List> ambiguousTypesRecords = [];
-    hierarchy = new ClassHierarchy(computeFullComponent(),
+    hierarchy = new ClassHierarchy(computeFullProgram(),
         onAmbiguousSupertypes: (Class cls, Supertype a, Supertype b) {
       if (ambiguousTypesRecords != null) {
         ambiguousTypesRecords.add([cls, a, b]);
       }
-    },
-        mixinInferrer: target.strongMode
-            ? new StrongModeMixinInferrer(this)
-            : new LegacyModeMixinInferrer());
+    });
     for (List record in ambiguousTypesRecords) {
       handleAmbiguousSupertypes(record[0], record[1], record[2]);
     }
@@ -610,14 +594,13 @@ class SourceLoader<L> extends Loader<L> {
         templateAmbiguousSupertypes.withArguments(
             name, a.asInterfaceType, b.asInterfaceType),
         cls.fileOffset,
-        noLength,
         cls.fileUri);
   }
 
   void ignoreAmbiguousSupertypes(Class cls, Supertype a, Supertype b) {}
 
-  void computeCoreTypes(Component component) {
-    coreTypes = new CoreTypes(component);
+  void computeCoreTypes(Program program) {
+    coreTypes = new CoreTypes(program);
     ticker.logMs("Computed core types");
   }
 
@@ -630,15 +613,6 @@ class SourceLoader<L> extends Loader<L> {
       }
     }
     ticker.logMs("Checked overrides");
-  }
-
-  void addNoSuchMethodForwarders(List<SourceClassBuilder> sourceClasses) {
-    for (SourceClassBuilder builder in sourceClasses) {
-      if (builder.library.loader == this) {
-        builder.addNoSuchMethodForwarders(hierarchy);
-      }
-    }
-    ticker.logMs("Added noSuchMethod forwarders");
   }
 
   void createTypeInferenceEngine() {
@@ -705,7 +679,7 @@ class SourceLoader<L> extends Loader<L> {
     // TODO(paulberry): could we make this unnecessary by not clearing class
     // inference info?
     typeInferenceEngine.classHierarchy = hierarchy = new ClassHierarchy(
-        computeFullComponent(),
+        computeFullProgram(),
         onAmbiguousSupertypes: ignoreAmbiguousSupertypes);
     ticker.logMs("Performed top level inference");
   }
@@ -748,15 +722,14 @@ class SourceLoader<L> extends Loader<L> {
     return target.backendTarget.throwCompileConstantError(coreTypes, error);
   }
 
-  Expression buildCompileTimeError(
-      Message message, int offset, int length, Uri uri) {
+  Expression buildCompileTimeError(Message message, int offset, Uri uri) {
     String text = target.context
-        .format(message.withLocation(uri, offset, length), Severity.error);
+        .format(message.withLocation(uri, offset), Severity.error);
     return target.backendTarget.buildCompileTimeError(coreTypes, text, offset);
   }
 
-  void recordMessage(Severity severity, Message message, int charOffset,
-      int length, Uri fileUri,
+  void recordMessage(
+      Severity severity, Message message, int charOffset, Uri fileUri,
       {LocatedMessage context}) {
     if (instrumentation == null) return;
 
@@ -794,10 +767,6 @@ class SourceLoader<L> extends Loader<L> {
         // Should have been resolved to either error or warning at this point.
         // Use a property name expressing that, in case it slips through.
         severityString = "unresolved severity";
-        break;
-
-      case Severity.context:
-        severityString = "context";
         break;
     }
     instrumentation.record(

@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library analyzer.source.analysis_options_provider;
+
 import 'dart:core';
 
 import 'package:analyzer/file_system/file_system.dart';
@@ -27,10 +29,10 @@ class AnalysisOptionsProvider {
   /// Recursively merge options referenced by an include directive
   /// and remove the include directive from the resulting options map.
   /// Return an empty options map if the file does not exist.
-  YamlMap getOptions(Folder root, {bool crawlUp: false}) {
+  Map<String, YamlNode> getOptions(Folder root, {bool crawlUp: false}) {
     File optionsFile = getOptionsFile(root, crawlUp: crawlUp);
     if (optionsFile == null) {
-      return new YamlMap();
+      return const <String, YamlNode>{};
     }
     return getOptionsFromFile(optionsFile);
   }
@@ -62,7 +64,7 @@ class AnalysisOptionsProvider {
   /// Recursively merge options referenced by an include directive
   /// and remove the include directive from the resulting options map.
   /// Return an empty options map if the file does not exist.
-  YamlMap getOptionsFromFile(File file) {
+  Map<String, YamlNode> getOptionsFromFile(File file) {
     return getOptionsFromSource(new FileSource(file));
   }
 
@@ -70,9 +72,10 @@ class AnalysisOptionsProvider {
   /// Recursively merge options referenced by an include directive
   /// and remove the include directive from the resulting options map.
   /// Return an empty options map if the file does not exist.
-  YamlMap getOptionsFromSource(Source source) {
-    YamlMap options = getOptionsFromString(_readAnalysisOptions(source));
-    YamlNode node = getValue(options, AnalyzerOptions.include);
+  Map<String, YamlNode> getOptionsFromSource(Source source) {
+    Map<String, YamlNode> options =
+        getOptionsFromString(_readAnalysisOptions(source));
+    YamlNode node = options.remove(AnalyzerOptions.include);
     if (sourceFactory != null && node is YamlScalar) {
       var path = node.value;
       if (path is String) {
@@ -87,21 +90,55 @@ class AnalysisOptionsProvider {
   /// An include directive, if present, will be left as-is,
   /// and the referenced options will NOT be merged into the result.
   /// Return an empty options map if the source is null.
-  YamlMap getOptionsFromString(String optionsSource) {
+  Map<String, YamlNode> getOptionsFromString(String optionsSource) {
+    Map<String, YamlNode> options = <String, YamlNode>{};
     if (optionsSource == null) {
-      return new YamlMap();
+      return options;
     }
-    try {
-      YamlNode doc = loadYamlNode(optionsSource);
-      if (doc is YamlMap) {
-        return doc;
+
+    YamlNode safelyLoadYamlNode() {
+      try {
+        return loadYamlNode(optionsSource);
+      } on YamlException catch (e) {
+        throw new OptionsFormatException(e.message, e.span);
+      } catch (e) {
+        throw new OptionsFormatException('Unable to parse YAML document.');
       }
-      return new YamlMap();
-    } on YamlException catch (e) {
-      throw new OptionsFormatException(e.message, e.span);
-    } catch (e) {
-      throw new OptionsFormatException('Unable to parse YAML document.');
     }
+
+    YamlNode doc = safelyLoadYamlNode();
+
+    // Empty options.
+    if (doc is YamlScalar && doc.value == null) {
+      return options;
+    }
+    if ((doc != null) && (doc is! YamlMap)) {
+      throw new OptionsFormatException(
+          'Bad options file format (expected map, got ${doc.runtimeType})',
+          doc.span);
+    }
+    if (doc is YamlMap) {
+      doc.nodes.forEach((k, YamlNode v) {
+        var key;
+        if (k is YamlScalar) {
+          key = k.value;
+        }
+        if (key is! String) {
+          throw new OptionsFormatException(
+              'Bad options file format (expected String scope key, '
+              'got ${k.runtimeType})',
+              (k ?? doc).span);
+        }
+        if (v != null && v is! YamlNode) {
+          throw new OptionsFormatException(
+              'Bad options file format (expected Node value, '
+              'got ${v.runtimeType}: `${v.toString()}`)',
+              doc.span);
+        }
+        options[key] = v;
+      });
+    }
+    return options;
   }
 
   /// Merge the given options contents where the values in [defaults] may be
@@ -116,8 +153,9 @@ class AnalysisOptionsProvider {
   ///   * maps are merged recursively.
   ///   * if map values cannot be merged, the overriding value is taken.
   ///
-  YamlMap merge(YamlMap defaults, YamlMap overrides) =>
-      new Merger().mergeMap(defaults, overrides);
+  Map<String, YamlNode> merge(
+          Map<String, YamlNode> defaults, Map<String, YamlNode> overrides) =>
+      new Merger().merge(defaults, overrides) as Map<String, YamlNode>;
 
   /// Read the contents of [source] as a string.
   /// Returns null if source is null or does not exist.

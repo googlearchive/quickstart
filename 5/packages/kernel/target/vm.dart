@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 library kernel.target.vm;
 
+// ignore: UNDEFINED_HIDDEN_NAME
 import 'dart:core' hide MapEntry;
 
 import '../ast.dart';
@@ -24,9 +25,6 @@ class VmTarget extends Target {
 
   @override
   bool get strongMode => flags.strongMode;
-
-  @override
-  bool get enableNoSuchMethodForwarders => true;
 
   @override
   String get name => 'vm';
@@ -71,7 +69,7 @@ class VmTarget extends Target {
   }
 
   @override
-  void performGlobalTransformations(CoreTypes coreTypes, Component component,
+  void performGlobalTransformations(CoreTypes coreTypes, Program program,
       {void logger(String msg)}) {}
 
   @override

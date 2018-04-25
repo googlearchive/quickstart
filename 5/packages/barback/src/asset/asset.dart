@@ -38,7 +38,7 @@ abstract class Asset {
   ///
   /// If the asset was created from a [String] the original string is always
   /// returned and [encoding] is ignored. Otherwise, the binary data of the
-  /// asset is decoded using [encoding], which defaults to [UTF8].
+  /// asset is decoded using [encoding], which defaults to [utf8].
   Future<String> readAsString({Encoding encoding});
 
   /// Streams the binary contents of the asset.

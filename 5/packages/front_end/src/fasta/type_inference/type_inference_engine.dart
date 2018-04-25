@@ -7,6 +7,7 @@ import 'package:front_end/src/fasta/builder/library_builder.dart';
 import 'package:front_end/src/fasta/kernel/kernel_shadow_ast.dart';
 import 'package:front_end/src/fasta/messages.dart';
 import 'package:front_end/src/fasta/source/source_library_builder.dart';
+import 'package:front_end/src/fasta/type_inference/type_inference_listener.dart';
 import 'package:front_end/src/fasta/type_inference/type_inferrer.dart';
 import 'package:front_end/src/fasta/type_inference/type_schema_environment.dart';
 import 'package:kernel/ast.dart'
@@ -25,8 +26,7 @@ import 'package:kernel/class_hierarchy.dart';
 import 'package:kernel/core_types.dart';
 
 import '../deprecated_problems.dart' show Crash;
-
-import '../messages.dart' show getLocationFromNode, noLength;
+import '../messages.dart' show getLocationFromNode;
 
 /// Concrete class derived from [InferenceNode] to represent type inference of a
 /// field based on its initializer.
@@ -49,15 +49,14 @@ class FieldInitializerInferenceNode extends InferenceNode {
       // typeInferrer to be null.  If this happens, just skip type inference for
       // this field.
       if (typeInferrer != null) {
-        var inferredType = typeInferrer
-            .inferDeclarationType(typeInferrer.inferFieldTopLevel(field, true));
+        var inferredType = typeInferrer.inferDeclarationType(
+            typeInferrer.inferFieldTopLevel(field, null, true));
         if (isCircular) {
           // Report the appropriate error.
           _library.addCompileTimeError(
               templateCantInferTypeDueToCircularity
                   .withArguments(field.name.name),
               field.fileOffset,
-              noLength,
               field.fileUri);
           inferredType = const DynamicType();
         }
@@ -211,12 +210,12 @@ abstract class TypeInferenceEngine {
 
   /// Creates a type inferrer for use inside of a method body declared in a file
   /// with the given [uri].
-  TypeInferrer createLocalTypeInferrer(
-      Uri uri, InterfaceType thisType, SourceLibraryBuilder library);
+  TypeInferrer createLocalTypeInferrer(Uri uri, TypeInferenceListener listener,
+      InterfaceType thisType, SourceLibraryBuilder library);
 
   /// Creates a [TypeInferrer] object which is ready to perform type inference
   /// on the given [field].
-  TypeInferrer createTopLevelTypeInferrer(
+  TypeInferrer createTopLevelTypeInferrer(TypeInferenceListener listener,
       InterfaceType thisType, ShadowField field);
 
   /// Performs the second phase of top level initializer inference, which is to
@@ -229,7 +228,7 @@ abstract class TypeInferenceEngine {
   /// corresponding fields.
   void finishTopLevelInitializingFormals();
 
-  /// Gets ready to do top level type inference for the component having the given
+  /// Gets ready to do top level type inference for the program having the given
   /// [hierarchy], using the given [coreTypes].
   void prepareTopLevel(CoreTypes coreTypes, ClassHierarchy hierarchy);
 

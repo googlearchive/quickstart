@@ -10,21 +10,18 @@ import 'dart:typed_data';
 import 'src/heap.dart';
 import 'type_algebra.dart';
 
-typedef HandleAmbiguousSupertypes = void Function(Class, Supertype, Supertype);
+import 'src/incremental_class_hierarchy.dart' show IncrementalClassHierarchy;
 
-abstract class MixinInferrer {
-  void infer(ClassHierarchy hierarchy, Class classNode);
-}
+typedef HandleAmbiguousSupertypes = void Function(Class, Supertype, Supertype);
 
 /// Interface for answering various subclassing queries.
 /// TODO(scheglov) Several methods are not used, or used only in tests.
 /// Check if these methods are not useful and should be removed .
 abstract class ClassHierarchy {
-  factory ClassHierarchy(Component component,
-      {HandleAmbiguousSupertypes onAmbiguousSupertypes,
-      MixinInferrer mixinInferrer}) {
+  factory ClassHierarchy(Program program,
+      {HandleAmbiguousSupertypes onAmbiguousSupertypes}) {
     int numberOfClasses = 0;
-    for (var library in component.libraries) {
+    for (var library in program.libraries) {
       numberOfClasses += library.classes.length;
     }
     onAmbiguousSupertypes ??= (Class cls, Supertype a, Supertype b) {
@@ -34,8 +31,14 @@ abstract class ClassHierarchy {
       }
     };
     return new ClosedWorldClassHierarchy._internal(
-        component, numberOfClasses, onAmbiguousSupertypes)
-      .._initialize(mixinInferrer);
+        program, numberOfClasses, onAmbiguousSupertypes)
+      .._initialize();
+  }
+
+  /// Use [ClassHierarchy] factory instead.
+  @deprecated
+  factory ClassHierarchy.deprecated_incremental([Program program]) {
+    return new IncrementalClassHierarchy.deprecated();
   }
 
   /// Given the [unordered] classes, return them in such order that classes
@@ -46,7 +49,7 @@ abstract class ClassHierarchy {
   /// Returns the unique index of the [class_].
   int getClassIndex(Class class_);
 
-  /// True if the component contains another class that is a subtype of given one.
+  /// True if the program contains another class that is a subtype of given one.
   bool hasProperSubtypes(Class class_);
 
   /// Returns the number of steps in the longest inheritance path from [class_]
@@ -86,11 +89,6 @@ abstract class ClassHierarchy {
   /// Returns the instantiation of [superclass] that is implemented by [type],
   /// or `null` if [type] does not implement [superclass] at all.
   InterfaceType getTypeAsInstanceOf(InterfaceType type, Class superclass);
-
-  /// Returns the instantiation of [superclass] that is implemented by [type],
-  /// or `null` if [type] does not implement [superclass].  [superclass] must
-  /// be a generic class.
-  Supertype asInstantiationOf(Supertype type, Class superclass);
 
   /// Returns the instance member that would respond to a dynamic dispatch of
   /// [name] to an instance of [class_], or `null` if no such member exists.
@@ -332,10 +330,10 @@ abstract class ClassHierarchy {
 class ClosedWorldClassHierarchy implements ClassHierarchy {
   final HandleAmbiguousSupertypes _onAmbiguousSupertypes;
 
-  /// The [Component] that this class hierarchy represents.
-  final Component _component;
+  /// The [Program] that this class hierarchy represents.
+  final Program _program;
 
-  /// All classes in the component.
+  /// All classes in the program.
   ///
   /// The list is ordered so that classes occur after their super classes.
   final List<Class> classes;
@@ -346,7 +344,7 @@ class ClosedWorldClassHierarchy implements ClassHierarchy {
   final List<Class> _classesByTopDownIndex;
 
   ClosedWorldClassHierarchy._internal(
-      this._component, int numberOfClasses, this._onAmbiguousSupertypes)
+      this._program, int numberOfClasses, this._onAmbiguousSupertypes)
       : classes = new List<Class>(numberOfClasses),
         _classesByTopDownIndex = new List<Class>(numberOfClasses);
 
@@ -680,27 +678,13 @@ class ClosedWorldClassHierarchy implements ClassHierarchy {
   @override
   ClassHierarchy applyChanges(Iterable<Class> classes) {
     if (classes.isEmpty) return this;
-    return new ClassHierarchy(_component,
+    return new ClassHierarchy(_program,
         onAmbiguousSupertypes: _onAmbiguousSupertypes);
   }
 
-  @override
-  Supertype asInstantiationOf(Supertype type, Class superclass) {
-    // This is similar to getTypeAsInstanceOf, except that it assumes that
-    // superclass is a generic class.  It thus does not rely on being able
-    // to answer isSubtypeOf queries and so can be used before we have built
-    // the intervals needed for those queries.
-    assert(superclass.typeParameters.isNotEmpty);
-    if (type.classNode == superclass) {
-      return superclass.asThisSupertype;
-    }
-    var map = _infoFor[type.classNode]?.genericSuperTypes;
-    return map == null ? null : map[superclass]?.first;
-  }
-
-  void _initialize(MixinInferrer mixinInferrer) {
+  void _initialize() {
     // Build the class ordering based on a topological sort.
-    for (var library in _component.libraries) {
+    for (var library in _program.libraries) {
       for (var classNode in library.classes) {
         _topologicalSortVisit(classNode);
       }
@@ -724,26 +708,7 @@ class ClosedWorldClassHierarchy implements ClassHierarchy {
 
     // Run a downward traversal from the root, compute preorder numbers for
     // each class, and build their subtype sets as interval lists.
-    if (classes.isNotEmpty) {
-      _topDownSortVisit(_infoFor[classes[0]]);
-    }
-
-    // Now that the intervals for subclass, mixer, and implementer queries are
-    // built, we may infer and record supertypes for the classes.
-    for (int i = 0; i < classes.length; ++i) {
-      Class classNode = classes[i];
-      _ClassInfo info = _infoFor[classNode];
-      if (classNode.supertype != null) {
-        _recordSuperTypes(info, classNode.supertype);
-      }
-      if (classNode.mixedInType != null) {
-        mixinInferrer?.infer(this, classNode);
-        _recordSuperTypes(info, classNode.mixedInType);
-      }
-      for (Supertype supertype in classNode.implementedTypes) {
-        _recordSuperTypes(info, supertype);
-      }
-    }
+    _topDownSortVisit(_infoFor[classes[0]]);
 
     for (int i = 0; i < classes.length; ++i) {
       var class_ = classes[i];
@@ -790,13 +755,16 @@ class ClosedWorldClassHierarchy implements ClassHierarchy {
     if (classNode.supertype != null) {
       superDepth =
           max(superDepth, _topologicalSortVisit(classNode.supertype.classNode));
+      _recordSuperTypes(info, classNode.supertype);
     }
     if (classNode.mixedInType != null) {
       superDepth = max(
           superDepth, _topologicalSortVisit(classNode.mixedInType.classNode));
+      _recordSuperTypes(info, classNode.mixedInType);
     }
     for (var supertype in classNode.implementedTypes) {
       superDepth = max(superDepth, _topologicalSortVisit(supertype.classNode));
+      _recordSuperTypes(info, supertype);
     }
     _buildDeclaredMembers(classNode, info);
     _buildImplementedMembers(classNode, info);

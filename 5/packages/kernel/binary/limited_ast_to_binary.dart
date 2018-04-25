@@ -8,7 +8,7 @@ import 'package:kernel/binary/ast_to_binary.dart';
 /// Writes libraries that satisfy the [predicate].
 ///
 /// Only the referenced subset of canonical names is indexed and written,
-/// so we don't waste time indexing all libraries of a component, when only
+/// so we don't waste time indexing all libraries of a program, when only
 /// a tiny subset is used.
 class LimitedBinaryPrinter extends BinaryPrinter {
   final LibraryFilter predicate;
@@ -27,10 +27,10 @@ class LimitedBinaryPrinter extends BinaryPrinter {
       : super(sink);
 
   @override
-  void computeCanonicalNames(Component component) {
-    for (var library in component.libraries) {
+  void computeCanonicalNames(Program program) {
+    for (var library in program.libraries) {
       if (predicate(library)) {
-        component.root
+        program.root
             .getChildFromUri(library.importUri)
             .bindTo(library.reference);
         library.computeCanonicalNames();
@@ -44,8 +44,8 @@ class LimitedBinaryPrinter extends BinaryPrinter {
   }
 
   @override
-  void writeLibraries(Component component) {
-    var librariesToWrite = component.libraries.where(predicate).toList();
+  void writeLibraries(Program program) {
+    var librariesToWrite = program.libraries.where(predicate).toList();
     writeList(librariesToWrite, writeNode);
   }
 
@@ -56,15 +56,15 @@ class LimitedBinaryPrinter extends BinaryPrinter {
   }
 
   @override
-  void writeComponentIndex(Component component, List<Library> libraries) {
+  void writeProgramIndex(Program program, List<Library> libraries) {
     var librariesToWrite = libraries.where(predicate).toList();
-    super.writeComponentIndex(component, librariesToWrite);
+    super.writeProgramIndex(program, librariesToWrite);
   }
 
   @override
-  void indexUris(Component component) {
+  void indexUris(Program program) {
     if (!excludeUriToSource) {
-      super.indexUris(component);
+      super.indexUris(program);
     } else {
       // We pretend not to know any uris, thereby excluding all sources.
     }

@@ -13,7 +13,7 @@ import 'package:kernel/ast.dart'
         Supertype,
         TypeParameter;
 
-import '../fasta_codes.dart' show messageSupertypeIsFunction, noLength;
+import '../fasta_codes.dart' show messageSupertypeIsFunction;
 
 import '../problems.dart' show unsupported;
 
@@ -76,13 +76,8 @@ class KernelFunctionTypeBuilder extends FunctionTypeBuilder
   Supertype buildSupertype(
       LibraryBuilder library, int charOffset, Uri fileUri) {
     library.addCompileTimeError(
-        messageSupertypeIsFunction, charOffset, noLength, fileUri);
+        messageSupertypeIsFunction, charOffset, fileUri);
     return null;
-  }
-
-  Supertype buildMixedInType(
-      LibraryBuilder library, int charOffset, Uri fileUri) {
-    return buildSupertype(library, charOffset, fileUri);
   }
 
   @override

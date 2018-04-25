@@ -4,16 +4,18 @@
 
 library fasta.source_class_builder;
 
+import 'package:front_end/src/base/instrumentation.dart' show Instrumentation;
+
+import 'package:front_end/src/fasta/kernel/kernel_shadow_ast.dart'
+    show ShadowClass;
+
 import 'package:kernel/ast.dart'
     show Class, Constructor, Member, Supertype, TreeNode, setParents;
-
-import '../../base/instrumentation.dart' show Instrumentation;
 
 import '../dill/dill_member_builder.dart' show DillMemberBuilder;
 
 import '../fasta_codes.dart'
     show
-        noLength,
         templateConflictsWithConstructor,
         templateConflictsWithFactory,
         templateConflictsWithMember,
@@ -37,8 +39,6 @@ import '../kernel/kernel_builder.dart'
         Scope,
         TypeVariableBuilder,
         compareProcedures;
-
-import '../kernel/kernel_shadow_ast.dart' show ShadowClass;
 
 import '../problems.dart' show unexpected, unhandled;
 
@@ -133,7 +133,7 @@ class SourceClassBuilder extends KernelClassBuilder {
     actualCls.supertype =
         supertype?.buildSupertype(library, charOffset, fileUri);
     actualCls.mixedInType =
-        mixedInType?.buildMixedInType(library, charOffset, fileUri);
+        mixedInType?.buildSupertype(library, charOffset, fileUri);
     // TODO(ahe): If `cls.supertype` is null, and this isn't Object, report a
     // compile-time error.
     cls.isAbstract = isAbstract;
@@ -151,39 +151,35 @@ class SourceClassBuilder extends KernelClassBuilder {
     constructors.forEach((String name, Builder constructor) {
       Builder member = scopeBuilder[name];
       if (member == null) return;
-      // TODO(ahe): Revisit these messages. It seems like the last two should
-      // be `context` parameter to this message.
+      // TODO(ahe): charOffset is missing.
       addCompileTimeError(templateConflictsWithMember.withArguments(name),
-          constructor.charOffset, noLength);
+          constructor.charOffset);
       if (constructor.isFactory) {
         addCompileTimeError(
             templateConflictsWithFactory.withArguments("${this.name}.${name}"),
-            member.charOffset,
-            noLength);
+            member.charOffset);
       } else {
         addCompileTimeError(
             templateConflictsWithConstructor
                 .withArguments("${this.name}.${name}"),
-            member.charOffset,
-            noLength);
+            member.charOffset);
       }
     });
 
     scope.setters.forEach((String name, Builder setter) {
       Builder member = scopeBuilder[name];
       if (member == null || !member.isField || member.isFinal) return;
+      // TODO(ahe): charOffset is missing.
       if (member.isInstanceMember == setter.isInstanceMember) {
-        addProblem(templateConflictsWithMember.withArguments(name),
-            setter.charOffset, noLength);
-        // TODO(ahe): Context argument to previous message?
-        addProblem(templateConflictsWithSetter.withArguments(name),
-            member.charOffset, noLength);
+        addProblem(
+            templateConflictsWithMember.withArguments(name), setter.charOffset);
+        addProblem(
+            templateConflictsWithSetter.withArguments(name), member.charOffset);
       } else {
         addProblem(templateConflictsWithMemberWarning.withArguments(name),
-            setter.charOffset, noLength);
-        // TODO(ahe): Context argument to previous message?
+            setter.charOffset);
         addProblem(templateConflictsWithSetterWarning.withArguments(name),
-            member.charOffset, noLength);
+            member.charOffset);
       }
     });
 

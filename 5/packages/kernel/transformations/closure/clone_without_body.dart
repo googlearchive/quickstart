@@ -4,4 +4,14 @@
 
 library kernel.transformations.closure.converter;
 
-export '../../clone.dart' show CloneWithoutBody;
+import '../../ast.dart' show DartType, FunctionNode, TreeNode, TypeParameter;
+
+import '../../clone.dart' show CloneVisitor;
+
+class CloneWithoutBody extends CloneVisitor {
+  CloneWithoutBody({Map<TypeParameter, DartType> typeSubstitution})
+      : super(typeSubstitution: typeSubstitution);
+
+  @override
+  TreeNode cloneFunctionNodeBody(FunctionNode node) => null;
+}

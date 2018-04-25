@@ -10,13 +10,13 @@ import '../core_types.dart';
 import '../type_environment.dart';
 import '../library_index.dart';
 
-Component transformComponent(
-    CoreTypes coreTypes, ClassHierarchy hierarchy, Component component,
+Program transformProgram(
+    CoreTypes coreTypes, ClassHierarchy hierarchy, Program program,
     {List<ProgramRoot> programRoots, bool strongMode: false}) {
-  new TreeShaker(coreTypes, hierarchy, component,
+  new TreeShaker(coreTypes, hierarchy, program,
           programRoots: programRoots, strongMode: strongMode)
-      .transform(component);
-  return component;
+      .transform(program);
+  return program;
 }
 
 enum ProgramRootKind {
@@ -94,7 +94,7 @@ class ProgramRoot {
 class TreeShaker {
   final CoreTypes coreTypes;
   final ClosedWorldClassHierarchy hierarchy;
-  final Component component;
+  final Program program;
   final bool strongMode;
   final List<ProgramRoot> programRoots;
 
@@ -175,10 +175,9 @@ class TreeShaker {
   /// the mirrors library.
   bool get forceShaking => programRoots != null && programRoots.isNotEmpty;
 
-  TreeShaker(CoreTypes coreTypes, ClassHierarchy hierarchy, Component component,
+  TreeShaker(CoreTypes coreTypes, ClassHierarchy hierarchy, Program program,
       {bool strongMode: false, List<ProgramRoot> programRoots})
-      : this._internal(
-            coreTypes, hierarchy, component, strongMode, programRoots);
+      : this._internal(coreTypes, hierarchy, program, strongMode, programRoots);
 
   bool isMemberBodyUsed(Member member) {
     return _usedMembers.containsKey(member);
@@ -217,15 +216,15 @@ class TreeShaker {
     return _classRetention[index];
   }
 
-  /// Applies the tree shaking results to the component.
+  /// Applies the tree shaking results to the program.
   ///
   /// This removes unused classes, members, and hierarchy data.
-  void transform(Component component) {
+  void transform(Program program) {
     if (isUsingMirrors) return; // Give up if using mirrors.
-    new _TreeShakingTransformer(this).transform(component);
+    new _TreeShakingTransformer(this).transform(program);
   }
 
-  TreeShaker._internal(this.coreTypes, this.hierarchy, this.component,
+  TreeShaker._internal(this.coreTypes, this.hierarchy, this.program,
       this.strongMode, this.programRoots)
       : this._dispatchedNames = new List<Set<Name>>(hierarchy.classes.length),
         this._usedMembersWithHost =
@@ -247,20 +246,19 @@ class TreeShaker {
   }
 
   void _build() {
-    if (component.mainMethod == null) {
-      throw 'Cannot perform tree shaking on a component without a main method';
+    if (program.mainMethod == null) {
+      throw 'Cannot perform tree shaking on a program without a main method';
     }
-    if (component.mainMethod.function.positionalParameters.length > 0) {
+    if (program.mainMethod.function.positionalParameters.length > 0) {
       // The main method takes a List<String> as argument.
       _addInstantiatedExternalSubclass(coreTypes.listClass);
       _addInstantiatedExternalSubclass(coreTypes.stringClass);
     }
     _addDispatchedName(coreTypes.objectClass, new Name('noSuchMethod'));
     _addPervasiveUses();
-    _addUsedMember(null, component.mainMethod);
+    _addUsedMember(null, program.mainMethod);
     if (programRoots != null) {
-      var table =
-          new LibraryIndex(component, programRoots.map((r) => r.library));
+      var table = new LibraryIndex(program, programRoots.map((r) => r.library));
       for (var root in programRoots) {
         _addUsedRoot(root, table);
       }
@@ -1032,7 +1030,7 @@ class _TreeShakingTransformer extends Transformer {
     return isUsed ? target : null;
   }
 
-  void transform(Component component) {
+  void transform(Program program) {
     for (Expression node in shaker._typedCalls) {
       // We should not leave dangling references, so if the target of a typed
       // call has been removed, we must remove the reference.  The receiver of
@@ -1046,7 +1044,7 @@ class _TreeShakingTransformer extends Transformer {
         node.interfaceTarget = _translateInterfaceTarget(node.interfaceTarget);
       }
     }
-    for (var library in component.libraries) {
+    for (var library in program.libraries) {
       if (!shaker.forceShaking && library.importUri.scheme == 'dart') {
         // The backend expects certain things to be present in the core
         // libraries, so we currently don't shake off anything there.
@@ -1163,22 +1161,22 @@ class _ExternalTypeVisitor extends DartTypeVisitor {
     }
   }
 
-  void visitCovariant(DartType type) => type?.accept(this);
+  visitCovariant(DartType type) => type?.accept(this);
 
-  void visitInvariant(DartType type) => shaker._invariantVisitor.visit(type);
+  visitInvariant(DartType type) => shaker._invariantVisitor.visit(type);
 
-  void visitInvalidType(InvalidType node) {}
+  visitInvalidType(InvalidType node) {}
 
-  void visitDynamicType(DynamicType node) {
+  visitDynamicType(DynamicType node) {
     // TODO(asgerf): Find a suitable model for untyped externals, e.g. track
     // them to the first type boundary.
   }
 
-  void visitVoidType(VoidType node) {}
+  visitVoidType(VoidType node) {}
 
-  void visitVectorType(VectorType node) {}
+  visitVectorType(VectorType node) {}
 
-  void visitInterfaceType(InterfaceType node) {
+  visitInterfaceType(InterfaceType node) {
     if (isCovariant) {
       shaker._addInstantiatedExternalSubclass(node.classNode);
     }
@@ -1199,11 +1197,11 @@ class _ExternalTypeVisitor extends DartTypeVisitor {
     }
   }
 
-  void visitTypedefType(TypedefType node) {
+  visitTypedefType(TypedefType node) {
     shaker.addUsedTypedef(node.typedefNode);
   }
 
-  void visitFunctionType(FunctionType node) {
+  visitFunctionType(FunctionType node) {
     visit(node.returnType);
     for (int i = 0; i < node.positionalParameters.length; ++i) {
       visitContravariant(node.positionalParameters[i]);
@@ -1213,7 +1211,7 @@ class _ExternalTypeVisitor extends DartTypeVisitor {
     }
   }
 
-  void visitTypeParameterType(TypeParameterType node) {}
+  visitTypeParameterType(TypeParameterType node) {}
 
   /// Just treat a couple of whitelisted classes as having covariant type
   /// parameters.

@@ -31,7 +31,7 @@ Injector platformInjector() {
   if (_platformInjectorCache == null) {
     final testabilityRegistry = new TestabilityRegistry();
     sharedStylesHost ??= new DomSharedStylesHost(document);
-    createInitDomAdapter(testabilityRegistry)();
+    initTestability(testabilityRegistry);
     _platformInjectorCache = new Injector.map({
       TestabilityRegistry: testabilityRegistry,
     });
@@ -185,7 +185,7 @@ ComponentRef<T> runApp<T>(
   }
   final injector = appInjector(createInjector);
   final ApplicationRef appRef = unsafeCast(injector.get(ApplicationRef));
-  return appRef.bootstrap(componentFactory, injector);
+  return appRef.bootstrap(componentFactory);
 }
 
 /// Asynchronous alternative to [runApp], supporting [beforeComponentCreated].
@@ -212,7 +212,7 @@ Future<ComponentRef<T>> runAppAsync<T>(
   final injector = appInjector(createInjector);
   return beforeComponentCreated(injector).then((_) {
     final appRef = unsafeCast<ApplicationRef>(injector.get(ApplicationRef));
-    return appRef.bootstrap(componentFactory, injector);
+    return appRef.bootstrap(componentFactory);
   });
 }
 

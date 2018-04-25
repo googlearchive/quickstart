@@ -705,62 +705,15 @@ class SourceVisitor extends ThrowingAstVisitor {
   }
 
   void _visitConstructorInitializers(ConstructorDeclaration node) {
-    var hasTrailingComma = node.parameters.parameters.isNotEmpty &&
-        node.parameters.parameters.last.endToken.next.type == TokenType.COMMA;
+    // Shift the ":" forward.
+    builder.indent(Indent.constructorInitializer);
 
-    if (hasTrailingComma) {
-      // Since the ")", "])", or "})" on the preceding line doesn't take up
-      // much space, it looks weird to move the ":" onto it's own line. Instead,
-      // keep it and the first initializer on the current line but add enough
-      // space before it to line it up with any subsequent initializers.
-      //
-      //     Foo(
-      //       parameter,
-      //     )   : field = value,
-      //           super();
-      space();
-      var isOptional =
-          node.parameters.parameters.last.kind != ParameterKind.REQUIRED;
-      if (node.initializers.length > 1) {
-        _writeText(isOptional ? " " : "  ", node.separator.offset);
-      }
+    split();
+    token(node.separator); // ":".
+    space();
 
-      // ":".
-      token(node.separator);
-      space();
-
-      builder.indent(6);
-    } else {
-      // Shift the itself ":" forward.
-      builder.indent(Indent.constructorInitializer);
-
-      // If the parameters or initializers split, put the ":" on its own line.
-      split();
-
-      // ":".
-      token(node.separator);
-      space();
-
-      // Try to line up the initializers with the first one that follows the ":":
-      //
-      //     Foo(notTrailing)
-      //         : initializer = value,
-      //           super(); // +2 from previous line.
-      //
-      //     Foo(
-      //       trailing,
-      //     ) : initializer = value,
-      //         super(); // +4 from previous line.
-      //
-      // This doesn't work if there is a trailing comma in an optional parameter,
-      // but we don't want to do a weird +5 alignment:
-      //
-      //     Foo({
-      //       trailing,
-      //     }) : initializer = value,
-      //         super(); // Doesn't quite line up. :(
-      builder.indent(2);
-    }
+    // Shift everything past the ":".
+    builder.indent();
 
     for (var i = 0; i < node.initializers.length; i++) {
       if (i > 0) {
@@ -773,7 +726,7 @@ class SourceVisitor extends ThrowingAstVisitor {
     }
 
     builder.unindent();
-    if (!hasTrailingComma) builder.unindent();
+    builder.unindent();
 
     // End the rule for ":" after all of the initializers.
     builder.endRule();
@@ -987,39 +940,8 @@ class SourceVisitor extends ThrowingAstVisitor {
     token(node.forKeyword);
     space();
     token(node.leftParenthesis);
-
     if (node.loopVariable != null) {
-      // TODO(rnystrom): The formatting logic here is slightly different from
-      // how parameter metadata is handled and from how variable metadata is
-      // handled. I think what it does works better in the context of a for-in
-      // loop, but consider trying to unify this with one of the above.
-      //
-      // Metadata on class and variable declarations is *always* split:
-      //
-      //     @foo
-      //     class Bar {}
-      //
-      // Metadata on parameters has some complex logic to handle multiple
-      // parameters with metadata. It also indents the parameters farther than
-      // the metadata when split:
-      //
-      //     function(
-      //         @foo(long arg list...)
-      //             parameter1,
-      //         @foo
-      //             parameter2) {}
-      //
-      // For for-in variables, we allow it to not split, like parameters, but
-      // don't indent the variable when it does split:
-      //
-      //     for (
-      //         @foo
-      //         @bar
-      //         var blah in stuff) {}
-      builder.startRule();
-      visitNodes(node.loopVariable.metadata, between: split, after: split);
       visit(node.loopVariable);
-      builder.endRule();
     } else {
       visit(node.identifier);
     }
@@ -1419,7 +1341,8 @@ class SourceVisitor extends ThrowingAstVisitor {
 
   visitInstanceCreationExpression(InstanceCreationExpression node) {
     builder.startSpan();
-    token(node.keyword, after: space);
+    token(node.keyword);
+    space();
     builder.startSpan(Cost.constructorName);
 
     // Start the expression nesting for the argument list here, in case this

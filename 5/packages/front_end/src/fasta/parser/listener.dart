@@ -62,11 +62,6 @@ class Listener {
     logEvent("Block");
   }
 
-  /// Called to handle a block that has been parsed but is not associated
-  /// with any top level function declaration. Substructures:
-  /// - block
-  void handleInvalidTopLevelBlock(Token token) {}
-
   void beginCascade(Token token) {}
 
   void endCascade() {
@@ -93,7 +88,7 @@ class Listener {
   /// Handle the beginning of a class declaration.
   /// [beginToken] may be the same as [name], or may point to modifiers
   /// (or extraneous modifiers in the case of recovery) preceding [name].
-  void beginClassDeclaration(Token begin, Token abstractToken, Token name) {}
+  void beginClassDeclaration(Token beginToken, Token name) {}
 
   /// Handle an extends clause in a class declaration. Substructures:
   /// - supertype (may be a mixin application)
@@ -224,8 +219,7 @@ class Listener {
     logEvent("ExpressionStatement");
   }
 
-  void beginFactoryMethod(
-      Token lastConsumed, Token externalToken, Token constToken) {}
+  void beginFactoryMethod(Token lastConsumed) {}
 
   void endFactoryMethod(
       Token beginToken, Token factoryKeyword, Token endToken) {
@@ -257,8 +251,7 @@ class Listener {
   /// - Variable declarations (count times)
   ///
   /// Doesn't have a corresponding begin event, use [beginMember] instead.
-  void endFields(Token staticToken, Token covariantToken, Token varFinalOrConst,
-      int count, Token beginToken, Token endToken) {
+  void endFields(int count, Token beginToken, Token endToken) {
     logEvent("Fields");
   }
 
@@ -323,15 +316,13 @@ class Listener {
   }
 
   /// Handle the beginning of a local function declaration.  Substructures:
-  /// - Metadata
   /// - Type variables
   void beginLocalFunctionDeclaration(Token token) {}
 
   /// A function declaration.
   ///
   /// Substructures:
-  /// - Metadata
-  /// - Type variables
+  /// - Modifiers
   /// - Return type
   /// - Name
   /// - Type variables
@@ -409,8 +400,7 @@ class Listener {
   /// Handle the beginning of a named mixin application.
   /// [beginToken] may be the same as [name], or may point to modifiers
   /// (or extraneous modifiers in the case of recovery) preceding [name].
-  void beginNamedMixinApplication(
-      Token begin, Token abstractToken, Token name) {}
+  void beginNamedMixinApplication(Token beginToken, Token name) {}
 
   /// Handle the end of a named mixin declaration.  Substructures:
   /// - metadata
@@ -636,13 +626,11 @@ class Listener {
     logEvent("Member");
   }
 
-  /// Handle the beginning of a method declaration.  Substructures:
-  /// - metadata
-  void beginMethod(Token externalToken, Token staticToken, Token covariantToken,
-      Token varFinalOrConst, Token name) {}
+  void beginMethod() {}
 
   /// Handle the end of a method declaration.  Substructures:
   /// - metadata
+  /// - modifiers
   /// - return type
   /// - method name (identifier, possibly qualified)
   /// - type variables
@@ -811,18 +799,18 @@ class Listener {
 
   /// Handle the end of a top level variable declaration.  Substructures:
   /// - Metadata
+  /// - Modifiers
   /// - Type
   /// - Repeated [count] times:
   ///   - Variable name (identifier)
   ///   - Field initializer
   /// Doesn't have a corresponding begin event.
   /// Use [beginTopLevelMember] instead.
-  void endTopLevelFields(Token staticToken, Token covariantToken,
-      Token varFinalOrConst, int count, Token beginToken, Token endToken) {
+  void endTopLevelFields(int count, Token beginToken, Token endToken) {
     logEvent("TopLevelFields");
   }
 
-  void beginTopLevelMethod(Token lastConsumed, Token externalToken) {}
+  void beginTopLevelMethod(Token lastConsumed) {}
 
   /// Handle the end of a top level method.  Substructures:
   /// - metadata
@@ -920,10 +908,7 @@ class Listener {
     logEvent("FunctionExpression");
   }
 
-  /// Handle the start of a variables declaration.  Substructures:
-  /// - Metadata
-  /// - Type
-  void beginVariablesDeclaration(Token token, Token varFinalOrConst) {}
+  void beginVariablesDeclaration(Token token) {}
 
   void endVariablesDeclaration(int count, Token endToken) {
     logEvent("VariablesDeclaration");

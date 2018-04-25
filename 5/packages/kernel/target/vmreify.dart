@@ -3,10 +3,10 @@
 // BSD-style license that can be found in the LICENSE file.
 library kernel.target.vmreify;
 
-import '../ast.dart' show Component;
+import '../ast.dart' show Program;
 import '../core_types.dart' show CoreTypes;
 import '../transformations/generic_types_reification.dart' as reify
-    show transformComponent;
+    show transformProgram;
 import 'targets.dart' show TargetFlags;
 import 'vmcc.dart' as vmcc_target;
 
@@ -27,18 +27,18 @@ class VmGenericTypesReifiedTarget extends vmcc_target.VmClosureConvertedTarget {
   }
 
   @override
-  void performGlobalTransformations(CoreTypes coreTypes, Component component,
+  void performGlobalTransformations(CoreTypes coreTypes, Program program,
       {void logger(String msg)}) {
-    super.performGlobalTransformations(coreTypes, component);
+    super.performGlobalTransformations(coreTypes, program);
     // TODO(dmitryas) this transformation should be made modular
-    reify.transformComponent(coreTypes, component);
+    reify.transformProgram(coreTypes, program);
   }
 
   // Disable tree shaking for Generic Types Reification. There are some runtime
   // libraries that are required for the transformation and are shaken off,
-  // because they aren't invoked from the component being transformed prior to
+  // because they aren't invoked from the program being transformed prior to
   // the transformation.
   // TODO(dmitryas): remove this when the libraries are in dart:_internal
   @override
-  void performTreeShaking(CoreTypes coreTypes, Component component) {}
+  void performTreeShaking(CoreTypes coreTypes, Program program) {}
 }

@@ -103,7 +103,7 @@ class DartFormatter {
 
     // Parse it.
     var parser = new Parser(stringSource, errorListener);
-    parser.enableOptionalNewAndConst = true;
+    parser.enableAssertInitializer = true;
 
     AstNode node;
     if (source.isCompilationUnit) {

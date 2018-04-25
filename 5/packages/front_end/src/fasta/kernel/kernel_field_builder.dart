@@ -22,6 +22,9 @@ import '../problems.dart' show internalProblem;
 
 import '../source/source_library_builder.dart' show SourceLibraryBuilder;
 
+import '../type_inference/type_inference_listener.dart'
+    show TypeInferenceListener;
+
 import 'body_builder.dart' show BodyBuilder;
 
 import 'kernel_builder.dart'
@@ -92,8 +95,9 @@ class KernelFieldBuilder extends FieldBuilder<Expression> {
       var memberScope =
           currentClass == null ? library.scope : currentClass.scope;
       var typeInferenceEngine = library.loader.typeInferenceEngine;
+      var listener = new TypeInferenceListener();
       var typeInferrer = typeInferenceEngine.createTopLevelTypeInferrer(
-          field.enclosingClass?.thisType, field);
+          listener, field.enclosingClass?.thisType, field);
       if (hasInitializer) {
         var bodyBuilder = new BodyBuilder(
             library,
@@ -130,6 +134,5 @@ class KernelFieldBuilder extends FieldBuilder<Expression> {
   DartType get builtType => field.type;
 
   @override
-  bool get hasTypeInferredFromInitializer =>
-      ShadowField.hasTypeInferredFromInitializer(field);
+  bool get hasImplicitType => type == null;
 }

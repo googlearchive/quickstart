@@ -76,11 +76,11 @@ class AggregateTransform extends BaseTransform {
   ///
   /// If the asset was created from a [String] the original string is always
   /// returned and [encoding] is ignored. Otherwise, the binary data of the
-  /// asset is decoded using [encoding], which defaults to [UTF8].
+  /// asset is decoded using [encoding], which defaults to [utf8].
   ///
   /// If an input with [id] cannot be found, throws an [AssetNotFoundException].
   Future<String> readInputAsString(AssetId id, {Encoding encoding}) {
-    if (encoding == null) encoding = UTF8;
+    if (encoding == null) encoding = utf8;
     return getInput(id).then(
         (input) => input.readAsString(encoding: encoding));
   }

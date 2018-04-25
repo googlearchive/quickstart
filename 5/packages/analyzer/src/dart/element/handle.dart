@@ -44,16 +44,10 @@ class ClassElementHandle extends ElementHandle implements ClassElement {
   List<FieldElement> get fields => actualElement.fields;
 
   @override
-  bool get hasJS => actualElement.hasJS;
-
-  @override
   bool get hasNonFinalField => actualElement.hasNonFinalField;
 
   @override
   bool get hasReferenceToSuper => actualElement.hasReferenceToSuper;
-
-  @override
-  bool get hasRequired => actualElement.hasRequired;
 
   @override
   bool get hasStaticMember => actualElement.hasStaticMember;
@@ -68,7 +62,7 @@ class ClassElementHandle extends ElementHandle implements ClassElement {
   bool get isEnum => actualElement.isEnum;
 
   @override
-  bool get isJS => actualElement.hasJS;
+  bool get isJS => actualElement.isJS;
 
   @override
   bool get isMixinApplication => actualElement.isMixinApplication;
@@ -80,7 +74,7 @@ class ClassElementHandle extends ElementHandle implements ClassElement {
   bool get isProxy => actualElement.isProxy;
 
   @override
-  bool get isRequired => actualElement.hasRequired;
+  bool get isRequired => actualElement.isRequired;
 
   @override
   bool get isValidMixin => actualElement.isValidMixin;
@@ -351,64 +345,40 @@ abstract class ElementHandle implements Element {
   Element get enclosingElement => actualElement.enclosingElement;
 
   @override
-  bool get hasAlwaysThrows => actualElement.hasAlwaysThrows;
-
-  @override
-  bool get hasDeprecated => actualElement.hasDeprecated;
-
-  @override
-  bool get hasFactory => actualElement.hasFactory;
-
-  @override
   int get hashCode => _location.hashCode;
 
   @override
-  bool get hasJS => actualElement.hasJS;
+  bool get isAlwaysThrows => actualElement.isAlwaysThrows;
 
   @override
-  bool get hasOverride => actualElement.hasOverride;
+  bool get isDeprecated => actualElement.isDeprecated;
 
   @override
-  bool get hasProtected => actualElement.hasProtected;
+  bool get isFactory => actualElement.isFactory;
 
   @override
-  bool get hasRequired => actualElement.hasRequired;
+  bool get isJS => actualElement.isJS;
 
   @override
-  bool get hasVisibleForTesting => actualElement.hasVisibleForTesting;
-
-  @override
-  bool get isAlwaysThrows => actualElement.hasAlwaysThrows;
-
-  @override
-  bool get isDeprecated => actualElement.hasDeprecated;
-
-  @override
-  bool get isFactory => actualElement.hasFactory;
-
-  @override
-  bool get isJS => actualElement.hasJS;
-
-  @override
-  bool get isOverride => actualElement.hasOverride;
+  bool get isOverride => actualElement.isOverride;
 
   @override
   bool get isPrivate => actualElement.isPrivate;
 
   @override
-  bool get isProtected => actualElement.hasProtected;
+  bool get isProtected => actualElement.isProtected;
 
   @override
   bool get isPublic => actualElement.isPublic;
 
   @override
-  bool get isRequired => actualElement.hasRequired;
+  bool get isRequired => actualElement.isRequired;
 
   @override
   bool get isSynthetic => actualElement.isSynthetic;
 
   @override
-  bool get isVisibleForTesting => actualElement.hasVisibleForTesting;
+  bool get isVisibleForTesting => actualElement.isVisibleForTesting;
 
   @override
   LibraryElement get library =>
@@ -974,7 +944,6 @@ class ParameterElementHandle extends VariableElementHandle
   @override
   ElementKind get kind => ElementKind.PARAMETER;
 
-  @deprecated
   @override
   ParameterKind get parameterKind => actualElement.parameterKind;
 

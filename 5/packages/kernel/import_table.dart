@@ -10,12 +10,12 @@ abstract class ImportTable {
   int getImportIndex(Library library);
 }
 
-class ComponentImportTable implements ImportTable {
+class ProgramImportTable implements ImportTable {
   final Map<Library, int> _libraryIndex = <Library, int>{};
 
-  ComponentImportTable(Component component) {
-    for (int i = 0; i < component.libraries.length; ++i) {
-      _libraryIndex[component.libraries[i]] = i;
+  ProgramImportTable(Program program) {
+    for (int i = 0; i < program.libraries.length; ++i) {
+      _libraryIndex[program.libraries[i]] = i;
     }
   }
 

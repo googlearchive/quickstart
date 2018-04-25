@@ -182,13 +182,12 @@ class Scope extends MutableScope {
     forwardDeclaredLabels[name] = target;
   }
 
-  bool claimLabel(String name) {
-    if (forwardDeclaredLabels == null ||
-        forwardDeclaredLabels.remove(name) == null) return false;
+  void claimLabel(String name) {
+    if (forwardDeclaredLabels == null) return;
+    forwardDeclaredLabels.remove(name);
     if (forwardDeclaredLabels.length == 0) {
       forwardDeclaredLabels = null;
     }
-    return true;
   }
 
   Map<String, Builder> get unclaimedForwardDeclarations {
@@ -210,7 +209,7 @@ class Scope extends MutableScope {
       if (usedNames?.containsKey(name) ?? false) {
         return templatePreviousUseOfName
             .withArguments(name)
-            .withLocation(fileUri, usedNames[name], name.length);
+            .withLocation(fileUri, usedNames[name]);
       }
       recordUse(name, charOffset, fileUri);
       local[name] = builder;

@@ -14,7 +14,4 @@ abstract class KernelTypeBuilder extends TypeBuilder {
   DartType build(LibraryBuilder library);
 
   Supertype buildSupertype(LibraryBuilder library, int charOffset, Uri fileUri);
-
-  Supertype buildMixedInType(
-      LibraryBuilder library, int charOffset, Uri fileUri);
 }

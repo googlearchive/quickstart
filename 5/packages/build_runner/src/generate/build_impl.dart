@@ -19,8 +19,6 @@ import '../asset/reader.dart';
 import '../asset/writer.dart';
 import '../asset_graph/graph.dart';
 import '../asset_graph/node.dart';
-import '../builder/post_process_builder.dart';
-import '../builder/run_post_process_builder.dart';
 import '../environment/build_environment.dart';
 import '../environment/io_environment.dart';
 import '../environment/overridable_environment.dart';
@@ -207,12 +205,13 @@ class _SingleBuild {
       if (!await createMergedOutputDirectories(_outputMap, _assetGraph,
           _packageGraph, _reader, _environment, _buildPhases)) {
         result = _convertToFailure(
-            result, 'Failed to create merged output directories.');
+            result, 'Failed to create merged output directories.',
+            failureType: FailureType.cantCreate);
       }
     }
     if (result.status == BuildStatus.success) {
       _logger.info('Succeeded after ${humanReadable(watch.elapsed)} with '
-          '${result.outputs.length} outputs\n');
+          '${result.outputs.length} outputs ($numActionsCompleted actions)\n');
     } else {
       if (result.exception is FatalBuildException) {
         // TODO(???) Really bad idea. Should not set exit codes in libraries!
@@ -224,12 +223,14 @@ class _SingleBuild {
     return result;
   }
 
-  BuildResult _convertToFailure(BuildResult previous, String errorMessge) =>
+  BuildResult _convertToFailure(BuildResult previous, String errorMessge,
+          {FailureType failureType}) =>
       new BuildResult(
         BuildStatus.failure,
         previous.outputs,
         exception: errorMessge,
         performance: previous.performance,
+        failureType: failureType,
       );
 
   Future<Null> _updateAssetGraph(Map<AssetId, ChangeType> updates) async {
@@ -492,9 +493,28 @@ class _SingleBuild {
 
     numActionsStarted++;
     var errorThrown = false;
-    await runPostProcessBuilder(builder, input, wrappedReader, wrappedWriter,
-            logger, _assetGraph, anchorNode, phaseNum)
-        .catchError((_) => errorThrown = true);
+    await runPostProcessBuilder(
+        builder, input, wrappedReader, wrappedWriter, logger,
+        addAsset: (assetId) {
+      if (_assetGraph.contains(assetId)) {
+        throw new InvalidOutputException(assetId, 'Asset already exists');
+      }
+      var node = new GeneratedAssetNode(assetId,
+          primaryInput: input,
+          builderOptionsId: anchorNode.builderOptionsId,
+          isHidden: true,
+          phaseNumber: phaseNum,
+          wasOutput: true,
+          isFailure: false,
+          state: GeneratedNodeState.upToDate);
+      _assetGraph.add(node);
+      anchorNode.outputs.add(assetId);
+    }, deleteAsset: (assetId) {
+      if (!_assetGraph.contains(assetId)) {
+        throw new AssetNotFoundException(assetId);
+      }
+      _assetGraph.get(assetId).isDeleted = true;
+    }).catchError((_) => errorThrown = true);
     numActionsCompleted++;
 
     var assetsWritten = wrappedWriter.assetsWritten.toSet();
@@ -516,6 +536,9 @@ class _SingleBuild {
         'Outputs should be known statically. Missing '
         '${outputs.where((o) => !_assetGraph.contains(o)).toList()}');
     assert(outputs.isNotEmpty, 'Can\'t run a build with no outputs');
+
+    // We only check the first output, because all outputs share the same inputs
+    // and invalidation state.
     var firstOutput = outputs.first;
     var node = _assetGraph.get(firstOutput) as GeneratedAssetNode;
     assert(
@@ -526,16 +549,13 @@ class _SingleBuild {
                 .isEmpty),
         'All outputs of a build action should share the same inputs.');
 
-    // We only check the first output, because all outputs share the same inputs
-    // and invalidation state.
+    // No need to build an up to date output
     if (node.state == GeneratedNodeState.upToDate) return false;
     // Early bail out condition, this is a forced update.
     if (node.state == GeneratedNodeState.definitelyNeedsUpdate) return true;
-    // TODO: Don't assume the worst for globs
-    // https://github.com/dart-lang/build/issues/624
-    if (node.previousInputsDigest == null) {
-      return true;
-    }
+    // This is a fresh build or the first time we've seen this output.
+    if (node.previousInputsDigest == null) return true;
+
     var digest = await _computeCombinedDigest(
         node.inputs, node.builderOptionsId, reader);
     if (digest != node.previousInputsDigest) {
@@ -614,20 +634,18 @@ class _SingleBuild {
   /// - Setting the `previousInputsDigest` on each output based on the inputs.
   Future<Null> _setOutputsState(Iterable<AssetId> outputs,
       SingleStepReader reader, AssetWriterSpy writer, bool isFailure) async {
-    // All inputs are the same, so we only compute this once, but lazily.
-    Digest inputsDigest;
-    var globsRan = reader.globsRan.toSet();
+    if (outputs.isEmpty) return;
+
+    final inputsDigest = await _computeCombinedDigest(
+        reader.assetsRead,
+        (_assetGraph.get(outputs.first) as GeneratedAssetNode).builderOptionsId,
+        reader);
+    final globsRan = reader.globsRan.toSet();
 
     for (var output in outputs) {
       var wasOutput = writer.assetsWritten.contains(output);
       var digest = wasOutput ? await _reader.digest(output) : null;
       var node = _assetGraph.get(output) as GeneratedAssetNode;
-
-      inputsDigest ??= await () {
-        var allInputs = reader.assetsRead.toSet();
-        if (node.primaryInput != null) allInputs.add(node.primaryInput);
-        return _computeCombinedDigest(allInputs, node.builderOptionsId, reader);
-      }();
 
       // **IMPORTANT**: All updates to `node` must be synchronous. With lazy
       // builders we can run arbitrary code between updates otherwise, at which

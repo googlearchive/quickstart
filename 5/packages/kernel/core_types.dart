@@ -94,11 +94,10 @@ class CoreTypes {
   Procedure _asyncErrorWrapperHelperProcedure;
   Procedure _awaitHelperProcedure;
 
-  /// The `dart:mirrors` library, or `null` if the component does not use it.
+  /// The `dart:mirrors` library, or `null` if the program does not use it.
   Library _mirrorsLibrary;
 
-  CoreTypes(Component component)
-      : _index = new LibraryIndex.coreLibraries(component);
+  CoreTypes(Program program) : _index = new LibraryIndex.coreLibraries(program);
 
   Procedure get asyncErrorWrapperHelperProcedure {
     return _asyncErrorWrapperHelperProcedure ??=

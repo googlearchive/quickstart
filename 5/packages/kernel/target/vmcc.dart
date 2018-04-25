@@ -3,15 +3,14 @@
 // BSD-style license that can be found in the LICENSE file.
 library kernel.target.vmcc;
 
-import '../ast.dart' show Component, Library;
+import '../ast.dart' show Program, Library;
 import '../core_types.dart' show CoreTypes;
 import '../class_hierarchy.dart';
 import '../transformations/continuation.dart' as cont;
 import '../transformations/mixin_full_resolution.dart' as mix;
 import '../transformations/sanitize_for_vm.dart';
 import '../transformations/treeshaker.dart';
-import '../transformations/closure_conversion.dart' as cc
-    show transformComponent;
+import '../transformations/closure_conversion.dart' as cc show transformProgram;
 import 'targets.dart' show TargetFlags;
 import 'vm.dart' as vm_target;
 
@@ -39,23 +38,23 @@ class VmClosureConvertedTarget extends vm_target.VmTarget {
   }
 
   @override
-  void performGlobalTransformations(CoreTypes coreTypes, Component component,
+  void performGlobalTransformations(CoreTypes coreTypes, Program program,
       {void logger(String msg)}) {
     if (flags.treeShake) {
-      performTreeShaking(coreTypes, component);
+      performTreeShaking(coreTypes, program);
     }
 
-    cont.transformComponent(coreTypes, component, flags.syncAsync);
+    cont.transformProgram(coreTypes, program, flags.syncAsync);
 
-    new SanitizeForVM().transform(component);
+    new SanitizeForVM().transform(program);
 
-    cc.transformComponent(coreTypes, component);
+    cc.transformProgram(coreTypes, program);
   }
 
-  void performTreeShaking(CoreTypes coreTypes, Component component) {
-    new TreeShaker(coreTypes, _hierarchy, component,
+  void performTreeShaking(CoreTypes coreTypes, Program program) {
+    new TreeShaker(coreTypes, _hierarchy, program,
             strongMode: strongMode, programRoots: flags.programRoots)
-        .transform(component);
+        .transform(program);
     _hierarchy = null; // Hierarchy must be recomputed.
   }
 }

@@ -63,7 +63,6 @@ enum NullValue {
   TypeList,
   TypeVariable,
   TypeVariables,
-  VarFinalOrConstToken,
   WithClause,
 }
 

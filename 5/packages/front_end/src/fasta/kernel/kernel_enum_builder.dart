@@ -32,7 +32,6 @@ import 'package:kernel/ast.dart'
 import '../fasta_codes.dart'
     show
         messageNoUnnamedConstructorInObject,
-        noLength,
         templateDuplicatedName,
         templateEnumConstantSameNameAsEnclosing;
 
@@ -165,7 +164,7 @@ class KernelEnumBuilder extends SourceClassBuilder
       String documentationComment = constantNamesAndOffsetsAndDocs[i + 2];
       if (members.containsKey(name)) {
         parent.addCompileTimeError(templateDuplicatedName.withArguments(name),
-            charOffset, noLength, parent.fileUri);
+            charOffset, parent.fileUri);
         constantNamesAndOffsetsAndDocs[i] = null;
         continue;
       }
@@ -173,7 +172,6 @@ class KernelEnumBuilder extends SourceClassBuilder
         parent.addCompileTimeError(
             templateEnumConstantSameNameAsEnclosing.withArguments(name),
             charOffset,
-            noLength,
             parent.fileUri);
         constantNamesAndOffsetsAndDocs[i] = null;
         continue;
@@ -266,7 +264,7 @@ class KernelEnumBuilder extends SourceClassBuilder
       // unnamed constructor requires no arguments. But that information isn't
       // always available at this point, and it's not really a situation that
       // can happen unless you start modifying the SDK sources.
-      addCompileTimeError(messageNoUnnamedConstructorInObject, -1, noLength);
+      addCompileTimeError(messageNoUnnamedConstructorInObject, -1);
     } else {
       constructor.initializers.add(
           new SuperInitializer(superConstructor.target, new Arguments.empty())

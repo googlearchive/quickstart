@@ -26,6 +26,7 @@ import 'package:analyzer/src/generated/resolver.dart' show TypeProvider;
 import 'package:analyzer/src/generated/type_system.dart'
     show TypeSystem, TypeSystemImpl;
 import 'package:analyzer/src/generated/utilities_collection.dart';
+import 'package:analyzer/src/generated/utilities_dart.dart' show ParameterKind;
 import 'package:analyzer/src/task/dart.dart';
 
 /**
@@ -621,7 +622,7 @@ class ConstantEvaluationEngine {
       }
       DartObjectImpl argumentValue = null;
       AstNode errorTarget = null;
-      if (baseParameter.isNamed) {
+      if (baseParameter.parameterKind == ParameterKind.NAMED) {
         argumentValue = namedArgumentValues[baseParameter.name];
         errorTarget = namedArgumentNodes[baseParameter.name];
       } else if (i < argumentCount) {

@@ -30,9 +30,7 @@ Incompatible override of ${superMember} with ${ownMember}:
 
   @override
   void reportFailure(TreeNode where, String message) {
-    final dynamic context = where is Class || where is Library
-        ? where
-        : _findEnclosingMember(where);
+    final context = _findEnclosingMember(where);
     String sourceLocation = '<unknown source>';
     String sourceLine = null;
 
@@ -41,9 +39,9 @@ Incompatible override of ${superMember} with ${ownMember}:
     if (fileOffset != TreeNode.noOffset) {
       final fileUri = _fileUriOf(context);
 
-      final component = context.enclosingComponent;
-      final source = component.uriToSource[fileUri];
-      final location = component.getLocation(fileUri, fileOffset);
+      final program = context.enclosingProgram;
+      final source = program.uriToSource[fileUri];
+      final location = program.getLocation(fileUri, fileOffset);
       final lineStart = source.lineStarts[location.line - 1];
       final lineEnd = (location.line < source.lineStarts.length)
           ? source.lineStarts[location.line]
@@ -59,13 +57,12 @@ Incompatible override of ${superMember} with ${ownMember}:
 
     // Find the name of the enclosing member.
     var name = "", body = context;
-    if (context is Class || context is Library) {
-      name = context.name;
-    } else if (context is Procedure || context is Constructor) {
+    if (context is Procedure || context is Constructor) {
       final parent = context.parent;
       final parentName =
           parent is Class ? parent.name : (parent as Library).name;
       name = "${parentName}::${context.name.name}";
+      body = context;
     } else {
       final field = context as Field;
       if (where is Field) {
@@ -98,8 +95,18 @@ Source:
     failures.add(failure);
   }
 
-  static Uri _fileUriOf(FileUriNode node) {
-    return node.fileUri;
+  static Uri _fileUriOf(Member context) {
+    if (context is Procedure) {
+      return context.fileUri;
+    } else if (context is Field) {
+      return context.fileUri;
+    } else {
+      final klass = context.enclosingClass;
+      if (klass != null) {
+        return klass.fileUri;
+      }
+      return context.enclosingLibrary.fileUri;
+    }
   }
 
   static String _realign(String str, [String prefix = '|   ']) =>
@@ -150,6 +157,7 @@ class HighlightingPrinter extends Printer {
   /// representation of the [highlight] node.
   static String stringifyContainingLines(Node node, Node highlight) {
     if (node == highlight) {
+      assert(node is Member);
       final firstLine = debugNodeToString(node).split('\n').first;
       return "${kHighlightStart}${firstLine}${kHighlightEnd}";
     }
