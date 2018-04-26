@@ -1,6 +1,6 @@
 library node_preamble;
 
-final _minified = r"""var self=Object.create(global);self.location={href:"file://"+function(){var e=process.cwd();return"win32"!=process.platform?e:"/"+e.replace("\\","/")}()+"/"},self.scheduleImmediate=setImmediate,self.require=require,self.exports=exports,self.process=process,self.__dirname=__dirname,self.__filename=__filename,function(){function e(){try{throw new Error}catch(e){var r=e.stack,l=new RegExp("^ *at [^(]*\\((.*):[0-9]*:[0-9]*\\)$","mg"),t=null;do{var n=l.exec(r);null!=n&&(t=n)}while(null!=n);return t[1]}}var r=null;self.document={get currentScript(){return null==r&&(r={src:e()}),r}}}(),self.dartDeferredLibraryLoader=function(e,r,l){try{load(e),r()}catch(t){l(t)}};""";
+final _minified = r"""var self=Object.create(global);self.location={href:"file://"+function(){var e=process.cwd();return"win32"!=process.platform?e:"/"+e.replace(/\\/g,"/")}()+"/"},self.scheduleImmediate=setImmediate,self.require=require,self.exports=exports,self.process=process,self.__dirname=__dirname,self.__filename=__filename,function(){var e=null;self.document={get currentScript(){return null==e&&(e={src:function(){try{throw new Error}catch(n){var e=n.stack,r=new RegExp("^ *at [^(]*\\((.*):[0-9]*:[0-9]*\\)$","mg"),l=null;do{var t=r.exec(e);null!=t&&(l=t)}while(null!=t);return l[1]}}()}),e}}}(),self.dartDeferredLibraryLoader=function(e,r,l){try{load(e),r()}catch(e){l(e)}};""";
 
 final _normal = r"""
 var self = Object.create(global);
@@ -12,7 +12,7 @@ self.location = {
   href: "file://" + (function() {
     var cwd = process.cwd();
     if (process.platform != "win32") return cwd;
-    return "/" + cwd.replace("\\", "/");
+    return "/" + cwd.replace(/\\/g, "/");
   })() + "/"
 };
 
