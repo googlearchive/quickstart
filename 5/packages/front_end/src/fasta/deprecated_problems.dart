@@ -13,7 +13,8 @@ import 'dart:io'
 
 import 'command_line_reporting.dart' show shouldThrowOn;
 
-import 'messages.dart' show LocatedMessage, isVerbose, templateUnspecified;
+import 'messages.dart'
+    show LocatedMessage, noLength, isVerbose, templateUnspecified;
 
 import 'severity.dart' show Severity;
 
@@ -64,7 +65,7 @@ class deprecated_InputError {
   static LocatedMessage toMessage(deprecated_InputError error) {
     return templateUnspecified
         .withArguments(safeToString(error.error))
-        .withLocation(error.uri, error.charOffset);
+        .withLocation(error.uri, error.charOffset, noLength);
   }
 }
 
@@ -118,14 +119,14 @@ Future reportCrash(error, StackTrace trace, [Uri uri, int charOffset]) async {
   String json = JSON.encode(data);
   HttpClient client = new HttpClient();
   try {
-    Uri uri = Uri.parse(defaultServerAddress);
+    Uri serverUri = Uri.parse(defaultServerAddress);
     HttpClientRequest request;
     try {
-      request = await client.postUrl(uri);
+      request = await client.postUrl(serverUri);
     } on SocketException {
       // Assume the crash logger isn't running.
       await client.close(force: true);
-      return new Future.error(error, trace);
+      return new Future.error(new Crash(uri, charOffset, error, trace), trace);
     }
     if (request != null) {
       await note("\nSending crash report data");

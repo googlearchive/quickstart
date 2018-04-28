@@ -2,8 +2,6 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-library analyzer.src.generated.testing.test_type_provider;
-
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/token.dart';
 import 'package:analyzer/dart/element/element.dart';
@@ -667,21 +665,21 @@ class TestTypeProvider extends TypeProviderBase {
     ];
     ConstFieldElementImpl varINFINITY = ElementFactory.fieldElement(
         "INFINITY", true, false, true, _doubleType,
-        initializer: AstTestFactory.doubleLiteral(double.INFINITY));
+        initializer: AstTestFactory.doubleLiteral(double.infinity));
     varINFINITY.constantInitializer = AstTestFactory.binaryExpression(
         AstTestFactory.integer(1), TokenType.SLASH, AstTestFactory.integer(0));
     List<FieldElement> fields = <FieldElement>[
       ElementFactory.fieldElement("NAN", true, false, true, _doubleType,
-          initializer: AstTestFactory.doubleLiteral(double.NAN)),
+          initializer: AstTestFactory.doubleLiteral(double.nan)),
       varINFINITY,
       ElementFactory.fieldElement(
           "NEGATIVE_INFINITY", true, false, true, _doubleType,
-          initializer: AstTestFactory.doubleLiteral(double.NEGATIVE_INFINITY)),
+          initializer: AstTestFactory.doubleLiteral(double.negativeInfinity)),
       ElementFactory.fieldElement(
           "MIN_POSITIVE", true, false, true, _doubleType,
-          initializer: AstTestFactory.doubleLiteral(double.MIN_POSITIVE)),
+          initializer: AstTestFactory.doubleLiteral(double.minPositive)),
       ElementFactory.fieldElement("MAX_FINITE", true, false, true, _doubleType,
-          initializer: AstTestFactory.doubleLiteral(double.MAX_FINITE))
+          initializer: AstTestFactory.doubleLiteral(double.maxFinite))
     ];
     doubleElement.fields = fields;
     int fieldCount = fields.length;
@@ -732,6 +730,7 @@ class TestTypeProvider extends TypeProviderBase {
     element.accessors = accessors;
     element.fields = accessors
         .map((PropertyAccessorElement accessor) => accessor.variable)
+        .cast<FieldElement>()
         .toList();
   }
 }

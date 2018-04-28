@@ -4,34 +4,47 @@
 
 import 'dart:async' show Future;
 
-import 'package:front_end/src/base/processed_options.dart';
-import 'package:front_end/src/kernel_generator_impl.dart';
-import 'package:kernel/kernel.dart' show Program;
+import 'package:kernel/kernel.dart' show Component;
+
 import 'package:kernel/target/targets.dart' show Target;
 
-import '../api_prototype/compiler_options.dart';
-import '../api_prototype/file_system.dart';
-import '../base/processed_options.dart';
-import '../fasta/compiler_context.dart';
-import '../fasta/fasta_codes.dart';
-import '../fasta/severity.dart';
-import '../kernel_generator_impl.dart';
-import 'compiler_state.dart';
+import '../api_prototype/compiler_options.dart'
+    show CompilerOptions, ErrorHandler;
 
-export 'compiler_state.dart';
+import '../api_prototype/file_system.dart' show FileSystem;
 
-InitializedCompilerState initializeCompiler(InitializedCompilerState oldState,
-    Target target, Uri sdkUri, Uri packagesFileUri) {
+import '../base/processed_options.dart' show ProcessedOptions;
+
+import '../fasta/compiler_context.dart' show CompilerContext;
+
+import '../fasta/fasta_codes.dart' show messageMissingMain, noLength;
+
+import '../fasta/severity.dart' show Severity;
+
+import '../kernel_generator_impl.dart' show generateKernelInternal;
+
+import 'compiler_state.dart' show InitializedCompilerState;
+
+export 'compiler_state.dart' show InitializedCompilerState;
+
+InitializedCompilerState initializeCompiler(
+    InitializedCompilerState oldState,
+    Target target,
+    Uri librariesSpecificationUri,
+    Uri sdkPlatformUri,
+    Uri packagesFileUri) {
   if (oldState != null &&
       oldState.options.packagesFileUri == packagesFileUri &&
-      oldState.options.linkedDependencies[0] == sdkUri) {
+      oldState.options.librariesSpecificationUri == librariesSpecificationUri &&
+      oldState.options.linkedDependencies[0] == sdkPlatformUri) {
     return oldState;
   }
 
   CompilerOptions options = new CompilerOptions()
     ..target = target
     ..strongMode = target.strongMode
-    ..linkedDependencies = [sdkUri]
+    ..linkedDependencies = [sdkPlatformUri]
+    ..librariesSpecificationUri = librariesSpecificationUri
     ..packagesFileUri = packagesFileUri;
 
   ProcessedOptions processedOpts = new ProcessedOptions(options, false, []);
@@ -39,7 +52,7 @@ InitializedCompilerState initializeCompiler(InitializedCompilerState oldState,
   return new InitializedCompilerState(options, processedOpts);
 }
 
-Future<Program> compile(InitializedCompilerState state, bool verbose,
+Future<Component> compile(InitializedCompilerState state, bool verbose,
     FileSystem fileSystem, ErrorHandler onError, Uri input) async {
   CompilerOptions options = state.options;
   options
@@ -55,15 +68,15 @@ Future<Program> compile(InitializedCompilerState state, bool verbose,
   var compilerResult = await CompilerContext.runWithOptions(processedOpts,
       (CompilerContext context) async {
     var compilerResult = await generateKernelInternal();
-    Program program = compilerResult?.program;
-    if (program == null) return null;
-    if (program.mainMethod == null) {
-      context.options
-          .report(messageMissingMain.withLocation(input, -1), Severity.error);
+    Component component = compilerResult?.component;
+    if (component == null) return null;
+    if (component.mainMethod == null) {
+      context.options.report(
+          messageMissingMain.withLocation(input, -1, noLength), Severity.error);
       return null;
     }
     return compilerResult;
   });
 
-  return compilerResult?.program;
+  return compilerResult?.component;
 }

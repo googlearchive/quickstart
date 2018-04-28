@@ -66,6 +66,7 @@ class AccessorInferenceNode extends MemberInferenceNode {
       _library.addCompileTimeError(
           templateCantInferTypeDueToCircularity.withArguments(_name),
           _offset,
+          noLength,
           _fileUri);
     } else {
       var inferredType = _matchTypes(overriddenTypes, _name, _offset);
@@ -1133,6 +1134,7 @@ abstract class MemberInferenceNode extends InferenceNode {
         _library.addCompileTimeError(
             templateCantInferTypeDueToInconsistentOverrides.withArguments(name),
             charOffset,
+            noLength,
             _fileUri);
         return const DynamicType();
       }

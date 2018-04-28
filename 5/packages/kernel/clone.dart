@@ -3,7 +3,6 @@
 // BSD-style license that can be found in the LICENSE file.
 library kernel.clone;
 
-// ignore: UNDEFINED_HIDDEN_NAME
 import 'dart:core' hide MapEntry;
 
 import 'ast.dart';
@@ -14,7 +13,7 @@ import 'type_algebra.dart';
 ///
 /// It is safe to clone members, but cloning a class or library is not
 /// supported.
-class CloneVisitor extends TreeVisitor {
+class CloneVisitor implements TreeVisitor {
   final Map<VariableDeclaration, VariableDeclaration> variables =
       <VariableDeclaration, VariableDeclaration>{};
   final Map<LabeledStatement, LabeledStatement> labels =
@@ -42,12 +41,33 @@ class CloneVisitor extends TreeVisitor {
     throw 'Cloning of classes is not implemented';
   }
 
-  TreeNode clone(TreeNode node) =>
-      node.accept(this)..fileOffset = node.fileOffset;
+  // The currently active file uri where we are cloning [TreeNode]s from.  If
+  // this is set to `null` we cannot clone file offsets to newly created nodes.
+  // The [_cloneFileOffset] helper function will ensure this.
+  Uri _activeFileUri;
+
+  // If we don't know the file uri we are cloning elements from, it's not safe
+  // to clone file offsets either.
+  int _cloneFileOffset(int fileOffset) {
+    return _activeFileUri == null ? TreeNode.noOffset : fileOffset;
+  }
+
+  TreeNode clone(TreeNode node) {
+    final Uri activeFileUriSaved = _activeFileUri;
+    if (node is FileUriNode) _activeFileUri = node.fileUri ?? _activeFileUri;
+    final TreeNode result = node.accept(this)
+      ..fileOffset = _cloneFileOffset(node.fileOffset);
+    _activeFileUri = activeFileUriSaved;
+    return result;
+  }
 
   TreeNode cloneOptional(TreeNode node) {
+    if (node == null) return null;
+    final Uri activeFileUriSaved = _activeFileUri;
+    if (node is FileUriNode) _activeFileUri = node.fileUri ?? _activeFileUri;
     TreeNode result = node?.accept(this);
-    if (result != null) result.fileOffset = node.fileOffset;
+    if (result != null) result.fileOffset = _cloneFileOffset(node.fileOffset);
+    _activeFileUri = activeFileUriSaved;
     return result;
   }
 
@@ -280,6 +300,10 @@ class CloneVisitor extends TreeVisitor {
     return new Block(node.statements.map(clone).toList());
   }
 
+  visitAssertBlock(AssertBlock node) {
+    return new AssertBlock(node.statements.map(clone).toList());
+  }
+
   visitEmptyStatement(EmptyStatement node) {
     return new EmptyStatement();
   }
@@ -391,24 +415,22 @@ class CloneVisitor extends TreeVisitor {
         isExternal: node.isExternal,
         isSynthetic: node.isSynthetic,
         initializers: node.initializers.map(clone).toList(),
-        transformerFlags: node.transformerFlags)
-      ..fileEndOffset = node.fileEndOffset;
+        transformerFlags: node.transformerFlags,
+        fileUri: _activeFileUri)
+      ..fileOffset = _cloneFileOffset(node.fileOffset)
+      ..fileEndOffset = _cloneFileOffset(node.fileEndOffset);
   }
 
   visitProcedure(Procedure node) {
     return new Procedure(node.name, node.kind, clone(node.function),
-        isAbstract: node.isAbstract,
-        isStatic: node.isStatic,
-        isExternal: node.isExternal,
-        isConst: node.isConst,
-        isForwardingStub: node.isForwardingStub,
-        isForwardingSemiStub: node.isForwardingSemiStub,
         transformerFlags: node.transformerFlags,
-        fileUri: node.fileUri,
+        fileUri: _activeFileUri,
         forwardingStubSuperTarget: node.forwardingStubSuperTarget,
         forwardingStubInterfaceTarget: node.forwardingStubInterfaceTarget)
-      ..fileEndOffset = node.fileEndOffset
-      ..isGenericContravariant = node.isGenericContravariant;
+      ..fileOffset = _cloneFileOffset(node.fileOffset)
+      ..fileEndOffset = _cloneFileOffset(node.fileEndOffset)
+      ..isGenericContravariant = node.isGenericContravariant
+      ..flags = node.flags;
   }
 
   visitField(Field node) {
@@ -422,8 +444,9 @@ class CloneVisitor extends TreeVisitor {
         hasImplicitGetter: node.hasImplicitGetter,
         hasImplicitSetter: node.hasImplicitSetter,
         transformerFlags: node.transformerFlags,
-        fileUri: node.fileUri)
-      ..fileEndOffset = node.fileEndOffset
+        fileUri: _activeFileUri)
+      ..fileOffset = _cloneFileOffset(node.fileOffset)
+      ..fileEndOffset = _cloneFileOffset(node.fileEndOffset)
       ..flags = node.flags
       ..flags2 = node.flags2;
   }
@@ -438,7 +461,8 @@ class CloneVisitor extends TreeVisitor {
         typeParameters: node.typeParameters.map(clone).toList(),
         positionalParameters: node.positionalParameters.map(clone).toList(),
         namedParameters: node.namedParameters.map(clone).toList(),
-        requiredParameterCount: node.requiredParameterCount);
+        requiredParameterCount: node.requiredParameterCount,
+        fileUri: _activeFileUri);
   }
 
   visitTypeParameter(TypeParameter node) {
@@ -462,7 +486,8 @@ class CloneVisitor extends TreeVisitor {
         returnType: visitType(node.returnType),
         asyncMarker: node.asyncMarker,
         dartAsyncMarker: node.dartAsyncMarker)
-      ..fileEndOffset = node.fileEndOffset;
+      ..fileOffset = _cloneFileOffset(node.fileOffset)
+      ..fileEndOffset = _cloneFileOffset(node.fileEndOffset);
   }
 
   visitArguments(Arguments node) {
@@ -474,4 +499,97 @@ class CloneVisitor extends TreeVisitor {
   visitNamedExpression(NamedExpression node) {
     return new NamedExpression(node.name, clone(node.value));
   }
+
+  defaultBasicLiteral(BasicLiteral node) {
+    return defaultExpression(node);
+  }
+
+  defaultExpression(Expression node) {
+    throw 'Unimplemented clone for Kernel expression: $node';
+  }
+
+  defaultInitializer(Initializer node) {
+    throw 'Unimplemented clone for Kernel initializer: $node';
+  }
+
+  defaultMember(Member node) {
+    throw 'Unimplemented clone for Kernel member: $node';
+  }
+
+  defaultStatement(Statement node) {
+    throw 'Unimplemented clone for Kernel statement: $node';
+  }
+
+  defaultTreeNode(TreeNode node) {
+    throw 'Cloning Kernel non-members is not supported.  '
+        'Tried cloning $node';
+  }
+
+  visitAssertInitializer(AssertInitializer node) {
+    return new AssertInitializer(clone(node.statement));
+  }
+
+  visitCheckLibraryIsLoaded(CheckLibraryIsLoaded node) {
+    return new CheckLibraryIsLoaded(node.import);
+  }
+
+  visitCombinator(Combinator node) {
+    return defaultTreeNode(node);
+  }
+
+  visitFieldInitializer(FieldInitializer node) {
+    return new FieldInitializer.byReference(
+        node.fieldReference, clone(node.value));
+  }
+
+  visitInstantiation(Instantiation node) {
+    return new Instantiation(
+        clone(node.expression), node.typeArguments.map(visitType).toList());
+  }
+
+  visitInvalidInitializer(InvalidInitializer node) {
+    return new InvalidInitializer();
+  }
+
+  visitLibraryDependency(LibraryDependency node) {
+    return defaultTreeNode(node);
+  }
+
+  visitLibraryPart(LibraryPart node) {
+    return defaultTreeNode(node);
+  }
+
+  visitLoadLibrary(LoadLibrary node) {
+    return new LoadLibrary(node.import);
+  }
+
+  visitLocalInitializer(LocalInitializer node) {
+    return new LocalInitializer(clone(node.variable));
+  }
+
+  visitComponent(Component node) {
+    return defaultTreeNode(node);
+  }
+
+  visitRedirectingInitializer(RedirectingInitializer node) {
+    return new RedirectingInitializer.byReference(
+        node.targetReference, clone(node.arguments));
+  }
+
+  visitSuperInitializer(SuperInitializer node) {
+    return new SuperInitializer.byReference(
+        node.targetReference, clone(node.arguments));
+  }
+
+  visitTypedef(Typedef node) {
+    return defaultTreeNode(node);
+  }
+}
+
+class CloneWithoutBody extends CloneVisitor {
+  CloneWithoutBody({Map<TypeParameter, DartType> typeSubstitution})
+      : super(typeSubstitution: typeSubstitution);
+
+  @override
+  TreeNode cloneFunctionNodeBody(FunctionNode node) => null;
 }

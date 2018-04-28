@@ -15,7 +15,6 @@ import 'package:analyzer/src/dart/ast/utilities.dart';
 import 'package:analyzer/src/dart/element/element.dart';
 import 'package:analyzer/src/dart/element/member.dart';
 import 'package:analyzer/src/dart/resolver/scope.dart' show NamespaceBuilder;
-import 'package:analyzer/src/generated/utilities_dart.dart';
 import 'package:analyzer/src/summary/idl.dart';
 import 'package:collection/collection.dart';
 
@@ -23,6 +22,52 @@ Element _getEnclosingElement(CompilationUnitElement unitElement, int offset) {
   var finder = new _ContainingElementFinder(offset);
   unitElement.accept(finder);
   return finder.containingElement;
+}
+
+/**
+ * An element declaration.
+ */
+class Declaration {
+  final int fileIndex;
+  final String name;
+  final DeclarationKind kind;
+  final int offset;
+  final int line;
+  final int column;
+  final int codeOffset;
+  final int codeLength;
+  final String className;
+  final String parameters;
+
+  Declaration(
+      this.fileIndex,
+      this.name,
+      this.kind,
+      this.offset,
+      this.line,
+      this.column,
+      this.codeOffset,
+      this.codeLength,
+      this.className,
+      this.parameters);
+}
+
+/**
+ * The kind of a [Declaration].
+ */
+enum DeclarationKind {
+  CLASS,
+  CLASS_TYPE_ALIAS,
+  CONSTRUCTOR,
+  ENUM,
+  ENUM_CONSTANT,
+  FIELD,
+  FUNCTION,
+  FUNCTION_TYPE_ALIAS,
+  GETTER,
+  METHOD,
+  SETTER,
+  VARIABLE
 }
 
 /**
@@ -57,6 +102,179 @@ class Search {
       }
     }
     return elements;
+  }
+
+  /**
+   * Return top-level and class member declarations.
+   *
+   * If [regExp] is not `null`, only declaration with names matching it are
+   * returned. Otherwise, all declarations are returned.
+   *
+   * If [maxResults] is not `null`, it sets the maximum number of returned
+   * declarations.
+   *
+   * The path of each file with at least one declaration is added to [files].
+   * The list is for searched, there might be duplicates, but this is OK,
+   * we just want reduce amount of data, not to make it absolute minimum.
+   */
+  Future<List<Declaration>> declarations(
+      RegExp regExp, int maxResults, List<String> files,
+      {String onlyForFile}) async {
+    List<Declaration> declarations = <Declaration>[];
+
+    DeclarationKind getExecutableKind(
+        UnlinkedExecutable executable, bool topLevel) {
+      switch (executable.kind) {
+        case UnlinkedExecutableKind.constructor:
+          return DeclarationKind.CONSTRUCTOR;
+        case UnlinkedExecutableKind.functionOrMethod:
+          if (topLevel) {
+            return DeclarationKind.FUNCTION;
+          }
+          return DeclarationKind.METHOD;
+        case UnlinkedExecutableKind.getter:
+          return DeclarationKind.GETTER;
+          break;
+        default:
+          return DeclarationKind.SETTER;
+      }
+    }
+
+    try {
+      for (String path in _driver.addedFiles) {
+        if (onlyForFile != null && path != onlyForFile) {
+          continue;
+        }
+
+        FileState file = _driver.fsState.getFileForPath(path);
+        int fileIndex;
+
+        void addDeclaration(String name, DeclarationKind kind, int offset,
+            int codeOffset, int codeLength,
+            {String className, String parameters}) {
+          if (maxResults != null && declarations.length >= maxResults) {
+            throw const _MaxNumberOfDeclarationsError();
+          }
+
+          if (name.endsWith('=')) {
+            name = name.substring(0, name.length - 1);
+          }
+          if (regExp != null && !regExp.hasMatch(name)) {
+            return;
+          }
+
+          if (fileIndex == null) {
+            fileIndex = files.length;
+            files.add(file.path);
+          }
+          var location = file.lineInfo.getLocation(offset);
+          declarations.add(new Declaration(
+              fileIndex,
+              name,
+              kind,
+              offset,
+              location.lineNumber,
+              location.columnNumber,
+              codeOffset,
+              codeLength,
+              className,
+              parameters));
+        }
+
+        UnlinkedUnit unlinkedUnit = file.unlinked;
+        var parameterComposer = new _UnlinkedParameterComposer(unlinkedUnit);
+
+        String getParametersString(List<UnlinkedParam> parameters) {
+          parameterComposer.clear();
+          parameterComposer.appendParameters(parameters);
+          return parameterComposer.buffer.toString();
+        }
+
+        String getExecutableParameters(UnlinkedExecutable executable) {
+          if (executable.kind == UnlinkedExecutableKind.getter) {
+            return null;
+          }
+          return getParametersString(executable.parameters);
+        }
+
+        for (var class_ in unlinkedUnit.classes) {
+          String className = class_.name;
+          addDeclaration(
+              className,
+              class_.isMixinApplication
+                  ? DeclarationKind.CLASS_TYPE_ALIAS
+                  : DeclarationKind.CLASS,
+              class_.nameOffset,
+              class_.codeRange.offset,
+              class_.codeRange.length);
+          parameterComposer.outerTypeParameters = class_.typeParameters;
+
+          for (var field in class_.fields) {
+            addDeclaration(field.name, DeclarationKind.FIELD, field.nameOffset,
+                field.codeRange.offset, field.codeRange.length,
+                className: className);
+          }
+
+          for (var executable in class_.executables) {
+            parameterComposer.innerTypeParameters = executable.typeParameters;
+            addDeclaration(
+                executable.name,
+                getExecutableKind(executable, false),
+                executable.nameOffset,
+                executable.codeRange.offset,
+                executable.codeRange.length,
+                className: className,
+                parameters: getExecutableParameters(executable));
+            parameterComposer.innerTypeParameters = const [];
+          }
+
+          parameterComposer.outerTypeParameters = const [];
+        }
+
+        for (var enum_ in unlinkedUnit.enums) {
+          addDeclaration(enum_.name, DeclarationKind.ENUM, enum_.nameOffset,
+              enum_.codeRange.offset, enum_.codeRange.length);
+          for (var value in enum_.values) {
+            addDeclaration(value.name, DeclarationKind.ENUM_CONSTANT,
+                value.nameOffset, value.nameOffset, value.name.length);
+          }
+        }
+
+        for (var executable in unlinkedUnit.executables) {
+          parameterComposer.outerTypeParameters = executable.typeParameters;
+          addDeclaration(
+              executable.name,
+              getExecutableKind(executable, true),
+              executable.nameOffset,
+              executable.codeRange.offset,
+              executable.codeRange.length,
+              parameters: getExecutableParameters(executable));
+        }
+
+        for (var typedef_ in unlinkedUnit.typedefs) {
+          parameterComposer.outerTypeParameters = typedef_.typeParameters;
+          addDeclaration(
+              typedef_.name,
+              DeclarationKind.FUNCTION_TYPE_ALIAS,
+              typedef_.nameOffset,
+              typedef_.codeRange.offset,
+              typedef_.codeRange.length,
+              parameters: getParametersString(typedef_.parameters));
+          parameterComposer.outerTypeParameters = const [];
+        }
+
+        for (var variable in unlinkedUnit.variables) {
+          addDeclaration(
+              variable.name,
+              DeclarationKind.VARIABLE,
+              variable.nameOffset,
+              variable.codeRange.offset,
+              variable.codeRange.length);
+        }
+      }
+    } on _MaxNumberOfDeclarationsError {}
+
+    return declarations;
   }
 
   /**
@@ -450,7 +668,7 @@ class Search {
       AstNode parent = node.parent;
       return parent is ClassDeclaration || parent is CompilationUnit;
     }));
-    if (parameter.parameterKind == ParameterKind.NAMED) {
+    if (parameter.isOptional) {
       results.addAll(await _searchReferences(parameter));
     }
     return results;
@@ -939,5 +1157,108 @@ class _LocalReferencesVisitor extends RecursiveAstVisitor {
         _getEnclosingElement(enclosingUnitElement, node.offset);
     results.add(new SearchResult._(
         enclosingElement, kind, node.offset, node.length, true, isQualified));
+  }
+}
+
+/**
+ * The marker class that is thrown to stop adding declarations.
+ */
+class _MaxNumberOfDeclarationsError {
+  const _MaxNumberOfDeclarationsError();
+}
+
+/**
+ * Helper for composing parameter strings.
+ */
+class _UnlinkedParameterComposer {
+  final UnlinkedUnit unlinkedUnit;
+  final StringBuffer buffer = new StringBuffer();
+
+  List<UnlinkedTypeParam> outerTypeParameters = const [];
+  List<UnlinkedTypeParam> innerTypeParameters = const [];
+
+  _UnlinkedParameterComposer(this.unlinkedUnit);
+
+  void appendParameter(UnlinkedParam parameter) {
+    bool hasType = appendType(parameter.type);
+    if (hasType && parameter.name.isNotEmpty) {
+      buffer.write(' ');
+    }
+    buffer.write(parameter.name);
+    if (parameter.isFunctionTyped) {
+      appendParameters(parameter.parameters);
+    }
+  }
+
+  void appendParameters(List<UnlinkedParam> parameters) {
+    buffer.write('(');
+
+    bool isFirstParameter = true;
+    for (var parameter in parameters) {
+      if (isFirstParameter) {
+        isFirstParameter = false;
+      } else {
+        buffer.write(', ');
+      }
+      appendParameter(parameter);
+    }
+
+    buffer.write(')');
+  }
+
+  bool appendType(EntityRef type) {
+    EntityRefKind kind = type?.entityKind;
+    if (kind == EntityRefKind.named) {
+      if (type.reference != 0) {
+        UnlinkedReference typeRef = unlinkedUnit.references[type.reference];
+        buffer.write(typeRef.name);
+        appendTypeArguments(type);
+        return true;
+      }
+      if (type.paramReference != 0) {
+        int ref = type.paramReference;
+        if (ref <= innerTypeParameters.length) {
+          var param = innerTypeParameters[innerTypeParameters.length - ref];
+          buffer.write(param.name);
+          return true;
+        }
+        ref -= innerTypeParameters.length;
+        if (ref <= outerTypeParameters.length) {
+          var param = outerTypeParameters[outerTypeParameters.length - ref];
+          buffer.write(param.name);
+          return true;
+        }
+        return false;
+      }
+    }
+    if (kind == EntityRefKind.genericFunctionType) {
+      if (appendType(type.syntheticReturnType)) {
+        buffer.write(' ');
+      }
+      buffer.write('Function');
+      appendParameters(type.syntheticParams);
+      return true;
+    }
+    return false;
+  }
+
+  void appendTypeArguments(EntityRef type) {
+    if (type.typeArguments.isNotEmpty) {
+      buffer.write('<');
+      bool first = true;
+      for (var arguments in type.typeArguments) {
+        if (first) {
+          first = false;
+        } else {
+          buffer.write(', ');
+        }
+        appendType(arguments);
+      }
+      buffer.write('>');
+    }
+  }
+
+  void clear() {
+    buffer.clear();
   }
 }
