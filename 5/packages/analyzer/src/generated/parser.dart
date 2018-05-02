@@ -25,7 +25,6 @@ import 'package:analyzer/src/generated/java_engine.dart';
 import 'package:analyzer/src/generated/source.dart';
 import 'package:analyzer/src/generated/utilities_dart.dart';
 import 'package:front_end/src/fasta/kernel/kernel_builder.dart';
-import 'package:front_end/src/fasta/kernel/kernel_library_builder.dart';
 import 'package:front_end/src/fasta/parser/identifier_context.dart' as fasta;
 import 'package:front_end/src/fasta/parser/member_kind.dart' as fasta;
 import 'package:front_end/src/fasta/parser/parser.dart' as fasta;
@@ -216,12 +215,6 @@ class Parser {
   bool _enableOptionalNewAndConst = false;
 
   /**
-   * A flag indicating whether the parser is to allow URI's in part-of
-   * directives.
-   */
-  bool _enableUriInPartOf = true;
-
-  /**
    * A flag indicating whether parser is to parse function bodies.
    */
   bool _parseFunctionBodies = true;
@@ -351,15 +344,15 @@ class Parser {
   /**
    * Return `true` if the parser is to allow URI's in part-of directives.
    */
-  bool get enableUriInPartOf => _enableUriInPartOf;
+  @deprecated
+  bool get enableUriInPartOf => true;
 
   /**
    * Set whether the parser is to allow URI's in part-of directives to the given
    * [enable] flag.
    */
-  void set enableUriInPartOf(bool enable) {
-    _enableUriInPartOf = enable;
-  }
+  @deprecated
+  void set enableUriInPartOf(bool enable) {}
 
   /**
    * Return `true` if the current token is the first token of a return type that
@@ -7444,7 +7437,7 @@ class Parser {
   Directive _parsePartOfDirective(CommentAndMetadata commentAndMetadata) {
     Token partKeyword = getAndAdvance();
     Token ofKeyword = getAndAdvance();
-    if (enableUriInPartOf && _matches(TokenType.STRING)) {
+    if (_matches(TokenType.STRING)) {
       StringLiteral libraryUri = _parseUri();
       Token semicolon = _expect(TokenType.SEMICOLON);
       return astFactory.partOfDirective(

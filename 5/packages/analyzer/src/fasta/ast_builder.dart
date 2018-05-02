@@ -22,7 +22,12 @@ import 'package:front_end/src/fasta/parser.dart'
 import 'package:front_end/src/fasta/scanner.dart' hide StringToken;
 import 'package:front_end/src/scanner/errors.dart' show translateErrorToken;
 import 'package:front_end/src/scanner/token.dart'
-    show StringToken, SyntheticBeginToken, SyntheticStringToken, SyntheticToken;
+    show
+        BeginToken,
+        StringToken,
+        SyntheticBeginToken,
+        SyntheticStringToken,
+        SyntheticToken;
 
 import 'package:front_end/src/fasta/problems.dart' show unhandled;
 import 'package:front_end/src/fasta/messages.dart'
@@ -43,7 +48,7 @@ import 'package:front_end/src/fasta/messages.dart'
         templateDuplicateLabelInSwitchStatement,
         templateExpectedType;
 import 'package:front_end/src/fasta/kernel/kernel_builder.dart'
-    show Builder, KernelLibraryBuilder, Scope;
+    show Builder, Scope;
 import 'package:front_end/src/fasta/quote.dart';
 import 'package:front_end/src/fasta/scanner/token_constants.dart';
 import 'package:front_end/src/fasta/source/scope_listener.dart'
@@ -55,7 +60,7 @@ class AstBuilder extends ScopeListener {
   final AstFactory ast = standard.astFactory;
 
   final FastaErrorReporter errorReporter;
-  final KernelLibraryBuilder library;
+  final Uri fileUri;
   final Builder member;
 
   ScriptTag scriptTag;
@@ -91,11 +96,11 @@ class AstBuilder extends ScopeListener {
 
   StringLiteral nativeName;
 
-  AstBuilder(ErrorReporter errorReporter, this.library, this.member,
+  AstBuilder(ErrorReporter errorReporter, this.fileUri, this.member,
       Scope scope, this.isFullAst,
       [Uri uri])
       : this.errorReporter = new FastaErrorReporter(errorReporter),
-        uri = uri ?? library.fileUri,
+        uri = uri ?? fileUri,
         super(scope);
 
   createJumpTarget(JumpTargetKind kind, int charOffset) {
@@ -521,8 +526,14 @@ class AstBuilder extends ScopeListener {
     Statement elsePart = popIfNotNull(elseToken);
     Statement thenPart = pop();
     ParenthesizedExpression condition = pop();
-    push(ast.ifStatement(ifToken, condition.leftParenthesis, condition,
-        condition.rightParenthesis, thenPart, elseToken, elsePart));
+    push(ast.ifStatement(
+        ifToken,
+        condition.leftParenthesis,
+        condition.expression,
+        condition.rightParenthesis,
+        thenPart,
+        elseToken,
+        elsePart));
   }
 
   void handleNoInitializers() {
@@ -874,8 +885,17 @@ class AstBuilder extends ScopeListener {
     Expression condition = pop();
     switch (kind) {
       case Assert.Expression:
-        throw new UnimplementedError(
-            'assert expressions are not yet supported');
+        // The parser has already reported an error indicating that assert
+        // cannot be used in an expression. Insert a placeholder.
+        List<Expression> arguments = <Expression>[condition];
+        if (message != null) {
+          arguments.add(message);
+        }
+        push(ast.functionExpressionInvocation(
+            ast.simpleIdentifier(assertKeyword),
+            null,
+            ast.argumentList(
+                leftParenthesis, arguments, leftParenthesis?.endGroup)));
         break;
       case Assert.Initializer:
         push(ast.assertInitializer(assertKeyword, leftParenthesis, condition,
@@ -1004,6 +1024,14 @@ class AstBuilder extends ScopeListener {
         popTypedList(count), leftDelimeter, rightDelimeter));
   }
 
+  @override
+  void beginFormalParameterDefaultValueExpression() {}
+
+  @override
+  void endFormalParameterDefaultValueExpression() {
+    debugEvent("FormalParameterDefaultValueExpression");
+  }
+
   void handleValuedFormalParameter(Token equals, Token token) {
     assert(optional('=', equals) || optional(':', equals));
     debugEvent("ValuedFormalParameter");
@@ -1050,19 +1078,8 @@ class AstBuilder extends ScopeListener {
     exitLocalScope();
     exitContinueTarget();
     exitBreakTarget();
-    if (variableOrDeclaration is SimpleIdentifier) {
-      push(ast.forEachStatementWithReference(
-          awaitToken,
-          forToken,
-          leftParenthesis,
-          variableOrDeclaration,
-          inKeyword,
-          iterator,
-          leftParenthesis?.endGroup,
-          body));
-    } else {
-      var statement = variableOrDeclaration as VariableDeclarationStatement;
-      VariableDeclarationList variableList = statement.variables;
+    if (variableOrDeclaration is VariableDeclarationStatement) {
+      VariableDeclarationList variableList = variableOrDeclaration.variables;
       push(ast.forEachStatementWithDeclaration(
           awaitToken,
           forToken,
@@ -1072,7 +1089,27 @@ class AstBuilder extends ScopeListener {
               variableList.metadata,
               variableList.keyword,
               variableList.type,
-              variableList.variables.single.name),
+              variableList.variables.first.name),
+          inKeyword,
+          iterator,
+          leftParenthesis?.endGroup,
+          body));
+    } else {
+      if (variableOrDeclaration is! SimpleIdentifier) {
+        // Parser has already reported the error.
+        if (!leftParenthesis.next.isIdentifier) {
+          parser.rewriter.insertTokenAfter(
+              leftParenthesis,
+              new SyntheticStringToken(
+                  TokenType.IDENTIFIER, '', leftParenthesis.next.charOffset));
+        }
+        variableOrDeclaration = ast.simpleIdentifier(leftParenthesis.next);
+      }
+      push(ast.forEachStatementWithReference(
+          awaitToken,
+          forToken,
+          leftParenthesis,
+          variableOrDeclaration,
           inKeyword,
           iterator,
           leftParenthesis?.endGroup,
@@ -1080,6 +1117,15 @@ class AstBuilder extends ScopeListener {
     }
   }
 
+  @override
+  void beginFormalParameter(Token token, MemberKind kind, Token covariantToken,
+      Token varFinalOrConst) {
+    push(new _Modifiers()
+      ..covariantKeyword = covariantToken
+      ..finalConstOrVarKeyword = varFinalOrConst);
+  }
+
+  @override
   void endFormalParameter(Token thisKeyword, Token periodAfterThis,
       Token nameToken, FormalParameterKind kind, MemberKind memberKind) {
     assert(optionalOrNull('this', thisKeyword));
@@ -1441,23 +1487,6 @@ class AstBuilder extends ScopeListener {
           messageIllegalAssignmentToNonAssignable, operator, operator);
     }
     push(ast.postfixExpression(expression, operator));
-  }
-
-  void handleModifier(Token token) {
-    assert(token.isModifier);
-    debugEvent("Modifier");
-
-    push(token);
-  }
-
-  void handleModifiers(int count) {
-    debugEvent("Modifiers");
-
-    if (count == 0) {
-      push(NullValue.Modifiers);
-    } else {
-      push(new _Modifiers(popTypedList(count)));
-    }
   }
 
   void beginTopLevelMethod(Token lastConsumed, Token externalToken) {
@@ -2085,17 +2114,22 @@ class AstBuilder extends ScopeListener {
 
   @override
   void endNamedFunctionExpression(Token endToken) {
-    // TODO(scheglov): The logEvent() invocation is commented because it
-    // spams to the console. We already know that these test fail, uncomment
-    // when you are working on fixing them.
-//    logEvent("NamedFunctionExpression");
-    unhandled("NamedFunctionExpression", "$runtimeType", -1, uri);
+    debugEvent("NamedFunctionExpression");
+    FunctionBody body = pop();
+    if (isFullAst) {
+      pop(); // constructor initializers
+      pop(); // separator before constructor initializers
+    }
+    FormalParameterList parameters = pop();
+    pop(); // name
+    pop(); // returnType
+    TypeParameterList typeParameters = pop();
+    push(ast.functionExpression(typeParameters, parameters, body));
   }
 
   @override
   void endLocalFunctionDeclaration(Token token) {
     debugEvent("LocalFunctionDeclaration");
-
     FunctionBody body = pop();
     if (isFullAst) {
       pop(); // constructor initializers
@@ -2227,26 +2261,25 @@ class AstBuilder extends ScopeListener {
     }
 
     if (parameters == null && (getOrSet == null || optional('set', getOrSet))) {
-      Token previous = typeParameters?.endToken;
-      if (previous == null) {
+      Token token = typeParameters?.endToken;
+      if (token == null) {
         if (name is AstNode) {
-          previous = name.endToken;
+          token = name.endToken;
         } else if (name is _OperatorName) {
-          previous = name.name.endToken;
+          token = name.name.endToken;
         } else {
           throw new UnimplementedError();
         }
       }
-      Token leftParen =
-          new SyntheticBeginToken(TokenType.OPEN_PAREN, previous.end);
+      Token next = token.next;
+      int offset = next.charOffset;
+      BeginToken leftParen =
+          new SyntheticBeginToken(TokenType.OPEN_PAREN, offset);
+      token.setNext(leftParen);
       Token rightParen =
-          new SyntheticToken(TokenType.CLOSE_PAREN, leftParen.offset);
-      rightParen.next = previous.next;
-      leftParen.next = rightParen;
-      previous.next = leftParen;
-      leftParen.previous = previous;
-      rightParen.previous = leftParen;
-      rightParen.next.previous = rightParen;
+          leftParen.setNext(new SyntheticToken(TokenType.CLOSE_PAREN, offset));
+      leftParen.endGroup = rightParen;
+      rightParen.setNext(next);
       parameters = ast.formalParameterList(
           leftParen, <FormalParameter>[], null, null, rightParen);
     }

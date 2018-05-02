@@ -232,7 +232,8 @@ class Listener {
     logEvent("FactoryMethod");
   }
 
-  void beginFormalParameter(Token token, MemberKind kind) {}
+  void beginFormalParameter(Token token, MemberKind kind, Token covariantToken,
+      Token varFinalOrConst) {}
 
   void endFormalParameter(Token thisKeyword, Token periodAfterThis,
       Token nameToken, FormalParameterKind kind, MemberKind memberKind) {
@@ -514,6 +515,12 @@ class Listener {
 
   void handleDottedName(int count, Token firstIdentifier) {
     logEvent("DottedName");
+  }
+
+  void beginImplicitCreationExpression(Token token) {}
+
+  void endImplicitCreationExpression(Token token) {
+    logEvent("ImplicitCreationExpression");
   }
 
   void beginInitializedIdentifier(Token token) {}
@@ -1053,14 +1060,6 @@ class Listener {
     logEvent("LiteralNull");
   }
 
-  void handleModifier(Token token) {
-    logEvent("Modifier");
-  }
-
-  void handleModifiers(int count) {
-    logEvent("Modifiers");
-  }
-
   void handleNativeClause(Token nativeToken, bool hasName) {
     logEvent("NativeClause");
   }
@@ -1162,6 +1161,12 @@ class Listener {
 
   void handleUnaryPrefixAssignmentExpression(Token token) {
     logEvent("UnaryPrefixAssignmentExpression");
+  }
+
+  void beginFormalParameterDefaultValueExpression() {}
+
+  void endFormalParameterDefaultValueExpression() {
+    logEvent("FormalParameterDefaultValueExpression");
   }
 
   void handleValuedFormalParameter(Token equals, Token token) {

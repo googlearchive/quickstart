@@ -14,7 +14,7 @@ import '../fasta_codes.dart' show LocatedMessage, Message, noLength, Template;
 
 import '../messages.dart' as messages show getLocationFromUri;
 
-import '../modifier.dart' show Modifier, constMask, finalMask;
+import '../modifier.dart' show Modifier, constMask, covariantMask, finalMask;
 
 import '../parser.dart'
     show
@@ -325,7 +325,13 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
       switchScope.unclaimedForwardDeclarations
           .forEach((String name, Builder builder) {
         if (outerSwitchScope == null) {
-          deprecated_addCompileTimeError(-1, "Label not found: '$name'.");
+          JumpTarget target = builder;
+          for (Statement statement in target.users) {
+            statement.parent.replaceChild(
+                statement,
+                wrapInCompileTimeErrorStatement(statement,
+                    fasta.templateLabelNotFound.withArguments(name)));
+          }
         } else {
           outerSwitchScope.forwardDeclareLabel(name, builder);
         }
@@ -334,40 +340,53 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
     switchScope = outerSwitchScope;
   }
 
-  void declareVariable(VariableDeclaration variable, Scope scope) {
-    // ignore: UNUSED_LOCAL_VARIABLE
-    Statement discardedStatement;
+  void wrapVariableInitializerInError(
+      VariableDeclaration variable,
+      Template<Message Function(String name)> template,
+      List<LocatedMessage> context) {
     String name = variable.name;
     int offset = variable.fileOffset;
-    if (scope.local[name] != null) {
+    Message message = template.withArguments(name);
+    if (variable.initializer == null) {
+      variable.initializer =
+          buildCompileTimeError(message, offset, name.length, context: context)
+            ..parent = variable;
+    } else {
+      variable.initializer = wrapInLocatedCompileTimeError(
+          variable.initializer, message.withLocation(uri, offset, name.length),
+          context: context)
+        ..parent = variable;
+    }
+  }
+
+  void declareVariable(VariableDeclaration variable, Scope scope) {
+    String name = variable.name;
+    Builder existing = scope.local[name];
+    if (existing != null) {
       // This reports an error for duplicated declarations in the same scope:
       // `{ var x; var x; }`
-      discardedStatement = pop(); // TODO(ahe): Issue 29717.
-      push(deprecated_buildCompileTimeErrorStatement(
-          "'$name' already declared in this scope.", offset));
+      wrapVariableInitializerInError(
+          variable, fasta.templateDuplicatedName, <LocatedMessage>[
+        fasta.templateDuplicatedNameCause
+            .withArguments(name)
+            .withLocation(uri, existing.charOffset, name.length)
+      ]);
       return;
     }
-    LocatedMessage error = scope.declare(
+    LocatedMessage context = scope.declare(
         variable.name,
         new KernelVariableBuilder(
             variable, member ?? classBuilder ?? library, uri),
-        variable.fileOffset,
         uri);
-    if (error != null) {
+    if (context != null) {
       // This case is different from the above error. In this case, the problem
       // is using `x` before it's declared: `{ var x; { print(x); var x;
       // }}`. In this case, we want two errors, the `x` in `print(x)` and the
       // second (or innermost declaration) of `x`.
-      discardedStatement = pop(); // TODO(ahe): Issue 29717.
-
-      // Reports the error on the last declaration of `x`.
-      push(deprecated_buildCompileTimeErrorStatement(
-          "Can't declare '$name' because it was already used in this scope.",
-          offset));
-
-      // Reports the error on `print(x)`.
-      library.addCompileTimeError(
-          error.messageObject, error.charOffset, error.length, error.uri);
+      wrapVariableInitializerInError(
+          variable,
+          fasta.templateDuplicatedNamePreviouslyUsed,
+          <LocatedMessage>[context]);
     }
   }
 
@@ -390,7 +409,8 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
     pushQualifiedReference(beginToken.next, periodBeforeName);
     if (arguments != null) {
       push(arguments);
-      endNewExpression(beginToken);
+      buildConstructorReferenceInvocation(
+          beginToken, beginToken.offset, Constness.explicitConst);
       push(popForValue());
     } else {
       String name = pop();
@@ -1019,7 +1039,7 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
       LocatedMessage argMessage}) {
     Message message;
     Name kernelName = new Name(name, library.library);
-    LocatedMessage context;
+    List<LocatedMessage> context;
     if (candidate != null) {
       Uri uri = candidate.location.file;
       int offset = candidate.fileOffset;
@@ -1033,7 +1053,7 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
         length = name.length;
         message = fasta.messageCandidateFound;
       }
-      context = message.withLocation(uri, offset, length);
+      context = [message.withLocation(uri, offset, length)];
     }
 
     if (isGetter) {
@@ -1079,7 +1099,9 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
 
   @override
   Message warnUnresolvedGet(Name name, int charOffset,
-      {bool isSuper: false, bool reportWarning: true, LocatedMessage context}) {
+      {bool isSuper: false,
+      bool reportWarning: true,
+      List<LocatedMessage> context}) {
     Message message = isSuper
         ? fasta.templateSuperclassHasNoGetter.withArguments(name.name)
         : fasta.templateGetterNotFound.withArguments(name.name);
@@ -1092,7 +1114,9 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
 
   @override
   Message warnUnresolvedSet(Name name, int charOffset,
-      {bool isSuper: false, bool reportWarning: true, LocatedMessage context}) {
+      {bool isSuper: false,
+      bool reportWarning: true,
+      List<LocatedMessage> context}) {
     Message message = isSuper
         ? fasta.templateSuperclassHasNoSetter.withArguments(name.name)
         : fasta.templateSetterNotFound.withArguments(name.name);
@@ -1105,7 +1129,9 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
 
   @override
   Message warnUnresolvedMethod(Name name, int charOffset,
-      {bool isSuper: false, bool reportWarning: true, LocatedMessage context}) {
+      {bool isSuper: false,
+      bool reportWarning: true,
+      List<LocatedMessage> context}) {
     String plainName = name.name;
     int dotIndex = plainName.lastIndexOf(".");
     if (dotIndex != -1) {
@@ -2052,6 +2078,13 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
   }
 
   @override
+  void beginFormalParameter(Token token, MemberKind kind, Token covariantToken,
+      Token varFinalOrConst) {
+    push((covariantToken != null ? covariantMask : 0) |
+        Modifier.validateVarFinalOrConst(varFinalOrConst?.lexeme));
+  }
+
+  @override
   void endFormalParameter(Token thisKeyword, Token periodAfterThis,
       Token nameToken, FormalParameterKind kind, MemberKind memberKind) {
     debugEvent("FormalParameter");
@@ -2064,7 +2097,7 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
     }
     Identifier name = pop();
     DartType type = pop();
-    int modifiers = Modifier.validate(pop());
+    int modifiers = pop();
     if (inCatchClause) {
       modifiers |= finalMask;
     }
@@ -2130,6 +2163,20 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
     exitLocalScope();
     push(type);
     functionNestingLevel--;
+  }
+
+  @override
+  void beginFormalParameterDefaultValueExpression() {
+    super.push(constantContext);
+    constantContext = ConstantContext.none;
+  }
+
+  @override
+  void endFormalParameterDefaultValueExpression() {
+    debugEvent("FormalParameterDefaultValueExpression");
+    var defaultValueExpression = pop();
+    constantContext = pop();
+    push(defaultValueExpression);
   }
 
   @override
@@ -2450,12 +2497,8 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
     if (target is Constructor) {
       isConst =
           isConst || constantContext != ConstantContext.none && target.isConst;
-      if (constness == Constness.implicit &&
-          target.isConst &&
-          constantContext != ConstantContext.inferred) {
-        return buildCompileTimeError(
-            fasta.messageCantDetermineConstness, charOffset, noLength);
-      } else if (isConst && !target.isConst) {
+      if ((isConst || constantContext == ConstantContext.inferred) &&
+          !target.isConst) {
         return deprecated_buildCompileTimeError(
             "Not a const constructor.", charOffset);
       }
@@ -2465,17 +2508,14 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
         ..fileOffset = charOffset;
     } else {
       Procedure procedure = target;
-      isConst = isConst ||
-          constantContext != ConstantContext.none && procedure.isConst;
-      if (constness == Constness.implicit &&
-          procedure.isConst &&
-          constantContext != ConstantContext.inferred) {
-        return buildCompileTimeError(
-            fasta.messageCantDetermineConstness, charOffset, noLength);
-      } else if (isConst && !procedure.isConst) {
-        return deprecated_buildCompileTimeError(
-            "Not a const factory.", charOffset);
-      } else if (procedure.isFactory) {
+      if (procedure.isFactory) {
+        isConst = isConst ||
+            constantContext != ConstantContext.none && procedure.isConst;
+        if ((isConst || constantContext == ConstantContext.inferred) &&
+            !procedure.isConst) {
+          return deprecated_buildCompileTimeError(
+              "Not a const factory.", charOffset);
+        }
         return new ShadowFactoryConstructorInvocation(target,
             targetTypeArguments, initialTarget, forest.castArguments(arguments),
             isConst: isConst)
@@ -2594,6 +2634,12 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
   }
 
   @override
+  void beginImplicitCreationExpression(Token token) {
+    debugEvent("beginImplicitCreationExpression");
+    super.push(constantContext);
+  }
+
+  @override
   void endConstLiteral(Token token) {
     debugEvent("endConstLiteral");
     var literal = pop();
@@ -2604,7 +2650,12 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
   @override
   void endNewExpression(Token token) {
     debugEvent("NewExpression");
-    Token nameToken = token.next;
+    buildConstructorReferenceInvocation(
+        token.next, token.offset, Constness.explicitNew);
+  }
+
+  void buildConstructorReferenceInvocation(
+      Token nameToken, int offset, Constness constness) {
     Arguments arguments = pop();
     String name = pop();
     List<DartType> typeArguments = pop();
@@ -2630,25 +2681,24 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
     ConstantContext savedConstantContext = pop();
     if (type is TypeDeclarationBuilder) {
       Expression expression = buildConstructorInvocation(
-          type,
-          nameToken,
-          arguments,
-          name,
-          typeArguments,
-          token.charOffset,
-          optional("const", token) || optional("@", token)
-              ? Constness.explicitConst
-              : Constness.explicitNew);
+          type, nameToken, arguments, name, typeArguments, offset, constness);
       push(deferredPrefix != null
           ? wrapInDeferredCheck(expression, deferredPrefix, checkOffset)
           : expression);
     } else if (type is ErrorAccessor) {
       push(type.buildError(arguments));
     } else {
-      push(throwNoSuchMethodError(forest.literalNull(token),
+      push(throwNoSuchMethodError(storeOffset(forest.literalNull(null), offset),
           debugName(getNodeName(type), name), arguments, nameToken.charOffset));
     }
     constantContext = savedConstantContext;
+  }
+
+  @override
+  void endImplicitCreationExpression(Token token) {
+    debugEvent("ImplicitCreationExpression");
+    buildConstructorReferenceInvocation(
+        token, token.offset, Constness.implicit);
   }
 
   @override
@@ -2749,7 +2799,8 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
   @override
   void endConstExpression(Token token) {
     debugEvent("endConstExpression");
-    endNewExpression(token);
+    buildConstructorReferenceInvocation(
+        token.next, token.offset, Constness.explicitConst);
   }
 
   @override
@@ -2879,29 +2930,40 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
 
       variable.type = function.functionType;
       if (isFunctionExpression) {
+        Expression oldInitializer = variable.initializer;
         variable.initializer = new ShadowFunctionExpression(function)
           ..parent = variable
           ..fileOffset = formals.charOffset;
         exitLocalScope();
-        push(new ShadowNamedFunctionExpression(variable));
+        Expression expression = new ShadowNamedFunctionExpression(variable);
+        if (oldInitializer != null) {
+          // This must have been a compile-time error.
+          assert(isErroneousNode(oldInitializer));
+
+          push(new Let(
+              new VariableDeclaration.forValue(oldInitializer)
+                ..fileOffset = expression.fileOffset,
+              expression)
+            ..fileOffset = expression.fileOffset);
+        } else {
+          push(expression);
+        }
       } else {
         declaration.function = function;
         function.parent = declaration;
-        push(declaration);
-      }
-    } else if (declaration is ExpressionStatement) {
-      // If [declaration] isn't a [FunctionDeclaration], it must be because
-      // there was a compile-time error.
-      // TODO(askesc): Be more specific about the error code when we have
-      // errors represented as explicit invalid nodes.
-      assert(library.loader.handledErrors.isNotEmpty);
+        if (variable.initializer != null) {
+          // This must have been a compile-time error.
+          assert(isErroneousNode(variable.initializer));
 
-      // TODO(paulberry,ahe): ensure that when integrating with analyzer, type
-      // inference is still performed for the dropped declaration.
-      if (isFunctionExpression) {
-        push(declaration.expression);
-      } else {
-        push(declaration);
+          push(new Block(<Statement>[
+            new ExpressionStatement(variable.initializer),
+            declaration
+          ])
+            ..fileOffset = declaration.fileOffset);
+          variable.initializer = null;
+        } else {
+          push(declaration);
+        }
       }
     } else {
       return unhandled("${declaration.runtimeType}", "pushNamedFunction",
@@ -3185,6 +3247,8 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
         break;
 
       case Assert.Expression:
+        // The parser has already reported an error indicating that assert
+        // cannot be used in an expression.
         push(deprecated_buildCompileTimeError(
             "`assert` can't be used as an expression."));
         break;
@@ -3435,7 +3499,8 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
   void beginTypeVariables(Token token) {
     debugEvent("beginTypeVariables");
     OutlineBuilder listener = new OutlineBuilder(library);
-    new ClassMemberParser(listener).parseTypeVariablesOpt(token.previous);
+    new ClassMemberParser(listener)
+        .parseTypeVariablesOpt(new Token.eof(-1)..next = token);
     enterFunctionTypeScope(listener.pop());
   }
 
@@ -3486,20 +3551,6 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
   }
 
   @override
-  void handleModifier(Token token) {
-    debugEvent("Modifier");
-    // TODO(ahe): Copied from outline_builder.dart.
-    push(new Modifier.fromString(token.stringValue));
-  }
-
-  @override
-  void handleModifiers(int count) {
-    debugEvent("Modifiers");
-    // TODO(ahe): Copied from outline_builder.dart.
-    push(popList(count) ?? NullValue.Modifiers);
-  }
-
-  @override
   void handleRecoverableError(
       Message message, Token startToken, Token endToken) {
     if (message == fasta.messageNativeClauseShouldBeAnnotation) {
@@ -3538,7 +3589,7 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
 
   @override
   Expression buildCompileTimeError(Message message, int charOffset, int length,
-      {LocatedMessage context}) {
+      {List<LocatedMessage> context}) {
     library.addCompileTimeError(message, charOffset, length, uri,
         wasHandled: true, context: context);
     return new ShadowSyntheticExpression(library.loader
@@ -3546,13 +3597,28 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
             .buildCompileTimeError(message, charOffset, length, uri)));
   }
 
-  Expression wrapInCompileTimeError(Expression expression, Message message) {
+  Expression wrapInCompileTimeError(Expression expression, Message message,
+      {List<LocatedMessage> context}) {
+    return wrapInLocatedCompileTimeError(
+        expression, message.withLocation(uri, expression.fileOffset, noLength),
+        context: context);
+  }
+
+  Expression wrapInLocatedCompileTimeError(
+      Expression expression, LocatedMessage message,
+      {List<LocatedMessage> context}) {
     // TODO(askesc): Produce explicit error expression wrapping the original.
     // See [issue 29717](https://github.com/dart-lang/sdk/issues/29717)
     return new Let(
-        new VariableDeclaration.forValue(expression)
+        new VariableDeclaration.forValue(buildCompileTimeError(
+            message.messageObject, message.charOffset, message.length,
+            context: context))
           ..fileOffset = expression.fileOffset,
-        buildCompileTimeError(message, expression.fileOffset, noLength))
+        new Let(
+            new VariableDeclaration.forValue(expression)
+              ..fileOffset = expression.fileOffset,
+            storeOffset(forest.literalNull(null), expression.fileOffset))
+          ..fileOffset = expression.fileOffset)
       ..fileOffset = expression.fileOffset;
   }
 
@@ -3595,7 +3661,7 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
   }
 
   Statement buildCompileTimeErrorStatement(Message message, int charOffset,
-      {LocatedMessage context}) {
+      {List<LocatedMessage> context}) {
     return new ShadowExpressionStatement(
         buildCompileTimeError(message, charOffset, noLength, context: context));
   }
@@ -3647,9 +3713,11 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
                 .withArguments(name),
             offset,
             noLength,
-            context: fasta.templateFinalInstanceVariableAlreadyInitializedCause
-                .withArguments(name)
-                .withLocation(uri, builder.charOffset, noLength));
+            context: [
+              fasta.templateFinalInstanceVariableAlreadyInitializedCause
+                  .withArguments(name)
+                  .withLocation(uri, builder.charOffset, noLength)
+            ]);
         Builder constructor =
             library.loader.getDuplicatedFieldInitializerError();
         return buildInvalidInitializer(
@@ -3846,20 +3914,20 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
 
   @override
   void addCompileTimeError(Message message, int charOffset, int length,
-      {LocatedMessage context}) {
+      {List<LocatedMessage> context}) {
     library.addCompileTimeError(message, charOffset, length, uri,
         context: context);
   }
 
   @override
   void addProblem(Message message, int charOffset, int length,
-      {LocatedMessage context}) {
+      {List<LocatedMessage> context}) {
     library.addProblem(message, charOffset, length, uri, context: context);
   }
 
   @override
   void addProblemErrorIfConst(Message message, int charOffset, int length,
-      {LocatedMessage context}) {
+      {List<LocatedMessage> context}) {
     // TODO(askesc): Instead of deciding on the severity, this method should
     // take two messages: one to use when a constant expression is
     // required and one to use otherwise.
@@ -3882,9 +3950,9 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
 
   @override
   Expression wrapInDeferredCheck(
-      Expression expression, PrefixBuilder prefix, int charOffset) {
+      Expression expression, KernelPrefixBuilder prefix, int charOffset) {
     var check = new VariableDeclaration.forValue(
-        new CheckLibraryIsLoaded(prefix.dependency))
+        forest.checkLibraryIsLoaded(prefix.dependency))
       ..fileOffset = charOffset;
     return new ShadowDeferredCheck(check, expression);
   }
@@ -3894,6 +3962,11 @@ class BodyBuilder<Arguments> extends ScopeListener<JumpTarget>
     TreeNode node = object as TreeNode;
     node.fileOffset = offset;
     return object;
+  }
+
+  bool isErroneousNode(TreeNode node) {
+    return library.loader.handledErrors.isNotEmpty &&
+        forest.isErroneousNode(node);
   }
 }
 

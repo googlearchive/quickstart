@@ -2321,7 +2321,7 @@ class ErrorVerifier extends RecursiveAstVisitor<Object> {
       if (_inGenerator) {
         return;
       } else if (_inAsync) {
-        if (expectedReturnType.isDynamic) {
+        if (expectedReturnType.isDynamic || expectedReturnType.isVoid) {
           return;
         }
         if (expectedReturnType is InterfaceType &&
@@ -2329,6 +2329,7 @@ class ErrorVerifier extends RecursiveAstVisitor<Object> {
           DartType futureArgument = expectedReturnType.typeArguments[0];
           if (futureArgument.isDynamic ||
               futureArgument.isDartCoreNull ||
+              futureArgument.isVoid ||
               futureArgument.isObject) {
             return;
           }
@@ -6211,11 +6212,12 @@ class ErrorVerifier extends RecursiveAstVisitor<Object> {
    * See [StaticWarningCode.FUNCTION_WITHOUT_CALL].
    */
   void _checkImplementsFunctionWithoutCall(AstNode className) {
-    ClassElement classElement = _enclosingClass;
-    if (classElement == null) {
+    if (_options.strongMode) {
+      // `implements Function` is ignored in strong mode/Dart 2.
       return;
     }
-    if (classElement.isAbstract) {
+    ClassElement classElement = _enclosingClass;
+    if (classElement == null || classElement.isAbstract) {
       return;
     }
     if (!_typeSystem.isSubtypeOf(
@@ -7276,19 +7278,10 @@ class _UninstantiatedBoundChecker extends RecursiveAstVisitor {
       return;
     }
 
-    var element = node.type.element;
-    if (element is TypeParameterizedElement &&
-        element.typeParameters.any((p) => p.bound != null)) {
+    final type = node.type;
+    if (type is TypeImpl && type.hasTypeParameterReferenceInBound) {
       _errorReporter.reportErrorForNode(
-          StrongModeCode.NOT_INSTANTIATED_BOUND, node, [node.type]);
-    }
-
-    var enclosingElement = element?.enclosingElement;
-    if (element is GenericFunctionTypeElement &&
-        enclosingElement is GenericTypeAliasElement &&
-        enclosingElement.typeParameters.any((p) => p.bound != null)) {
-      _errorReporter.reportErrorForNode(
-          StrongModeCode.NOT_INSTANTIATED_BOUND, node, [node.type]);
+          StrongModeCode.NOT_INSTANTIATED_BOUND, node, [type]);
     }
   }
 }

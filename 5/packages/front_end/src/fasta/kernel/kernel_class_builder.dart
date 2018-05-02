@@ -29,6 +29,8 @@ import 'package:kernel/class_hierarchy.dart' show ClassHierarchy;
 
 import 'package:kernel/clone.dart' show CloneWithoutBody;
 
+import 'package:kernel/core_types.dart' show CoreTypes;
+
 import 'package:kernel/type_algebra.dart' show Substitution, getSubstitutionMap;
 
 import 'package:kernel/type_environment.dart' show TypeEnvironment;
@@ -37,12 +39,15 @@ import '../dill/dill_member_builder.dart' show DillMemberBuilder;
 
 import '../fasta_codes.dart'
     show
+        LocatedMessage,
         Message,
         messagePatchClassOrigin,
         messagePatchClassTypeVariablesMismatch,
         messagePatchDeclarationMismatch,
         messagePatchDeclarationOrigin,
         noLength,
+        templateMissingImplementationCause,
+        templateMissingImplementationNotAbstract,
         templateOverriddenMethodCause,
         templateOverrideFewerNamedArguments,
         templateOverrideFewerPositionalArguments,
@@ -116,6 +121,9 @@ abstract class KernelClassBuilder
     assert(arguments == null || cls.typeParameters.length == arguments.length);
     return arguments == null ? cls.rawType : new InterfaceType(cls, arguments);
   }
+
+  @override
+  int get typeVariablesCount => typeVariables?.length ?? 0;
 
   List<DartType> buildTypeArguments(
       LibraryBuilder library, List<KernelTypeBuilder> arguments) {
@@ -288,6 +296,66 @@ abstract class KernelClassBuilder
     });
   }
 
+  void checkAbstractMembers(CoreTypes coreTypes, ClassHierarchy hierarchy) {
+    if (isAbstract ||
+        hierarchy.getDispatchTarget(cls, noSuchMethodName).enclosingClass !=
+            coreTypes.objectClass) {
+      // Unimplemented members allowed
+      // TODO(dmitryas): Call hasUserDefinedNoSuchMethod instead when ready.
+      return;
+    }
+
+    List<LocatedMessage> context = null;
+
+    void findMissingImplementations({bool setters}) {
+      List<Member> dispatchTargets =
+          hierarchy.getDispatchTargets(cls, setters: setters);
+      int targetIndex = 0;
+      for (Member interfaceMember
+          in hierarchy.getInterfaceMembers(cls, setters: setters)) {
+        // Is this either a public member or a visible private member?
+        if (!interfaceMember.name.isPrivate ||
+            (interfaceMember.enclosingLibrary == cls.enclosingLibrary &&
+                interfaceMember.fileUri ==
+                    interfaceMember.enclosingClass.fileUri)) {
+          while (targetIndex < dispatchTargets.length &&
+              ClassHierarchy.compareMembers(
+                      dispatchTargets[targetIndex], interfaceMember) <
+                  0) {
+            targetIndex++;
+          }
+          if (targetIndex >= dispatchTargets.length ||
+              ClassHierarchy.compareMembers(
+                      dispatchTargets[targetIndex], interfaceMember) >
+                  0) {
+            Name name = interfaceMember.name;
+            String displayName = name.name + (setters ? "=" : "");
+            context ??= <LocatedMessage>[];
+            context.add(templateMissingImplementationCause
+                .withArguments(displayName)
+                .withLocation(interfaceMember.fileUri,
+                    interfaceMember.fileOffset, name.name.length));
+          }
+        }
+      }
+    }
+
+    findMissingImplementations(setters: false);
+    findMissingImplementations(setters: true);
+
+    if (context?.isNotEmpty ?? false) {
+      String memberString =
+          context.map((message) => "'${message.arguments["name"]}'").join(", ");
+      library.addProblem(
+          templateMissingImplementationNotAbstract.withArguments(
+              cls.name, memberString),
+          cls.fileOffset,
+          cls.name.length,
+          cls.fileUri,
+          context: context);
+    }
+  }
+
   // TODO(dmitryas): Find a better place for this routine.
   static bool hasUserDefinedNoSuchMethod(
       Class klass, ClassHierarchy hierarchy) {
@@ -306,12 +374,8 @@ abstract class KernelClassBuilder
     cloned.isAbstract = true;
     cloned.isNoSuchMethodForwarder = true;
 
-    String name = cloned.name.name;
     cls.procedures.add(cloned);
     cloned.parent = cls;
-    DillMemberBuilder memberBuilder = new DillMemberBuilder(cloned, this);
-    memberBuilder.next = scopeBuilder[name];
-    scopeBuilder.addMember(name, memberBuilder);
   }
 
   void addNoSuchMethodForwarders(ClassHierarchy hierarchy) {
@@ -320,12 +384,23 @@ abstract class KernelClassBuilder
     }
 
     Set<Name> existingForwardersNames = new Set<Name>();
+    Set<Name> existingSetterForwardersNames = new Set<Name>();
     if (cls.superclass != null &&
         hasUserDefinedNoSuchMethod(cls.superclass, hierarchy)) {
       List<Member> concrete = hierarchy.getDispatchTargets(cls.superclass);
       for (Member member in hierarchy.getInterfaceMembers(cls.superclass)) {
         if (ClassHierarchy.findMemberByName(concrete, member.name) == null) {
           existingForwardersNames.add(member.name);
+        }
+      }
+
+      List<Member> concreteSetters =
+          hierarchy.getDispatchTargets(cls.superclass, setters: true);
+      for (Member member
+          in hierarchy.getInterfaceMembers(cls.superclass, setters: true)) {
+        if (ClassHierarchy.findMemberByName(concreteSetters, member.name) ==
+            null) {
+          existingSetterForwardersNames.add(member.name);
         }
       }
     }
@@ -337,19 +412,49 @@ abstract class KernelClassBuilder
           existingForwardersNames.add(member.name);
         }
       }
+
+      List<Member> concreteSetters =
+          hierarchy.getDispatchTargets(cls.superclass, setters: true);
+      for (Member member
+          in hierarchy.getInterfaceMembers(cls.superclass, setters: true)) {
+        if (ClassHierarchy.findMemberByName(concreteSetters, member.name) ==
+            null) {
+          existingSetterForwardersNames.add(member.name);
+        }
+      }
     }
 
     List<Member> concrete = hierarchy.getDispatchTargets(cls);
     List<Member> declared = hierarchy.getDeclaredMembers(cls);
     for (Member member in hierarchy.getInterfaceMembers(cls)) {
-      if (ClassHierarchy.findMemberByName(concrete, member.name) == null &&
+      if (member is Procedure &&
+          ClassHierarchy.findMemberByName(concrete, member.name) == null &&
           !existingForwardersNames.contains(member.name)) {
         if (ClassHierarchy.findMemberByName(declared, member.name) != null) {
-          Procedure procedure = member;
-          procedure.isNoSuchMethodForwarder = true;
+          member.isNoSuchMethodForwarder = true;
         } else {
           addNoSuchMethodForwarderForProcedure(member, hierarchy);
         }
+        existingForwardersNames.add(member.name);
+      }
+    }
+
+    List<Member> concreteSetters =
+        hierarchy.getDispatchTargets(cls, setters: true);
+    List<Member> declaredSetters =
+        hierarchy.getDeclaredMembers(cls, setters: true);
+    for (Member member in hierarchy.getInterfaceMembers(cls, setters: true)) {
+      if (member is Procedure &&
+          ClassHierarchy.findMemberByName(concreteSetters, member.name) ==
+              null &&
+          !existingSetterForwardersNames.contains(member.name)) {
+        if (ClassHierarchy.findMemberByName(declaredSetters, member.name) !=
+            null) {
+          member.isNoSuchMethodForwarder = true;
+        } else {
+          addNoSuchMethodForwarderForProcedure(member, hierarchy);
+        }
+        existingSetterForwardersNames.add(member.name);
       }
     }
   }
@@ -382,10 +487,12 @@ abstract class KernelClassBuilder
               "${interfaceMember.name.name}"),
           declaredMember.fileOffset,
           noLength,
-          context: templateOverriddenMethodCause
-              .withArguments(interfaceMember.name.name)
-              .withLocation(_getMemberUri(interfaceMember),
-                  interfaceMember.fileOffset, noLength));
+          context: [
+            templateOverriddenMethodCause
+                .withArguments(interfaceMember.name.name)
+                .withLocation(_getMemberUri(interfaceMember),
+                    interfaceMember.fileOffset, noLength)
+          ]);
     } else if (library.loader.target.backendTarget.strongMode &&
         declaredFunction?.typeParameters != null) {
       var substitution = <TypeParameter, DartType>{};
@@ -445,10 +552,12 @@ abstract class KernelClassBuilder
         fileOffset = declaredParameter.fileOffset;
       }
       library.addCompileTimeError(message, fileOffset, noLength, fileUri,
-          context: templateOverriddenMethodCause
-              .withArguments(interfaceMember.name.name)
-              .withLocation(_getMemberUri(interfaceMember),
-                  interfaceMember.fileOffset, noLength));
+          context: [
+            templateOverriddenMethodCause
+                .withArguments(interfaceMember.name.name)
+                .withLocation(_getMemberUri(interfaceMember),
+                    interfaceMember.fileOffset, noLength)
+          ]);
       return true;
     }
     return false;
@@ -496,10 +605,12 @@ abstract class KernelClassBuilder
               "${interfaceMember.name.name}"),
           declaredMember.fileOffset,
           noLength,
-          context: templateOverriddenMethodCause
-              .withArguments(interfaceMember.name.name)
-              .withLocation(interfaceMember.fileUri, interfaceMember.fileOffset,
-                  noLength));
+          context: [
+            templateOverriddenMethodCause
+                .withArguments(interfaceMember.name.name)
+                .withLocation(interfaceMember.fileUri,
+                    interfaceMember.fileOffset, noLength)
+          ]);
     }
     if (interfaceFunction.requiredParameterCount <
         declaredFunction.requiredParameterCount) {
@@ -510,10 +621,12 @@ abstract class KernelClassBuilder
               "${interfaceMember.name.name}"),
           declaredMember.fileOffset,
           noLength,
-          context: templateOverriddenMethodCause
-              .withArguments(interfaceMember.name.name)
-              .withLocation(interfaceMember.fileUri, interfaceMember.fileOffset,
-                  noLength));
+          context: [
+            templateOverriddenMethodCause
+                .withArguments(interfaceMember.name.name)
+                .withLocation(interfaceMember.fileUri,
+                    interfaceMember.fileOffset, noLength)
+          ]);
     }
     for (int i = 0;
         i < declaredFunction.positionalParameters.length &&
@@ -543,10 +656,12 @@ abstract class KernelClassBuilder
               "${interfaceMember.name.name}"),
           declaredMember.fileOffset,
           noLength,
-          context: templateOverriddenMethodCause
-              .withArguments(interfaceMember.name.name)
-              .withLocation(interfaceMember.fileUri, interfaceMember.fileOffset,
-                  noLength));
+          context: [
+            templateOverriddenMethodCause
+                .withArguments(interfaceMember.name.name)
+                .withLocation(interfaceMember.fileUri,
+                    interfaceMember.fileOffset, noLength)
+          ]);
     }
     int compareNamedParameters(VariableDeclaration p0, VariableDeclaration p1) {
       return p0.name.compareTo(p1.name);
@@ -576,10 +691,12 @@ abstract class KernelClassBuilder
                   "${interfaceMember.name.name}"),
               declaredMember.fileOffset,
               noLength,
-              context: templateOverriddenMethodCause
-                  .withArguments(interfaceMember.name.name)
-                  .withLocation(interfaceMember.fileUri,
-                      interfaceMember.fileOffset, noLength));
+              context: [
+                templateOverriddenMethodCause
+                    .withArguments(interfaceMember.name.name)
+                    .withLocation(interfaceMember.fileUri,
+                        interfaceMember.fileOffset, noLength)
+              ]);
           break outer;
         }
       }
@@ -674,10 +791,10 @@ abstract class KernelClassBuilder
       int originLength = typeVariables?.length ?? 0;
       int patchLength = patch.typeVariables?.length ?? 0;
       if (originLength != patchLength) {
-        patch.addCompileTimeError(
-            messagePatchClassTypeVariablesMismatch, patch.charOffset, noLength,
-            context: messagePatchClassOrigin.withLocation(
-                fileUri, charOffset, noLength));
+        patch.addCompileTimeError(messagePatchClassTypeVariablesMismatch,
+            patch.charOffset, noLength, context: [
+          messagePatchClassOrigin.withLocation(fileUri, charOffset, noLength)
+        ]);
       } else if (typeVariables != null) {
         int count = 0;
         for (KernelTypeVariableBuilder t in patch.typeVariables) {
@@ -686,9 +803,10 @@ abstract class KernelClassBuilder
       }
     } else {
       library.addCompileTimeError(messagePatchDeclarationMismatch,
-          patch.charOffset, noLength, patch.fileUri,
-          context: messagePatchDeclarationOrigin.withLocation(
-              fileUri, charOffset, noLength));
+          patch.charOffset, noLength, patch.fileUri, context: [
+        messagePatchDeclarationOrigin.withLocation(
+            fileUri, charOffset, noLength)
+      ]);
     }
   }
 

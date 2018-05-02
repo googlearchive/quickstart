@@ -359,16 +359,6 @@ Message _withArgumentsCannotReadSdkSpecification(String string) {
 }
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
-const Code<Null> codeCantDetermineConstness = messageCantDetermineConstness;
-
-// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
-const MessageCode messageCantDetermineConstness = const MessageCode(
-    "CantDetermineConstness",
-    severity: Severity.error,
-    message:
-        r"""The keyword 'const' or 'new' is required here. Due to an implementation limit, the compiler isn't able to infer 'const' or 'new' here.""");
-
-// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 const Code<Null> codeCantInferPackagesFromManyInputs =
     messageCantInferPackagesFromManyInputs;
 
@@ -480,6 +470,7 @@ const Code<Null> codeCatchSyntax = messageCatchSyntax;
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 const MessageCode messageCatchSyntax = const MessageCode("CatchSyntax",
+    analyzerCode: "CATCH_SYNTAX",
     dart2jsCode: "*ignored*",
     message:
         r"""'catch' must be followed by '(identifier)' or '(identifier, identifier)'.""",
@@ -1130,32 +1121,28 @@ const MessageCode messageDuplicateDeferred = const MessageCode(
     tip: r"""Try removing all but one 'deferred' keyword.""");
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
-const Template<
-    Message Function(
-        String
-            string)> templateDuplicateLabelInSwitchStatement = const Template<
-        Message Function(String string)>(
-    messageTemplate:
-        r"""The label '#string' was already used in this switch statement.""",
-    tipTemplate: r"""Try choosing a different name for this label.""",
-    withArguments: _withArgumentsDuplicateLabelInSwitchStatement);
+const Template<Message Function(String name)>
+    templateDuplicateLabelInSwitchStatement =
+    const Template<Message Function(String name)>(
+        messageTemplate:
+            r"""The label '#name' was already used in this switch statement.""",
+        tipTemplate: r"""Try choosing a different name for this label.""",
+        withArguments: _withArgumentsDuplicateLabelInSwitchStatement);
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
-const Code<Message Function(String string)>
-    codeDuplicateLabelInSwitchStatement =
-    const Code<Message Function(String string)>(
-        "DuplicateLabelInSwitchStatement",
+const Code<Message Function(String name)> codeDuplicateLabelInSwitchStatement =
+    const Code<Message Function(String name)>("DuplicateLabelInSwitchStatement",
         templateDuplicateLabelInSwitchStatement,
         analyzerCode: "DUPLICATE_LABEL_IN_SWITCH_STATEMENT",
         dart2jsCode: "*fatal*");
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
-Message _withArgumentsDuplicateLabelInSwitchStatement(String string) {
+Message _withArgumentsDuplicateLabelInSwitchStatement(String name) {
   return new Message(codeDuplicateLabelInSwitchStatement,
       message:
-          """The label '$string' was already used in this switch statement.""",
+          """The label '$name' was already used in this switch statement.""",
       tip: """Try choosing a different name for this label.""",
-      arguments: {'string': string});
+      arguments: {'name': name});
 }
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
@@ -1312,20 +1299,84 @@ Message _withArgumentsDuplicatedModifier(Token token) {
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 const Template<Message Function(String name)> templateDuplicatedName =
     const Template<Message Function(String name)>(
-        messageTemplate: r"""Duplicated name: '#name'.""",
+        messageTemplate: r"""'#name' is already declared in this scope.""",
         withArguments: _withArgumentsDuplicatedName);
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 const Code<Message Function(String name)> codeDuplicatedName =
     const Code<Message Function(String name)>(
-  "DuplicatedName",
-  templateDuplicatedName,
-);
+        "DuplicatedName", templateDuplicatedName,
+        severity: Severity.error);
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 Message _withArgumentsDuplicatedName(String name) {
   return new Message(codeDuplicatedName,
-      message: """Duplicated name: '$name'.""", arguments: {'name': name});
+      message: """'$name' is already declared in this scope.""",
+      arguments: {'name': name});
+}
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Template<Message Function(String name)> templateDuplicatedNameCause =
+    const Template<Message Function(String name)>(
+        messageTemplate: r"""Previous declaration of '#name'.""",
+        withArguments: _withArgumentsDuplicatedNameCause);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Message Function(String name)> codeDuplicatedNameCause =
+    const Code<Message Function(String name)>(
+        "DuplicatedNameCause", templateDuplicatedNameCause,
+        severity: Severity.context);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+Message _withArgumentsDuplicatedNameCause(String name) {
+  return new Message(codeDuplicatedNameCause,
+      message: """Previous declaration of '$name'.""",
+      arguments: {'name': name});
+}
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Template<
+    Message Function(
+        String
+            name)> templateDuplicatedNamePreviouslyUsed = const Template<
+        Message Function(String name)>(
+    messageTemplate:
+        r"""Can't declare '#name' because it was already used in this scope.""",
+    withArguments: _withArgumentsDuplicatedNamePreviouslyUsed);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Message Function(String name)> codeDuplicatedNamePreviouslyUsed =
+    const Code<Message Function(String name)>(
+        "DuplicatedNamePreviouslyUsed", templateDuplicatedNamePreviouslyUsed,
+        severity: Severity.error);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+Message _withArgumentsDuplicatedNamePreviouslyUsed(String name) {
+  return new Message(codeDuplicatedNamePreviouslyUsed,
+      message:
+          """Can't declare '$name' because it was already used in this scope.""",
+      arguments: {'name': name});
+}
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Template<Message Function(String name)>
+    templateDuplicatedNamePreviouslyUsedCause =
+    const Template<Message Function(String name)>(
+        messageTemplate: r"""Previous use of '#name'.""",
+        withArguments: _withArgumentsDuplicatedNamePreviouslyUsedCause);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Message Function(String name)>
+    codeDuplicatedNamePreviouslyUsedCause =
+    const Code<Message Function(String name)>(
+        "DuplicatedNamePreviouslyUsedCause",
+        templateDuplicatedNamePreviouslyUsedCause,
+        severity: Severity.context);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+Message _withArgumentsDuplicatedNamePreviouslyUsedCause(String name) {
+  return new Message(codeDuplicatedNamePreviouslyUsedCause,
+      message: """Previous use of '$name'.""", arguments: {'name': name});
 }
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
@@ -1593,6 +1644,31 @@ Message _withArgumentsExpectedDeclaration(Token token) {
   String lexeme = token.lexeme;
   return new Message(codeExpectedDeclaration,
       message: """Expected a declaration, but got '$lexeme'.""",
+      arguments: {'token': token});
+}
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Template<
+    Message Function(Token token)> templateExpectedEnumBody = const Template<
+        Message Function(Token token)>(
+    messageTemplate: r"""Expected a enum body, but got '#lexeme'.""",
+    tipTemplate:
+        r"""An enum definition must have a body with at least one constant name.""",
+    withArguments: _withArgumentsExpectedEnumBody);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Message Function(Token token)> codeExpectedEnumBody =
+    const Code<Message Function(Token token)>(
+        "ExpectedEnumBody", templateExpectedEnumBody,
+        analyzerCode: "MISSING_ENUM_BODY", dart2jsCode: "*fatal*");
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+Message _withArgumentsExpectedEnumBody(Token token) {
+  String lexeme = token.lexeme;
+  return new Message(codeExpectedEnumBody,
+      message: """Expected a enum body, but got '$lexeme'.""",
+      tip:
+          """An enum definition must have a body with at least one constant name.""",
       arguments: {'token': token});
 }
 
@@ -2555,6 +2631,28 @@ Message _withArgumentsInternalProblemConstructorNotFound(
 }
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Template<Message Function(String string)>
+    templateInternalProblemContextSeverity =
+    const Template<Message Function(String string)>(
+        messageTemplate:
+            r"""Non-context message has context severity: #string""",
+        withArguments: _withArgumentsInternalProblemContextSeverity);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Message Function(String string)> codeInternalProblemContextSeverity =
+    const Code<Message Function(String string)>(
+        "InternalProblemContextSeverity",
+        templateInternalProblemContextSeverity,
+        severity: Severity.internalProblem);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+Message _withArgumentsInternalProblemContextSeverity(String string) {
+  return new Message(codeInternalProblemContextSeverity,
+      message: """Non-context message has context severity: $string""",
+      arguments: {'string': string});
+}
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 const Code<Null> codeInternalProblemExtendingUnmodifiableScope =
     messageInternalProblemExtendingUnmodifiableScope;
 
@@ -2841,6 +2939,35 @@ Message _withArgumentsInternalVerificationError(String string) {
   return new Message(codeInternalVerificationError,
       message: """Verification of the generated program failed:
 $string""", arguments: {'string': string});
+}
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Template<
+    Message Function(
+        String
+            string)> templateInternalVisitorUnsupportedDefault = const Template<
+        Message Function(String string)>(
+    messageTemplate:
+        r"""Trying to invoke a default visiting method of a visitor on a node #string.""",
+    tipTemplate:
+        r"""Try invoking one of the specialized 'visit' methods instead.""",
+    withArguments: _withArgumentsInternalVisitorUnsupportedDefault);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Message Function(String string)>
+    codeInternalVisitorUnsupportedDefault =
+    const Code<Message Function(String string)>(
+        "InternalVisitorUnsupportedDefault",
+        templateInternalVisitorUnsupportedDefault,
+        severity: Severity.internalProblem);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+Message _withArgumentsInternalVisitorUnsupportedDefault(String string) {
+  return new Message(codeInternalVisitorUnsupportedDefault,
+      message:
+          """Trying to invoke a default visiting method of a visitor on a node $string.""",
+      tip: """Try invoking one of the specialized 'visit' methods instead.""",
+      arguments: {'string': string});
 }
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
@@ -3259,6 +3386,30 @@ const MessageCode messageInvalidVoid = const MessageCode("InvalidVoid",
         r"""Try removing 'void' keyword or replace it with 'var', 'final', or a type.""");
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Template<
+    Message Function(String name)> templateLabelNotFound = const Template<
+        Message Function(String name)>(
+    messageTemplate: r"""Can't find label '#name'.""",
+    tipTemplate:
+        r"""Try defining the label, or correcting the name to match an existing label.""",
+    withArguments: _withArgumentsLabelNotFound);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Message Function(String name)> codeLabelNotFound =
+    const Code<Message Function(String name)>(
+        "LabelNotFound", templateLabelNotFound,
+        analyzerCode: "LABEL_UNDEFINED", dart2jsCode: "*fatal*");
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+Message _withArgumentsLabelNotFound(String name) {
+  return new Message(codeLabelNotFound,
+      message: """Can't find label '$name'.""",
+      tip:
+          """Try defining the label, or correcting the name to match an existing label.""",
+      arguments: {'name': name});
+}
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 const Code<Null> codeLibraryDirectiveNotFirst = messageLibraryDirectiveNotFirst;
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
@@ -3480,6 +3631,18 @@ const MessageCode messageMissingExponent = const MessageCode("MissingExponent",
         r"""Make sure there is an exponent, and remove any whitespace before it.""");
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Null> codeMissingExpressionInThrow = messageMissingExpressionInThrow;
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const MessageCode messageMissingExpressionInThrow = const MessageCode(
+    "MissingExpressionInThrow",
+    analyzerCode: "MISSING_EXPRESSION_IN_THROW",
+    dart2jsCode: "*fatal*",
+    message: r"""Missing expression after 'throw'.""",
+    tip:
+        r"""Add an expression after 'throw' or use 'rethrow' to throw a caught exception""");
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 const Code<Null> codeMissingFunctionParameters =
     messageMissingFunctionParameters;
 
@@ -3491,6 +3654,69 @@ const MessageCode messageMissingFunctionParameters = const MessageCode(
     message:
         r"""A function declaration needs an explicit list of parameters.""",
     tip: r"""Try adding a parameter list to the function declaration.""");
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Template<Message Function(String name)>
+    templateMissingImplementationCause =
+    const Template<Message Function(String name)>(
+        messageTemplate: r"""'#name' is defined here.""",
+        withArguments: _withArgumentsMissingImplementationCause);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Message Function(String name)> codeMissingImplementationCause =
+    const Code<Message Function(String name)>(
+        "MissingImplementationCause", templateMissingImplementationCause,
+        severity: Severity.context);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+Message _withArgumentsMissingImplementationCause(String name) {
+  return new Message(codeMissingImplementationCause,
+      message: """'$name' is defined here.""", arguments: {'name': name});
+}
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Template<
+    Message Function(
+        String name,
+        String
+            string)> templateMissingImplementationNotAbstract = const Template<
+        Message Function(String name, String string)>(
+    messageTemplate:
+        r"""The non-abstract class '#name' is missing implementations for these members:
+  #string.""",
+    tipTemplate: r"""Try to either
+ - provide an implementation,
+ - inherit an implementation from a superclass or mixin,
+ - mark the class as abstract, or
+ - provide a 'noSuchMethod' implementation.
+""",
+    withArguments: _withArgumentsMissingImplementationNotAbstract);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+const Code<Message Function(String name, String string)>
+    codeMissingImplementationNotAbstract =
+    const Code<Message Function(String name, String string)>(
+        "MissingImplementationNotAbstract",
+        templateMissingImplementationNotAbstract,
+        analyzerCode: "CONCRETE_CLASS_WITH_ABSTRACT_MEMBER",
+        dart2jsCode: "*fatal*",
+        severity: Severity.errorLegacyWarning);
+
+// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
+Message _withArgumentsMissingImplementationNotAbstract(
+    String name, String string) {
+  return new Message(codeMissingImplementationNotAbstract,
+      message:
+          """The non-abstract class '$name' is missing implementations for these members:
+  $string.""",
+      tip: """Try to either
+ - provide an implementation,
+ - inherit an implementation from a superclass or mixin,
+ - mark the class as abstract, or
+ - provide a 'noSuchMethod' implementation.
+""",
+      arguments: {'name': name, 'string': string});
+}
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 const Code<Null> codeMissingInput = messageMissingInput;
@@ -4473,25 +4699,6 @@ const MessageCode messagePrefixAfterCombinator = const MessageCode(
     message:
         r"""The prefix ('as' clause) should come before any show/hide combinators.""",
     tip: r"""Try moving the prefix before the combinators.""");
-
-// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
-const Template<Message Function(String name)> templatePreviousUseOfName =
-    const Template<Message Function(String name)>(
-        messageTemplate: r"""Previous use of '#name'.""",
-        withArguments: _withArgumentsPreviousUseOfName);
-
-// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
-const Code<Message Function(String name)> codePreviousUseOfName =
-    const Code<Message Function(String name)>(
-  "PreviousUseOfName",
-  templatePreviousUseOfName,
-);
-
-// DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
-Message _withArgumentsPreviousUseOfName(String name) {
-  return new Message(codePreviousUseOfName,
-      message: """Previous use of '$name'.""", arguments: {'name': name});
-}
 
 // DO NOT EDIT. THIS FILE IS GENERATED. SEE TOP OF FILE.
 const Code<Null> codePrivateNamedParameter = messagePrivateNamedParameter;

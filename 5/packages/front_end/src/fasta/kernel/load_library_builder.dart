@@ -4,20 +4,25 @@
 
 import 'package:kernel/ast.dart'
     show
-        Member,
+        DartType,
+        DynamicType,
+        FunctionNode,
+        InterfaceType,
+        LibraryDependency,
         LoadLibrary,
+        Member,
+        Name,
         Procedure,
         ProcedureKind,
-        Name,
-        FunctionNode,
-        ReturnStatement,
-        LibraryDependency;
+        ReturnStatement;
 
-import 'builder.dart' show Builder, LibraryBuilder;
+import 'kernel_builder.dart' show Builder, KernelLibraryBuilder;
+
+import 'forest.dart' show Forest;
 
 /// Builder to represent the `deferLibrary.loadLibrary` calls and tear-offs.
 class LoadLibraryBuilder extends Builder {
-  final LibraryBuilder parent;
+  final KernelLibraryBuilder parent;
 
   final LibraryDependency importDependency;
 
@@ -31,17 +36,22 @@ class LoadLibraryBuilder extends Builder {
   LoadLibraryBuilder(this.parent, this.importDependency, this.charOffset)
       : super(parent, charOffset, parent.fileUri);
 
-  LoadLibrary createLoadLibrary(int charOffset) {
-    return new LoadLibrary(importDependency)..fileOffset = charOffset;
+  LoadLibrary createLoadLibrary(int charOffset, Forest forest) {
+    return forest.loadLibrary(importDependency)..fileOffset = charOffset;
   }
 
-  Procedure createTearoffMethod() {
+  Procedure createTearoffMethod(Forest forest) {
     if (tearoff != null) return tearoff;
-    LoadLibrary expression = createLoadLibrary(charOffset);
+    LoadLibrary expression = createLoadLibrary(charOffset, forest);
     String prefix = expression.import.name;
-    tearoff = new Procedure(new Name('__loadLibrary_$prefix', parent.target),
-        ProcedureKind.Method, new FunctionNode(new ReturnStatement(expression)),
-        fileUri: parent.target.fileUri, isStatic: true)
+    tearoff = new Procedure(
+        new Name('__loadLibrary_$prefix', parent.target),
+        ProcedureKind.Method,
+        new FunctionNode(new ReturnStatement(expression),
+            returnType: new InterfaceType(parent.loader.coreTypes.futureClass,
+                <DartType>[const DynamicType()])),
+        fileUri: parent.target.fileUri,
+        isStatic: true)
       ..fileOffset = charOffset;
     return tearoff;
   }

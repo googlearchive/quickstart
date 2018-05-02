@@ -135,7 +135,7 @@ class Tag {
   /// Internal version of kernel binary format.
   /// Bump it when making incompatible changes in kernel binaries.
   /// Keep in sync with runtime/vm/kernel_binary.h.
-  static const int BinaryFormatVersion = 3;
+  static const int BinaryFormatVersion = 4;
 }
 
 abstract class ConstantTag {
@@ -147,6 +147,7 @@ abstract class ConstantTag {
   static const int MapConstant = 5;
   static const int ListConstant = 6;
   static const int InstanceConstant = 7;
-  static const int TearOffConstant = 8;
-  static const int TypeLiteralConstant = 9;
+  static const int PartialInstantiationConstant = 8;
+  static const int TearOffConstant = 9;
+  static const int TypeLiteralConstant = 10;
 }

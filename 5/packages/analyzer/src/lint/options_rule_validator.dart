@@ -3,8 +3,8 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:analyzer/analyzer.dart';
-import 'package:analyzer/plugin/options.dart';
 import 'package:analyzer/src/lint/registry.dart';
+import 'package:analyzer/src/plugin/options.dart';
 import 'package:analyzer/src/util/yaml.dart';
 import 'package:yaml/yaml.dart';
 
@@ -24,6 +24,7 @@ const AnalysisOptionsWarningCode UNDEFINED_LINT_WARNING =
 class LinterRuleOptionsValidator extends OptionsValidator {
   static const linter = 'linter';
   static const rulesKey = 'rules';
+
   @override
   List<AnalysisError> validate(ErrorReporter reporter, YamlMap options) {
     List<AnalysisError> errors = <AnalysisError>[];
@@ -37,8 +38,8 @@ class LinterRuleOptionsValidator extends OptionsValidator {
 
   validateRules(YamlNode rules, ErrorReporter reporter) {
     if (rules is YamlList) {
-      Iterable<String> registeredLints =
-          Registry.ruleRegistry.map((r) => r.name);
+      List<String> registeredLints =
+          Registry.ruleRegistry.map((r) => r.name).toList();
       rules.nodes.forEach((YamlNode ruleNode) {
         Object value = ruleNode.value;
         if (value != null && !registeredLints.contains(value)) {

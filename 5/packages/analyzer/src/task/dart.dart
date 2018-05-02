@@ -13,6 +13,7 @@ import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/error/error.dart';
 import 'package:analyzer/error/listener.dart';
 import 'package:analyzer/exception/exception.dart';
+import 'package:analyzer/source/line_info.dart';
 import 'package:analyzer/src/context/cache.dart';
 import 'package:analyzer/src/dart/ast/ast.dart'
     show NamespaceDirectiveImpl, UriBasedDirectiveImpl, UriValidationCode;
@@ -38,6 +39,9 @@ import 'package:analyzer/src/generated/source.dart';
 import 'package:analyzer/src/generated/utilities_dart.dart';
 import 'package:analyzer/src/plugin/engine_plugin.dart';
 import 'package:analyzer/src/services/lint.dart';
+import 'package:analyzer/src/task/api/dart.dart';
+import 'package:analyzer/src/task/api/general.dart';
+import 'package:analyzer/src/task/api/model.dart';
 import 'package:analyzer/src/task/driver.dart';
 import 'package:analyzer/src/task/general.dart';
 import 'package:analyzer/src/task/html.dart';
@@ -45,9 +49,6 @@ import 'package:analyzer/src/task/inputs.dart';
 import 'package:analyzer/src/task/model.dart';
 import 'package:analyzer/src/task/strong/checker.dart';
 import 'package:analyzer/src/task/strong_mode.dart';
-import 'package:analyzer/task/dart.dart';
-import 'package:analyzer/task/general.dart';
-import 'package:analyzer/task/model.dart';
 
 /**
  * The [ResultCachingPolicy] for ASTs.
@@ -1507,7 +1508,6 @@ class BuildLibraryElementTask extends SourceBasedAnalysisTask {
     //
     LibraryIdentifier libraryNameNode = null;
     String partsLibraryName = _UNKNOWN_LIBRARY_NAME;
-    bool hasPartDirective = false;
     Set<Source> seenPartSources = new Set<Source>();
     FunctionElement entryPoint =
         _findEntryPoint(definingCompilationUnitElement);
@@ -1524,7 +1524,6 @@ class BuildLibraryElementTask extends SourceBasedAnalysisTask {
       } else if (directive is PartDirective) {
         StringLiteral partUri = directive.uri;
         Source partSource = directive.uriSource;
-        hasPartDirective = true;
         CompilationUnit partUnit = partUnitMap[partSource];
         if (partUnit != null) {
           CompilationUnitElementImpl partElement = partUnit.element;
@@ -1594,12 +1593,8 @@ class BuildLibraryElementTask extends SourceBasedAnalysisTask {
         }
       }
     }
-    if (hasPartDirective &&
-        libraryNameNode == null &&
-        !context.analysisOptions.enableUriInPartOf) {
-      errors.add(new AnalysisError(librarySource, 0, 0,
-          ResolverErrorCode.MISSING_LIBRARY_DIRECTIVE_WITH_PART));
-    }
+    // TODO(brianwilkerson) Report the error
+    // ResolverErrorCode.MISSING_LIBRARY_DIRECTIVE_WITH_PART
     //
     // Create and populate the library element.
     //
@@ -3081,7 +3076,7 @@ class IgnoreInfo {
           .group(1)
           .split(',')
           .map((String code) => code.trim().toLowerCase());
-      LineInfo_Location location = info.getLocation(match.start);
+      CharacterLocation location = info.getLocation(match.start);
       int lineNumber = location.lineNumber;
       String beforeMatch = content.substring(
           info.getOffsetOfLine(lineNumber - 1),
@@ -3769,7 +3764,6 @@ class ParseDartTask extends SourceBasedAnalysisTask {
         options.analyzeFunctionBodiesPredicate(_source);
     parser.parseGenericMethodComments = options.strongMode;
     parser.enableOptionalNewAndConst = options.previewDart2;
-    parser.enableUriInPartOf = options.enableUriInPartOf;
     CompilationUnit unit = parser.parseCompilationUnit(tokenStream);
     unit.lineInfo = lineInfo;
 
@@ -4896,11 +4890,6 @@ class ResolveTopLevelUnitTypeBoundsTask extends SourceBasedAnalysisTask {
   static const String UNIT_INPUT = 'UNIT_INPUT';
 
   /**
-   * The name of the [TYPE_PROVIDER] input.
-   */
-  static const String TYPE_PROVIDER_INPUT = 'TYPE_PROVIDER_INPUT';
-
-  /**
    * The task descriptor describing this kind of task.
    */
   static final TaskDescriptor DESCRIPTOR = new TaskDescriptor(
@@ -4927,13 +4916,12 @@ class ResolveTopLevelUnitTypeBoundsTask extends SourceBasedAnalysisTask {
     LibraryElement library = getRequiredInput(LIBRARY_INPUT);
     CompilationUnit unit = getRequiredInput(UNIT_INPUT);
     CompilationUnitElement unitElement = unit.element;
-    TypeProvider typeProvider = getRequiredInput(TYPE_PROVIDER_INPUT);
     //
     // Resolve TypeName nodes.
     //
     RecordingErrorListener errorListener = new RecordingErrorListener();
     new TypeParameterBoundsResolver(
-            typeProvider, library, unitElement.source, errorListener)
+            context.typeSystem, library, unitElement.source, errorListener)
         .resolveTypeBounds(unit);
     //
     // Record outputs.
@@ -4960,8 +4948,7 @@ class ResolveTopLevelUnitTypeBoundsTask extends SourceBasedAnalysisTask {
       'dependOnAllExportedSources':
           IMPORTED_LIBRARIES.of(unit.library).toMapOf(EXPORT_SOURCE_CLOSURE),
       LIBRARY_INPUT: LIBRARY_ELEMENT4.of(unit.library),
-      UNIT_INPUT: RESOLVED_UNIT3.of(unit),
-      TYPE_PROVIDER_INPUT: TYPE_PROVIDER.of(AnalysisContextTarget.request)
+      UNIT_INPUT: RESOLVED_UNIT3.of(unit)
     };
   }
 

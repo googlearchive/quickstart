@@ -18,6 +18,7 @@ import 'package:analyzer/error/listener.dart';
 import 'package:analyzer/exception/exception.dart';
 import 'package:analyzer/src/dart/ast/ast.dart';
 import 'package:analyzer/src/dart/ast/ast_factory.dart';
+import 'package:analyzer/src/dart/ast/token.dart';
 import 'package:analyzer/src/dart/ast/utilities.dart';
 import 'package:analyzer/src/dart/element/element.dart';
 import 'package:analyzer/src/dart/element/member.dart' show ConstructorMember;
@@ -44,12 +45,14 @@ export 'package:analyzer/src/generated/type_system.dart';
  * feature.
  */
 class AstRewriteVisitor extends ScopedVisitor {
+  final bool addConstKeyword;
+
   /**
    * Initialize a newly created visitor.
    */
   AstRewriteVisitor(LibraryElement definingLibrary, Source source,
       TypeProvider typeProvider, AnalysisErrorListener errorListener,
-      {Scope nameScope})
+      {Scope nameScope, this.addConstKeyword: false})
       : super(definingLibrary, source, typeProvider, errorListener,
             nameScope: nameScope);
 
@@ -77,7 +80,7 @@ class AstRewriteVisitor extends ScopedVisitor {
         TypeName typeName = astFactory.typeName(methodName, node.typeArguments);
         InstanceCreationExpression instanceCreationExpression =
             astFactory.instanceCreationExpression(
-                null,
+                _getKeyword(node),
                 astFactory.constructorName(typeName, null, null),
                 node.argumentList);
         DartType type = _getType(element, node.typeArguments);
@@ -100,7 +103,7 @@ class AstRewriteVisitor extends ScopedVisitor {
           TypeName typeName = astFactory.typeName(target, node.typeArguments);
           InstanceCreationExpression instanceCreationExpression =
               astFactory.instanceCreationExpression(
-                  null,
+                  _getKeyword(node),
                   astFactory.constructorName(
                       typeName, node.operator, methodName),
                   node.argumentList);
@@ -124,7 +127,7 @@ class AstRewriteVisitor extends ScopedVisitor {
               node.typeArguments);
           InstanceCreationExpression instanceCreationExpression =
               astFactory.instanceCreationExpression(
-                  null,
+                  _getKeyword(node),
                   astFactory.constructorName(typeName, null, null),
                   node.argumentList);
           DartType type = _getType(prefixedElement, node.typeArguments);
@@ -145,7 +148,7 @@ class AstRewriteVisitor extends ScopedVisitor {
             TypeName typeName = astFactory.typeName(target, node.typeArguments);
             InstanceCreationExpression instanceCreationExpression =
                 astFactory.instanceCreationExpression(
-                    null,
+                    _getKeyword(node),
                     astFactory.constructorName(
                         typeName, node.operator, methodName),
                     node.argumentList);
@@ -159,6 +162,16 @@ class AstRewriteVisitor extends ScopedVisitor {
       }
     }
     return null;
+  }
+
+  /**
+   * Return the token that should be used in the [InstanceCreationExpression]
+   * that corresponds to the given invocation [node].
+   */
+  Token _getKeyword(MethodInvocation node) {
+    return addConstKeyword
+        ? new KeywordToken(Keyword.CONST, node.offset)
+        : null;
   }
 
   /**
@@ -4869,8 +4882,9 @@ class ResolverErrorCode extends ErrorCode {
           'PART_OF_UNNAMED_LIBRARY',
           "Library is unnamed. Expected a URI not a library name '{0}' in the "
           "part-of directive.",
-          "Try changing the part-of directive to a URI, or try including a"
-          " different part.");
+          correction:
+              "Try changing the part-of directive to a URI, or try including a"
+              " different part.");
 
   /**
    * Initialize a newly created error code to have the given [name]. The message
@@ -4878,8 +4892,8 @@ class ResolverErrorCode extends ErrorCode {
    * template. The correction associated with the error will be created from the
    * given [correction] template.
    */
-  const ResolverErrorCode(String name, String message, [String correction])
-      : super(name, message, correction);
+  const ResolverErrorCode(String name, String message, {String correction})
+      : super.temporary(name, message, correction: correction);
 
   @override
   ErrorSeverity get errorSeverity => type.severity;
@@ -4983,12 +4997,15 @@ class ResolverVisitor extends ScopedVisitor {
    */
   ResolverVisitor(LibraryElement definingLibrary, Source source,
       TypeProvider typeProvider, AnalysisErrorListener errorListener,
-      {Scope nameScope})
+      {Scope nameScope,
+      bool propagateTypes: true,
+      reportConstEvaluationErrors: true})
       : super(definingLibrary, source, typeProvider, errorListener,
             nameScope: nameScope) {
     AnalysisOptions options = definingLibrary.context.analysisOptions;
     this.strongMode = options.strongMode;
-    this.elementResolver = new ElementResolver(this);
+    this.elementResolver = new ElementResolver(this,
+        reportConstEvaluationErrors: reportConstEvaluationErrors);
     this.typeSystem = definingLibrary.context.typeSystem;
     bool strongModeHints = false;
     if (options is AnalysisOptionsImpl) {
@@ -4996,7 +5013,8 @@ class ResolverVisitor extends ScopedVisitor {
     }
     this.inferenceContext = new InferenceContext._(
         typeProvider, typeSystem, strongModeHints, errorReporter);
-    this.typeAnalyzer = new StaticTypeAnalyzer(this);
+    this.typeAnalyzer =
+        new StaticTypeAnalyzer(this, propagateTypes: propagateTypes);
   }
 
   /**
@@ -5720,7 +5738,8 @@ class ResolverVisitor extends ScopedVisitor {
     }
     // Clone the ASTs for default formal parameters, so that we can use them
     // during constant evaluation.
-    if (!_hasSerializedConstantInitializer(element)) {
+    if (element is ConstVariableElement &&
+        !_hasSerializedConstantInitializer(element)) {
       (element as ConstVariableElement).constantInitializer =
           _createCloner().cloneNode(node.defaultValue);
     }
@@ -6597,15 +6616,12 @@ class ResolverVisitor extends ScopedVisitor {
    * serialized.
    */
   bool _hasSerializedConstantInitializer(ParameterElement parameter) {
-    if (LibraryElementImpl.hasResolutionCapability(
-        definingLibrary, LibraryResolutionCapability.constantExpressions)) {
-      Element executable = parameter.enclosingElement;
-      if (executable is MethodElement) {
-        return true;
-      }
-      if (executable is FunctionElement) {
-        return executable.enclosingElement is CompilationUnitElement;
-      }
+    Element executable = parameter.enclosingElement;
+    if (executable is MethodElement ||
+        executable is FunctionElement &&
+            executable.enclosingElement is CompilationUnitElement) {
+      return LibraryElementImpl.hasResolutionCapability(
+          definingLibrary, LibraryResolutionCapability.constantExpressions);
     }
     return false;
   }
@@ -8869,7 +8885,7 @@ class TypeOverrideManager_TypeOverrideScope {
  * type aliases.
  */
 class TypeParameterBoundsResolver {
-  final TypeProvider typeProvider;
+  final TypeSystem typeSystem;
   final LibraryElement library;
   final Source source;
   final AnalysisErrorListener errorListener;
@@ -8878,7 +8894,7 @@ class TypeParameterBoundsResolver {
   TypeNameResolver typeNameResolver = null;
 
   TypeParameterBoundsResolver(
-      this.typeProvider, this.library, this.source, this.errorListener);
+      this.typeSystem, this.library, this.source, this.errorListener);
 
   /**
    * Resolve bounds of type parameters of classes, class and function type
@@ -8948,12 +8964,8 @@ class TypeParameterBoundsResolver {
             } else {
               libraryScope ??= new LibraryScope(library);
               typeParametersScope ??= createTypeParametersScope();
-              typeNameResolver ??= new TypeNameResolver(
-                  new TypeSystemImpl(typeProvider),
-                  typeProvider,
-                  library,
-                  source,
-                  errorListener);
+              typeNameResolver ??= new TypeNameResolver(typeSystem,
+                  typeSystem.typeProvider, library, source, errorListener);
               typeNameResolver.nameScope = typeParametersScope;
               _resolveTypeName(bound);
               typeParameterElement.bound = bound.type;

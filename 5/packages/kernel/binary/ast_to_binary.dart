@@ -175,6 +175,14 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
         writeCanonicalNameReference(fieldRef.canonicalName);
         writeConstantReference(value);
       });
+    } else if (constant is PartialInstantiationConstant) {
+      writeByte(ConstantTag.PartialInstantiationConstant);
+      writeConstantReference(constant.tearOffConstant);
+      final int length = constant.types.length;
+      writeUInt30(length);
+      for (int i = 0; i < length; ++i) {
+        writeDartType(constant.types[i]);
+      }
     } else if (constant is TearOffConstant) {
       writeByte(ConstantTag.TearOffConstant);
       writeCanonicalNameReference(constant.procedure.canonicalName);
@@ -412,7 +420,23 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
 
       // RList<UInt32> nodeReferences
       if (subsection.nodeToReferenceId != null) {
-        for (var nodeOffset in subsection.offsetsOfReferencedNodes) {
+        final offsets = subsection.offsetsOfReferencedNodes;
+        for (int i = 0; i < offsets.length; ++i) {
+          final nodeOffset = offsets[i];
+          if (nodeOffset < 0) {
+            // Dangling reference.
+            // Find a node which was referenced to report meaningful error.
+            Node referencedNode;
+            subsection.nodeToReferenceId.forEach((node, id) {
+              if (id == i) {
+                referencedNode = node;
+              }
+            });
+            throw 'Unable to write reference to node'
+                ' ${referencedNode.runtimeType} $referencedNode'
+                ' from metadata ${subsection.repository.tag}'
+                ' (node is not written into kernel binary)';
+          }
           writeUInt32(nodeOffset);
         }
         writeUInt32(subsection.offsetsOfReferencedNodes.length);
@@ -642,7 +666,7 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
     }
     writeOffset(node.fileOffset);
     writeByte(node.flags);
-    writeNodeList(node.annotations);
+    writeAnnotationList(node.annotations);
     writeLibraryReference(node.targetLibrary);
     writeStringReference(node.name ?? '');
     writeNodeList(node.combinators);
@@ -665,10 +689,8 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
     if (_metadataSubsections != null) {
       _recordNodeOffsetForMetadataMapping(node);
     }
-    final Uri activeFileUriSaved = _activeFileUri;
-    _activeFileUri = writeUriReference(node.fileUri);
-    writeNodeList(node.annotations);
-    _activeFileUri = activeFileUriSaved;
+    writeAnnotationList(node.annotations);
+    writeStringReference(node.partUri);
   }
 
   void visitTypedef(Typedef node) {
@@ -808,6 +830,7 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
     writeOffset(node.fileEndOffset);
     writeByte(node.kind.index);
     writeByte(node.flags);
+    writeByte(node.flags2);
     writeName(node.name ?? '');
     writeAnnotationList(node.annotations);
     writeOptionalReference(node.forwardingStubSuperTargetReference);
@@ -1003,7 +1026,6 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
   void visitPropertyGet(PropertyGet node) {
     writeByte(Tag.PropertyGet);
     writeOffset(node.fileOffset);
-    writeByte(node.flags);
     writeNode(node.receiver);
     writeName(node.name);
     writeReference(node.interfaceTargetReference);
@@ -1013,7 +1035,6 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
   void visitPropertySet(PropertySet node) {
     writeByte(Tag.PropertySet);
     writeOffset(node.fileOffset);
-    writeByte(node.flags);
     writeNode(node.receiver);
     writeName(node.name);
     writeNode(node.value);
@@ -1041,7 +1062,6 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
   void visitDirectPropertyGet(DirectPropertyGet node) {
     writeByte(Tag.DirectPropertyGet);
     writeOffset(node.fileOffset);
-    writeByte(node.flags);
     writeNode(node.receiver);
     writeReference(node.targetReference);
   }
@@ -1050,7 +1070,6 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
   void visitDirectPropertySet(DirectPropertySet node) {
     writeByte(Tag.DirectPropertySet);
     writeOffset(node.fileOffset);
-    writeByte(node.flags);
     writeNode(node.receiver);
     writeReference(node.targetReference);
     writeNode(node.value);
@@ -1075,7 +1094,6 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
   void visitMethodInvocation(MethodInvocation node) {
     writeByte(Tag.MethodInvocation);
     writeOffset(node.fileOffset);
-    writeByte(node.flags);
     writeNode(node.receiver);
     writeName(node.name);
     writeNode(node.arguments);
@@ -1095,7 +1113,6 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
   void visitDirectMethodInvocation(DirectMethodInvocation node) {
     writeByte(Tag.DirectMethodInvocation);
     writeOffset(node.fileOffset);
-    writeByte(node.flags);
     writeNode(node.receiver);
     writeReference(node.targetReference);
     writeNode(node.arguments);
@@ -1715,6 +1732,7 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
     writeAnnotationList(node.annotations);
     writeStringReference(node.name ?? '');
     writeNode(node.bound);
+    writeOptionalNode(node.defaultType);
   }
 
   // ================================================================
@@ -1900,6 +1918,19 @@ class BinaryPrinter implements Visitor<void>, BinarySink {
   @override
   void visitStringConstantReference(StringConstant node) {
     throw new UnsupportedError('serialization of StringConstant references');
+  }
+
+  @override
+  void visitPartialInstantiationConstant(PartialInstantiationConstant node) {
+    throw new UnsupportedError(
+        'serialization of PartialInstantiationConstants ');
+  }
+
+  @override
+  void visitPartialInstantiationConstantReference(
+      PartialInstantiationConstant node) {
+    throw new UnsupportedError(
+        'serialization of PartialInstantiationConstant references');
   }
 
   @override
@@ -2263,6 +2294,6 @@ class _MetadataSubsection {
       : nodeToReferenceId =
             nodeToReferenceId.isNotEmpty ? nodeToReferenceId : null,
         offsetsOfReferencedNodes = nodeToReferenceId.isNotEmpty
-            ? new List<int>.filled(nodeToReferenceId.length, 0)
+            ? new List<int>.filled(nodeToReferenceId.length, -1)
             : null;
 }

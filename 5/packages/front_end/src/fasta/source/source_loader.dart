@@ -360,6 +360,8 @@ class SourceLoader<L> extends Loader<L> {
 
   void instantiateToBound(TypeBuilder dynamicType, TypeBuilder bottomType,
       ClassBuilder objectClass) {
+    if (!target.strongMode) return;
+
     int count = 0;
     builders.forEach((Uri uri, LibraryBuilder library) {
       if (library.loader == this) {
@@ -525,10 +527,12 @@ class SourceLoader<L> extends Loader<L> {
                         .withArguments(builder.fullNameForErrors),
                     cls.charOffset,
                     noLength,
-                    context: templateIllegalMixinDueToConstructorsCause
-                        .withArguments(builder.fullNameForErrors)
-                        .withLocation(constructory.fileUri,
-                            constructory.charOffset, noLength));
+                    context: [
+                      templateIllegalMixinDueToConstructorsCause
+                          .withArguments(builder.fullNameForErrors)
+                          .withLocation(constructory.fileUri,
+                              constructory.charOffset, noLength)
+                    ]);
               }
             }
           }
@@ -632,7 +636,20 @@ class SourceLoader<L> extends Loader<L> {
     ticker.logMs("Checked overrides");
   }
 
+  void checkAbstractMembers(List<SourceClassBuilder> sourceClasses) {
+    if (!target.strongMode) return;
+    assert(hierarchy != null);
+    for (SourceClassBuilder builder in sourceClasses) {
+      if (builder.library.loader == this) {
+        builder.checkAbstractMembers(coreTypes, hierarchy);
+      }
+    }
+    ticker.logMs("Checked abstract members");
+  }
+
   void addNoSuchMethodForwarders(List<SourceClassBuilder> sourceClasses) {
+    if (!target.backendTarget.enableNoSuchMethodForwarders) return;
+
     for (SourceClassBuilder builder in sourceClasses) {
       if (builder.library.loader == this) {
         builder.addNoSuchMethodForwarders(hierarchy);
@@ -757,7 +774,7 @@ class SourceLoader<L> extends Loader<L> {
 
   void recordMessage(Severity severity, Message message, int charOffset,
       int length, Uri fileUri,
-      {LocatedMessage context}) {
+      {List<LocatedMessage> context}) {
     if (instrumentation == null) return;
 
     if (charOffset == -1 &&
@@ -807,8 +824,18 @@ class SourceLoader<L> extends Loader<L> {
         // TODO(ahe): Should I add an InstrumentationValue for Message?
         new InstrumentationValueLiteral(message.code.name));
     if (context != null) {
-      instrumentation.record(context.uri, context.charOffset, "context",
-          new InstrumentationValueLiteral(context.code.name));
+      for (LocatedMessage contextMessage in context) {
+        instrumentation.record(
+            contextMessage.uri,
+            contextMessage.charOffset,
+            "context",
+            new InstrumentationValueLiteral(contextMessage.code.name));
+      }
     }
+  }
+
+  void releaseAncillaryResources() {
+    hierarchy = null;
+    typeInferenceEngine = null;
   }
 }

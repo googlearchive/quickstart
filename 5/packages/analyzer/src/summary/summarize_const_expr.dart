@@ -423,6 +423,9 @@ abstract class AbstractConstExprSerializer {
       _serialize(expr.expression);
       references.add(serializeType(expr.type));
       operations.add(UnlinkedExprOperation.typeCheck);
+      if (expr.notOperator != null) {
+        operations.add(UnlinkedExprOperation.not);
+      }
     } else if (expr is SuperExpression) {
       operations.add(UnlinkedExprOperation.pushSuper);
     } else if (expr is ThisExpression) {
@@ -592,10 +595,6 @@ abstract class AbstractConstExprSerializer {
   }
 
   void _serializeMethodInvocation(MethodInvocation invocation) {
-    if (invocation.target != null ||
-        invocation.methodName.name != 'identical') {
-      isValidConst = false;
-    }
     Expression target = invocation.target;
     SimpleIdentifier methodName = invocation.methodName;
     ArgumentList argumentList = invocation.argumentList;

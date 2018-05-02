@@ -242,9 +242,7 @@ class KernelTarget extends TargetImplementation {
       objectType.bind(loader.coreLibrary["Object"]);
       bottomType.bind(loader.coreLibrary["Null"]);
       loader.resolveTypes();
-      if (loader.target.strongMode) {
-        loader.instantiateToBound(dynamicType, bottomType, objectClassBuilder);
-      }
+      loader.instantiateToBound(dynamicType, bottomType, objectClassBuilder);
       List<SourceClassBuilder> myClasses = collectMyClasses();
       loader.checkSemantics(myClasses);
       loader.finishTypeVariables(objectClassBuilder);
@@ -264,9 +262,8 @@ class KernelTarget extends TargetImplementation {
         loader.performTopLevelInference(myClasses);
       }
       loader.checkOverrides(myClasses);
-      if (backendTarget.enableNoSuchMethodForwarders) {
-        loader.addNoSuchMethodForwarders(myClasses);
-      }
+      loader.checkAbstractMembers(myClasses);
+      loader.addNoSuchMethodForwarders(myClasses);
     } on deprecated_InputError catch (e) {
       ticker.logMs("Got deprecated_InputError");
       handleInputError(e, isFullComponent: false);
@@ -665,15 +662,11 @@ class KernelTarget extends TargetImplementation {
         fieldInitializers[constructor] = myFieldInitializers;
         if (constructor.isConst && nonFinalFields.isNotEmpty) {
           builder.addCompileTimeError(messageConstConstructorNonFinalField,
-              constructor.fileOffset, noLength);
-          // TODO(askesc): Put as context argument when multiple contexts
-          // are supported.
-          for (Field field in nonFinalFields) {
-            builder.addCompileTimeError(
-                messageConstConstructorNonFinalFieldCause,
-                field.fileOffset,
-                noLength);
-          }
+              constructor.fileOffset, noLength,
+              context: nonFinalFields
+                  .map((field) => messageConstConstructorNonFinalFieldCause
+                      .withLocation(field.fileUri, field.fileOffset, noLength))
+                  .toList());
           nonFinalFields.clear();
         }
       }

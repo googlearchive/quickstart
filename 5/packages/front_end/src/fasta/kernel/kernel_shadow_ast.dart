@@ -413,16 +413,18 @@ abstract class ShadowComplexAssignment extends ShadowSyntheticExpression {
       if (isPreIncDec || isPostIncDec) {
         rhsType = inferrer.coreTypes.intClass.rawType;
       } else {
-        // Analyzer uses a null context for the RHS here.
-        // TODO(paulberry): improve on this.
-        rhsType = inferrer.inferExpression(rhs, const UnknownType(), true);
         // It's not necessary to call _storeLetType for [rhs] because the RHS
         // is always passed directly to the combiner; it's never stored in a
         // temporary variable first.
-        assert(identical(combiner.arguments.positional[0], rhs));
+        assert(identical(combiner.arguments.positional.first, rhs));
+        // Analyzer uses a null context for the RHS here.
+        // TODO(paulberry): improve on this.
+        rhsType = inferrer.inferExpression(rhs, const UnknownType(), true);
+        // Do not use rhs after this point because it may be a Shadow node
+        // that has been replaced in the tree with its desugaring.
         var expectedType = getPositionalParameterType(combinerType, 0);
-        inferrer.ensureAssignable(
-            expectedType, rhsType, rhs, combiner.fileOffset);
+        inferrer.ensureAssignable(expectedType, rhsType,
+            combiner.arguments.positional.first, combiner.fileOffset);
       }
       if (isOverloadedArithmeticOperator) {
         combinedType = inferrer.typeSchemaEnvironment
@@ -1588,10 +1590,7 @@ class ShadowPropertyAssign extends ShadowComplexAssignmentWithReceiver {
 
   Object _handleWriteContravariance(
       ShadowTypeInferrer inferrer, DartType receiverType) {
-    var writeMember = inferrer.findPropertySetMember(receiverType, write);
-    inferrer.handlePropertySetContravariance(
-        receiver, writeMember, write is PropertySet ? write : null, write);
-    return writeMember;
+    return inferrer.findPropertySetMember(receiverType, write);
   }
 
   @override
@@ -1913,6 +1912,7 @@ class ShadowSyntheticExpression extends Let implements ShadowExpression {
   /// [desugared].
   void _replaceWithDesugared() {
     parent.replaceChild(this, desugared);
+    parent = null;
   }
 
   /// Updates any [Let] nodes in the desugared expression to account for the
@@ -2382,6 +2382,27 @@ class ShadowYieldStatement extends YieldStatement implements ShadowStatement {
     }
     closureContext.handleYield(
         inferrer, isYieldStar, inferredType, expression, fileOffset);
+  }
+}
+
+/// Concrete shadow object representing a deferred load library call.
+class ShadowLoadLibrary extends LoadLibrary implements ShadowExpression {
+  ShadowLoadLibrary(LibraryDependency import) : super(import);
+
+  @override
+  DartType _inferExpression(ShadowTypeInferrer inferrer, DartType typeContext) {
+    return super.getStaticType(inferrer.typeSchemaEnvironment);
+  }
+}
+
+/// Concrete shadow object representing a deferred library-is-loaded check.
+class ShadowCheckLibraryIsLoaded extends CheckLibraryIsLoaded
+    implements ShadowExpression {
+  ShadowCheckLibraryIsLoaded(LibraryDependency import) : super(import);
+
+  @override
+  DartType _inferExpression(ShadowTypeInferrer inferrer, DartType typeContext) {
+    return super.getStaticType(inferrer.typeSchemaEnvironment);
   }
 }
 

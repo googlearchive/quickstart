@@ -67,6 +67,7 @@ import 'kernel_builder.dart'
         KernelFunctionTypeAliasBuilder,
         KernelInvalidTypeBuilder,
         KernelLibraryBuilder,
+        KernelPrefixBuilder,
         KernelTypeVariableBuilder,
         LibraryBuilder,
         LoadLibraryBuilder,
@@ -141,7 +142,7 @@ abstract class BuilderHelper<Arguments> {
   StaticGet makeStaticGet(Member readTarget, Token token);
 
   Expression wrapInDeferredCheck(
-      Expression expression, PrefixBuilder prefix, int charOffset);
+      Expression expression, KernelPrefixBuilder prefix, int charOffset);
 
   dynamic deprecated_addCompileTimeError(int charOffset, String message);
 
@@ -433,7 +434,7 @@ class ThisAccessor<Arguments> extends FastaAccessor<Arguments> {
 
   Expression buildSimpleRead() {
     if (!isSuper) {
-      return new ShadowThisExpression();
+      return new ShadowThisExpression()..fileOffset = offsetForToken(token);
     } else {
       return helper.buildCompileTimeError(messageSuperAsExpression,
           offsetForToken(token), lengthForToken(token));
@@ -921,7 +922,7 @@ class LoadLibraryAccessor<Arguments> extends kernel
       helper.addProblemErrorIfConst(
           messageLoadLibraryTakesNoArguments, offset, 'loadLibrary'.length);
     }
-    return builder.createLoadLibrary(offset);
+    return builder.createLoadLibrary(offset, forest);
   }
 }
 

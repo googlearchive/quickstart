@@ -24,6 +24,7 @@ import 'package:analyzer/src/generated/parser.dart';
 import 'package:analyzer/src/generated/resolver.dart';
 import 'package:analyzer/src/generated/source.dart' show LineInfo, Source;
 import 'package:analyzer/src/generated/utilities_dart.dart';
+import 'package:analyzer/src/fasta/token_utils.dart' as util show findPrevious;
 
 /**
  * Two or more string literals that are implicitly concatenated because of being
@@ -987,6 +988,9 @@ abstract class AstNodeImpl implements AstNode {
     }
     return _propertyMap[name] as E;
   }
+
+  Token findPrevious(Token target) =>
+      util.findPrevious(beginToken, target) ?? parent?.findPrevious(target);
 
   @override
   void setProperty(String name, Object value) {
@@ -2762,20 +2766,23 @@ class ConstantAnalysisErrorListener extends AnalysisErrorListener {
 
   @override
   void onError(AnalysisError error) {
-    switch (error.errorCode) {
-      case CompileTimeErrorCode.CONST_EVAL_TYPE_BOOL:
-      case CompileTimeErrorCode.CONST_EVAL_TYPE_BOOL_NUM_STRING:
-      case CompileTimeErrorCode.CONST_EVAL_TYPE_INT:
-      case CompileTimeErrorCode.CONST_EVAL_TYPE_NUM:
-      case CompileTimeErrorCode.CONST_EVAL_THROWS_EXCEPTION:
-      case CompileTimeErrorCode.CONST_EVAL_THROWS_IDBZE:
-      case CompileTimeErrorCode.CONST_WITH_NON_CONSTANT_ARGUMENT:
-      case CompileTimeErrorCode.NON_CONSTANT_VALUE_IN_INITIALIZER:
-      case CompileTimeErrorCode
-          .CONST_CONSTRUCTOR_WITH_FIELD_INITIALIZED_BY_NON_CONST:
-      case CompileTimeErrorCode.INVALID_CONSTANT:
-      case CompileTimeErrorCode.MISSING_CONST_IN_LIST_LITERAL:
-        hasConstError = true;
+    ErrorCode errorCode = error.errorCode;
+    if (errorCode is CompileTimeErrorCode) {
+      switch (errorCode) {
+        case CompileTimeErrorCode.CONST_EVAL_TYPE_BOOL:
+        case CompileTimeErrorCode.CONST_EVAL_TYPE_BOOL_NUM_STRING:
+        case CompileTimeErrorCode.CONST_EVAL_TYPE_INT:
+        case CompileTimeErrorCode.CONST_EVAL_TYPE_NUM:
+        case CompileTimeErrorCode.CONST_EVAL_THROWS_EXCEPTION:
+        case CompileTimeErrorCode.CONST_EVAL_THROWS_IDBZE:
+        case CompileTimeErrorCode.CONST_WITH_NON_CONSTANT_ARGUMENT:
+        case CompileTimeErrorCode.NON_CONSTANT_VALUE_IN_INITIALIZER:
+        case CompileTimeErrorCode
+            .CONST_CONSTRUCTOR_WITH_FIELD_INITIALIZED_BY_NON_CONST:
+        case CompileTimeErrorCode.INVALID_CONSTANT:
+        case CompileTimeErrorCode.MISSING_CONST_IN_LIST_LITERAL:
+          hasConstError = true;
+      }
     }
   }
 }
@@ -6551,7 +6558,7 @@ class InstanceCreationExpressionImpl extends ExpressionImpl
     if (!isImplicit) {
       return keyword.keyword == Keyword.CONST;
     } else {
-      return inConstantContext || canBeConst();
+      return inConstantContext;
     }
   }
 
@@ -6617,6 +6624,13 @@ class InstanceCreationExpressionImpl extends ExpressionImpl
               return false;
             }
           }
+        }
+      } else if (argument is Identifier) {
+        Element element = argument.bestElement;
+        if (element is PropertyAccessorElement && !element.variable.isConst) {
+          return false;
+        } else if (element is VariableElement && !element.isConst) {
+          return false;
         }
       } else {
         return false;

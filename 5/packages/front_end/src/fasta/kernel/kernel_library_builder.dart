@@ -4,7 +4,7 @@
 
 library fasta.kernel_library_builder;
 
-import 'dart:convert' show JSON;
+import 'dart:convert' show jsonEncode;
 
 import 'package:kernel/ast.dart';
 
@@ -201,8 +201,10 @@ class KernelLibraryBuilder
               templateConflictsWithTypeVariable.withArguments(name),
               member.charOffset,
               name.length,
-              context: messageConflictsWithTypeVariableCause.withLocation(
-                  tv.fileUri, tv.charOffset, name.length));
+              context: [
+                messageConflictsWithTypeVariableCause.withLocation(
+                    tv.fileUri, tv.charOffset, name.length)
+              ]);
         }
       }
       setParent(name, member);
@@ -226,10 +228,12 @@ class KernelLibraryBuilder
       if (existing != null) {
         addCompileTimeError(messageTypeVariableDuplicatedName, tv.charOffset,
             tv.name.length, fileUri,
-            context: templateTypeVariableDuplicatedNameCause
-                .withArguments(tv.name)
-                .withLocation(
-                    fileUri, existing.charOffset, existing.name.length));
+            context: [
+              templateTypeVariableDuplicatedNameCause
+                  .withArguments(tv.name)
+                  .withLocation(
+                      fileUri, existing.charOffset, existing.name.length)
+            ]);
       } else {
         typeVariablesByName[tv.name] = tv;
         if (owner is ClassBuilder) {
@@ -810,9 +814,17 @@ class KernelLibraryBuilder
     }
 
     for (KernelLibraryBuilder part in parts) {
-      library.addPart(new LibraryPart(<Expression>[], part.fileUri));
       part.addDependencies(library, seen);
     }
+  }
+
+  @override
+  void addPart(List<MetadataBuilder> metadata, String uri, int charOffset) {
+    super.addPart(metadata, uri, charOffset);
+    // TODO(ahe): [metadata] should be stored, evaluated, and added to [part].
+    LibraryPart part = new LibraryPart(<Expression>[], uri)
+      ..fileOffset = charOffset;
+    library.addPart(part);
   }
 
   @override
@@ -828,7 +840,7 @@ class KernelLibraryBuilder
 
     if (unserializableExports != null) {
       library.addMember(new Field(new Name("_exports#", library),
-          initializer: new StringLiteral(JSON.encode(unserializableExports)),
+          initializer: new StringLiteral(jsonEncode(unserializableExports)),
           isStatic: true,
           isConst: true));
     }

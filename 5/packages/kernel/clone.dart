@@ -98,26 +98,22 @@ class CloneVisitor implements TreeVisitor {
 
   visitPropertyGet(PropertyGet node) {
     return new PropertyGet.byReference(
-        clone(node.receiver), node.name, node.interfaceTargetReference)
-      ..flags = node.flags;
+        clone(node.receiver), node.name, node.interfaceTargetReference);
   }
 
   visitPropertySet(PropertySet node) {
     return new PropertySet.byReference(clone(node.receiver), node.name,
-        clone(node.value), node.interfaceTargetReference)
-      ..flags = node.flags;
+        clone(node.value), node.interfaceTargetReference);
   }
 
   visitDirectPropertyGet(DirectPropertyGet node) {
     return new DirectPropertyGet.byReference(
-        clone(node.receiver), node.targetReference)
-      ..flags = node.flags;
+        clone(node.receiver), node.targetReference);
   }
 
   visitDirectPropertySet(DirectPropertySet node) {
     return new DirectPropertySet.byReference(
-        clone(node.receiver), node.targetReference, clone(node.value))
-      ..flags = node.flags;
+        clone(node.receiver), node.targetReference, clone(node.value));
   }
 
   visitSuperPropertyGet(SuperPropertyGet node) {
@@ -140,14 +136,12 @@ class CloneVisitor implements TreeVisitor {
 
   visitMethodInvocation(MethodInvocation node) {
     return new MethodInvocation.byReference(clone(node.receiver), node.name,
-        clone(node.arguments), node.interfaceTargetReference)
-      ..flags = node.flags;
+        clone(node.arguments), node.interfaceTargetReference);
   }
 
   visitDirectMethodInvocation(DirectMethodInvocation node) {
     return new DirectMethodInvocation.byReference(
-        clone(node.receiver), node.targetReference, clone(node.arguments))
-      ..flags = node.flags;
+        clone(node.receiver), node.targetReference, clone(node.arguments));
   }
 
   visitSuperMethodInvocation(SuperMethodInvocation node) {
@@ -351,7 +345,8 @@ class CloneVisitor implements TreeVisitor {
       switchCases[switchCase] = new SwitchCase(
           switchCase.expressions.map(clone).toList(),
           new List<int>.from(switchCase.expressionOffsets),
-          null);
+          null,
+          isDefault: switchCase.isDefault);
     }
     return new SwitchStatement(
         clone(node.expression), node.cases.map(clone).toList());
@@ -392,7 +387,7 @@ class CloneVisitor implements TreeVisitor {
   }
 
   visitYieldStatement(YieldStatement node) {
-    return new YieldStatement(clone(node.expression));
+    return new YieldStatement(clone(node.expression))..flags = node.flags;
   }
 
   visitVariableDeclaration(VariableDeclaration node) {
@@ -430,7 +425,8 @@ class CloneVisitor implements TreeVisitor {
       ..fileOffset = _cloneFileOffset(node.fileOffset)
       ..fileEndOffset = _cloneFileOffset(node.fileEndOffset)
       ..isGenericContravariant = node.isGenericContravariant
-      ..flags = node.flags;
+      ..flags = node.flags
+      ..flags2 = node.flags2;
   }
 
   visitField(Field node) {
@@ -469,6 +465,9 @@ class CloneVisitor implements TreeVisitor {
     var newNode = new TypeParameter(node.name);
     typeSubstitution[node] = new TypeParameterType(newNode);
     newNode.bound = visitType(node.bound);
+    if (node.defaultType != null) {
+      newNode.defaultType = visitType(node.defaultType);
+    }
     return newNode..flags = node.flags;
   }
 

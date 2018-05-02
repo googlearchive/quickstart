@@ -767,16 +767,34 @@ class OutlineBuilder extends UnhandledListener {
   }
 
   @override
+  void beginFormalParameter(Token token, MemberKind kind, Token covariantToken,
+      Token varFinalOrConst) {
+    push((covariantToken != null ? covariantMask : 0) |
+        Modifier.validateVarFinalOrConst(varFinalOrConst?.lexeme));
+  }
+
+  @override
   void endFormalParameter(Token thisKeyword, Token periodAfterThis,
       Token nameToken, FormalParameterKind kind, MemberKind memberKind) {
     debugEvent("FormalParameter");
     int charOffset = pop();
     String name = pop();
     TypeBuilder type = pop();
-    int modifiers = Modifier.validate(pop());
+    int modifiers = pop();
     List<MetadataBuilder> metadata = pop();
     push(library.addFormalParameter(
         metadata, modifiers, type, name, thisKeyword != null, charOffset));
+  }
+
+  @override
+  void beginFormalParameterDefaultValueExpression() {
+    // Ignored for now.
+  }
+
+  @override
+  void endFormalParameterDefaultValueExpression() {
+    debugEvent("FormalParameterDefaultValueExpression");
+    // Ignored for now.
   }
 
   @override
@@ -844,10 +862,12 @@ class OutlineBuilder extends UnhandledListener {
               templateDuplicatedParameterName.withArguments(formals[1].name),
               formals[1].charOffset,
               formals[1].name.length,
-              context: templateDuplicatedParameterNameCause
-                  .withArguments(formals[1].name)
-                  .withLocation(
-                      uri, formals[0].charOffset, formals[0].name.length));
+              context: [
+                templateDuplicatedParameterNameCause
+                    .withArguments(formals[1].name)
+                    .withLocation(
+                        uri, formals[0].charOffset, formals[0].name.length)
+              ]);
         }
       } else if (formals.length > 2) {
         Map<String, FormalParameterBuilder> seenNames =
@@ -858,11 +878,13 @@ class OutlineBuilder extends UnhandledListener {
             addCompileTimeError(
                 templateDuplicatedParameterName.withArguments(formal.name),
                 formal.charOffset,
-                formal.name.length);
-            addCompileTimeError(
-                templateDuplicatedParameterNameCause.withArguments(formal.name),
-                seenNames[formal.name].charOffset,
-                seenNames[formal.name].name.length);
+                formal.name.length,
+                context: [
+                  templateDuplicatedParameterNameCause
+                      .withArguments(formal.name)
+                      .withLocation(uri, seenNames[formal.name].charOffset,
+                          seenNames[formal.name].name.length)
+                ]);
           } else {
             seenNames[formal.name] = formal;
           }
@@ -1155,26 +1177,14 @@ class OutlineBuilder extends UnhandledListener {
   }
 
   @override
-  void handleModifier(Token token) {
-    debugEvent("Modifier");
-    push(new Modifier.fromString(token.stringValue));
-  }
-
-  @override
-  void handleModifiers(int count) {
-    debugEvent("Modifiers");
-    push(popList(count) ?? NullValue.Modifiers);
-  }
-
-  @override
   void addCompileTimeError(Message message, int charOffset, int length,
-      {LocatedMessage context}) {
+      {List<LocatedMessage> context}) {
     library.addCompileTimeError(message, charOffset, length, uri,
         context: context);
   }
 
   void addProblem(Message message, int charOffset, int length,
-      {LocatedMessage context}) {
+      {List<LocatedMessage> context}) {
     library.addProblem(message, charOffset, length, uri, context: context);
   }
 
