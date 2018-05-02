@@ -3,7 +3,7 @@ description: A web app that uses AngularDart
 version: 0.0.1
 
 environment:
-  sdk: '>=2.0.0-dev.48.0 <2.0.0'
+  sdk: '>=2.0.0-dev.51.0 <2.0.0'
 
 dependencies:
   angular: ^5.0.0-alpha
