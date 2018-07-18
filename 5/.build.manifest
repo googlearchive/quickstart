@@ -41,6 +41,7 @@ packages/intl/src/data/dates/patterns/af.json
 packages/intl/src/data/dates/patterns/am.json
 packages/intl/src/data/dates/patterns/ar.json
 packages/intl/src/data/dates/patterns/ar_DZ.json
+packages/intl/src/data/dates/patterns/ar_EG.json
 packages/intl/src/data/dates/patterns/az.json
 packages/intl/src/data/dates/patterns/be.json
 packages/intl/src/data/dates/patterns/bg.json
@@ -157,6 +158,7 @@ packages/intl/src/data/dates/symbols/af.json
 packages/intl/src/data/dates/symbols/am.json
 packages/intl/src/data/dates/symbols/ar.json
 packages/intl/src/data/dates/symbols/ar_DZ.json
+packages/intl/src/data/dates/symbols/ar_EG.json
 packages/intl/src/data/dates/symbols/az.json
 packages/intl/src/data/dates/symbols/be.json
 packages/intl/src/data/dates/symbols/bg.json
